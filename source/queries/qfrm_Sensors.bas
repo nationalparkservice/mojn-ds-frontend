@@ -1,0 +1,3 @@
+SELECT data_visit.ID, data_visit.VisitDate, Format([data_visit].[StartTime],"Short Time") AS StartTime, data_visit.Notes, data_visit.VisitTypeID, data_visit.DataProcessingLevelID, data_visit.DataProcessingLevelDate, data_visit.DataProcessingLevelNote, data_visit.ProtocolID, data_visit.MonitoringStatusID, data_site.Name, data_visit.SpringTypeID, data_site.code AS SiteCode, data_site.AccessDirections, data_site.Lat_WGS84, data_site.Lon_WGS84, data_site.ID AS SiteID, lookup_park.Code AS ParkCode, lookup_subunit.Code AS SubUnitCode, lookup_park.ID AS ParkID
+FROM ((data_visit INNER JOIN data_site ON data_visit.siteid = data_site.id) INNER JOIN lookup_park ON data_site.parkid = lookup_park.id) LEFT JOIN lookup_subunit ON data_site.subunitid = lookup_subunit.id;
+

@@ -1,0 +1,3 @@
+SELECT data_SensorRetrievalAttempt.ID, data_SensorRetrievalAttempt.VisitID, data_SensorRetrievalAttempt.SensorDeploymentID, data_SensorRetrievalAttempt.IsSensorRetrieved, data_SensorRetrievalAttempt.SensorProblemID, data_SensorRetrievalAttempt.RetrievalTimeOfDay, data_SensorRetrievalAttempt.IsDownloadSuccessfulID, data_SensorRetrievalAttempt.Notes, data_SensorRetrievalAttempt.DateCreated
+FROM data_SensorRetrievalAttempt;
+

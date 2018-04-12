@@ -1,0 +1,4 @@
+SELECT SensorImportConverted.SampleDate, SensorImportConverted.Unit, SensorImportConverted.Measurement, SensorImportConverted.SensorImportHeaderID
+FROM SensorImportConverted
+ORDER BY SensorImportConverted.SampleDate;
+

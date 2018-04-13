@@ -700,7 +700,7 @@ Private hasChanges As Boolean
 Private Const mstrcFormName = "frm_ChangeVersionInformation"
 
 Private Sub cmdCancel_Click()
-    DoCmd.Close acForm, Me.name, acSaveNo
+    DoCmd.Close acForm, Me.Name, acSaveNo
 End Sub
 
 Private Sub cmdClose_Click()
@@ -709,7 +709,7 @@ Private Sub cmdClose_Click()
     
     If Form_Validate Then
         cmdSave_Click
-        DoCmd.Close acForm, Me.name, acSaveNo
+        DoCmd.Close acForm, Me.Name, acSaveNo
     Else
         MsgBox "Unable to save data." & vbNewLine & vbNewLine & _
         "Be sure there are no missing values." & vbNewLine & vbNewLine & _

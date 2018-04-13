@@ -20,11 +20,11 @@ Begin Form
     GridY =24
     Width =16560
     DatasheetFontHeight =11
-    ItemSuffix =236
-    Left =1245
-    Top =405
-    Right =17805
-    Bottom =11460
+    ItemSuffix =238
+    Left =1980
+    Top =255
+    Right =18540
+    Bottom =11310
     DatasheetGridlinesColor =15921906
     Filter ="ID = 374"
     RecSrcDt = Begin
@@ -280,6 +280,14 @@ Begin Form
         Begin EmptyCell
             Height =240
             GridlineColor =12632256
+            GridlineThemeColorIndex =1
+            GridlineShade =65.0
+        End
+        Begin WebBrowser
+            OldBorderStyle =1
+            BackThemeColorIndex =1
+            BorderThemeColorIndex =1
+            BorderShade =65.0
             GridlineThemeColorIndex =1
             GridlineShade =65.0
         End
@@ -1607,16 +1615,17 @@ Begin Form
                         End
                         Begin Page
                             OverlapFlags =247
-                            Left =75
+                            PictureType =1
+                            Left =60
                             Top =540
-                            Width =16410
+                            Width =16425
                             Height =9300
                             BorderColor =10921638
                             Name ="tabRepeatPhotos"
                             Tag ="AlwaysVisible"
                             Caption ="Repeat Photos"
                             GridlineColor =10921638
-                            LayoutCachedLeft =75
+                            LayoutCachedLeft =60
                             LayoutCachedTop =540
                             LayoutCachedWidth =16485
                             LayoutCachedHeight =9840
@@ -1626,24 +1635,22 @@ Begin Form
                             WebImagePaddingBottom =2
                             Begin
                                 Begin Subform
-                                    Locked = NotDefault
                                     OverlapFlags =247
-                                    SpecialEffect =2
-                                    Left =300
-                                    Top =576
-                                    Width =12798
-                                    Height =7681
+                                    Left =60
+                                    Top =540
+                                    Width =16110
+                                    Height =9238
                                     BorderColor =10921638
-                                    Name ="sfrmRepeatPhotoActivity"
-                                    SourceObject ="Form.sfrm_RepeatPhotoActivity"
+                                    Name ="sfrmPhotoActivity"
+                                    SourceObject ="Form.sfrm_PhotoActivity"
                                     LinkChildFields ="VisitID"
                                     LinkMasterFields ="ID"
                                     GridlineColor =10921638
 
-                                    LayoutCachedLeft =300
-                                    LayoutCachedTop =576
-                                    LayoutCachedWidth =13098
-                                    LayoutCachedHeight =8257
+                                    LayoutCachedLeft =60
+                                    LayoutCachedTop =540
+                                    LayoutCachedWidth =16170
+                                    LayoutCachedHeight =9778
                                 End
                             End
                         End

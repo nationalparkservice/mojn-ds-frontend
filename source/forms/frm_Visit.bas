@@ -9,7 +9,6 @@ Begin Form
     NavigationButtons = NotDefault
     CloseButton = NotDefault
     DividingLines = NotDefault
-    FilterOn = NotDefault
     AllowDesignChanges = NotDefault
     DefaultView =0
     ScrollBars =0
@@ -21,11 +20,11 @@ Begin Form
     GridY =24
     Width =16560
     DatasheetFontHeight =11
-    ItemSuffix =232
-    Left =3825
-    Top =1065
-    Right =20385
-    Bottom =12120
+    ItemSuffix =236
+    Left =1245
+    Top =405
+    Right =17805
+    Bottom =11460
     DatasheetGridlinesColor =15921906
     Filter ="ID = 374"
     RecSrcDt = Begin
@@ -392,6 +391,7 @@ Begin Form
                 Begin TextBox
                     Visible = NotDefault
                     Enabled = NotDefault
+                    Locked = NotDefault
                     TabStop = NotDefault
                     OverlapFlags =87
                     BackStyle =0
@@ -419,6 +419,7 @@ Begin Form
                 Begin TextBox
                     Visible = NotDefault
                     Enabled = NotDefault
+                    Locked = NotDefault
                     TabStop = NotDefault
                     OldBorderStyle =0
                     OverlapFlags =87
@@ -477,6 +478,7 @@ Begin Form
                 Begin TextBox
                     Visible = NotDefault
                     Enabled = NotDefault
+                    Locked = NotDefault
                     OldBorderStyle =0
                     OverlapFlags =87
                     BackStyle =0
@@ -621,6 +623,7 @@ Begin Form
                     WebImagePaddingTop =2
                     WebImagePaddingRight =1
                     WebImagePaddingBottom =1
+                    Overlaps =1
                 End
                 Begin CommandButton
                     OverlapFlags =87
@@ -734,6 +737,7 @@ Begin Form
                     WebImagePaddingTop =2
                     WebImagePaddingRight =1
                     WebImagePaddingBottom =1
+                    Overlaps =1
                 End
                 Begin CommandButton
                     OverlapFlags =85
@@ -746,9 +750,9 @@ Begin Form
                     TabIndex =11
                     ForeColor =4210752
                     Name ="cmdLockVisit"
-                    Caption ="Unlocked"
+                    Caption ="Locked"
                     OnClick ="[Event Procedure]"
-                    Picture ="Unlocked-32-DkGray"
+                    Picture ="Locked-32-Red"
                     GridlineColor =10921638
 
                     LayoutCachedLeft =13380
@@ -832,6 +836,7 @@ Begin Form
                             WebImagePaddingBottom =2
                             Begin
                                 Begin TextBox
+                                    Locked = NotDefault
                                     OldBorderStyle =0
                                     OverlapFlags =87
                                     BackStyle =0
@@ -852,6 +857,7 @@ Begin Form
                                 End
                                 Begin ComboBox
                                     LimitToList = NotDefault
+                                    Locked = NotDefault
                                     OverlapFlags =215
                                     TextAlign =2
                                     IMESentenceMode =3
@@ -926,6 +932,7 @@ Begin Form
                                 End
                                 Begin ComboBox
                                     LimitToList = NotDefault
+                                    Locked = NotDefault
                                     OverlapFlags =215
                                     TextAlign =2
                                     IMESentenceMode =3
@@ -984,6 +991,7 @@ Begin Form
                                 End
                                 Begin ComboBox
                                     LimitToList = NotDefault
+                                    Locked = NotDefault
                                     OverlapFlags =215
                                     TextAlign =2
                                     IMESentenceMode =3
@@ -1048,6 +1056,7 @@ Begin Form
                                 End
                                 Begin ComboBox
                                     LimitToList = NotDefault
+                                    Locked = NotDefault
                                     OverlapFlags =215
                                     TextAlign =2
                                     IMESentenceMode =3
@@ -1106,6 +1115,7 @@ Begin Form
                                     End
                                 End
                                 Begin TextBox
+                                    Locked = NotDefault
                                     EnterKeyBehavior = NotDefault
                                     ScrollBars =2
                                     OverlapFlags =215
@@ -1162,12 +1172,13 @@ Begin Form
                                     End
                                 End
                                 Begin Subform
+                                    Locked = NotDefault
                                     CanGrow = NotDefault
                                     TabStop = NotDefault
                                     OverlapFlags =247
                                     OldBorderStyle =0
                                     Left =1740
-                                    Top =2341
+                                    Top =3660
                                     Width =4319
                                     Height =3415
                                     TabIndex =6
@@ -1179,15 +1190,15 @@ Begin Form
                                     GridlineColor =10921638
 
                                     LayoutCachedLeft =1740
-                                    LayoutCachedTop =2341
+                                    LayoutCachedTop =3660
                                     LayoutCachedWidth =6059
-                                    LayoutCachedHeight =5756
+                                    LayoutCachedHeight =7075
                                     Begin
                                         Begin Label
                                             OverlapFlags =215
                                             TextAlign =3
                                             Left =300
-                                            Top =2521
+                                            Top =3840
                                             Width =1380
                                             Height =2100
                                             FontWeight =700
@@ -1196,15 +1207,16 @@ Begin Form
                                             Caption ="*Field Crew, Data Entry, and Review Personnel"
                                             GridlineColor =10921638
                                             LayoutCachedLeft =300
-                                            LayoutCachedTop =2521
+                                            LayoutCachedTop =3840
                                             LayoutCachedWidth =1680
-                                            LayoutCachedHeight =4621
+                                            LayoutCachedHeight =5940
                                             ForeThemeColorIndex =-1
                                             ForeTint =100.0
                                         End
                                     End
                                 End
                                 Begin TextBox
+                                    Locked = NotDefault
                                     EnterKeyBehavior = NotDefault
                                     ScrollBars =2
                                     OverlapFlags =223
@@ -1257,6 +1269,7 @@ Begin Form
                                 End
                                 Begin ComboBox
                                     LimitToList = NotDefault
+                                    Locked = NotDefault
                                     OverlapFlags =223
                                     IMESentenceMode =3
                                     ColumnCount =3
@@ -1317,6 +1330,7 @@ Begin Form
                                 End
                                 Begin TextBox
                                     Enabled = NotDefault
+                                    Locked = NotDefault
                                     TabStop = NotDefault
                                     OverlapFlags =223
                                     TextAlign =1
@@ -1462,6 +1476,7 @@ Begin Form
                                     ForeTint =100.0
                                 End
                                 Begin Subform
+                                    Locked = NotDefault
                                     OverlapFlags =247
                                     OldBorderStyle =0
                                     Left =6480
@@ -1504,6 +1519,27 @@ Begin Form
                                         End
                                     End
                                 End
+                                Begin Subform
+                                    Locked = NotDefault
+                                    OverlapFlags =247
+                                    OldBorderStyle =0
+                                    Left =240
+                                    Top =2640
+                                    Width =5775
+                                    Height =720
+                                    TabIndex =11
+                                    BorderColor =10921638
+                                    Name ="sfrm_Camera"
+                                    SourceObject ="Form.sfrm_Camera"
+                                    LinkChildFields ="VisitID"
+                                    LinkMasterFields ="ID"
+                                    GridlineColor =10921638
+
+                                    LayoutCachedLeft =240
+                                    LayoutCachedTop =2640
+                                    LayoutCachedWidth =6015
+                                    LayoutCachedHeight =3360
+                                End
                             End
                         End
                         Begin Page
@@ -1527,6 +1563,7 @@ Begin Form
                             WebImagePaddingBottom =2
                             Begin
                                 Begin Subform
+                                    Locked = NotDefault
                                     OverlapFlags =247
                                     OldBorderStyle =0
                                     Left =240
@@ -1546,6 +1583,7 @@ Begin Form
                                     LayoutCachedHeight =2340
                                 End
                                 Begin Subform
+                                    Locked = NotDefault
                                     OverlapFlags =247
                                     OldBorderStyle =0
                                     Left =240
@@ -1588,6 +1626,7 @@ Begin Form
                             WebImagePaddingBottom =2
                             Begin
                                 Begin Subform
+                                    Locked = NotDefault
                                     OverlapFlags =247
                                     SpecialEffect =2
                                     Left =300
@@ -1629,6 +1668,7 @@ Begin Form
                             WebImagePaddingBottom =2
                             Begin
                                 Begin Subform
+                                    Locked = NotDefault
                                     OverlapFlags =247
                                     OldBorderStyle =0
                                     Left =60
@@ -1670,6 +1710,7 @@ Begin Form
                             WebImagePaddingBottom =2
                             Begin
                                 Begin Subform
+                                    Locked = NotDefault
                                     OverlapFlags =247
                                     OldBorderStyle =0
                                     Left =60
@@ -1711,6 +1752,7 @@ Begin Form
                             WebImagePaddingBottom =2
                             Begin
                                 Begin Subform
+                                    Locked = NotDefault
                                     CanGrow = NotDefault
                                     OverlapFlags =247
                                     OldBorderStyle =0
@@ -1753,6 +1795,7 @@ Begin Form
                             WebImagePaddingBottom =2
                             Begin
                                 Begin Subform
+                                    Locked = NotDefault
                                     CanGrow = NotDefault
                                     OverlapFlags =247
                                     OldBorderStyle =0
@@ -1797,6 +1840,7 @@ Begin Form
                             WebImagePaddingBottom =2
                             Begin
                                 Begin Subform
+                                    Locked = NotDefault
                                     CanGrow = NotDefault
                                     OverlapFlags =247
                                     OldBorderStyle =0
@@ -1839,6 +1883,7 @@ Begin Form
                             WebImagePaddingBottom =2
                             Begin
                                 Begin Subform
+                                    Locked = NotDefault
                                     CanGrow = NotDefault
                                     OverlapFlags =247
                                     OldBorderStyle =0
@@ -2156,15 +2201,15 @@ On Error GoTo ErrorHandler
     Dim ctlSub As Control
     
     For Each ctl In Me.Controls
-        If ctl.name <> "cmdLockVisit" And _
-            ctl.name <> "txtSiteName" And _
-            ctl.name <> "txtVisitDate" And _
-            ctl.name <> "txtStartTime" And _
-            ctl.name <> "cmdClose" And _
-            ctl.name <> "cmdViewPhotos" And _
-            ctl.name <> "cmdFieldDataSheet" And _
-            ctl.name <> "cmdGoogleMaps" And _
-            ctl.name <> "cmdSiteInfoSheet" _
+        If ctl.Name <> "cmdLockVisit" And _
+            ctl.Name <> "txtSiteName" And _
+            ctl.Name <> "txtVisitDate" And _
+            ctl.Name <> "txtStartTime" And _
+            ctl.Name <> "cmdClose" And _
+            ctl.Name <> "cmdViewPhotos" And _
+            ctl.Name <> "cmdFieldDataSheet" And _
+            ctl.Name <> "cmdGoogleMaps" And _
+            ctl.Name <> "cmdSiteInfoSheet" _
             Then
             'Lock all other controls when record is locked
             If ctl.ControlType = acComboBox Or ctl.ControlType = acTextBox Or ctl.ControlType = acCheckBox Or _

@@ -1143,7 +1143,7 @@ Private Sub Form_Open(Cancel As Integer)
         End Select
     Else
         MsgBox "Retrieval ID or Import Type not set.  Closing form", vbOKOnly + vbExclamation, "Missing form parameter"
-        DoCmd.Close acForm, Me.name
+        DoCmd.Close acForm, Me.Name
     End If
     SetupAcceptButton
     SetupImportButton
@@ -1152,7 +1152,7 @@ Exit_Sub:
     
 Handle_Error:
     MsgBox "Form: " & mstrcFormName & vbNewLine & "Sub:  Form_Open" & vbNewLine & "Error #" & Err.Number & ": " & Err.Description, vbCritical
-    DoCmd.Close acForm, Me.name
+    DoCmd.Close acForm, Me.Name
     Resume Exit_Sub
 
 End Sub

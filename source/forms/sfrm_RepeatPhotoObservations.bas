@@ -7,7 +7,6 @@ Begin Form
     NavigationButtons = NotDefault
     CloseButton = NotDefault
     DividingLines = NotDefault
-    FilterOn = NotDefault
     AllowDesignChanges = NotDefault
     ScrollBars =2
     PictureAlignment =2
@@ -17,10 +16,10 @@ Begin Form
     Width =11909
     DatasheetFontHeight =11
     ItemSuffix =14
-    Left =4365
-    Top =4335
-    Right =16530
-    Bottom =7905
+    Left =1665
+    Top =3660
+    Right =13830
+    Bottom =7230
     DatasheetGridlinesColor =15921906
     RecSrcDt = Begin
         0x0338954d6f15e540

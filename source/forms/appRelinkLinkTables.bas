@@ -410,7 +410,7 @@ Private Sub cmdClose_Click()
     On Error GoTo Error_Handler
     
     Forms!frm_Switchboard.Form.Requery
-    DoCmd.Close acForm, Me.name, acSavePrompt
+    DoCmd.Close acForm, Me.Name, acSavePrompt
 
 Exit_Sub:
     Exit Sub

@@ -509,7 +509,7 @@ Option Explicit
 
 Private Sub cmdOK_Click()
    
-    DoCmd.Close acForm, Me.name, acSaveNo
+    DoCmd.Close acForm, Me.Name, acSaveNo
     DoCmd.OpenForm "frm_Switchboard"
 
 End Sub

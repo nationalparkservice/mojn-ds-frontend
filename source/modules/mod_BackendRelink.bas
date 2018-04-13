@@ -299,9 +299,9 @@ Private Function GetLinkedTableConnectionString() As String
 
 End Function
 
-Private Sub UpdateProperty(name As String, Value As String)
+Private Sub UpdateProperty(Name As String, Value As String)
 
-    mProperties.Remove UCase(name)
-    mProperties.Add Key:=UCase(name), item:=Value
+    mProperties.Remove UCase(Name)
+    mProperties.Add Key:=UCase(Name), item:=Value
     
 End Sub

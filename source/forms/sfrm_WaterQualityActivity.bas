@@ -14,10 +14,10 @@ Begin Form
     Width =15840
     DatasheetFontHeight =11
     ItemSuffix =33
-    Left =1260
-    Top =3375
-    Right =17100
-    Bottom =12360
+    Left =1305
+    Top =2550
+    Right =17400
+    Bottom =11790
     DatasheetGridlinesColor =15921906
     RecSrcDt = Begin
         0x19205bcaca15e540
@@ -533,6 +533,7 @@ Begin Form
                     End
                 End
                 Begin Subform
+                    Enabled = NotDefault
                     OverlapFlags =85
                     OldBorderStyle =0
                     Left =300
@@ -646,6 +647,7 @@ Begin Form
                     End
                 End
                 Begin Subform
+                    Enabled = NotDefault
                     OverlapFlags =85
                     OldBorderStyle =0
                     Left =3540
@@ -760,6 +762,7 @@ Begin Form
                     End
                 End
                 Begin Subform
+                    Enabled = NotDefault
                     OverlapFlags =85
                     OldBorderStyle =0
                     Left =7755
@@ -874,6 +877,7 @@ Begin Form
                     End
                 End
                 Begin Subform
+                    Enabled = NotDefault
                     OverlapFlags =85
                     OldBorderStyle =0
                     Left =10995
@@ -1003,6 +1007,7 @@ Begin Form
                     LayoutCachedHeight =1140
                 End
                 Begin Subform
+                    Enabled = NotDefault
                     OverlapFlags =85
                     OldBorderStyle =0
                     Left =300
@@ -1048,6 +1053,7 @@ Begin Form
                     End
                 End
                 Begin Subform
+                    Enabled = NotDefault
                     OverlapFlags =85
                     OldBorderStyle =0
                     Left =6300
@@ -1093,6 +1099,7 @@ Begin Form
                     End
                 End
                 Begin Subform
+                    Enabled = NotDefault
                     OverlapFlags =85
                     OldBorderStyle =0
                     Left =10680

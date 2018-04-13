@@ -3308,7 +3308,7 @@ Err_Handler:
 End Sub
 
 Private Sub tabctlMenu_Change()
-    If Me.tabctlMenu.Pages(Me.tabctlMenu.Value).name = "tabAbout" Then
+    If Me.tabctlMenu.Pages(Me.tabctlMenu.Value).Name = "tabAbout" Then
         SetupAboutTab
     End If
 End Sub

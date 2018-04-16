@@ -25,7 +25,7 @@ Begin Form
     Top =750
     Right =7785
     Bottom =5355
-    DatasheetGridlinesColor =15132391
+    DatasheetGridlinesColor =15921906
     RecordSource ="SELECT data_SensorDeployment.VisitID, lookup_IsSensorRetrieved.Code AS SensorRet"
         "rieved, data_Visit.VisitDate, lookup_SensorProblem.Label AS SensorProblem, data_"
         "Site.Code AS SpringCode, data_SensorDeployment.SensorID FROM data_Site INNER JOI"

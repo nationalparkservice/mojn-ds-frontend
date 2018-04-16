@@ -514,7 +514,7 @@ Private Sub cmdLink_Click()
         
         Me.txtLinkingOutput.Value = Me.txtLinkingOutput.Value & vbNewLine & "Finished Linking"
         'Update Switchboard label showing backend details
-        Forms!frm_Switchboard!backend_description = strDatabaseName & " on " & strDatabaseInstance
+        Forms!frm_Switchboard!Backend_Description = strDatabaseName & " on " & strDatabaseInstance
         
         Me.txtLinkingOutput.SelStart = Nz(Len(Me.txtLinkingOutput), 0)
         Me.txtLinkingOutput.SelLength = 0

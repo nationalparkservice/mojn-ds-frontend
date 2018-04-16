@@ -26,7 +26,7 @@ Begin Form
     Top =516
     Right =9552
     Bottom =8472
-    DatasheetGridlinesColor =15132391
+    DatasheetGridlinesColor =15921906
     RecSrcDt = Begin
         0xd9d71de4f10be540
     End
@@ -199,10 +199,10 @@ Begin Form
                     LayoutCachedTop =1380
                     LayoutCachedWidth =11940
                     LayoutCachedHeight =1740
-                    BackColor =15123357
-                    BorderColor =15123357
-                    HoverColor =15652797
-                    PressedColor =11957550
+                    BackColor =14136213
+                    BorderColor =14136213
+                    HoverColor =15060409
+                    PressedColor =9592887
                     HoverForeColor =4210752
                     PressedForeColor =4210752
                     WebImagePaddingLeft =2
@@ -226,10 +226,10 @@ Begin Form
                     LayoutCachedTop =1380
                     LayoutCachedWidth =13500
                     LayoutCachedHeight =1740
-                    BackColor =15123357
-                    BorderColor =15123357
-                    HoverColor =15652797
-                    PressedColor =11957550
+                    BackColor =14136213
+                    BorderColor =14136213
+                    HoverColor =15060409
+                    PressedColor =9592887
                     HoverForeColor =4210752
                     PressedForeColor =4210752
                     WebImagePaddingLeft =2
@@ -382,10 +382,10 @@ Begin Form
                     LayoutCachedTop =780
                     LayoutCachedWidth =13500
                     LayoutCachedHeight =1080
-                    BackColor =15123357
-                    BorderColor =15123357
-                    HoverColor =15652797
-                    PressedColor =11957550
+                    BackColor =14136213
+                    BorderColor =14136213
+                    HoverColor =15060409
+                    PressedColor =9592887
                     HoverForeColor =4210752
                     PressedForeColor =4210752
                     WebImagePaddingLeft =2
@@ -430,10 +430,10 @@ Begin Form
                     LayoutCachedTop =1380
                     LayoutCachedWidth =10380
                     LayoutCachedHeight =1740
-                    BackColor =15123357
-                    BorderColor =15123357
-                    HoverColor =15652797
-                    PressedColor =11957550
+                    BackColor =14136213
+                    BorderColor =14136213
+                    HoverColor =15060409
+                    PressedColor =9592887
                     HoverForeColor =4210752
                     PressedForeColor =4210752
                     WebImagePaddingLeft =2
@@ -510,10 +510,10 @@ Begin Form
                     LayoutCachedTop =60
                     LayoutCachedWidth =13500
                     LayoutCachedHeight =659
-                    BackColor =15123357
-                    BorderColor =15123357
-                    HoverColor =15652797
-                    PressedColor =11957550
+                    BackColor =14136213
+                    BorderColor =14136213
+                    HoverColor =15060409
+                    PressedColor =9592887
                     HoverForeColor =4210752
                     PressedForeColor =4210752
                     WebImagePaddingLeft =2

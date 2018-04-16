@@ -15,11 +15,11 @@ Begin Form
     GridY =24
     Width =15480
     DatasheetFontHeight =11
-    ItemSuffix =36
-    Left =3810
-    Top =1155
-    Right =19035
-    Bottom =10710
+    ItemSuffix =89
+    Left =1650
+    Top =1500
+    Right =16875
+    Bottom =11055
     DatasheetGridlinesColor =15921906
     RecSrcDt = Begin
         0x780553036c18e540
@@ -60,6 +60,16 @@ Begin Form
             BorderTint =50.0
             ForeThemeColorIndex =0
             ForeTint =50.0
+            GridlineThemeColorIndex =1
+            GridlineShade =65.0
+        End
+        Begin Rectangle
+            SpecialEffect =3
+            BackStyle =0
+            BorderLineStyle =0
+            BackThemeColorIndex =1
+            BorderThemeColorIndex =1
+            BorderShade =65.0
             GridlineThemeColorIndex =1
             GridlineShade =65.0
         End
@@ -176,6 +186,18 @@ Begin Form
             BorderShade =65.0
             ShowPageHeaderAndPageFooter =1
         End
+        Begin UnboundObjectFrame
+            SpecialEffect =2
+            OldBorderStyle =1
+            ThemeFontIndex =1
+            BackThemeColorIndex =1
+            BorderThemeColorIndex =1
+            BorderShade =65.0
+            ForeThemeColorIndex =2
+            ForeShade =50.0
+            GridlineThemeColorIndex =1
+            GridlineShade =65.0
+        End
         Begin Tab
             FontSize =11
             FontName ="Calibri"
@@ -205,6 +227,12 @@ Begin Form
             GridlineThemeColorIndex =1
             GridlineShade =65.0
         End
+        Begin EmptyCell
+            Height =240
+            GridlineColor =12632256
+            GridlineThemeColorIndex =1
+            GridlineShade =65.0
+        End
         Begin WebBrowser
             OldBorderStyle =1
             BackThemeColorIndex =1
@@ -212,6 +240,43 @@ Begin Form
             BorderShade =65.0
             GridlineThemeColorIndex =1
             GridlineShade =65.0
+        End
+        Begin NavigationControl
+            BorderWidth =1
+            BorderLineStyle =0
+            BackThemeColorIndex =1
+            BorderThemeColorIndex =1
+            GridlineThemeColorIndex =1
+            GridlineShade =65.0
+        End
+        Begin NavigationButton
+            ForeColor =-2
+            GridlineThemeColorIndex =1
+            GridlineShade =65.0
+            HoverColor =-2
+            HoverThemeColorIndex =2
+            HoverTint =20.0
+            PressedColor =-2
+            PressedThemeColorIndex =2
+            PressedTint =60.0
+            HoverForeColor =-2
+            HoverForeThemeColorIndex =0
+            HoverForeTint =75.0
+            PressedForeColor =-2
+            PressedForeThemeColorIndex =0
+            PressedForeTint =75.0
+            BackColor =15790320
+            BackThemeColorIndex =1
+            OldBorderStyle =0
+            BorderLineStyle =0
+            BorderThemeColorIndex =3
+            BorderShade =90.0
+            ThemeFontIndex =1
+            FontName ="Calibri"
+            FontWeight =400
+            FontSize =11
+            ForeThemeColorIndex =0
+            ForeTint =75.0
         End
         Begin FormHeader
             Height =0
@@ -222,7 +287,8 @@ Begin Form
             AlternateBackShade =95.0
         End
         Begin Section
-            Height =9540
+            CanGrow = NotDefault
+            Height =14160
             BackColor =15921906
             Name ="Detail"
             AlternateBackColor =15527148
@@ -231,152 +297,340 @@ Begin Form
                     OldBorderStyle =1
                     BorderWidth =1
                     PictureType =1
-                    Left =8820
-                    Top =240
-                    Width =6480
-                    Height =4080
+                    Left =7980
+                    Top =420
+                    Width =6900
+                    Height =5340
                     BorderColor =10921638
                     Name ="imgCurrentPhoto"
                     GridlineColor =10921638
                     ControlSource ="RenamedFilePath"
 
-                    LayoutCachedLeft =8820
-                    LayoutCachedTop =240
-                    LayoutCachedWidth =15300
-                    LayoutCachedHeight =4320
-                    TabIndex =1
+                    LayoutCachedLeft =7980
+                    LayoutCachedTop =420
+                    LayoutCachedWidth =14880
+                    LayoutCachedHeight =5760
+                    TabIndex =2
                 End
-                Begin WebBrowser
-                    OverlapFlags =85
-                    Left =240
-                    Top =300
-                    Width =8160
-                    Height =5940
-                    AutoActivate =1
+                Begin Image
+                    PictureType =1
+                    Left =360
+                    Top =360
                     BorderColor =10921638
-                    Name ="WebBrowser35"
-                    OleData = Begin
-                        0x000e0000d0cf11e0a1b11ae1000000000000000000000000000000003e000300 ,
-                        0xfeff090006000000000000000000000001000000020000000000000000100000 ,
-                        0x0400000001000000feffffff0000000003000000ffffffffffffffffffffffff ,
-                        0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff ,
-                        0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff ,
-                        0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff ,
-                        0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff ,
-                        0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff ,
-                        0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff ,
-                        0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff ,
-                        0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff ,
-                        0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff ,
-                        0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff ,
-                        0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff ,
-                        0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff ,
-                        0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff ,
-                        0xfffffffffdfffffffeffffffffffffffffffffffffffffffffffffffffffffff ,
-                        0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff ,
-                        0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff ,
-                        0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff ,
-                        0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff ,
-                        0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff ,
-                        0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff ,
-                        0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff ,
-                        0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff ,
-                        0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff ,
-                        0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff ,
-                        0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff ,
-                        0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff ,
-                        0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff ,
-                        0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff ,
-                        0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff ,
-                        0xffffffff52006f006f007400200045006e007400720079000000000000000000 ,
-                        0x0000000000000000000000000000000000000000000000000000000000000000 ,
-                        0x0000000016000500ffffffffffffffffffffffff000000000000000000000000 ,
-                        0x000000000000000000000000000000000000000000000000feffffff00000000 ,
-                        0x0000000000000000000000000000000000000000000000000000000000000000 ,
-                        0x0000000000000000000000000000000000000000000000000000000000000000 ,
-                        0x0000000000000000ffffffffffffffffffffffff000000000000000000000000 ,
-                        0x0000000000000000000000000000000000000000000000000000000000000000 ,
-                        0x0000000000000000000000000000000000000000000000000000000000000000 ,
-                        0x0000000000000000000000000000000000000000000000000000000000000000 ,
-                        0x0000000000000000ffffffffffffffffffffffff000000000000000000000000 ,
-                        0x0000000000000000000000000000000000000000000000000000000000000000 ,
-                        0x0000000000000000000000000000000000000000000000000000000000000000 ,
-                        0x0000000000000000000000000000000000000000000000000000000000000000 ,
-                        0x0000000000000000ffffffffffffffffffffffff000000000000000000000000 ,
-                        0x0000000000000000000000000000000000000000000000000000000000000000 ,
-                        0x0000000052006f006f007400200045006e007400720079000000000000000000 ,
-                        0x0000000000000000000000000000000000000000000000000000000000000000 ,
-                        0x0000000016000500ffffffffffffffff0100000061f956880a34d011a96b00c0 ,
-                        0x4fd705a200000000000000000000000000e55fa17fd3d3010500000000010000 ,
-                        0x0000000003004f006c0065004f0062006a006500630074004400610074006100 ,
-                        0x0000000000000000000000000000000000000000000000000000000000000000 ,
-                        0x000000001e000201ffffffff02000000ffffffff000000000000000000000000 ,
-                        0x00000000000000000000000000000000000000000000000001000000ac000000 ,
-                        0x0000000003004100630063006500730073004f0062006a005300690074006500 ,
-                        0x4400610074006100000000000000000000000000000000000000000000000000 ,
-                        0x0000000026000200ffffffffffffffffffffffff000000000000000000000000 ,
-                        0x0000000000000000000000000000000000000000000000000000000038000000 ,
-                        0x0000000000000000000000000000000000000000000000000000000000000000 ,
-                        0x0000000000000000000000000000000000000000000000000000000000000000 ,
-                        0x0000000000000000ffffffffffffffffffffffff000000000000000000000000 ,
-                        0x0000000000000000000000000000000000000000000000000000000000000000 ,
-                        0x00000000fffffffffffffffffefffffffdfffffffefffffffeffffffffffffff ,
-                        0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff ,
-                        0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff ,
-                        0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff ,
-                        0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff ,
-                        0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff ,
-                        0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff ,
-                        0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff ,
-                        0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff ,
-                        0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff ,
-                        0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff ,
-                        0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff ,
-                        0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff ,
-                        0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff ,
-                        0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff ,
-                        0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff ,
-                        0xfffffffffeffffff0200000003000000feffffffffffffffffffffffffffffff ,
-                        0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff ,
-                        0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff ,
-                        0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff ,
-                        0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff ,
-                        0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff ,
-                        0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff ,
-                        0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff ,
-                        0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff ,
-                        0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff ,
-                        0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff ,
-                        0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff ,
-                        0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff ,
-                        0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff ,
-                        0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff ,
-                        0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff ,
-                        0xffffffff38000000000000000100000000000000000000000000000000000000 ,
-                        0x0000000038000000000000000000000000000000000000000000000000000000 ,
-                        0x0000000061f956880a34d011a96b00c04fd705a24c0000001f380000d3280000 ,
-                        0x0000000000000000000000000000000000000000000000004c00000000000000 ,
-                        0x0000000001000000e0d057007335cf11ae6908002b2e12620800000000000000 ,
-                        0x4c0000000114020000000000c000000000000046800000000000000000000000 ,
-                        0x0000000000000000000000000000000000000000000000000000000001000000 ,
-                        0x0000000000000000000000000000000000000000000000000000000000000000 ,
-                        0x0000000000000000000000000000000000000000000000000000000000000000 ,
-                        0x0000000000000000000000000000000000000000000000000000000000000000 ,
-                        0x0000000000000000000000000000000000000000000000000000000000000000 ,
-                        0x0000000000000000000000000000000000000000000000000000000000000000 ,
-                        0x0000000000000000000000000000000000000000000000000000000000000000 ,
-                        0x0000000000000000000000000000000000000000000000000000000000000000 ,
-                        0x0000000000000000000000000000000000000000000000000000000000000000 ,
-                        0x0000000000000000000000000000000000000000000000000000000000000000 ,
-                        0x0000000000000000
-                    End
+                    Name ="img1"
+                    Tag ="thumbnail"
+                    Picture ="M:\\LIBRARY\\Clip_Art and Logos\\MOJN Logo\\MOJN I&M_Official Logo\\MOJN I&M log"
+                        "o_B&W test.png"
                     GridlineColor =10921638
 
-                    LayoutCachedLeft =240
-                    LayoutCachedTop =300
-                    LayoutCachedWidth =8400
-                    LayoutCachedHeight =6240
-                    ControlSource ="=\"M:\\MONITORING\\DS_Water\\Data\\Images\""
+                    LayoutCachedLeft =360
+                    LayoutCachedTop =360
+                    LayoutCachedWidth =1800
+                    LayoutCachedHeight =1800
+                    TabIndex =18
+                End
+                Begin Image
+                    PictureType =1
+                    Left =2160
+                    Top =360
+                    BorderColor =10921638
+                    Name ="img2"
+                    Tag ="thumbnail"
+                    GridlineColor =10921638
+
+                    LayoutCachedLeft =2160
+                    LayoutCachedTop =360
+                    LayoutCachedWidth =3600
+                    LayoutCachedHeight =1800
+                    TabIndex =17
+                End
+                Begin Image
+                    PictureType =1
+                    Left =3960
+                    Top =360
+                    BorderColor =10921638
+                    Name ="Image38"
+                    Tag ="thumbnail"
+                    GridlineColor =10921638
+
+                    LayoutCachedLeft =3960
+                    LayoutCachedTop =360
+                    LayoutCachedWidth =5400
+                    LayoutCachedHeight =1800
+                    TabIndex =16
+                End
+                Begin Image
+                    PictureType =1
+                    Left =5760
+                    Top =360
+                    BorderColor =10921638
+                    Name ="Image39"
+                    Tag ="thumbnail"
+                    GridlineColor =10921638
+
+                    LayoutCachedLeft =5760
+                    LayoutCachedTop =360
+                    LayoutCachedWidth =7200
+                    LayoutCachedHeight =1800
+                    TabIndex =15
+                End
+                Begin Image
+                    PictureType =1
+                    Left =360
+                    Top =2160
+                    BorderColor =10921638
+                    Name ="Image40"
+                    Tag ="thumbnail"
+                    GridlineColor =10921638
+
+                    LayoutCachedLeft =360
+                    LayoutCachedTop =2160
+                    LayoutCachedWidth =1800
+                    LayoutCachedHeight =3600
+                    TabIndex =14
+                End
+                Begin Image
+                    PictureType =1
+                    Left =2160
+                    Top =2160
+                    BorderColor =10921638
+                    Name ="Image41"
+                    Tag ="thumbnail"
+                    GridlineColor =10921638
+
+                    LayoutCachedLeft =2160
+                    LayoutCachedTop =2160
+                    LayoutCachedWidth =3600
+                    LayoutCachedHeight =3600
+                    TabIndex =13
+                End
+                Begin Image
+                    PictureType =1
+                    Left =3960
+                    Top =2160
+                    BorderColor =10921638
+                    Name ="Image42"
+                    Tag ="thumbnail"
+                    GridlineColor =10921638
+
+                    LayoutCachedLeft =3960
+                    LayoutCachedTop =2160
+                    LayoutCachedWidth =5400
+                    LayoutCachedHeight =3600
+                    TabIndex =12
+                End
+                Begin Image
+                    PictureType =1
+                    Left =5760
+                    Top =2160
+                    BorderColor =10921638
+                    Name ="Image43"
+                    Tag ="thumbnail"
+                    GridlineColor =10921638
+
+                    LayoutCachedLeft =5760
+                    LayoutCachedTop =2160
+                    LayoutCachedWidth =7200
+                    LayoutCachedHeight =3600
+                    TabIndex =11
+                End
+                Begin Image
+                    PictureType =1
+                    Left =360
+                    Top =3960
+                    BorderColor =10921638
+                    Name ="Image44"
+                    Tag ="thumbnail"
+                    GridlineColor =10921638
+
+                    LayoutCachedLeft =360
+                    LayoutCachedTop =3960
+                    LayoutCachedWidth =1800
+                    LayoutCachedHeight =5400
+                    TabIndex =10
+                End
+                Begin Image
+                    PictureType =1
+                    Left =2160
+                    Top =3960
+                    BorderColor =10921638
+                    Name ="Image45"
+                    Tag ="thumbnail"
+                    GridlineColor =10921638
+
+                    LayoutCachedLeft =2160
+                    LayoutCachedTop =3960
+                    LayoutCachedWidth =3600
+                    LayoutCachedHeight =5400
+                    TabIndex =9
+                End
+                Begin Image
+                    PictureType =1
+                    Left =3960
+                    Top =3960
+                    BorderColor =10921638
+                    Name ="Image46"
+                    Tag ="thumbnail"
+                    GridlineColor =10921638
+
+                    LayoutCachedLeft =3960
+                    LayoutCachedTop =3960
+                    LayoutCachedWidth =5400
+                    LayoutCachedHeight =5400
+                    TabIndex =8
+                End
+                Begin Image
+                    PictureType =1
+                    Left =5760
+                    Top =3960
+                    BorderColor =10921638
+                    Name ="Image47"
+                    Tag ="thumbnail"
+                    GridlineColor =10921638
+
+                    LayoutCachedLeft =5760
+                    LayoutCachedTop =3960
+                    LayoutCachedWidth =7200
+                    LayoutCachedHeight =5400
+                    TabIndex =7
+                End
+                Begin Image
+                    PictureType =1
+                    Left =360
+                    Top =5760
+                    BorderColor =10921638
+                    Name ="Image48"
+                    Tag ="thumbnail"
+                    GridlineColor =10921638
+
+                    LayoutCachedLeft =360
+                    LayoutCachedTop =5760
+                    LayoutCachedWidth =1800
+                    LayoutCachedHeight =7200
+                    TabIndex =6
+                End
+                Begin Image
+                    PictureType =1
+                    Left =2160
+                    Top =5760
+                    BorderColor =10921638
+                    Name ="Image49"
+                    Tag ="thumbnail"
+                    GridlineColor =10921638
+
+                    LayoutCachedLeft =2160
+                    LayoutCachedTop =5760
+                    LayoutCachedWidth =3600
+                    LayoutCachedHeight =7200
+                    TabIndex =5
+                End
+                Begin Image
+                    PictureType =1
+                    Left =3960
+                    Top =5760
+                    BorderColor =10921638
+                    Name ="Image50"
+                    Tag ="thumbnail"
+                    GridlineColor =10921638
+
+                    LayoutCachedLeft =3960
+                    LayoutCachedTop =5760
+                    LayoutCachedWidth =5400
+                    LayoutCachedHeight =7200
+                    TabIndex =4
+                End
+                Begin Image
+                    PictureType =1
+                    Left =5760
+                    Top =5760
+                    BorderColor =10921638
+                    Name ="Image51"
+                    Tag ="thumbnail"
+                    GridlineColor =10921638
+
+                    LayoutCachedLeft =5760
+                    LayoutCachedTop =5760
+                    LayoutCachedWidth =7200
+                    LayoutCachedHeight =7200
+                    TabIndex =3
+                End
+                Begin CommandButton
+                    Visible = NotDefault
+                    Enabled = NotDefault
+                    OverlapFlags =85
+                    Left =3960
+                    Top =7620
+                    Name ="Command6"
+                    Caption ="Next Page"
+                    GridlineColor =10921638
+
+                    LayoutCachedLeft =3960
+                    LayoutCachedTop =7620
+                    LayoutCachedWidth =5400
+                    LayoutCachedHeight =7980
+                    ForeThemeColorIndex =-1
+                    ForeTint =100.0
+                    UseTheme =0
+                    BackColor =14136213
+                    BorderColor =14136213
+                    ThemeFontIndex =-1
+                    HoverColor =15060409
+                    PressedColor =9592887
+                    HoverForeColor =4210752
+                    PressedForeColor =4210752
+                    WebImagePaddingLeft =2
+                    WebImagePaddingTop =2
+                    WebImagePaddingRight =1
+                    WebImagePaddingBottom =1
+                End
+                Begin CommandButton
+                    Visible = NotDefault
+                    Enabled = NotDefault
+                    OverlapFlags =85
+                    Left =2160
+                    Top =7620
+                    TabIndex =1
+                    Name ="Command86"
+                    Caption ="Previous Page"
+                    GridlineColor =10921638
+
+                    LayoutCachedLeft =2160
+                    LayoutCachedTop =7620
+                    LayoutCachedWidth =3600
+                    LayoutCachedHeight =7980
+                    ForeThemeColorIndex =-1
+                    ForeTint =100.0
+                    UseTheme =0
+                    BackColor =14136213
+                    BorderColor =14136213
+                    ThemeFontIndex =-1
+                    HoverColor =15060409
+                    PressedColor =9592887
+                    HoverForeColor =4210752
+                    PressedForeColor =4210752
+                    WebImagePaddingLeft =2
+                    WebImagePaddingTop =2
+                    WebImagePaddingRight =1
+                    WebImagePaddingBottom =1
+                End
+                Begin Rectangle
+                    SpecialEffect =0
+                    BorderWidth =3
+                    OverlapFlags =247
+                    Left =2160
+                    Top =120
+                    Width =1440
+                    Height =1440
+                    BorderColor =10213059
+                    Name ="boxSelectedPhoto"
+                    GridlineColor =10921638
+                    LayoutCachedLeft =2160
+                    LayoutCachedTop =120
+                    LayoutCachedWidth =3600
+                    LayoutCachedHeight =1560
+                    BorderThemeColorIndex =6
+                    BorderTint =60.0
+                    BorderShade =100.0
                 End
             End
         End
@@ -389,3 +643,9 @@ Begin Form
         End
     End
 End
+CodeBehindForm
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = True
+Attribute VB_PredeclaredId = True
+Attribute VB_Exposed = False
+Option Compare Database

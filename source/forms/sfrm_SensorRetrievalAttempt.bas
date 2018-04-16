@@ -20,10 +20,10 @@ Begin Form
     Width =15840
     DatasheetFontHeight =11
     ItemSuffix =26
-    Left =1485
-    Top =4410
-    Right =17325
-    Bottom =10050
+    Left =885
+    Top =2430
+    Right =16725
+    Bottom =8070
     DatasheetGridlinesColor =15921906
     AfterInsert ="[Event Procedure]"
     RecSrcDt = Begin
@@ -956,7 +956,7 @@ Begin Form
                     TabIndex =11
                     BorderColor =10921638
                     ForeColor =4210752
-                    Name ="IsSensorRetrievedID"
+                    Name ="IsSensorRetrieved"
                     ControlSource ="IsSensorRetrievedID"
                     GridlineColor =10921638
 

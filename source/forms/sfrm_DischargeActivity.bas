@@ -989,11 +989,11 @@ On Error GoTo Error_Handler
             EnableSpringbrook (True)
     End Select
     
-Exit_Sub:
+Exit_Procedure:
     Exit Sub
 Error_Handler:
     MsgBox "Form: " & mstrcFormName & vbNewLine & "Sub:  cboFlowConditionID_AfterUpdate" & vbNewLine & "Error #" & Err.Number & ": " & Err.Description, vbCritical
-    Resume Exit_Sub
+    Resume Exit_Procedure
 End Sub
 
 Private Sub Form_BeforeUpdate(Cancel As Integer)
@@ -1073,11 +1073,11 @@ On Error GoTo Error_Handler
         Me.Undo
     End If
         
-Exit_Sub:
+Exit_Procedure:
     Exit Sub
 Error_Handler:
     MsgBox "Form: " & mstrcFormName & vbNewLine & "Sub:  cboDataProcessingLevelID_AfterUpdate" & vbNewLine & "Error #" & Err.Number & ": " & Err.Description, vbCritical
-    Resume Exit_Sub
+    Resume Exit_Procedure
 End Sub
 
 Public Function EnableToggles(bEnabled As Boolean)

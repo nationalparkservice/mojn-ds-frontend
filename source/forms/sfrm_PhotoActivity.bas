@@ -14,10 +14,10 @@ Begin Form
     Width =16230
     DatasheetFontHeight =11
     ItemSuffix =32
-    Left =2400
-    Top =3330
-    Right =18240
-    Bottom =12300
+    Left =1080
+    Top =3375
+    Right =16920
+    Bottom =12345
     DatasheetGridlinesColor =15921906
     RecSrcDt = Begin
         0xc208564c6c18e540
@@ -181,21 +181,15 @@ Begin Form
                 Begin Subform
                     OverlapFlags =85
                     OldBorderStyle =0
-                    Left =120
-                    Top =120
                     Width =16110
                     Height =9237
                     BorderColor =10921638
                     Name ="sfrmRepeatPhoto"
-                    SourceObject ="Form.sfrm_EnterRepeatPhotos"
-                    LinkChildFields ="PhotoActivityID"
-                    LinkMasterFields ="ID"
+                    SourceObject ="Form.sfrm_RepeatPhotosView"
                     GridlineColor =10921638
 
-                    LayoutCachedLeft =120
-                    LayoutCachedTop =120
-                    LayoutCachedWidth =16230
-                    LayoutCachedHeight =9357
+                    LayoutCachedWidth =16110
+                    LayoutCachedHeight =9237
                 End
             End
         End

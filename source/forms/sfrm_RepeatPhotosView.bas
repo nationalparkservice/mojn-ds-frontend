@@ -1,41 +1,41 @@
 ﻿Version =20
 VersionRequired =20
 Begin Form
+    AllowFilters = NotDefault
     RecordSelectors = NotDefault
     AutoCenter = NotDefault
+    AllowDeletions = NotDefault
     DividingLines = NotDefault
+    AllowAdditions = NotDefault
+    AllowEdits = NotDefault
     AllowDesignChanges = NotDefault
     DefaultView =0
     ScrollBars =0
     ViewsAllowed =1
     PictureAlignment =2
     DatasheetGridlinesBehavior =3
+    Cycle =1
     PictureType =1
     GridX =24
     GridY =24
     Width =15480
     DatasheetFontHeight =11
     ItemSuffix =89
-    Left =1650
-    Top =1500
-    Right =16875
-    Bottom =11055
+    Left =1410
+    Top =3990
+    Right =17265
+    Bottom =12975
     DatasheetGridlinesColor =15921906
     RecSrcDt = Begin
-        0x780553036c18e540
+        0xa5910b3dd718e540
     End
-    RecordSource ="SELECT [data_Photo].[ID], [data_Photo].[PhotoActivityID], [data_Photo].[DateTake"
-        "n], [data_Photo].[PhotoDescriptionCodeID], [data_Photo].[IsLibraryPhotoID], [dat"
-        "a_Photo].[OriginalFilePath], [data_Photo].[RenamedFilePath], [data_Photo].[GPSUn"
-        "itID], [data_Photo].[PhotoID], [data_Photo].[HorizontalDatumID], [data_Photo].[U"
-        "TMZoneID], [data_Photo].[UtmX_m], [data_Photo].[UtmY_m], [data_Photo].[Notes], ["
-        "data_Photo].[DateCreated] FROM data_Photo; "
     Caption ="sfrm_EnterRepeatPhotos"
     DatasheetFontName ="Calibri"
     PrtMip = Begin
         0x6801000068010000680100006801000000000000201c0000e010000001000000 ,
         0x010000006801000000000000a10700000100000001000000
     End
+    OnLoad ="[Event Procedure]"
     AllowDatasheetView =0
     FilterOnLoad =0
     ShowPageMargins =0
@@ -294,22 +294,22 @@ Begin Form
             AlternateBackColor =15527148
             Begin
                 Begin Image
-                    OldBorderStyle =1
                     BorderWidth =1
                     PictureType =1
                     Left =7980
-                    Top =420
+                    Top =360
                     Width =6900
                     Height =5340
                     BorderColor =10921638
                     Name ="imgCurrentPhoto"
+                    Picture ="M:\\MONITORING\\DS_Water\\Data\\Images\\MOJA_P_MID0153\\MOJA_P_MID0153_20160222_"
+                        "DNSTR_0890.JPG"
                     GridlineColor =10921638
-                    ControlSource ="RenamedFilePath"
 
                     LayoutCachedLeft =7980
-                    LayoutCachedTop =420
+                    LayoutCachedTop =360
                     LayoutCachedWidth =14880
-                    LayoutCachedHeight =5760
+                    LayoutCachedHeight =5700
                     TabIndex =2
                 End
                 Begin Image
@@ -318,9 +318,8 @@ Begin Form
                     Top =360
                     BorderColor =10921638
                     Name ="img1"
+                    OnClick ="[Event Procedure]"
                     Tag ="thumbnail"
-                    Picture ="M:\\LIBRARY\\Clip_Art and Logos\\MOJN Logo\\MOJN I&M_Official Logo\\MOJN I&M log"
-                        "o_B&W test.png"
                     GridlineColor =10921638
 
                     LayoutCachedLeft =360
@@ -335,6 +334,7 @@ Begin Form
                     Top =360
                     BorderColor =10921638
                     Name ="img2"
+                    OnClick ="[Event Procedure]"
                     Tag ="thumbnail"
                     GridlineColor =10921638
 
@@ -349,7 +349,8 @@ Begin Form
                     Left =3960
                     Top =360
                     BorderColor =10921638
-                    Name ="Image38"
+                    Name ="img3"
+                    OnClick ="[Event Procedure]"
                     Tag ="thumbnail"
                     GridlineColor =10921638
 
@@ -364,7 +365,8 @@ Begin Form
                     Left =5760
                     Top =360
                     BorderColor =10921638
-                    Name ="Image39"
+                    Name ="img4"
+                    OnClick ="[Event Procedure]"
                     Tag ="thumbnail"
                     GridlineColor =10921638
 
@@ -379,7 +381,8 @@ Begin Form
                     Left =360
                     Top =2160
                     BorderColor =10921638
-                    Name ="Image40"
+                    Name ="img5"
+                    OnClick ="[Event Procedure]"
                     Tag ="thumbnail"
                     GridlineColor =10921638
 
@@ -394,7 +397,8 @@ Begin Form
                     Left =2160
                     Top =2160
                     BorderColor =10921638
-                    Name ="Image41"
+                    Name ="img6"
+                    OnClick ="[Event Procedure]"
                     Tag ="thumbnail"
                     GridlineColor =10921638
 
@@ -409,7 +413,8 @@ Begin Form
                     Left =3960
                     Top =2160
                     BorderColor =10921638
-                    Name ="Image42"
+                    Name ="img7"
+                    OnClick ="[Event Procedure]"
                     Tag ="thumbnail"
                     GridlineColor =10921638
 
@@ -424,7 +429,8 @@ Begin Form
                     Left =5760
                     Top =2160
                     BorderColor =10921638
-                    Name ="Image43"
+                    Name ="img8"
+                    OnClick ="[Event Procedure]"
                     Tag ="thumbnail"
                     GridlineColor =10921638
 
@@ -439,7 +445,8 @@ Begin Form
                     Left =360
                     Top =3960
                     BorderColor =10921638
-                    Name ="Image44"
+                    Name ="img9"
+                    OnClick ="[Event Procedure]"
                     Tag ="thumbnail"
                     GridlineColor =10921638
 
@@ -454,7 +461,8 @@ Begin Form
                     Left =2160
                     Top =3960
                     BorderColor =10921638
-                    Name ="Image45"
+                    Name ="img10"
+                    OnClick ="[Event Procedure]"
                     Tag ="thumbnail"
                     GridlineColor =10921638
 
@@ -469,7 +477,8 @@ Begin Form
                     Left =3960
                     Top =3960
                     BorderColor =10921638
-                    Name ="Image46"
+                    Name ="img11"
+                    OnClick ="[Event Procedure]"
                     Tag ="thumbnail"
                     GridlineColor =10921638
 
@@ -484,7 +493,8 @@ Begin Form
                     Left =5760
                     Top =3960
                     BorderColor =10921638
-                    Name ="Image47"
+                    Name ="img12"
+                    OnClick ="[Event Procedure]"
                     Tag ="thumbnail"
                     GridlineColor =10921638
 
@@ -499,7 +509,8 @@ Begin Form
                     Left =360
                     Top =5760
                     BorderColor =10921638
-                    Name ="Image48"
+                    Name ="img13"
+                    OnClick ="[Event Procedure]"
                     Tag ="thumbnail"
                     GridlineColor =10921638
 
@@ -514,7 +525,8 @@ Begin Form
                     Left =2160
                     Top =5760
                     BorderColor =10921638
-                    Name ="Image49"
+                    Name ="img14"
+                    OnClick ="[Event Procedure]"
                     Tag ="thumbnail"
                     GridlineColor =10921638
 
@@ -529,7 +541,8 @@ Begin Form
                     Left =3960
                     Top =5760
                     BorderColor =10921638
-                    Name ="Image50"
+                    Name ="img15"
+                    OnClick ="[Event Procedure]"
                     Tag ="thumbnail"
                     GridlineColor =10921638
 
@@ -544,7 +557,8 @@ Begin Form
                     Left =5760
                     Top =5760
                     BorderColor =10921638
-                    Name ="Image51"
+                    Name ="img16"
+                    OnClick ="[Event Procedure]"
                     Tag ="thumbnail"
                     GridlineColor =10921638
 
@@ -582,6 +596,7 @@ Begin Form
                     WebImagePaddingTop =2
                     WebImagePaddingRight =1
                     WebImagePaddingBottom =1
+                    Overlaps =1
                 End
                 Begin CommandButton
                     Visible = NotDefault
@@ -612,22 +627,23 @@ Begin Form
                     WebImagePaddingTop =2
                     WebImagePaddingRight =1
                     WebImagePaddingBottom =1
+                    Overlaps =1
                 End
                 Begin Rectangle
                     SpecialEffect =0
                     BorderWidth =3
                     OverlapFlags =247
-                    Left =2160
-                    Top =120
+                    Left =360
+                    Top =240
                     Width =1440
                     Height =1440
                     BorderColor =10213059
                     Name ="boxSelectedPhoto"
                     GridlineColor =10921638
-                    LayoutCachedLeft =2160
-                    LayoutCachedTop =120
-                    LayoutCachedWidth =3600
-                    LayoutCachedHeight =1560
+                    LayoutCachedLeft =360
+                    LayoutCachedTop =240
+                    LayoutCachedWidth =1800
+                    LayoutCachedHeight =1680
                     BorderThemeColorIndex =6
                     BorderTint =60.0
                     BorderShade =100.0
@@ -649,3 +665,132 @@ Attribute VB_Creatable = True
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 Option Compare Database
+
+Private Sub Form_Load()
+Dim renamedPhotos As DAO.Recordset
+Dim qry As String
+Dim rptPhotoSOPID As Integer
+Dim thumbnailGrid As New Collection
+
+rptPhotoSOPID = 1
+
+'Get recordset of renamed paths and descriptions
+qry = "SELECT data_Photo.RenamedFilePath, ref_PhotoDescriptionCode.Code FROM data_Photo LEFT JOIN ref_PhotoDescriptionCode ON data_Photo.PhotoDescriptionCodeID = ref_PhotoDescriptionCode.ID WHERE ref_PhotoDescriptionCode.PhotoSOPID = " & _
+    rptPhotoSOPID & " AND data_Photo.PhotoActivityID = " & Me.Parent.ID & ";"
+
+Set renamedPhotos = CurrentDb.OpenRecordset(qry, dbOpenSnapshot, dbReadOnly)
+
+'Get collection of thumbnail controls
+For Each obj In Me.Controls
+    If obj.tag = "thumbnail" Then thumbnailGrid.Add obj
+Next obj
+
+PopulateThumbnailGrid renamedPhotos, thumbnailGrid, 1
+
+End Sub
+
+Private Sub thumbnailClick(img As control)
+Me!imgCurrentPhoto.Picture = "M:\MONITORING\DS_Water\Data\Images\JOTR_P_CON0215\JOTR_P_CON0215_20161130_SOURCE_0249.JPG"
+'Me.imgCurrentPhoto.Picture = img.Picture
+'Me.boxSelectedPhoto.Left = img.Left
+'Me.boxSelectedPhoto.Top = img.Top
+'Me.boxSelectedPhoto.Visible = True
+
+End Sub
+
+
+Private Sub img1_Click()
+
+thumbnailClick Me.img1
+
+End Sub
+
+Private Sub img2_Click()
+
+thumbnailClick Me.img2
+
+End Sub
+
+Private Sub img3_Click()
+
+thumbnailClick Me.img3
+
+End Sub
+
+Private Sub img4_Click()
+
+thumbnailClick Me.img4
+
+End Sub
+
+Private Sub img5_Click()
+
+thumbnailClick Me.img5
+
+End Sub
+
+Private Sub img6_Click()
+
+thumbnailClick Me.img6
+
+End Sub
+
+Private Sub img7_Click()
+
+thumbnailClick Me.img7
+
+End Sub
+
+Private Sub img8_Click()
+
+thumbnailClick Me.img8
+
+End Sub
+
+Private Sub img9_Click()
+
+thumbnailClick Me.img9
+
+End Sub
+
+Private Sub img10_Click()
+
+thumbnailClick Me.img10
+
+End Sub
+
+Private Sub img11_Click()
+
+thumbnailClick Me.img11
+
+End Sub
+
+Private Sub img12_Click()
+
+thumbnailClick Me.img12
+
+End Sub
+
+Private Sub img13_Click()
+
+thumbnailClick Me.img13
+
+End Sub
+
+Private Sub img14_Click()
+
+thumbnailClick Me.img14
+
+End Sub
+
+Private Sub img15_Click()
+
+thumbnailClick Me.img15
+
+End Sub
+
+Private Sub img16_Click()
+
+thumbnailClick Me.img16
+
+End Sub

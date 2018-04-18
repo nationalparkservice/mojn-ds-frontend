@@ -3,7 +3,10 @@ VersionRequired =20
 Begin Form
     RecordSelectors = NotDefault
     AutoCenter = NotDefault
+    NavigationButtons = NotDefault
+    AllowDeletions = NotDefault
     DividingLines = NotDefault
+    DataEntry = NotDefault
     AllowDesignChanges = NotDefault
     DefaultView =0
     ScrollBars =0
@@ -15,14 +18,14 @@ Begin Form
     GridY =24
     Width =15480
     DatasheetFontHeight =11
-    ItemSuffix =33
-    Left =3555
-    Top =870
-    Right =18780
-    Bottom =10425
+    ItemSuffix =36
+    Left =3795
+    Top =3600
+    Right =19650
+    Bottom =12885
     DatasheetGridlinesColor =15921906
     RecSrcDt = Begin
-        0x780553036c18e540
+        0xec6e7774f618e540
     End
     RecordSource ="SELECT [data_Photo].[ID], [data_Photo].[PhotoActivityID], [data_Photo].[DateTake"
         "n], [data_Photo].[PhotoDescriptionCodeID], [data_Photo].[IsLibraryPhotoID], [dat"
@@ -202,7 +205,7 @@ Begin Form
             AlternateBackShade =95.0
         End
         Begin Section
-            Height =9540
+            Height =9780
             BackColor =15921906
             Name ="Detail"
             AlternateBackColor =15527148
@@ -408,7 +411,7 @@ Begin Form
                     OverlapFlags =85
                     IMESentenceMode =3
                     Left =2430
-                    Top =5820
+                    Top =5580
                     Width =5850
                     Height =1140
                     ColumnWidth =3000
@@ -420,14 +423,14 @@ Begin Form
                     GridlineColor =10921638
 
                     LayoutCachedLeft =2430
-                    LayoutCachedTop =5820
+                    LayoutCachedTop =5580
                     LayoutCachedWidth =8280
-                    LayoutCachedHeight =6960
+                    LayoutCachedHeight =6720
                     Begin
                         Begin Label
                             OverlapFlags =85
                             Left =300
-                            Top =5820
+                            Top =5580
                             Width =2040
                             Height =330
                             BorderColor =8355711
@@ -436,9 +439,9 @@ Begin Form
                             Caption ="Notes"
                             GridlineColor =10921638
                             LayoutCachedLeft =300
-                            LayoutCachedTop =5820
+                            LayoutCachedTop =5580
                             LayoutCachedWidth =2340
-                            LayoutCachedHeight =6150
+                            LayoutCachedHeight =5910
                         End
                     End
                 End
@@ -593,7 +596,7 @@ Begin Form
                     LayoutCachedTop =240
                     LayoutCachedWidth =15300
                     LayoutCachedHeight =4320
-                    TabIndex =12
+                    TabIndex =16
                 End
                 Begin ComboBox
                     OverlapFlags =85
@@ -722,6 +725,124 @@ Begin Form
                         End
                     End
                 End
+                Begin CommandButton
+                    OverlapFlags =85
+                    Left =6840
+                    Top =7260
+                    TabIndex =12
+                    Name ="cmdSave"
+                    Caption ="Save"
+                    OnClick ="[Event Procedure]"
+                    GridlineColor =10921638
+
+                    LayoutCachedLeft =6840
+                    LayoutCachedTop =7260
+                    LayoutCachedWidth =8280
+                    LayoutCachedHeight =7620
+                    ForeThemeColorIndex =-1
+                    ForeTint =100.0
+                    UseTheme =0
+                    BackColor =14136213
+                    BorderColor =14136213
+                    ThemeFontIndex =-1
+                    HoverColor =15060409
+                    PressedColor =9592887
+                    HoverForeColor =4210752
+                    PressedForeColor =4210752
+                    WebImagePaddingLeft =2
+                    WebImagePaddingTop =2
+                    WebImagePaddingRight =1
+                    WebImagePaddingBottom =1
+                End
+                Begin CommandButton
+                    OverlapFlags =85
+                    Left =5280
+                    Top =7260
+                    TabIndex =13
+                    Name ="cmdCancel"
+                    Caption ="Cancel"
+                    OnClick ="[Event Procedure]"
+                    GridlineColor =10921638
+
+                    LayoutCachedLeft =5280
+                    LayoutCachedTop =7260
+                    LayoutCachedWidth =6720
+                    LayoutCachedHeight =7620
+                    ForeThemeColorIndex =-1
+                    ForeTint =100.0
+                    UseTheme =0
+                    BackColor =14136213
+                    BorderColor =14136213
+                    ThemeFontIndex =-1
+                    HoverColor =15060409
+                    PressedColor =9592887
+                    HoverForeColor =4210752
+                    PressedForeColor =4210752
+                    WebImagePaddingLeft =2
+                    WebImagePaddingTop =2
+                    WebImagePaddingRight =1
+                    WebImagePaddingBottom =1
+                End
+                Begin CommandButton
+                    Visible = NotDefault
+                    OverlapFlags =85
+                    Left =6840
+                    Top =7740
+                    TabIndex =14
+                    Name ="cmdNew"
+                    Caption ="New"
+                    OnClick ="[Event Procedure]"
+                    GridlineColor =10921638
+
+                    LayoutCachedLeft =6840
+                    LayoutCachedTop =7740
+                    LayoutCachedWidth =8280
+                    LayoutCachedHeight =8100
+                    ForeThemeColorIndex =-1
+                    ForeTint =100.0
+                    UseTheme =0
+                    BackColor =14136213
+                    BorderColor =14136213
+                    ThemeFontIndex =-1
+                    HoverColor =15060409
+                    PressedColor =9592887
+                    HoverForeColor =4210752
+                    PressedForeColor =4210752
+                    WebImagePaddingLeft =2
+                    WebImagePaddingTop =2
+                    WebImagePaddingRight =1
+                    WebImagePaddingBottom =1
+                End
+                Begin CommandButton
+                    Visible = NotDefault
+                    OverlapFlags =85
+                    Left =5280
+                    Top =7740
+                    TabIndex =15
+                    Name ="cmdClose"
+                    Caption ="Close"
+                    OnClick ="[Event Procedure]"
+                    GridlineColor =10921638
+
+                    LayoutCachedLeft =5280
+                    LayoutCachedTop =7740
+                    LayoutCachedWidth =6720
+                    LayoutCachedHeight =8100
+                    ForeThemeColorIndex =-1
+                    ForeTint =100.0
+                    UseTheme =0
+                    BackColor =14136213
+                    BorderColor =14136213
+                    ThemeFontIndex =-1
+                    HoverColor =15060409
+                    PressedColor =9592887
+                    HoverForeColor =4210752
+                    PressedForeColor =4210752
+                    WebImagePaddingLeft =2
+                    WebImagePaddingTop =2
+                    WebImagePaddingRight =1
+                    WebImagePaddingBottom =1
+                End
             End
         End
         Begin FormFooter
@@ -733,3 +854,88 @@ Begin Form
         End
     End
 End
+CodeBehindForm
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = True
+Attribute VB_PredeclaredId = True
+Attribute VB_Exposed = False
+Option Compare Database
+
+Private Sub cmdCancel_Click()
+
+'Undo edits after making sure that they haven't been committed to the database
+If Me.NewRecord Then
+    Me.Undo
+Else
+    MsgBox ("This record has already been saved. Contact the data management team if this photo should be removed.")
+    GoTo Error_Handler
+End If
+
+'Close form
+Forms!frm_Visit.sfrmPhotoActivity.Form!txtDummy.SetFocus
+Me.Visible = False
+
+Exit_Function:
+    Exit Sub
+Error_Handler:
+    Resume Exit_Function
+End Sub
+
+
+Private Sub cmdClose_Click()
+
+'Make sure that changes have been saved and that renamed photo exists
+
+'Close form
+
+End Sub
+
+Private Sub cmdNew_Click()
+
+'Go to new record
+
+'Disable New button and Close button
+
+'Enable Save button and Cancel button
+
+End Sub
+
+Private Sub cmdSave_Click()
+
+Dim fso As Object
+Dim pathOrigin As String
+Dim pathDest As String
+Dim origFileExists As Boolean
+Dim renamedFileExists As Boolean
+Dim recordFound As Boolean
+
+Set fso = VBA.CreateObject("Scripting.FileSystemObject")
+Set pathOrigin = "C:\Users\sewright\Documents\test.txt"
+Set pathDest = "C:\Users\sewright\Documents\test2\test2.txt"
+Set origFileExists = fileExists(pathDest)
+Set renamedFileExists = fileExists(pathOrigin)
+Set recordFound = CheckRecExists(Me.Recordset, "ID = " & Me.ID)
+
+'Check if renamed file exists already. If it already exists but there is no record in the database, ok to save record. Otherwise, error.
+If !origFileExists Then
+    MsgBox ("The original file could not be found. Please double check the date and file number, or manually enter a valid original path.")
+    GoTo Exit_Function
+ElseIf recordFound & renamedFileExists Then
+    MsgBox ("This photo already exists and has been entered into the database")
+    GoTo Exit_Function
+ElseIf !recordFound & renamedFileExists Then
+    DoCmd.RunCommand acCmdSaveRecord
+ElseIf recordFound & !renamedFileExists Then
+    Call fso.CopyFile(pathOrigin, pathDest, False)
+End If
+
+'Disable editing on non-GPS fields
+
+'If successful save, enable New button and Close button; disable Cancel button
+
+
+Exit_Function:
+    Exit Sub
+Error_Handler:
+    Resume Exit_Function
+End Sub

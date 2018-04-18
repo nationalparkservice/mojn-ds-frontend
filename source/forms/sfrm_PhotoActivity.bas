@@ -6,18 +6,19 @@ Begin Form
     DividingLines = NotDefault
     AllowDesignChanges = NotDefault
     DefaultView =0
+    ScrollBars =0
     PictureAlignment =2
     DatasheetGridlinesBehavior =3
     PictureType =1
     GridX =24
     GridY =24
-    Width =16230
+    Width =16170
     DatasheetFontHeight =11
-    ItemSuffix =32
-    Left =1080
-    Top =3375
-    Right =16920
-    Bottom =12345
+    ItemSuffix =39
+    Left =3405
+    Top =465
+    Right =19620
+    Bottom =9450
     DatasheetGridlinesColor =15921906
     RecSrcDt = Begin
         0xc208564c6c18e540
@@ -28,6 +29,7 @@ Begin Form
         0x6801000068010000680100006801000000000000201c0000e010000001000000 ,
         0x010000006801000000000000a10700000100000001000000
     End
+    OnLoad ="[Event Procedure]"
     AllowDatasheetView =0
     FilterOnLoad =0
     ShowPageMargins =0
@@ -52,6 +54,30 @@ Begin Form
             BorderTint =50.0
             ForeThemeColorIndex =0
             ForeTint =50.0
+            GridlineThemeColorIndex =1
+            GridlineShade =65.0
+        End
+        Begin Rectangle
+            SpecialEffect =3
+            BackStyle =0
+            BorderLineStyle =0
+            BackThemeColorIndex =1
+            BorderThemeColorIndex =1
+            BorderShade =65.0
+            GridlineThemeColorIndex =1
+            GridlineShade =65.0
+        End
+        Begin Image
+            BackStyle =0
+            OldBorderStyle =0
+            BorderLineStyle =0
+            SizeMode =3
+            PictureAlignment =2
+            BorderColor =16777215
+            GridlineColor =16777215
+            BackThemeColorIndex =1
+            BorderThemeColorIndex =1
+            BorderShade =65.0
             GridlineThemeColorIndex =1
             GridlineShade =65.0
         End
@@ -173,25 +199,206 @@ Begin Form
         End
         Begin Section
             CanGrow = NotDefault
-            Height =9357
+            Height =19257
             BackColor =15921906
             Name ="Detail"
             AlternateBackColor =15527148
             Begin
+                Begin Image
+                    SpecialEffect =4
+                    OldBorderStyle =1
+                    BorderWidth =3
+                    PictureType =1
+                    Left =7995
+                    Top =420
+                    Width =7920
+                    Height =4710
+                    BorderColor =10921638
+                    Name ="imgCurrentPhoto"
+                    Picture ="M:\\MONITORING\\DS_Water\\Data\\Images\\JOTR_P_CON0215\\JOTR_P_CON0215_20161130_"
+                        "UPSTR_0250.JPG"
+                    GridlineColor =10921638
+
+                    LayoutCachedLeft =7995
+                    LayoutCachedTop =420
+                    LayoutCachedWidth =15915
+                    LayoutCachedHeight =5130
+                    TabIndex =5
+                End
                 Begin Subform
                     OverlapFlags =85
                     OldBorderStyle =0
-                    Width =16110
-                    Height =9237
+                    Left =495
+                    Top =750
+                    Width =7140
+                    Height =7680
+                    TabIndex =1
                     BorderColor =10921638
-                    Name ="sfrmRepeatPhoto"
-                    SourceObject ="Form.sfrm_RepeatPhotosView"
+                    Name ="sfrmRepeatPhotosList"
+                    SourceObject ="Form.sfrm_RepeatPhotosList"
+                    LinkChildFields ="PhotoActivityID"
+                    LinkMasterFields ="ID"
                     GridlineColor =10921638
 
-                    LayoutCachedWidth =16110
-                    LayoutCachedHeight =9237
+                    LayoutCachedLeft =495
+                    LayoutCachedTop =750
+                    LayoutCachedWidth =7635
+                    LayoutCachedHeight =8430
+                    Begin
+                        Begin Label
+                            FontItalic = NotDefault
+                            OverlapFlags =85
+                            Left =540
+                            Top =420
+                            Width =7080
+                            Height =300
+                            BorderColor =8355711
+                            Name ="Label37"
+                            Caption ="Click on an item in the list to view image and details"
+                            GridlineColor =10921638
+                            LayoutCachedLeft =540
+                            LayoutCachedTop =420
+                            LayoutCachedWidth =7620
+                            LayoutCachedHeight =720
+                            ForeTint =100.0
+                        End
+                    End
+                End
+                Begin Subform
+                    OverlapFlags =85
+                    OldBorderStyle =0
+                    Left =8040
+                    Top =5160
+                    Width =7995
+                    Height =3480
+                    TabIndex =2
+                    BorderColor =10921638
+                    Name ="sfrmRepeatPhotoInfo"
+                    SourceObject ="Form.sfrm_RepeatPhotoInfo"
+                    LinkChildFields ="PhotoActivityID"
+                    LinkMasterFields ="ID"
+                    GridlineColor =10921638
+
+                    LayoutCachedLeft =8040
+                    LayoutCachedTop =5160
+                    LayoutCachedWidth =16035
+                    LayoutCachedHeight =8640
+                End
+                Begin CommandButton
+                    OverlapFlags =85
+                    Left =5280
+                    Top =8880
+                    Width =2340
+                    TabIndex =3
+                    Name ="cmdAddRepeatPhoto"
+                    Caption ="Add Repeat Photos"
+                    OnClick ="[Event Procedure]"
+                    GridlineColor =10921638
+
+                    LayoutCachedLeft =5280
+                    LayoutCachedTop =8880
+                    LayoutCachedWidth =7620
+                    LayoutCachedHeight =9240
+                    ForeThemeColorIndex =-1
+                    ForeTint =100.0
+                    UseTheme =0
+                    BackColor =14136213
+                    BorderColor =14136213
+                    ThemeFontIndex =-1
+                    HoverColor =15060409
+                    PressedColor =9592887
+                    HoverForeColor =4210752
+                    PressedForeColor =4210752
+                    WebImagePaddingLeft =2
+                    WebImagePaddingTop =2
+                    WebImagePaddingRight =1
+                    WebImagePaddingBottom =1
+                End
+                Begin Subform
+                    Visible = NotDefault
+                    OverlapFlags =85
+                    OldBorderStyle =0
+                    Left =60
+                    Top =9720
+                    Width =16110
+                    Height =9537
+                    BorderColor =10921638
+                    Name ="sfrmRepeatPhoto"
+                    SourceObject ="Form.sfrm_RepeatPhotosEnter"
+                    LinkChildFields ="PhotoActivityID"
+                    LinkMasterFields ="ID"
+                    GridlineColor =10921638
+
+                    LayoutCachedLeft =60
+                    LayoutCachedTop =9720
+                    LayoutCachedWidth =16170
+                    LayoutCachedHeight =19257
+                End
+                Begin TextBox
+                    OldBorderStyle =0
+                    OverlapFlags =85
+                    BackStyle =0
+                    IMESentenceMode =3
+                    Width =60
+                    Height =315
+                    TabIndex =4
+                    BorderColor =10921638
+                    ForeColor =4210752
+                    Name ="txtDummy"
+                    GridlineColor =10921638
+
+                    LayoutCachedWidth =60
+                    LayoutCachedHeight =315
                 End
             End
         End
     End
 End
+CodeBehindForm
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = True
+Attribute VB_PredeclaredId = True
+Attribute VB_Exposed = False
+Option Compare Database
+
+Private Sub cmdAddRepeatPhoto_Click()
+    Me.sfrmRepeatPhoto.Visible = True
+    Me.sfrmRepeatPhoto.Top = 0
+    Me.sfrmRepeatPhoto.Left = 0
+    Me.sfrmRepeatPhoto.Enabled = True
+End Sub
+
+Private Sub Form_Load()
+
+Dim renamedPhotos As DAO.Recordset
+Dim qry As String
+Dim rptPhotoSOPID As Integer
+Dim rptPhotosExist As Boolean
+Dim thumbnailGrid As New Collection
+
+rptPhotoSOPID = 1
+
+'Clear current photo
+Me.imgCurrentPhoto.Picture = ""
+
+'Make photo details subform invisible
+Me.sfrmRepeatPhotoInfo.Visible = False
+
+'Get recordset of renamed paths and descriptions
+qry = "SELECT data_Photo.RenamedFilePath, ref_PhotoDescriptionCode.Code FROM data_Photo LEFT JOIN ref_PhotoDescriptionCode ON data_Photo.PhotoDescriptionCodeID = ref_PhotoDescriptionCode.ID WHERE ref_PhotoDescriptionCode.PhotoSOPID = " & _
+    rptPhotoSOPID & " AND data_Photo.PhotoActivityID = " & Me.ID & ";"
+
+Set renamedPhotos = CurrentDb.OpenRecordset(qry, dbOpenSnapshot, dbReadOnly)
+renamedPhotos.MoveLast
+rptPhotosExist = (renamedPhotos.RecordCount > 0)
+
+If rptPhotosExist Then
+    Me.sfrmRepeatPhoto.Visible = False
+    
+Else
+    Me.sfrmRepeatPhoto.Visible = True
+    Me.sfrmRepeatPhoto.Top = 0
+    Me.sfrmRepeatPhoto.Left = 0
+End If
+    
+End Sub

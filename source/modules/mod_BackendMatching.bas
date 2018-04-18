@@ -25,12 +25,10 @@ Public Function fxnGetApplicationComponentVersionRequired(strComponent As String
         Set Db = CurrentDb
         
         fxnGetApplicationComponentVersionRequired = CurrentDb.Containers("Databases").Documents("UserDefined").Properties(strComponent)
-    
     Else
-        
         fxnGetApplicationComponentVersionRequired = Empty
-    
     End If
+    
 Exit_Function:
     Exit Function
 Error_Handler:

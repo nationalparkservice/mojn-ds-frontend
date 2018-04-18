@@ -13,8 +13,12 @@ Begin Report
     Width =11352
     DatasheetFontHeight =11
     ItemSuffix =16
-    Top =135
+    Left =3900
+    Top =3900
     DatasheetGridlinesColor =15921906
+    RecSrcDt = Begin
+        0x17a666787418e540
+    End
     RecordSource ="SELECT metadata_FieldDescriptions.SchemaName, metadata_FieldDescriptions.TableNa"
         "me, metadata_FieldDescriptions.ColumnName, metadata_FieldDescriptions.DataType, "
         "metadata_FieldDescriptions.FieldSize, metadata_FieldDescriptions.ColumnDescripti"

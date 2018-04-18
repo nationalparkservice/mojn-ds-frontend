@@ -20,10 +20,10 @@ Begin Form
     Width =15840
     DatasheetFontHeight =11
     ItemSuffix =26
-    Left =2220
-    Top =4260
-    Right =18060
-    Bottom =9900
+    Left =885
+    Top =2430
+    Right =16725
+    Bottom =8070
     DatasheetGridlinesColor =15921906
     AfterInsert ="[Event Procedure]"
     RecSrcDt = Begin
@@ -945,6 +945,25 @@ Begin Form
                     BackThemeColorIndex =-1
                     ForeThemeColorIndex =-1
                     ForeTint =100.0
+                End
+                Begin TextBox
+                    OverlapFlags =85
+                    IMESentenceMode =3
+                    Left =7860
+                    Top =1020
+                    Width =240
+                    Height =315
+                    TabIndex =11
+                    BorderColor =10921638
+                    ForeColor =4210752
+                    Name ="IsSensorRetrieved"
+                    ControlSource ="IsSensorRetrievedID"
+                    GridlineColor =10921638
+
+                    LayoutCachedLeft =7860
+                    LayoutCachedTop =1020
+                    LayoutCachedWidth =8100
+                    LayoutCachedHeight =1335
                 End
             End
         End

@@ -20,10 +20,10 @@ Begin Form
     Width =11100
     DatasheetFontHeight =11
     ItemSuffix =13
-    Left =2460
-    Top =5055
-    Right =13560
-    Bottom =12300
+    Left =2595
+    Top =4845
+    Right =13695
+    Bottom =12090
     DatasheetGridlinesColor =15921906
     RecSrcDt = Begin
         0x5eb7f4100d99e440
@@ -394,7 +394,6 @@ Private bStopProcess As Boolean
 
 
 Private Sub Form_Open(Cancel As Integer)
-
     On Error GoTo Error_Handler
     
     bStopProcess = False
@@ -423,47 +422,49 @@ Private Sub cmdLink_Click()
     On Error GoTo Error_Handler
     
     Dim strDatabaseInstance As String
-    Dim strIndexColumnName As String
-    Dim strUsername As String
-    Dim strConnectionString As String
     Dim strDatabaseName As String
-    Dim strLinkingProgress As StringBuilder
+    Dim strDriver As String
+    Dim strConnectionString As String
     Dim bLinkSuccess As Boolean
-    Dim i As Integer
-    
     Dim Db As DAO.Database
-    Dim qd As DAO.QueryDef
     Dim rs As DAO.Recordset
-    Dim td As DAO.TableDef
     
-    ' Bail if no server is chosen
+    'Prompt if no database profile is chosen
     If IsNull(Me.cboChooseServer) Or Me.cboChooseServer = "" Then
-        MsgBox "Choose a Server/instance", vbOKOnly + vbCritical, "Critical"
+        MsgBox "Please choose or create a Database Profile", vbOKOnly + vbCritical, "Critical"
         GoTo Exit_Sub
     End If
     
-    ' Setup locals
+    'Setup locals
     bStopProcess = False
     strDatabaseInstance = DLookup("Server", "app_Server", "ID = " & Me.cboChooseServer)
     strDatabaseName = DLookup("Database", "app_Server", "ID = " & Me.cboChooseServer)
-    strUsername = rlnkGetUsername()
+    strDriver = DLookup("Driver", "app_Server", "ID = " & Me.cboChooseServer)
     strConnectionString = rlnkADOConnectionStringFromServerProfile(Me.cboChooseServer)
-    Set strLinkingProgress = New StringBuilder
 
-
-    ' Does the server chosen exist and is it reachable?
+    'Test for connection to server
+    Me.txtLinkingOutput = Null
+    Me.txtLinkingOutput.SetFocus
+    With Me.txtLinkingOutput
+        .SetFocus
+        .Value = .Value & "Testing Connection to server......"
+        .SelStart = Len(Nz(.Value, ""))
+    End With
     If rlnkCheckServer(strConnectionString) = False Then
         MsgBox "Connection to the selected server is unavailable", vbOKOnly + vbCritical, "No Server Access"
         GoTo Exit_Sub
     End If
+    With Me.txtLinkingOutput
+        .SetFocus
+        .Value = .Value & "..........Success" & vbNewLine & vbNewLine
+        .SelStart = Len(Nz(.Value, ""))
+    End With
 
-    ' Setup controls
+    ' If Server is found, Setup controls
     Me.cmdLink.Enabled = False
     Me.cboChooseServer.Enabled = False
     Me.cmdBrowseEditDatabaseProfiles.Enabled = False
     Me.cmdClose.Enabled = False
-    Me.txtLinkingOutput = Null
-    Me.txtLinkingOutput.SetFocus
     
     ' Setup db objects
     Set Db = CurrentDb
@@ -476,44 +477,40 @@ Private Sub cmdLink_Click()
         rs.MoveFirst
         
         Do While Not rs.EOF And Not bStopProcess
-            strLinkingProgress.Append rs.Fields("TableName")
-            
             With Me.txtLinkingOutput
                 .SetFocus
-                .Value = .Value & strLinkingProgress.ToString()
+                .Value = .Value & rs.Fields("TableName")
                 .SelStart = Len(Nz(.Value, ""))
             End With
             
-            bLinkSuccess = rlnkAttachDSNLessTable(rs.Fields("TableName"), _
+            bLinkSuccess = rlnkAttachTable(rs.Fields("TableName"), _
                     rs.Fields("ForeignName"), _
                     strDatabaseInstance, _
                     strDatabaseName, _
+                    strDriver, _
                     Nz(rs.Fields("ViewKeyName")))
             
             Select Case bLinkSuccess
                 Case True:
-                    strLinkingProgress.Append "....success" & vbNewLine
+                    With Me.txtLinkingOutput
+                        .SetFocus
+                        .Value = .Value & ".......success" & vbNewLine
+                        .SelStart = Len(Nz(.Value, ""))
+                    End With
                 Case False:
-                    strLinkingProgress.Append "....******FAILED*******" & vbNewLine
+                    With Me.txtLinkingOutput
+                        .SetFocus
+                        .Value = .Value & ".......******FAILED*******" & vbNewLine
+                        .SelStart = Len(Nz(.Value, ""))
+                    End With
             End Select
             
-            With Me.txtLinkingOutput
-                .SetFocus
-                .Value = .Value & strLinkingProgress.ToString()
-                .SelStart = Len(Nz(.Value, ""))
-            End With
-            
-            strLinkingProgress.Reset
             Me.txtLinkingOutput.SetFocus
-            
             rs.MoveNext
-            
             DoEvents
-        
         Loop
         
         Me.txtLinkingOutput.Value = Me.txtLinkingOutput.Value & vbNewLine & "Finished Linking"
-        'Update Switchboard label showing backend details
         Forms!frm_Switchboard!Backend_Description = strDatabaseName & " on " & strDatabaseInstance
         
         Me.txtLinkingOutput.SelStart = Nz(Len(Me.txtLinkingOutput), 0)
@@ -525,12 +522,9 @@ Private Sub cmdLink_Click()
         MsgBox msgWrongBackendRelinked, vbCritical, "Mismatch"
     End If
     
-    
 Exit_Sub:
     Set Db = Nothing
-    Set qd = Nothing
     Set rs = Nothing
-    Set td = Nothing
     Me.cmdLink.Enabled = True
     Me.cboChooseServer.Enabled = True
     Me.cmdClose.Enabled = True
@@ -542,7 +536,6 @@ Error_Handler:
 End Sub
 
 Private Sub cmdStop_Click()
-
     On Error GoTo Error_Handler
     
     bStopProcess = True
@@ -555,7 +548,6 @@ Error_Handler:
 End Sub
 
 Private Sub cmdBrowseEditDatabaseProfiles_Click()
-
     On Error GoTo Error_Handler
     
     DoCmd.OpenForm "appManageServers", acNormal, , , acFormPropertySettings, acDialog

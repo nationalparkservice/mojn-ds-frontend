@@ -20,7 +20,7 @@ If nPhotos <= i Then GoTo Exit_Function
 
 For Each t In thumbnailGrid
     'If we haven't run out of photos, set the picture property to the next photo in photoPaths
-    If nPhotos >= i Then
+    If nPhotos > i Then
         photoPaths.AbsolutePosition = i
         t.Picture = photoPaths!RenamedFilePath
     'If there are no more photos to display, set the picture property to empty

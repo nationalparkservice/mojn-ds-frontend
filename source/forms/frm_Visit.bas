@@ -21,12 +21,12 @@ Begin Form
     Width =16560
     DatasheetFontHeight =11
     ItemSuffix =236
-    Left =1245
+    Left =-675
     Top =405
-    Right =17805
+    Right =15885
     Bottom =11460
     DatasheetGridlinesColor =15921906
-    Filter ="ID = 374"
+    Filter ="ID = 284"
     RecSrcDt = Begin
         0xab2688a2f412e540
     End
@@ -752,7 +752,7 @@ Begin Form
                     Name ="cmdLockVisit"
                     Caption ="Locked"
                     OnClick ="[Event Procedure]"
-                    Picture ="Locked-32-Red"
+                    Picture ="Locked-32-Maroon"
                     GridlineColor =10921638
 
                     LayoutCachedLeft =13380
@@ -2226,7 +2226,7 @@ On Error GoTo ErrorHandler
     
     'Update Lock Display on form
     cmdLockVisit.Caption = IIf(bLocked = True, "Locked", "Unlocked")
-    cmdLockVisit.Picture = IIf(bLocked = True, "Locked-32-Red", "Unlocked-32-DkGray")
+    cmdLockVisit.Picture = IIf(bLocked = True, "Locked-32-Maroon", "Unlocked-32-DkGray")
     
 ExitSub:
     Exit Sub

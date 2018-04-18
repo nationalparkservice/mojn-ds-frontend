@@ -16,7 +16,7 @@ Begin Form
     Top =10596
     Right =8100
     Bottom =12588
-    DatasheetGridlinesColor =15132391
+    DatasheetGridlinesColor =15921906
     RecSrcDt = Begin
         0xcf7a955b3003e540
     End
@@ -849,10 +849,10 @@ Begin Form
                     LayoutCachedLeft =5892
                     LayoutCachedWidth =6273
                     LayoutCachedHeight =476
-                    BackColor =15123357
-                    BorderColor =15123357
-                    HoverColor =15652797
-                    PressedColor =11957550
+                    BackColor =14136213
+                    BorderColor =14136213
+                    HoverColor =15060409
+                    PressedColor =9592887
                     HoverForeColor =4210752
                     PressedForeColor =4210752
                     WebImagePaddingLeft =2

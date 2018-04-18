@@ -619,11 +619,6 @@ Begin Form
                     TabIndex =1
                     BorderColor =14211288
                     ColumnInfo ="\"\";\"\";\"\";\"\";\"\";\"\";\"\";\"\";\"10\";\"12\""
-                    ConditionalFormat = Begin
-                        0x0100000060000000000000000000000000000000000000000000000000000000 ,
-                        0x0000000000000000000000000000000000000000000000000000000000000000 ,
-                        0x0000000000000000000000000000000000000000000000000000000000000000
-                    End
                     Name ="cboSubunitID"
                     ControlSource ="SubunitID"
                     RowSourceType ="Table/Query"
@@ -646,9 +641,6 @@ Begin Form
                     BorderShade =100.0
                     ForeThemeColorIndex =-1
                     ForeShade =100.0
-                    ConditionalFormat14 = Begin
-                        0x010000000000
-                    End
                     Begin
                         Begin Label
                             OverlapFlags =93
@@ -684,11 +676,6 @@ Begin Form
                     BorderColor =14211288
                     Name ="txtGRTSOrder"
                     ControlSource ="GRTSOrder"
-                    ConditionalFormat = Begin
-                        0x0100000060000000000000000000000000000000000000000000000000000000 ,
-                        0x0000000000000000000000000000000000000000000000000000000000000000 ,
-                        0x0000000000000000000000000000000000000000000000000000000000000000
-                    End
                     GridlineColor =10921638
 
                     LayoutCachedLeft =1799
@@ -701,9 +688,6 @@ Begin Form
                     ThemeFontIndex =-1
                     ForeThemeColorIndex =-1
                     ForeTint =100.0
-                    ConditionalFormat14 = Begin
-                        0x010000000000
-                    End
                     Begin
                         Begin Label
                             OverlapFlags =93
@@ -740,11 +724,6 @@ Begin Form
                     TabIndex =2
                     BorderColor =14211288
                     ColumnInfo ="\"\";\"\";\"\";\"\";\"\";\"\";\"10\";\"20\""
-                    ConditionalFormat = Begin
-                        0x0100000060000000000000000000000000000000000000000000000000000000 ,
-                        0x0000000000000000000000000000000000000000000000000000000000000000 ,
-                        0x0000000000000000000000000000000000000000000000000000000000000000
-                    End
                     Name ="cboGRTSDrawID"
                     ControlSource ="GRTSDrawID"
                     RowSourceType ="Table/Query"
@@ -766,9 +745,6 @@ Begin Form
                     BorderShade =100.0
                     ForeThemeColorIndex =-1
                     ForeShade =100.0
-                    ConditionalFormat14 = Begin
-                        0x010000000000
-                    End
                     Begin
                         Begin Label
                             OverlapFlags =93
@@ -805,11 +781,6 @@ Begin Form
                     TabIndex =5
                     BorderColor =14211288
                     ColumnInfo ="\"\";\"\";\"\";\"\";\"\";\"\";\"10\";\"20\""
-                    ConditionalFormat = Begin
-                        0x0100000060000000000000000000000000000000000000000000000000000000 ,
-                        0x0000000000000000000000000000000000000000000000000000000000000000 ,
-                        0x0000000000000000000000000000000000000000000000000000000000000000
-                    End
                     Name ="cboGRTSStatusID"
                     ControlSource ="GRTSStatusID"
                     RowSourceType ="Table/Query"
@@ -831,9 +802,6 @@ Begin Form
                     BorderShade =100.0
                     ForeThemeColorIndex =-1
                     ForeShade =100.0
-                    ConditionalFormat14 = Begin
-                        0x010000000000
-                    End
                     Begin
                         Begin Label
                             OverlapFlags =93
@@ -870,11 +838,6 @@ Begin Form
                     TabIndex =4
                     BorderColor =14211288
                     ColumnInfo ="\"\";\"\";\"\";\"\";\"\";\"\";\"10\";\"20\""
-                    ConditionalFormat = Begin
-                        0x0100000060000000000000000000000000000000000000000000000000000000 ,
-                        0x0000000000000000000000000000000000000000000000000000000000000000 ,
-                        0x0000000000000000000000000000000000000000000000000000000000000000
-                    End
                     Name ="cboGRTSPanelID"
                     ControlSource ="GRTSPanelID"
                     RowSourceType ="Table/Query"
@@ -896,9 +859,6 @@ Begin Form
                     BorderShade =100.0
                     ForeThemeColorIndex =-1
                     ForeShade =100.0
-                    ConditionalFormat14 = Begin
-                        0x010000000000
-                    End
                     Begin
                         Begin Label
                             OverlapFlags =93
@@ -933,11 +893,6 @@ Begin Form
                     BorderColor =14211288
                     Name ="txtLat_WGS84"
                     ControlSource ="Lat_WGS84"
-                    ConditionalFormat = Begin
-                        0x0100000060000000000000000000000000000000000000000000000000000000 ,
-                        0x0000000000000000000000000000000000000000000000000000000000000000 ,
-                        0x0000000000000000000000000000000000000000000000000000000000000000
-                    End
                     GridlineColor =10921638
 
                     LayoutCachedLeft =7439
@@ -950,9 +905,6 @@ Begin Form
                     ThemeFontIndex =-1
                     ForeThemeColorIndex =-1
                     ForeTint =100.0
-                    ConditionalFormat14 = Begin
-                        0x010000000000
-                    End
                     Begin
                         Begin Label
                             OverlapFlags =93
@@ -987,11 +939,6 @@ Begin Form
                     BorderColor =14211288
                     Name ="txtLon_WGS84"
                     ControlSource ="Lon_WGS84"
-                    ConditionalFormat = Begin
-                        0x0100000060000000000000000000000000000000000000000000000000000000 ,
-                        0x0000000000000000000000000000000000000000000000000000000000000000 ,
-                        0x0000000000000000000000000000000000000000000000000000000000000000
-                    End
                     GridlineColor =10921638
 
                     LayoutCachedLeft =7439
@@ -1004,9 +951,6 @@ Begin Form
                     ThemeFontIndex =-1
                     ForeThemeColorIndex =-1
                     ForeTint =100.0
-                    ConditionalFormat14 = Begin
-                        0x010000000000
-                    End
                     Begin
                         Begin Label
                             OverlapFlags =93
@@ -1041,11 +985,6 @@ Begin Form
                     BorderColor =14211288
                     Name ="txtX_UTM_NAD83_11N"
                     ControlSource ="X_UTM_NAD83_11N"
-                    ConditionalFormat = Begin
-                        0x0100000060000000000000000000000000000000000000000000000000000000 ,
-                        0x0000000000000000000000000000000000000000000000000000000000000000 ,
-                        0x0000000000000000000000000000000000000000000000000000000000000000
-                    End
                     GridlineColor =10921638
 
                     LayoutCachedLeft =7439
@@ -1058,9 +997,6 @@ Begin Form
                     ThemeFontIndex =-1
                     ForeThemeColorIndex =-1
                     ForeTint =100.0
-                    ConditionalFormat14 = Begin
-                        0x010000000000
-                    End
                     Begin
                         Begin Label
                             OverlapFlags =93
@@ -1095,11 +1031,6 @@ Begin Form
                     BorderColor =14211288
                     Name ="txtY_UTM_NAD83_11N"
                     ControlSource ="Y_UTM_NAD83_11N"
-                    ConditionalFormat = Begin
-                        0x0100000060000000000000000000000000000000000000000000000000000000 ,
-                        0x0000000000000000000000000000000000000000000000000000000000000000 ,
-                        0x0000000000000000000000000000000000000000000000000000000000000000
-                    End
                     GridlineColor =10921638
 
                     LayoutCachedLeft =7439
@@ -1112,9 +1043,6 @@ Begin Form
                     ThemeFontIndex =-1
                     ForeThemeColorIndex =-1
                     ForeTint =100.0
-                    ConditionalFormat14 = Begin
-                        0x010000000000
-                    End
                     Begin
                         Begin Label
                             OverlapFlags =93
@@ -1149,11 +1077,6 @@ Begin Form
                     BorderColor =14211288
                     Name ="txtX_UTM_NAD83_12N"
                     ControlSource ="X_UTM_NAD83_12N"
-                    ConditionalFormat = Begin
-                        0x0100000060000000000000000000000000000000000000000000000000000000 ,
-                        0x0000000000000000000000000000000000000000000000000000000000000000 ,
-                        0x0000000000000000000000000000000000000000000000000000000000000000
-                    End
                     GridlineColor =10921638
 
                     LayoutCachedLeft =7439
@@ -1166,9 +1089,6 @@ Begin Form
                     ThemeFontIndex =-1
                     ForeThemeColorIndex =-1
                     ForeTint =100.0
-                    ConditionalFormat14 = Begin
-                        0x010000000000
-                    End
                     Begin
                         Begin Label
                             OverlapFlags =93
@@ -1203,11 +1123,6 @@ Begin Form
                     BorderColor =14211288
                     Name ="txtY_UTM_NAD83_12N"
                     ControlSource ="Y_UTM_NAD83_12N"
-                    ConditionalFormat = Begin
-                        0x0100000060000000000000000000000000000000000000000000000000000000 ,
-                        0x0000000000000000000000000000000000000000000000000000000000000000 ,
-                        0x0000000000000000000000000000000000000000000000000000000000000000
-                    End
                     GridlineColor =10921638
 
                     LayoutCachedLeft =7439
@@ -1220,9 +1135,6 @@ Begin Form
                     ThemeFontIndex =-1
                     ForeThemeColorIndex =-1
                     ForeTint =100.0
-                    ConditionalFormat14 = Begin
-                        0x010000000000
-                    End
                     Begin
                         Begin Label
                             OverlapFlags =93

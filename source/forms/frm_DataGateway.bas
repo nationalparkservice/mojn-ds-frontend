@@ -11,7 +11,6 @@ Begin Form
     AllowDeletions = NotDefault
     DividingLines = NotDefault
     AllowAdditions = NotDefault
-    OrderByOn = NotDefault
     AllowUpdating =2
     ScrollBars =2
     ViewsAllowed =1
@@ -2075,7 +2074,7 @@ Private Sub cmdSiteInfoSheet_Click()
     SiteInfoSheetName = SiteInfoSheetFolder & "\" & ParkCode & "\" & SiteCode & ".docx"
     
     'If the cover sheet exists, for the site, open it
-    If FileExists(SiteInfoSheetName) Then
+    If fileExists(SiteInfoSheetName) Then
         Application.FollowHyperlink SiteInfoSheetName
     'If cover sheet file does not exist, open the root directory
     ElseIf FolderExists(RootFolder) Then

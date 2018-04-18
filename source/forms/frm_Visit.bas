@@ -18,15 +18,15 @@ Begin Form
     Cycle =1
     GridX =24
     GridY =24
-    Width =16560
+    Width =16605
     DatasheetFontHeight =11
-    ItemSuffix =236
-    Left =-675
+    ItemSuffix =242
+    Left =690
     Top =405
-    Right =15885
+    Right =17295
     Bottom =11460
     DatasheetGridlinesColor =15921906
-    Filter ="ID = 284"
+    Filter ="ID = 374"
     RecSrcDt = Begin
         0xab2688a2f412e540
     End
@@ -760,7 +760,7 @@ Begin Form
                     Name ="cmdLockVisit"
                     Caption ="Locked"
                     OnClick ="[Event Procedure]"
-                    Picture ="Locked-32-Maroon"
+                    Picture ="Locked-32-Red"
                     GridlineColor =10921638
 
                     LayoutCachedLeft =13380
@@ -797,13 +797,13 @@ Begin Form
             Begin
                 Begin Tab
                     OverlapFlags =85
-                    Width =16560
+                    Width =16605
                     Height =9915
                     FontWeight =700
                     Name ="tabctlSpringLocationVisit"
                     GridlineColor =10921638
 
-                    LayoutCachedWidth =16560
+                    LayoutCachedWidth =16605
                     LayoutCachedHeight =9915
                     ThemeFontIndex =1
                     BackColor =15921906
@@ -826,7 +826,7 @@ Begin Form
                             OverlapFlags =87
                             Left =75
                             Top =480
-                            Width =16410
+                            Width =16455
                             Height =9360
                             BorderColor =10921638
                             Name ="tabIntro"
@@ -834,7 +834,7 @@ Begin Form
                             GridlineColor =10921638
                             LayoutCachedLeft =75
                             LayoutCachedTop =480
-                            LayoutCachedWidth =16485
+                            LayoutCachedWidth =16530
                             LayoutCachedHeight =9840
                             WebImagePaddingLeft =2
                             WebImagePaddingTop =2
@@ -1552,7 +1552,7 @@ Begin Form
                             OverlapFlags =247
                             Left =75
                             Top =480
-                            Width =16410
+                            Width =16455
                             Height =9360
                             BorderColor =10921638
                             Name ="tabSensor"
@@ -1561,7 +1561,7 @@ Begin Form
                             GridlineColor =10921638
                             LayoutCachedLeft =75
                             LayoutCachedTop =480
-                            LayoutCachedWidth =16485
+                            LayoutCachedWidth =16530
                             LayoutCachedHeight =9840
                             WebImagePaddingLeft =2
                             WebImagePaddingTop =2
@@ -1614,16 +1614,18 @@ Begin Form
                         Begin Page
                             OverlapFlags =247
                             PictureType =1
+                            Left =60
                             Top =480
-                            Width =16485
+                            Width =16470
                             Height =9360
                             BorderColor =10921638
                             Name ="tabRepeatPhotos"
                             Tag ="AlwaysVisible"
                             Caption ="Repeat Photos"
                             GridlineColor =10921638
+                            LayoutCachedLeft =60
                             LayoutCachedTop =480
-                            LayoutCachedWidth =16485
+                            LayoutCachedWidth =16530
                             LayoutCachedHeight =9840
                             WebImagePaddingLeft =2
                             WebImagePaddingTop =2
@@ -1633,8 +1635,10 @@ Begin Form
                                 Begin Subform
                                     Locked = NotDefault
                                     OverlapFlags =247
+                                    OldBorderStyle =0
+                                    Left =60
                                     Top =480
-                                    Width =16110
+                                    Width =16470
                                     Height =9238
                                     BorderColor =10921638
                                     Name ="sfrmPhotoActivity"
@@ -1643,9 +1647,23 @@ Begin Form
                                     LinkMasterFields ="ID"
                                     GridlineColor =10921638
 
+                                    LayoutCachedLeft =60
                                     LayoutCachedTop =480
-                                    LayoutCachedWidth =16110
+                                    LayoutCachedWidth =16530
                                     LayoutCachedHeight =9718
+                                End
+                                Begin EmptyCell
+                                    Left =420
+                                    Top =840
+                                    Name ="EmptyCell238"
+                                    GroupTable =1
+                                    GridlineColor =10921638
+                                    LayoutCachedLeft =420
+                                    LayoutCachedTop =840
+                                    LayoutCachedWidth =1860
+                                    LayoutCachedHeight =1080
+                                    LayoutGroup =1
+                                    GroupTable =1
                                 End
                             End
                         End
@@ -1653,7 +1671,7 @@ Begin Form
                             OverlapFlags =247
                             Left =60
                             Top =480
-                            Width =16425
+                            Width =16470
                             Height =9360
                             BorderColor =10921638
                             Name ="tabDischarge"
@@ -1662,7 +1680,7 @@ Begin Form
                             GridlineColor =10921638
                             LayoutCachedLeft =60
                             LayoutCachedTop =480
-                            LayoutCachedWidth =16485
+                            LayoutCachedWidth =16530
                             LayoutCachedHeight =9840
                             WebImagePaddingLeft =2
                             WebImagePaddingTop =2
@@ -1695,7 +1713,7 @@ Begin Form
                             OverlapFlags =247
                             Left =60
                             Top =480
-                            Width =16425
+                            Width =16470
                             Height =9360
                             BorderColor =10921638
                             Name ="tabQuality"
@@ -1704,7 +1722,7 @@ Begin Form
                             GridlineColor =10921638
                             LayoutCachedLeft =60
                             LayoutCachedTop =480
-                            LayoutCachedWidth =16485
+                            LayoutCachedWidth =16530
                             LayoutCachedHeight =9840
                             WebImagePaddingLeft =2
                             WebImagePaddingTop =2
@@ -1737,7 +1755,7 @@ Begin Form
                             OverlapFlags =247
                             Left =60
                             Top =480
-                            Width =16425
+                            Width =16470
                             Height =9360
                             BorderColor =10921638
                             Name ="tabDisturbance"
@@ -1746,7 +1764,7 @@ Begin Form
                             GridlineColor =10921638
                             LayoutCachedLeft =60
                             LayoutCachedTop =480
-                            LayoutCachedWidth =16485
+                            LayoutCachedWidth =16530
                             LayoutCachedHeight =9840
                             WebImagePaddingLeft =2
                             WebImagePaddingTop =2
@@ -1780,7 +1798,7 @@ Begin Form
                             OverlapFlags =247
                             Left =60
                             Top =480
-                            Width =16425
+                            Width =16470
                             Height =9360
                             BorderColor =10921638
                             Name ="tabWildlife"
@@ -1789,7 +1807,7 @@ Begin Form
                             GridlineColor =10921638
                             LayoutCachedLeft =60
                             LayoutCachedTop =480
-                            LayoutCachedWidth =16485
+                            LayoutCachedWidth =16530
                             LayoutCachedHeight =9840
                             WebImagePaddingLeft =2
                             WebImagePaddingTop =2
@@ -1825,7 +1843,7 @@ Begin Form
                             OverlapFlags =247
                             Left =75
                             Top =480
-                            Width =16410
+                            Width =16455
                             Height =9360
                             BorderColor =10921638
                             Name ="tabRiparian"
@@ -1834,7 +1852,7 @@ Begin Form
                             GridlineColor =10921638
                             LayoutCachedLeft =75
                             LayoutCachedTop =480
-                            LayoutCachedWidth =16485
+                            LayoutCachedWidth =16530
                             LayoutCachedHeight =9840
                             WebImagePaddingLeft =2
                             WebImagePaddingTop =2
@@ -1868,7 +1886,7 @@ Begin Form
                             OverlapFlags =247
                             Left =60
                             Top =480
-                            Width =16425
+                            Width =16470
                             Height =9360
                             BorderColor =10921638
                             Name ="tabInvasives"
@@ -1877,7 +1895,7 @@ Begin Form
                             GridlineColor =10921638
                             LayoutCachedLeft =60
                             LayoutCachedTop =480
-                            LayoutCachedWidth =16485
+                            LayoutCachedWidth =16530
                             LayoutCachedHeight =9840
                             WebImagePaddingLeft =2
                             WebImagePaddingTop =2
@@ -1911,7 +1929,7 @@ Begin Form
                             OverlapFlags =247
                             Left =75
                             Top =480
-                            Width =16410
+                            Width =16455
                             Height =9360
                             BorderColor =10921638
                             Name ="tabMiscPhotos"
@@ -1920,7 +1938,7 @@ Begin Form
                             GridlineColor =10921638
                             LayoutCachedLeft =75
                             LayoutCachedTop =480
-                            LayoutCachedWidth =16485
+                            LayoutCachedWidth =16530
                             LayoutCachedHeight =9840
                             WebImagePaddingLeft =2
                             WebImagePaddingTop =2
@@ -2015,7 +2033,7 @@ Private Sub cmdSiteInfoSheet_Click()
     SiteInfoSheetName = SiteInfoSheetFolder & "\" & ParkFolder & "\" & SiteCode & ".docx"
     
     'If the cover sheet exists, for the site, open it
-    If FileExists(SiteInfoSheetName) Then
+    If fileExists(SiteInfoSheetName) Then
         Application.FollowHyperlink SiteInfoSheetName
     'IF cover sheet file does not exist, open the root directory
     ElseIf FolderExists(RootFolder) Then
@@ -2066,10 +2084,10 @@ Private Sub cmdFieldDataSheet_Click()
     FieldFileNameIncoming = IncomingFolder & "\" & Me.[Code] & ".pdf"
     
     'If the field data sheet exists, in the WaterYear folder, open it
-    If FileExists(FieldFileName) Then
+    If fileExists(FieldFileName) Then
         Application.FollowHyperlink FieldFileName
     'Or, if the incoming file exists, open it
-    ElseIf FileExists(FieldFileNameIncoming) Then
+    ElseIf fileExists(FieldFileNameIncoming) Then
         Application.FollowHyperlink FieldFileNameIncoming
     'IF neither file exist, open the root directory for the field data sheets
     ElseIf FolderExists(RootFolder) Then
@@ -2228,7 +2246,7 @@ On Error GoTo ErrorHandler
     
     'Update Lock Display on form
     cmdLockVisit.Caption = IIf(bLocked = True, "Locked", "Unlocked")
-    cmdLockVisit.Picture = IIf(bLocked = True, "Locked-32-Maroon", "Unlocked-32-DkGray")
+    cmdLockVisit.Picture = IIf(bLocked = True, "Locked-32-Red", "Unlocked-32-DkGray")
     
 ExitSub:
     Exit Sub

@@ -3,6 +3,8 @@
 Option Compare Database
 Option Explicit
 
+
+
 Public Function WaterYear(datDate As Date) As Integer
     'Returns the Water Year (Oct 1 - Sep 30) when given a date as input
     On Error GoTo Error_Handler
@@ -54,20 +56,20 @@ Public Function FolderExists(varPath As Variant) As Boolean
     End If
 End Function
 
-Public Function FileExists(varFile As Variant) As Boolean
+Public Function fileExists(varFile As Variant) As Boolean
 'Return whether a file exists
     On Error GoTo Err_FileExists
     
     If IsNull(varFile) Then
-        FileExists = False
+        fileExists = False
         Exit Function
     End If
-    FileExists = (Len(Dir(varFile)) > 0)
+    fileExists = (Len(Dir(varFile)) > 0)
     
 Exit_FileExists:
         Exit Function
 Err_FileExists:
-        FileExists = False
+        fileExists = False
         Resume Exit_FileExists
 End Function
 

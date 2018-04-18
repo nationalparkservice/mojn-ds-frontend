@@ -1070,7 +1070,7 @@ Private Sub cmdImport_Click()
 
         fileName = Trim(Me.txtFileName)
         
-        If fileName <> "" And FileExists(fileName) Then
+        If fileName <> "" And fileExists(fileName) Then
         
             ' Get the import file's header text at the top of the file, first 18 lines
             StatusBar "Reading the header block..."

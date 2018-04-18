@@ -304,7 +304,7 @@ Public Function fxnDeleteFile(ByVal strPath As String) As Boolean
     Dim fs As Variant
 
     Set fs = CreateObject("Scripting.FileSystemObject")
-    If FileExists(strPath) Then
+    If fileExists(strPath) Then
         fs.DeleteFile strPath, True
         fxnDeleteFile = True
     Else

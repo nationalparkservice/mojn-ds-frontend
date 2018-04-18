@@ -283,6 +283,14 @@ Begin Form
             GridlineThemeColorIndex =1
             GridlineShade =65.0
         End
+        Begin WebBrowser
+            OldBorderStyle =1
+            BackThemeColorIndex =1
+            BorderThemeColorIndex =1
+            BorderShade =65.0
+            GridlineThemeColorIndex =1
+            GridlineShade =65.0
+        End
         Begin FormHeader
             Height =1155
             BackColor =4281912
@@ -789,14 +797,12 @@ Begin Form
             Begin
                 Begin Tab
                     OverlapFlags =85
-                    Top =60
                     Width =16560
-                    Height =9855
+                    Height =9915
                     FontWeight =700
                     Name ="tabctlSpringLocationVisit"
                     GridlineColor =10921638
 
-                    LayoutCachedTop =60
                     LayoutCachedWidth =16560
                     LayoutCachedHeight =9915
                     ThemeFontIndex =1
@@ -819,15 +825,15 @@ Begin Form
                         Begin Page
                             OverlapFlags =87
                             Left =75
-                            Top =540
+                            Top =480
                             Width =16410
-                            Height =9300
+                            Height =9360
                             BorderColor =10921638
                             Name ="tabIntro"
                             Caption ="Intro"
                             GridlineColor =10921638
                             LayoutCachedLeft =75
-                            LayoutCachedTop =540
+                            LayoutCachedTop =480
                             LayoutCachedWidth =16485
                             LayoutCachedHeight =9840
                             WebImagePaddingLeft =2
@@ -1545,16 +1551,16 @@ Begin Form
                         Begin Page
                             OverlapFlags =247
                             Left =75
-                            Top =540
+                            Top =480
                             Width =16410
-                            Height =9300
+                            Height =9360
                             BorderColor =10921638
                             Name ="tabSensor"
                             Tag ="Sensor"
                             Caption ="Sensor"
                             GridlineColor =10921638
                             LayoutCachedLeft =75
-                            LayoutCachedTop =540
+                            LayoutCachedTop =480
                             LayoutCachedWidth =16485
                             LayoutCachedHeight =9840
                             WebImagePaddingLeft =2
@@ -1607,17 +1613,16 @@ Begin Form
                         End
                         Begin Page
                             OverlapFlags =247
-                            Left =75
-                            Top =540
-                            Width =16410
-                            Height =9300
+                            PictureType =1
+                            Top =480
+                            Width =16485
+                            Height =9360
                             BorderColor =10921638
                             Name ="tabRepeatPhotos"
                             Tag ="AlwaysVisible"
                             Caption ="Repeat Photos"
                             GridlineColor =10921638
-                            LayoutCachedLeft =75
-                            LayoutCachedTop =540
+                            LayoutCachedTop =480
                             LayoutCachedWidth =16485
                             LayoutCachedHeight =9840
                             WebImagePaddingLeft =2
@@ -1628,38 +1633,35 @@ Begin Form
                                 Begin Subform
                                     Locked = NotDefault
                                     OverlapFlags =247
-                                    SpecialEffect =2
-                                    Left =300
-                                    Top =576
-                                    Width =12798
-                                    Height =7681
+                                    Top =480
+                                    Width =16110
+                                    Height =9238
                                     BorderColor =10921638
-                                    Name ="sfrmRepeatPhotoActivity"
-                                    SourceObject ="Form.sfrm_RepeatPhotoActivity"
+                                    Name ="sfrmPhotoActivity"
+                                    SourceObject ="Form.sfrm_PhotoActivity"
                                     LinkChildFields ="VisitID"
                                     LinkMasterFields ="ID"
                                     GridlineColor =10921638
 
-                                    LayoutCachedLeft =300
-                                    LayoutCachedTop =576
-                                    LayoutCachedWidth =13098
-                                    LayoutCachedHeight =8257
+                                    LayoutCachedTop =480
+                                    LayoutCachedWidth =16110
+                                    LayoutCachedHeight =9718
                                 End
                             End
                         End
                         Begin Page
                             OverlapFlags =247
                             Left =60
-                            Top =540
+                            Top =480
                             Width =16425
-                            Height =9300
+                            Height =9360
                             BorderColor =10921638
                             Name ="tabDischarge"
                             Tag ="Default"
                             Caption ="Discharge"
                             GridlineColor =10921638
                             LayoutCachedLeft =60
-                            LayoutCachedTop =540
+                            LayoutCachedTop =480
                             LayoutCachedWidth =16485
                             LayoutCachedHeight =9840
                             WebImagePaddingLeft =2
@@ -1692,16 +1694,16 @@ Begin Form
                         Begin Page
                             OverlapFlags =247
                             Left =60
-                            Top =540
+                            Top =480
                             Width =16425
-                            Height =9300
+                            Height =9360
                             BorderColor =10921638
                             Name ="tabQuality"
                             Tag ="Quality"
                             Caption ="Quality"
                             GridlineColor =10921638
                             LayoutCachedLeft =60
-                            LayoutCachedTop =540
+                            LayoutCachedTop =480
                             LayoutCachedWidth =16485
                             LayoutCachedHeight =9840
                             WebImagePaddingLeft =2
@@ -1734,16 +1736,16 @@ Begin Form
                         Begin Page
                             OverlapFlags =247
                             Left =60
-                            Top =540
+                            Top =480
                             Width =16425
-                            Height =9300
+                            Height =9360
                             BorderColor =10921638
                             Name ="tabDisturbance"
                             Tag ="Default"
                             Caption ="Disturbance"
                             GridlineColor =10921638
                             LayoutCachedLeft =60
-                            LayoutCachedTop =540
+                            LayoutCachedTop =480
                             LayoutCachedWidth =16485
                             LayoutCachedHeight =9840
                             WebImagePaddingLeft =2
@@ -1777,16 +1779,16 @@ Begin Form
                         Begin Page
                             OverlapFlags =247
                             Left =60
-                            Top =540
+                            Top =480
                             Width =16425
-                            Height =9300
+                            Height =9360
                             BorderColor =10921638
                             Name ="tabWildlife"
                             Tag ="Default"
                             Caption ="Wildlife"
                             GridlineColor =10921638
                             LayoutCachedLeft =60
-                            LayoutCachedTop =540
+                            LayoutCachedTop =480
                             LayoutCachedWidth =16485
                             LayoutCachedHeight =9840
                             WebImagePaddingLeft =2
@@ -1822,16 +1824,16 @@ Begin Form
                         Begin Page
                             OverlapFlags =247
                             Left =75
-                            Top =540
+                            Top =480
                             Width =16410
-                            Height =9300
+                            Height =9360
                             BorderColor =10921638
                             Name ="tabRiparian"
                             Tag ="Riparian"
                             Caption ="Riparian"
                             GridlineColor =10921638
                             LayoutCachedLeft =75
-                            LayoutCachedTop =540
+                            LayoutCachedTop =480
                             LayoutCachedWidth =16485
                             LayoutCachedHeight =9840
                             WebImagePaddingLeft =2
@@ -1865,16 +1867,16 @@ Begin Form
                         Begin Page
                             OverlapFlags =247
                             Left =60
-                            Top =540
+                            Top =480
                             Width =16425
-                            Height =9300
+                            Height =9360
                             BorderColor =10921638
                             Name ="tabInvasives"
                             Tag ="Default"
                             Caption ="Invasives"
                             GridlineColor =10921638
                             LayoutCachedLeft =60
-                            LayoutCachedTop =540
+                            LayoutCachedTop =480
                             LayoutCachedWidth =16485
                             LayoutCachedHeight =9840
                             WebImagePaddingLeft =2
@@ -1908,16 +1910,16 @@ Begin Form
                         Begin Page
                             OverlapFlags =247
                             Left =75
-                            Top =540
+                            Top =480
                             Width =16410
-                            Height =9300
+                            Height =9360
                             BorderColor =10921638
                             Name ="tabMiscPhotos"
                             Tag ="MiscPhotos"
                             Caption ="Misc. Photos"
                             GridlineColor =10921638
                             LayoutCachedLeft =75
-                            LayoutCachedTop =540
+                            LayoutCachedTop =480
                             LayoutCachedWidth =16485
                             LayoutCachedHeight =9840
                             WebImagePaddingLeft =2
@@ -2197,8 +2199,8 @@ End Sub
 Public Sub VisitLock(bLocked As Boolean)
 On Error GoTo ErrorHandler
 
-    Dim ctl As Control
-    Dim ctlSub As Control
+    Dim ctl As control
+    Dim ctlSub As control
     
     For Each ctl In Me.Controls
         If ctl.Name <> "cmdLockVisit" And _

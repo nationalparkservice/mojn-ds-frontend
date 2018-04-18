@@ -15,10 +15,10 @@ Begin Form
     Width =12906
     DatasheetFontHeight =11
     ItemSuffix =32
-    Left =7560
-    Top =2490
-    Right =21000
-    Bottom =11715
+    Left =7035
+    Top =1785
+    Right =20220
+    Bottom =11010
     DatasheetGridlinesColor =15921906
     RecSrcDt = Begin
         0x211d80114df3e440
@@ -817,25 +817,10 @@ Begin Form
                     ForeColor =4210752
                     Name ="cmdClose"
                     Caption ="Close"
+                    OnClick ="[Event Procedure]"
                     FontName ="Arial"
                     ControlTipText ="Close Form"
                     GridlineColor =10921638
-                    OnClickEmMacro = Begin
-                        Version =196611
-                        ColumnsShown =8
-                        Begin
-                            Action ="Close"
-                            Argument ="-1"
-                            Argument =""
-                            Argument ="0"
-                        End
-                        Begin
-                            Comment ="_AXL:<?xml version=\"1.0\" encoding=\"UTF-16\" standalone=\"no\"?>\015\012<UserI"
-                                "nterfaceMacro For=\"cmdClose\" xmlns=\"http://schemas.microsoft.com/office/acces"
-                                "sservices/2009/11/application\"><Statements><Action Name=\"CloseWindow\"/></Stat"
-                                "ements></UserInterfaceMacro>"
-                        End
-                    End
 
                     LayoutCachedLeft =11640
                     LayoutCachedTop =5700
@@ -950,6 +935,7 @@ Begin Form
                     BorderColor =10921638
                     Name ="chkActive"
                     ControlSource ="IsActive"
+                    DefaultValue ="True"
                     GridlineColor =10921638
 
                     LayoutCachedLeft =2940
@@ -1036,41 +1022,34 @@ Option Explicit
 Const mstrcFormName As String = "app_ManageServers"
 
 Private Sub Form_AfterUpdate()
-
     On Error GoTo Error_Handler
     
-    Me.txtConnectionString = ODBCConnectionStringFromServerProfile(Me!ID)
+    Me.txtConnectionString = rlnkODBCConnectionStringFromServerProfile(Me!ID)
 
 Exit_Sub:
     Exit Sub
-    
 Error_Handler:
     MsgBox "Form: " & mstrcFormName & vbNewLine & "Sub:  Form_AfterUpdate" & vbNewLine & "Error #" & Err.Number & ": " & Err.Description, vbCritical
     Resume Exit_Sub
-    
 End Sub
 
 Private Sub Form_Current()
-
     On Error GoTo Error_Handler
     
     If Me.Trusted_Connection <> True Then Me.Trusted_Connection = True
     
     If Not IsNull(Me!ID) Then
-        Me.txtConnectionString = ODBCConnectionStringFromServerProfile(Me!ID)
+        Me.txtConnectionString = rlnkODBCConnectionStringFromServerProfile(Me!ID)
     End If
 
 Exit_Sub:
     Exit Sub
-    
 Error_Handler:
     MsgBox "Form: " & mstrcFormName & vbNewLine & "Sub:  Form_Current" & vbNewLine & "Error #" & Err.Number & ": " & Err.Description, vbCritical
     Resume Exit_Sub
-    
 End Sub
 
 Private Sub txtServer_BeforeUpdate(Cancel As Integer)
-
     On Error GoTo Error_Handler
     
     Dim newname As String
@@ -1084,9 +1063,20 @@ Private Sub txtServer_BeforeUpdate(Cancel As Integer)
 
 Exit_Sub:
     Exit Sub
-    
 Error_Handler:
     MsgBox "Form: " & mstrcFormName & vbNewLine & "Sub:  txtServer_BeforeUpdate" & vbNewLine & "Error #" & Err.Number & ": " & Err.Description, vbCritical
     Resume Exit_Sub
+End Sub
+
+Private Sub cmdClose_Click()
+    On Error GoTo Error_Handler
     
+    Forms!appRelinkLinkTables.Form.Requery
+    DoCmd.Close acForm, Me.Name, acSavePrompt
+
+Exit_Sub:
+    Exit Sub
+Error_Handler:
+    MsgBox "Form: " & mstrcFormName & vbNewLine & "Sub:  Form_AfterUpdate" & vbNewLine & "Error #" & Err.Number & ": " & Err.Description, vbCritical
+    Resume Exit_Sub
 End Sub

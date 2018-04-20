@@ -1,4 +1,4 @@
 ﻿ref_ParkTaxonProtectedStatus
-ODBC;DRIVER=ODBC Driver 13 for SQL Server;SERVER=INPLAKE52V\MOJN;UID=mlehman;Trusted_Connection=Yes;APP=Microsoft Office 2016;DATABASE=Testing_MOJN_DS_Water;
+ODBC;DRIVER=ODBC Driver 13 for SQL Server;SERVER=INPLAKE52V\MOJN;UID=mlehman;PWD=;Trusted_Connection=Yes;APP=Microsoft Office 2016;DATABASE=Testing_MOJN_DS_Water;
 ref.ParkTaxonProtectedStatus
 TaxonID;+ParkID

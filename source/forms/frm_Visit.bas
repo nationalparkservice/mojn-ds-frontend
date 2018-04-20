@@ -9,6 +9,7 @@ Begin Form
     NavigationButtons = NotDefault
     CloseButton = NotDefault
     DividingLines = NotDefault
+    FilterOn = NotDefault
     AllowDesignChanges = NotDefault
     DefaultView =0
     ScrollBars =0
@@ -21,12 +22,12 @@ Begin Form
     Width =16560
     DatasheetFontHeight =11
     ItemSuffix =236
-    Left =-675
-    Top =405
-    Right =15885
-    Bottom =11460
+    Left =3825
+    Top =465
+    Right =20385
+    Bottom =11520
     DatasheetGridlinesColor =15921906
-    Filter ="ID = 284"
+    Filter ="ID = 231"
     RecSrcDt = Begin
         0xab2688a2f412e540
     End
@@ -760,7 +761,7 @@ Begin Form
                     Name ="cmdLockVisit"
                     Caption ="Locked"
                     OnClick ="[Event Procedure]"
-                    Picture ="Locked-32-Maroon"
+                    Picture ="Locked-32-Red"
                     GridlineColor =10921638
 
                     LayoutCachedLeft =13380
@@ -2199,8 +2200,8 @@ End Sub
 Public Sub VisitLock(bLocked As Boolean)
 On Error GoTo ErrorHandler
 
-    Dim ctl As control
-    Dim ctlSub As control
+    Dim ctl As Control
+    Dim ctlSub As Control
     
     For Each ctl In Me.Controls
         If ctl.Name <> "cmdLockVisit" And _

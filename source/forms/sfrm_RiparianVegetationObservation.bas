@@ -755,7 +755,7 @@ Private Sub cmdDeleteRiparianVegObs_Click()
             If YesNo = vbYes Then
                 CurrentDb.Execute "Delete * from data_RiparianVegetationObservation where ID = " & Me.ID, dbSeeChanges
                 Me.Requery
-                RiparianVegetationObservationExists = CheckRecExists(Me.Recordset, "RiparianVegetationActivityID = " & Me.Parent.VisitID)
+                RiparianVegetationObservationExists = CheckRecExists(Me.RecordsetClone, "RiparianVegetationActivityID = " & Me.Parent.VisitID)
                 If RiparianVegetationObservationExists Then
                     Me.sfrmRiparianVegetationPhoto.Enabled = True
                 Else
@@ -772,7 +772,7 @@ Private Sub cmdDeleteRiparianVegObs_Click()
             If YesNo = vbYes Then
                 CurrentDb.Execute "Delete * from data_RiparianVegetationObservation where ID = " & Me.ID, dbSeeChanges
                 Me.Requery
-                RiparianVegetationObservationExists = CheckRecExists(Me.Recordset, "RiparianVegetationActivityID = " & Me.Parent.VisitID)
+                RiparianVegetationObservationExists = CheckRecExists(Me.RecordsetClone, "RiparianVegetationActivityID = " & Me.Parent.VisitID)
                 If RiparianVegetationObservationExists Then
                     Me.sfrmRiparianVegetationPhoto.Enabled = True
                 Else

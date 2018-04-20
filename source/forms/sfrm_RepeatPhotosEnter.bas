@@ -20,13 +20,13 @@ Begin Form
     Width =15480
     DatasheetFontHeight =11
     ItemSuffix =36
-    Left =3825
-    Top =2550
-    Right =19935
-    Bottom =12090
+    Left =1815
+    Top =-1770
+    Right =17670
+    Bottom =7515
     DatasheetGridlinesColor =15921906
     RecSrcDt = Begin
-        0x830122a03219e540
+        0xc0ade2175119e540
     End
     RecordSource ="SELECT [data_Photo].[ID], [data_Photo].[PhotoActivityID], [data_Photo].[DateTake"
         "n], [data_Photo].[PhotoDescriptionCodeID], [data_Photo].[IsLibraryPhotoID], [dat"
@@ -215,8 +215,8 @@ Begin Form
                 Begin TextBox
                     OverlapFlags =85
                     IMESentenceMode =3
-                    Left =2430
-                    Top =300
+                    Left =2445
+                    Top =840
                     Width =2130
                     Height =330
                     ColumnWidth =1620
@@ -230,26 +230,26 @@ Begin Form
                     DefaultValue ="=[Forms]![frm_Visit]![VisitDate]"
                     GridlineColor =10921638
 
-                    LayoutCachedLeft =2430
-                    LayoutCachedTop =300
-                    LayoutCachedWidth =4560
-                    LayoutCachedHeight =630
+                    LayoutCachedLeft =2445
+                    LayoutCachedTop =840
+                    LayoutCachedWidth =4575
+                    LayoutCachedHeight =1170
                     Begin
                         Begin Label
                             OverlapFlags =85
-                            Left =300
-                            Top =300
+                            Left =315
+                            Top =840
                             Width =2040
                             Height =330
                             BorderColor =8355711
                             ForeColor =8355711
                             Name ="DateTaken_Label"
-                            Caption ="DateTaken"
+                            Caption ="Date Taken"
                             GridlineColor =10921638
-                            LayoutCachedLeft =300
-                            LayoutCachedTop =300
-                            LayoutCachedWidth =2340
-                            LayoutCachedHeight =630
+                            LayoutCachedLeft =315
+                            LayoutCachedTop =840
+                            LayoutCachedWidth =2355
+                            LayoutCachedHeight =1170
                         End
                     End
                 End
@@ -259,8 +259,8 @@ Begin Form
                     ScrollBars =2
                     OverlapFlags =85
                     IMESentenceMode =3
-                    Left =2430
-                    Top =1980
+                    Left =2445
+                    Top =2520
                     Width =6210
                     Height =660
                     ColumnWidth =3000
@@ -271,26 +271,26 @@ Begin Form
                     ControlSource ="OriginalFilePath"
                     GridlineColor =10921638
 
-                    LayoutCachedLeft =2430
-                    LayoutCachedTop =1980
-                    LayoutCachedWidth =8640
-                    LayoutCachedHeight =2640
+                    LayoutCachedLeft =2445
+                    LayoutCachedTop =2520
+                    LayoutCachedWidth =8655
+                    LayoutCachedHeight =3180
                     Begin
                         Begin Label
                             OverlapFlags =85
-                            Left =300
-                            Top =1980
+                            Left =315
+                            Top =2520
                             Width =2040
                             Height =510
                             BorderColor =8355711
                             ForeColor =8355711
                             Name ="OriginalFilePath_Label"
-                            Caption ="OriginalFilePath"
+                            Caption ="Incoming File"
                             GridlineColor =10921638
-                            LayoutCachedLeft =300
-                            LayoutCachedTop =1980
-                            LayoutCachedWidth =2340
-                            LayoutCachedHeight =2490
+                            LayoutCachedLeft =315
+                            LayoutCachedTop =2520
+                            LayoutCachedWidth =2355
+                            LayoutCachedHeight =3030
                         End
                     End
                 End
@@ -300,8 +300,8 @@ Begin Form
                     ScrollBars =2
                     OverlapFlags =85
                     IMESentenceMode =3
-                    Left =2430
-                    Top =2760
+                    Left =2445
+                    Top =3300
                     Width =6210
                     Height =660
                     ColumnWidth =3000
@@ -312,34 +312,34 @@ Begin Form
                     ControlSource ="RenamedFilePath"
                     GridlineColor =10921638
 
-                    LayoutCachedLeft =2430
-                    LayoutCachedTop =2760
-                    LayoutCachedWidth =8640
-                    LayoutCachedHeight =3420
+                    LayoutCachedLeft =2445
+                    LayoutCachedTop =3300
+                    LayoutCachedWidth =8655
+                    LayoutCachedHeight =3960
                     Begin
                         Begin Label
                             OverlapFlags =85
-                            Left =300
-                            Top =2760
+                            Left =315
+                            Top =3300
                             Width =2040
-                            Height =510
+                            Height =555
                             BorderColor =8355711
                             ForeColor =8355711
                             Name ="RenamedFilePath_Label"
-                            Caption ="RenamedFilePath"
+                            Caption ="Renamed File (proposed)"
                             GridlineColor =10921638
-                            LayoutCachedLeft =300
-                            LayoutCachedTop =2760
-                            LayoutCachedWidth =2340
-                            LayoutCachedHeight =3270
+                            LayoutCachedLeft =315
+                            LayoutCachedTop =3300
+                            LayoutCachedWidth =2355
+                            LayoutCachedHeight =3855
                         End
                     End
                 End
                 Begin TextBox
                     OverlapFlags =85
                     IMESentenceMode =3
-                    Left =2430
-                    Top =4800
+                    Left =2445
+                    Top =5340
                     Width =3660
                     Height =330
                     ColumnWidth =3000
@@ -350,34 +350,34 @@ Begin Form
                     ControlSource ="UtmX_m"
                     GridlineColor =10921638
 
-                    LayoutCachedLeft =2430
-                    LayoutCachedTop =4800
-                    LayoutCachedWidth =6090
-                    LayoutCachedHeight =5130
+                    LayoutCachedLeft =2445
+                    LayoutCachedTop =5340
+                    LayoutCachedWidth =6105
+                    LayoutCachedHeight =5670
                     Begin
                         Begin Label
                             OverlapFlags =85
-                            Left =300
-                            Top =4800
+                            Left =315
+                            Top =5340
                             Width =2040
                             Height =330
                             BorderColor =8355711
                             ForeColor =8355711
                             Name ="UtmX_m_Label"
-                            Caption ="UtmX_m"
+                            Caption ="UTM X (m)"
                             GridlineColor =10921638
-                            LayoutCachedLeft =300
-                            LayoutCachedTop =4800
-                            LayoutCachedWidth =2340
-                            LayoutCachedHeight =5130
+                            LayoutCachedLeft =315
+                            LayoutCachedTop =5340
+                            LayoutCachedWidth =2355
+                            LayoutCachedHeight =5670
                         End
                     End
                 End
                 Begin TextBox
                     OverlapFlags =85
                     IMESentenceMode =3
-                    Left =2430
-                    Top =5220
+                    Left =2445
+                    Top =5760
                     Width =3660
                     Height =330
                     ColumnWidth =3000
@@ -388,26 +388,26 @@ Begin Form
                     ControlSource ="UtmY_m"
                     GridlineColor =10921638
 
-                    LayoutCachedLeft =2430
-                    LayoutCachedTop =5220
-                    LayoutCachedWidth =6090
-                    LayoutCachedHeight =5550
+                    LayoutCachedLeft =2445
+                    LayoutCachedTop =5760
+                    LayoutCachedWidth =6105
+                    LayoutCachedHeight =6090
                     Begin
                         Begin Label
                             OverlapFlags =85
-                            Left =300
-                            Top =5220
+                            Left =315
+                            Top =5760
                             Width =2040
                             Height =330
                             BorderColor =8355711
                             ForeColor =8355711
                             Name ="UtmY_m_Label"
-                            Caption ="UtmY_m"
+                            Caption ="UTM Y (m)"
                             GridlineColor =10921638
-                            LayoutCachedLeft =300
-                            LayoutCachedTop =5220
-                            LayoutCachedWidth =2340
-                            LayoutCachedHeight =5550
+                            LayoutCachedLeft =315
+                            LayoutCachedTop =5760
+                            LayoutCachedWidth =2355
+                            LayoutCachedHeight =6090
                         End
                     End
                 End
@@ -416,8 +416,8 @@ Begin Form
                     ScrollBars =2
                     OverlapFlags =85
                     IMESentenceMode =3
-                    Left =2430
-                    Top =5700
+                    Left =2445
+                    Top =6240
                     Width =6210
                     Height =1140
                     ColumnWidth =3000
@@ -428,15 +428,15 @@ Begin Form
                     ControlSource ="Notes"
                     GridlineColor =10921638
 
-                    LayoutCachedLeft =2430
-                    LayoutCachedTop =5700
-                    LayoutCachedWidth =8640
-                    LayoutCachedHeight =6840
+                    LayoutCachedLeft =2445
+                    LayoutCachedTop =6240
+                    LayoutCachedWidth =8655
+                    LayoutCachedHeight =7380
                     Begin
                         Begin Label
                             OverlapFlags =85
-                            Left =300
-                            Top =5700
+                            Left =315
+                            Top =6240
                             Width =2040
                             Height =330
                             BorderColor =8355711
@@ -444,18 +444,18 @@ Begin Form
                             Name ="Notes_Label"
                             Caption ="Notes"
                             GridlineColor =10921638
-                            LayoutCachedLeft =300
-                            LayoutCachedTop =5700
-                            LayoutCachedWidth =2340
-                            LayoutCachedHeight =6030
+                            LayoutCachedLeft =315
+                            LayoutCachedTop =6240
+                            LayoutCachedWidth =2355
+                            LayoutCachedHeight =6570
                         End
                     End
                 End
                 Begin ComboBox
                     OverlapFlags =85
                     IMESentenceMode =3
-                    Left =2430
-                    Top =720
+                    Left =2445
+                    Top =1260
                     Width =3330
                     Height =315
                     BoundColumn =1
@@ -470,37 +470,37 @@ Begin Form
                     AfterUpdate ="[Event Procedure]"
                     GridlineColor =10921638
 
-                    LayoutCachedLeft =2430
-                    LayoutCachedTop =720
-                    LayoutCachedWidth =5760
-                    LayoutCachedHeight =1035
+                    LayoutCachedLeft =2445
+                    LayoutCachedTop =1260
+                    LayoutCachedWidth =5775
+                    LayoutCachedHeight =1575
                     ForeThemeColorIndex =0
                     ForeTint =75.0
                     ForeShade =100.0
                     Begin
                         Begin Label
                             OverlapFlags =85
-                            Left =300
-                            Top =720
+                            Left =315
+                            Top =1260
                             Width =2040
                             Height =330
                             BorderColor =8355711
                             ForeColor =8355711
                             Name ="PhotoDescriptionCodeID_Label"
-                            Caption ="PhotoDescriptionCodeID"
+                            Caption ="Photo Code"
                             GridlineColor =10921638
-                            LayoutCachedLeft =300
-                            LayoutCachedTop =720
-                            LayoutCachedWidth =2340
-                            LayoutCachedHeight =1050
+                            LayoutCachedLeft =315
+                            LayoutCachedTop =1260
+                            LayoutCachedWidth =2355
+                            LayoutCachedHeight =1590
                         End
                     End
                 End
                 Begin ComboBox
                     OverlapFlags =85
                     IMESentenceMode =3
-                    Left =2430
-                    Top =1560
+                    Left =2445
+                    Top =2100
                     Width =1950
                     Height =315
                     TabIndex =1
@@ -515,37 +515,37 @@ Begin Form
                         "ryPhoto; "
                     GridlineColor =10921638
 
-                    LayoutCachedLeft =2430
-                    LayoutCachedTop =1560
-                    LayoutCachedWidth =4380
-                    LayoutCachedHeight =1875
+                    LayoutCachedLeft =2445
+                    LayoutCachedTop =2100
+                    LayoutCachedWidth =4395
+                    LayoutCachedHeight =2415
                     ForeThemeColorIndex =0
                     ForeTint =75.0
                     ForeShade =100.0
                     Begin
                         Begin Label
                             OverlapFlags =85
-                            Left =300
-                            Top =1560
+                            Left =315
+                            Top =2100
                             Width =2040
                             Height =330
                             BorderColor =8355711
                             ForeColor =8355711
                             Name ="IsLibraryPhotoID_Label"
-                            Caption ="IsLibraryPhotoID"
+                            Caption ="Library Photo?"
                             GridlineColor =10921638
-                            LayoutCachedLeft =300
-                            LayoutCachedTop =1560
-                            LayoutCachedWidth =2340
-                            LayoutCachedHeight =1890
+                            LayoutCachedLeft =315
+                            LayoutCachedTop =2100
+                            LayoutCachedWidth =2355
+                            LayoutCachedHeight =2430
                         End
                     End
                 End
                 Begin ComboBox
                     OverlapFlags =85
                     IMESentenceMode =3
-                    Left =2430
-                    Top =3540
+                    Left =2445
+                    Top =4080
                     Width =2430
                     Height =315
                     TabIndex =4
@@ -560,57 +560,54 @@ Begin Form
                     GridlineColor =10921638
                     AllowValueListEdits =0
 
-                    LayoutCachedLeft =2430
-                    LayoutCachedTop =3540
-                    LayoutCachedWidth =4860
-                    LayoutCachedHeight =3855
+                    LayoutCachedLeft =2445
+                    LayoutCachedTop =4080
+                    LayoutCachedWidth =4875
+                    LayoutCachedHeight =4395
                     ForeThemeColorIndex =0
                     ForeTint =75.0
                     ForeShade =100.0
                     Begin
                         Begin Label
                             OverlapFlags =85
-                            Left =300
-                            Top =3540
+                            Left =315
+                            Top =4080
                             Width =2040
                             Height =330
                             BorderColor =8355711
                             ForeColor =8355711
                             Name ="GPSUnitID_Label"
-                            Caption ="GPSUnitID"
+                            Caption ="GPS Unit"
                             GridlineColor =10921638
-                            LayoutCachedLeft =300
-                            LayoutCachedTop =3540
-                            LayoutCachedWidth =2340
-                            LayoutCachedHeight =3870
+                            LayoutCachedLeft =315
+                            LayoutCachedTop =4080
+                            LayoutCachedWidth =2355
+                            LayoutCachedHeight =4410
                         End
                     End
                 End
                 Begin Image
-                    OldBorderStyle =1
                     BorderWidth =1
                     PictureType =1
-                    Left =8820
-                    Top =240
+                    Left =8835
+                    Top =540
                     Width =6480
                     Height =4080
                     BorderColor =10921638
                     Name ="imgCurrentPhoto"
-                    Picture ="\\\\INPLAKE52V\\ORG\\MONITORING\\_FieldPhotoOriginals_DoNotModify\\MOJN_05\\2016"
-                        "_11_30\\PB300262.JPG"
                     GridlineColor =10921638
 
-                    LayoutCachedLeft =8820
-                    LayoutCachedTop =240
-                    LayoutCachedWidth =15300
-                    LayoutCachedHeight =4320
+                    LayoutCachedLeft =8835
+                    LayoutCachedTop =540
+                    LayoutCachedWidth =15315
+                    LayoutCachedHeight =4620
                     TabIndex =15
                 End
                 Begin ComboBox
                     OverlapFlags =85
                     IMESentenceMode =3
-                    Left =2430
-                    Top =3960
+                    Left =2445
+                    Top =4500
                     Width =2430
                     Height =315
                     TabIndex =5
@@ -625,37 +622,37 @@ Begin Form
                         "ontalDatum; "
                     GridlineColor =10921638
 
-                    LayoutCachedLeft =2430
-                    LayoutCachedTop =3960
-                    LayoutCachedWidth =4860
-                    LayoutCachedHeight =4275
+                    LayoutCachedLeft =2445
+                    LayoutCachedTop =4500
+                    LayoutCachedWidth =4875
+                    LayoutCachedHeight =4815
                     ForeThemeColorIndex =0
                     ForeTint =75.0
                     ForeShade =100.0
                     Begin
                         Begin Label
                             OverlapFlags =85
-                            Left =300
-                            Top =3960
+                            Left =315
+                            Top =4500
                             Width =2040
                             Height =330
                             BorderColor =8355711
                             ForeColor =8355711
                             Name ="HorizontalDatumID_Label"
-                            Caption ="HorizontalDatumID"
+                            Caption ="Datum"
                             GridlineColor =10921638
-                            LayoutCachedLeft =300
-                            LayoutCachedTop =3960
-                            LayoutCachedWidth =2340
-                            LayoutCachedHeight =4290
+                            LayoutCachedLeft =315
+                            LayoutCachedTop =4500
+                            LayoutCachedWidth =2355
+                            LayoutCachedHeight =4830
                         End
                     End
                 End
                 Begin ComboBox
                     OverlapFlags =85
                     IMESentenceMode =3
-                    Left =2430
-                    Top =4380
+                    Left =2445
+                    Top =4920
                     Width =2430
                     Height =315
                     TabIndex =6
@@ -669,55 +666,57 @@ Begin Form
                     RowSource ="SELECT lookup_UtmZone.Label, lookup_UtmZone.ID FROM lookup_UtmZone; "
                     GridlineColor =10921638
 
-                    LayoutCachedLeft =2430
-                    LayoutCachedTop =4380
-                    LayoutCachedWidth =4860
-                    LayoutCachedHeight =4695
+                    LayoutCachedLeft =2445
+                    LayoutCachedTop =4920
+                    LayoutCachedWidth =4875
+                    LayoutCachedHeight =5235
                     ForeThemeColorIndex =0
                     ForeTint =75.0
                     ForeShade =100.0
                     Begin
                         Begin Label
                             OverlapFlags =85
-                            Left =300
-                            Top =4380
+                            Left =315
+                            Top =4920
                             Width =2040
                             Height =330
                             BorderColor =8355711
                             ForeColor =8355711
                             Name ="UTMZoneID_Label"
-                            Caption ="UTMZoneID"
+                            Caption ="UTM Zone"
                             GridlineColor =10921638
-                            LayoutCachedLeft =300
-                            LayoutCachedTop =4380
-                            LayoutCachedWidth =2340
-                            LayoutCachedHeight =4710
+                            LayoutCachedLeft =315
+                            LayoutCachedTop =4920
+                            LayoutCachedWidth =2355
+                            LayoutCachedHeight =5250
                         End
                     End
                 End
                 Begin TextBox
+                    DecimalPlaces =0
                     OverlapFlags =85
                     IMESentenceMode =3
-                    Left =2430
-                    Top =1140
+                    Left =2445
+                    Top =1680
                     Width =2130
                     Height =330
                     TabIndex =11
                     BorderColor =10921638
                     ForeColor =4210752
                     Name ="txtFileNumber"
-                    AfterUpdate ="[Event Procedure]"
+                    BeforeUpdate ="[Event Procedure]"
+                    DefaultValue ="\"\""
                     GridlineColor =10921638
 
-                    LayoutCachedLeft =2430
-                    LayoutCachedTop =1140
-                    LayoutCachedWidth =4560
-                    LayoutCachedHeight =1470
+                    LayoutCachedLeft =2445
+                    LayoutCachedTop =1680
+                    LayoutCachedWidth =4575
+                    LayoutCachedHeight =2010
                     Begin
                         Begin Label
                             OverlapFlags =85
-                            Left =300
-                            Top =1140
+                            Left =315
+                            Top =1680
                             Width =2040
                             Height =330
                             BorderColor =8355711
@@ -725,17 +724,17 @@ Begin Form
                             Name ="Label32"
                             Caption ="File Number"
                             GridlineColor =10921638
-                            LayoutCachedLeft =300
-                            LayoutCachedTop =1140
-                            LayoutCachedWidth =2340
-                            LayoutCachedHeight =1470
+                            LayoutCachedLeft =315
+                            LayoutCachedTop =1680
+                            LayoutCachedWidth =2355
+                            LayoutCachedHeight =2010
                         End
                     End
                 End
                 Begin CommandButton
                     OverlapFlags =85
                     Left =4500
-                    Top =7200
+                    Top =7680
                     Width =1980
                     TabIndex =12
                     Name ="cmdSaveClose"
@@ -744,9 +743,9 @@ Begin Form
                     GridlineColor =10921638
 
                     LayoutCachedLeft =4500
-                    LayoutCachedTop =7200
+                    LayoutCachedTop =7680
                     LayoutCachedWidth =6480
-                    LayoutCachedHeight =7560
+                    LayoutCachedHeight =8040
                     ForeThemeColorIndex =-1
                     ForeTint =100.0
                     UseTheme =0
@@ -761,11 +760,12 @@ Begin Form
                     WebImagePaddingTop =2
                     WebImagePaddingRight =1
                     WebImagePaddingBottom =1
+                    Overlaps =1
                 End
                 Begin CommandButton
                     OverlapFlags =85
                     Left =2340
-                    Top =7200
+                    Top =7680
                     Width =1980
                     TabIndex =13
                     Name ="cmdCancel"
@@ -774,9 +774,9 @@ Begin Form
                     GridlineColor =10921638
 
                     LayoutCachedLeft =2340
-                    LayoutCachedTop =7200
+                    LayoutCachedTop =7680
                     LayoutCachedWidth =4320
-                    LayoutCachedHeight =7560
+                    LayoutCachedHeight =8040
                     ForeThemeColorIndex =-1
                     ForeTint =100.0
                     UseTheme =0
@@ -791,11 +791,12 @@ Begin Form
                     WebImagePaddingTop =2
                     WebImagePaddingRight =1
                     WebImagePaddingBottom =1
+                    Overlaps =1
                 End
                 Begin CommandButton
                     OverlapFlags =85
                     Left =6660
-                    Top =7200
+                    Top =7680
                     Width =1980
                     TabIndex =14
                     Name ="cmdSaveNew"
@@ -804,9 +805,9 @@ Begin Form
                     GridlineColor =10921638
 
                     LayoutCachedLeft =6660
-                    LayoutCachedTop =7200
+                    LayoutCachedTop =7680
                     LayoutCachedWidth =8640
-                    LayoutCachedHeight =7560
+                    LayoutCachedHeight =8040
                     ForeThemeColorIndex =-1
                     ForeTint =100.0
                     UseTheme =0
@@ -821,6 +822,29 @@ Begin Form
                     WebImagePaddingTop =2
                     WebImagePaddingRight =1
                     WebImagePaddingBottom =1
+                    Overlaps =1
+                End
+                Begin Label
+                    BackStyle =1
+                    OverlapFlags =85
+                    TextAlign =2
+                    Left =300
+                    Top =360
+                    Width =8355
+                    Height =300
+                    BackColor =4281912
+                    BorderColor =8355711
+                    ForeColor =16777215
+                    Name ="lblPhotoDataEntry"
+                    Caption ="Add New Photo"
+                    GridlineColor =10921638
+                    LayoutCachedLeft =300
+                    LayoutCachedTop =360
+                    LayoutCachedWidth =8655
+                    LayoutCachedHeight =660
+                    BackThemeColorIndex =-1
+                    ForeThemeColorIndex =-1
+                    ForeTint =100.0
                 End
             End
         End
@@ -845,6 +869,8 @@ Private Sub CloseSubform()
 'Close form
 Forms!frm_Visit.sfrmPhotoActivity.Form!txtDummy.SetFocus
 Me.imgCurrentPhoto.Picture = ""
+Me.txtFileNumber = ""
+Forms!frm_Visit.sfrmPhotoActivity.Form!sfrmRepeatPhotosList.Requery
 Me.Visible = False
 
 End Sub
@@ -897,19 +923,31 @@ Private Function GenerateRenamedFilePath(SiteCode As String, DateTaken As Date, 
 
 GenerateRenamedFilePath = ""
 
-'If any arguments are missing, exit the function
-If IsNothing(SiteCode) Or IsNothing(Description) Or IsNothing(DateTaken) Or IsNothing(fileNumber) Then
-    GoTo Exit_Function
+If (Not IsNothing(SiteCode)) And (Not IsNothing(Description)) And (Not IsNothing(DateTaken)) And (Not IsNothing(fileNumber)) Then
+    GenerateRenamedFilePath = GetPhotosPath() & "\" & SiteCode & "\" & SiteCode & "_" & Format(DateTaken, "yyyymmdd") & "_" & Description & "_" & fileNumber & ".JPG"
 End If
-
-GenerateRenamedFilePath = GetPhotosPath() & "\" & SiteCode & "\" & SiteCode & "_" & Format(DateTaken, "yyyymmdd") & "_" & Description & "_" & fileNumber & ".JPG"
 
 Exit_Function:
     Exit Function
 Error_Handler:
+    MsgBox Err.Number & ": " & Err.Description
     Resume Exit_Function
 End Function
 
+Private Function GenerateRenamedFileFolder(SiteCode As String) As String
+
+GenerateRenamedFileFolder = ""
+
+If Not IsNothing(SiteCode) Then
+    GenerateRenamedFileFolder = GetPhotosPath() & "\" & SiteCode & "\"
+End If
+
+Exit_Function:
+    Exit Function
+Error_Handler:
+    MsgBox Err.Number & ": " & Err.Description
+    Resume Exit_Function
+End Function
 
 Private Sub cboPhotoDescriptionCode_AfterUpdate()
 
@@ -924,6 +962,8 @@ Private Sub cmdCancel_Click()
 'Undo edits after making sure that they haven't been committed to the database
 If Me.NewRecord Then
     Me.Undo
+    Me.imgCurrentPhoto.Picture = ""
+    Me.txtFileNumber = ""
 Else
     MsgBox ("This record has already been saved. Contact the data management team if this photo should be removed.")
     GoTo Exit_Function
@@ -934,6 +974,7 @@ CloseSubform
 Exit_Function:
     Exit Sub
 Error_Handler:
+    MsgBox Err.Number & ": " & Err.Description
     Resume Exit_Function
 End Sub
 
@@ -944,6 +985,7 @@ If SaveRecord() Then CloseSubform
 Exit_Function:
     Exit Sub
 Error_Handler:
+    MsgBox Err.Number & ": " & Err.Description
     Resume Exit_Function
 End Sub
 
@@ -953,16 +995,21 @@ On Error GoTo Error_Handler
 Dim fso As Object
 Dim pathOrigin As String
 Dim pathDest As String
+Dim folderDest As String
 Dim origFileExists As Boolean
 Dim renamedFileExists As Boolean
 Dim recordFound As Boolean
+Dim photoRst As DAO.Recordset
+
+Set photoRst = CurrentDb.OpenRecordset("SELECT RenamedFilePath FROM data_Photo WHERE PhotoActivityID = " & Me.PhotoActivityID)
 
 Set fso = VBA.CreateObject("Scripting.FileSystemObject")
-pathOrigin = Me.txtOriginalFilePath
-pathDest = Me.txtRenamedFilePath
+pathOrigin = IIf(IsNull(Me.txtOriginalFilePath), "", Me.txtOriginalFilePath)
+pathDest = IIf(IsNull(Me.txtRenamedFilePath), "", Me.txtRenamedFilePath)
+folderDest = GenerateRenamedFileFolder(GetSiteCode(Forms!frm_Visit.SiteID))
 origFileExists = FileExists(pathOrigin) And Not IsNothing(pathOrigin)
 renamedFileExists = FileExists(pathDest) And Not IsNothing(pathDest)
-recordFound = IIf(Not IsNothing(Me.txtRenamedFilePath), CheckRecExists(Me.RecordsetClone, "RenamedFilePath = '" & Me.txtRenamedFilePath & "'"), False)
+recordFound = IIf(Not IsNothing(Me.txtRenamedFilePath), CheckRecExists(photoRst, "RenamedFilePath = '" & Me.txtRenamedFilePath & "'"), False)
 
 'Check for original file
 If Not origFileExists Then
@@ -984,22 +1031,27 @@ ElseIf Not recordFound And renamedFileExists Then
     SaveRecord = True
 'If the renamed photo doesn't exist and there's no record in the database, save the record and copy & rename the photo
 ElseIf Not recordFound And Not renamedFileExists Then
-    DoCmd.RunCommand acCmdSaveRecord
+    If Not FolderExists(folderDest) Then fso.CreateFolder (folderDest)
     Call fso.CopyFile(pathOrigin, pathDest, False)
+    DoCmd.RunCommand acCmdSaveRecord
     SaveRecord = True
 End If
 
 Exit_Function:
     Exit Function
 Error_Handler:
-    MsgBox Err.Number & Err.Description
+    MsgBox Err.Number & ": " & Err.Description
     SaveRecord = False
     Resume Exit_Function
 End Function
 
 Private Sub cmdSaveNew_Click()
 
-If SaveRecord() Then DoCmd.RunCommand acCmdRecordsGoToNew
+If SaveRecord() Then
+    DoCmd.RunCommand acCmdRecordsGoToNew
+    Me.imgCurrentPhoto.Picture = ""
+    Me.txtFileNumber = ""
+End If
 
 End Sub
 
@@ -1021,10 +1073,15 @@ End If
 
 End Sub
 
-Private Sub txtFileNumber_AfterUpdate()
+Private Sub txtFileNumber_BeforeUpdate(Cancel As Integer)
 
 If Not IsNothing(Me.txtFileNumber) And Not IsNothing(Me.txtDateTaken) And Not IsNothing(Me.cboPhotoDescriptionCode) Then
- UpdatePaths
+ If IsNumeric(Me.txtFileNumber) And (Len(Me.txtFileNumber) >= 4) Then
+    UpdatePaths
+ Else
+    MsgBox ("File number must be a number with at least four digits. If the file number was recorded with fewer than four digits, pad it with zeroes (e.g. 123 becomes 0123)")
+    Cancel = True
+ End If
 End If
 
 End Sub

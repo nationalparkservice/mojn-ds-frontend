@@ -20,10 +20,10 @@ Begin Form
     Width =15840
     DatasheetFontHeight =11
     ItemSuffix =22
-    Left =195
-    Top =1065
-    Right =16305
-    Bottom =9945
+    Left =3195
+    Top =2595
+    Right =19305
+    Bottom =11835
     DatasheetGridlinesColor =15921906
     RecSrcDt = Begin
         0x372b2ba47615e540
@@ -902,8 +902,8 @@ On Error GoTo Error_Handler
     Dim EstDischargeExists As Boolean
     Dim VolDischargeExists As Boolean
 
-    EstDischargeExists = CheckRecExists(Me.sfrmDischargeEstimated.Form.Recordset, "DischargeActivityID = " & Me.ID)
-    VolDischargeExists = CheckRecExists(Me.sfrmDischargeVolumetric.Form.Recordset, "DischargeActivityID = " & Me.ID)
+    EstDischargeExists = CheckRecExists(Me.sfrmDischargeEstimated.Form.RecordsetClone, "DischargeActivityID = " & Me.ID)
+    VolDischargeExists = CheckRecExists(Me.sfrmDischargeVolumetric.Form.RecordsetClone, "DischargeActivityID = " & Me.ID)
     
     If IsNull(Me.FlowConditionID.Value) = True Then  'Flow condition not declared; disable all other controls
         EnableToggles (False)
@@ -953,8 +953,8 @@ On Error GoTo Error_Handler
     Dim EstDischargeExists As Boolean
     Dim VolDischargeExists As Boolean
 
-    EstDischargeExists = CheckRecExists(Me.sfrmDischargeEstimated.Form.Recordset, "DischargeActivityID = " & Me.ID)
-    VolDischargeExists = CheckRecExists(Me.sfrmDischargeVolumetric.Form.Recordset, "DischargeActivityID = " & Me.ID)
+    EstDischargeExists = CheckRecExists(Me.sfrmDischargeEstimated.Form.RecordsetClone, "DischargeActivityID = " & Me.ID)
+    VolDischargeExists = CheckRecExists(Me.sfrmDischargeVolumetric.Form.RecordsetClone, "DischargeActivityID = " & Me.ID)
     DoCmd.RunCommand acCmdSaveRecord
     
     Select Case Me.FlowConditionID.Value
@@ -1008,8 +1008,8 @@ On Error GoTo Error_Handler
     Dim EstDischargeExists As Boolean
     Dim VolDischargeExists As Boolean
     
-    EstDischargeExists = CheckRecExists(Me.sfrmDischargeEstimated.Form.Recordset, "DischargeActivityID = " & Me.ID)
-    VolDischargeExists = CheckRecExists(Me.sfrmDischargeVolumetric.Form.Recordset, "DischargeActivityID = " & Me.ID)
+    EstDischargeExists = CheckRecExists(Me.sfrmDischargeEstimated.Form.RecordsetClone, "DischargeActivityID = " & Me.ID)
+    VolDischargeExists = CheckRecExists(Me.sfrmDischargeVolumetric.Form.RecordsetClone, "DischargeActivityID = " & Me.ID)
     
     'As long as no volumetric discharge data has been entered, switch view to estimated discharge
         If Me.tgl_EstimatedDischarge.Value = True And Not VolDischargeExists Then
@@ -1037,8 +1037,8 @@ On Error GoTo Error_Handler
     Dim EstDischargeExists As Boolean
     Dim VolDischargeExists As Boolean
     
-    EstDischargeExists = CheckRecExists(Me.sfrmDischargeEstimated.Form.Recordset, "DischargeActivityID = " & Me.ID)
-    VolDischargeExists = CheckRecExists(Me.sfrmDischargeVolumetric.Form.Recordset, "DischargeActivityID = " & Me.ID)
+    EstDischargeExists = CheckRecExists(Me.sfrmDischargeEstimated.Form.RecordsetClone, "DischargeActivityID = " & Me.ID)
+    VolDischargeExists = CheckRecExists(Me.sfrmDischargeVolumetric.Form.RecordsetClone, "DischargeActivityID = " & Me.ID)
     
     'As long as no estimated discharge data has been entered, switch view to volumetric discharge
         If Me.tgl_VolumetricDischarge.Value = True And Not EstDischargeExists Then

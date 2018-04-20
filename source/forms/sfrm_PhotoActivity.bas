@@ -15,10 +15,10 @@ Begin Form
     Width =16170
     DatasheetFontHeight =11
     ItemSuffix =40
-    Left =3180
-    Top =525
-    Right =19020
-    Bottom =9495
+    Left =3150
+    Top =2550
+    Right =19245
+    Bottom =11775
     DatasheetGridlinesColor =15921906
     RecSrcDt = Begin
         0xc208564c6c18e540
@@ -199,7 +199,7 @@ Begin Form
         End
         Begin Section
             CanGrow = NotDefault
-            Height =19257
+            Height =19317
             BackColor =15921906
             Name ="Detail"
             AlternateBackColor =15527148

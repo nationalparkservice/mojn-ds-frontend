@@ -20,10 +20,10 @@ Begin Form
     Width =15840
     DatasheetFontHeight =11
     ItemSuffix =26
-    Left =885
-    Top =2430
-    Right =16725
-    Bottom =8070
+    Left =3375
+    Top =4455
+    Right =19215
+    Bottom =10095
     DatasheetGridlinesColor =15921906
     AfterInsert ="[Event Procedure]"
     RecSrcDt = Begin

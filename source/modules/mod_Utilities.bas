@@ -3,6 +3,48 @@
 Option Compare Database
 Option Explicit
 
+Public Function GetPhotosPath() As String
+
+GetPhotosPath = DLookup("Value", "app_ConfigurationVariable", "Label = 'PhotoShareDirectory'")
+
+End Function
+
+Public Function GetPhotosIncomingPath() As String
+
+GetPhotosIncomingPath = DLookup("Value", "app_ConfigurationVariable", "Label = 'PhotoIncomingShareDirectory'")
+
+End Function
+
+Public Function GetFieldNotesPath() As String
+
+GetFieldNotesPath = DLookup("Value", "app_ConfigurationVariable", "Label = 'FieldNotesShareDirectory'")
+
+End Function
+
+Public Function GetSiteInfoSheetPath() As String
+
+GetSiteInfoSheetPath = DLookup("Value", "app_ConfigurationVariable", "Label = 'SiteInfoSheetShareDirectory'")
+
+End Function
+
+Public Function GetPhotoDescriptionCode(PhotoDescriptionCodeID As Integer) As String
+
+GetPhotoDescriptionCode = DLookup("Code", "ref_PhotoDescriptionCode", "ID = " & PhotoDescriptionCodeID)
+
+End Function
+
+Public Function GetCameraCardLabel(CameraCardID As Integer) As String
+
+GetCameraCardLabel = DLookup("Label", "ref_CameraCard", "ID = " & CameraCardID)
+
+End Function
+
+Public Function GetSiteCode(SiteID As Integer) As String
+
+GetSiteCode = DLookup("Code", "data_Site", "ID = " & SiteID)
+
+End Function
+
 Public Function WaterYear(datDate As Date) As Integer
     'Returns the Water Year (Oct 1 - Sep 30) when given a date as input
     On Error GoTo Error_Handler
@@ -51,18 +93,20 @@ Public Function FolderExists(varPath As Variant) As Boolean
     On Error Resume Next
     If Len(varPath) > 0 Then
         FolderExists = (Len(Dir$(varPath, vbDirectory)) > 0&)
+    Else: FolderExists = False
     End If
+    
 End Function
 
 Public Function FileExists(varFile As Variant) As Boolean
 'Return whether a file exists
     On Error GoTo Err_FileExists
     
-    If IsNull(varFile) Then
+    If IsNothing(varFile) Then
         FileExists = False
-        Exit Function
+    Else
+        FileExists = (Len(Dir(varFile)) > 0)
     End If
-    FileExists = (Len(Dir(varFile)) > 0)
     
 Exit_FileExists:
         Exit Function
@@ -72,7 +116,8 @@ Err_FileExists:
 End Function
 
 Public Function CheckRecExists(rst As DAO.Recordset, filter As String, Optional message As String = "") As Boolean
-
+    On Error GoTo Error_Handler
+    
     rst.FindFirst filter
 
     If rst.NoMatch Then
@@ -81,6 +126,12 @@ Public Function CheckRecExists(rst As DAO.Recordset, filter As String, Optional 
         CheckRecExists = True
         If message <> "" Then MsgBox (message)
     End If
+
+Exit_Function:
+    Exit Function
+Error_Handler:
+    MsgBox Err.Number & Err.Description
+    Resume Exit_Function
 End Function
 
 Public Function IsNetwork(varUnitCode As Variant) As Boolean
@@ -119,7 +170,7 @@ Public Sub StatusBar(Optional msg As Variant)
 
 End Sub
 
-Public Function IsNothing(varToTest As Variant) As Integer
+Public Function IsNothing(varToTest As Variant) As Boolean
   ' Comments: Tests for a "logical" nothing based on data type
   '           Empty and Null = Nothing
   '           Number = 0 is Nothing

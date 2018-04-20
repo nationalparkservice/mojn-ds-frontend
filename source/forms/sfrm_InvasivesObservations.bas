@@ -973,7 +973,7 @@ Private Sub cmdDeleteInvasivesObservation_Click()
                 If YesNo = vbYes Then
                     CurrentDb.Execute "Delete * from data_InvasivesObservation where id = " & Me.ID, dbSeeChanges
                     Me.Requery
-                    InvasivesObservationsExists = CheckRecExists(Me.Recordset, "InvasivesActivityID = " & Me.Parent.VisitID)
+                    InvasivesObservationsExists = CheckRecExists(Me.RecordsetClone, "InvasivesActivityID = " & Me.Parent.VisitID)
                         If InvasivesObservationsExists Then
                             Me.sfrmInvasivesPhoto.Enabled = True
                         Else
@@ -990,7 +990,7 @@ Private Sub cmdDeleteInvasivesObservation_Click()
                 If YesNo = vbYes Then
                     CurrentDb.Execute "Delete * from data_InvasivesObservation where id = " & Me.ID, dbSeeChanges
                     Me.Requery
-                    InvasivesObservationsExists = CheckRecExists(Me.Recordset, "InvasivesActivityID = " & Me.Parent.VisitID)
+                    InvasivesObservationsExists = CheckRecExists(Me.RecordsetClone, "InvasivesActivityID = " & Me.Parent.VisitID)
                         If InvasivesObservationsExists Then
                             Me.sfrmInvasivesPhoto.Enabled = True
                         Else

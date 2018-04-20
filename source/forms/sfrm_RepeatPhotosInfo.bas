@@ -20,21 +20,19 @@ Begin Form
     Width =7935
     DatasheetFontHeight =11
     ItemSuffix =109
-    Left =8790
-    Top =7335
-    Right =16785
-    Bottom =10815
+    Left =9810
+    Top =8970
+    Right =17550
+    Bottom =12195
     DatasheetGridlinesColor =15921906
-    Filter ="data_Photo.ID = 1551"
     RecSrcDt = Begin
-        0x989316f9ef18e540
+        0x760844df3519e540
     End
     RecordSource ="SELECT data_Photo.*, lookup_IsLibraryPhoto.Label, ref_PhotoDescriptionCode.Label"
         " FROM ref_PhotoDescriptionCode RIGHT JOIN (lookup_IsLibraryPhoto RIGHT JOIN data"
         "_Photo ON lookup_IsLibraryPhoto.ID = data_Photo.IsLibraryPhotoID) ON ref_PhotoDe"
-        "scriptionCode.ID = data_Photo.PhotoDescriptionCodeID WHERE (((ref_PhotoDescripti"
-        "onCode.PhotoSOPID)=1)); "
-    Caption ="sfrm_EnterRepeatPhotos"
+        "scriptionCode.ID = data_Photo.PhotoDescriptionCodeID; "
+    Caption ="sfrm_RepeatPhotosInfo"
     DatasheetFontName ="Calibri"
     PrtMip = Begin
         0x6801000068010000680100006801000000000000201c0000e010000001000000 ,
@@ -290,6 +288,7 @@ Begin Form
             AlternateBackColor =15527148
             Begin
                 Begin TextBox
+                    TabStop = NotDefault
                     OldBorderStyle =0
                     OverlapFlags =93
                     TextAlign =2
@@ -301,6 +300,7 @@ Begin Form
                     Height =390
                     FontSize =14
                     FontWeight =700
+                    TabIndex =1
                     BorderColor =10921638
                     ForeColor =4210752
                     Name ="PhotoDescriptionCodeID"
@@ -313,13 +313,13 @@ Begin Form
                     LayoutCachedHeight =570
                 End
                 Begin Tab
+                    TabStop = NotDefault
                     OverlapFlags =255
                     Left =60
                     Top =405
                     Width =7875
                     Height =3015
                     FontSize =10
-                    TabIndex =2
                     Name ="tabPhotoDetail"
                     GridlineColor =10921638
 
@@ -773,7 +773,7 @@ Begin Form
                     Width =7620
                     Height =738
                     FontSize =10
-                    TabIndex =1
+                    TabIndex =2
                     BorderColor =10921638
                     ForeColor =4210752
                     Name ="Notes"

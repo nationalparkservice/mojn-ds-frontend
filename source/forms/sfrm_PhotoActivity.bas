@@ -14,11 +14,11 @@ Begin Form
     GridY =24
     Width =16170
     DatasheetFontHeight =11
-    ItemSuffix =39
-    Left =3405
-    Top =465
-    Right =19620
-    Bottom =9450
+    ItemSuffix =40
+    Left =3180
+    Top =525
+    Right =19020
+    Bottom =9495
     DatasheetGridlinesColor =15921906
     RecSrcDt = Begin
         0xc208564c6c18e540
@@ -209,30 +209,29 @@ Begin Form
                     OldBorderStyle =1
                     BorderWidth =3
                     PictureType =1
-                    Left =7995
+                    Left =7920
                     Top =420
                     Width =7920
                     Height =4710
                     BorderColor =10921638
                     Name ="imgCurrentPhoto"
-                    Picture ="M:\\MONITORING\\DS_Water\\Data\\Images\\JOTR_P_CON0215\\JOTR_P_CON0215_20161130_"
-                        "UPSTR_0250.JPG"
                     GridlineColor =10921638
 
-                    LayoutCachedLeft =7995
+                    LayoutCachedLeft =7920
                     LayoutCachedTop =420
-                    LayoutCachedWidth =15915
+                    LayoutCachedWidth =15840
                     LayoutCachedHeight =5130
                     TabIndex =5
                 End
                 Begin Subform
-                    OverlapFlags =85
+                    TabStop = NotDefault
+                    OverlapFlags =93
                     OldBorderStyle =0
                     Left =495
                     Top =750
                     Width =7140
-                    Height =7680
-                    TabIndex =1
+                    Height =7110
+                    TabIndex =2
                     BorderColor =10921638
                     Name ="sfrmRepeatPhotosList"
                     SourceObject ="Form.sfrm_RepeatPhotosList"
@@ -243,11 +242,11 @@ Begin Form
                     LayoutCachedLeft =495
                     LayoutCachedTop =750
                     LayoutCachedWidth =7635
-                    LayoutCachedHeight =8430
+                    LayoutCachedHeight =7860
                     Begin
                         Begin Label
                             FontItalic = NotDefault
-                            OverlapFlags =85
+                            OverlapFlags =93
                             Left =540
                             Top =420
                             Width =7080
@@ -265,16 +264,17 @@ Begin Form
                     End
                 End
                 Begin Subform
-                    OverlapFlags =85
+                    Visible = NotDefault
+                    OverlapFlags =93
                     OldBorderStyle =0
                     Left =8040
                     Top =5160
                     Width =7995
                     Height =3480
-                    TabIndex =2
+                    TabIndex =3
                     BorderColor =10921638
-                    Name ="sfrmRepeatPhotoInfo"
-                    SourceObject ="Form.sfrm_RepeatPhotoInfo"
+                    Name ="sfrmRepeatPhotosInfo"
+                    SourceObject ="Form.sfrm_RepeatPhotosInfo"
                     LinkChildFields ="PhotoActivityID"
                     LinkMasterFields ="ID"
                     GridlineColor =10921638
@@ -285,20 +285,21 @@ Begin Form
                     LayoutCachedHeight =8640
                 End
                 Begin CommandButton
-                    OverlapFlags =85
-                    Left =5280
-                    Top =8880
-                    Width =2340
-                    TabIndex =3
+                    OverlapFlags =93
+                    Left =540
+                    Top =8160
+                    Width =7080
+                    Height =420
+                    TabIndex =4
                     Name ="cmdAddRepeatPhoto"
                     Caption ="Add Repeat Photos"
                     OnClick ="[Event Procedure]"
                     GridlineColor =10921638
 
-                    LayoutCachedLeft =5280
-                    LayoutCachedTop =8880
+                    LayoutCachedLeft =540
+                    LayoutCachedTop =8160
                     LayoutCachedWidth =7620
-                    LayoutCachedHeight =9240
+                    LayoutCachedHeight =8580
                     ForeThemeColorIndex =-1
                     ForeTint =100.0
                     UseTheme =0
@@ -313,41 +314,39 @@ Begin Form
                     WebImagePaddingTop =2
                     WebImagePaddingRight =1
                     WebImagePaddingBottom =1
+                    Overlaps =1
                 End
                 Begin Subform
-                    Visible = NotDefault
-                    OverlapFlags =85
+                    OverlapFlags =247
                     OldBorderStyle =0
-                    Left =60
-                    Top =9720
                     Width =16110
                     Height =9537
+                    TabIndex =1
                     BorderColor =10921638
-                    Name ="sfrmRepeatPhoto"
+                    Name ="sfrmRepeatPhotos"
                     SourceObject ="Form.sfrm_RepeatPhotosEnter"
                     LinkChildFields ="PhotoActivityID"
                     LinkMasterFields ="ID"
                     GridlineColor =10921638
 
-                    LayoutCachedLeft =60
-                    LayoutCachedTop =9720
-                    LayoutCachedWidth =16170
-                    LayoutCachedHeight =19257
+                    LayoutCachedWidth =16110
+                    LayoutCachedHeight =9537
                 End
                 Begin TextBox
                     OldBorderStyle =0
-                    OverlapFlags =85
+                    OverlapFlags =93
                     BackStyle =0
                     IMESentenceMode =3
-                    Width =60
+                    Left =120
+                    Width =0
                     Height =315
-                    TabIndex =4
                     BorderColor =10921638
                     ForeColor =4210752
                     Name ="txtDummy"
                     GridlineColor =10921638
 
-                    LayoutCachedWidth =60
+                    LayoutCachedLeft =120
+                    LayoutCachedWidth =120
                     LayoutCachedHeight =315
                 End
             End
@@ -362,10 +361,10 @@ Attribute VB_Exposed = False
 Option Compare Database
 
 Private Sub cmdAddRepeatPhoto_Click()
-    Me.sfrmRepeatPhoto.Visible = True
-    Me.sfrmRepeatPhoto.Top = 0
-    Me.sfrmRepeatPhoto.Left = 0
-    Me.sfrmRepeatPhoto.Enabled = True
+    Me.sfrmRepeatPhotos.Visible = True
+    Me.sfrmRepeatPhotos.Top = 0
+    Me.sfrmRepeatPhotos.Left = 0
+    Me.sfrmRepeatPhotos.Enabled = True
 End Sub
 
 Private Sub Form_Load()
@@ -382,23 +381,31 @@ rptPhotoSOPID = 1
 Me.imgCurrentPhoto.Picture = ""
 
 'Make photo details subform invisible
-Me.sfrmRepeatPhotoInfo.Visible = False
+Me.sfrmRepeatPhotosInfo.Visible = False
 
 'Get recordset of renamed paths and descriptions
-qry = "SELECT data_Photo.RenamedFilePath, ref_PhotoDescriptionCode.Code FROM data_Photo LEFT JOIN ref_PhotoDescriptionCode ON data_Photo.PhotoDescriptionCodeID = ref_PhotoDescriptionCode.ID WHERE ref_PhotoDescriptionCode.PhotoSOPID = " & _
-    rptPhotoSOPID & " AND data_Photo.PhotoActivityID = " & Me.ID & ";"
-
-Set renamedPhotos = CurrentDb.OpenRecordset(qry, dbOpenSnapshot, dbReadOnly)
-renamedPhotos.MoveLast
-rptPhotosExist = (renamedPhotos.RecordCount > 0)
+If Not IsNull(Me.ID) Then
+    qry = "SELECT data_Photo.RenamedFilePath, ref_PhotoDescriptionCode.Code FROM data_Photo LEFT JOIN ref_PhotoDescriptionCode ON data_Photo.PhotoDescriptionCodeID = ref_PhotoDescriptionCode.ID WHERE ref_PhotoDescriptionCode.PhotoSOPID = " & _
+        rptPhotoSOPID & " AND data_Photo.PhotoActivityID = " & Me.ID & ";"
+    
+    Set renamedPhotos = CurrentDb.OpenRecordset(qry, dbOpenSnapshot, dbReadOnly)
+    If Not (renamedPhotos.BOF And renamedPhotos.EOF) Then
+        renamedPhotos.MoveFirst
+        renamedPhotos.MoveLast
+        rptPhotosExist = (renamedPhotos.RecordCount > 0)
+    Else: rptPhotosExist = False
+    End If
+Else
+    rptPhotosExist = False
+End If
 
 If rptPhotosExist Then
-    Me.sfrmRepeatPhoto.Visible = False
+    Me.sfrmRepeatPhotos.Visible = False
     
 Else
-    Me.sfrmRepeatPhoto.Visible = True
-    Me.sfrmRepeatPhoto.Top = 0
-    Me.sfrmRepeatPhoto.Left = 0
+    Me.sfrmRepeatPhotos.Visible = True
+    Me.sfrmRepeatPhotos.Top = 0
+    Me.sfrmRepeatPhotos.Left = 0
 End If
     
 End Sub

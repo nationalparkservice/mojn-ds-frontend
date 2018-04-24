@@ -10,6 +10,7 @@ Begin Form
     CloseButton = NotDefault
     DividingLines = NotDefault
     KeyPreview = NotDefault
+    FilterOn = NotDefault
     ScrollBars =2
     ViewsAllowed =1
     PictureAlignment =2
@@ -20,10 +21,10 @@ Begin Form
     Width =15840
     DatasheetFontHeight =11
     ItemSuffix =26
-    Left =3375
-    Top =4455
-    Right =19215
-    Bottom =10095
+    Left =3945
+    Top =4515
+    Right =19785
+    Bottom =10155
     DatasheetGridlinesColor =15921906
     AfterInsert ="[Event Procedure]"
     RecSrcDt = Begin

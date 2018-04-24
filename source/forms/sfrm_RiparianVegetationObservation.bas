@@ -19,17 +19,16 @@ Begin Form
     Width =13920
     DatasheetFontHeight =11
     ItemSuffix =23
-    Left =2490
-    Top =3240
-    Right =16290
-    Bottom =7500
+    Left =2160
+    Top =5655
+    Right =15705
+    Bottom =9660
     DatasheetGridlinesColor =15921906
     RecSrcDt = Begin
         0x34fd75986c15e540
     End
     RecordSource ="data_RiparianVegetationObservation"
     BeforeUpdate ="[Event Procedure]"
-    AfterUpdate ="[Event Procedure]"
     DatasheetFontName ="Calibri"
     PrtMip = Begin
         0x6801000068010000680100006801000000000000201c0000e010000001000000 ,
@@ -543,89 +542,11 @@ Begin Form
         End
         Begin FormFooter
             CanGrow = NotDefault
+            Height =0
             BackColor =15921906
             Name ="FormFooter"
             AlternateBackThemeColorIndex =1
             AlternateBackShade =95.0
-            Begin
-                Begin Subform
-                    Enabled = NotDefault
-                    OverlapFlags =85
-                    OldBorderStyle =0
-                    Left =10164
-                    Top =180
-                    Width =2750
-                    Height =1185
-                    BorderColor =65536
-                    Name ="sfrmRiparianVegetationPhoto"
-                    SourceObject ="Form.sfrm_RiparianVegetationPhoto"
-                    LinkChildFields ="RiparianVegetationObservationID"
-                    LinkMasterFields ="ID"
-                    GridlineColor =10921638
-
-                    LayoutCachedLeft =10164
-                    LayoutCachedTop =180
-                    LayoutCachedWidth =12914
-                    LayoutCachedHeight =1365
-                    BorderThemeColorIndex =-1
-                    BorderShade =100.0
-                    Begin
-                        Begin Label
-                            FontItalic = NotDefault
-                            OverlapFlags =85
-                            TextAlign =2
-                            Left =6660
-                            Top =180
-                            Width =3360
-                            Height =300
-                            FontWeight =700
-                            BorderColor =6108695
-                            Name ="lblRiparianVegPhotos"
-                            Caption ="Photos for observations of:"
-                            GridlineColor =10921638
-                            LayoutCachedLeft =6660
-                            LayoutCachedTop =180
-                            LayoutCachedWidth =10020
-                            LayoutCachedHeight =480
-                            BorderThemeColorIndex =-1
-                            BorderTint =100.0
-                            ForeThemeColorIndex =-1
-                            ForeTint =100.0
-                        End
-                    End
-                End
-                Begin TextBox
-                    Locked = NotDefault
-                    TabStop = NotDefault
-                    OldBorderStyle =0
-                    OverlapFlags =85
-                    TextAlign =2
-                    BackStyle =0
-                    IMESentenceMode =3
-                    Left =6660
-                    Top =540
-                    Width =3363
-                    Height =846
-                    FontSize =14
-                    FontWeight =700
-                    TabIndex =1
-                    BackColor =12765388
-                    BorderColor =10921638
-                    ForeColor =1643706
-                    Name ="txtRiparianVegObsPhotos"
-                    ControlSource ="=[cboLifeFormID].[Column](0)"
-                    GridlineColor =10921638
-
-                    LayoutCachedLeft =6660
-                    LayoutCachedTop =540
-                    LayoutCachedWidth =10023
-                    LayoutCachedHeight =1386
-                    BackThemeColorIndex =-1
-                    ThemeFontIndex =-1
-                    ForeThemeColorIndex =-1
-                    ForeTint =100.0
-                End
-            End
         End
     End
 End
@@ -756,12 +677,6 @@ Private Sub cmdDeleteRiparianVegObs_Click()
                 CurrentDb.Execute "Delete * from data_RiparianVegetationObservation where ID = " & Me.ID, dbSeeChanges
                 Me.Requery
                 RiparianVegetationObservationExists = CheckRecExists(Me.RecordsetClone, "RiparianVegetationActivityID = " & Me.Parent.VisitID)
-                If RiparianVegetationObservationExists Then
-                    Me.sfrmRiparianVegetationPhoto.Enabled = True
-                Else
-                    Me.sfrmRiparianVegetationPhoto.Enabled = False
-                    Me.Requery
-                End If
             Else
                 Me.Undo
             End If
@@ -773,12 +688,6 @@ Private Sub cmdDeleteRiparianVegObs_Click()
                 CurrentDb.Execute "Delete * from data_RiparianVegetationObservation where ID = " & Me.ID, dbSeeChanges
                 Me.Requery
                 RiparianVegetationObservationExists = CheckRecExists(Me.RecordsetClone, "RiparianVegetationActivityID = " & Me.Parent.VisitID)
-                If RiparianVegetationObservationExists Then
-                    Me.sfrmRiparianVegetationPhoto.Enabled = True
-                Else
-                    Me.sfrmRiparianVegetationPhoto.Enabled = False
-                    Me.Requery
-                End If
             Else
                 Me.Undo
             End If
@@ -787,27 +696,6 @@ Private Sub cmdDeleteRiparianVegObs_Click()
     
 End Sub
 
-Private Sub Form_AfterUpdate()
-
-On Error GoTo Error_Handler
-
-    Dim intRiparianVegetationObservationsCount As Integer
-    
-    intRiparianVegetationObservationsCount = DCount("ID", "data_RiparianVegetationObservation", "RiparianVegetationActivityID = " & Me.Parent.VisitID)
-        
-    'Enable Riparian Vegetation Photo form when observations are present
-    If intRiparianVegetationObservationsCount <> 0 Then
-        Me.sfrmRiparianVegetationPhoto.Enabled = True
-    Else
-        Me.sfrmRiparianVegetationPhoto.Enabled = False
-    End If
-
-Exit_Sub:
-    Exit Sub
-Error_Handler:
-    MsgBox "Form: " & mstrcFormName & vbNewLine & "Sub:  Form_AfterUpdate" & vbNewLine & "Error #" & Err.Number & ": " & Err.Description, vbCritical
-    Resume Exit_Sub
-End Sub
 
 Private Sub Form_BeforeUpdate(Cancel As Integer)
 

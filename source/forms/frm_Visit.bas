@@ -9,6 +9,7 @@ Begin Form
     NavigationButtons = NotDefault
     CloseButton = NotDefault
     DividingLines = NotDefault
+    FilterOn = NotDefault
     AllowDesignChanges = NotDefault
     DefaultView =0
     ScrollBars =0
@@ -21,12 +22,12 @@ Begin Form
     Width =16560
     DatasheetFontHeight =11
     ItemSuffix =236
-    Left =1125
-    Top =360
-    Right =17685
-    Bottom =11415
+    Left =3705
+    Top =510
+    Right =20265
+    Bottom =11565
     DatasheetGridlinesColor =15921906
-    Filter ="ID = 231"
+    Filter ="ID = 286"
     RecSrcDt = Begin
         0xab2688a2f412e540
     End
@@ -1601,9 +1602,9 @@ Begin Form
                             Width =16485
                             Height =9360
                             BorderColor =10921638
-                            Name ="tabRepeatPhotos"
+                            Name ="tabPhotos"
                             Tag ="AlwaysVisible"
-                            Caption ="Repeat Photos"
+                            Caption ="Photos"
                             GridlineColor =10921638
                             LayoutCachedTop =480
                             LayoutCachedWidth =16485
@@ -1615,6 +1616,7 @@ Begin Form
                             Begin
                                 Begin Subform
                                     OverlapFlags =247
+                                    OldBorderStyle =0
                                     Top =480
                                     Width =16110
                                     Height =9238
@@ -1882,26 +1884,6 @@ Begin Form
                                     LayoutCachedHeight =9779
                                 End
                             End
-                        End
-                        Begin Page
-                            OverlapFlags =247
-                            Left =75
-                            Top =480
-                            Width =16410
-                            Height =9360
-                            BorderColor =10921638
-                            Name ="tabMiscPhotos"
-                            Tag ="MiscPhotos"
-                            Caption ="Misc. Photos"
-                            GridlineColor =10921638
-                            LayoutCachedLeft =75
-                            LayoutCachedTop =480
-                            LayoutCachedWidth =16485
-                            LayoutCachedHeight =9840
-                            WebImagePaddingLeft =2
-                            WebImagePaddingTop =2
-                            WebImagePaddingRight =2
-                            WebImagePaddingBottom =2
                         End
                     End
                 End

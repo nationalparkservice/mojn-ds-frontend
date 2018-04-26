@@ -3,6 +3,17 @@
 Option Compare Database
 Option Explicit
 
+Public Function DeleteRecord(currentForm As Form)
+
+If currentForm.NewRecord Then
+    currentForm.Undo
+Else
+    currentForm.SetFocus
+    DoCmd.RunCommand acCmdDeleteRecord
+End If
+
+End Function
+
 Public Function GetPhotosPath() As String
 
 GetPhotosPath = DLookup("Value", "app_ConfigurationVariable", "Label = 'PhotoShareDirectory'")

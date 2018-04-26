@@ -21,13 +21,13 @@ Begin Form
     GridY =24
     Width =16560
     DatasheetFontHeight =11
-    ItemSuffix =236
-    Left =3705
-    Top =510
-    Right =20265
-    Bottom =11565
+    ItemSuffix =238
+    Left =2145
+    Top =75
+    Right =18705
+    Bottom =11130
     DatasheetGridlinesColor =15921906
-    Filter ="ID = 286"
+    Filter ="ID = 283"
     RecSrcDt = Begin
         0xab2688a2f412e540
     End
@@ -1119,9 +1119,9 @@ Begin Form
                                     OverlapFlags =215
                                     TextAlign =1
                                     IMESentenceMode =3
-                                    Left =6420
+                                    Left =6600
                                     Top =1200
-                                    Width =9902
+                                    Width =9647
                                     Height =3126
                                     TabIndex =5
                                     LeftMargin =43
@@ -1131,9 +1131,9 @@ Begin Form
                                     ControlSource ="Notes"
                                     GridlineColor =10921638
 
-                                    LayoutCachedLeft =6420
+                                    LayoutCachedLeft =6600
                                     LayoutCachedTop =1200
-                                    LayoutCachedWidth =16322
+                                    LayoutCachedWidth =16247
                                     LayoutCachedHeight =4326
                                     BackThemeColorIndex =-1
                                     BorderThemeColorIndex =-1
@@ -1146,8 +1146,8 @@ Begin Form
                                             BackStyle =1
                                             OverlapFlags =215
                                             TextAlign =1
-                                            Left =6421
-                                            Top =841
+                                            Left =6600
+                                            Top =840
                                             Width =724
                                             Height =300
                                             BackColor =4281912
@@ -1156,10 +1156,10 @@ Begin Form
                                             Name ="lblNotes"
                                             Caption ="Notes"
                                             GridlineColor =10921638
-                                            LayoutCachedLeft =6421
-                                            LayoutCachedTop =841
-                                            LayoutCachedWidth =7145
-                                            LayoutCachedHeight =1141
+                                            LayoutCachedLeft =6600
+                                            LayoutCachedTop =840
+                                            LayoutCachedWidth =7324
+                                            LayoutCachedHeight =1140
                                             ThemeFontIndex =-1
                                             BackThemeColorIndex =-1
                                             BorderThemeColorIndex =-1
@@ -1176,7 +1176,7 @@ Begin Form
                                     OldBorderStyle =0
                                     Left =1740
                                     Top =3660
-                                    Width =4319
+                                    Width =4739
                                     Height =3415
                                     TabIndex =6
                                     BorderColor =10921638
@@ -1188,7 +1188,7 @@ Begin Form
 
                                     LayoutCachedLeft =1740
                                     LayoutCachedTop =3660
-                                    LayoutCachedWidth =6059
+                                    LayoutCachedWidth =6479
                                     LayoutCachedHeight =7075
                                     Begin
                                         Begin Label
@@ -1472,9 +1472,9 @@ Begin Form
                                 Begin Subform
                                     OverlapFlags =247
                                     OldBorderStyle =0
-                                    Left =6480
+                                    Left =6600
                                     Top =4860
-                                    Width =9900
+                                    Width =9780
                                     Height =3060
                                     TabIndex =10
                                     BorderColor =10921638
@@ -1484,7 +1484,7 @@ Begin Form
                                     LinkMasterFields ="ID"
                                     GridlineColor =10921638
 
-                                    LayoutCachedLeft =6480
+                                    LayoutCachedLeft =6600
                                     LayoutCachedTop =4860
                                     LayoutCachedWidth =16380
                                     LayoutCachedHeight =7920
@@ -1492,7 +1492,7 @@ Begin Form
                                         Begin Label
                                             BackStyle =1
                                             OverlapFlags =215
-                                            Left =6480
+                                            Left =6600
                                             Top =4500
                                             Width =1920
                                             Height =300
@@ -1502,9 +1502,9 @@ Begin Form
                                             Name ="lblActivityDashboard"
                                             Caption ="Activity Dashboard"
                                             GridlineColor =10921638
-                                            LayoutCachedLeft =6480
+                                            LayoutCachedLeft =6600
                                             LayoutCachedTop =4500
-                                            LayoutCachedWidth =8400
+                                            LayoutCachedWidth =8520
                                             LayoutCachedHeight =4800
                                             BackThemeColorIndex =-1
                                             ForeThemeColorIndex =-1

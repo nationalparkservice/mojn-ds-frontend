@@ -4,7 +4,6 @@ Begin Form
     RecordSelectors = NotDefault
     NavigationButtons = NotDefault
     DividingLines = NotDefault
-    FilterOn = NotDefault
     AllowDesignChanges = NotDefault
     DefaultView =0
     ScrollBars =0
@@ -16,11 +15,11 @@ Begin Form
     GridY =24
     Width =16110
     DatasheetFontHeight =11
-    ItemSuffix =41
-    Left =3705
-    Top =2595
-    Right =19815
-    Bottom =11835
+    ItemSuffix =42
+    Left =2955
+    Top =3255
+    Right =18810
+    Bottom =12240
     DatasheetGridlinesColor =15921906
     RecSrcDt = Begin
         0xc208564c6c18e540
@@ -210,31 +209,29 @@ Begin Form
                     SpecialEffect =4
                     OldBorderStyle =1
                     BorderWidth =3
-                    PictureType =1
+                    PictureType =2
                     Left =7605
                     Top =900
                     Width =7995
                     Height =4710
                     BorderColor =10921638
                     Name ="imgCurrentPhoto"
-                    Picture ="\\\\INPLAKE52V\\ORG\\MONITORING\\DS_Water\\Data\\Images\\Test\\CAMO_P_STA0304\\C"
-                        "AMO_P_STA0304_20161020_BIRD_0044.JPG"
                     GridlineColor =10921638
 
                     LayoutCachedLeft =7605
                     LayoutCachedTop =900
                     LayoutCachedWidth =15600
                     LayoutCachedHeight =5610
-                    TabIndex =5
+                    TabIndex =7
                 End
                 Begin Subform
                     TabStop = NotDefault
                     OverlapFlags =93
                     OldBorderStyle =0
-                    Left =180
-                    Top =1230
+                    Left =195
+                    Top =1320
                     Width =7140
-                    Height =6870
+                    Height =6540
                     TabIndex =2
                     BorderColor =10921638
                     Name ="sfrmPhotoList"
@@ -243,31 +240,13 @@ Begin Form
                     LinkMasterFields ="ID"
                     GridlineColor =10921638
 
-                    LayoutCachedLeft =180
-                    LayoutCachedTop =1230
-                    LayoutCachedWidth =7320
-                    LayoutCachedHeight =8100
-                    Begin
-                        Begin Label
-                            FontItalic = NotDefault
-                            OverlapFlags =93
-                            Left =225
-                            Top =900
-                            Width =7080
-                            Height =300
-                            BorderColor =8355711
-                            Name ="Label37"
-                            Caption ="Click on an item in the list to view image and details"
-                            GridlineColor =10921638
-                            LayoutCachedLeft =225
-                            LayoutCachedTop =900
-                            LayoutCachedWidth =7305
-                            LayoutCachedHeight =1200
-                            ForeTint =100.0
-                        End
-                    End
+                    LayoutCachedLeft =195
+                    LayoutCachedTop =1320
+                    LayoutCachedWidth =7335
+                    LayoutCachedHeight =7860
                 End
                 Begin Subform
+                    Visible = NotDefault
                     OverlapFlags =93
                     OldBorderStyle =0
                     Left =7515
@@ -289,10 +268,10 @@ Begin Form
                 End
                 Begin CommandButton
                     OverlapFlags =93
-                    Left =240
-                    Top =8220
-                    Width =7080
-                    Height =420
+                    Left =195
+                    Top =8100
+                    Width =7140
+                    Height =540
                     TabIndex =4
                     Name ="cmdAddRepeatPhoto"
                     Caption ="Add Repeat Photos"
@@ -303,9 +282,9 @@ Begin Form
                     BottomPadding =150
                     GridlineColor =10921638
 
-                    LayoutCachedLeft =240
-                    LayoutCachedTop =8220
-                    LayoutCachedWidth =7320
+                    LayoutCachedLeft =195
+                    LayoutCachedTop =8100
+                    LayoutCachedWidth =7335
                     LayoutCachedHeight =8640
                     ForeTint =100.0
                     Shape =0
@@ -334,7 +313,6 @@ Begin Form
                     Overlaps =1
                 End
                 Begin Subform
-                    Visible = NotDefault
                     OverlapFlags =247
                     OldBorderStyle =0
                     Width =16110
@@ -371,9 +349,9 @@ Begin Form
                     BackStyle =1
                     OverlapFlags =93
                     TextAlign =2
-                    Left =210
+                    Left =195
                     Top =300
-                    Width =7125
+                    Width =6780
                     Height =300
                     FontWeight =700
                     BackColor =4281912
@@ -382,9 +360,9 @@ Begin Form
                     Name ="lblPhotoList"
                     Caption ="Photos"
                     GridlineColor =10921638
-                    LayoutCachedLeft =210
+                    LayoutCachedLeft =195
                     LayoutCachedTop =300
-                    LayoutCachedWidth =7335
+                    LayoutCachedWidth =6975
                     LayoutCachedHeight =600
                     BackThemeColorIndex =-1
                     ForeThemeColorIndex =-1
@@ -396,7 +374,7 @@ Begin Form
                     TextAlign =2
                     Left =7605
                     Top =300
-                    Width =7935
+                    Width =8010
                     Height =300
                     FontWeight =700
                     BackColor =4281912
@@ -407,10 +385,132 @@ Begin Form
                     GridlineColor =10921638
                     LayoutCachedLeft =7605
                     LayoutCachedTop =300
-                    LayoutCachedWidth =15540
+                    LayoutCachedWidth =15615
                     LayoutCachedHeight =600
                     BackThemeColorIndex =-1
                     ForeThemeColorIndex =-1
+                    ForeTint =100.0
+                End
+                Begin ComboBox
+                    LimitToList = NotDefault
+                    OverlapFlags =93
+                    IMESentenceMode =3
+                    ListWidth =1440
+                    Left =1740
+                    Top =780
+                    Width =1800
+                    Height =320
+                    TabIndex =5
+                    BoundColumn =1
+                    BorderColor =10921638
+                    ForeColor =2108188
+                    ColumnInfo ="\"\";\"\";\"10\";\"50\""
+                    Name ="cboPhotoSOPFilter"
+                    RowSourceType ="Table/Query"
+                    RowSource ="SELECT lookup_PhotoSOP.Label, lookup_PhotoSOP.ID FROM lookup_PhotoSOP; "
+                    ColumnWidths ="1440"
+                    AfterUpdate ="[Event Procedure]"
+                    Tag ="NoLock"
+                    GridlineColor =10921638
+                    AllowValueListEdits =0
+
+                    LayoutCachedLeft =1740
+                    LayoutCachedTop =780
+                    LayoutCachedWidth =3540
+                    LayoutCachedHeight =1100
+                    Begin
+                        Begin Label
+                            FontItalic = NotDefault
+                            OverlapFlags =93
+                            TextAlign =1
+                            Left =240
+                            Top =780
+                            Width =1440
+                            Height =320
+                            LeftMargin =22
+                            TopMargin =22
+                            RightMargin =22
+                            BottomMargin =22
+                            BorderColor =8355711
+                            Name ="cboPhotoSOPID_Label"
+                            Caption ="Filter by SOP:"
+                            GridlineColor =10921638
+                            LayoutCachedLeft =240
+                            LayoutCachedTop =780
+                            LayoutCachedWidth =1680
+                            LayoutCachedHeight =1100
+                            ForeTint =100.0
+                        End
+                    End
+                End
+                Begin CommandButton
+                    OverlapFlags =93
+                    Left =5280
+                    Top =780
+                    Width =1620
+                    Height =320
+                    TabIndex =6
+                    Name ="cmdClearPhotoSOPFilter"
+                    Caption ="Clear Filter"
+                    OnClick ="[Event Procedure]"
+                    Tag ="NoLock"
+                    LeftPadding =45
+                    TopPadding =45
+                    RightPadding =150
+                    BottomPadding =150
+                    GridlineColor =10921638
+
+                    LayoutCachedLeft =5280
+                    LayoutCachedTop =780
+                    LayoutCachedWidth =6900
+                    LayoutCachedHeight =1100
+                    ForeTint =100.0
+                    Shape =0
+                    Gradient =0
+                    BackColor =14277081
+                    BackThemeColorIndex =1
+                    BackTint =100.0
+                    BackShade =85.0
+                    BorderColor =8355711
+                    BorderThemeColorIndex =1
+                    BorderTint =100.0
+                    BorderShade =50.0
+                    ThemeFontIndex =-1
+                    HoverColor =14277081
+                    HoverThemeColorIndex =1
+                    HoverTint =100.0
+                    HoverShade =85.0
+                    PressedColor =14277081
+                    PressedThemeColorIndex =1
+                    PressedShade =85.0
+                    HoverForeColor =0
+                    HoverForeTint =100.0
+                    PressedForeColor =0
+                    PressedForeTint =100.0
+                    Shadow =1
+                    Overlaps =1
+                End
+                Begin Label
+                    FontItalic = NotDefault
+                    OverlapFlags =255
+                    TextAlign =2
+                    Left =7605
+                    Top =2340
+                    Width =7995
+                    Height =1260
+                    LeftMargin =90
+                    TopMargin =90
+                    RightMargin =90
+                    BottomMargin =90
+                    BorderColor =8355711
+                    Name ="lblPhotoInstructions"
+                    Caption ="Click on an item in the list to the left to view the corresponding image and ima"
+                        "ge details. Use the dropdown above the list to filter by SOP."
+                    GridlineColor =10921638
+                    LayoutCachedLeft =7605
+                    LayoutCachedTop =2340
+                    LayoutCachedWidth =15600
+                    LayoutCachedHeight =3600
                     ForeTint =100.0
                 End
             End
@@ -424,11 +524,46 @@ Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 Option Compare Database
 
+
+Private Sub cboPhotoSOPFilter_AfterUpdate()
+
+'Filter the photo list by SOP
+Me.sfrmPhotoList.Form.filter = "PhotoSOPID = " & Me.cboPhotoSOPFilter
+Me.sfrmPhotoList.Form.FilterOn = True
+
+'Clear the current photo
+HidePhoto
+
+End Sub
+
 Private Sub cmdAddRepeatPhoto_Click()
-    Me.sfrmPhotoEntry.Top = 0
-    Me.sfrmPhotoEntry.Left = 0
-    Me.sfrmPhotoEntry.Enabled = True
-    Me.sfrmPhotoEntry.Visible = True
+'Make the photo entry subform visible
+Me.sfrmPhotoEntry.Top = 0
+Me.sfrmPhotoEntry.Left = 0
+Me.sfrmPhotoEntry.Enabled = True
+Me.sfrmPhotoEntry.Visible = True
+End Sub
+
+Public Sub HidePhoto()
+
+'Clear current photo
+Me.imgCurrentPhoto.Picture = ""
+
+'Display instructions
+Me.lblPhotoInstructions.Visible = True
+
+'Make photo details subform invisible
+Me.sfrmPhotoInfo.Visible = False
+
+End Sub
+
+Private Sub cmdClearPhotoSOPFilter_Click()
+
+'Stop filtering the list of photos by SOP
+Me.sfrmPhotoList.Form.filter = ""
+Me.sfrmPhotoList.Form.FilterOn = False
+Me.cboPhotoSOPFilter = Null
+
 End Sub
 
 Private Sub Form_Load()
@@ -438,11 +573,8 @@ Dim qry As String
 Dim photosExist As Boolean
 Dim thumbnailGrid As New Collection
 
-'Clear current photo
-Me.imgCurrentPhoto.Picture = ""
-
-'Make photo details subform invisible
-Me.sfrmPhotoInfo.Visible = False
+'Hide current photo and photo info
+HidePhoto
 
 'Get recordset of renamed paths and descriptions
 If Not IsNull(Me.ID) Then

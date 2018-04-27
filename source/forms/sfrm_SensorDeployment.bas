@@ -19,10 +19,10 @@ Begin Form
     Width =15846
     DatasheetFontHeight =11
     ItemSuffix =5
-    Left =-1200
-    Top =3555
-    Right =14385
-    Bottom =4920
+    Left =3765
+    Top =2775
+    Right =19605
+    Bottom =4395
     DatasheetGridlinesColor =15921906
     RecSrcDt = Begin
         0x05dbeaa68e15e540
@@ -463,33 +463,8 @@ Private Sub cmdDeleteSensorDeployment_Click()
     
     On Error Resume Next
     
-    Dim YesNo As Integer
+    DeleteRecord Me, Me.NewRecord
     
-    If IsNull(Me.VisitID) Then
-        Resume Next
-    'If user clicks delete button and there are unsaved changes, save the record and then prompt the user to indicate if they're sure they want to get rid of the record.
-    Else
-        If Not IsNull(Me.VisitID) And Me.Dirty = True Then
-            DoCmd.RunCommand acCmdSaveRecord
-            YesNo = MsgBox("You are about to delete this Sensor Deployment record." & Chr(13) & vbNewLine & "If you click Yes, you won't be able to undo this Delete operation. " _
-            & "Are you sure you want to delete this record?", vbYesNo + vbExclamation, "Delete Sensor Deployment?")
-                If YesNo = vbYes Then
-                    CurrentDb.Execute "Delete * from data_SensorDeployment where VisitID = " & Me.VisitID, dbSeeChanges
-                    Me.Requery
-                Else
-                    Me.Undo
-                End If
-        Else
-            YesNo = MsgBox("You are about to delete this Sensor Deployment record." & Chr(13) & vbNewLine & "If you click Yes, you won't be able to undo this Delete operation. " _
-            & "Are you sure you want to delete this record?", vbYesNo + vbExclamation, "Delete Sensor Deployment?")
-                If YesNo = vbYes Then
-                    CurrentDb.Execute "Delete * from data_SensorDeployment where VisitID = " & Me.VisitID, dbSeeChanges
-                    Me.Requery
-                Else
-                    Me.Undo
-                End If
-        End If
-    End If
 End Sub
 
 Private Sub Form_BeforeUpdate(Cancel As Integer)

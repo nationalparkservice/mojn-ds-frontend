@@ -563,7 +563,7 @@ Private Const mstrcFormName As String = "sfrm_RiparianVegetationObservation"
 Private Sub cboConfirmedPlantCodeID_AfterUpdate()
 
     'When user selects a confirmed plant code (species), cboProtectedStatus should default to the park's protected status for that species
-    'but also provide the whole list of Protected Status' so the user may select a different one, if necessary.
+    'but also provide the whole list of Protected Statuses so the user may select a different one, if necessary.
 
 On Error GoTo Error_Handler
 
@@ -657,42 +657,10 @@ End Sub
 
 Private Sub cmdDeleteRiparianVegObs_Click()
 
-'Delete Riparian observation record and photo file #s, associated with a visit, from data_RiparianVegetationObservation, and data_RiparianVegetationPhoto
+'Delete Riparian observation record
     
-    On Error Resume Next
-    
-    Dim YesNo As Integer
-    Dim RiparianVegetationObservationExists
-    
-    If IsNull(Me.ID) Then
-        Resume Next
-    'If user clicks delete button and there are unsaved changes, save the record and then prompt the user to indicate if they're sure they want to get rid of the record.
-    Else
-        If Not IsNull(Me.ID) And Me.Dirty = True Then
-            DoCmd.RunCommand acCmdSaveRecord
-            YesNo = MsgBox("You are about to delete this Riparian Vegetation Observation, which may include Species Information and Photo File #s." _
-            & Chr(13) & vbNewLine & "If you click Yes, you won't be able to undo this Delete operation." & Chr(13) _
-            & "Are you sure you want to delete this record?", vbYesNo + vbExclamation, "Delete Riparian Vegetation Observation?")
-            If YesNo = vbYes Then
-                CurrentDb.Execute "Delete * from data_RiparianVegetationObservation where ID = " & Me.ID, dbSeeChanges
-                Me.Requery
-                RiparianVegetationObservationExists = CheckRecExists(Me.RecordsetClone, "RiparianVegetationActivityID = " & Me.Parent.VisitID)
-            Else
-                Me.Undo
-            End If
-        Else
-        YesNo = MsgBox("You are about to delete this Riparian Vegetation Observation, which may include Species Information and Photo File #s." _
-        & Chr(13) & vbNewLine & "If you click Yes, you won't be able to undo this Delete operation." & Chr(13) _
-        & "Are you sure you want to delete this record?", vbYesNo + vbExclamation, "Delete Riparian Vegetation Observation?")
-            If YesNo = vbYes Then
-                CurrentDb.Execute "Delete * from data_RiparianVegetationObservation where ID = " & Me.ID, dbSeeChanges
-                Me.Requery
-                RiparianVegetationObservationExists = CheckRecExists(Me.RecordsetClone, "RiparianVegetationActivityID = " & Me.Parent.VisitID)
-            Else
-                Me.Undo
-            End If
-        End If
-    End If
+On Error Resume Next
+DeleteRecord Me, Me.NewRecord
     
 End Sub
 

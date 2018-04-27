@@ -438,38 +438,9 @@ Option Explicit
 Private Sub cmdDeleteWildlifeObservation_Click()
     
 'Delete Wildlife observation, associated with a visit, from data_WildlifeObservation
-
-    On Error Resume Next
-    
-    Dim YesNo As Integer
-    
-    If IsNull(Me.ID) Then
-        Resume Next
-    'If user clicks delete Activity button and there are unsaved changes, save the record and then prompt the user to indicate it they're sure they want to get rid of the record.
-    Else
-        If Not IsNull(Me.ID) And Me.Dirty = True Then
-            DoCmd.RunCommand acCmdSaveRecord
-            YesNo = MsgBox("You are about to delete this Wildlife Observation." & Chr(13) + vbNewLine & "If you click Yes, you won't be able to undo this Delete operation." & Chr(13) _
-            & "Are you sure you want to delete this record?", vbYesNo + vbExclamation, "Delete Wildlife Observation?")
-                If YesNo = vbYes Then
-                    CurrentDb.Execute "Delete * from data_WildlifeObservation where ID = " & Me.ID, dbSeeChanges
-                    Me.Requery
-                Else
-                    Me.Undo
-                End If
-    'If no unsaved changes, prompt user to indicate if they're sure they want to delete record.
-        Else
-            YesNo = MsgBox("You are about to delete this Wildlife Observation." & Chr(13) + vbNewLine & "If you click Yes, you won't be able to undo this Delete operation." & Chr(13) _
-            & "Are you sure you want to delete this record?", vbYesNo + vbExclamation, "Delete Wildlife Observation?")
-                If YesNo = vbYes Then
-                    CurrentDb.Execute "Delete * from data_WildlifeObservation where ID = " & Me.ID, dbSeeChanges
-                    Me.Requery
-                Else
-                    Me.Undo
-                End If
-        End If
-    End If
-    
+On Error Resume Next
+DeleteRecord Me, Me.NewRecord
+   
 End Sub
 
 Private Sub Form_BeforeUpdate(Cancel As Integer)

@@ -18,10 +18,10 @@ Begin Form
     Width =3780
     DatasheetFontHeight =11
     ItemSuffix =6
-    Left =3210
-    Top =5850
-    Right =7815
-    Bottom =9945
+    Left =2970
+    Top =4410
+    Right =7830
+    Bottom =8760
     DatasheetGridlinesColor =15921906
     RecSrcDt = Begin
         0xad035cf77615e540
@@ -375,40 +375,10 @@ Option Explicit
 
 Private Sub cmdDeleteVolumetricDischarge_Click()
 
-    'Delete Volumetric Discharge record, associated with a visit, from data_DischargeVolumetricObservation
+'Delete Volumetric Discharge record, associated with a visit, from data_DischargeVolumetricObservation
     
-    On Error Resume Next
-    
-    Dim YesNo As Integer
-    
-    If IsNull(Me.ID) Then
-        Resume Next
-    'If user clicks delete button and there are unsaved changes, save the record and then prompt the user to indicate if they're sure they want to get rid of the record.
-    Else
-        If Not IsNull(Me.ID) And Me.Dirty = True Then
-            DoCmd.RunCommand acCmdSaveRecord
-            YesNo = MsgBox("You are about to delete this Volumetric Discharge Observation." & Chr(13) + vbNewLine _
-            & "If you click Yes, you won't be able to undo this Delete operation." & Chr(13) _
-                & "Are you sure you want to delete this record?", vbYesNo + vbExclamation, "Delete Volumetric Discharge Observation?")
-                    If YesNo = vbYes Then
-                        CurrentDb.Execute "Delete * from data_DischargeVolumetricObservation where ID = " & Me.ID, dbSeeChanges
-                        Me.Requery
-                    Else
-                        Me.Undo
-                    End If
-        Else
-            YesNo = MsgBox("You are about to delete this Volumetric Discharge Observation." & Chr(13) + vbNewLine _
-            & "If you click Yes, you won't be able to undo this Delete operation." & Chr(13) _
-                & "Are you sure you want to delete this record?", vbYesNo + vbExclamation, "Delete Volumetric Discharge Observation?")
-                    If YesNo = vbYes Then
-                        CurrentDb.Execute "Delete * from data_DischargeVolumetricObservation where ID = " & Me.ID, dbSeeChanges
-                        Me.Requery
-                    Else
-                        Me.Undo
-                    End If
-        End If
-    End If
-
+On Error Resume Next
+DeleteRecord Me, Me.NewRecord
 
 End Sub
 

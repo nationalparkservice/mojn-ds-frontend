@@ -20,10 +20,10 @@ Begin Form
     Width =2940
     DatasheetFontHeight =11
     ItemSuffix =3
-    Left =3210
-    Top =5880
-    Right =5955
-    Bottom =6375
+    Left =4050
+    Top =4665
+    Right =7050
+    Bottom =5415
     DatasheetGridlinesColor =15921906
     RecSrcDt = Begin
         0x335bdaa87615e540
@@ -343,7 +343,7 @@ Option Explicit
 
 Private Sub cboEstimatedDischargeFlagID_Change()
     
-    'Default Estimated Discharge Flad to 1 ("<"), and then LitersPerMinute should be 1. If LitersPerMinute <>1, Estimated Discharge will be null
+    'Default Estimated Discharge Flag to 1 ("<"), and then LitersPerMinute should be 1. If LitersPerMinute <>1, Estimated Discharge will be null
     If Me.cboEstimatedDischargeFlagID = 1 Then
         Me.txtDischarge_LitersPerMinute.Value = 1
     End If
@@ -354,38 +354,9 @@ Private Sub cmdDeleteEstimatedDischarge_Click()
 
 'Delete Estimated Discharge record, associated with a visit, from data_DischargeEstimatedObservation
     
-    On Error Resume Next
+On Error Resume Next
+DeleteRecord Me, Me.NewRecord
     
-    Dim YesNo As Integer
-    
-    If IsNull(Me.ID) Then
-        Resume Next
-    'If user clicks delete button and there are unsaved changes, save the record and then prompt the user to indicate if they're sure they want to get rid of the record.
-    Else
-        If Not IsNull(Me.ID) And Me.Dirty = True Then
-            DoCmd.RunCommand acCmdSaveRecord
-            YesNo = MsgBox("You are about to delete this Estimated Discharge Observation." & Chr(13) + vbNewLine _
-            & "If you click Yes, you won't be able to undo this Delete operation." & Chr(13) _
-                & "Are you sure you want to delete this record?", vbYesNo + vbExclamation, "Delete Estimated Discharge Observation?")
-                    If YesNo = vbYes Then
-                        CurrentDb.Execute "Delete * from data_DischargeEstimatedObservation where ID = " & Me.ID, dbSeeChanges
-                        Me.Requery
-                    Else
-                        Me.Undo
-                    End If
-        Else
-            YesNo = MsgBox("You are about to delete this Estimated Discharge Observation." & Chr(13) + vbNewLine _
-            & "If you click Yes, you won't be able to undo this Delete operation." & Chr(13) _
-                & "Are you sure you want to delete this record?", vbYesNo + vbExclamation, "Delete Estimated Discharge Observation?")
-                    If YesNo = vbYes Then
-                        CurrentDb.Execute "Delete * from data_DischargeEstimatedObservation where ID = " & Me.ID, dbSeeChanges
-                        Me.Requery
-                    Else
-                        Me.Undo
-                    End If
-        End If
-    End If
-
 End Sub
 
 Private Sub Form_BeforeUpdate(Cancel As Integer)
@@ -393,11 +364,11 @@ Private Sub Form_BeforeUpdate(Cancel As Integer)
     'Liters per minute is required and values should be >=0 and <=1000
     If IsNull(Me.txtDischarge_LitersPerMinute) Then
         Cancel = True
-        MsgBox ("Enter the discharge liters per minute amount."), vbOKOnly + vbExclamation, "Discharge Liters Per Minute"
+        MsgBox ("A discharge value is required"), vbOKOnly + vbExclamation, "Discharge Liters Per Minute"
         Me.txtDischarge_LitersPerMinute.SetFocus
     ElseIf Not IsNull(Me.txtDischarge_LitersPerMinute) And (Me.txtDischarge_LitersPerMinute < 0 Or Me.txtDischarge_LitersPerMinute > 1000) Then
         Cancel = True
-        MsgBox ("Enter a value that is within the accepted range for Estimated Discharge Liters per Minute."), vbOKOnly + vbExclamation, "Discharge Liters Per Minute"
+        MsgBox ("Discharge value outside accepted range."), vbOKOnly + vbExclamation, "Discharge Liters Per Minute"
         Me.txtDischarge_LitersPerMinute.SetFocus
     End If
 

@@ -877,40 +877,8 @@ Private Sub cmdDeleteInvasivesObservation_Click()
     
 'Delete Invasive Species observation record, with photo file records from data_InvasivesObservation, data_InvasivesPhoto
     
-    On Error Resume Next
-    
-    Dim YesNo As Integer
-    Dim InvasivesObservationsExists As Boolean
-    
-    If IsNull(Me.ID) Then
-        Resume Next
-    'If user clicks delete button and there are unsaved changes, save the record and then prompt the user to indicate if they're sure they want to get rid of the record.
-    Else
-        If Not IsNull(Me.ID) And Me.Dirty = True Then
-            DoCmd.RunCommand acCmdSaveRecord
-            YesNo = MsgBox("You are about to delete this Invasive Species Observation, which may include Location, Protected Status, and Photo File #s." & Chr(13) & vbNewLine & _
-            "If you click Yes, you won't be able to undo this Delete operation." & Chr(13) _
-            & "Are you sure you want to delete this record?", vbYesNo + vbExclamation, "Delete Invasive Species Observation?")
-                If YesNo = vbYes Then
-                    CurrentDb.Execute "Delete * from data_InvasivesObservation where id = " & Me.ID, dbSeeChanges
-                    Me.Requery
-                    InvasivesObservationsExists = CheckRecExists(Me.RecordsetClone, "InvasivesActivityID = " & Me.Parent.VisitID)
-                Else
-                    Me.Undo
-                End If
-        Else
-            YesNo = MsgBox("You are about to delete this Invasive Species Observation, which may include Location, Protected Status, and Photo File #s." & Chr(13) & vbNewLine & _
-            "If you click Yes, you won't be able to undo this Delete operation." & Chr(13) _
-            & "Are you sure you want to delete this record?", vbYesNo + vbExclamation, "Delete Invasive Species Observation?")
-                If YesNo = vbYes Then
-                    CurrentDb.Execute "Delete * from data_InvasivesObservation where id = " & Me.ID, dbSeeChanges
-                    Me.Requery
-                    InvasivesObservationsExists = CheckRecExists(Me.RecordsetClone, "InvasivesActivityID = " & Me.Parent.VisitID)
-                Else
-                    Me.Undo
-                End If
-        End If
-    End If
+On Error Resume Next
+DeleteRecord Me, Me.NewRecord
 
 End Sub
 

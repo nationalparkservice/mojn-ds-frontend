@@ -19,10 +19,10 @@ Begin Form
     Width =4500
     DatasheetFontHeight =11
     ItemSuffix =5
-    Left =9150
-    Top =5010
-    Right =13695
-    Bottom =9915
+    Left =9990
+    Top =3795
+    Right =14790
+    Bottom =8955
     DatasheetGridlinesColor =15921906
     RecSrcDt = Begin
         0x9d66bc17ab15e540
@@ -189,6 +189,7 @@ Begin Form
             AlternateBackColor =14602694
             Begin
                 Begin TextBox
+                    Visible = NotDefault
                     OverlapFlags =85
                     TextAlign =2
                     IMESentenceMode =3
@@ -198,7 +199,7 @@ Begin Form
                     Height =313
                     TabIndex =2
                     BorderColor =14211288
-                    Name ="txtSpringbrookLength_meters"
+                    Name ="txtSpringbrookLength_m"
                     ControlSource ="SpringbrookLength_meters"
                     GridlineColor =10921638
 
@@ -327,6 +328,7 @@ Begin Form
                     RowSource ="SELECT lookup_SpringbrookLengthFlag.ID, lookup_SpringbrookLengthFlag.Code, looku"
                         "p_SpringbrookLengthFlag.Label FROM lookup_SpringbrookLengthFlag; "
                     ColumnWidths ="0;1199;1944"
+                    BeforeUpdate ="[Event Procedure]"
                     GridlineColor =10921638
                     AllowValueListEdits =0
 
@@ -489,35 +491,34 @@ Private Sub cmdDeleteSpringbrookDim_Click()
 
 'Delete Springbrook Dimensions record, associated with a visit, from data_SpringbrookDimensions
     
-    On Error Resume Next
-    
-    Dim YesNo As Integer
-    
-    If IsNull(Me.DischargeActivityID) Then
-        Resume Next
-    'If user clicks delete button and there are unsaved changes, save the record and then prompt the user to indicate if they're sure they want to get rid of the record.
-    Else
-        If Not IsNull(Me.DischargeActivityID) And Me.Dirty = True Then
-            DoCmd.RunCommand acCmdSaveRecord
-            YesNo = MsgBox("You are about to delete the Springbrook Dimensions for this visit." & Chr(13) + vbNewLine _
-            & "If you click Yes, you won't be able to undo this Delete operation." & Chr(13) _
-                & "Are you sure you want to delete this record?", vbYesNo + vbExclamation, "Delete Springbrook Dimensions?")
-                    If YesNo = vbYes Then
-                        CurrentDb.Execute "Delete * from data_SpringbrookDimensions where DischargeActivityID = " & Me.DischargeActivityID, dbSeeChanges
-                        Me.Requery
-                    Else
-                        Me.Undo
-                    End If
+On Error Resume Next
+DeleteRecord Me, Me.NewRecord
+
+End Sub
+
+
+Private Sub cboSpringbrookLengthFlagID_BeforeUpdate(Cancel As Integer)
+
+'If flag is ">50m", confirm change and then clear & hide springbrook length
+If Me.cboSpringbrookLengthFlagID = LookupIDFromCode("lookup_SpringbrookLengthFlag", ">50m") Then
+    If Not IsNull(Me.txtSpringbrookLength_m) Then
+        If MsgBox("Setting springbrook length to >50m will clear the existing springbrook length value. Do you want to continue?", vbYesNo) = vbYes Then
+            Me.txtSpringbrookLength_m = Null
+            Me.txtSpringbrookLength_m.Visible = False
         Else
-            YesNo = MsgBox("You are about to delete the Springbrook Dimensions for this visit." & Chr(13) + vbNewLine _
-            & "If you click Yes, you won't be able to undo this Delete operation." & Chr(13) _
-                & "Are you sure you want to delete this record?", vbYesNo + vbExclamation, "Delete Springbrook Dimensions?")
-                    If YesNo = vbYes Then
-                        CurrentDb.Execute "Delete * from data_SpringbrookDimensions where DischargeActivityID = " & Me.DischargeActivityID, dbSeeChanges
-                        Me.Requery
-                    Else
-                        Me.Undo
-                    End If
+            Cancel = True
         End If
+    Else
+        Me.txtSpringbrookLength_m.Visible = False
     End If
+'If flag is "measured", make springbrook length field visible
+Else
+    Me.txtSpringbrookLength_m.Visible = True
+End If
+
+Exit_Sub:
+    Exit Sub
+Error_Handler:
+    MsgBox "Sub:  Form_Load" & vbNewLine & "Error #" & Err.Number & ": " & Err.Description, vbCritical
+    Resume Exit_Sub
 End Sub

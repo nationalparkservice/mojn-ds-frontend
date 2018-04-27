@@ -9,6 +9,7 @@ Begin Form
     NavigationButtons = NotDefault
     CloseButton = NotDefault
     DividingLines = NotDefault
+    FilterOn = NotDefault
     AllowDesignChanges = NotDefault
     DefaultView =0
     ScrollBars =0
@@ -26,7 +27,7 @@ Begin Form
     Right =20385
     Bottom =11520
     DatasheetGridlinesColor =15921906
-    Filter ="ID = 283"
+    Filter ="ID = 300"
     RecSrcDt = Begin
         0xab2688a2f412e540
     End

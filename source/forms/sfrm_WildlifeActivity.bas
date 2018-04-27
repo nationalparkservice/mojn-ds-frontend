@@ -456,7 +456,7 @@ Begin Form
                             BorderColor =8355711
                             ForeColor =8355711
                             Name ="lblActivityNotes"
-                            Caption ="Notes"
+                            Caption ="Wildlife Notes"
                             GridlineColor =10921638
                             LayoutCachedLeft =300
                             LayoutCachedTop =6840

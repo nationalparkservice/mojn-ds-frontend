@@ -200,7 +200,7 @@ Begin Form
         End
         Begin Section
             CanGrow = NotDefault
-            Height =20397
+            Height =22017
             BackColor =15921906
             Name ="Detail"
             AlternateBackColor =15527148
@@ -210,28 +210,28 @@ Begin Form
                     OldBorderStyle =1
                     BorderWidth =3
                     PictureType =2
-                    Left =7605
-                    Top =900
+                    Left =7620
+                    Top =660
                     Width =7995
-                    Height =4710
+                    Height =3840
                     BorderColor =10921638
                     Name ="imgCurrentPhoto"
                     GridlineColor =10921638
 
-                    LayoutCachedLeft =7605
-                    LayoutCachedTop =900
-                    LayoutCachedWidth =15600
-                    LayoutCachedHeight =5610
-                    TabIndex =7
+                    LayoutCachedLeft =7620
+                    LayoutCachedTop =660
+                    LayoutCachedWidth =15615
+                    LayoutCachedHeight =4500
+                    TabIndex =10
                 End
                 Begin Subform
                     TabStop = NotDefault
                     OverlapFlags =93
                     OldBorderStyle =0
-                    Left =195
-                    Top =1320
-                    Width =7140
-                    Height =6540
+                    Left =300
+                    Top =1080
+                    Width =7035
+                    Height =5730
                     TabIndex =2
                     BorderColor =10921638
                     Name ="sfrmPhotoList"
@@ -240,18 +240,18 @@ Begin Form
                     LinkMasterFields ="ID"
                     GridlineColor =10921638
 
-                    LayoutCachedLeft =195
-                    LayoutCachedTop =1320
+                    LayoutCachedLeft =300
+                    LayoutCachedTop =1080
                     LayoutCachedWidth =7335
-                    LayoutCachedHeight =7860
+                    LayoutCachedHeight =6810
                 End
                 Begin Subform
                     Visible = NotDefault
                     OverlapFlags =93
                     OldBorderStyle =0
-                    Left =7515
-                    Top =5640
-                    Width =8220
+                    Left =7560
+                    Top =4620
+                    Width =8235
                     Height =3480
                     TabIndex =3
                     BorderColor =10921638
@@ -261,17 +261,17 @@ Begin Form
                     LinkMasterFields ="ID"
                     GridlineColor =10921638
 
-                    LayoutCachedLeft =7515
-                    LayoutCachedTop =5640
-                    LayoutCachedWidth =15735
-                    LayoutCachedHeight =9120
+                    LayoutCachedLeft =7560
+                    LayoutCachedTop =4620
+                    LayoutCachedWidth =15795
+                    LayoutCachedHeight =8100
                 End
                 Begin CommandButton
                     OverlapFlags =93
-                    Left =195
-                    Top =8100
-                    Width =7140
-                    Height =540
+                    Left =300
+                    Top =7320
+                    Width =6780
+                    Height =480
                     TabIndex =4
                     Name ="cmdAddRepeatPhoto"
                     Caption ="Add Repeat Photos"
@@ -282,10 +282,10 @@ Begin Form
                     BottomPadding =150
                     GridlineColor =10921638
 
-                    LayoutCachedLeft =195
-                    LayoutCachedTop =8100
-                    LayoutCachedWidth =7335
-                    LayoutCachedHeight =8640
+                    LayoutCachedLeft =300
+                    LayoutCachedTop =7320
+                    LayoutCachedWidth =7080
+                    LayoutCachedHeight =7800
                     ForeTint =100.0
                     Shape =0
                     Gradient =0
@@ -350,8 +350,8 @@ Begin Form
                     BackStyle =1
                     OverlapFlags =93
                     TextAlign =2
-                    Left =195
-                    Top =300
+                    Left =300
+                    Top =180
                     Width =6780
                     Height =300
                     FontWeight =700
@@ -361,10 +361,10 @@ Begin Form
                     Name ="lblPhotoList"
                     Caption ="Photos"
                     GridlineColor =10921638
-                    LayoutCachedLeft =195
-                    LayoutCachedTop =300
-                    LayoutCachedWidth =6975
-                    LayoutCachedHeight =600
+                    LayoutCachedLeft =300
+                    LayoutCachedTop =180
+                    LayoutCachedWidth =7080
+                    LayoutCachedHeight =480
                     BackThemeColorIndex =-1
                     ForeThemeColorIndex =-1
                     ForeTint =100.0
@@ -373,8 +373,8 @@ Begin Form
                     BackStyle =1
                     OverlapFlags =93
                     TextAlign =2
-                    Left =7605
-                    Top =300
+                    Left =7620
+                    Top =180
                     Width =8010
                     Height =300
                     FontWeight =700
@@ -384,10 +384,10 @@ Begin Form
                     Name ="lblPhotoPreview"
                     Caption ="Preview"
                     GridlineColor =10921638
-                    LayoutCachedLeft =7605
-                    LayoutCachedTop =300
-                    LayoutCachedWidth =15615
-                    LayoutCachedHeight =600
+                    LayoutCachedLeft =7620
+                    LayoutCachedTop =180
+                    LayoutCachedWidth =15630
+                    LayoutCachedHeight =480
                     BackThemeColorIndex =-1
                     ForeThemeColorIndex =-1
                     ForeTint =100.0
@@ -397,8 +397,8 @@ Begin Form
                     OverlapFlags =93
                     IMESentenceMode =3
                     ListWidth =1440
-                    Left =1740
-                    Top =780
+                    Left =1800
+                    Top =600
                     Width =1800
                     Height =320
                     TabIndex =5
@@ -415,17 +415,17 @@ Begin Form
                     GridlineColor =10921638
                     AllowValueListEdits =0
 
-                    LayoutCachedLeft =1740
-                    LayoutCachedTop =780
-                    LayoutCachedWidth =3540
-                    LayoutCachedHeight =1100
+                    LayoutCachedLeft =1800
+                    LayoutCachedTop =600
+                    LayoutCachedWidth =3600
+                    LayoutCachedHeight =920
                     Begin
                         Begin Label
                             FontItalic = NotDefault
                             OverlapFlags =93
                             TextAlign =1
-                            Left =240
-                            Top =780
+                            Left =300
+                            Top =600
                             Width =1440
                             Height =320
                             LeftMargin =22
@@ -436,18 +436,18 @@ Begin Form
                             Name ="cboPhotoSOPID_Label"
                             Caption ="Filter by SOP:"
                             GridlineColor =10921638
-                            LayoutCachedLeft =240
-                            LayoutCachedTop =780
-                            LayoutCachedWidth =1680
-                            LayoutCachedHeight =1100
+                            LayoutCachedLeft =300
+                            LayoutCachedTop =600
+                            LayoutCachedWidth =1740
+                            LayoutCachedHeight =920
                             ForeTint =100.0
                         End
                     End
                 End
                 Begin CommandButton
                     OverlapFlags =93
-                    Left =5280
-                    Top =780
+                    Left =5265
+                    Top =600
                     Width =1620
                     Height =320
                     TabIndex =6
@@ -461,10 +461,10 @@ Begin Form
                     BottomPadding =150
                     GridlineColor =10921638
 
-                    LayoutCachedLeft =5280
-                    LayoutCachedTop =780
-                    LayoutCachedWidth =6900
-                    LayoutCachedHeight =1100
+                    LayoutCachedLeft =5265
+                    LayoutCachedTop =600
+                    LayoutCachedWidth =6885
+                    LayoutCachedHeight =920
                     ForeTint =100.0
                     Shape =0
                     Gradient =0
@@ -495,8 +495,8 @@ Begin Form
                     FontItalic = NotDefault
                     OverlapFlags =255
                     TextAlign =2
-                    Left =7605
-                    Top =2340
+                    Left =7590
+                    Top =2220
                     Width =7995
                     Height =1260
                     LeftMargin =90
@@ -508,10 +508,223 @@ Begin Form
                     Caption ="Click on an item in the list to the left to view the corresponding image and ima"
                         "ge details. Use the dropdown above the list to filter by SOP."
                     GridlineColor =10921638
-                    LayoutCachedLeft =7605
-                    LayoutCachedTop =2340
-                    LayoutCachedWidth =15600
-                    LayoutCachedHeight =3600
+                    LayoutCachedLeft =7590
+                    LayoutCachedTop =2220
+                    LayoutCachedWidth =15585
+                    LayoutCachedHeight =3480
+                    ForeTint =100.0
+                End
+                Begin TextBox
+                    EnterKeyBehavior = NotDefault
+                    ScrollBars =2
+                    OverlapFlags =93
+                    IMESentenceMode =3
+                    Left =4436
+                    Top =8340
+                    Width =11105
+                    Height =726
+                    FontSize =10
+                    TabIndex =7
+                    BorderColor =14211288
+                    Name ="txtDataProcessingLevelNote"
+                    ControlSource ="DataProcessingLevelNote"
+                    GridlineColor =10921638
+
+                    LayoutCachedLeft =4436
+                    LayoutCachedTop =8340
+                    LayoutCachedWidth =15541
+                    LayoutCachedHeight =9066
+                    BackThemeColorIndex =-1
+                    BorderThemeColorIndex =-1
+                    BorderShade =100.0
+                    ThemeFontIndex =-1
+                    ForeThemeColorIndex =-1
+                    ForeTint =100.0
+                    Begin
+                        Begin Label
+                            OverlapFlags =93
+                            TextAlign =3
+                            Left =3840
+                            Top =8344
+                            Width =540
+                            Height =238
+                            FontSize =10
+                            BorderColor =10319446
+                            Name ="lblDPLNote"
+                            Caption ="Notes"
+                            GridlineColor =10921638
+                            LayoutCachedLeft =3840
+                            LayoutCachedTop =8344
+                            LayoutCachedWidth =4380
+                            LayoutCachedHeight =8582
+                            ThemeFontIndex =-1
+                            BorderThemeColorIndex =-1
+                            BorderTint =100.0
+                            ForeThemeColorIndex =-1
+                            ForeTint =100.0
+                        End
+                    End
+                End
+                Begin ComboBox
+                    LimitToList = NotDefault
+                    OverlapFlags =93
+                    IMESentenceMode =3
+                    ColumnCount =3
+                    ListWidth =1440
+                    Left =1680
+                    Top =8520
+                    Width =1980
+                    Height =238
+                    FontSize =10
+                    TabIndex =8
+                    BorderColor =10921638
+                    ColumnInfo ="\"\";\"\";\"\";\"\";\"\";\"\";\"10\";\"40\""
+                    Name ="cboDataProcessingLevelID"
+                    ControlSource ="DataProcessingLevelID"
+                    RowSourceType ="Table/Query"
+                    RowSource ="SELECT lookup_DataProcessingLevel.ID, lookup_DataProcessingLevel.Code, lookup_Da"
+                        "taProcessingLevel.Label FROM lookup_DataProcessingLevel; "
+                    ColumnWidths ="0;0;1440"
+                    GridlineColor =10921638
+                    AllowValueListEdits =0
+
+                    ShowOnlyRowSourceValues =255
+                    LayoutCachedLeft =1680
+                    LayoutCachedTop =8520
+                    LayoutCachedWidth =3660
+                    LayoutCachedHeight =8758
+                    ThemeFontIndex =-1
+                    BackThemeColorIndex =-1
+                    ForeThemeColorIndex =-1
+                    ForeShade =100.0
+                    Begin
+                        Begin Label
+                            OverlapFlags =93
+                            TextAlign =3
+                            Left =420
+                            Top =8520
+                            Width =1200
+                            Height =238
+                            FontSize =10
+                            BorderColor =10319446
+                            Name ="lblDPL"
+                            Caption ="*DPL"
+                            GridlineColor =10921638
+                            LayoutCachedLeft =420
+                            LayoutCachedTop =8520
+                            LayoutCachedWidth =1620
+                            LayoutCachedHeight =8758
+                            ThemeFontIndex =-1
+                            BorderThemeColorIndex =-1
+                            BorderTint =100.0
+                            ForeThemeColorIndex =-1
+                            ForeTint =100.0
+                        End
+                    End
+                End
+                Begin TextBox
+                    Enabled = NotDefault
+                    Locked = NotDefault
+                    TabStop = NotDefault
+                    OverlapFlags =93
+                    TextAlign =1
+                    IMESentenceMode =3
+                    Left =1680
+                    Top =8820
+                    Width =1980
+                    Height =238
+                    FontSize =10
+                    TabIndex =9
+                    BackColor =15921906
+                    BorderColor =10921638
+                    Name ="txtDataProcessingLevelDate"
+                    ControlSource ="DataProcessingLevelDate"
+                    Format ="Short Date"
+                    ConditionalFormat = Begin
+                        0x0100000064000000010000000200000000000000000000000100000001000000 ,
+                        0x00000000f9eded00000000000000000000000000000000000000000000000000 ,
+                        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+                        0x00000000
+                    End
+                    GridlineColor =10921638
+                    ShowDatePicker =0
+
+                    LayoutCachedLeft =1680
+                    LayoutCachedTop =8820
+                    LayoutCachedWidth =3660
+                    LayoutCachedHeight =9058
+                    BackThemeColorIndex =-1
+                    ThemeFontIndex =-1
+                    ForeThemeColorIndex =-1
+                    ForeTint =100.0
+                    ConditionalFormat14 = Begin
+                        0x01000100000002000000000000000100000000000000f9eded00000000000000 ,
+                        0x00000000000000000000000000000000000000
+                    End
+                    Begin
+                        Begin Label
+                            OverlapFlags =93
+                            TextAlign =3
+                            Left =420
+                            Top =8820
+                            Width =1200
+                            Height =238
+                            FontSize =10
+                            BorderColor =10319446
+                            Name ="lblDPLDate"
+                            Caption ="*DPL Date"
+                            GridlineColor =10921638
+                            LayoutCachedLeft =420
+                            LayoutCachedTop =8820
+                            LayoutCachedWidth =1620
+                            LayoutCachedHeight =9058
+                            ThemeFontIndex =-1
+                            BorderThemeColorIndex =-1
+                            BorderTint =100.0
+                            ForeThemeColorIndex =-1
+                            ForeTint =100.0
+                        End
+                    End
+                End
+                Begin Rectangle
+                    SpecialEffect =0
+                    OverlapFlags =255
+                    Left =240
+                    Top =8220
+                    Width =15420
+                    Height =960
+                    BorderColor =2500134
+                    Name ="Box207"
+                    GridlineColor =10921638
+                    LayoutCachedLeft =240
+                    LayoutCachedTop =8220
+                    LayoutCachedWidth =15660
+                    LayoutCachedHeight =9180
+                    BorderThemeColorIndex =0
+                    BorderTint =85.0
+                    BorderShade =100.0
+                End
+                Begin Label
+                    BackStyle =1
+                    OverlapFlags =255
+                    TextAlign =2
+                    Left =420
+                    Top =8040
+                    Width =2340
+                    Height =300
+                    FontWeight =700
+                    BackColor =4281912
+                    BorderColor =8355711
+                    ForeColor =16777215
+                    Name ="lblDataProcessingLevelHeading"
+                    Caption ="Data Processing Level"
+                    GridlineColor =10921638
+                    LayoutCachedLeft =420
+                    LayoutCachedTop =8040
+                    LayoutCachedWidth =2760
+                    LayoutCachedHeight =8340
+                    BackThemeColorIndex =-1
+                    ForeThemeColorIndex =-1
                     ForeTint =100.0
                 End
             End
@@ -543,7 +756,7 @@ Me.sfrmPhotoEntry.Top = 0
 Me.sfrmPhotoEntry.Left = 0
 Me.sfrmPhotoEntry.Enabled = True
 Me.sfrmPhotoEntry.Visible = True
-Me.sfrmPhotoEntry.Requery
+Me.sfrmPhotoEntry.SetFocus
 
 End Sub
 

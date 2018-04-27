@@ -18,10 +18,10 @@ Begin Form
     Width =4319
     DatasheetFontHeight =11
     ItemSuffix =4
-    Left =4695
-    Top =6435
-    Right =9180
-    Bottom =9600
+    Left =5565
+    Top =5730
+    Right =10305
+    Bottom =9150
     DatasheetGridlinesColor =15921906
     RecSrcDt = Begin
         0x2f831d1f9d15e540
@@ -363,11 +363,6 @@ Option Compare Database
 
 Private Sub cmdDeletePersonnel_Click()
 
-DeleteRecord (Me)
-'If Me.NewRecord Then
-'    Me.Undo
-'Else
-'    DoCmd.RunCommand acCmdDeleteRecord
-'End If
+DeleteRecord Me, Me.NewRecord
 
 End Sub

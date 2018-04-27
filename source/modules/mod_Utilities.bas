@@ -3,13 +3,14 @@
 Option Compare Database
 Option Explicit
 
-Public Function DeleteRecord(currentForm As Form)
+Public Function DeleteRecord(currentForm As Form, recordIsNew As Boolean)
 
-If currentForm.NewRecord Then
-    currentForm.Undo
-Else
-    currentForm.SetFocus
-    DoCmd.RunCommand acCmdDeleteRecord
+If MsgBox("Are you sure you want to delete this record?", vbYesNo) = vbYes Then
+    If recordIsNew Then
+        currentForm.Undo
+    Else
+        DoCmd.RunCommand acCmdDeleteRecord
+    End If
 End If
 
 End Function

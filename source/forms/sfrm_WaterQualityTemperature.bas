@@ -13,10 +13,10 @@ Begin Form
     Width =2579
     DatasheetFontHeight =11
     ItemSuffix =5
-    Left =12585
-    Top =5925
-    Right =15180
-    Bottom =7770
+    Left =13785
+    Top =4050
+    Right =16635
+    Bottom =6150
     DatasheetGridlinesColor =15921906
     RecSrcDt = Begin
         0x2c1ae211ce15e540
@@ -391,32 +391,5 @@ Option Compare Database
 
 Private Sub cmdDeleteRecord_Click()
 On Error Resume Next
-    
-'    Dim YesNo As Integer
-'
-'    If IsNull(Me.VisitID) Then
-'        Resume Next
-'    'If user clicks delete button and there are unsaved changes, save the record and then prompt the user to indicate if they're sure they want to get rid of the record.
-'    Else
-'        If Not IsNull(Me.VisitID) And Me.Dirty = True Then
-'            DoCmd.RunCommand acCmdSaveRecord
-'            YesNo = MsgBox("You are about to delete this measurement record." & Chr(13) & vbNewLine & "If you click Yes, you won't be able to undo this Delete operation. " _
-'            & "Are you sure you want to delete this record?", vbYesNo + vbExclamation, "Delete Sensor Deployment?")
-'                If YesNo = vbYes Then
-'                    CurrentDb.Execute "Delete * from data_SensorDeployment where VisitID = " & Me.VisitID, dbSeeChanges
-'                    Me.Requery
-'                Else
-'                    Me.Undo
-'                End If
-'        Else
-'            YesNo = MsgBox("You are about to delete this Sensor Deployment record." & Chr(13) & vbNewLine & "If you click Yes, you won't be able to undo this Delete operation. " _
-'            & "Are you sure you want to delete this record?", vbYesNo + vbExclamation, "Delete Sensor Deployment?")
-'                If YesNo = vbYes Then
-'                    CurrentDb.Execute "Delete * from data_SensorDeployment where VisitID = " & Me.VisitID, dbSeeChanges
-'                    Me.Requery
-'                Else
-'                    Me.Undo
-'                End If
-'        End If
-'    End If
+DeleteRecord Me, Me.NewRecord
 End Sub

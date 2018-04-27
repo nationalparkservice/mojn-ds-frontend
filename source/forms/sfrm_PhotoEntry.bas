@@ -6,7 +6,6 @@ Begin Form
     NavigationButtons = NotDefault
     AllowDeletions = NotDefault
     DividingLines = NotDefault
-    FilterOn = NotDefault
     AllowEdits = NotDefault
     DataEntry = NotDefault
     AllowDesignChanges = NotDefault
@@ -22,10 +21,10 @@ Begin Form
     Width =15480
     DatasheetFontHeight =11
     ItemSuffix =36
-    Left =3240
-    Top =2220
-    Right =19350
-    Bottom =11760
+    Left =3375
+    Top =2430
+    Right =19485
+    Bottom =11970
     DatasheetGridlinesColor =15921906
     RecSrcDt = Begin
         0xc0ade2175119e540

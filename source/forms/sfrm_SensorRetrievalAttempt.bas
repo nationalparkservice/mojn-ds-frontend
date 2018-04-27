@@ -20,10 +20,10 @@ Begin Form
     Width =15840
     DatasheetFontHeight =11
     ItemSuffix =26
-    Left =3195
-    Top =5175
-    Right =18780
-    Bottom =10560
+    Left =4065
+    Top =4470
+    Right =19905
+    Bottom =10110
     DatasheetGridlinesColor =15921906
     AfterInsert ="[Event Procedure]"
     RecSrcDt = Begin
@@ -974,13 +974,13 @@ On Error GoTo Error_Handler
 
 'If sensor not retrieved, set download successful to N/A
     If Me.IsSensorRetrievedID = 2 Then
-        Me.IsDownloadSuccessfulID = 8
+        Me.cboIsDownloadSuccessfulID = 8
 'If no sensor retrieval data, set download successful to No Data
     ElseIf Me.IsSensorRetrievedID = 9 Then
-        Me.IsDownloadSuccessfulID = 9
+        Me.cboIsDownloadSuccessfulID = 9
 'If sensor retrieved and download successful is set to N/A, set download successful to null.
     ElseIf Me.IsSensorRetrievedID = 1 And Me.IsDownloadSuccessfulID = 8 Then
-        Me.IsDownloadSuccessfulID = Null
+        Me.cboIsDownloadSuccessfulID = Null
     End If
     
     SetupImportButtons  ' Enable/disable the two import buttons and the delete buttons based on the [Retrieved?] value
@@ -1000,33 +1000,8 @@ Private Sub cmdDeleteSensorRetrieval_Click()
 
     On Error Resume Next
     
-    Dim YesNo As Integer
+    DeleteRecord Me, Me.NewRecord
     
-    If IsNull(Me.VisitID) Then
-        Resume Next
-    'If user clicks delete button and there are unsaved changes, save the record and then prompt the user to indicate if they're sure they want to get rid of the record.
-    Else
-        If Not IsNull(Me.VisitID) And Me.Dirty = True Then
-            DoCmd.RunCommand acCmdSaveRecord
-            YesNo = MsgBox("You are about to delete this Sensor Retrieval Attempt." & Chr(13) & vbNewLine & "If you click Yes, you won't be able to undo this Delete operation." & Chr(13) _
-            & "Are you sure you want to delete this record?", vbYesNo + vbExclamation, "Delete Sensor Retrieval Attempt?")
-                If YesNo = vbYes Then
-                    CurrentDb.Execute "Delete * from data_SensorRetrievalAttempt where id = " & Me.ID, dbSeeChanges
-                    Me.Requery
-                Else
-                    Me.Undo
-                End If
-        Else
-            YesNo = MsgBox("You are about to delete this Sensor Retrieval Attempt." & Chr(13) & vbNewLine & "If you click Yes, you won't be able to undo this Delete operation." & Chr(13) _
-            & "Are you sure you want to delete this record?", vbYesNo + vbExclamation, "Delete Sensor Retrieval Attempt?")
-                If YesNo = vbYes Then
-                    CurrentDb.Execute "Delete * from data_SensorRetrievalAttempt where id = " & Me.ID, dbSeeChanges
-                    Me.Requery
-                Else
-                    Me.Undo
-                End If
-        End If
-    End If
 End Sub
 
 Private Sub cmdDeleteTSensorDataHumidity_Click()

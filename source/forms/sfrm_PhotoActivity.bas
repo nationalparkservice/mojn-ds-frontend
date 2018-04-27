@@ -16,10 +16,10 @@ Begin Form
     Width =16110
     DatasheetFontHeight =11
     ItemSuffix =42
-    Left =2955
-    Top =3255
-    Right =18810
-    Bottom =12240
+    Left =3825
+    Top =2550
+    Right =19935
+    Bottom =11790
     DatasheetGridlinesColor =15921906
     RecSrcDt = Begin
         0xc208564c6c18e540
@@ -313,6 +313,7 @@ Begin Form
                     Overlaps =1
                 End
                 Begin Subform
+                    Visible = NotDefault
                     OverlapFlags =247
                     OldBorderStyle =0
                     Width =16110
@@ -542,6 +543,8 @@ Me.sfrmPhotoEntry.Top = 0
 Me.sfrmPhotoEntry.Left = 0
 Me.sfrmPhotoEntry.Enabled = True
 Me.sfrmPhotoEntry.Visible = True
+Me.sfrmPhotoEntry.Requery
+
 End Sub
 
 Public Sub HidePhoto()

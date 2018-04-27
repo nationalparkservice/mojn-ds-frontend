@@ -18,15 +18,15 @@ Begin Form
     PictureType =1
     GridX =24
     GridY =24
-    Width =8145
+    Width =8055
     DatasheetFontHeight =11
     ItemSuffix =115
-    Left =10890
-    Top =8070
-    Right =19110
-    Bottom =11550
+    Left =11010
+    Top =6555
+    Right =19245
+    Bottom =10035
     DatasheetGridlinesColor =15921906
-    Filter ="data_Photo.ID = 3294"
+    Filter ="data_Photo.ID = 1352"
     RecSrcDt = Begin
         0x760844df3519e540
     End
@@ -318,7 +318,7 @@ Begin Form
                     OverlapFlags =255
                     Left =120
                     Top =120
-                    Width =8025
+                    Width =7935
                     Height =3120
                     FontSize =10
                     Name ="tabPhotoDetail"
@@ -326,7 +326,7 @@ Begin Form
 
                     LayoutCachedLeft =120
                     LayoutCachedTop =120
-                    LayoutCachedWidth =8145
+                    LayoutCachedWidth =8055
                     LayoutCachedHeight =3240
                     ThemeFontIndex =1
                     BackColor =14277081
@@ -342,7 +342,7 @@ Begin Form
                             OverlapFlags =119
                             Left =195
                             Top =555
-                            Width =7875
+                            Width =7785
                             Height =2610
                             BorderColor =10921638
                             Name ="pgPhotoDetail"
@@ -350,7 +350,7 @@ Begin Form
                             GridlineColor =10921638
                             LayoutCachedLeft =195
                             LayoutCachedTop =555
-                            LayoutCachedWidth =8070
+                            LayoutCachedWidth =7980
                             LayoutCachedHeight =3165
                             WebImagePaddingLeft =2
                             WebImagePaddingTop =2
@@ -526,7 +526,7 @@ Begin Form
                             OverlapFlags =247
                             Left =195
                             Top =555
-                            Width =7875
+                            Width =7785
                             Height =2610
                             BorderColor =10921638
                             Name ="pgPhotoGPS"
@@ -534,7 +534,7 @@ Begin Form
                             GridlineColor =10921638
                             LayoutCachedLeft =195
                             LayoutCachedTop =555
-                            LayoutCachedWidth =8070
+                            LayoutCachedWidth =7980
                             LayoutCachedHeight =3165
                             WebImagePaddingLeft =2
                             WebImagePaddingTop =2

@@ -11,6 +11,7 @@ Begin Form
     AllowDeletions = NotDefault
     DividingLines = NotDefault
     AllowAdditions = NotDefault
+    FilterOn = NotDefault
     OrderByOn = NotDefault
     AllowUpdating =2
     ScrollBars =2

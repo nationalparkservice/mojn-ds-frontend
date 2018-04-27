@@ -237,6 +237,7 @@ Begin Form
             AlternateBackColor =15921906
             Begin
                 Begin Subform
+                    Enabled = NotDefault
                     CanGrow = NotDefault
                     OverlapFlags =215
                     OldBorderStyle =0

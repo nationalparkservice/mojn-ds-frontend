@@ -6,6 +6,7 @@ Begin Form
     NavigationButtons = NotDefault
     AllowDeletions = NotDefault
     DividingLines = NotDefault
+    FilterOn = NotDefault
     AllowEdits = NotDefault
     DataEntry = NotDefault
     AllowDesignChanges = NotDefault
@@ -21,10 +22,10 @@ Begin Form
     Width =15480
     DatasheetFontHeight =11
     ItemSuffix =36
-    Left =3375
-    Top =2430
-    Right =19485
-    Bottom =11970
+    Left =3135
+    Top =2535
+    Right =19245
+    Bottom =12075
     DatasheetGridlinesColor =15921906
     RecSrcDt = Begin
         0xc0ade2175119e540
@@ -42,6 +43,7 @@ Begin Form
         0x6801000068010000680100006801000000000000201c0000e010000001000000 ,
         0x010000006801000000000000a10700000100000001000000
     End
+    OnGotFocus ="[Event Procedure]"
     AllowDatasheetView =0
     FilterOnLoad =0
     ShowPageMargins =0
@@ -1074,6 +1076,10 @@ If (Not FileExists(Me.txtRenamedFilePath)) Or IsNothing(Me.txtRenamedFilePath) T
     MsgBox ("Please save the photo or cancel before leaving this form")
 End If
 
+End Sub
+
+Private Sub Form_GotFocus()
+MsgBox ("test")
 End Sub
 
 Private Sub txtDateTaken_AfterUpdate()

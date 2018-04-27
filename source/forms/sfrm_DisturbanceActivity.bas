@@ -231,10 +231,11 @@ Begin Form
             AlternateBackColor =15921906
             Begin
                 Begin Subform
+                    Enabled = NotDefault
                     CanGrow = NotDefault
                     OverlapFlags =85
                     OldBorderStyle =0
-                    Left =8520
+                    Left =10740
                     Top =1320
                     Width =2819
                     Height =1793
@@ -246,9 +247,9 @@ Begin Form
                     LinkMasterFields ="ID"
                     GridlineColor =10921638
 
-                    LayoutCachedLeft =8520
+                    LayoutCachedLeft =10740
                     LayoutCachedTop =1320
-                    LayoutCachedWidth =11339
+                    LayoutCachedWidth =13559
                     LayoutCachedHeight =3113
                     BorderThemeColorIndex =-1
                     BorderShade =100.0
@@ -257,7 +258,7 @@ Begin Form
                             BackStyle =1
                             OverlapFlags =85
                             TextAlign =2
-                            Left =8520
+                            Left =10740
                             Top =960
                             Width =2745
                             Height =300
@@ -268,9 +269,9 @@ Begin Form
                             Name ="Label38"
                             Caption ="Modification Type(s)"
                             GridlineColor =10921638
-                            LayoutCachedLeft =8520
+                            LayoutCachedLeft =10740
                             LayoutCachedTop =960
-                            LayoutCachedWidth =11265
+                            LayoutCachedWidth =13485
                             LayoutCachedHeight =1260
                             BackThemeColorIndex =-1
                             ForeThemeColorIndex =-1
@@ -284,7 +285,7 @@ Begin Form
                     IMESentenceMode =3
                     ColumnCount =3
                     ListWidth =2520
-                    Left =8571
+                    Left =10791
                     Top =540
                     Width =2715
                     Height =314
@@ -298,14 +299,14 @@ Begin Form
                         "kup_FlowModificationStatus.Label FROM lookup_FlowModificationStatus ORDER BY loo"
                         "kup_FlowModificationStatus.Code; "
                     ColumnWidths ="0;0;2520"
-                    AfterUpdate ="[Event Procedure]"
+                    BeforeUpdate ="[Event Procedure]"
                     GridlineColor =10921638
                     AllowValueListEdits =0
 
                     ShowOnlyRowSourceValues =255
-                    LayoutCachedLeft =8571
+                    LayoutCachedLeft =10791
                     LayoutCachedTop =540
-                    LayoutCachedWidth =11286
+                    LayoutCachedWidth =13506
                     LayoutCachedHeight =854
                     ThemeFontIndex =-1
                     BackThemeColorIndex =-1
@@ -317,7 +318,7 @@ Begin Form
                         Begin Label
                             OverlapFlags =85
                             TextAlign =3
-                            Left =6480
+                            Left =8700
                             Top =540
                             Width =2040
                             Height =314
@@ -325,9 +326,9 @@ Begin Form
                             Name ="lblFlowModificationStatusID"
                             Caption ="*Flow Modification?"
                             GridlineColor =10921638
-                            LayoutCachedLeft =6480
+                            LayoutCachedLeft =8700
                             LayoutCachedTop =540
-                            LayoutCachedWidth =8520
+                            LayoutCachedWidth =10740
                             LayoutCachedHeight =854
                             ThemeFontIndex =-1
                             BorderThemeColorIndex =-1
@@ -345,7 +346,7 @@ Begin Form
                     ListWidth =2880
                     Left =2295
                     Top =900
-                    Width =659
+                    Width =1589
                     Height =314
                     BorderColor =14211288
                     ColumnInfo ="\"\";\"\";\"\";\"\";\"\";\"\";\"10\";\"20\""
@@ -362,7 +363,7 @@ Begin Form
                     ShowOnlyRowSourceValues =255
                     LayoutCachedLeft =2295
                     LayoutCachedTop =900
-                    LayoutCachedWidth =2954
+                    LayoutCachedWidth =3884
                     LayoutCachedHeight =1214
                     ThemeFontIndex =-1
                     BackThemeColorIndex =-1
@@ -401,7 +402,7 @@ Begin Form
                     ListWidth =2880
                     Left =2295
                     Top =1260
-                    Width =659
+                    Width =1589
                     Height =314
                     TabIndex =1
                     BorderColor =14211288
@@ -419,7 +420,7 @@ Begin Form
                     ShowOnlyRowSourceValues =255
                     LayoutCachedLeft =2295
                     LayoutCachedTop =1260
-                    LayoutCachedWidth =2954
+                    LayoutCachedWidth =3884
                     LayoutCachedHeight =1574
                     ThemeFontIndex =-1
                     BackThemeColorIndex =-1
@@ -459,7 +460,7 @@ Begin Form
                     ListWidth =2880
                     Left =2295
                     Top =1620
-                    Width =659
+                    Width =1589
                     Height =314
                     TabIndex =2
                     BorderColor =14211288
@@ -477,7 +478,7 @@ Begin Form
                     ShowOnlyRowSourceValues =255
                     LayoutCachedLeft =2295
                     LayoutCachedTop =1620
-                    LayoutCachedWidth =2954
+                    LayoutCachedWidth =3884
                     LayoutCachedHeight =1934
                     ThemeFontIndex =-1
                     BackThemeColorIndex =-1
@@ -517,7 +518,7 @@ Begin Form
                     ListWidth =2880
                     Left =2295
                     Top =1980
-                    Width =659
+                    Width =1589
                     Height =314
                     TabIndex =3
                     BorderColor =14211288
@@ -535,7 +536,7 @@ Begin Form
                     ShowOnlyRowSourceValues =255
                     LayoutCachedLeft =2295
                     LayoutCachedTop =1980
-                    LayoutCachedWidth =2954
+                    LayoutCachedWidth =3884
                     LayoutCachedHeight =2294
                     ThemeFontIndex =-1
                     BackThemeColorIndex =-1
@@ -575,7 +576,7 @@ Begin Form
                     ListWidth =2880
                     Left =2295
                     Top =2340
-                    Width =659
+                    Width =1589
                     Height =314
                     TabIndex =4
                     BorderColor =14211288
@@ -593,7 +594,7 @@ Begin Form
                     ShowOnlyRowSourceValues =255
                     LayoutCachedLeft =2295
                     LayoutCachedTop =2340
-                    LayoutCachedWidth =2954
+                    LayoutCachedWidth =3884
                     LayoutCachedHeight =2654
                     ThemeFontIndex =-1
                     BackThemeColorIndex =-1
@@ -633,7 +634,7 @@ Begin Form
                     ListWidth =2880
                     Left =2295
                     Top =2700
-                    Width =659
+                    Width =1589
                     Height =314
                     TabIndex =5
                     BorderColor =14211288
@@ -651,7 +652,7 @@ Begin Form
                     ShowOnlyRowSourceValues =255
                     LayoutCachedLeft =2295
                     LayoutCachedTop =2700
-                    LayoutCachedWidth =2954
+                    LayoutCachedWidth =3884
                     LayoutCachedHeight =3014
                     ThemeFontIndex =-1
                     BackThemeColorIndex =-1
@@ -689,9 +690,9 @@ Begin Form
                     IMESentenceMode =3
                     ColumnCount =3
                     ListWidth =2880
-                    Left =5310
+                    Left =6555
                     Top =900
-                    Width =659
+                    Width =1589
                     Height =314
                     TabIndex =6
                     BorderColor =14211288
@@ -707,9 +708,9 @@ Begin Form
                     AllowValueListEdits =0
 
                     ShowOnlyRowSourceValues =255
-                    LayoutCachedLeft =5310
+                    LayoutCachedLeft =6555
                     LayoutCachedTop =900
-                    LayoutCachedWidth =5969
+                    LayoutCachedWidth =8144
                     LayoutCachedHeight =1214
                     ThemeFontIndex =-1
                     BackThemeColorIndex =-1
@@ -721,7 +722,7 @@ Begin Form
                         Begin Label
                             OverlapFlags =85
                             TextAlign =3
-                            Left =3270
+                            Left =4515
                             Top =900
                             Width =1919
                             Height =314
@@ -729,9 +730,9 @@ Begin Form
                             Name ="lblFire"
                             Caption ="Fire"
                             GridlineColor =10921638
-                            LayoutCachedLeft =3270
+                            LayoutCachedLeft =4515
                             LayoutCachedTop =900
-                            LayoutCachedWidth =5189
+                            LayoutCachedWidth =6434
                             LayoutCachedHeight =1214
                             ThemeFontIndex =-1
                             BorderThemeColorIndex =-1
@@ -747,9 +748,9 @@ Begin Form
                     IMESentenceMode =3
                     ColumnCount =3
                     ListWidth =2880
-                    Left =5310
+                    Left =6555
                     Top =1260
-                    Width =659
+                    Width =1589
                     Height =314
                     TabIndex =7
                     BorderColor =14211288
@@ -765,9 +766,9 @@ Begin Form
                     AllowValueListEdits =0
 
                     ShowOnlyRowSourceValues =255
-                    LayoutCachedLeft =5310
+                    LayoutCachedLeft =6555
                     LayoutCachedTop =1260
-                    LayoutCachedWidth =5969
+                    LayoutCachedWidth =8144
                     LayoutCachedHeight =1574
                     ThemeFontIndex =-1
                     BackThemeColorIndex =-1
@@ -779,7 +780,7 @@ Begin Form
                         Begin Label
                             OverlapFlags =85
                             TextAlign =3
-                            Left =3270
+                            Left =4515
                             Top =1260
                             Width =1935
                             Height =314
@@ -787,9 +788,9 @@ Begin Form
                             Name ="lblFlooding"
                             Caption ="Flooding"
                             GridlineColor =10921638
-                            LayoutCachedLeft =3270
+                            LayoutCachedLeft =4515
                             LayoutCachedTop =1260
-                            LayoutCachedWidth =5205
+                            LayoutCachedWidth =6450
                             LayoutCachedHeight =1574
                             ThemeFontIndex =-1
                             BorderThemeColorIndex =-1
@@ -805,9 +806,9 @@ Begin Form
                     IMESentenceMode =3
                     ColumnCount =3
                     ListWidth =2880
-                    Left =5310
+                    Left =6555
                     Top =1620
-                    Width =659
+                    Width =1589
                     Height =314
                     TabIndex =8
                     BorderColor =14211288
@@ -823,9 +824,9 @@ Begin Form
                     AllowValueListEdits =0
 
                     ShowOnlyRowSourceValues =255
-                    LayoutCachedLeft =5310
+                    LayoutCachedLeft =6555
                     LayoutCachedTop =1620
-                    LayoutCachedWidth =5969
+                    LayoutCachedWidth =8144
                     LayoutCachedHeight =1934
                     ThemeFontIndex =-1
                     BackThemeColorIndex =-1
@@ -837,7 +838,7 @@ Begin Form
                         Begin Label
                             OverlapFlags =85
                             TextAlign =3
-                            Left =3270
+                            Left =4515
                             Top =1620
                             Width =1935
                             Height =314
@@ -845,9 +846,9 @@ Begin Form
                             Name ="lblWildfire"
                             Caption ="Wildlife"
                             GridlineColor =10921638
-                            LayoutCachedLeft =3270
+                            LayoutCachedLeft =4515
                             LayoutCachedTop =1620
-                            LayoutCachedWidth =5205
+                            LayoutCachedWidth =6450
                             LayoutCachedHeight =1934
                             ThemeFontIndex =-1
                             BorderThemeColorIndex =-1
@@ -863,9 +864,9 @@ Begin Form
                     IMESentenceMode =3
                     ColumnCount =3
                     ListWidth =2880
-                    Left =5310
+                    Left =6555
                     Top =1980
-                    Width =659
+                    Width =1589
                     Height =314
                     TabIndex =9
                     BorderColor =14211288
@@ -881,9 +882,9 @@ Begin Form
                     AllowValueListEdits =0
 
                     ShowOnlyRowSourceValues =255
-                    LayoutCachedLeft =5310
+                    LayoutCachedLeft =6555
                     LayoutCachedTop =1980
-                    LayoutCachedWidth =5969
+                    LayoutCachedWidth =8144
                     LayoutCachedHeight =2294
                     ThemeFontIndex =-1
                     BackThemeColorIndex =-1
@@ -895,7 +896,7 @@ Begin Form
                         Begin Label
                             OverlapFlags =85
                             TextAlign =3
-                            Left =3270
+                            Left =4515
                             Top =1980
                             Width =1935
                             Height =314
@@ -903,9 +904,9 @@ Begin Form
                             Name ="lblOtherNatural"
                             Caption ="Other (Note below)"
                             GridlineColor =10921638
-                            LayoutCachedLeft =3270
+                            LayoutCachedLeft =4515
                             LayoutCachedTop =1980
-                            LayoutCachedWidth =5205
+                            LayoutCachedWidth =6450
                             LayoutCachedHeight =2294
                             ThemeFontIndex =-1
                             BorderThemeColorIndex =-1
@@ -921,9 +922,9 @@ Begin Form
                     IMESentenceMode =3
                     ColumnCount =3
                     ListWidth =2880
-                    Left =5311
+                    Left =6556
                     Top =2700
-                    Width =659
+                    Width =1589
                     Height =314
                     TabIndex =10
                     BorderColor =14211288
@@ -939,9 +940,9 @@ Begin Form
                     AllowValueListEdits =0
 
                     ShowOnlyRowSourceValues =255
-                    LayoutCachedLeft =5311
+                    LayoutCachedLeft =6556
                     LayoutCachedTop =2700
-                    LayoutCachedWidth =5970
+                    LayoutCachedWidth =8145
                     LayoutCachedHeight =3014
                     ThemeFontIndex =-1
                     BackThemeColorIndex =-1
@@ -953,7 +954,7 @@ Begin Form
                         Begin Label
                             OverlapFlags =85
                             TextAlign =3
-                            Left =3270
+                            Left =4515
                             Top =2700
                             Width =1935
                             Height =314
@@ -961,9 +962,9 @@ Begin Form
                             Name ="lblOverall"
                             Caption ="*Overall"
                             GridlineColor =10921638
-                            LayoutCachedLeft =3270
+                            LayoutCachedLeft =4515
                             LayoutCachedTop =2700
-                            LayoutCachedWidth =5205
+                            LayoutCachedWidth =6450
                             LayoutCachedHeight =3014
                             ThemeFontIndex =-1
                             BorderThemeColorIndex =-1
@@ -979,7 +980,7 @@ Begin Form
                     TextAlign =2
                     Left =240
                     Top =540
-                    Width =2715
+                    Width =3660
                     Height =313
                     FontWeight =700
                     BackColor =4281912
@@ -990,7 +991,7 @@ Begin Form
                     GridlineColor =10921638
                     LayoutCachedLeft =240
                     LayoutCachedTop =540
-                    LayoutCachedWidth =2955
+                    LayoutCachedWidth =3900
                     LayoutCachedHeight =853
                     BackThemeColorIndex =-1
                     ForeThemeColorIndex =-1
@@ -1000,9 +1001,9 @@ Begin Form
                     BackStyle =1
                     OverlapFlags =85
                     TextAlign =2
-                    Left =3255
+                    Left =4500
                     Top =540
-                    Width =2714
+                    Width =3659
                     Height =313
                     FontWeight =700
                     BackColor =4281912
@@ -1011,9 +1012,9 @@ Begin Form
                     Name ="Label36"
                     Caption ="*Natural"
                     GridlineColor =10921638
-                    LayoutCachedLeft =3255
+                    LayoutCachedLeft =4500
                     LayoutCachedTop =540
-                    LayoutCachedWidth =5969
+                    LayoutCachedWidth =8159
                     LayoutCachedHeight =853
                     BackThemeColorIndex =-1
                     ForeThemeColorIndex =-1
@@ -1023,9 +1024,9 @@ Begin Form
                     BackStyle =1
                     OverlapFlags =85
                     TextAlign =2
-                    Left =3255
+                    Left =4500
                     Top =2340
-                    Width =2714
+                    Width =3659
                     Height =313
                     FontWeight =700
                     BackColor =4281912
@@ -1034,9 +1035,9 @@ Begin Form
                     Name ="Label37"
                     Caption ="*Overall"
                     GridlineColor =10921638
-                    LayoutCachedLeft =3255
+                    LayoutCachedLeft =4500
                     LayoutCachedTop =2340
-                    LayoutCachedWidth =5969
+                    LayoutCachedWidth =8159
                     LayoutCachedHeight =2653
                     BackThemeColorIndex =-1
                     ForeThemeColorIndex =-1
@@ -1302,7 +1303,7 @@ Begin Form
                     Visible = NotDefault
                     OverlapFlags =85
                     IMESentenceMode =3
-                    Left =13260
+                    Left =14280
                     Top =240
                     Width =300
                     Height =315
@@ -1313,9 +1314,9 @@ Begin Form
                     ControlSource ="ID"
                     GridlineColor =10921638
 
-                    LayoutCachedLeft =13260
+                    LayoutCachedLeft =14280
                     LayoutCachedTop =240
-                    LayoutCachedWidth =13560
+                    LayoutCachedWidth =14580
                     LayoutCachedHeight =555
                 End
                 Begin Line
@@ -1323,13 +1324,13 @@ Begin Form
                     OverlapFlags =93
                     Left =240
                     Top =360
-                    Width =5760
+                    Width =7920
                     BorderColor =4281912
                     Name ="lineEnterFirst"
                     GridlineColor =10921638
                     LayoutCachedLeft =240
                     LayoutCachedTop =360
-                    LayoutCachedWidth =6000
+                    LayoutCachedWidth =8160
                     LayoutCachedHeight =360
                     BorderThemeColorIndex =-1
                 End
@@ -1354,22 +1355,22 @@ Begin Form
                 Begin Line
                     BorderWidth =1
                     OverlapFlags =93
-                    Left =6480
+                    Left =8700
                     Top =360
                     Width =4800
                     BorderColor =4281912
                     Name ="lineEnterSecond"
                     GridlineColor =10921638
-                    LayoutCachedLeft =6480
+                    LayoutCachedLeft =8700
                     LayoutCachedTop =360
-                    LayoutCachedWidth =11280
+                    LayoutCachedWidth =13500
                     LayoutCachedHeight =360
                     BorderThemeColorIndex =-1
                 End
                 Begin Label
                     FontItalic = NotDefault
                     OverlapFlags =87
-                    Left =6480
+                    Left =8700
                     Top =120
                     Width =1830
                     Height =240
@@ -1379,9 +1380,9 @@ Begin Form
                     Name ="lblEnterSecond"
                     Caption ="Enter this data second"
                     GridlineColor =10921638
-                    LayoutCachedLeft =6480
+                    LayoutCachedLeft =8700
                     LayoutCachedTop =120
-                    LayoutCachedWidth =8310
+                    LayoutCachedWidth =10530
                     LayoutCachedHeight =360
                 End
             End
@@ -1422,13 +1423,12 @@ Error_Handler:
     
 End Sub
 
-Private Sub cboFlowModificationStatusID_AfterUpdate()
+Private Sub cboFlowModificationStatusID_BeforeUpdate(Cancel As Integer)
 On Error GoTo Error_Handler
 
     Dim DisturbanceModificationsExist As Boolean
     Dim intDisturbanceModificationsCount As Integer
-'    intDisturbanceModificationsCount = DCount("ID", "data_DisturbanceFlowModification", "DisturbanceActivityID = " & Me.ID)
-    intDisturbanceModificationsCount = 0
+    intDisturbanceModificationsCount = DCount("ID", "data_DisturbanceFlowModification", "DisturbanceActivityID = " & Me.ID)
     
     'If user sets Flow Modification Status to any of the 'yes' options, enable Disturbance Modifications form.
     If (Me.cboFlowModificationStatusID = 1 Or _
@@ -1442,10 +1442,11 @@ On Error GoTo Error_Handler
         intDisturbanceModificationsCount <> 0 Then
             MsgBox ("One or more Disturbance Modifications have been entered for this visit. " & Chr(13) + vbNewLine & _
                     "If you are sure you want to change the Disturbance Modification Status to ""None"" or ""No Data"", please delete your Disturbance Modifications first."), vbOKOnly + vbExclamation, "Existing Records"
-            Me.Undo
+            Me.cboFlowModificationStatusID.Undo
+            Cancel = True
             Me.sfrmDisturbanceModifications.Enabled = True
     Else: Me.sfrmDisturbanceModifications.Enabled = False
-    DoCmd.Save acDefault
+    'DoCmd.Save acDefault
     End If
 Exit_Sub:
     Exit Sub
@@ -1478,14 +1479,14 @@ Error_Handler:
     Resume Exit_Sub
 End Sub
 
-Private Sub Form_Error(DataErr As Integer, Response As Integer)
+Private Sub Form_Error(DataErr As Integer, response As Integer)
         'All fields for Anthropogenic and Natural Disturbances are required
         Select Case DataErr
             Case 3146
                 MsgBox ("Please make sure that all disturbance fields are filled out."), vbOKOnly + vbExclamation, "Disturbances"
-                Response = acDataErrContinue
+                response = acDataErrContinue
             Case Else
-                Response = acDataErrDisplay
+                response = acDataErrDisplay
         End Select
         ActiveControl.Undo
 End Sub

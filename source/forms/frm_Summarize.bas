@@ -501,7 +501,7 @@ Err_Handler:
     Resume Exit_Procedure
 End Sub
 
-Private Sub cboPickQuery_NotInList(NewData As String, Response As Integer)
+Private Sub cboPickQuery_NotInList(NewData As String, response As Integer)
     On Error GoTo Err_Handler
 
     Me.ActiveControl.Undo

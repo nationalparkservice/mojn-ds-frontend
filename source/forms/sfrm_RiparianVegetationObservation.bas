@@ -19,10 +19,10 @@ Begin Form
     Width =13920
     DatasheetFontHeight =11
     ItemSuffix =23
-    Left =2160
-    Top =5655
-    Right =15705
-    Bottom =9660
+    Left =4170
+    Top =4215
+    Right =17970
+    Bottom =8475
     DatasheetGridlinesColor =15921906
     RecSrcDt = Begin
         0x34fd75986c15e540
@@ -659,9 +659,14 @@ Private Sub cmdDeleteRiparianVegObs_Click()
 
 'Delete Riparian observation record
     
-On Error Resume Next
+On Error GoTo Error_Handler
 DeleteRecord Me, Me.NewRecord
     
+Exit_Sub:
+    Exit Sub
+Error_Handler:
+    MsgBox "Form: " & mstrcFormName & vbNewLine & "Sub:  cboRiparianVegTaxonRefAuthID_Change" & vbNewLine & "Error #" & Err.Number & ": " & Err.Description, vbCritical
+    Resume Exit_Sub
 End Sub
 
 

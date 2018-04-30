@@ -21,10 +21,10 @@ Begin Form
     Width =15840
     DatasheetFontHeight =11
     ItemSuffix =44
-    Left =3885
-    Top =2610
-    Right =19995
-    Bottom =11850
+    Left =2025
+    Top =2385
+    Right =18135
+    Bottom =11625
     DatasheetGridlinesColor =15921906
     RecSrcDt = Begin
         0x3a89a5777b15e540
@@ -182,6 +182,18 @@ Begin Form
             BorderShade =65.0
             ShowPageHeaderAndPageFooter =1
         End
+        Begin Chart
+            SpecialEffect =2
+            OldBorderStyle =1
+            ThemeFontIndex =1
+            BackThemeColorIndex =1
+            BorderThemeColorIndex =1
+            BorderShade =65.0
+            ForeThemeColorIndex =2
+            ForeShade =50.0
+            GridlineThemeColorIndex =1
+            GridlineShade =65.0
+        End
         Begin UnboundObjectFrame
             SpecialEffect =2
             OldBorderStyle =1
@@ -231,7 +243,6 @@ Begin Form
             AlternateBackColor =15921906
             Begin
                 Begin Subform
-                    Enabled = NotDefault
                     CanGrow = NotDefault
                     OverlapFlags =85
                     OldBorderStyle =0
@@ -1301,6 +1312,7 @@ Begin Form
                 End
                 Begin TextBox
                     Visible = NotDefault
+                    TabStop = NotDefault
                     OverlapFlags =85
                     IMESentenceMode =3
                     Left =14280

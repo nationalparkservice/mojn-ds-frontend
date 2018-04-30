@@ -19,10 +19,10 @@ Begin Form
     Width =15840
     DatasheetFontHeight =11
     ItemSuffix =11
-    Left =3885
-    Top =2610
-    Right =19995
-    Bottom =11850
+    Left =2370
+    Top =3300
+    Right =18225
+    Bottom =12285
     DatasheetGridlinesColor =15921906
     RecSrcDt = Begin
         0x340b8c157915e540
@@ -188,6 +188,18 @@ Begin Form
             BorderShade =65.0
             ShowPageHeaderAndPageFooter =1
         End
+        Begin Chart
+            SpecialEffect =2
+            OldBorderStyle =1
+            ThemeFontIndex =1
+            BackThemeColorIndex =1
+            BorderThemeColorIndex =1
+            BorderShade =65.0
+            ForeThemeColorIndex =2
+            ForeShade =50.0
+            GridlineThemeColorIndex =1
+            GridlineShade =65.0
+        End
         Begin UnboundObjectFrame
             SpecialEffect =2
             OldBorderStyle =1
@@ -237,7 +249,6 @@ Begin Form
             AlternateBackColor =15921906
             Begin
                 Begin Subform
-                    Enabled = NotDefault
                     CanGrow = NotDefault
                     OverlapFlags =215
                     OldBorderStyle =0
@@ -262,6 +273,7 @@ Begin Form
                         Begin Label
                             BackStyle =1
                             OverlapFlags =93
+                            TextAlign =2
                             Left =240
                             Top =840
                             Width =3420
@@ -293,7 +305,7 @@ Begin Form
                     ListWidth =1199
                     Left =2880
                     Top =120
-                    Width =1019
+                    Width =1379
                     Height =315
                     FontSize =12
                     TabIndex =1
@@ -319,7 +331,7 @@ Begin Form
 
                     LayoutCachedLeft =2880
                     LayoutCachedTop =120
-                    LayoutCachedWidth =3899
+                    LayoutCachedWidth =4259
                     LayoutCachedHeight =435
                     ConditionalFormat14 = Begin
                         0x01000100000001000000000000000100000000000000f9eded00220000004900 ,

@@ -19,10 +19,10 @@ Begin Form
     Width =4500
     DatasheetFontHeight =11
     ItemSuffix =5
-    Left =9990
-    Top =3795
-    Right =14790
-    Bottom =8955
+    Left =8130
+    Top =3570
+    Right =12930
+    Bottom =8730
     DatasheetGridlinesColor =15921906
     RecSrcDt = Begin
         0x9d66bc17ab15e540
@@ -146,6 +146,18 @@ Begin Form
             GridlineShade =65.0
             BorderShade =65.0
             ShowPageHeaderAndPageFooter =1
+        End
+        Begin Chart
+            SpecialEffect =2
+            OldBorderStyle =1
+            ThemeFontIndex =1
+            BackThemeColorIndex =1
+            BorderThemeColorIndex =1
+            BorderShade =65.0
+            ForeThemeColorIndex =2
+            ForeShade =50.0
+            GridlineThemeColorIndex =1
+            GridlineShade =65.0
         End
         Begin Tab
             FontSize =11

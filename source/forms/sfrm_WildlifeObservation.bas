@@ -14,13 +14,13 @@ Begin Form
     DatasheetGridlinesBehavior =3
     GridX =24
     GridY =24
-    Width =15480
+    Width =15613
     DatasheetFontHeight =11
-    ItemSuffix =10
-    Left =1590
-    Top =3525
-    Right =17070
-    Bottom =8145
+    ItemSuffix =24
+    Left =3255
+    Top =5070
+    Right =18750
+    Bottom =9735
     DatasheetGridlinesColor =15921906
     RecSrcDt = Begin
         0x340aab957b15e540
@@ -147,6 +147,18 @@ Begin Form
             BorderShade =65.0
             ShowPageHeaderAndPageFooter =1
         End
+        Begin Chart
+            SpecialEffect =2
+            OldBorderStyle =1
+            ThemeFontIndex =1
+            BackThemeColorIndex =1
+            BorderThemeColorIndex =1
+            BorderShade =65.0
+            ForeThemeColorIndex =2
+            ForeShade =50.0
+            GridlineThemeColorIndex =1
+            GridlineShade =65.0
+        End
         Begin Tab
             FontSize =11
             FontName ="Calibri"
@@ -176,6 +188,12 @@ Begin Form
             GridlineThemeColorIndex =1
             GridlineShade =65.0
         End
+        Begin EmptyCell
+            Height =240
+            GridlineColor =12632256
+            GridlineThemeColorIndex =1
+            GridlineShade =65.0
+        End
         Begin FormHeader
             Height =314
             BackColor =15921906
@@ -186,34 +204,16 @@ Begin Form
                 Begin Label
                     OverlapFlags =85
                     TextAlign =2
-                    Left =60
-                    Width =1134
-                    Height =314
+                    Left =6840
+                    Width =8400
+                    Height =300
                     BorderColor =6108695
-                    Name ="lblWildlifeType"
-                    Caption ="Type"
+                    Name ="lblWildlifeEvidenceNotes"
+                    Caption ="Evidence Notes"
                     GridlineColor =10921638
-                    LayoutCachedLeft =60
-                    LayoutCachedWidth =1194
-                    LayoutCachedHeight =314
-                    BorderThemeColorIndex =-1
-                    BorderTint =100.0
-                    ForeThemeColorIndex =-1
-                    ForeTint =100.0
-                End
-                Begin Label
-                    OverlapFlags =85
-                    TextAlign =2
-                    Left =2340
-                    Width =4320
-                    Height =314
-                    BorderColor =6108695
-                    Name ="lblWildlifeSpecies"
-                    Caption ="Species"
-                    GridlineColor =10921638
-                    LayoutCachedLeft =2340
-                    LayoutCachedWidth =6660
-                    LayoutCachedHeight =314
+                    LayoutCachedLeft =6840
+                    LayoutCachedWidth =15240
+                    LayoutCachedHeight =300
                     ThemeFontIndex =-1
                     BorderThemeColorIndex =-1
                     BorderTint =100.0
@@ -224,15 +224,15 @@ Begin Form
                     OverlapFlags =85
                     TextAlign =2
                     Left =1260
-                    Width =1020
-                    Height =314
+                    Width =1080
+                    Height =300
                     BorderColor =6108695
                     Name ="lblWildlifeEvidence"
                     Caption ="Evidence"
                     GridlineColor =10921638
                     LayoutCachedLeft =1260
-                    LayoutCachedWidth =2280
-                    LayoutCachedHeight =314
+                    LayoutCachedWidth =2340
+                    LayoutCachedHeight =300
                     ThemeFontIndex =-1
                     BorderThemeColorIndex =-1
                     BorderTint =100.0
@@ -242,17 +242,35 @@ Begin Form
                 Begin Label
                     OverlapFlags =85
                     TextAlign =2
-                    Left =6720
-                    Width =8274
-                    Height =314
+                    Left =2400
+                    Width =4380
+                    Height =300
                     BorderColor =6108695
-                    Name ="lblWildlifeEvidenceNotes"
-                    Caption ="Evidence Notes"
+                    Name ="lblWildlifeSpecies"
+                    Caption ="Species"
                     GridlineColor =10921638
-                    LayoutCachedLeft =6720
-                    LayoutCachedWidth =14994
-                    LayoutCachedHeight =314
+                    LayoutCachedLeft =2400
+                    LayoutCachedWidth =6780
+                    LayoutCachedHeight =300
                     ThemeFontIndex =-1
+                    BorderThemeColorIndex =-1
+                    BorderTint =100.0
+                    ForeThemeColorIndex =-1
+                    ForeTint =100.0
+                End
+                Begin Label
+                    OverlapFlags =85
+                    TextAlign =2
+                    Left =60
+                    Width =1140
+                    Height =300
+                    BorderColor =6108695
+                    Name ="lblWildlifeType"
+                    Caption ="Type"
+                    GridlineColor =10921638
+                    LayoutCachedLeft =60
+                    LayoutCachedWidth =1200
+                    LayoutCachedHeight =300
                     BorderThemeColorIndex =-1
                     BorderTint =100.0
                     ForeThemeColorIndex =-1
@@ -267,20 +285,20 @@ Begin Form
             AlternateBackColor =15921906
             Begin
                 Begin TextBox
-                    OverlapFlags =93
+                    OverlapFlags =85
                     IMESentenceMode =3
-                    Left =2280
+                    Left =2400
                     Width =4380
-                    Height =313
+                    Height =300
                     TabIndex =2
                     BorderColor =14211288
                     Name ="txtSpeciesName"
                     ControlSource ="SpeciesName"
                     GridlineColor =10921638
 
-                    LayoutCachedLeft =2280
-                    LayoutCachedWidth =6660
-                    LayoutCachedHeight =313
+                    LayoutCachedLeft =2400
+                    LayoutCachedWidth =6780
+                    LayoutCachedHeight =300
                     BackThemeColorIndex =-1
                     BorderThemeColorIndex =-1
                     BorderShade =100.0
@@ -290,20 +308,20 @@ Begin Form
                 Begin TextBox
                     EnterKeyBehavior = NotDefault
                     ScrollBars =2
-                    OverlapFlags =87
+                    OverlapFlags =85
                     IMESentenceMode =3
-                    Left =6660
-                    Width =8394
-                    Height =313
+                    Left =6840
+                    Width =8400
+                    Height =300
                     TabIndex =3
                     BorderColor =14211288
                     Name ="txtEvidenceNotes"
                     ControlSource ="EvidenceNotes"
                     GridlineColor =10921638
 
-                    LayoutCachedLeft =6660
-                    LayoutCachedWidth =15054
-                    LayoutCachedHeight =313
+                    LayoutCachedLeft =6840
+                    LayoutCachedWidth =15240
+                    LayoutCachedHeight =300
                     BackThemeColorIndex =-1
                     BorderThemeColorIndex =-1
                     BorderShade =100.0
@@ -313,14 +331,14 @@ Begin Form
                 End
                 Begin ComboBox
                     LimitToList = NotDefault
-                    OverlapFlags =95
+                    OverlapFlags =85
                     TextAlign =2
                     IMESentenceMode =3
                     ColumnCount =3
                     ListWidth =2880
-                    Left =1200
+                    Left =1260
                     Width =1080
-                    Height =313
+                    Height =300
                     TabIndex =1
                     BorderColor =14211288
                     ColumnInfo ="\"\";\"\";\"\";\"\";\"\";\"\";\"10\";\"12\""
@@ -334,9 +352,9 @@ Begin Form
                     AllowValueListEdits =0
 
                     ShowOnlyRowSourceValues =255
-                    LayoutCachedLeft =1200
-                    LayoutCachedWidth =2280
-                    LayoutCachedHeight =313
+                    LayoutCachedLeft =1260
+                    LayoutCachedWidth =2340
+                    LayoutCachedHeight =300
                     ThemeFontIndex =-1
                     BackThemeColorIndex =-1
                     BorderThemeColorIndex =-1
@@ -346,14 +364,14 @@ Begin Form
                 End
                 Begin ComboBox
                     LimitToList = NotDefault
-                    OverlapFlags =87
+                    OverlapFlags =85
                     TextAlign =2
                     IMESentenceMode =3
                     ColumnCount =3
                     ListWidth =2880
                     Left =60
                     Width =1140
-                    Height =313
+                    Height =300
                     BorderColor =14211288
                     ColumnInfo ="\"\";\"\";\"\";\"\";\"\";\"\";\"10\";\"12\""
                     Name ="cmbWildlifeTypeID"
@@ -368,7 +386,7 @@ Begin Form
                     ShowOnlyRowSourceValues =255
                     LayoutCachedLeft =60
                     LayoutCachedWidth =1200
-                    LayoutCachedHeight =313
+                    LayoutCachedHeight =300
                     ThemeFontIndex =-1
                     BackThemeColorIndex =-1
                     BorderThemeColorIndex =-1
@@ -380,7 +398,7 @@ Begin Form
                     TabStop = NotDefault
                     OverlapFlags =85
                     PictureType =2
-                    Left =15120
+                    Left =15300
                     Width =313
                     Height =313
                     TabIndex =4
@@ -391,8 +409,8 @@ Begin Form
                     Picture ="X-Mark-16-LtGray"
                     GridlineColor =10921638
 
-                    LayoutCachedLeft =15120
-                    LayoutCachedWidth =15433
+                    LayoutCachedLeft =15300
+                    LayoutCachedWidth =15613
                     LayoutCachedHeight =313
                     Gradient =0
                     BackColor =15527148

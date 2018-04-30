@@ -16,10 +16,10 @@ Begin Form
     Width =16110
     DatasheetFontHeight =11
     ItemSuffix =42
-    Left =3825
-    Top =2550
-    Right =19935
-    Bottom =11790
+    Left =1965
+    Top =2385
+    Right =18075
+    Bottom =11625
     DatasheetGridlinesColor =15921906
     RecSrcDt = Begin
         0xc208564c6c18e540
@@ -169,6 +169,18 @@ Begin Form
             BorderShade =65.0
             ShowPageHeaderAndPageFooter =1
         End
+        Begin Chart
+            SpecialEffect =2
+            OldBorderStyle =1
+            ThemeFontIndex =1
+            BackThemeColorIndex =1
+            BorderThemeColorIndex =1
+            BorderShade =65.0
+            ForeThemeColorIndex =2
+            ForeShade =50.0
+            GridlineThemeColorIndex =1
+            GridlineShade =65.0
+        End
         Begin Tab
             FontSize =11
             FontName ="Calibri"
@@ -214,7 +226,7 @@ Begin Form
                     Top =660
                     Width =7995
                     Height =3840
-                    BorderColor =10921638
+                    BorderColor =9211020
                     Name ="imgCurrentPhoto"
                     GridlineColor =10921638
 
@@ -223,6 +235,8 @@ Begin Form
                     LayoutCachedWidth =15615
                     LayoutCachedHeight =4500
                     TabIndex =10
+                    BorderThemeColorIndex =-1
+                    BorderShade =100.0
                 End
                 Begin Subform
                     TabStop = NotDefault
@@ -316,8 +330,9 @@ Begin Form
                     Visible = NotDefault
                     OverlapFlags =247
                     OldBorderStyle =0
+                    Top =5160
                     Width =16110
-                    Height =9537
+                    Height =7947
                     TabIndex =1
                     BorderColor =10921638
                     Name ="sfrmPhotoEntry"
@@ -326,12 +341,13 @@ Begin Form
                     LinkMasterFields ="ID"
                     GridlineColor =10921638
 
+                    LayoutCachedTop =5160
                     LayoutCachedWidth =16110
-                    LayoutCachedHeight =9537
+                    LayoutCachedHeight =13107
                 End
                 Begin TextBox
                     OldBorderStyle =0
-                    OverlapFlags =93
+                    OverlapFlags =85
                     BackStyle =0
                     IMESentenceMode =3
                     Left =120
@@ -348,7 +364,7 @@ Begin Form
                 End
                 Begin Label
                     BackStyle =1
-                    OverlapFlags =93
+                    OverlapFlags =85
                     TextAlign =2
                     Left =300
                     Top =180
@@ -371,7 +387,7 @@ Begin Form
                 End
                 Begin Label
                     BackStyle =1
-                    OverlapFlags =93
+                    OverlapFlags =85
                     TextAlign =2
                     Left =7620
                     Top =180
@@ -394,7 +410,7 @@ Begin Form
                 End
                 Begin ComboBox
                     LimitToList = NotDefault
-                    OverlapFlags =93
+                    OverlapFlags =85
                     IMESentenceMode =3
                     ListWidth =1440
                     Left =1800
@@ -403,7 +419,7 @@ Begin Form
                     Height =320
                     TabIndex =5
                     BoundColumn =1
-                    BorderColor =10921638
+                    BorderColor =9211020
                     ForeColor =2108188
                     ColumnInfo ="\"\";\"\";\"10\";\"50\""
                     Name ="cboPhotoSOPFilter"
@@ -419,10 +435,12 @@ Begin Form
                     LayoutCachedTop =600
                     LayoutCachedWidth =3600
                     LayoutCachedHeight =920
+                    BorderThemeColorIndex =-1
+                    BorderShade =100.0
                     Begin
                         Begin Label
                             FontItalic = NotDefault
-                            OverlapFlags =93
+                            OverlapFlags =85
                             TextAlign =1
                             Left =300
                             Top =600
@@ -445,7 +463,7 @@ Begin Form
                     End
                 End
                 Begin CommandButton
-                    OverlapFlags =93
+                    OverlapFlags =85
                     Left =5265
                     Top =600
                     Width =1620
@@ -468,14 +486,12 @@ Begin Form
                     ForeTint =100.0
                     Shape =0
                     Gradient =0
-                    BackColor =14277081
-                    BackThemeColorIndex =1
+                    BackColor =14211288
+                    BackThemeColorIndex =-1
                     BackTint =100.0
-                    BackShade =85.0
-                    BorderColor =8355711
-                    BorderThemeColorIndex =1
+                    BorderColor =9211020
+                    BorderThemeColorIndex =-1
                     BorderTint =100.0
-                    BorderShade =50.0
                     ThemeFontIndex =-1
                     HoverColor =14277081
                     HoverThemeColorIndex =1
@@ -493,11 +509,11 @@ Begin Form
                 End
                 Begin Label
                     FontItalic = NotDefault
-                    OverlapFlags =255
+                    OverlapFlags =247
                     TextAlign =2
-                    Left =7590
+                    Left =7620
                     Top =2220
-                    Width =7995
+                    Width =7965
                     Height =1260
                     LeftMargin =90
                     TopMargin =90
@@ -508,7 +524,7 @@ Begin Form
                     Caption ="Click on an item in the list to the left to view the corresponding image and ima"
                         "ge details. Use the dropdown above the list to filter by SOP."
                     GridlineColor =10921638
-                    LayoutCachedLeft =7590
+                    LayoutCachedLeft =7620
                     LayoutCachedTop =2220
                     LayoutCachedWidth =15585
                     LayoutCachedHeight =3480

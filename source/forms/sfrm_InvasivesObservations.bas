@@ -17,12 +17,12 @@ Begin Form
     DatasheetGridlinesBehavior =3
     GridX =24
     GridY =24
-    Width =15840
+    Width =15960
     DatasheetFontHeight =11
     ItemSuffix =40
-    Left =2100
+    Left =3495
     Top =5175
-    Right =17370
+    Right =18765
     Bottom =10320
     DatasheetGridlinesColor =15921906
     RecSrcDt = Begin
@@ -162,6 +162,18 @@ Begin Form
             BorderShade =65.0
             ShowPageHeaderAndPageFooter =1
         End
+        Begin Chart
+            SpecialEffect =2
+            OldBorderStyle =1
+            ThemeFontIndex =1
+            BackThemeColorIndex =1
+            BorderThemeColorIndex =1
+            BorderShade =65.0
+            ForeThemeColorIndex =2
+            ForeShade =50.0
+            GridlineThemeColorIndex =1
+            GridlineShade =65.0
+        End
         Begin Tab
             FontSize =11
             FontName ="Calibri"
@@ -198,7 +210,7 @@ Begin Form
             GridlineShade =65.0
         End
         Begin FormHeader
-            Height =479
+            Height =480
             BackColor =15921906
             Name ="FormHeader"
             AlternateBackThemeColorIndex =1
@@ -207,19 +219,19 @@ Begin Form
                 Begin Label
                     OverlapFlags =85
                     TextAlign =2
-                    Left =1500
+                    Left =1560
                     Top =240
                     Width =3060
-                    Height =239
+                    Height =240
                     FontSize =10
                     BorderColor =6108695
                     Name ="lblSpeciesNotes"
                     Caption ="Species Notes"
                     GridlineColor =10921638
-                    LayoutCachedLeft =1500
+                    LayoutCachedLeft =1560
                     LayoutCachedTop =240
-                    LayoutCachedWidth =4560
-                    LayoutCachedHeight =479
+                    LayoutCachedWidth =4620
+                    LayoutCachedHeight =480
                     BorderThemeColorIndex =-1
                     BorderTint =100.0
                     ForeThemeColorIndex =-1
@@ -228,19 +240,19 @@ Begin Form
                 Begin Label
                     OverlapFlags =85
                     TextAlign =2
-                    Left =5700
+                    Left =5820
                     Top =240
-                    Width =1008
-                    Height =239
+                    Width =1080
+                    Height =240
                     FontSize =10
                     BorderColor =6108695
                     Name ="lblInvasiveUtmX"
                     Caption ="UTMX (m)"
                     GridlineColor =10921638
-                    LayoutCachedLeft =5700
+                    LayoutCachedLeft =5820
                     LayoutCachedTop =240
-                    LayoutCachedWidth =6708
-                    LayoutCachedHeight =479
+                    LayoutCachedWidth =6900
+                    LayoutCachedHeight =480
                     ThemeFontIndex =-1
                     BorderThemeColorIndex =-1
                     BorderTint =100.0
@@ -250,19 +262,19 @@ Begin Form
                 Begin Label
                     OverlapFlags =85
                     TextAlign =2
-                    Left =6780
+                    Left =6960
                     Top =240
-                    Width =1008
-                    Height =239
+                    Width =1080
+                    Height =240
                     FontSize =10
                     BorderColor =6108695
                     Name ="lblInvasiveUtmY"
                     Caption ="UTMY (m)"
                     GridlineColor =10921638
-                    LayoutCachedLeft =6780
+                    LayoutCachedLeft =6960
                     LayoutCachedTop =240
-                    LayoutCachedWidth =7788
-                    LayoutCachedHeight =479
+                    LayoutCachedWidth =8040
+                    LayoutCachedHeight =480
                     ThemeFontIndex =-1
                     BorderThemeColorIndex =-1
                     BorderTint =100.0
@@ -272,17 +284,19 @@ Begin Form
                 Begin Label
                     OverlapFlags =85
                     TextAlign =2
+                    Left =60
                     Top =240
-                    Width =1056
-                    Height =239
+                    Width =1080
+                    Height =240
                     FontSize =10
                     BorderColor =6108695
                     Name ="lblSpeciesID"
                     Caption ="*Species"
                     GridlineColor =10921638
+                    LayoutCachedLeft =60
                     LayoutCachedTop =240
-                    LayoutCachedWidth =1056
-                    LayoutCachedHeight =479
+                    LayoutCachedWidth =1140
+                    LayoutCachedHeight =480
                     ThemeFontIndex =-1
                     BorderThemeColorIndex =-1
                     BorderTint =100.0
@@ -292,17 +306,17 @@ Begin Form
                 Begin Label
                     OverlapFlags =85
                     TextAlign =2
-                    Left =4620
-                    Width =1056
-                    Height =479
+                    Left =4680
+                    Width =1080
+                    Height =480
                     FontSize =10
                     BorderColor =6108695
                     Name ="lblRiparianVegBufferID"
                     Caption ="*Riparian\015\012Veg Buffer"
                     GridlineColor =10921638
-                    LayoutCachedLeft =4620
-                    LayoutCachedWidth =5676
-                    LayoutCachedHeight =479
+                    LayoutCachedLeft =4680
+                    LayoutCachedWidth =5760
+                    LayoutCachedHeight =480
                     ThemeFontIndex =-1
                     BorderThemeColorIndex =-1
                     BorderTint =100.0
@@ -312,19 +326,19 @@ Begin Form
                 Begin Label
                     OverlapFlags =85
                     TextAlign =2
-                    Left =7860
+                    Left =8100
                     Top =240
-                    Width =2028
-                    Height =239
+                    Width =2100
+                    Height =240
                     FontSize =10
                     BorderColor =6108695
                     Name ="lblInvasiveDatum"
                     Caption ="Horizontal Datum"
                     GridlineColor =10921638
-                    LayoutCachedLeft =7860
+                    LayoutCachedLeft =8100
                     LayoutCachedTop =240
-                    LayoutCachedWidth =9888
-                    LayoutCachedHeight =479
+                    LayoutCachedWidth =10200
+                    LayoutCachedHeight =480
                     ThemeFontIndex =-1
                     BorderThemeColorIndex =-1
                     BorderTint =100.0
@@ -334,19 +348,19 @@ Begin Form
                 Begin Label
                     OverlapFlags =85
                     TextAlign =2
-                    Left =9960
+                    Left =10260
                     Top =240
-                    Width =855
-                    Height =239
+                    Width =900
+                    Height =240
                     FontSize =10
                     BorderColor =6108695
                     Name ="lblInvasiveUTMZone"
                     Caption ="UTM Zone"
                     GridlineColor =10921638
-                    LayoutCachedLeft =9960
+                    LayoutCachedLeft =10260
                     LayoutCachedTop =240
-                    LayoutCachedWidth =10815
-                    LayoutCachedHeight =479
+                    LayoutCachedWidth =11160
+                    LayoutCachedHeight =480
                     ThemeFontIndex =-1
                     BorderThemeColorIndex =-1
                     BorderTint =100.0
@@ -356,19 +370,19 @@ Begin Form
                 Begin Label
                     OverlapFlags =85
                     TextAlign =2
-                    Left =10860
+                    Left =11220
                     Top =240
-                    Width =2340
-                    Height =239
+                    Width =2400
+                    Height =240
                     FontSize =10
                     BorderColor =6108695
                     Name ="lblInvasiveProtectedStatusID"
                     Caption ="*Protected Status"
                     GridlineColor =10921638
-                    LayoutCachedLeft =10860
+                    LayoutCachedLeft =11220
                     LayoutCachedTop =240
-                    LayoutCachedWidth =13200
-                    LayoutCachedHeight =479
+                    LayoutCachedWidth =13620
+                    LayoutCachedHeight =480
                     ThemeFontIndex =-1
                     BorderThemeColorIndex =-1
                     BorderTint =100.0
@@ -378,17 +392,17 @@ Begin Form
                 Begin Label
                     OverlapFlags =85
                     TextAlign =2
-                    Left =13260
-                    Width =1848
-                    Height =479
+                    Left =13680
+                    Width =1860
+                    Height =480
                     FontSize =10
                     BorderColor =8355711
                     Name ="lblInvasiveTaxonomicRefAuthID"
                     Caption ="*Taxonomic Reference Authority"
                     GridlineColor =10921638
-                    LayoutCachedLeft =13260
-                    LayoutCachedWidth =15108
-                    LayoutCachedHeight =479
+                    LayoutCachedLeft =13680
+                    LayoutCachedWidth =15540
+                    LayoutCachedHeight =480
                     ThemeFontIndex =-1
                     ForeThemeColorIndex =-1
                     ForeTint =100.0
@@ -403,12 +417,12 @@ Begin Form
             AlternateBackColor =15921906
             Begin
                 Begin TextBox
-                    OverlapFlags =93
+                    OverlapFlags =85
                     TextAlign =1
                     IMESentenceMode =3
                     Left =1560
                     Width =3060
-                    Height =313
+                    Height =300
                     TabIndex =2
                     BorderColor =14211288
                     Name ="txtInvasiveSpeciesNotes"
@@ -417,7 +431,7 @@ Begin Form
 
                     LayoutCachedLeft =1560
                     LayoutCachedWidth =4620
-                    LayoutCachedHeight =313
+                    LayoutCachedHeight =300
                     BackThemeColorIndex =-1
                     BorderThemeColorIndex =-1
                     BorderShade =100.0
@@ -426,21 +440,21 @@ Begin Form
                     ForeTint =100.0
                 End
                 Begin TextBox
-                    OverlapFlags =93
+                    OverlapFlags =85
                     TextAlign =2
                     IMESentenceMode =3
-                    Left =5700
-                    Width =1083
-                    Height =313
+                    Left =5820
+                    Width =1080
+                    Height =300
                     TabIndex =4
                     BorderColor =14211288
                     Name ="txtInvasiveUtmX_m"
                     ControlSource ="UtmX_m"
                     GridlineColor =10921638
 
-                    LayoutCachedLeft =5700
-                    LayoutCachedWidth =6783
-                    LayoutCachedHeight =313
+                    LayoutCachedLeft =5820
+                    LayoutCachedWidth =6900
+                    LayoutCachedHeight =300
                     BackThemeColorIndex =-1
                     BorderThemeColorIndex =-1
                     BorderShade =100.0
@@ -449,21 +463,21 @@ Begin Form
                     ForeTint =100.0
                 End
                 Begin TextBox
-                    OverlapFlags =95
+                    OverlapFlags =85
                     TextAlign =2
                     IMESentenceMode =3
-                    Left =6780
-                    Width =1083
-                    Height =313
+                    Left =6960
+                    Width =1080
+                    Height =300
                     TabIndex =5
                     BorderColor =14211288
                     Name ="txtInvasiveUtmY_m"
                     ControlSource ="UtmY_m"
                     GridlineColor =10921638
 
-                    LayoutCachedLeft =6780
-                    LayoutCachedWidth =7863
-                    LayoutCachedHeight =313
+                    LayoutCachedLeft =6960
+                    LayoutCachedWidth =8040
+                    LayoutCachedHeight =300
                     BackThemeColorIndex =-1
                     BorderThemeColorIndex =-1
                     BorderShade =100.0
@@ -480,8 +494,8 @@ Begin Form
                     ColumnCount =5
                     ListWidth =8280
                     Left =60
-                    Width =1086
-                    Height =313
+                    Width =1080
+                    Height =300
                     BorderColor =14211288
                     ColumnInfo ="\"\";\"\";\"\";\"\";\"\";\"\";\"\";\"\";\"\";\"\";\"10\";\"20\""
                     Name ="cboTaxonID"
@@ -497,8 +511,8 @@ Begin Form
 
                     ShowOnlyRowSourceValues =255
                     LayoutCachedLeft =60
-                    LayoutCachedWidth =1146
-                    LayoutCachedHeight =313
+                    LayoutCachedWidth =1140
+                    LayoutCachedHeight =300
                     BackThemeColorIndex =-1
                     BorderThemeColorIndex =-1
                     BorderShade =100.0
@@ -507,14 +521,14 @@ Begin Form
                 End
                 Begin ComboBox
                     LimitToList = NotDefault
-                    OverlapFlags =87
+                    OverlapFlags =85
                     TextAlign =2
                     IMESentenceMode =3
                     ColumnCount =2
                     ListWidth =2160
-                    Left =4620
-                    Width =1086
-                    Height =313
+                    Left =4680
+                    Width =1080
+                    Height =300
                     TabIndex =3
                     BorderColor =14211288
                     ColumnInfo ="\"\";\"\";\"\";\"\";\"10\";\"20\""
@@ -528,9 +542,9 @@ Begin Form
                     AllowValueListEdits =0
 
                     ShowOnlyRowSourceValues =255
-                    LayoutCachedLeft =4620
-                    LayoutCachedWidth =5706
-                    LayoutCachedHeight =313
+                    LayoutCachedLeft =4680
+                    LayoutCachedWidth =5760
+                    LayoutCachedHeight =300
                     ThemeFontIndex =-1
                     BackThemeColorIndex =-1
                     BorderThemeColorIndex =-1
@@ -540,14 +554,14 @@ Begin Form
                 End
                 Begin ComboBox
                     LimitToList = NotDefault
-                    OverlapFlags =95
+                    OverlapFlags =85
                     TextAlign =2
                     IMESentenceMode =3
                     ColumnCount =2
                     ListWidth =1440
-                    Left =7860
-                    Width =2103
-                    Height =313
+                    Left =8100
+                    Width =2100
+                    Height =300
                     TabIndex =6
                     BorderColor =14211288
                     ColumnInfo ="\"\";\"\";\"\";\"\";\"10\";\"40\""
@@ -561,9 +575,9 @@ Begin Form
                     AllowValueListEdits =0
 
                     ShowOnlyRowSourceValues =255
-                    LayoutCachedLeft =7860
-                    LayoutCachedWidth =9963
-                    LayoutCachedHeight =313
+                    LayoutCachedLeft =8100
+                    LayoutCachedWidth =10200
+                    LayoutCachedHeight =300
                     ThemeFontIndex =-1
                     BackThemeColorIndex =-1
                     BorderThemeColorIndex =-1
@@ -573,14 +587,14 @@ Begin Form
                 End
                 Begin ComboBox
                     LimitToList = NotDefault
-                    OverlapFlags =95
+                    OverlapFlags =85
                     TextAlign =2
                     IMESentenceMode =3
                     ColumnCount =2
                     ListWidth =720
-                    Left =9960
+                    Left =10260
                     Width =900
-                    Height =313
+                    Height =300
                     TabIndex =7
                     BorderColor =14211288
                     ColumnInfo ="\"\";\"\";\"\";\"\";\"10\";\"10\""
@@ -594,9 +608,9 @@ Begin Form
                     AllowValueListEdits =0
 
                     ShowOnlyRowSourceValues =255
-                    LayoutCachedLeft =9960
-                    LayoutCachedWidth =10860
-                    LayoutCachedHeight =313
+                    LayoutCachedLeft =10260
+                    LayoutCachedWidth =11160
+                    LayoutCachedHeight =300
                     ThemeFontIndex =-1
                     BackThemeColorIndex =-1
                     BorderThemeColorIndex =-1
@@ -608,7 +622,7 @@ Begin Form
                     TabStop = NotDefault
                     OverlapFlags =85
                     PictureType =2
-                    Left =15166
+                    Left =15586
                     Width =313
                     Height =313
                     TabIndex =10
@@ -619,8 +633,8 @@ Begin Form
                     Picture ="X-Mark-16-LtGray"
                     GridlineColor =10921638
 
-                    LayoutCachedLeft =15166
-                    LayoutCachedWidth =15479
+                    LayoutCachedLeft =15586
+                    LayoutCachedWidth =15899
                     LayoutCachedHeight =313
                     Gradient =0
                     BackColor =15527148
@@ -645,14 +659,14 @@ Begin Form
                 End
                 Begin ComboBox
                     LimitToList = NotDefault
-                    OverlapFlags =95
+                    OverlapFlags =85
                     TextAlign =2
                     IMESentenceMode =3
                     ColumnCount =3
                     ListWidth =2160
-                    Left =10860
+                    Left =11220
                     Width =2400
-                    Height =313
+                    Height =300
                     TabIndex =8
                     BorderColor =14211288
                     ColumnInfo ="\"\";\"\";\"\";\"\";\"\";\"\";\"10\";\"50\""
@@ -666,9 +680,9 @@ Begin Form
                     GridlineColor =10921638
                     AllowValueListEdits =0
 
-                    LayoutCachedLeft =10860
-                    LayoutCachedWidth =13260
-                    LayoutCachedHeight =313
+                    LayoutCachedLeft =11220
+                    LayoutCachedWidth =13620
+                    LayoutCachedHeight =300
                     ThemeFontIndex =-1
                     BackThemeColorIndex =-1
                     BorderThemeColorIndex =-1
@@ -678,14 +692,14 @@ Begin Form
                 End
                 Begin ComboBox
                     LimitToList = NotDefault
-                    OverlapFlags =87
+                    OverlapFlags =85
                     TextAlign =2
                     IMESentenceMode =3
                     ColumnCount =3
                     ListWidth =4799
-                    Left =13260
-                    Width =1848
-                    Height =313
+                    Left =13680
+                    Width =1860
+                    Height =300
                     TabIndex =9
                     BorderColor =14211288
                     ColumnInfo ="\"\";\"\";\"\";\"\";\"\";\"\";\"10\";\"80\""
@@ -702,9 +716,9 @@ Begin Form
                     GridlineColor =10921638
                     AllowValueListEdits =0
 
-                    LayoutCachedLeft =13260
-                    LayoutCachedWidth =15108
-                    LayoutCachedHeight =313
+                    LayoutCachedLeft =13680
+                    LayoutCachedWidth =15540
+                    LayoutCachedHeight =300
                     ThemeFontIndex =-1
                     BackThemeColorIndex =-1
                     BorderThemeColorIndex =-1
@@ -713,11 +727,12 @@ Begin Form
                     ForeShade =100.0
                 End
                 Begin CommandButton
+                    TabStop = NotDefault
                     OverlapFlags =85
                     PictureType =2
                     Left =1200
-                    Width =312
-                    Height =311
+                    Width =300
+                    Height =300
                     TabIndex =1
                     ForeColor =4210752
                     Name ="cmdGoToSpeciesLink"
@@ -726,8 +741,8 @@ Begin Form
                     GridlineColor =10921638
 
                     LayoutCachedLeft =1200
-                    LayoutCachedWidth =1512
-                    LayoutCachedHeight =311
+                    LayoutCachedWidth =1500
+                    LayoutCachedHeight =300
                     Gradient =0
                     BackColor =15921906
                     BackThemeColorIndex =-1

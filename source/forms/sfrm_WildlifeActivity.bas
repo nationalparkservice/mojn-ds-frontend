@@ -11,13 +11,13 @@ Begin Form
     DatasheetGridlinesBehavior =3
     GridX =24
     GridY =24
-    Width =15840
+    Width =15885
     DatasheetFontHeight =11
     ItemSuffix =28
-    Left =3885
-    Top =2610
-    Right =19995
-    Bottom =11850
+    Left =2370
+    Top =3300
+    Right =18225
+    Bottom =12285
     DatasheetGridlinesColor =15921906
     RecSrcDt = Begin
         0xa55d10aad915e540
@@ -160,6 +160,18 @@ Begin Form
             GridlineShade =65.0
             BorderShade =65.0
             ShowPageHeaderAndPageFooter =1
+        End
+        Begin Chart
+            SpecialEffect =2
+            OldBorderStyle =1
+            ThemeFontIndex =1
+            BackThemeColorIndex =1
+            BorderThemeColorIndex =1
+            BorderShade =65.0
+            ForeThemeColorIndex =2
+            ForeShade =50.0
+            GridlineThemeColorIndex =1
+            GridlineShade =65.0
         End
         Begin Tab
             FontSize =11
@@ -472,7 +484,7 @@ Begin Form
                     ColumnCount =3
                     Left =2520
                     Top =120
-                    Width =1200
+                    Width =1320
                     Height =315
                     ColumnOrder =0
                     FontSize =12
@@ -499,7 +511,7 @@ Begin Form
 
                     LayoutCachedLeft =2520
                     LayoutCachedTop =120
-                    LayoutCachedWidth =3720
+                    LayoutCachedWidth =3840
                     LayoutCachedHeight =435
                     ForeThemeColorIndex =0
                     ForeTint =75.0
@@ -545,10 +557,10 @@ Begin Form
                     LayoutCachedHeight =540
                 End
                 Begin Subform
-                    Enabled = NotDefault
                     OverlapFlags =85
                     OldBorderStyle =0
-                    Top =780
+                    Left =135
+                    Top =1260
                     Width =15750
                     Height =4920
                     TabIndex =5
@@ -559,9 +571,37 @@ Begin Form
                     LinkMasterFields ="ID"
                     GridlineColor =10921638
 
-                    LayoutCachedTop =780
-                    LayoutCachedWidth =15750
-                    LayoutCachedHeight =5700
+                    LayoutCachedLeft =135
+                    LayoutCachedTop =1260
+                    LayoutCachedWidth =15885
+                    LayoutCachedHeight =6180
+                    Begin
+                        Begin Label
+                            BackStyle =1
+                            OverlapFlags =85
+                            TextAlign =2
+                            Left =120
+                            Top =840
+                            Width =3255
+                            Height =300
+                            FontWeight =700
+                            BackColor =4281912
+                            BorderColor =6108695
+                            ForeColor =16777215
+                            Name ="lblObservationSubform"
+                            Caption ="Wildlife Observations"
+                            GridlineColor =10921638
+                            LayoutCachedLeft =120
+                            LayoutCachedTop =840
+                            LayoutCachedWidth =3375
+                            LayoutCachedHeight =1140
+                            BackThemeColorIndex =-1
+                            BorderThemeColorIndex =-1
+                            BorderTint =100.0
+                            ForeThemeColorIndex =-1
+                            ForeTint =100.0
+                        End
+                    End
                 End
             End
         End

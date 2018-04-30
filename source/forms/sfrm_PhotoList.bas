@@ -18,10 +18,10 @@ Begin Form
     Width =6840
     DatasheetFontHeight =11
     ItemSuffix =42
-    Left =3570
-    Top =3750
-    Right =10455
-    Bottom =10290
+    Left =4800
+    Top =5160
+    Right =11580
+    Bottom =10635
     DatasheetGridlinesColor =15921906
     RecSrcDt = Begin
         0xd251bf69f519e540
@@ -164,6 +164,18 @@ Begin Form
             GridlineShade =65.0
             BorderShade =65.0
             ShowPageHeaderAndPageFooter =1
+        End
+        Begin Chart
+            SpecialEffect =2
+            OldBorderStyle =1
+            ThemeFontIndex =1
+            BackThemeColorIndex =1
+            BorderThemeColorIndex =1
+            BorderShade =65.0
+            ForeThemeColorIndex =2
+            ForeShade =50.0
+            GridlineThemeColorIndex =1
+            GridlineShade =65.0
         End
         Begin Tab
             FontSize =11
@@ -371,11 +383,5 @@ End Sub
 Private Sub cmdPhotoClick_Click()
 
 Disp_Image Me.RenamedFilePath
-
-End Sub
-
-Private Sub cboPhotoSOPID_AfterUpdate()
-
-Me.filter = "PhotoSOPID = " & Me.cboPhotoSOPID
 
 End Sub

@@ -19,11 +19,11 @@ Begin Form
     GridY =24
     Width =15840
     DatasheetFontHeight =11
-    ItemSuffix =26
-    Left =4065
-    Top =4470
-    Right =19905
-    Bottom =10110
+    ItemSuffix =27
+    Left =4410
+    Top =5385
+    Right =19995
+    Bottom =10770
     DatasheetGridlinesColor =15921906
     AfterInsert ="[Event Procedure]"
     RecSrcDt = Begin
@@ -184,6 +184,18 @@ Begin Form
             GridlineShade =65.0
             BorderShade =65.0
             ShowPageHeaderAndPageFooter =1
+        End
+        Begin Chart
+            SpecialEffect =2
+            OldBorderStyle =1
+            ThemeFontIndex =1
+            BackThemeColorIndex =1
+            BorderThemeColorIndex =1
+            BorderShade =65.0
+            ForeThemeColorIndex =2
+            ForeShade =50.0
+            GridlineThemeColorIndex =1
+            GridlineShade =65.0
         End
         Begin UnboundObjectFrame
             SpecialEffect =2
@@ -385,7 +397,7 @@ Begin Form
                     Top =840
                     Width =1918
                     Height =297
-                    TabIndex =5
+                    TabIndex =4
                     BorderColor =14211288
                     Name ="txtRetrievalTimeOfDay"
                     ControlSource ="RetrievalTimeOfDay"
@@ -493,7 +505,7 @@ Begin Form
                     Width =5106
                     Height =1140
                     FontSize =10
-                    TabIndex =6
+                    TabIndex =5
                     BorderColor =14211288
                     Name ="txtNotes"
                     ControlSource ="Notes"
@@ -543,7 +555,7 @@ Begin Form
                     Top =120
                     Width =2460
                     Height =297
-                    TabIndex =4
+                    TabIndex =3
                     BorderColor =14211288
                     ColumnInfo ="\"\";\"\";\"\";\"\";\"10\";\"50\""
                     Name ="cboSensorProblemID"
@@ -732,7 +744,7 @@ Begin Form
                     Top =120
                     Width =486
                     Height =1140
-                    TabIndex =7
+                    TabIndex =6
                     ForeColor =4210752
                     Name ="cmdDeleteSensorRetrieval"
                     OnClick ="[Event Procedure]"
@@ -764,187 +776,6 @@ Begin Form
                     WebImagePaddingRight =1
                     WebImagePaddingBottom =1
                     Overlaps =1
-                End
-                Begin CommandButton
-                    Enabled = NotDefault
-                    OverlapFlags =93
-                    Left =3120
-                    Top =1680
-                    Width =3156
-                    Height =300
-                    TabIndex =3
-                    ForeColor =4210752
-                    Name ="cmdImportTSensorDataTemperature"
-                    Caption ="Import Temperature"
-                    OnClick ="[Event Procedure]"
-                    GridlineColor =10921638
-
-                    LayoutCachedLeft =3120
-                    LayoutCachedTop =1680
-                    LayoutCachedWidth =6276
-                    LayoutCachedHeight =1980
-                    BackColor =12566463
-                    BackThemeColorIndex =-1
-                    BackTint =100.0
-                    BorderColor =14136213
-                    HoverColor =11525325
-                    HoverThemeColorIndex =-1
-                    HoverTint =100.0
-                    PressedColor =12566463
-                    PressedThemeColorIndex =-1
-                    PressedShade =100.0
-                    HoverForeColor =4210752
-                    PressedForeColor =4210752
-                    WebImagePaddingLeft =2
-                    WebImagePaddingTop =2
-                    WebImagePaddingRight =1
-                    WebImagePaddingBottom =1
-                    Overlaps =1
-                End
-                Begin CommandButton
-                    Enabled = NotDefault
-                    OverlapFlags =93
-                    Left =9600
-                    Top =1680
-                    Width =3156
-                    Height =300
-                    TabIndex =8
-                    ForeColor =4210752
-                    Name ="cmdImportTSensorDataHumidity"
-                    Caption ="Import Humidity"
-                    OnClick ="[Event Procedure]"
-                    GridlineColor =10921638
-
-                    LayoutCachedLeft =9600
-                    LayoutCachedTop =1680
-                    LayoutCachedWidth =12756
-                    LayoutCachedHeight =1980
-                    BackColor =12566463
-                    BackThemeColorIndex =-1
-                    BackTint =100.0
-                    BorderColor =14136213
-                    HoverColor =11525325
-                    HoverThemeColorIndex =-1
-                    HoverTint =100.0
-                    PressedColor =12566463
-                    PressedThemeColorIndex =-1
-                    PressedShade =100.0
-                    HoverForeColor =4210752
-                    PressedForeColor =4210752
-                    WebImagePaddingLeft =2
-                    WebImagePaddingTop =2
-                    WebImagePaddingRight =1
-                    WebImagePaddingBottom =1
-                    Overlaps =1
-                End
-                Begin CommandButton
-                    Enabled = NotDefault
-                    OverlapFlags =93
-                    Left =6360
-                    Top =1680
-                    Width =2016
-                    Height =300
-                    TabIndex =9
-                    ForeColor =4210752
-                    Name ="cmdDeleteTSensorDataTemperature"
-                    Caption ="Delete Temperature"
-                    OnClick ="[Event Procedure]"
-                    GridlineColor =10921638
-
-                    LayoutCachedLeft =6360
-                    LayoutCachedTop =1680
-                    LayoutCachedWidth =8376
-                    LayoutCachedHeight =1980
-                    BackColor =12566463
-                    BackThemeColorIndex =-1
-                    BackTint =100.0
-                    BorderColor =14136213
-                    HoverColor =10856415
-                    HoverThemeColorIndex =-1
-                    HoverTint =100.0
-                    PressedColor =12566463
-                    PressedThemeColorIndex =-1
-                    PressedShade =100.0
-                    HoverForeColor =4210752
-                    PressedForeColor =4210752
-                    WebImagePaddingLeft =2
-                    WebImagePaddingTop =2
-                    WebImagePaddingRight =1
-                    WebImagePaddingBottom =1
-                    Overlaps =1
-                End
-                Begin CommandButton
-                    Enabled = NotDefault
-                    OverlapFlags =93
-                    Left =12840
-                    Top =1680
-                    Width =2016
-                    Height =300
-                    TabIndex =10
-                    ForeColor =4210752
-                    Name ="cmdDeleteTSensorDataHumidity"
-                    Caption ="Delete Humidity"
-                    OnClick ="[Event Procedure]"
-                    GridlineColor =10921638
-
-                    LayoutCachedLeft =12840
-                    LayoutCachedTop =1680
-                    LayoutCachedWidth =14856
-                    LayoutCachedHeight =1980
-                    BackColor =12566463
-                    BackThemeColorIndex =-1
-                    BackTint =100.0
-                    BorderColor =14136213
-                    HoverColor =10856415
-                    HoverThemeColorIndex =-1
-                    HoverTint =100.0
-                    PressedColor =12566463
-                    PressedThemeColorIndex =-1
-                    PressedShade =100.0
-                    HoverForeColor =4210752
-                    PressedForeColor =4210752
-                    WebImagePaddingLeft =2
-                    WebImagePaddingTop =2
-                    WebImagePaddingRight =1
-                    WebImagePaddingBottom =1
-                    Overlaps =1
-                End
-                Begin Rectangle
-                    OverlapFlags =223
-                    Left =60
-                    Top =1560
-                    Width =15714
-                    Height =540
-                    BorderColor =10921638
-                    Name ="fraImport"
-                    GridlineColor =10921638
-                    LayoutCachedLeft =60
-                    LayoutCachedTop =1560
-                    LayoutCachedWidth =15774
-                    LayoutCachedHeight =2100
-                End
-                Begin Label
-                    OverlapFlags =215
-                    TextAlign =2
-                    Left =300
-                    Top =1680
-                    Width =1884
-                    Height =300
-                    FontSize =10
-                    FontWeight =700
-                    BorderColor =8355711
-                    Name ="lblWildlifeObserved"
-                    Caption ="Import Sensor Data"
-                    FontName ="Arial"
-                    GridlineColor =10921638
-                    LayoutCachedLeft =300
-                    LayoutCachedTop =1680
-                    LayoutCachedWidth =2184
-                    LayoutCachedHeight =1980
-                    ThemeFontIndex =-1
-                    BackThemeColorIndex =-1
-                    ForeThemeColorIndex =-1
-                    ForeTint =100.0
                 End
             End
         End
@@ -982,8 +813,6 @@ On Error GoTo Error_Handler
     ElseIf Me.IsSensorRetrievedID = 1 And Me.IsDownloadSuccessfulID = 8 Then
         Me.cboIsDownloadSuccessfulID = Null
     End If
-    
-    SetupImportButtons  ' Enable/disable the two import buttons and the delete buttons based on the [Retrieved?] value
     
 Exit_Sub:
     Exit Sub
@@ -1130,11 +959,6 @@ Private Sub cmdImportTSensorDataTemperature_Click()
 
 End Sub
 
-Private Sub Form_AfterInsert()
-
-    SetupImportButtons
-    
-End Sub
 
 Private Sub Form_BeforeUpdate(Cancel As Integer)
 'LC 10/30/2017 - Before adding record to table, check for nulls in required fields
@@ -1147,19 +971,6 @@ Private Sub Form_BeforeUpdate(Cancel As Integer)
         Me.cboIsSensorRetrieved.SetFocus
     End If
             
-End Sub
-
-Private Sub Form_Current()
-'    If Not IsNull(Me.ID) Then
-'        Me.txtSensorTemperatureImportDate = DLookup("ImportDate", "data_SensorImportHeader_Temperature", "SensorRetrievalAttemptID = " & Me.ID & " AND IsImportSuccess = True")
-'        Me.txtSensorHumidityImportDate = DLookup("ImportDate", "data_SensorImportHeader_Humidity", "SensorRetrievalAttemptID = " & Me.ID)
-'    Else
-'        Me.txtSensorTemperatureImportDate = "n/a"
-'        Me.txtSensorHumidityImportDate = "n/a"
-'    End If
-        
-    SetupImportButtons  ' Enable/disable the two import and delete buttons based on the [Retrieved?] value
-
 End Sub
 
 Private Function cmdImportTSensorDataTemperature_CanExecute() As Boolean
@@ -1192,20 +1003,6 @@ Private Function cmdDeleteTSensorDataHumidity_CanExecute() As Boolean
     End If
 End Function
 
-Private Sub Form_KeyUp(KeyCode As Integer, Shift As Integer)
-    If KeyCode = 27 Then
-        SetupImportButtons  ' Enable/disable the two import and two delete buttons based on the [Retrieved?] value
-    End If
-End Sub
-
 Private Sub Form_Open(Cancel As Integer)
     YesID = DLookup("ID", "lookup_IsSensorRetrieved", "Label = 'Yes'")
-End Sub
-
-Private Sub SetupImportButtons()
-    Me.cmdImportTSensorDataTemperature.Enabled = cmdImportTSensorDataTemperature_CanExecute()
-    Me.cmdImportTSensorDataHumidity.Enabled = cmdImportTSensorDataHumidity_CanExecute()
-    Me.cmdDeleteTSensorDataTemperature.Enabled = cmdDeleteTSensorDataTemperature_CanExecute()
-    Me.cmdDeleteTSensorDataHumidity.Enabled = cmdDeleteTSensorDataHumidity_CanExecute()
-    
 End Sub

@@ -14,10 +14,10 @@ Begin Form
     Width =15840
     DatasheetFontHeight =11
     ItemSuffix =33
-    Left =3885
-    Top =2610
-    Right =19980
-    Bottom =11850
+    Left =2025
+    Top =2385
+    Right =18120
+    Bottom =11625
     DatasheetGridlinesColor =15921906
     RecSrcDt = Begin
         0x19205bcaca15e540
@@ -160,6 +160,18 @@ Begin Form
             GridlineShade =65.0
             BorderShade =65.0
             ShowPageHeaderAndPageFooter =1
+        End
+        Begin Chart
+            SpecialEffect =2
+            OldBorderStyle =1
+            ThemeFontIndex =1
+            BackThemeColorIndex =1
+            BorderThemeColorIndex =1
+            BorderShade =65.0
+            ForeThemeColorIndex =2
+            ForeShade =50.0
+            GridlineThemeColorIndex =1
+            GridlineShade =65.0
         End
         Begin Tab
             FontSize =11
@@ -533,6 +545,7 @@ Begin Form
                     End
                 End
                 Begin Subform
+                    Enabled = NotDefault
                     OverlapFlags =85
                     OldBorderStyle =0
                     Left =300
@@ -646,6 +659,7 @@ Begin Form
                     End
                 End
                 Begin Subform
+                    Enabled = NotDefault
                     OverlapFlags =85
                     OldBorderStyle =0
                     Left =3540
@@ -760,6 +774,7 @@ Begin Form
                     End
                 End
                 Begin Subform
+                    Enabled = NotDefault
                     OverlapFlags =85
                     OldBorderStyle =0
                     Left =7755
@@ -874,6 +889,7 @@ Begin Form
                     End
                 End
                 Begin Subform
+                    Enabled = NotDefault
                     OverlapFlags =85
                     OldBorderStyle =0
                     Left =10995
@@ -1003,6 +1019,7 @@ Begin Form
                     LayoutCachedHeight =1140
                 End
                 Begin Subform
+                    Enabled = NotDefault
                     OverlapFlags =85
                     OldBorderStyle =0
                     Left =300
@@ -1048,6 +1065,7 @@ Begin Form
                     End
                 End
                 Begin Subform
+                    Enabled = NotDefault
                     OverlapFlags =85
                     OldBorderStyle =0
                     Left =6300
@@ -1093,6 +1111,7 @@ Begin Form
                     End
                 End
                 Begin Subform
+                    Enabled = NotDefault
                     OverlapFlags =85
                     OldBorderStyle =0
                     Left =10680

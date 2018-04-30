@@ -21,10 +21,10 @@ Begin Form
     Width =15840
     DatasheetFontHeight =11
     ItemSuffix =21
-    Left =3945
-    Top =2610
-    Right =20055
-    Bottom =11850
+    Left =2085
+    Top =2385
+    Right =18195
+    Bottom =11625
     DatasheetGridlinesColor =15921906
     RecSrcDt = Begin
         0x51f3cbe4ac15e540
@@ -179,6 +179,18 @@ Begin Form
             BorderShade =65.0
             ShowPageHeaderAndPageFooter =1
         End
+        Begin Chart
+            SpecialEffect =2
+            OldBorderStyle =1
+            ThemeFontIndex =1
+            BackThemeColorIndex =1
+            BorderThemeColorIndex =1
+            BorderShade =65.0
+            ForeThemeColorIndex =2
+            ForeShade =50.0
+            GridlineThemeColorIndex =1
+            GridlineShade =65.0
+        End
         Begin UnboundObjectFrame
             SpecialEffect =2
             OldBorderStyle =1
@@ -235,7 +247,7 @@ Begin Form
                     ListWidth =1440
                     Left =3852
                     Top =540
-                    Width =1185
+                    Width =1485
                     Height =313
                     BorderColor =14211288
                     ColumnInfo ="\"\";\"\";\"\";\"\";\"10\";\"20\""
@@ -259,7 +271,7 @@ Begin Form
                     ShowOnlyRowSourceValues =255
                     LayoutCachedLeft =3852
                     LayoutCachedTop =540
-                    LayoutCachedWidth =5037
+                    LayoutCachedWidth =5337
                     LayoutCachedHeight =853
                     ThemeFontIndex =-1
                     BackThemeColorIndex =-1
@@ -303,7 +315,7 @@ Begin Form
                     OldBorderStyle =0
                     Left =240
                     Top =1620
-                    Width =13796
+                    Width =13931
                     Height =4255
                     TabIndex =1
                     BorderColor =65536
@@ -315,7 +327,7 @@ Begin Form
 
                     LayoutCachedLeft =240
                     LayoutCachedTop =1620
-                    LayoutCachedWidth =14036
+                    LayoutCachedWidth =14171
                     LayoutCachedHeight =5875
                     BorderThemeColorIndex =-1
                     BorderShade =100.0
@@ -355,7 +367,7 @@ Begin Form
                     ColumnCount =3
                     Left =3837
                     Top =120
-                    Width =1199
+                    Width =1499
                     Height =313
                     FontSize =12
                     TabIndex =2
@@ -383,7 +395,7 @@ Begin Form
                     ShowOnlyRowSourceValues =255
                     LayoutCachedLeft =3837
                     LayoutCachedTop =120
-                    LayoutCachedWidth =5036
+                    LayoutCachedWidth =5336
                     LayoutCachedHeight =433
                     ThemeFontIndex =-1
                     BackThemeColorIndex =-1

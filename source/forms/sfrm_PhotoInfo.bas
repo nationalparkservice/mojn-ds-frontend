@@ -21,12 +21,12 @@ Begin Form
     Width =8055
     DatasheetFontHeight =11
     ItemSuffix =115
-    Left =11010
-    Top =6555
-    Right =19245
-    Bottom =10035
+    Left =11400
+    Top =7215
+    Right =19635
+    Bottom =10695
     DatasheetGridlinesColor =15921906
-    Filter ="data_Photo.ID = 1352"
+    Filter ="data_Photo.ID = 3299"
     RecSrcDt = Begin
         0x760844df3519e540
     End

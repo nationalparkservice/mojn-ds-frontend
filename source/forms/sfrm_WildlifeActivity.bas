@@ -6,6 +6,7 @@ Begin Form
     AutoCenter = NotDefault
     NavigationButtons = NotDefault
     DividingLines = NotDefault
+    FilterOn = NotDefault
     DefaultView =0
     PictureAlignment =2
     DatasheetGridlinesBehavior =3
@@ -14,10 +15,10 @@ Begin Form
     Width =15885
     DatasheetFontHeight =11
     ItemSuffix =28
-    Left =2370
-    Top =3300
-    Right =18225
-    Bottom =12285
+    Left =3255
+    Top =2385
+    Right =19365
+    Bottom =11625
     DatasheetGridlinesColor =15921906
     RecSrcDt = Begin
         0xa55d10aad915e540

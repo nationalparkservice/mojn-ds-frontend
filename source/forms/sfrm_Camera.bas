@@ -18,10 +18,10 @@ Begin Form
     Width =5759
     DatasheetFontHeight =11
     ItemSuffix =16
-    Left =1485
-    Top =4650
-    Right =7260
-    Bottom =5370
+    Left =4095
+    Top =4710
+    Right =9870
+    Bottom =5385
     DatasheetGridlinesColor =15921906
     RecSrcDt = Begin
         0x556e2cfc5618e540
@@ -32,6 +32,7 @@ Begin Form
         "oActivity].[DataProcessingLevelNote], [data_PhotoActivity].[DateCreated] FROM da"
         "ta_PhotoActivity; "
     Caption ="sfrm_Camera"
+    AfterUpdate ="[Event Procedure]"
     DatasheetFontName ="Calibri"
     PrtMip = Begin
         0x6801000068010000680100006801000000000000201c0000e010000001000000 ,
@@ -289,3 +290,17 @@ Begin Form
         End
     End
 End
+CodeBehindForm
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = True
+Attribute VB_PredeclaredId = True
+Attribute VB_Exposed = False
+Option Compare Database
+
+Private Sub Form_AfterUpdate()
+
+DoCmd.RunCommand acCmdSaveRecord
+Forms!frm_Visit!sfrmActivityDashboard.Form.Requery
+Forms!frm_Visit!sfrmPhotoActivity.Form.Requery
+
+End Sub

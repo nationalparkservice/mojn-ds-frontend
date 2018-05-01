@@ -9,6 +9,7 @@ Begin Form
     NavigationButtons = NotDefault
     CloseButton = NotDefault
     DividingLines = NotDefault
+    FilterOn = NotDefault
     AllowEdits = NotDefault
     AllowDesignChanges = NotDefault
     DefaultView =0
@@ -17,14 +18,15 @@ Begin Form
     DatasheetGridlinesBehavior =3
     GridX =24
     GridY =24
-    Width =5580
+    Width =5453
     DatasheetFontHeight =11
     ItemSuffix =55
-    Left =8070
-    Top =3090
-    Right =13740
-    Bottom =5955
+    Left =10560
+    Top =3120
+    Right =16230
+    Bottom =5985
     DatasheetGridlinesColor =15921906
+    Filter ="ID = 140"
     RecSrcDt = Begin
         0xb93e99ec55fbe440
     End
@@ -129,10 +131,9 @@ Begin Form
             GridlineShade =65.0
         End
         Begin Section
-            Height =3060
-            BackColor =15527148
+            Height =3000
+            BackColor =15921906
             Name ="Detail"
-            AlternateBackColor =14602694
             Begin
                 Begin CommandButton
                     OverlapFlags =93
@@ -144,8 +145,9 @@ Begin Form
                     Caption ="Edit"
                     OnClick ="[Event Procedure]"
                     LeftPadding =60
-                    RightPadding =75
-                    BottomPadding =120
+                    TopPadding =45
+                    RightPadding =150
+                    BottomPadding =150
                     GridlineColor =10921638
 
                     LayoutCachedLeft =4320
@@ -153,26 +155,28 @@ Begin Form
                     LayoutCachedWidth =5400
                     LayoutCachedHeight =2880
                     ForeTint =100.0
-                    BackColor =12566463
+                    Shape =0
+                    Gradient =0
+                    BackColor =14211288
                     BackThemeColorIndex =-1
                     BackTint =100.0
-                    BorderColor =0
-                    BorderThemeColorIndex =0
+                    BorderColor =9211020
+                    BorderThemeColorIndex =-1
                     BorderTint =100.0
-                    HoverColor =12566463
+                    HoverColor =14211288
                     HoverThemeColorIndex =-1
                     HoverTint =100.0
-                    PressedColor =12566463
+                    PressedColor =14211288
                     PressedThemeColorIndex =-1
                     PressedShade =100.0
                     HoverForeColor =0
                     HoverForeTint =100.0
                     PressedForeColor =0
                     PressedForeTint =100.0
-                    Shadow =-1
+                    Shadow =1
                     QuickStyle =22
-                    QuickStyleMask =-49
-                    WebImagePaddingTop =1
+                    QuickStyleMask =-117
+                    WebImagePaddingLeft =1
                     Overlaps =1
                 End
                 Begin TextBox
@@ -189,7 +193,7 @@ Begin Form
                     TopMargin =22
                     RightMargin =22
                     BottomMargin =22
-                    BorderColor =10921638
+                    BorderColor =9211020
                     ForeColor =4210752
                     Name ="txtSerialNumber"
                     ControlSource ="SerialNumber"
@@ -205,6 +209,8 @@ Begin Form
                     ColumnStart =1
                     ColumnEnd =1
                     LayoutGroup =1
+                    BorderThemeColorIndex =-1
+                    BorderShade =100.0
                     GroupTable =1
                     Begin
                         Begin Label
@@ -248,7 +254,7 @@ Begin Form
                     TopMargin =22
                     RightMargin =22
                     BottomMargin =22
-                    BorderColor =10921638
+                    BorderColor =9211020
                     ForeColor =4210752
                     Name ="txtTagLabel"
                     ControlSource ="Label"
@@ -262,6 +268,8 @@ Begin Form
                     ColumnStart =1
                     ColumnEnd =1
                     LayoutGroup =1
+                    BorderThemeColorIndex =-1
+                    BorderShade =100.0
                     GroupTable =1
                     Begin
                         Begin Label
@@ -306,7 +314,7 @@ Begin Form
                     TopMargin =22
                     RightMargin =22
                     BottomMargin =22
-                    BorderColor =10921638
+                    BorderColor =9211020
                     ForeColor =4210752
                     Name ="txtNotes"
                     ControlSource ="Summary"
@@ -322,6 +330,8 @@ Begin Form
                     ColumnStart =1
                     ColumnEnd =1
                     LayoutGroup =1
+                    BorderThemeColorIndex =-1
+                    BorderShade =100.0
                     GroupTable =1
                     Begin
                         Begin Label
@@ -362,11 +372,11 @@ Begin Form
                     Height =315
                     TabIndex =2
                     BoundColumn =1
-                    BorderColor =10921638
+                    BorderColor =9211020
                     ForeColor =4210752
                     ColumnInfo ="\"\";\"\";\"10\";\"200\""
                     Name ="cboModelID"
-                    ControlSource ="ModelID"
+                    ControlSource ="SensorModelID"
                     RowSourceType ="Table/Query"
                     RowSource ="SELECT ref_SensorModel.Label, ref_SensorModel.ID FROM ref_SensorModel; "
                     DefaultValue ="2"
@@ -386,6 +396,8 @@ Begin Form
                     ColumnStart =1
                     ColumnEnd =1
                     LayoutGroup =1
+                    BorderThemeColorIndex =-1
+                    BorderShade =100.0
                     ForeThemeColorIndex =0
                     ForeTint =75.0
                     ForeShade =100.0
@@ -430,8 +442,9 @@ Begin Form
                     Caption ="Cancel"
                     OnClick ="[Event Procedure]"
                     LeftPadding =60
-                    RightPadding =75
-                    BottomPadding =120
+                    TopPadding =45
+                    RightPadding =150
+                    BottomPadding =150
                     GridlineColor =10921638
 
                     LayoutCachedLeft =3120
@@ -439,68 +452,73 @@ Begin Form
                     LayoutCachedWidth =4200
                     LayoutCachedHeight =2880
                     ForeTint =100.0
-                    BackColor =12566463
+                    Shape =0
+                    Gradient =0
+                    BackColor =14211288
                     BackThemeColorIndex =-1
                     BackTint =100.0
-                    BorderColor =0
-                    BorderThemeColorIndex =0
+                    BorderColor =9211020
+                    BorderThemeColorIndex =-1
                     BorderTint =100.0
-                    HoverColor =12566463
+                    HoverColor =14211288
                     HoverThemeColorIndex =-1
                     HoverTint =100.0
-                    PressedColor =12566463
+                    PressedColor =14211288
                     PressedThemeColorIndex =-1
                     PressedShade =100.0
                     HoverForeColor =0
                     HoverForeTint =100.0
                     PressedForeColor =0
                     PressedForeTint =100.0
-                    Shadow =-1
+                    Shadow =1
                     QuickStyle =22
-                    QuickStyleMask =-49
-                    WebImagePaddingTop =1
+                    QuickStyleMask =-117
+                    WebImagePaddingLeft =1
                     Overlaps =1
                 End
                 Begin CommandButton
                     Visible = NotDefault
                     OverlapFlags =215
                     Left =4320
-                    Top =2520
+                    Top =2640
                     Width =1080
                     TabIndex =5
                     Name ="cmdSave"
                     Caption ="Save"
                     OnClick ="[Event Procedure]"
                     LeftPadding =60
-                    RightPadding =75
-                    BottomPadding =120
+                    TopPadding =45
+                    RightPadding =150
+                    BottomPadding =150
                     GridlineColor =10921638
 
                     LayoutCachedLeft =4320
-                    LayoutCachedTop =2520
+                    LayoutCachedTop =2640
                     LayoutCachedWidth =5400
-                    LayoutCachedHeight =2880
+                    LayoutCachedHeight =3000
                     ForeTint =100.0
-                    BackColor =12566463
+                    Shape =0
+                    Gradient =0
+                    BackColor =14211288
                     BackThemeColorIndex =-1
                     BackTint =100.0
-                    BorderColor =0
-                    BorderThemeColorIndex =0
+                    BorderColor =9211020
+                    BorderThemeColorIndex =-1
                     BorderTint =100.0
-                    HoverColor =12566463
+                    HoverColor =14211288
                     HoverThemeColorIndex =-1
                     HoverTint =100.0
-                    PressedColor =12566463
+                    PressedColor =14211288
                     PressedThemeColorIndex =-1
                     PressedShade =100.0
                     HoverForeColor =0
                     HoverForeTint =100.0
                     PressedForeColor =0
                     PressedForeTint =100.0
-                    Shadow =-1
+                    Shadow =1
                     QuickStyle =22
-                    QuickStyleMask =-49
-                    WebImagePaddingTop =1
+                    QuickStyleMask =-117
+                    WebImagePaddingLeft =1
                     Overlaps =1
                 End
             End
@@ -536,13 +554,13 @@ If IsNull(Me.ID) Then
     Me.Parent.Form!txtSetFocus.SetFocus
     Me.Visible = False
 Else
+    Me.AllowEdits = False
     swapButtons
 End If
     
 End Sub
 
 Private Sub cmdEdit_Click()
-
 
 Me.AllowEdits = True
 swapButtons

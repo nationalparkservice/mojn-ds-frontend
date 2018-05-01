@@ -10,6 +10,7 @@ Begin Form
     NavigationButtons = NotDefault
     CloseButton = NotDefault
     DividingLines = NotDefault
+    FilterOn = NotDefault
     AllowDesignChanges = NotDefault
     ScrollBars =2
     PictureAlignment =2
@@ -19,10 +20,10 @@ Begin Form
     Width =13920
     DatasheetFontHeight =11
     ItemSuffix =23
-    Left =2880
-    Top =4125
-    Right =16815
-    Bottom =8385
+    Left =4065
+    Top =4110
+    Right =18000
+    Bottom =8370
     DatasheetGridlinesColor =15921906
     RecSrcDt = Begin
         0x34fd75986c15e540
@@ -505,7 +506,7 @@ Begin Form
                     RowSource ="SELECT lookup_ProtectedStatus.ID, lookup_ProtectedStatus.Code, lookup_ProtectedS"
                         "tatus.Label FROM lookup_ProtectedStatus ORDER BY lookup_ProtectedStatus.ID; "
                     ColumnWidths ="0;0;2363"
-                    OnChange ="[Event Procedure]"
+                    BeforeUpdate ="[Event Procedure]"
                     GridlineColor =10921638
                     AllowValueListEdits =0
 
@@ -539,7 +540,7 @@ Begin Form
                         "andard ON lookup_TaxonomicReferenceAuthority.TaxonomicStandardID = lookup_Taxono"
                         "micStandard.ID; "
                     ColumnWidths ="0;1847;2952"
-                    OnChange ="[Event Procedure]"
+                    BeforeUpdate ="[Event Procedure]"
                     GridlineColor =10921638
 
                     LayoutCachedLeft =11460
@@ -611,7 +612,7 @@ Error_Handler:
     Resume Exit_Sub
 End Sub
 
-Private Sub cboProtectedStatus_Change()
+Private Sub cboProtectedStatus_BeforeUpdate(Cancel As Integer)
 
     'If user changes protected status, display message asking if they're sure they want to change the protected status. If no, undo change. If yes, make change.
     
@@ -629,7 +630,8 @@ On Error GoTo Error_Handler
     
     'Check user's response. If no, undo change.
     If YesNo = vbNo Then
-        Me.cboProtectedStatus.Undo
+        Cancel = True
+        Me!cboProtectedStatus.Undo
     End If
     
 Exit_Sub:
@@ -639,7 +641,7 @@ Error_Handler:
     Resume Exit_Sub
 End Sub
 
-Private Sub cboRiparianVegTaxonRefAuthID_Change()
+Private Sub cboRiparianVegTaxonRefAuthID_BeforeUpdate(Cancel As Integer)
 
     'If user changes Taxonomic Reference Authority, display message asking if they're sure they want to change it. If user responds no, undo change. If yes, make change.
     
@@ -657,6 +659,7 @@ On Error GoTo Error_Handler
     
     'Check user's response. If no, undo change.
     If YesNo = vbNo Then
+        Cancel = True
         Me.cboRiparianVegTaxonRefAuthID.Undo
     End If
     

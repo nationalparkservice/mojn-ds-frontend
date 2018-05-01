@@ -21,10 +21,10 @@ Begin Form
     Width =6180
     DatasheetFontHeight =11
     ItemSuffix =21
-    Left =7245
-    Top =2925
-    Right =13275
-    Bottom =6705
+    Left =4800
+    Top =3360
+    Right =10830
+    Bottom =7140
     DatasheetGridlinesColor =15921906
     RecSrcDt = Begin
         0x2d844c838e00e540
@@ -655,7 +655,7 @@ Private Sub cmdSensors_Click()
     Dim stLinkCriteria As String
 
     stDocName = "frm_Sensors"
-    DoCmd.OpenForm stDocName, , , stLinkCriteria, , acDialog
+    DoCmd.OpenForm stDocName, , , stLinkCriteria, , acWindowNormal
 
 Exit_Procedure:
     Exit Sub

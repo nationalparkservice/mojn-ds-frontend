@@ -6,6 +6,7 @@ Begin Form
     AutoCenter = NotDefault
     NavigationButtons = NotDefault
     DividingLines = NotDefault
+    FilterOn = NotDefault
     DefaultView =0
     PictureAlignment =2
     DatasheetGridlinesBehavior =3
@@ -14,10 +15,10 @@ Begin Form
     Width =15840
     DatasheetFontHeight =11
     ItemSuffix =33
-    Left =2025
-    Top =2385
-    Right =18120
-    Bottom =11625
+    Left =3915
+    Top =2610
+    Right =20010
+    Bottom =11850
     DatasheetGridlinesColor =15921906
     RecSrcDt = Begin
         0x19205bcaca15e540
@@ -545,7 +546,6 @@ Begin Form
                     End
                 End
                 Begin Subform
-                    Enabled = NotDefault
                     OverlapFlags =85
                     OldBorderStyle =0
                     Left =300
@@ -659,7 +659,6 @@ Begin Form
                     End
                 End
                 Begin Subform
-                    Enabled = NotDefault
                     OverlapFlags =85
                     OldBorderStyle =0
                     Left =3540
@@ -774,7 +773,6 @@ Begin Form
                     End
                 End
                 Begin Subform
-                    Enabled = NotDefault
                     OverlapFlags =85
                     OldBorderStyle =0
                     Left =7755
@@ -889,7 +887,6 @@ Begin Form
                     End
                 End
                 Begin Subform
-                    Enabled = NotDefault
                     OverlapFlags =85
                     OldBorderStyle =0
                     Left =10995
@@ -1019,7 +1016,6 @@ Begin Form
                     LayoutCachedHeight =1140
                 End
                 Begin Subform
-                    Enabled = NotDefault
                     OverlapFlags =85
                     OldBorderStyle =0
                     Left =300
@@ -1065,7 +1061,6 @@ Begin Form
                     End
                 End
                 Begin Subform
-                    Enabled = NotDefault
                     OverlapFlags =85
                     OldBorderStyle =0
                     Left =6300
@@ -1111,7 +1106,6 @@ Begin Form
                     End
                 End
                 Begin Subform
-                    Enabled = NotDefault
                     OverlapFlags =85
                     OldBorderStyle =0
                     Left =10680

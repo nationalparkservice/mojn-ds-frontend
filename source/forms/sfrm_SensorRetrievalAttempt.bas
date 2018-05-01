@@ -20,10 +20,10 @@ Begin Form
     Width =15840
     DatasheetFontHeight =11
     ItemSuffix =27
-    Left =4410
-    Top =5385
-    Right =19995
-    Bottom =10770
+    Left =3555
+    Top =5010
+    Right =19140
+    Bottom =10395
     DatasheetGridlinesColor =15921906
     AfterInsert ="[Event Procedure]"
     RecSrcDt = Begin
@@ -239,7 +239,7 @@ Begin Form
             GridlineShade =65.0
         End
         Begin FormHeader
-            Height =720
+            Height =435
             BackColor =15921906
             Name ="FormHeader"
             AlternateBackThemeColorIndex =1
@@ -268,124 +268,21 @@ Begin Form
                     ForeThemeColorIndex =-1
                     ForeTint =100.0
                 End
-                Begin TextBox
-                    Enabled = NotDefault
-                    Locked = NotDefault
-                    FontItalic = NotDefault
-                    OverlapFlags =85
-                    TextAlign =2
-                    IMESentenceMode =3
-                    Left =14664
-                    Top =60
-                    Width =1080
-                    ColumnOrder =0
-                    FontSize =10
-                    BorderColor =10921638
-                    ForeColor =4210752
-                    Name ="txtSensorTemperatureImportDate"
-                    Format ="Short Date"
-                    FontName ="Arial"
-                    GridlineColor =10921638
-
-                    LayoutCachedLeft =14664
-                    LayoutCachedTop =60
-                    LayoutCachedWidth =15744
-                    LayoutCachedHeight =300
-                    ThemeFontIndex =-1
-                    Begin
-                        Begin Label
-                            FontItalic = NotDefault
-                            OverlapFlags =85
-                            TextAlign =3
-                            Left =8880
-                            Top =60
-                            Width =5760
-                            Height =240
-                            FontSize =10
-                            BorderColor =6108695
-                            Name ="lblRecordCount"
-                            Caption ="Selected Retrieval Attempt's Temperature Log File Imported on:"
-                            FontName ="Arial"
-                            GridlineColor =10921638
-                            LayoutCachedLeft =8880
-                            LayoutCachedTop =60
-                            LayoutCachedWidth =14640
-                            LayoutCachedHeight =300
-                            ThemeFontIndex =-1
-                            BorderThemeColorIndex =-1
-                            BorderTint =100.0
-                            ForeThemeColorIndex =-1
-                            ForeTint =100.0
-                        End
-                    End
-                End
-                Begin TextBox
-                    Enabled = NotDefault
-                    Locked = NotDefault
-                    FontItalic = NotDefault
-                    OverlapFlags =85
-                    TextAlign =2
-                    IMESentenceMode =3
-                    Left =14664
-                    Top =360
-                    Width =1080
-                    ColumnOrder =1
-                    FontSize =10
-                    TabIndex =1
-                    BorderColor =10921638
-                    ForeColor =4210752
-                    Name ="txtSensorHumidityImportDate"
-                    Format ="Short Date"
-                    FontName ="Arial"
-                    GridlineColor =10921638
-
-                    LayoutCachedLeft =14664
-                    LayoutCachedTop =360
-                    LayoutCachedWidth =15744
-                    LayoutCachedHeight =600
-                    ThemeFontIndex =-1
-                    Begin
-                        Begin Label
-                            FontItalic = NotDefault
-                            OverlapFlags =85
-                            TextAlign =3
-                            Left =8880
-                            Top =360
-                            Width =5760
-                            Height =240
-                            FontSize =10
-                            BorderColor =6108695
-                            Name ="lblRecordCountHumidity"
-                            Caption ="Selected Retrieval Attempt's Humidity Log File Imported on:"
-                            FontName ="Arial"
-                            GridlineColor =10921638
-                            LayoutCachedLeft =8880
-                            LayoutCachedTop =360
-                            LayoutCachedWidth =14640
-                            LayoutCachedHeight =600
-                            ThemeFontIndex =-1
-                            BorderThemeColorIndex =-1
-                            BorderTint =100.0
-                            ForeThemeColorIndex =-1
-                            ForeTint =100.0
-                        End
-                    End
-                End
                 Begin Line
                     BorderWidth =1
                     OverlapFlags =85
-                    Top =660
+                    Top =420
                     Width =15840
                     Name ="Line24"
                     GridlineColor =10921638
-                    LayoutCachedTop =660
+                    LayoutCachedTop =420
                     LayoutCachedWidth =15840
-                    LayoutCachedHeight =660
+                    LayoutCachedHeight =420
                 End
             End
         End
         Begin Section
-            Height =2235
+            Height =1395
             BackColor =15921906
             Name ="Detail"
             AlternateBackColor =15527148
@@ -393,9 +290,9 @@ Begin Form
                 Begin TextBox
                     OverlapFlags =85
                     IMESentenceMode =3
-                    Left =2758
+                    Left =2398
                     Top =840
-                    Width =1918
+                    Width =2638
                     Height =297
                     TabIndex =4
                     BorderColor =14211288
@@ -405,9 +302,9 @@ Begin Form
                     InputMask ="00:00;0;_"
                     GridlineColor =10921638
 
-                    LayoutCachedLeft =2758
+                    LayoutCachedLeft =2398
                     LayoutCachedTop =840
-                    LayoutCachedWidth =4676
+                    LayoutCachedWidth =5036
                     LayoutCachedHeight =1137
                     BackThemeColorIndex =-1
                     BorderThemeColorIndex =-1
@@ -418,17 +315,22 @@ Begin Form
                         Begin Label
                             OverlapFlags =85
                             TextAlign =3
-                            Left =660
+                            Left =300
                             Top =840
                             Width =2034
                             Height =300
+                            FontSize =10
+                            LeftMargin =22
+                            TopMargin =22
+                            RightMargin =22
+                            BottomMargin =22
                             BorderColor =6108695
                             Name ="Label2"
                             Caption ="  Retrieval Time (24hr)"
                             GridlineColor =10921638
-                            LayoutCachedLeft =660
+                            LayoutCachedLeft =300
                             LayoutCachedTop =840
-                            LayoutCachedWidth =2694
+                            LayoutCachedWidth =2334
                             LayoutCachedHeight =1140
                             ThemeFontIndex =-1
                             BorderThemeColorIndex =-1
@@ -443,9 +345,9 @@ Begin Form
                     IMESentenceMode =3
                     ColumnCount =2
                     ListWidth =1440
-                    Left =2758
+                    Left =2398
                     Top =120
-                    Width =1918
+                    Width =2638
                     Height =297
                     TabIndex =1
                     BorderColor =14211288
@@ -461,9 +363,9 @@ Begin Form
                     AllowValueListEdits =0
 
                     ShowOnlyRowSourceValues =255
-                    LayoutCachedLeft =2758
+                    LayoutCachedLeft =2398
                     LayoutCachedTop =120
-                    LayoutCachedWidth =4676
+                    LayoutCachedWidth =5036
                     LayoutCachedHeight =417
                     ThemeFontIndex =-1
                     BackThemeColorIndex =-1
@@ -475,17 +377,22 @@ Begin Form
                         Begin Label
                             OverlapFlags =85
                             TextAlign =3
-                            Left =180
+                            Left =60
                             Top =120
-                            Width =2520
+                            Width =2280
                             Height =297
+                            FontSize =10
+                            LeftMargin =22
+                            TopMargin =22
+                            RightMargin =22
+                            BottomMargin =22
                             BorderColor =6108695
                             Name ="Label0"
                             Caption ="*Retrieved?"
                             GridlineColor =10921638
-                            LayoutCachedLeft =180
+                            LayoutCachedLeft =60
                             LayoutCachedTop =120
-                            LayoutCachedWidth =2700
+                            LayoutCachedWidth =2340
                             LayoutCachedHeight =417
                             ThemeFontIndex =-1
                             BorderThemeColorIndex =-1
@@ -500,9 +407,9 @@ Begin Form
                     ScrollBars =2
                     OverlapFlags =85
                     IMESentenceMode =3
-                    Left =10140
+                    Left =10320
                     Top =120
-                    Width =5106
+                    Width =4926
                     Height =1140
                     FontSize =10
                     TabIndex =5
@@ -511,7 +418,7 @@ Begin Form
                     ControlSource ="Notes"
                     GridlineColor =10921638
 
-                    LayoutCachedLeft =10140
+                    LayoutCachedLeft =10320
                     LayoutCachedTop =120
                     LayoutCachedWidth =15246
                     LayoutCachedHeight =1260
@@ -525,17 +432,22 @@ Begin Form
                         Begin Label
                             OverlapFlags =85
                             TextAlign =3
-                            Left =9480
+                            Left =9660
                             Top =120
                             Width =600
                             Height =311
+                            FontSize =10
+                            LeftMargin =22
+                            TopMargin =22
+                            RightMargin =22
+                            BottomMargin =22
                             BorderColor =6108695
                             Name ="Label4"
                             Caption ="  Notes"
                             GridlineColor =10921638
-                            LayoutCachedLeft =9480
+                            LayoutCachedLeft =9660
                             LayoutCachedTop =120
-                            LayoutCachedWidth =10080
+                            LayoutCachedWidth =10260
                             LayoutCachedHeight =431
                             ThemeFontIndex =-1
                             BorderThemeColorIndex =-1
@@ -551,7 +463,7 @@ Begin Form
                     IMESentenceMode =3
                     ColumnCount =2
                     ListWidth =1440
-                    Left =6960
+                    Left =7140
                     Top =120
                     Width =2460
                     Height =297
@@ -568,9 +480,9 @@ Begin Form
                     AllowValueListEdits =0
 
                     ShowOnlyRowSourceValues =255
-                    LayoutCachedLeft =6960
+                    LayoutCachedLeft =7140
                     LayoutCachedTop =120
-                    LayoutCachedWidth =9420
+                    LayoutCachedWidth =9600
                     LayoutCachedHeight =417
                     ThemeFontIndex =-1
                     BackThemeColorIndex =-1
@@ -582,17 +494,22 @@ Begin Form
                         Begin Label
                             OverlapFlags =85
                             TextAlign =3
-                            Left =4920
+                            Left =5100
                             Top =120
                             Width =1980
                             Height =297
+                            FontSize =10
+                            LeftMargin =22
+                            TopMargin =22
+                            RightMargin =22
+                            BottomMargin =22
                             BorderColor =6108695
                             Name ="Label1"
                             Caption ="*Sensor Problem"
                             GridlineColor =10921638
-                            LayoutCachedLeft =4920
+                            LayoutCachedLeft =5100
                             LayoutCachedTop =120
-                            LayoutCachedWidth =6900
+                            LayoutCachedWidth =7080
                             LayoutCachedHeight =417
                             ThemeFontIndex =-1
                             BorderThemeColorIndex =-1
@@ -608,7 +525,7 @@ Begin Form
                     IMESentenceMode =3
                     ColumnCount =3
                     ListWidth =3456
-                    Left =6960
+                    Left =7140
                     Top =480
                     Width =2460
                     Height =297
@@ -626,9 +543,9 @@ Begin Form
                     AllowValueListEdits =0
 
                     ShowOnlyRowSourceValues =255
-                    LayoutCachedLeft =6960
+                    LayoutCachedLeft =7140
                     LayoutCachedTop =480
-                    LayoutCachedWidth =9420
+                    LayoutCachedWidth =9600
                     LayoutCachedHeight =777
                     ThemeFontIndex =-1
                     BackThemeColorIndex =-1
@@ -640,17 +557,22 @@ Begin Form
                         Begin Label
                             OverlapFlags =85
                             TextAlign =3
-                            Left =4740
+                            Left =5100
                             Top =480
-                            Width =2160
+                            Width =1980
                             Height =297
+                            FontSize =10
+                            LeftMargin =22
+                            TopMargin =22
+                            RightMargin =22
+                            BottomMargin =22
                             BorderColor =6108695
                             Name ="Label3"
                             Caption ="  Download Successful?"
                             GridlineColor =10921638
-                            LayoutCachedLeft =4740
+                            LayoutCachedLeft =5100
                             LayoutCachedTop =480
-                            LayoutCachedWidth =6900
+                            LayoutCachedWidth =7080
                             LayoutCachedHeight =777
                             ThemeFontIndex =-1
                             BorderThemeColorIndex =-1
@@ -665,35 +587,35 @@ Begin Form
                     OverlapFlags =85
                     IMESentenceMode =3
                     ColumnCount =2
-                    Left =2759
+                    Left =2399
                     Top =480
-                    Width =1918
+                    Width =2638
                     Height =297
                     BorderColor =14211288
                     ColumnInfo ="\"\";\"\";\"\";\"\";\"10\";\"0\""
                     Name ="cboSensorDeploymentID"
                     ControlSource ="SensorDeploymentID"
                     RowSourceType ="Table/Query"
-                    RowSource ="SELECT data_SensorDeployment.ID, [ref_Sensor].[Label] & \", deployed\" & [data_V"
-                        "isit].[VisitDate] AS cboText, data_SensorDeployment.SensorID, data_Site.ID, data"
-                        "_SensorRetrievalAttempt.ID FROM (((data_Site INNER JOIN data_Visit ON data_Site."
-                        "ID = data_Visit.SiteID) INNER JOIN data_SensorDeployment ON data_Visit.ID = data"
-                        "_SensorDeployment.VisitID) INNER JOIN ref_Sensor ON data_SensorDeployment.Sensor"
-                        "ID = ref_Sensor.ID) LEFT JOIN data_SensorRetrievalAttempt ON data_SensorDeployme"
-                        "nt.ID = data_SensorRetrievalAttempt.SensorDeploymentID WHERE (((data_SensorDeplo"
-                        "yment.SensorID)<>Forms!frm_Visit!sfrm_SensorDeployment.Form!SensorID) And ((data"
-                        "_Site.ID)=Forms!frm_Visit!SiteID) And ((data_SensorRetrievalAttempt.ID) Is Null "
-                        "Or (data_SensorRetrievalAttempt.ID)=Forms!frm_Visit!sfrm_SensorRetrievalAttempt."
-                        "Form!ID)); "
+                    RowSource ="SELECT data_SensorDeployment.ID, [ref_Sensor].[Label] & \", deployed \" & [data_"
+                        "Visit].[VisitDate] AS cboText, data_SensorDeployment.SensorID, data_Site.ID, dat"
+                        "a_SensorRetrievalAttempt.ID FROM (((data_Site INNER JOIN data_Visit ON data_Site"
+                        ".ID = data_Visit.SiteID) INNER JOIN data_SensorDeployment ON data_Visit.ID = dat"
+                        "a_SensorDeployment.VisitID) INNER JOIN ref_Sensor ON data_SensorDeployment.Senso"
+                        "rID = ref_Sensor.ID) LEFT JOIN data_SensorRetrievalAttempt ON data_SensorDeploym"
+                        "ent.ID = data_SensorRetrievalAttempt.SensorDeploymentID WHERE (((data_SensorDepl"
+                        "oyment.SensorID)<>Forms!frm_Visit!sfrm_SensorDeployment.Form!SensorID) And ((dat"
+                        "a_Site.ID)=Forms!frm_Visit!SiteID) And ((data_SensorRetrievalAttempt.ID) Is Null"
+                        " Or (data_SensorRetrievalAttempt.ID)=Forms!frm_Visit!sfrm_SensorRetrievalAttempt"
+                        ".Form!ID)); "
                     ColumnWidths ="0;2880"
                     GridlineColor =10921638
                     AllowValueListEdits =0
                     InheritValueList =0
 
                     ShowOnlyRowSourceValues =255
-                    LayoutCachedLeft =2759
+                    LayoutCachedLeft =2399
                     LayoutCachedTop =480
-                    LayoutCachedWidth =4677
+                    LayoutCachedWidth =5037
                     LayoutCachedHeight =777
                     ThemeFontIndex =-1
                     BackThemeColorIndex =-1
@@ -705,17 +627,22 @@ Begin Form
                         Begin Label
                             OverlapFlags =85
                             TextAlign =3
-                            Left =180
+                            Left =60
                             Top =480
-                            Width =2520
+                            Width =2280
                             Height =300
+                            FontSize =10
+                            LeftMargin =22
+                            TopMargin =22
+                            RightMargin =22
+                            BottomMargin =22
                             BorderColor =6108695
                             Name ="Label8"
                             Caption ="*Prior Sensor Deployment"
                             GridlineColor =10921638
-                            LayoutCachedLeft =180
+                            LayoutCachedLeft =60
                             LayoutCachedTop =480
-                            LayoutCachedWidth =2700
+                            LayoutCachedWidth =2340
                             LayoutCachedHeight =780
                             ThemeFontIndex =-1
                             BorderThemeColorIndex =-1
@@ -728,13 +655,13 @@ Begin Form
                 Begin Line
                     BorderWidth =1
                     OverlapFlags =85
-                    Top =2220
+                    Top =1380
                     Width =15840
                     Name ="Line14"
                     GridlineColor =10921638
-                    LayoutCachedTop =2220
+                    LayoutCachedTop =1380
                     LayoutCachedWidth =15840
-                    LayoutCachedHeight =2220
+                    LayoutCachedHeight =1380
                 End
                 Begin CommandButton
                     TabStop = NotDefault

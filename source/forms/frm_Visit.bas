@@ -9,10 +9,11 @@ Begin Form
     NavigationButtons = NotDefault
     CloseButton = NotDefault
     DividingLines = NotDefault
+    FilterOn = NotDefault
     AllowDesignChanges = NotDefault
     DefaultView =0
     ScrollBars =0
-    BorderStyle =3
+    BorderStyle =1
     PictureAlignment =2
     DatasheetGridlinesBehavior =3
     Cycle =1
@@ -21,12 +22,12 @@ Begin Form
     Width =16620
     DatasheetFontHeight =11
     ItemSuffix =238
-    Left =1905
+    Left =3135
     Top =240
-    Right =18525
+    Right =19755
     Bottom =11295
     DatasheetGridlinesColor =15921906
-    Filter ="ID = 300"
+    Filter ="[ID]=379"
     RecSrcDt = Begin
         0xab2688a2f412e540
     End

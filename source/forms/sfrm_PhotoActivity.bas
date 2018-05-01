@@ -4,6 +4,7 @@ Begin Form
     RecordSelectors = NotDefault
     NavigationButtons = NotDefault
     DividingLines = NotDefault
+    FilterOn = NotDefault
     AllowDesignChanges = NotDefault
     DefaultView =0
     ScrollBars =0
@@ -15,11 +16,11 @@ Begin Form
     GridY =24
     Width =16110
     DatasheetFontHeight =11
-    ItemSuffix =42
-    Left =1965
-    Top =2385
-    Right =18075
-    Bottom =11625
+    ItemSuffix =43
+    Left =3855
+    Top =2610
+    Right =19965
+    Bottom =11850
     DatasheetGridlinesColor =15921906
     RecSrcDt = Begin
         0xc208564c6c18e540
@@ -228,6 +229,7 @@ Begin Form
                     Height =3840
                     BorderColor =9211020
                     Name ="imgCurrentPhoto"
+                    Picture ="JOTR_P_CON0215_20171213_DNSTR_0933"
                     GridlineColor =10921638
 
                     LayoutCachedLeft =7620
@@ -260,7 +262,6 @@ Begin Form
                     LayoutCachedHeight =6810
                 End
                 Begin Subform
-                    Visible = NotDefault
                     OverlapFlags =93
                     OldBorderStyle =0
                     Left =7560
@@ -330,7 +331,6 @@ Begin Form
                     Visible = NotDefault
                     OverlapFlags =247
                     OldBorderStyle =0
-                    Top =5160
                     Width =16110
                     Height =7947
                     TabIndex =1
@@ -341,13 +341,12 @@ Begin Form
                     LinkMasterFields ="ID"
                     GridlineColor =10921638
 
-                    LayoutCachedTop =5160
                     LayoutCachedWidth =16110
-                    LayoutCachedHeight =13107
+                    LayoutCachedHeight =7947
                 End
                 Begin TextBox
                     OldBorderStyle =0
-                    OverlapFlags =85
+                    OverlapFlags =93
                     BackStyle =0
                     IMESentenceMode =3
                     Left =120
@@ -364,7 +363,7 @@ Begin Form
                 End
                 Begin Label
                     BackStyle =1
-                    OverlapFlags =85
+                    OverlapFlags =93
                     TextAlign =2
                     Left =300
                     Top =180
@@ -387,7 +386,7 @@ Begin Form
                 End
                 Begin Label
                     BackStyle =1
-                    OverlapFlags =85
+                    OverlapFlags =93
                     TextAlign =2
                     Left =7620
                     Top =180
@@ -410,7 +409,7 @@ Begin Form
                 End
                 Begin ComboBox
                     LimitToList = NotDefault
-                    OverlapFlags =85
+                    OverlapFlags =93
                     IMESentenceMode =3
                     ListWidth =1440
                     Left =1800
@@ -440,7 +439,7 @@ Begin Form
                     Begin
                         Begin Label
                             FontItalic = NotDefault
-                            OverlapFlags =85
+                            OverlapFlags =93
                             TextAlign =1
                             Left =300
                             Top =600
@@ -463,7 +462,7 @@ Begin Form
                     End
                 End
                 Begin CommandButton
-                    OverlapFlags =85
+                    OverlapFlags =93
                     Left =5265
                     Top =600
                     Width =1620
@@ -508,8 +507,9 @@ Begin Form
                     Overlaps =1
                 End
                 Begin Label
+                    Visible = NotDefault
                     FontItalic = NotDefault
-                    OverlapFlags =247
+                    OverlapFlags =255
                     TextAlign =2
                     Left =7620
                     Top =2220
@@ -722,7 +722,7 @@ Begin Form
                 End
                 Begin Label
                     BackStyle =1
-                    OverlapFlags =255
+                    OverlapFlags =247
                     TextAlign =2
                     Left =420
                     Top =8040

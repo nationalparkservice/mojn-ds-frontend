@@ -9,6 +9,7 @@ Begin Form
     NavigationButtons = NotDefault
     CloseButton = NotDefault
     DividingLines = NotDefault
+    FilterOn = NotDefault
     AllowDesignChanges = NotDefault
     DefaultView =0
     ScrollBars =0
@@ -20,10 +21,10 @@ Begin Form
     Width =15840
     DatasheetFontHeight =11
     ItemSuffix =22
-    Left =2025
-    Top =2385
-    Right =18135
-    Bottom =11625
+    Left =3915
+    Top =2610
+    Right =20025
+    Bottom =11850
     DatasheetGridlinesColor =15921906
     RecSrcDt = Begin
         0x372b2ba47615e540
@@ -317,6 +318,7 @@ Begin Form
                     End
                 End
                 Begin ToggleButton
+                    Enabled = NotDefault
                     OverlapFlags =93
                     Left =180
                     Top =1260
@@ -389,6 +391,7 @@ Begin Form
                     End
                 End
                 Begin ToggleButton
+                    Enabled = NotDefault
                     OverlapFlags =87
                     Left =1620
                     Top =1260
@@ -553,6 +556,8 @@ Begin Form
                     End
                 End
                 Begin Subform
+                    Visible = NotDefault
+                    Enabled = NotDefault
                     CanGrow = NotDefault
                     OverlapFlags =247
                     OldBorderStyle =0
@@ -574,6 +579,7 @@ Begin Form
                     LayoutCachedHeight =2822
                     Begin
                         Begin Label
+                            Visible = NotDefault
                             FontItalic = NotDefault
                             OverlapFlags =223
                             Left =180
@@ -1055,6 +1061,9 @@ On Error GoTo Error_Handler
             EnableVolumetric (False)
             EnableSpringbrook (True)
     End Select
+    
+    DoCmd.Save acDefault
+    Forms!frm_Visit!sfrmActivityDashboard.Form.Requery
     
 Exit_Procedure:
     Exit Sub

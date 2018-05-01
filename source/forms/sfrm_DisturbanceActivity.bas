@@ -10,6 +10,7 @@ Begin Form
     NavigationButtons = NotDefault
     CloseButton = NotDefault
     DividingLines = NotDefault
+    FilterOn = NotDefault
     DefaultView =0
     ScrollBars =0
     ViewsAllowed =1
@@ -21,16 +22,15 @@ Begin Form
     Width =15840
     DatasheetFontHeight =11
     ItemSuffix =44
-    Left =2025
+    Left =3255
     Top =2385
-    Right =18135
+    Right =19365
     Bottom =11625
     DatasheetGridlinesColor =15921906
     RecSrcDt = Begin
         0x3a89a5777b15e540
     End
     RecordSource ="data_DisturbanceActivity"
-    BeforeUpdate ="[Event Procedure]"
     DatasheetFontName ="Calibri"
     PrtMip = Begin
         0x6801000068010000680100006801000000000000201c0000e010000001000000 ,
@@ -311,6 +311,7 @@ Begin Form
                         "kup_FlowModificationStatus.Code; "
                     ColumnWidths ="0;0;2520"
                     BeforeUpdate ="[Event Procedure]"
+                    AfterUpdate ="[Event Procedure]"
                     GridlineColor =10921638
                     AllowValueListEdits =0
 
@@ -1435,6 +1436,14 @@ Error_Handler:
     
 End Sub
 
+Private Sub cboFlowModificationStatusID_AfterUpdate()
+
+DoCmd.RunCommand acCmdSaveRecord
+Forms!frm_Visit!sfrmActivityDashboard.Form.Requery
+
+End Sub
+
+
 Private Sub cboFlowModificationStatusID_BeforeUpdate(Cancel As Integer)
 On Error GoTo Error_Handler
 
@@ -1454,42 +1463,19 @@ On Error GoTo Error_Handler
         intDisturbanceModificationsCount <> 0 Then
             MsgBox ("One or more Disturbance Modifications have been entered for this visit. " & Chr(13) + vbNewLine & _
                     "If you are sure you want to change the Disturbance Modification Status to ""None"" or ""No Data"", please delete your Disturbance Modifications first."), vbOKOnly + vbExclamation, "Existing Records"
-            Me.cboFlowModificationStatusID.Undo
             Cancel = True
+            Me.cboFlowModificationStatusID.Undo
             Me.sfrmDisturbanceModifications.Enabled = True
     Else: Me.sfrmDisturbanceModifications.Enabled = False
-    'DoCmd.Save acDefault
+   
     End If
 Exit_Sub:
     Exit Sub
 Error_Handler:
-    MsgBox "Form: " & mstrcFormName & vbNewLine & "Sub:  cboFlowModicationStatusID_AfterUpdate" & vbNewLine & "Error #" & Err.Number & ": " & Err.Description, vbCritical
+    MsgBox "Form: " & mstrcFormName & vbNewLine & "Sub:  cboFlowModificationStatusID_BeforeUpdate" & vbNewLine & "Error #" & Err.Number & ": " & Err.Description, vbCritical
     Resume Exit_Sub
 End Sub
 
-Private Sub Form_BeforeUpdate(Cancel As Integer)
-On Error GoTo Error_Handler
-
-    'If FlowModificationStatusID = 1, 2, or 4 enable the disturbance modification form
-    If (Me.cboFlowModificationStatusID = 1) Or _
-        (Me.cboFlowModificationStatusID = 2) Or _
-        (Me.cboFlowModificationStatusID = 4) Then
-            Me.sfrmDisturbanceModifications.Enabled = True
-
-    '... or if flow modification status is not 1, 2 or 4, make sure disturbance modification form is disabled.
-    Else:
-        Me.sfrmDisturbanceModifications.Enabled = False
-    End If
-
-    'Requery the DPL date text box to force the date to show
-Me.txtdataprocessingleveldate.Requery
-
-Exit_Sub:
-    Exit Sub
-Error_Handler:
-    MsgBox "Form: " & mstrcFormName & vbNewLine & "Sub:  Form_BeforeUpdate" & vbNewLine & "Error #" & Err.Number & ": " & Err.Description, vbCritical
-    Resume Exit_Sub
-End Sub
 
 Private Sub Form_Error(DataErr As Integer, response As Integer)
         'All fields for Anthropogenic and Natural Disturbances are required

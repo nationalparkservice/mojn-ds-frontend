@@ -19,10 +19,10 @@ Begin Form
     Width =4500
     DatasheetFontHeight =11
     ItemSuffix =5
-    Left =8970
-    Top =3495
-    Right =13770
-    Bottom =8655
+    Left =9600
+    Top =3795
+    Right =14400
+    Bottom =8955
     DatasheetGridlinesColor =15921906
     RecSrcDt = Begin
         0x9d66bc17ab15e540
@@ -502,6 +502,12 @@ Option Compare Database
 Option Explicit
 
 Const strcFormName As String = "sfrm_SpringbrookDimensions"
+
+Public Function RowCount() As Integer
+
+RowCount = Me.RecordsetClone.RecordCount
+
+End Function
 
 Private Sub cmdDeleteSpringbrookDim_Click()
 

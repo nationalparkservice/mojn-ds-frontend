@@ -17,10 +17,10 @@ Begin Form
     Width =2820
     DatasheetFontHeight =11
     ItemSuffix =4
-    Left =12015
-    Top =5265
-    Right =14580
-    Bottom =6810
+    Left =14010
+    Top =3570
+    Right =16830
+    Bottom =5370
     DatasheetGridlinesColor =15921906
     RecSrcDt = Begin
         0x959b1e88aa15e540
@@ -284,3 +284,9 @@ Private Sub cmdDeleteDisturbanceModification_Click()
 DeleteRecord Me, Me.NewRecord
 
 End Sub
+
+Public Function RowCount() As Integer
+
+RowCount = Me.RecordsetClone.RecordCount
+
+End Function

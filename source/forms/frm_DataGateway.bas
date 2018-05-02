@@ -11,8 +11,6 @@ Begin Form
     AllowDeletions = NotDefault
     DividingLines = NotDefault
     AllowAdditions = NotDefault
-    FilterOn = NotDefault
-    OrderByOn = NotDefault
     AllowUpdating =2
     ScrollBars =2
     ViewsAllowed =1
@@ -24,12 +22,12 @@ Begin Form
     Width =14400
     DatasheetFontHeight =11
     ItemSuffix =48
-    Left =5190
-    Top =1260
-    Right =19845
-    Bottom =9615
+    Left =7215
+    Top =3180
+    Right =21615
+    Bottom =11535
     DatasheetGridlinesColor =15921906
-    Filter ="[ParkID] = 96"
+    Filter ="[ParkID] = 85"
     OrderBy ="SiteCode"
     RecSrcDt = Begin
         0xc1c4d0d02e11e540
@@ -2541,10 +2539,14 @@ Err_Handler:
 End Sub
 
 Private Sub Form_Close()
-    On Error GoTo Exit_Procedure
+    On Error GoTo Error_Handler
     
     cmdGoogleMaps.HyperlinkAddress = ""
     cmdSiteInfoSheet.HyperlinkAddress = ""
     
 Exit_Procedure:
+    Exit Sub
+Error_Handler:
+    MsgBox "Error #" & Err.Number & ": " & Err.Description, vbCritical
+    Resume Exit_Procedure
 End Sub

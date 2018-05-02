@@ -7,6 +7,7 @@ Begin Form
     NavigationButtons = NotDefault
     CloseButton = NotDefault
     DividingLines = NotDefault
+    FilterOn = NotDefault
     AllowDesignChanges = NotDefault
     DefaultView =0
     ScrollBars =0
@@ -18,10 +19,10 @@ Begin Form
     Width =5820
     DatasheetFontHeight =11
     ItemSuffix =17
-    Left =4440
-    Top =5625
-    Right =10005
-    Bottom =6090
+    Left =3465
+    Top =4365
+    Right =9285
+    Bottom =5085
     DatasheetGridlinesColor =15921906
     RecSrcDt = Begin
         0x556e2cfc5618e540
@@ -307,11 +308,11 @@ Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 Option Compare Database
 
-Private Sub Command16_Click()
+Public Function RowCount() As Integer
 
-DeleteRecord Me, Me.NewRecord
+RowCount = Me.RecordsetClone.RecordCount
 
-End Sub
+End Function
 
 Private Sub Form_AfterUpdate()
 

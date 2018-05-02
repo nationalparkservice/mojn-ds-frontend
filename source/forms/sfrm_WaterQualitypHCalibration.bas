@@ -13,22 +13,19 @@ Begin Form
     Width =5460
     DatasheetFontHeight =11
     ItemSuffix =19
-    Left =-720
-    Top =8040
-    Right =4755
-    Bottom =10185
+    Left =2400
+    Top =8640
+    Right =7875
+    Bottom =10785
     DatasheetGridlinesColor =15921906
-    RecSrcDt = Begin
-        0xd02f5ebb4a16e540
-    End
     RecordSource ="SELECT data_CalibrationpH.ID, data_CalibrationpH.CalibrationTime, data_Calibrati"
         "onpH.CalibrationDate, data_CalibrationpH.StandardValue_pH, data_CalibrationpH.Pr"
         "eCalibrationReading_pH, data_CalibrationpH.PreCalibrationTemperature_C, data_Cal"
         "ibrationpH.PostCalibrationReading_pH, data_CalibrationpH.PostCalibrationTemperat"
-        "ure_C, data_CalibrationpH.pHInstrumentID, data_CalibrationpH.Notes, data_Calibra"
-        "tionpH.DateCreated FROM data_CalibrationpH WHERE (((data_CalibrationpH.Calibrati"
-        "onDate)<[Forms]![frm_Visit]![VisitDate])) ORDER BY data_CalibrationpH.Calibratio"
-        "nDate DESC; "
+        "ure_C, data_CalibrationpH.Notes, data_CalibrationpH.DateCreated FROM data_Calibr"
+        "ationpH WHERE (((data_CalibrationpH.CalibrationDate)<=Forms!frm_Visit!VisitDate)"
+        " And ((data_CalibrationpH.pHInstrumentID)=Forms!frm_Visit!sfrm_WaterQualityActiv"
+        "ity.Form!cbopHInstrumentID)) ORDER BY data_CalibrationpH.CalibrationDate DESC; "
     DatasheetFontName ="Calibri"
     PrtMip = Begin
         0x6801000068010000680100006801000000000000201c0000e010000001000000 ,

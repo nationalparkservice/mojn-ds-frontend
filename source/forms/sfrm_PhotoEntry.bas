@@ -7,6 +7,7 @@ Begin Form
     AllowDeletions = NotDefault
     DividingLines = NotDefault
     AllowEdits = NotDefault
+    DataEntry = NotDefault
     AllowDesignChanges = NotDefault
     DefaultView =0
     ScrollBars =0
@@ -20,10 +21,10 @@ Begin Form
     Width =15540
     DatasheetFontHeight =11
     ItemSuffix =38
-    Left =3915
-    Top =3930
-    Right =19770
-    Bottom =11625
+    Left =3720
+    Top =2595
+    Right =19830
+    Bottom =10545
     DatasheetGridlinesColor =15921906
     RecSrcDt = Begin
         0xc0ade2175119e540
@@ -1244,8 +1245,8 @@ Dim renamedFileExists As Boolean
 Dim recordFound As Boolean
 Dim photoRst As DAO.Recordset
 
-If Not IsNull(Me.PhotoActivityID) Then
-    Set photoRst = CurrentDb.OpenRecordset("SELECT RenamedFilePath FROM data_Photo WHERE PhotoActivityID = " & Me.PhotoActivityID)
+If Not IsNull(Me.txtRenamedFilePath) Then
+    Set photoRst = CurrentDb.OpenRecordset("SELECT RenamedFilePath FROM data_Photo WHERE RenamedFilePath = '" & Me.txtRenamedFilePath & "'")
 Else
     MsgBox ("Please finish entering data before attempting to save.")
     GoTo Exit_Function

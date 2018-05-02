@@ -6,6 +6,7 @@ Begin Form
     AutoCenter = NotDefault
     NavigationButtons = NotDefault
     DividingLines = NotDefault
+    FilterOn = NotDefault
     DefaultView =0
     PictureAlignment =2
     DatasheetGridlinesBehavior =3
@@ -14,10 +15,10 @@ Begin Form
     Width =15840
     DatasheetFontHeight =11
     ItemSuffix =33
-    Left =2865
-    Top =2310
-    Right =18960
-    Bottom =11550
+    Left =4665
+    Top =2040
+    Right =20760
+    Bottom =11280
     DatasheetGridlinesColor =15921906
     RecSrcDt = Begin
         0x19205bcaca15e540
@@ -546,7 +547,6 @@ Begin Form
                     End
                 End
                 Begin Subform
-                    Enabled = NotDefault
                     OverlapFlags =85
                     OldBorderStyle =0
                     Left =300
@@ -660,7 +660,6 @@ Begin Form
                     End
                 End
                 Begin Subform
-                    Enabled = NotDefault
                     OverlapFlags =85
                     OldBorderStyle =0
                     Left =6780
@@ -775,7 +774,6 @@ Begin Form
                     End
                 End
                 Begin Subform
-                    Enabled = NotDefault
                     OverlapFlags =85
                     OldBorderStyle =0
                     Left =11160
@@ -890,7 +888,6 @@ Begin Form
                     End
                 End
                 Begin Subform
-                    Enabled = NotDefault
                     OverlapFlags =85
                     OldBorderStyle =0
                     Left =3480
@@ -1019,7 +1016,6 @@ Begin Form
                     LayoutCachedHeight =1410
                 End
                 Begin Subform
-                    Enabled = NotDefault
                     OverlapFlags =85
                     OldBorderStyle =0
                     Left =300
@@ -1030,8 +1026,6 @@ Begin Form
                     BorderColor =10921638
                     Name ="sfrmWaterQualitypHCalibration"
                     SourceObject ="Form.sfrm_WaterQualitypHCalibration"
-                    LinkChildFields ="pHInstrumentID"
-                    LinkMasterFields ="pHInstrumentID"
                     GridlineColor =10921638
 
                     LayoutCachedLeft =300
@@ -1065,7 +1059,6 @@ Begin Form
                     End
                 End
                 Begin Subform
-                    Enabled = NotDefault
                     OverlapFlags =85
                     OldBorderStyle =0
                     Left =6300
@@ -1076,8 +1069,6 @@ Begin Form
                     BorderColor =10921638
                     Name ="sfrmWaterQualityDOCalibration"
                     SourceObject ="Form.sfrm_WaterQualityDOCalibration"
-                    LinkChildFields ="DOInstrumentID"
-                    LinkMasterFields ="DOInstrumentID"
                     GridlineColor =10921638
 
                     LayoutCachedLeft =6300
@@ -1111,7 +1102,6 @@ Begin Form
                     End
                 End
                 Begin Subform
-                    Enabled = NotDefault
                     OverlapFlags =85
                     OldBorderStyle =0
                     Left =10680
@@ -1122,8 +1112,6 @@ Begin Form
                     BorderColor =10921638
                     Name ="sfrmWaterQualitySpCondCalibration"
                     SourceObject ="Form.sfrm_WaterQualitySpCondCalibration"
-                    LinkChildFields ="SpCondInstrumentID"
-                    LinkMasterFields ="SpCondInstrumentID"
                     GridlineColor =10921638
 
                     LayoutCachedLeft =10680
@@ -1194,6 +1182,55 @@ Option Compare Database
 Option Explicit
 
 Private Const mstrcFormName As String = "sfrm_WaterQualityActivity"
+
+Public Function DataQualityOK() As Boolean
+
+Dim dataCollected As String
+Dim pHCount As Integer
+Dim tempCount As Integer
+Dim DOCount As Integer
+Dim SpCondCount As Integer
+Dim instrSpecified As Boolean
+
+If Me.NewRecord Then
+    DataQualityOK = True
+    GoTo Exit_Procedure
+End If
+
+instrSpecified = LookupCodeFromID("ref_WaterQualityInstrument", Me.cbopHInstrumentID) = "None" And _
+        LookupCodeFromID("ref_WaterQualityInstrument", Me.cboTemperatureInstrumentID) = "None" And _
+        LookupCodeFromID("ref_WaterQualityInstrument", Me.cboDOInstrumentID) = "None" And _
+        LookupCodeFromID("ref_WaterQualityInstrument", Me.cboSpCondInstrumentID) = "None"
+
+dataCollected = LookupCodeFromID("lookup_WaterQualityDataCollected", Me.cboWaterQualityDataCollectedID)
+pHCount = Me.sfrmWaterQualitypH.Form.RowCount()
+tempCount = Me.sfrmWaterQualityTemperature.Form.RowCount()
+DOCount = Me.sfrmWaterQualityDO.Form.RowCount()
+SpCondCount = Me.sfrmWaterQualitySpCond.Form.RowCount()
+
+Select Case dataCollected
+Case "Y"
+    If (pHCount > 0 And LookupCodeFromID("ref_WaterQualityInstrument", Me.cbopHInstrumentID) <> "None") Or _
+        (tempCount > 0 And LookupCodeFromID("ref_WaterQualityInstrument", Me.cboTemperatureInstrumentID) <> "None") Or _
+        (DOCount > 0 And LookupCodeFromID("ref_WaterQualityInstrument", Me.cboDOInstrumentID) <> "None") Or _
+        (SpCondCount > 0 And LookupCodeFromID("ref_WaterQualityInstrument", Me.cboSpCondInstrumentID) <> "None") Then
+        DataQualityOK = True
+    Else: DataQualityOK = False
+    End If
+Case "NIW", "NO", "NU"
+    If (pHCount + tempCount + DOCount + SpCondCount) = 0 Then
+        DataQualityOK = True
+    Else: DataQualityOK = False
+    End If
+End Select
+
+Exit_Procedure:
+    Exit Function
+Error_Handler:
+    MsgBox "Form: " & mstrcFormName & vbNewLine & "Fxn:  DataQualityOK" & vbNewLine & "Error #" & Err.Number & ": " & Err.Description, vbCritical
+    Resume Exit_Procedure
+
+End Function
 
 
 Private Sub Form_Load()
@@ -1407,7 +1444,7 @@ Public Function RefreshCalibration()
     On Error GoTo Error_Handler
 
     Me.sfrmWaterQualityDOCalibration.Requery
-    Me.sfrmWaterQualitypHCalibration.Requery
+    Me.sfrmWaterQualitypHCalibration.Form.Requery
     Me.sfrmWaterQualitySpCondCalibration.Requery
 
 Exit_Function:

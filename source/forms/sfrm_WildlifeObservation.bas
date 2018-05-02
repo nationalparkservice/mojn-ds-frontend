@@ -8,6 +8,7 @@ Begin Form
     NavigationButtons = NotDefault
     CloseButton = NotDefault
     DividingLines = NotDefault
+    FilterOn = NotDefault
     ScrollBars =2
     ViewsAllowed =1
     PictureAlignment =2
@@ -17,10 +18,10 @@ Begin Form
     Width =15613
     DatasheetFontHeight =11
     ItemSuffix =24
-    Left =3255
-    Top =5070
-    Right =18750
-    Bottom =9735
+    Left =3405
+    Top =3510
+    Right =19155
+    Bottom =8430
     DatasheetGridlinesColor =15921906
     RecSrcDt = Begin
         0x340aab957b15e540
@@ -475,3 +476,9 @@ Private Sub Form_BeforeUpdate(Cancel As Integer)
         Me.cmbWildlifeEvidenceID.SetFocus
     End If
 End Sub
+
+Public Function RowCount() As Integer
+
+RowCount = Me.RecordsetClone.RecordCount
+
+End Function

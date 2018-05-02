@@ -9,6 +9,7 @@ Begin Form
     NavigationButtons = NotDefault
     CloseButton = NotDefault
     DividingLines = NotDefault
+    FilterOn = NotDefault
     AllowDesignChanges = NotDefault
     DefaultView =0
     ScrollBars =0
@@ -20,10 +21,10 @@ Begin Form
     Width =15840
     DatasheetFontHeight =11
     ItemSuffix =22
-    Left =2865
-    Top =2310
-    Right =18975
-    Bottom =11550
+    Left =3495
+    Top =2610
+    Right =19605
+    Bottom =11850
     DatasheetGridlinesColor =15921906
     RecSrcDt = Begin
         0x372b2ba47615e540
@@ -317,6 +318,7 @@ Begin Form
                     End
                 End
                 Begin ToggleButton
+                    Enabled = NotDefault
                     OverlapFlags =93
                     Left =180
                     Top =1260
@@ -389,6 +391,7 @@ Begin Form
                     End
                 End
                 Begin ToggleButton
+                    Enabled = NotDefault
                     OverlapFlags =87
                     Left =1620
                     Top =1260
@@ -553,6 +556,8 @@ Begin Form
                     End
                 End
                 Begin Subform
+                    Visible = NotDefault
+                    Enabled = NotDefault
                     CanGrow = NotDefault
                     OverlapFlags =247
                     OldBorderStyle =0
@@ -574,6 +579,7 @@ Begin Form
                     LayoutCachedHeight =2822
                     Begin
                         Begin Label
+                            Visible = NotDefault
                             FontItalic = NotDefault
                             OverlapFlags =223
                             Left =180
@@ -898,6 +904,35 @@ Option Explicit
 
 Const mstrcFormName As String = "sfrm_DischargeActivity"
 
+Public Function DataQualityOK() As Boolean
+On Error GoTo Error_Handler
+
+Dim flowCondition As String
+Dim dimensionsExist As Integer
+
+If Me.NewRecord Then
+    DataQualityOK = True
+    GoTo Exit_Procedure
+End If
+
+dimensionsExist = (Me.sfrmSpringbrookDimensions.Form.RowCount() > 0)
+flowCondition = LookupLabelFromID("lookup_FlowCondition", Me.cboFlowConditionID)
+
+Select Case flowCondition
+    Case "dry", "wet soil only", "flowing", "flood", "standing water"
+        DataQualityOK = dimensionsExist
+    Case Else
+        DataQualityOK = Not dimensionsExist
+End Select
+
+Exit_Procedure:
+    Exit Function
+Error_Handler:
+    MsgBox "Module: " & mstrcFormName & vbNewLine & "Fxn: DataQualityOK" & vbNewLine & "Error #" & Err.Number & ": " & Err.Description, vbCritical
+    Resume Exit_Procedure
+
+End Function
+
 Private Function ValidateFlowCondition(flowCondition As String, estDischarge As Boolean, volDischarge As Boolean, springbrookFlag As Variant, springbrookLength As Variant, springbrookWidth As Variant) As Boolean
 On Error GoTo Error_Handler
 
@@ -1057,7 +1092,7 @@ On Error GoTo Error_Handler
             EnableSpringbrook (True)
     End Select
     
-    DoCmd.Save acDefault
+    DoCmd.RunCommand acCmdSaveRecord
     Forms!frm_Visit!sfrmActivityDashboard.Form.Requery
     
 Exit_Procedure:

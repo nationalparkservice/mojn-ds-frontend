@@ -10,6 +10,7 @@ Begin Form
     NavigationButtons = NotDefault
     CloseButton = NotDefault
     DividingLines = NotDefault
+    FilterOn = NotDefault
     DefaultView =0
     ScrollBars =0
     ViewsAllowed =1
@@ -21,17 +22,15 @@ Begin Form
     Width =15840
     DatasheetFontHeight =11
     ItemSuffix =44
-    Left =2865
-    Top =2310
-    Right =18975
-    Bottom =11550
+    Left =3750
+    Top =2235
+    Right =19860
+    Bottom =11475
     DatasheetGridlinesColor =15921906
     RecSrcDt = Begin
         0x3a89a5777b15e540
     End
     RecordSource ="data_DisturbanceActivity"
-    BeforeUpdate ="[Event Procedure]"
-    AfterUpdate ="[Event Procedure]"
     DatasheetFontName ="Calibri"
     PrtMip = Begin
         0x6801000068010000680100006801000000000000201c0000e010000001000000 ,
@@ -244,6 +243,7 @@ Begin Form
             AlternateBackColor =15921906
             Begin
                 Begin Subform
+                    Enabled = NotDefault
                     CanGrow = NotDefault
                     OverlapFlags =85
                     OldBorderStyle =0
@@ -1413,6 +1413,43 @@ Option Explicit
 
 Const mstrcFormName As String = "sfrm_DisturbanceActivity"
 
+Public Function DataQualityOK() As Boolean
+On Error GoTo Error_Handler
+
+Dim flowModification As String
+Dim modificationCount As Integer
+
+If Me.NewRecord Then
+    DataQualityOK = True
+    GoTo Exit_Procedure
+End If
+
+modificationCount = Me.sfrmDisturbanceModifications.Form.RowCount()
+flowModification = LookupCodeFromID("lookup_FlowModificationStatus", Me.cboFlowModificationStatusID)
+
+Select Case flowModification
+Case "YA", "YI", "YU"
+    If modificationCount > 0 Then
+        DataQualityOK = True
+    Else: DataQualityOK = False
+    End If
+
+Case "N", "ND"
+    If modificationCount = 0 Then
+        DataQualityOK = True
+    Else: DataQualityOK = False
+    End If
+End Select
+
+Exit_Procedure:
+    Exit Function
+Error_Handler:
+    MsgBox "Module: " & mstrcFormName & vbNewLine & "Fxn: DataQualityOK" & vbNewLine & "Error #" & Err.Number & ": " & Err.Description, vbCritical
+    Resume Exit_Procedure
+
+End Function
+
+
 Private Sub Form_Load()
 On Error GoTo Error_Handler
     
@@ -1508,14 +1545,4 @@ Exit_Sub:
 Error_Handler:
     MsgBox "Form: " & mstrcFormName & vbNewLine & "Sub:  cboDataProcessingLevelID_AfterUpdate" & vbNewLine & "Error #" & Err.Number & ": " & Err.Description, vbCritical
     Resume Exit_Sub
-End Sub
-
-Private Sub Form_AfterUpdate()
-
-MsgBox ("after update")
-End Sub
-
-Private Sub Form_BeforeUpdate(Cancel As Integer)
-
-MsgBox ("before update")
 End Sub

@@ -13,10 +13,10 @@ Begin Form
     Width =2579
     DatasheetFontHeight =11
     ItemSuffix =5
-    Left =13785
-    Top =4050
-    Right =16635
-    Bottom =6150
+    Left =4815
+    Top =4710
+    Right =7665
+    Bottom =6570
     DatasheetGridlinesColor =15921906
     RecSrcDt = Begin
         0x2c1ae211ce15e540
@@ -393,3 +393,9 @@ Private Sub cmdDeleteRecord_Click()
 On Error Resume Next
 DeleteRecord Me, Me.NewRecord
 End Sub
+
+Public Function RowCount() As Integer
+
+RowCount = Me.RecordsetClone.RecordCount
+
+End Function

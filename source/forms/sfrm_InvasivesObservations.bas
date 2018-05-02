@@ -10,6 +10,7 @@ Begin Form
     NavigationButtons = NotDefault
     CloseButton = NotDefault
     DividingLines = NotDefault
+    FilterOn = NotDefault
     AllowDesignChanges = NotDefault
     ScrollBars =2
     BorderStyle =0
@@ -20,10 +21,10 @@ Begin Form
     Width =15960
     DatasheetFontHeight =11
     ItemSuffix =40
-    Left =2595
-    Top =5130
-    Right =17865
-    Bottom =10275
+    Left =3510
+    Top =3390
+    Right =19035
+    Bottom =8790
     DatasheetGridlinesColor =15921906
     RecSrcDt = Begin
         0x8e8931077915e540
@@ -962,3 +963,9 @@ Error_Handler:
     Resume Exit_Sub
     
 End Sub
+
+Public Function RowCount() As Integer
+
+RowCount = Me.RecordsetClone.RecordCount
+
+End Function

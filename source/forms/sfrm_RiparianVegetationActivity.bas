@@ -10,6 +10,7 @@ Begin Form
     NavigationButtons = NotDefault
     CloseButton = NotDefault
     DividingLines = NotDefault
+    FilterOn = NotDefault
     AllowDesignChanges = NotDefault
     DefaultView =0
     ScrollBars =0
@@ -21,10 +22,10 @@ Begin Form
     Width =15840
     DatasheetFontHeight =11
     ItemSuffix =21
-    Left =2925
-    Top =2310
-    Right =19035
-    Bottom =11550
+    Left =3810
+    Top =2235
+    Right =19920
+    Bottom =11475
     DatasheetGridlinesColor =15921906
     RecSrcDt = Begin
         0x51f3cbe4ac15e540
@@ -311,6 +312,7 @@ Begin Form
                     End
                 End
                 Begin Subform
+                    Enabled = NotDefault
                     CanGrow = NotDefault
                     OverlapFlags =85
                     OldBorderStyle =0
@@ -736,6 +738,34 @@ Option Compare Database
 Option Explicit
 
 Private Const mstrcFormName As String = "sfrm_RiparianVegetationActivity"
+
+Public Function DataQualityOK() As Boolean
+On Error GoTo Error_Handler
+
+Dim dataCollected As String
+Dim observationCount As Integer
+
+If Me.NewRecord Then
+    DataQualityOK = True
+    GoTo Exit_Procedure
+End If
+
+dataCollected = LookupCodeFromID("lookup_IsVegetationObserved", Me.cboIsVegetationObserved)
+observationCount = Me.sfrmRiparianVegetationObservation.Form.RowCount()
+
+Select Case dataCollected
+Case "Y"
+    DataQualityOK = (observationCount > 0) And Not IsNull(Me.cboIsMistletoePresent)
+Case "N", "ND"
+    DataQualityOK = (observationCount = 0) And Not IsNull(Me.cboIsMistletoePresent)
+End Select
+
+Exit_Procedure:
+    Exit Function
+Error_Handler:
+    MsgBox "Module: " & mstrcFormName & vbNewLine & "Fxn: DataQualityOK" & vbNewLine & "Error #" & Err.Number & ": " & Err.Description, vbCritical
+    Resume Exit_Procedure
+End Function
 
 Private Sub Form_Load()
 On Error GoTo Error_Handler

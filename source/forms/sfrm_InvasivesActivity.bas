@@ -8,6 +8,7 @@ Begin Form
     NavigationButtons = NotDefault
     CloseButton = NotDefault
     DividingLines = NotDefault
+    FilterOn = NotDefault
     AllowDesignChanges = NotDefault
     DefaultView =0
     ScrollBars =0
@@ -19,10 +20,10 @@ Begin Form
     Width =15840
     DatasheetFontHeight =11
     ItemSuffix =11
-    Left =2865
-    Top =2310
-    Right =18975
-    Bottom =11550
+    Left =4560
+    Top =2175
+    Right =20670
+    Bottom =11415
     DatasheetGridlinesColor =15921906
     RecSrcDt = Begin
         0x340b8c157915e540
@@ -663,6 +664,34 @@ Option Compare Database
 Option Explicit
 
 Const mstrcFormName As String = "sfrm_InvasivesActivity"
+
+Public Function DataQualityOK() As Boolean
+On Error GoTo Error_Handler
+
+Dim dataCollected As String
+Dim observationCount As Integer
+
+If Me.NewRecord Then
+    DataQualityOK = True
+    GoTo Exit_Procedure
+End If
+
+dataCollected = LookupCodeFromID("lookup_InvasivesObserved", Me.cboInvasivesObserved)
+observationCount = Me.sfrmInvasivesObservations.Form.RowCount()
+
+Select Case dataCollected
+Case "Y"
+    DataQualityOK = (observationCount > 0)
+Case "N", "ND"
+    DataQualityOK = (observationCount = 0)
+End Select
+
+Exit_Procedure:
+    Exit Function
+Error_Handler:
+    MsgBox "Module: " & mstrcFormName & vbNewLine & "Fxn: DataQualityOK" & vbNewLine & "Error #" & Err.Number & ": " & Err.Description, vbCritical
+    Resume Exit_Procedure
+End Function
 
 Private Sub Form_Load()
 On Error GoTo Error_Handler

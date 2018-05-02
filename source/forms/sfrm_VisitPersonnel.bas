@@ -8,6 +8,7 @@ Begin Form
     NavigationButtons = NotDefault
     CloseButton = NotDefault
     DividingLines = NotDefault
+    FilterOn = NotDefault
     AllowDesignChanges = NotDefault
     ScrollBars =2
     BorderStyle =0
@@ -18,10 +19,10 @@ Begin Form
     Width =4319
     DatasheetFontHeight =11
     ItemSuffix =4
-    Left =3705
-    Top =6495
-    Right =8190
-    Bottom =9660
+    Left =4965
+    Top =5385
+    Right =9705
+    Bottom =8805
     DatasheetGridlinesColor =15921906
     RecSrcDt = Begin
         0x2f831d1f9d15e540
@@ -366,3 +367,9 @@ Private Sub cmdDeletePersonnel_Click()
 DeleteRecord Me, Me.NewRecord
 
 End Sub
+
+Public Function RowCount() As Integer
+
+RowCount = Me.RecordsetClone.RecordCount
+
+End Function

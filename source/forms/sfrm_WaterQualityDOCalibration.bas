@@ -13,22 +13,20 @@ Begin Form
     Width =3900
     DatasheetFontHeight =11
     ItemSuffix =20
-    Left =5280
-    Top =8040
-    Right =9195
-    Bottom =10125
+    Left =10320
+    Top =5580
+    Right =14235
+    Bottom =7665
     DatasheetGridlinesColor =15921906
-    RecSrcDt = Begin
-        0x9d66bce74b16e540
-    End
     RecordSource ="SELECT data_CalibrationDO.ID, data_CalibrationDO.CalibrationTime, data_Calibrati"
         "onDO.CalibrationDate, data_CalibrationDO.PreCalibrationReading_percent, data_Cal"
         "ibrationDO.PreCalibrationTemperature_C, data_CalibrationDO.PostCalibrationReadin"
         "g_percent, data_CalibrationDO.PostCalibrationTemperature_C, data_CalibrationDO.B"
         "arometricPressure_mmHg, data_CalibrationDO.DOInstrumentID, data_CalibrationDO.No"
         "tes, data_CalibrationDO.DateCreated FROM data_CalibrationDO WHERE (((data_Calibr"
-        "ationDO.CalibrationDate)<[Forms]![frm_Visit]![VisitDate])) ORDER BY data_Calibra"
-        "tionDO.CalibrationDate DESC; "
+        "ationDO.CalibrationDate)<Forms!frm_Visit!VisitDate) And ((data_CalibrationDO.DOI"
+        "nstrumentID)=Forms!frm_Visit!sfrm_WaterQualityActivity.Form!cboDOInstrumentID)) "
+        "ORDER BY data_CalibrationDO.CalibrationDate DESC; "
     DatasheetFontName ="Calibri"
     PrtMip = Begin
         0x6801000068010000680100006801000000000000201c0000e010000001000000 ,

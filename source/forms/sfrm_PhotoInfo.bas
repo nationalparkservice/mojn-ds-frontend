@@ -7,6 +7,7 @@ Begin Form
     AllowDeletions = NotDefault
     DividingLines = NotDefault
     AllowAdditions = NotDefault
+    FilterOn = NotDefault
     AllowDesignChanges = NotDefault
     DefaultView =0
     ScrollBars =0
@@ -20,10 +21,10 @@ Begin Form
     Width =8055
     DatasheetFontHeight =11
     ItemSuffix =115
-    Left =9855
-    Top =5730
-    Right =17835
-    Bottom =8955
+    Left =10875
+    Top =7245
+    Right =19110
+    Bottom =10725
     DatasheetGridlinesColor =15921906
     Filter ="data_Photo.ID = 3299"
     RecSrcDt = Begin

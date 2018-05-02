@@ -13,21 +13,20 @@ Begin Form
     Width =3900
     DatasheetFontHeight =11
     ItemSuffix =21
-    Left =9660
-    Top =8040
-    Right =13605
-    Bottom =10125
+    Left =14700
+    Top =5580
+    Right =18645
+    Bottom =7665
     DatasheetGridlinesColor =15921906
-    RecSrcDt = Begin
-        0x579ea31f8e16e540
-    End
     RecordSource ="SELECT data_CalibrationSpCond.ID, data_CalibrationSpCond.CalibrationTime, data_C"
         "alibrationSpCond.CalibrationDate, data_CalibrationSpCond.StandardValue_microS_pe"
         "r_cm, data_CalibrationSpCond.PreCalibrationReading_microS_per_cm, data_Calibrati"
         "onSpCond.PostCalibrationReading_microS_per_cm, data_CalibrationSpCond.SpCondInst"
         "rumentID, data_CalibrationSpCond.Notes, data_CalibrationSpCond.DateCreated FROM "
-        "data_CalibrationSpCond WHERE (((data_CalibrationSpCond.CalibrationDate)<[Forms]!"
-        "[frm_Visit]![VisitDate])) ORDER BY data_CalibrationSpCond.CalibrationDate DESC; "
+        "data_CalibrationSpCond WHERE (((data_CalibrationSpCond.CalibrationDate)<Forms!fr"
+        "m_Visit!VisitDate) And ((data_CalibrationSpCond.SpCondInstrumentID)=Forms!frm_Vi"
+        "sit!sfrm_WaterQualityActivity.Form!cboSpCondInstrumentID)) ORDER BY data_Calibra"
+        "tionSpCond.CalibrationDate DESC; "
     DatasheetFontName ="Calibri"
     PrtMip = Begin
         0x6801000068010000680100006801000000000000201c0000e010000001000000 ,

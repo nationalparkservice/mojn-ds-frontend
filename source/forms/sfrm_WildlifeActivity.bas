@@ -6,7 +6,6 @@ Begin Form
     AutoCenter = NotDefault
     NavigationButtons = NotDefault
     DividingLines = NotDefault
-    FilterOn = NotDefault
     DefaultView =0
     PictureAlignment =2
     DatasheetGridlinesBehavior =3
@@ -15,10 +14,10 @@ Begin Form
     Width =15885
     DatasheetFontHeight =11
     ItemSuffix =28
-    Left =3255
-    Top =2385
-    Right =19365
-    Bottom =11625
+    Left =2865
+    Top =2310
+    Right =18975
+    Bottom =11550
     DatasheetGridlinesColor =15921906
     RecSrcDt = Begin
         0xa55d10aad915e540
@@ -233,6 +232,7 @@ Begin Form
                     Width =11105
                     Height =966
                     FontSize =10
+                    TabIndex =4
                     BorderColor =14211288
                     Name ="txtDataProcessingLevelNote"
                     ControlSource ="DataProcessingLevelNote"
@@ -284,7 +284,7 @@ Begin Form
                     Width =1980
                     Height =238
                     FontSize =10
-                    TabIndex =1
+                    TabIndex =3
                     BorderColor =10921638
                     ColumnInfo ="\"\";\"\";\"\";\"\";\"\";\"\";\"10\";\"40\""
                     Name ="cboDataProcessingLevelID"
@@ -343,7 +343,7 @@ Begin Form
                     Width =1980
                     Height =238
                     FontSize =10
-                    TabIndex =2
+                    TabIndex =5
                     BackColor =15921906
                     BorderColor =10921638
                     Name ="txtDataProcessingLevelDate"
@@ -446,7 +446,7 @@ Begin Form
                     Top =7020
                     Width =15420
                     Height =723
-                    TabIndex =3
+                    TabIndex =2
                     BorderColor =14211288
                     ForeColor =4210752
                     Name ="Notes"
@@ -489,7 +489,6 @@ Begin Form
                     Height =315
                     ColumnOrder =0
                     FontSize =12
-                    TabIndex =4
                     BorderColor =10921638
                     ForeColor =4210752
                     ColumnInfo ="\"\";\"\";\"\";\"\";\"\";\"\";\"10\";\"40\""
@@ -564,7 +563,7 @@ Begin Form
                     Top =1260
                     Width =15750
                     Height =4920
-                    TabIndex =5
+                    TabIndex =1
                     BorderColor =10921638
                     Name ="sfrmWildlifeObservation"
                     SourceObject ="Form.sfrm_WildlifeObservation"

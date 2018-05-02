@@ -15,13 +15,13 @@ Begin Form
     DatasheetGridlinesBehavior =3
     GridX =24
     GridY =24
-    Width =5759
+    Width =5820
     DatasheetFontHeight =11
-    ItemSuffix =16
-    Left =4095
-    Top =4710
-    Right =9870
-    Bottom =5385
+    ItemSuffix =17
+    Left =4440
+    Top =5625
+    Right =10005
+    Bottom =6090
     DatasheetGridlinesColor =15921906
     RecSrcDt = Begin
         0x556e2cfc5618e540
@@ -62,6 +62,16 @@ Begin Form
             BorderTint =50.0
             ForeThemeColorIndex =0
             ForeTint =50.0
+            GridlineThemeColorIndex =1
+            GridlineShade =65.0
+        End
+        Begin Rectangle
+            SpecialEffect =3
+            BackStyle =0
+            BorderLineStyle =0
+            BackThemeColorIndex =1
+            BorderThemeColorIndex =1
+            BorderShade =65.0
             GridlineThemeColorIndex =1
             GridlineShade =65.0
         End
@@ -297,10 +307,18 @@ Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 Option Compare Database
 
+Private Sub Command16_Click()
+
+DeleteRecord Me, Me.NewRecord
+
+End Sub
+
 Private Sub Form_AfterUpdate()
 
 DoCmd.RunCommand acCmdSaveRecord
 Forms!frm_Visit!sfrmActivityDashboard.Form.Requery
 Forms!frm_Visit!sfrmPhotoActivity.Form.Requery
+Forms!frm_Visit!sfrmPhotoActivity.Form.PhotoTabSetup
+
 
 End Sub

@@ -10,7 +10,6 @@ Begin Form
     NavigationButtons = NotDefault
     CloseButton = NotDefault
     DividingLines = NotDefault
-    FilterOn = NotDefault
     AllowDesignChanges = NotDefault
     DefaultView =0
     ScrollBars =0
@@ -22,10 +21,10 @@ Begin Form
     Width =15840
     DatasheetFontHeight =11
     ItemSuffix =21
-    Left =3315
-    Top =2385
-    Right =19425
-    Bottom =11625
+    Left =2925
+    Top =2310
+    Right =19035
+    Bottom =11550
     DatasheetGridlinesColor =15921906
     RecSrcDt = Begin
         0x51f3cbe4ac15e540
@@ -250,6 +249,7 @@ Begin Form
                     Top =540
                     Width =1485
                     Height =313
+                    TabIndex =1
                     BorderColor =14211288
                     ColumnInfo ="\"\";\"\";\"\";\"\";\"10\";\"20\""
                     ConditionalFormat = Begin
@@ -318,7 +318,7 @@ Begin Form
                     Top =1620
                     Width =13931
                     Height =4255
-                    TabIndex =1
+                    TabIndex =2
                     BorderColor =65536
                     Name ="sfrmRiparianVegetationObservation"
                     SourceObject ="Form.sfrm_RiparianVegetationObservation"
@@ -371,7 +371,6 @@ Begin Form
                     Width =1499
                     Height =313
                     FontSize =12
-                    TabIndex =2
                     BorderColor =14211288
                     ColumnInfo ="\"\";\"\";\"\";\"\";\"\";\"\";\"10\";\"50\""
                     ConditionalFormat = Begin
@@ -447,7 +446,7 @@ Begin Form
                     Width =11105
                     Height =966
                     FontSize =10
-                    TabIndex =3
+                    TabIndex =5
                     BorderColor =14211288
                     Name ="txtDataProcessingLevelNote"
                     ControlSource ="DataProcessingLevelNote"
@@ -558,7 +557,7 @@ Begin Form
                     Width =1980
                     Height =238
                     FontSize =10
-                    TabIndex =5
+                    TabIndex =6
                     BackColor =15921906
                     BorderColor =10921638
                     Name ="txtDataProcessingLevelDate"
@@ -660,7 +659,7 @@ Begin Form
                     Top =7020
                     Width =15420
                     Height =723
-                    TabIndex =6
+                    TabIndex =3
                     BorderColor =14211288
                     ForeColor =4210752
                     Name ="Notes"
@@ -705,6 +704,7 @@ Begin Form
                 End
                 Begin TextBox
                     Visible = NotDefault
+                    TabStop = NotDefault
                     OverlapFlags =85
                     IMESentenceMode =3
                     Left =12720

@@ -9,7 +9,6 @@ Begin Form
     NavigationButtons = NotDefault
     CloseButton = NotDefault
     DividingLines = NotDefault
-    FilterOn = NotDefault
     AllowDesignChanges = NotDefault
     DefaultView =0
     ScrollBars =0
@@ -21,10 +20,10 @@ Begin Form
     Width =15840
     DatasheetFontHeight =11
     ItemSuffix =22
-    Left =3915
-    Top =2610
-    Right =20025
-    Bottom =11850
+    Left =2865
+    Top =2310
+    Right =18975
+    Bottom =11550
     DatasheetGridlinesColor =15921906
     RecSrcDt = Begin
         0x372b2ba47615e540
@@ -318,7 +317,6 @@ Begin Form
                     End
                 End
                 Begin ToggleButton
-                    Enabled = NotDefault
                     OverlapFlags =93
                     Left =180
                     Top =1260
@@ -391,7 +389,6 @@ Begin Form
                     End
                 End
                 Begin ToggleButton
-                    Enabled = NotDefault
                     OverlapFlags =87
                     Left =1620
                     Top =1260
@@ -556,8 +553,6 @@ Begin Form
                     End
                 End
                 Begin Subform
-                    Visible = NotDefault
-                    Enabled = NotDefault
                     CanGrow = NotDefault
                     OverlapFlags =247
                     OldBorderStyle =0
@@ -579,7 +574,6 @@ Begin Form
                     LayoutCachedHeight =2822
                     Begin
                         Begin Label
-                            Visible = NotDefault
                             FontItalic = NotDefault
                             OverlapFlags =223
                             Left =180
@@ -623,7 +617,7 @@ Begin Form
                     Width =11105
                     Height =966
                     FontSize =10
-                    TabIndex =6
+                    TabIndex =8
                     BorderColor =14211288
                     Name ="txtDataProcessingLevelNote"
                     ControlSource ="DataProcessingLevelNote"
@@ -734,7 +728,7 @@ Begin Form
                     Width =1980
                     Height =238
                     FontSize =10
-                    TabIndex =8
+                    TabIndex =9
                     BackColor =15921906
                     BorderColor =10921638
                     Name ="txtDataProcessingLevelDate"
@@ -836,7 +830,7 @@ Begin Form
                     Top =7020
                     Width =15420
                     Height =723
-                    TabIndex =9
+                    TabIndex =6
                     BorderColor =14211288
                     ForeColor =4210752
                     Name ="txtNotes"
@@ -871,6 +865,7 @@ Begin Form
                 End
                 Begin TextBox
                     Visible = NotDefault
+                    TabStop = NotDefault
                     OverlapFlags =85
                     IMESentenceMode =3
                     Left =10920

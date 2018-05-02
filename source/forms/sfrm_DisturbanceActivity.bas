@@ -10,7 +10,6 @@ Begin Form
     NavigationButtons = NotDefault
     CloseButton = NotDefault
     DividingLines = NotDefault
-    FilterOn = NotDefault
     DefaultView =0
     ScrollBars =0
     ViewsAllowed =1
@@ -22,15 +21,17 @@ Begin Form
     Width =15840
     DatasheetFontHeight =11
     ItemSuffix =44
-    Left =3255
-    Top =2385
-    Right =19365
-    Bottom =11625
+    Left =2865
+    Top =2310
+    Right =18975
+    Bottom =11550
     DatasheetGridlinesColor =15921906
     RecSrcDt = Begin
         0x3a89a5777b15e540
     End
     RecordSource ="data_DisturbanceActivity"
+    BeforeUpdate ="[Event Procedure]"
+    AfterUpdate ="[Event Procedure]"
     DatasheetFontName ="Calibri"
     PrtMip = Begin
         0x6801000068010000680100006801000000000000201c0000e010000001000000 ,
@@ -1065,7 +1066,7 @@ Begin Form
                     Width =11105
                     Height =966
                     FontSize =10
-                    TabIndex =13
+                    TabIndex =15
                     BorderColor =14211288
                     Name ="txtDataProcessingLevelNote"
                     ControlSource ="DataProcessingLevelNote"
@@ -1176,7 +1177,7 @@ Begin Form
                     Width =1980
                     Height =238
                     FontSize =10
-                    TabIndex =15
+                    TabIndex =16
                     BackColor =15921906
                     BorderColor =10921638
                     Name ="txtDataProcessingLevelDate"
@@ -1278,7 +1279,7 @@ Begin Form
                     Top =7020
                     Width =15420
                     Height =723
-                    TabIndex =16
+                    TabIndex =13
                     BorderColor =14211288
                     ForeColor =4210752
                     Name ="Notes"
@@ -1507,4 +1508,14 @@ Exit_Sub:
 Error_Handler:
     MsgBox "Form: " & mstrcFormName & vbNewLine & "Sub:  cboDataProcessingLevelID_AfterUpdate" & vbNewLine & "Error #" & Err.Number & ": " & Err.Description, vbCritical
     Resume Exit_Sub
+End Sub
+
+Private Sub Form_AfterUpdate()
+
+MsgBox ("after update")
+End Sub
+
+Private Sub Form_BeforeUpdate(Cancel As Integer)
+
+MsgBox ("before update")
 End Sub

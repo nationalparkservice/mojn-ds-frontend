@@ -4,7 +4,6 @@ Begin Form
     RecordSelectors = NotDefault
     NavigationButtons = NotDefault
     DividingLines = NotDefault
-    FilterOn = NotDefault
     AllowDesignChanges = NotDefault
     DefaultView =0
     ScrollBars =0
@@ -16,11 +15,11 @@ Begin Form
     GridY =24
     Width =16110
     DatasheetFontHeight =11
-    ItemSuffix =43
-    Left =3855
-    Top =2610
-    Right =19965
-    Bottom =11850
+    ItemSuffix =46
+    Left =1575
+    Top =3135
+    Right =17430
+    Bottom =12120
     DatasheetGridlinesColor =15921906
     RecSrcDt = Begin
         0xc208564c6c18e540
@@ -213,7 +212,7 @@ Begin Form
         End
         Begin Section
             CanGrow = NotDefault
-            Height =22017
+            Height =23607
             BackColor =15921906
             Name ="Detail"
             AlternateBackColor =15527148
@@ -229,7 +228,6 @@ Begin Form
                     Height =3840
                     BorderColor =9211020
                     Name ="imgCurrentPhoto"
-                    Picture ="JOTR_P_CON0215_20171213_DNSTR_0933"
                     GridlineColor =10921638
 
                     LayoutCachedLeft =7620
@@ -242,7 +240,7 @@ Begin Form
                 End
                 Begin Subform
                     TabStop = NotDefault
-                    OverlapFlags =93
+                    OverlapFlags =85
                     OldBorderStyle =0
                     Left =300
                     Top =1080
@@ -262,13 +260,14 @@ Begin Form
                     LayoutCachedHeight =6810
                 End
                 Begin Subform
-                    OverlapFlags =93
+                    Visible = NotDefault
+                    OverlapFlags =85
                     OldBorderStyle =0
                     Left =7560
                     Top =4620
                     Width =8235
                     Height =3480
-                    TabIndex =3
+                    TabIndex =4
                     BorderColor =10921638
                     Name ="sfrmPhotoInfo"
                     SourceObject ="Form.sfrm_PhotoInfo"
@@ -282,12 +281,12 @@ Begin Form
                     LayoutCachedHeight =8100
                 End
                 Begin CommandButton
-                    OverlapFlags =93
+                    OverlapFlags =85
                     Left =300
                     Top =7320
                     Width =6780
                     Height =480
-                    TabIndex =4
+                    TabIndex =3
                     Name ="cmdAddRepeatPhoto"
                     Caption ="Add Repeat Photos"
                     OnClick ="[Event Procedure]"
@@ -329,11 +328,12 @@ Begin Form
                 End
                 Begin Subform
                     Visible = NotDefault
-                    OverlapFlags =247
+                    OverlapFlags =85
                     OldBorderStyle =0
+                    Top =10080
                     Width =16110
                     Height =7947
-                    TabIndex =1
+                    TabIndex =8
                     BorderColor =10921638
                     Name ="sfrmPhotoEntry"
                     SourceObject ="Form.sfrm_PhotoEntry"
@@ -341,17 +341,19 @@ Begin Form
                     LinkMasterFields ="ID"
                     GridlineColor =10921638
 
+                    LayoutCachedTop =10080
                     LayoutCachedWidth =16110
-                    LayoutCachedHeight =7947
+                    LayoutCachedHeight =18027
                 End
                 Begin TextBox
                     OldBorderStyle =0
-                    OverlapFlags =93
+                    OverlapFlags =85
                     BackStyle =0
                     IMESentenceMode =3
                     Left =120
                     Width =0
                     Height =315
+                    TabIndex =9
                     BorderColor =10921638
                     ForeColor =4210752
                     Name ="txtDummy"
@@ -363,7 +365,7 @@ Begin Form
                 End
                 Begin Label
                     BackStyle =1
-                    OverlapFlags =93
+                    OverlapFlags =85
                     TextAlign =2
                     Left =300
                     Top =180
@@ -386,7 +388,7 @@ Begin Form
                 End
                 Begin Label
                     BackStyle =1
-                    OverlapFlags =93
+                    OverlapFlags =85
                     TextAlign =2
                     Left =7620
                     Top =180
@@ -409,14 +411,13 @@ Begin Form
                 End
                 Begin ComboBox
                     LimitToList = NotDefault
-                    OverlapFlags =93
+                    OverlapFlags =85
                     IMESentenceMode =3
                     ListWidth =1440
                     Left =1800
                     Top =600
                     Width =1800
                     Height =320
-                    TabIndex =5
                     BoundColumn =1
                     BorderColor =9211020
                     ForeColor =2108188
@@ -439,7 +440,7 @@ Begin Form
                     Begin
                         Begin Label
                             FontItalic = NotDefault
-                            OverlapFlags =93
+                            OverlapFlags =85
                             TextAlign =1
                             Left =300
                             Top =600
@@ -462,12 +463,12 @@ Begin Form
                     End
                 End
                 Begin CommandButton
-                    OverlapFlags =93
-                    Left =5265
+                    OverlapFlags =85
+                    Left =5280
                     Top =600
                     Width =1620
                     Height =320
-                    TabIndex =6
+                    TabIndex =1
                     Name ="cmdClearPhotoSOPFilter"
                     Caption ="Clear Filter"
                     OnClick ="[Event Procedure]"
@@ -478,9 +479,9 @@ Begin Form
                     BottomPadding =150
                     GridlineColor =10921638
 
-                    LayoutCachedLeft =5265
+                    LayoutCachedLeft =5280
                     LayoutCachedTop =600
-                    LayoutCachedWidth =6885
+                    LayoutCachedWidth =6900
                     LayoutCachedHeight =920
                     ForeTint =100.0
                     Shape =0
@@ -507,9 +508,8 @@ Begin Form
                     Overlaps =1
                 End
                 Begin Label
-                    Visible = NotDefault
                     FontItalic = NotDefault
-                    OverlapFlags =255
+                    OverlapFlags =247
                     TextAlign =2
                     Left =7620
                     Top =2220
@@ -540,7 +540,7 @@ Begin Form
                     Width =11105
                     Height =726
                     FontSize =10
-                    TabIndex =7
+                    TabIndex =6
                     BorderColor =14211288
                     Name ="txtDataProcessingLevelNote"
                     ControlSource ="DataProcessingLevelNote"
@@ -592,7 +592,7 @@ Begin Form
                     Width =1980
                     Height =238
                     FontSize =10
-                    TabIndex =8
+                    TabIndex =5
                     BorderColor =10921638
                     ColumnInfo ="\"\";\"\";\"\";\"\";\"\";\"\";\"10\";\"40\""
                     Name ="cboDataProcessingLevelID"
@@ -650,7 +650,7 @@ Begin Form
                     Width =1980
                     Height =238
                     FontSize =10
-                    TabIndex =9
+                    TabIndex =7
                     BackColor =15921906
                     BorderColor =10921638
                     Name ="txtDataProcessingLevelDate"
@@ -771,8 +771,11 @@ Private Sub cmdAddRepeatPhoto_Click()
 Me.sfrmPhotoEntry.Top = 0
 Me.sfrmPhotoEntry.Left = 0
 Me.sfrmPhotoEntry.Enabled = True
+Me.sfrmPhotoEntry.Form.DataEntry = True
 Me.sfrmPhotoEntry.Visible = True
 Me.sfrmPhotoEntry.SetFocus
+Me.sfrmPhotoEntry.Form.cboPhotoDescriptionCode.SetFocus
+
 
 End Sub
 
@@ -800,35 +803,54 @@ End Sub
 
 Private Sub Form_Load()
 
+PhotoTabSetup
+    
+End Sub
+
+Public Sub PhotoTabSetup()
+
 Dim renamedPhotos As DAO.Recordset
 Dim qry As String
 Dim photosExist As Boolean
+Dim photoActivityExists As Boolean
 Dim thumbnailGrid As New Collection
 
 'Hide current photo and photo info
 HidePhoto
 
-'Get recordset of renamed paths and descriptions
-If Not IsNull(Me.ID) Then
+'If the photo activity record doesn't exist, prompt the user to enter a camera and camera card
+If IsNull(Me.ID) Then
+    photoActivityExists = False
+    
+'If there is a photo activity record, check for corresponding photo records
+Else
     qry = "SELECT PhotoActivityID FROM data_Photo WHERE PhotoActivityID = " & Me.ID & ";"
     Set renamedPhotos = CurrentDb.OpenRecordset(qry, dbOpenSnapshot, dbReadOnly)
+
     If Not (renamedPhotos.BOF And renamedPhotos.EOF) Then
         renamedPhotos.MoveFirst
         renamedPhotos.MoveLast
         photosExist = (renamedPhotos.RecordCount > 0)
-    Else: photosExist = False
+    Else
+        photosExist = False
     End If
-Else
-    photosExist = False
+    
+    photoActivityExists = True
 End If
 
+'If photos exist for this visit, default to the photo browser view
 If photosExist Then
     Me.sfrmPhotoEntry.Visible = False
     
-Else
+'If no photos exist for this visit and there is a photo activity record, default to the photo data entry view
+ElseIf photoActivityExists Then
     Me.sfrmPhotoEntry.Visible = True
     Me.sfrmPhotoEntry.Top = 0
     Me.sfrmPhotoEntry.Left = 0
+    Me.sfrmPhotoEntry.Form.DataEntry = True
+'If there is no photo activity record, disable photo data entry
+Else
+    Me.sfrmPhotoEntry.Visible = False
+    Me.cmdAddRepeatPhoto.Enabled = False
 End If
-    
 End Sub

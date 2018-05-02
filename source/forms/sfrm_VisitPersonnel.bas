@@ -18,10 +18,10 @@ Begin Form
     Width =4319
     DatasheetFontHeight =11
     ItemSuffix =4
-    Left =5565
-    Top =5730
-    Right =10305
-    Bottom =9150
+    Left =3705
+    Top =6495
+    Right =8190
+    Bottom =9660
     DatasheetGridlinesColor =15921906
     RecSrcDt = Begin
         0x2f831d1f9d15e540
@@ -278,7 +278,7 @@ Begin Form
                     Left =4020
                     Width =299
                     Height =299
-                    TabIndex =1
+                    TabIndex =2
                     ForeColor =4210752
                     Name ="cmdDeletePersonnel"
                     OnClick ="[Event Procedure]"
@@ -320,7 +320,7 @@ Begin Form
                     Left =1260
                     Width =2699
                     Height =299
-                    TabIndex =2
+                    TabIndex =1
                     BorderColor =14211288
                     ColumnInfo ="\"\";\"\";\"\";\"\";\"10\";\"100\""
                     Name ="cboPersonnelRoleID"

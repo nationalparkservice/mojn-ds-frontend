@@ -19,10 +19,10 @@ Begin Form
     Width =4500
     DatasheetFontHeight =11
     ItemSuffix =5
-    Left =10020
-    Top =3795
-    Right =14820
-    Bottom =8955
+    Left =8970
+    Top =3495
+    Right =13770
+    Bottom =8655
     DatasheetGridlinesColor =15921906
     RecSrcDt = Begin
         0x9d66bc17ab15e540
@@ -341,6 +341,7 @@ Begin Form
                         "p_SpringbrookLengthFlag.Label FROM lookup_SpringbrookLengthFlag; "
                     ColumnWidths ="0;1199;1944"
                     BeforeUpdate ="[Event Procedure]"
+                    DefaultValue ="3"
                     GridlineColor =10921638
                     AllowValueListEdits =0
 

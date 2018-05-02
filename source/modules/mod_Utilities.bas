@@ -5,7 +5,9 @@ Option Explicit
 
 Const strcModName As String = "mod_Utilities"
 
+
 Public Function DeleteRecord(currentForm As Form, recordIsNew As Boolean)
+On Error GoTo Error_Handler
 
 If MsgBox("Are you sure you want to delete this record?", vbYesNo) = vbYes Then
     If recordIsNew Then
@@ -14,6 +16,12 @@ If MsgBox("Are you sure you want to delete this record?", vbYesNo) = vbYes Then
         DoCmd.RunCommand acCmdDeleteRecord
     End If
 End If
+
+Exit_Procedure:
+    Exit Function
+Error_Handler:
+    MsgBox "Module: " & strcModName & vbNewLine & "Fxn:  DeleteRecord" & vbNewLine & "Error #" & Err.Number & ": " & Err.Description, vbCritical
+    Resume Exit_Procedure
 
 End Function
 
@@ -214,9 +222,12 @@ Public Function GetDataType(strTableName As String, strFieldName As String) As I
     On Error Resume Next
     intResult = CurrentDb.TableDefs(strTableName)(strFieldName).Type
     GetDataType = intResult
+    
 End Function
 
 Public Sub StatusBar(Optional msg As Variant)
+On Error GoTo Error_Handler
+
     Dim Temp As Variant
 
     If Not IsMissing(msg) Then
@@ -229,6 +240,11 @@ Public Sub StatusBar(Optional msg As Variant)
         Temp = SysCmd(acSysCmdClearStatus)
     End If
 
+Exit_Procedure:
+    Exit Sub
+Error_Handler:
+    MsgBox "Module: " & strcModName & vbNewLine & "Fxn:  StatusBar" & vbNewLine & "Error #" & Err.Number & ": " & Err.Description, vbCritical
+    Resume Exit_Procedure
 End Sub
 
 Public Function IsNothing(varToTest As Variant) As Boolean

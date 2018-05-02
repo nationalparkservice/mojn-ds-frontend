@@ -22,12 +22,12 @@ Begin Form
     Width =16620
     DatasheetFontHeight =11
     ItemSuffix =238
-    Left =3135
-    Top =240
-    Right =19755
-    Bottom =11295
+    Left =3795
+    Top =465
+    Right =20415
+    Bottom =11520
     DatasheetGridlinesColor =15921906
-    Filter ="[ID]=379"
+    Filter ="ID = 284"
     RecSrcDt = Begin
         0xab2688a2f412e540
     End
@@ -415,6 +415,7 @@ Begin Form
                 Begin TextBox
                     Visible = NotDefault
                     Enabled = NotDefault
+                    Locked = NotDefault
                     TabStop = NotDefault
                     OverlapFlags =87
                     BackStyle =0
@@ -442,6 +443,7 @@ Begin Form
                 Begin TextBox
                     Visible = NotDefault
                     Enabled = NotDefault
+                    Locked = NotDefault
                     TabStop = NotDefault
                     OldBorderStyle =0
                     OverlapFlags =87
@@ -500,6 +502,7 @@ Begin Form
                 Begin TextBox
                     Visible = NotDefault
                     Enabled = NotDefault
+                    Locked = NotDefault
                     OldBorderStyle =0
                     OverlapFlags =87
                     BackStyle =0
@@ -776,9 +779,9 @@ Begin Form
                     TabIndex =11
                     ForeColor =4210752
                     Name ="cmdLockVisit"
-                    Caption ="Unlocked"
+                    Caption ="Locked"
                     OnClick ="[Event Procedure]"
-                    Picture ="Unlocked-32-DkGray"
+                    Picture ="Locked-32-Maroon"
                     GridlineColor =10921638
 
                     LayoutCachedLeft =13380
@@ -822,6 +825,7 @@ Begin Form
                     Height =9915
                     FontWeight =700
                     Name ="tabctlSpringLocationVisit"
+                    OnChange ="[Event Procedure]"
                     GridlineColor =10921638
 
                     LayoutCachedWidth =16620
@@ -862,27 +866,9 @@ Begin Form
                             WebImagePaddingRight =2
                             WebImagePaddingBottom =2
                             Begin
-                                Begin TextBox
-                                    OldBorderStyle =0
-                                    OverlapFlags =87
-                                    BackStyle =0
-                                    IMESentenceMode =3
-                                    Left =1140
-                                    Top =600
-                                    Width =1
-                                    Height =1
-                                    BorderColor =10921638
-                                    ForeColor =4210752
-                                    Name ="txtLandingSpot"
-                                    GridlineColor =10921638
-
-                                    LayoutCachedLeft =1140
-                                    LayoutCachedTop =600
-                                    LayoutCachedWidth =1141
-                                    LayoutCachedHeight =601
-                                End
                                 Begin ComboBox
                                     LimitToList = NotDefault
+                                    Locked = NotDefault
                                     OverlapFlags =215
                                     TextAlign =2
                                     IMESentenceMode =3
@@ -894,7 +880,6 @@ Begin Form
                                     Width =4260
                                     Height =330
                                     FontSize =12
-                                    TabIndex =1
                                     BorderColor =14211288
                                     ColumnInfo ="\"\";\"\";\"\";\"\";\"\";\"\";\"10\";\"70\""
                                     ConditionalFormat = Begin
@@ -955,8 +940,27 @@ Begin Form
                                         End
                                     End
                                 End
+                                Begin Rectangle
+                                    SpecialEffect =0
+                                    OverlapFlags =223
+                                    Left =300
+                                    Top =8040
+                                    Width =16020
+                                    Height =1140
+                                    BorderColor =2500134
+                                    Name ="Box207"
+                                    GridlineColor =10921638
+                                    LayoutCachedLeft =300
+                                    LayoutCachedTop =8040
+                                    LayoutCachedWidth =16320
+                                    LayoutCachedHeight =9180
+                                    BorderThemeColorIndex =0
+                                    BorderTint =85.0
+                                    BorderShade =100.0
+                                End
                                 Begin ComboBox
                                     LimitToList = NotDefault
+                                    Locked = NotDefault
                                     OverlapFlags =215
                                     TextAlign =2
                                     IMESentenceMode =3
@@ -966,7 +970,7 @@ Begin Form
                                     Width =4260
                                     Height =300
                                     FontSize =12
-                                    TabIndex =2
+                                    TabIndex =1
                                     BorderColor =14211288
                                     ColumnInfo ="\"\";\"\";\"\";\"\";\"10\";\"50\""
                                     Name ="cboSpringTypeID"
@@ -1015,6 +1019,7 @@ Begin Form
                                 End
                                 Begin ComboBox
                                     LimitToList = NotDefault
+                                    Locked = NotDefault
                                     OverlapFlags =215
                                     TextAlign =2
                                     IMESentenceMode =3
@@ -1025,7 +1030,7 @@ Begin Form
                                     Width =4260
                                     Height =300
                                     FontSize =12
-                                    TabIndex =3
+                                    TabIndex =2
                                     BorderColor =14211288
                                     ColumnInfo ="\"\";\"\";\"\";\"\";\"10\";\"400\""
                                     Name ="cboProtocolID"
@@ -1079,6 +1084,7 @@ Begin Form
                                 End
                                 Begin ComboBox
                                     LimitToList = NotDefault
+                                    Locked = NotDefault
                                     OverlapFlags =215
                                     TextAlign =2
                                     IMESentenceMode =3
@@ -1088,7 +1094,7 @@ Begin Form
                                     Width =4260
                                     Height =300
                                     FontSize =12
-                                    TabIndex =4
+                                    TabIndex =3
                                     BorderColor =14211288
                                     ColumnInfo ="\"\";\"\";\"\";\"\";\"\";\"\";\"10\";\"50\""
                                     Name ="cboVisitType"
@@ -1136,7 +1142,73 @@ Begin Form
                                         End
                                     End
                                 End
+                                Begin Subform
+                                    Locked = NotDefault
+                                    OverlapFlags =247
+                                    OldBorderStyle =0
+                                    Left =300
+                                    Top =2640
+                                    Width =5820
+                                    Height =720
+                                    TabIndex =4
+                                    BorderColor =10921638
+                                    Name ="sfrm_Camera"
+                                    SourceObject ="Form.sfrm_Camera"
+                                    LinkChildFields ="VisitID"
+                                    LinkMasterFields ="ID"
+                                    GridlineColor =10921638
+
+                                    LayoutCachedLeft =300
+                                    LayoutCachedTop =2640
+                                    LayoutCachedWidth =6120
+                                    LayoutCachedHeight =3360
+                                End
+                                Begin Subform
+                                    Locked = NotDefault
+                                    CanGrow = NotDefault
+                                    TabStop = NotDefault
+                                    OverlapFlags =247
+                                    OldBorderStyle =0
+                                    Left =1800
+                                    Top =3660
+                                    Width =4739
+                                    Height =3415
+                                    TabIndex =5
+                                    BorderColor =10921638
+                                    Name ="sfrmVisitPersonnel"
+                                    SourceObject ="Form.sfrm_VisitPersonnel"
+                                    LinkChildFields ="VisitID"
+                                    LinkMasterFields ="ID"
+                                    GridlineColor =10921638
+
+                                    LayoutCachedLeft =1800
+                                    LayoutCachedTop =3660
+                                    LayoutCachedWidth =6539
+                                    LayoutCachedHeight =7075
+                                    Begin
+                                        Begin Label
+                                            OverlapFlags =215
+                                            TextAlign =3
+                                            Left =360
+                                            Top =3840
+                                            Width =1380
+                                            Height =2100
+                                            FontWeight =700
+                                            BorderColor =8355711
+                                            Name ="lblField"
+                                            Caption ="*Field Crew, Data Entry, and Review Personnel"
+                                            GridlineColor =10921638
+                                            LayoutCachedLeft =360
+                                            LayoutCachedTop =3840
+                                            LayoutCachedWidth =1740
+                                            LayoutCachedHeight =5940
+                                            ForeThemeColorIndex =-1
+                                            ForeTint =100.0
+                                        End
+                                    End
+                                End
                                 Begin TextBox
+                                    Locked = NotDefault
                                     EnterKeyBehavior = NotDefault
                                     ScrollBars =2
                                     OverlapFlags =215
@@ -1146,7 +1218,7 @@ Begin Form
                                     Top =1200
                                     Width =9647
                                     Height =3126
-                                    TabIndex =5
+                                    TabIndex =6
                                     LeftMargin =43
                                     TopMargin =29
                                     BorderColor =14211288
@@ -1192,103 +1264,10 @@ Begin Form
                                         End
                                     End
                                 End
-                                Begin Subform
-                                    CanGrow = NotDefault
-                                    TabStop = NotDefault
-                                    OverlapFlags =247
-                                    OldBorderStyle =0
-                                    Left =1800
-                                    Top =3660
-                                    Width =4739
-                                    Height =3415
-                                    TabIndex =6
-                                    BorderColor =10921638
-                                    Name ="sfrmVisitPersonnel"
-                                    SourceObject ="Form.sfrm_VisitPersonnel"
-                                    LinkChildFields ="VisitID"
-                                    LinkMasterFields ="ID"
-                                    GridlineColor =10921638
-
-                                    LayoutCachedLeft =1800
-                                    LayoutCachedTop =3660
-                                    LayoutCachedWidth =6539
-                                    LayoutCachedHeight =7075
-                                    Begin
-                                        Begin Label
-                                            OverlapFlags =215
-                                            TextAlign =3
-                                            Left =360
-                                            Top =3840
-                                            Width =1380
-                                            Height =2100
-                                            FontWeight =700
-                                            BorderColor =8355711
-                                            Name ="lblField"
-                                            Caption ="*Field Crew, Data Entry, and Review Personnel"
-                                            GridlineColor =10921638
-                                            LayoutCachedLeft =360
-                                            LayoutCachedTop =3840
-                                            LayoutCachedWidth =1740
-                                            LayoutCachedHeight =5940
-                                            ForeThemeColorIndex =-1
-                                            ForeTint =100.0
-                                        End
-                                    End
-                                End
-                                Begin TextBox
-                                    EnterKeyBehavior = NotDefault
-                                    ScrollBars =2
-                                    OverlapFlags =223
-                                    IMESentenceMode =3
-                                    Left =5171
-                                    Top =8400
-                                    Width =11030
-                                    Height =606
-                                    FontSize =10
-                                    TabIndex =7
-                                    BorderColor =14211288
-                                    Name ="txtDataProcessingLevelNote"
-                                    ControlSource ="DataProcessingLevelNote"
-                                    GridlineColor =10921638
-
-                                    LayoutCachedLeft =5171
-                                    LayoutCachedTop =8400
-                                    LayoutCachedWidth =16201
-                                    LayoutCachedHeight =9006
-                                    BackThemeColorIndex =-1
-                                    BorderThemeColorIndex =-1
-                                    BorderShade =100.0
-                                    ThemeFontIndex =-1
-                                    ForeThemeColorIndex =-1
-                                    ForeTint =100.0
-                                    Begin
-                                        Begin Label
-                                            OverlapFlags =223
-                                            TextAlign =3
-                                            Left =4500
-                                            Top =8404
-                                            Width =615
-                                            Height =238
-                                            FontSize =10
-                                            BorderColor =10319446
-                                            Name ="lblDPLNote"
-                                            Caption ="Notes"
-                                            GridlineColor =10921638
-                                            LayoutCachedLeft =4500
-                                            LayoutCachedTop =8404
-                                            LayoutCachedWidth =5115
-                                            LayoutCachedHeight =8642
-                                            ThemeFontIndex =-1
-                                            BorderThemeColorIndex =-1
-                                            BorderTint =100.0
-                                            ForeThemeColorIndex =-1
-                                            ForeTint =100.0
-                                        End
-                                    End
-                                End
                                 Begin ComboBox
                                     LimitToList = NotDefault
-                                    OverlapFlags =223
+                                    Locked = NotDefault
+                                    OverlapFlags =215
                                     IMESentenceMode =3
                                     ColumnCount =3
                                     ListWidth =1440
@@ -1297,7 +1276,7 @@ Begin Form
                                     Width =1980
                                     Height =238
                                     FontSize =10
-                                    TabIndex =8
+                                    TabIndex =7
                                     BorderColor =14211288
                                     ColumnInfo ="\"\";\"\";\"\";\"\";\"\";\"\";\"10\";\"40\""
                                     Name ="cboDataProcessingLevelID"
@@ -1323,7 +1302,7 @@ Begin Form
                                     ForeShade =100.0
                                     Begin
                                         Begin Label
-                                            OverlapFlags =223
+                                            OverlapFlags =215
                                             TextAlign =3
                                             Left =780
                                             Top =8400
@@ -1347,9 +1326,83 @@ Begin Form
                                     End
                                 End
                                 Begin TextBox
+                                    Locked = NotDefault
+                                    EnterKeyBehavior = NotDefault
+                                    ScrollBars =2
+                                    OverlapFlags =215
+                                    IMESentenceMode =3
+                                    Left =5171
+                                    Top =8400
+                                    Width =11030
+                                    Height =606
+                                    FontSize =10
+                                    TabIndex =8
+                                    BorderColor =14211288
+                                    Name ="txtDataProcessingLevelNote"
+                                    ControlSource ="DataProcessingLevelNote"
+                                    GridlineColor =10921638
+
+                                    LayoutCachedLeft =5171
+                                    LayoutCachedTop =8400
+                                    LayoutCachedWidth =16201
+                                    LayoutCachedHeight =9006
+                                    BackThemeColorIndex =-1
+                                    BorderThemeColorIndex =-1
+                                    BorderShade =100.0
+                                    ThemeFontIndex =-1
+                                    ForeThemeColorIndex =-1
+                                    ForeTint =100.0
+                                    Begin
+                                        Begin Label
+                                            OverlapFlags =215
+                                            TextAlign =3
+                                            Left =4500
+                                            Top =8404
+                                            Width =615
+                                            Height =238
+                                            FontSize =10
+                                            BorderColor =10319446
+                                            Name ="lblDPLNote"
+                                            Caption ="Notes"
+                                            GridlineColor =10921638
+                                            LayoutCachedLeft =4500
+                                            LayoutCachedTop =8404
+                                            LayoutCachedWidth =5115
+                                            LayoutCachedHeight =8642
+                                            ThemeFontIndex =-1
+                                            BorderThemeColorIndex =-1
+                                            BorderTint =100.0
+                                            ForeThemeColorIndex =-1
+                                            ForeTint =100.0
+                                        End
+                                    End
+                                End
+                                Begin TextBox
+                                    Locked = NotDefault
+                                    OldBorderStyle =0
+                                    OverlapFlags =87
+                                    BackStyle =0
+                                    IMESentenceMode =3
+                                    Left =1140
+                                    Top =600
+                                    Width =1
+                                    Height =1
+                                    TabIndex =9
+                                    BorderColor =10921638
+                                    ForeColor =4210752
+                                    Name ="txtLandingSpot"
+                                    GridlineColor =10921638
+
+                                    LayoutCachedLeft =1140
+                                    LayoutCachedTop =600
+                                    LayoutCachedWidth =1141
+                                    LayoutCachedHeight =601
+                                End
+                                Begin TextBox
                                     Enabled = NotDefault
+                                    Locked = NotDefault
                                     TabStop = NotDefault
-                                    OverlapFlags =223
+                                    OverlapFlags =215
                                     TextAlign =1
                                     IMESentenceMode =3
                                     Left =2040
@@ -1357,7 +1410,7 @@ Begin Form
                                     Width =1980
                                     Height =238
                                     FontSize =10
-                                    TabIndex =9
+                                    TabIndex =10
                                     BackColor =15921906
                                     BorderColor =14211288
                                     Name ="txtDataProcessingLevelDate"
@@ -1388,7 +1441,7 @@ Begin Form
                                     End
                                     Begin
                                         Begin Label
-                                            OverlapFlags =223
+                                            OverlapFlags =215
                                             TextAlign =3
                                             Left =780
                                             Top =8700
@@ -1411,95 +1464,15 @@ Begin Form
                                         End
                                     End
                                 End
-                                Begin Label
-                                    FontItalic = NotDefault
-                                    OverlapFlags =215
-                                    TextAlign =1
-                                    Left =300
-                                    Top =9300
-                                    Width =3894
-                                    Height =300
-                                    BorderColor =8355711
-                                    Name ="lblRequiredFieldNote"
-                                    Caption ="* Indicates a required field"
-                                    GridlineColor =10921638
-                                    LayoutCachedLeft =300
-                                    LayoutCachedTop =9300
-                                    LayoutCachedWidth =4194
-                                    LayoutCachedHeight =9600
-                                    ForeThemeColorIndex =-1
-                                    ForeTint =100.0
-                                End
-                                Begin Label
-                                    FontItalic = NotDefault
-                                    OverlapFlags =223
-                                    TextAlign =3
-                                    Left =11340
-                                    Top =8100
-                                    Width =4800
-                                    Height =240
-                                    FontSize =8
-                                    BorderColor =8355711
-                                    ForeColor =3751056
-                                    Name ="lblDPLClarification"
-                                    Caption ="This DPL applies only to the information on this tab"
-                                    GridlineColor =10921638
-                                    LayoutCachedLeft =11340
-                                    LayoutCachedTop =8100
-                                    LayoutCachedWidth =16140
-                                    LayoutCachedHeight =8340
-                                    ForeThemeColorIndex =-1
-                                    ForeTint =100.0
-                                End
-                                Begin Rectangle
-                                    SpecialEffect =0
-                                    OverlapFlags =255
-                                    Left =300
-                                    Top =8040
-                                    Width =16020
-                                    Height =1140
-                                    BorderColor =2500134
-                                    Name ="Box207"
-                                    GridlineColor =10921638
-                                    LayoutCachedLeft =300
-                                    LayoutCachedTop =8040
-                                    LayoutCachedWidth =16320
-                                    LayoutCachedHeight =9180
-                                    BorderThemeColorIndex =0
-                                    BorderTint =85.0
-                                    BorderShade =100.0
-                                End
-                                Begin Label
-                                    BackStyle =1
-                                    OverlapFlags =247
-                                    TextAlign =2
-                                    Left =540
-                                    Top =7860
-                                    Width =2340
-                                    Height =300
-                                    FontWeight =700
-                                    BackColor =4281912
-                                    BorderColor =8355711
-                                    ForeColor =16777215
-                                    Name ="lblDPLIntro"
-                                    Caption ="Data Processing Level"
-                                    GridlineColor =10921638
-                                    LayoutCachedLeft =540
-                                    LayoutCachedTop =7860
-                                    LayoutCachedWidth =2880
-                                    LayoutCachedHeight =8160
-                                    BackThemeColorIndex =-1
-                                    ForeThemeColorIndex =-1
-                                    ForeTint =100.0
-                                End
                                 Begin Subform
+                                    Locked = NotDefault
                                     OverlapFlags =247
                                     OldBorderStyle =0
                                     Left =6660
                                     Top =4860
                                     Width =9780
                                     Height =3060
-                                    TabIndex =10
+                                    TabIndex =11
                                     BorderColor =10921638
                                     Name ="sfrmActivityDashboard"
                                     SourceObject ="Form.sfrm_ActivityDashboard"
@@ -1535,25 +1508,68 @@ Begin Form
                                         End
                                     End
                                 End
-                                Begin Subform
-                                    OverlapFlags =247
-                                    OldBorderStyle =0
+                                Begin Label
+                                    FontItalic = NotDefault
+                                    OverlapFlags =215
+                                    TextAlign =1
                                     Left =300
-                                    Top =2640
-                                    Width =5775
-                                    Height =720
-                                    TabIndex =11
-                                    BorderColor =10921638
-                                    Name ="sfrm_Camera"
-                                    SourceObject ="Form.sfrm_Camera"
-                                    LinkChildFields ="VisitID"
-                                    LinkMasterFields ="ID"
+                                    Top =9300
+                                    Width =3894
+                                    Height =300
+                                    BorderColor =8355711
+                                    Name ="lblRequiredFieldNote"
+                                    Caption ="* Indicates a required field"
                                     GridlineColor =10921638
-
                                     LayoutCachedLeft =300
-                                    LayoutCachedTop =2640
-                                    LayoutCachedWidth =6075
-                                    LayoutCachedHeight =3360
+                                    LayoutCachedTop =9300
+                                    LayoutCachedWidth =4194
+                                    LayoutCachedHeight =9600
+                                    ForeThemeColorIndex =-1
+                                    ForeTint =100.0
+                                End
+                                Begin Label
+                                    FontItalic = NotDefault
+                                    OverlapFlags =215
+                                    TextAlign =3
+                                    Left =11340
+                                    Top =8100
+                                    Width =4800
+                                    Height =240
+                                    FontSize =8
+                                    BorderColor =8355711
+                                    ForeColor =3751056
+                                    Name ="lblDPLClarification"
+                                    Caption ="This DPL applies only to the information on this tab"
+                                    GridlineColor =10921638
+                                    LayoutCachedLeft =11340
+                                    LayoutCachedTop =8100
+                                    LayoutCachedWidth =16140
+                                    LayoutCachedHeight =8340
+                                    ForeThemeColorIndex =-1
+                                    ForeTint =100.0
+                                End
+                                Begin Label
+                                    BackStyle =1
+                                    OverlapFlags =215
+                                    TextAlign =2
+                                    Left =540
+                                    Top =7860
+                                    Width =2340
+                                    Height =300
+                                    FontWeight =700
+                                    BackColor =4281912
+                                    BorderColor =8355711
+                                    ForeColor =16777215
+                                    Name ="lblDPLIntro"
+                                    Caption ="Data Processing Level"
+                                    GridlineColor =10921638
+                                    LayoutCachedLeft =540
+                                    LayoutCachedTop =7860
+                                    LayoutCachedWidth =2880
+                                    LayoutCachedHeight =8160
+                                    BackThemeColorIndex =-1
+                                    ForeThemeColorIndex =-1
+                                    ForeTint =100.0
                                 End
                             End
                         End
@@ -1579,6 +1595,7 @@ Begin Form
                             WebImagePaddingBottom =2
                             Begin
                                 Begin Subform
+                                    Locked = NotDefault
                                     OverlapFlags =247
                                     OldBorderStyle =0
                                     Left =60
@@ -1620,6 +1637,7 @@ Begin Form
                             WebImagePaddingBottom =2
                             Begin
                                 Begin Subform
+                                    Locked = NotDefault
                                     OverlapFlags =247
                                     OldBorderStyle =0
                                     Left =300
@@ -1639,6 +1657,7 @@ Begin Form
                                     LayoutCachedHeight =2340
                                 End
                                 Begin Subform
+                                    Locked = NotDefault
                                     OverlapFlags =247
                                     OldBorderStyle =0
                                     Left =300
@@ -1681,6 +1700,7 @@ Begin Form
                             WebImagePaddingBottom =2
                             Begin
                                 Begin Subform
+                                    Locked = NotDefault
                                     OverlapFlags =247
                                     OldBorderStyle =0
                                     Left =120
@@ -1722,6 +1742,7 @@ Begin Form
                             WebImagePaddingBottom =2
                             Begin
                                 Begin Subform
+                                    Locked = NotDefault
                                     OverlapFlags =247
                                     OldBorderStyle =0
                                     Left =120
@@ -1763,6 +1784,7 @@ Begin Form
                             WebImagePaddingBottom =2
                             Begin
                                 Begin Subform
+                                    Locked = NotDefault
                                     CanGrow = NotDefault
                                     OverlapFlags =247
                                     OldBorderStyle =0
@@ -1805,6 +1827,7 @@ Begin Form
                             WebImagePaddingBottom =2
                             Begin
                                 Begin Subform
+                                    Locked = NotDefault
                                     CanGrow = NotDefault
                                     OverlapFlags =247
                                     OldBorderStyle =0
@@ -1849,6 +1872,7 @@ Begin Form
                             WebImagePaddingBottom =2
                             Begin
                                 Begin Subform
+                                    Locked = NotDefault
                                     CanGrow = NotDefault
                                     OverlapFlags =247
                                     OldBorderStyle =0
@@ -1891,6 +1915,7 @@ Begin Form
                             WebImagePaddingBottom =2
                             Begin
                                 Begin Subform
+                                    Locked = NotDefault
                                     CanGrow = NotDefault
                                     OverlapFlags =247
                                     OldBorderStyle =0
@@ -1935,6 +1960,13 @@ Option Compare Database
 Option Explicit
 
 Private Const mstrcFormName = "frm_Visit"
+Private currentTabNumber As Integer
+
+Sub Initialize()
+
+currentTabNumber = 0
+
+End Sub
 
 Private Sub Form_Load()
     
@@ -1951,7 +1983,7 @@ On Error GoTo Error_Handler
         VisitLock (Me.OpenArgs)
     End If
        
-    Me.txtLandingSpot.SetFocus
+    'Me.txtLandingSpot.SetFocus
     
 Exit_Procedure:
     Exit Sub
@@ -2241,3 +2273,55 @@ Error_Handler:
     MsgBox "Form: " & mstrcFormName & vbNewLine & "Sub:  cboDataProcessingLevelID_AfterUpdate" & vbNewLine & "Error #" & Err.Number & ": " & Err.Description, vbCritical
     Resume Exit_Sub
 End Sub
+
+Private Sub tabctlSpringLocationVisit_Change()
+On Error GoTo Error_Handler
+
+'Don't check for missing data again if we just switched back to the current tab
+If currentTabNumber = Me.tabctlSpringLocationVisit Then GoTo Exit_Procedure
+
+'Check for missing data on current tab. If any data are missing, then prevent the user from switching tabs
+If Not MissingData(currentTabNumber) Then
+    currentTabNumber = Me.tabctlSpringLocationVisit
+Else
+    Me.tabctlSpringLocationVisit = currentTabNumber
+    MsgBox ("Please finish entering data on this tab before moving on to the next")
+End If
+
+Exit_Procedure:
+    Exit Sub
+Error_Handler:
+    MsgBox "Form: " & mstrcFormName & vbNewLine & "Sub:  tabctlSpringLocationVisit_Change" & vbNewLine & "Error #" & Err.Number & ": " & Err.Description, vbCritical
+    Resume Exit_Procedure
+
+End Sub
+
+Private Function MissingData(CurrentTab As Integer) As Boolean
+
+Dim tabName As String
+tabName = Me.tabctlSpringLocationVisit.Pages(CurrentTab).Name
+
+Select Case tabName
+Case "tabIntro"
+
+Case "tabPhotos"
+    
+Case "tabSensor"
+
+Case "tabDischarge"
+
+Case "tabQuality"
+
+Case "tabDisturbance"
+
+Case "tabWildlife"
+
+Case "tabRiparian"
+
+Case "tabInvasives"
+
+End Select
+
+MissingData = False 'MsgBox(CurrentTab, vbYesNo) = vbYes)
+
+End Function

@@ -20,10 +20,10 @@ Begin Form
     Width =15840
     DatasheetFontHeight =11
     ItemSuffix =27
-    Left =3555
-    Top =5010
-    Right =19140
-    Bottom =10395
+    Left =2205
+    Top =5235
+    Right =17790
+    Bottom =10620
     DatasheetGridlinesColor =15921906
     AfterInsert ="[Event Procedure]"
     RecSrcDt = Begin
@@ -294,7 +294,7 @@ Begin Form
                     Top =840
                     Width =2638
                     Height =297
-                    TabIndex =4
+                    TabIndex =2
                     BorderColor =14211288
                     Name ="txtRetrievalTimeOfDay"
                     ControlSource ="RetrievalTimeOfDay"
@@ -349,7 +349,6 @@ Begin Form
                     Top =120
                     Width =2638
                     Height =297
-                    TabIndex =1
                     BorderColor =14211288
                     ColumnInfo ="\"\";\"\";\"\";\"\";\"10\";\"20\""
                     Name ="cboIsSensorRetrieved"
@@ -529,7 +528,7 @@ Begin Form
                     Top =480
                     Width =2460
                     Height =297
-                    TabIndex =2
+                    TabIndex =4
                     BorderColor =14211288
                     ColumnInfo ="\"\";\"\";\"\";\"\";\"\";\"\";\"10\";\"100\""
                     Name ="cboIsDownloadSuccessfulID"
@@ -591,6 +590,7 @@ Begin Form
                     Top =480
                     Width =2638
                     Height =297
+                    TabIndex =1
                     BorderColor =14211288
                     ColumnInfo ="\"\";\"\";\"\";\"\";\"10\";\"0\""
                     Name ="cboSensorDeploymentID"
@@ -828,63 +828,8 @@ Private Sub cmdDeleteTSensorDataTemperature_Click()
 
 End Sub
 
-Private Sub cmdImportTSensorDataHumidity_Click()
-    Dim RetrievalID As String
-    Dim ImportType As String
-    Dim SensorHumidityImportExists As Boolean
-    Dim YesNoResponse As Integer
-    
-    SensorHumidityImportExists = Nz(DLookup("ID", "data_SensorImportHeader_Humidity", "SensorRetrievalAttemptID = " & Me.ID))
-        
-    If Not IsNull(Me.ID) And (Me.IsSensorRetrievedID = YesID) And (SensorHumidityImportExists = False) Then
-        RetrievalID = XML_Tag("RetrievalID", Me.ID)
-        ImportType = XML_Tag("ImportType", "Humidity")
-        DoCmd.OpenForm "frmImportSensorData", acNormal, , , acFormPropertySettings, acDialog, RetrievalID & ImportType
-        Me.Requery
-    ElseIf Not IsNull(Me.ID) And (Me.IsSensorRetrievedID = YesID) And (SensorHumidityImportExists = True) Then
-        YesNoResponse = MsgBox("Sensor Humidity Measurements were previously imported. Do you want to replace all the measurements?", vbYesNo + vbExclamation, "Import Sensor Humidity Data")
-            If YesNoResponse = vbYes Then
-                CurrentDb.Execute "Delete * from data_SensorImportHeader_Humidity where SensorRetrievalAttemptID = " & Me.ID, dbSeeChanges
-                Me.txtSensorHumidityImportDate = "n/a"
-                RetrievalID = XML_Tag("RetrievalID", Me.ID)
-                ImportType = XML_Tag("ImportType", "Humidity")
-                DoCmd.OpenForm "frmImportSensorData", acNormal, , , acFormPropertySettings, acDialog, RetrievalID & ImportType
-                Me.Requery
-            Else
-                Me.Undo
-            End If
-    End If
 
-End Sub
 
-Private Sub cmdImportTSensorDataTemperature_Click()
-    Dim RetrievalID As String
-    Dim ImportType As String
-    Dim SensorTempImportExists As Boolean
-    Dim YesNoResponse As Integer
-    
-    SensorTempImportExists = Nz(DLookup("ID", "data_SensorImportHeader_Temperature", "SensorRetrievalAttemptID = " & Me.ID))
-        
-    If Not IsNull(Me.ID) And (Me.IsSensorRetrievedID = YesID) And (SensorTempImportExists = False) Then
-        RetrievalID = XML_Tag("RetrievalID", Me.ID)
-        ImportType = XML_Tag("ImportType", "Temperature")
-        DoCmd.OpenForm "frmImportSensorData", acNormal, , , acFormPropertySettings, acDialog, RetrievalID & ImportType
-        Me.Requery
-    ElseIf Not IsNull(Me.ID) And (Me.IsSensorRetrievedID = YesID) And (SensorTempImportExists = True) Then
-        YesNoResponse = MsgBox("Sensor Temperature Measurements were previously imported. Do you want to replace all the measurements?", vbYesNo + vbExclamation, "Import Sensor Temperature Data")
-            If YesNoResponse = vbYes Then
-                CurrentDb.Execute "Delete * from data_SensorImportHeader_Temperature where SensorRetrievalAttemptID = " & Me.ID, dbSeeChanges
-                Me.txtSensorTemperatureImportDate = "n/a"
-                RetrievalID = XML_Tag("RetrievalID", Me.ID)
-                ImportType = XML_Tag("ImportType", "Temperature")
-                DoCmd.OpenForm "frmImportSensorData", acNormal, , , acFormPropertySettings, acDialog, RetrievalID & ImportType
-                Me.Requery
-            Else
-                Me.Undo
-            End If
-    End If
-
-End Sub
 
 
 Private Sub Form_BeforeUpdate(Cancel As Integer)

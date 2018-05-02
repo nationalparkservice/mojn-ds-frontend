@@ -10,7 +10,6 @@ Begin Form
     NavigationButtons = NotDefault
     CloseButton = NotDefault
     DividingLines = NotDefault
-    FilterOn = NotDefault
     AllowDesignChanges = NotDefault
     ScrollBars =2
     PictureAlignment =2
@@ -20,10 +19,10 @@ Begin Form
     Width =13920
     DatasheetFontHeight =11
     ItemSuffix =23
-    Left =4065
-    Top =4110
-    Right =18000
-    Bottom =8370
+    Left =2655
+    Top =5610
+    Right =16335
+    Bottom =9615
     DatasheetGridlinesColor =15921906
     RecSrcDt = Begin
         0x34fd75986c15e540
@@ -452,7 +451,7 @@ Begin Form
                     Width =306
                     Height =312
                     FontSize =10
-                    TabIndex =5
+                    TabIndex =6
                     ForeColor =4210752
                     Name ="cmdDeleteRiparianVegObs"
                     OnClick ="[Event Procedure]"
@@ -507,6 +506,7 @@ Begin Form
                         "tatus.Label FROM lookup_ProtectedStatus ORDER BY lookup_ProtectedStatus.ID; "
                     ColumnWidths ="0;0;2363"
                     BeforeUpdate ="[Event Procedure]"
+                    DefaultValue ="4"
                     GridlineColor =10921638
                     AllowValueListEdits =0
 
@@ -527,7 +527,7 @@ Begin Form
                     Left =11460
                     Width =1991
                     Height =313
-                    TabIndex =6
+                    TabIndex =5
                     BorderColor =14211288
                     ForeColor =2108188
                     ColumnInfo ="\"\";\"\";\"\";\"\";\"\";\"\";\"10\";\"80\""
@@ -541,6 +541,7 @@ Begin Form
                         "micStandard.ID; "
                     ColumnWidths ="0;1847;2952"
                     BeforeUpdate ="[Event Procedure]"
+                    DefaultValue ="1"
                     GridlineColor =10921638
 
                     LayoutCachedLeft =11460

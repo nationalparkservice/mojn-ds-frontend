@@ -7,7 +7,6 @@ Begin Form
     AllowDeletions = NotDefault
     DividingLines = NotDefault
     AllowAdditions = NotDefault
-    FilterOn = NotDefault
     AllowDesignChanges = NotDefault
     DefaultView =0
     ScrollBars =0
@@ -21,10 +20,10 @@ Begin Form
     Width =8055
     DatasheetFontHeight =11
     ItemSuffix =115
-    Left =11400
-    Top =7215
-    Right =19635
-    Bottom =10695
+    Left =9855
+    Top =5730
+    Right =17835
+    Bottom =8955
     DatasheetGridlinesColor =15921906
     Filter ="data_Photo.ID = 3299"
     RecSrcDt = Begin
@@ -398,6 +397,46 @@ Begin Form
                                 End
                                 Begin TextBox
                                     Locked = NotDefault
+                                    OverlapFlags =247
+                                    IMESentenceMode =3
+                                    Left =975
+                                    Top =915
+                                    Width =1080
+                                    Height =270
+                                    FontSize =10
+                                    TabIndex =1
+                                    BorderColor =10921638
+                                    ForeColor =4210752
+                                    Name ="IsLibraryPhotoID"
+                                    ControlSource ="lookup_IsLibraryPhoto.Label"
+                                    GridlineColor =10921638
+
+                                    LayoutCachedLeft =975
+                                    LayoutCachedTop =915
+                                    LayoutCachedWidth =2055
+                                    LayoutCachedHeight =1185
+                                    Begin
+                                        Begin Label
+                                            OverlapFlags =247
+                                            Left =195
+                                            Top =915
+                                            Width =720
+                                            Height =243
+                                            FontSize =10
+                                            BorderColor =8355711
+                                            ForeColor =8355711
+                                            Name ="Label91"
+                                            Caption ="Library?"
+                                            GridlineColor =10921638
+                                            LayoutCachedLeft =195
+                                            LayoutCachedTop =915
+                                            LayoutCachedWidth =915
+                                            LayoutCachedHeight =1158
+                                        End
+                                    End
+                                End
+                                Begin TextBox
+                                    Locked = NotDefault
                                     EnterKeyBehavior = NotDefault
                                     ScrollBars =2
                                     OverlapFlags =247
@@ -407,7 +446,7 @@ Begin Form
                                     Width =4740
                                     Height =723
                                     FontSize =10
-                                    TabIndex =1
+                                    TabIndex =2
                                     BorderColor =10921638
                                     ForeColor =4210752
                                     Name ="OriginalFilePath"
@@ -449,7 +488,7 @@ Begin Form
                                     Width =4740
                                     Height =723
                                     FontSize =10
-                                    TabIndex =2
+                                    TabIndex =3
                                     BorderColor =10921638
                                     ForeColor =4210752
                                     Name ="RenamedFilePath"
@@ -480,46 +519,6 @@ Begin Form
                                         End
                                     End
                                 End
-                                Begin TextBox
-                                    Locked = NotDefault
-                                    OverlapFlags =247
-                                    IMESentenceMode =3
-                                    Left =975
-                                    Top =915
-                                    Width =1080
-                                    Height =270
-                                    FontSize =10
-                                    TabIndex =3
-                                    BorderColor =10921638
-                                    ForeColor =4210752
-                                    Name ="IsLibraryPhotoID"
-                                    ControlSource ="lookup_IsLibraryPhoto.Label"
-                                    GridlineColor =10921638
-
-                                    LayoutCachedLeft =975
-                                    LayoutCachedTop =915
-                                    LayoutCachedWidth =2055
-                                    LayoutCachedHeight =1185
-                                    Begin
-                                        Begin Label
-                                            OverlapFlags =247
-                                            Left =195
-                                            Top =915
-                                            Width =720
-                                            Height =243
-                                            FontSize =10
-                                            BorderColor =8355711
-                                            ForeColor =8355711
-                                            Name ="Label91"
-                                            Caption ="Library?"
-                                            GridlineColor =10921638
-                                            LayoutCachedLeft =195
-                                            LayoutCachedTop =915
-                                            LayoutCachedWidth =915
-                                            LayoutCachedHeight =1158
-                                        End
-                                    End
-                                End
                             End
                         End
                         Begin Page
@@ -541,83 +540,6 @@ Begin Form
                             WebImagePaddingRight =2
                             WebImagePaddingBottom =2
                             Begin
-                                Begin TextBox
-                                    OverlapFlags =247
-                                    IMESentenceMode =3
-                                    Left =5985
-                                    Top =600
-                                    Width =1980
-                                    Height =242
-                                    FontSize =10
-                                    BorderColor =10921638
-                                    ForeColor =4210752
-                                    Name ="UtmX_m"
-                                    ControlSource ="UtmX_m"
-                                    GridlineColor =10921638
-
-                                    LayoutCachedLeft =5985
-                                    LayoutCachedTop =600
-                                    LayoutCachedWidth =7965
-                                    LayoutCachedHeight =842
-                                    Begin
-                                        Begin Label
-                                            OverlapFlags =247
-                                            Left =4905
-                                            Top =600
-                                            Width =915
-                                            Height =240
-                                            FontSize =10
-                                            BorderColor =8355711
-                                            ForeColor =8355711
-                                            Name ="Label97"
-                                            Caption ="UTM X (m)"
-                                            GridlineColor =10921638
-                                            LayoutCachedLeft =4905
-                                            LayoutCachedTop =600
-                                            LayoutCachedWidth =5820
-                                            LayoutCachedHeight =840
-                                        End
-                                    End
-                                End
-                                Begin TextBox
-                                    OverlapFlags =247
-                                    IMESentenceMode =3
-                                    Left =5985
-                                    Top =900
-                                    Width =1980
-                                    Height =242
-                                    FontSize =10
-                                    TabIndex =1
-                                    BorderColor =10921638
-                                    ForeColor =4210752
-                                    Name ="UtmY_m"
-                                    ControlSource ="UtmY_m"
-                                    GridlineColor =10921638
-
-                                    LayoutCachedLeft =5985
-                                    LayoutCachedTop =900
-                                    LayoutCachedWidth =7965
-                                    LayoutCachedHeight =1142
-                                    Begin
-                                        Begin Label
-                                            OverlapFlags =247
-                                            Left =4905
-                                            Top =900
-                                            Width =900
-                                            Height =240
-                                            FontSize =10
-                                            BorderColor =8355711
-                                            ForeColor =8355711
-                                            Name ="Label98"
-                                            Caption ="UTM Y (m)"
-                                            GridlineColor =10921638
-                                            LayoutCachedLeft =4905
-                                            LayoutCachedTop =900
-                                            LayoutCachedWidth =5805
-                                            LayoutCachedHeight =1140
-                                        End
-                                    End
-                                End
                                 Begin ComboBox
                                     OverlapFlags =247
                                     IMESentenceMode =3
@@ -626,7 +548,6 @@ Begin Form
                                     Width =3300
                                     Height =270
                                     FontSize =10
-                                    TabIndex =2
                                     BoundColumn =1
                                     BorderColor =10921638
                                     ForeColor =4210752
@@ -673,7 +594,7 @@ Begin Form
                                     Width =3300
                                     Height =270
                                     FontSize =10
-                                    TabIndex =3
+                                    TabIndex =1
                                     BoundColumn =1
                                     BorderColor =10921638
                                     ForeColor =4210752
@@ -721,7 +642,7 @@ Begin Form
                                     Width =3300
                                     Height =270
                                     FontSize =10
-                                    TabIndex =4
+                                    TabIndex =2
                                     BoundColumn =1
                                     BorderColor =10921638
                                     ForeColor =4210752
@@ -757,6 +678,84 @@ Begin Form
                                             LayoutCachedTop =1215
                                             LayoutCachedWidth =1215
                                             LayoutCachedHeight =1457
+                                        End
+                                    End
+                                End
+                                Begin TextBox
+                                    OverlapFlags =247
+                                    IMESentenceMode =3
+                                    Left =5985
+                                    Top =600
+                                    Width =1980
+                                    Height =242
+                                    FontSize =10
+                                    TabIndex =3
+                                    BorderColor =10921638
+                                    ForeColor =4210752
+                                    Name ="UtmX_m"
+                                    ControlSource ="UtmX_m"
+                                    GridlineColor =10921638
+
+                                    LayoutCachedLeft =5985
+                                    LayoutCachedTop =600
+                                    LayoutCachedWidth =7965
+                                    LayoutCachedHeight =842
+                                    Begin
+                                        Begin Label
+                                            OverlapFlags =247
+                                            Left =4905
+                                            Top =600
+                                            Width =915
+                                            Height =240
+                                            FontSize =10
+                                            BorderColor =8355711
+                                            ForeColor =8355711
+                                            Name ="Label97"
+                                            Caption ="UTM X (m)"
+                                            GridlineColor =10921638
+                                            LayoutCachedLeft =4905
+                                            LayoutCachedTop =600
+                                            LayoutCachedWidth =5820
+                                            LayoutCachedHeight =840
+                                        End
+                                    End
+                                End
+                                Begin TextBox
+                                    OverlapFlags =247
+                                    IMESentenceMode =3
+                                    Left =5985
+                                    Top =900
+                                    Width =1980
+                                    Height =242
+                                    FontSize =10
+                                    TabIndex =4
+                                    BorderColor =10921638
+                                    ForeColor =4210752
+                                    Name ="UtmY_m"
+                                    ControlSource ="UtmY_m"
+                                    GridlineColor =10921638
+
+                                    LayoutCachedLeft =5985
+                                    LayoutCachedTop =900
+                                    LayoutCachedWidth =7965
+                                    LayoutCachedHeight =1142
+                                    Begin
+                                        Begin Label
+                                            OverlapFlags =247
+                                            Left =4905
+                                            Top =900
+                                            Width =900
+                                            Height =240
+                                            FontSize =10
+                                            BorderColor =8355711
+                                            ForeColor =8355711
+                                            Name ="Label98"
+                                            Caption ="UTM Y (m)"
+                                            GridlineColor =10921638
+                                            LayoutCachedLeft =4905
+                                            LayoutCachedTop =900
+                                            LayoutCachedWidth =5805
+                                            LayoutCachedHeight =1140
                                         End
                                     End
                                 End

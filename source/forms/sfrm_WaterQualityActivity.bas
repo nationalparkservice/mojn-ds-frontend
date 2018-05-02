@@ -6,7 +6,6 @@ Begin Form
     AutoCenter = NotDefault
     NavigationButtons = NotDefault
     DividingLines = NotDefault
-    FilterOn = NotDefault
     DefaultView =0
     PictureAlignment =2
     DatasheetGridlinesBehavior =3
@@ -15,10 +14,10 @@ Begin Form
     Width =15840
     DatasheetFontHeight =11
     ItemSuffix =33
-    Left =3915
-    Top =2610
-    Right =20010
-    Bottom =11850
+    Left =2865
+    Top =2310
+    Right =18960
+    Bottom =11550
     DatasheetGridlinesColor =15921906
     RecSrcDt = Begin
         0x19205bcaca15e540
@@ -233,6 +232,7 @@ Begin Form
                     Width =11105
                     Height =966
                     FontSize =10
+                    TabIndex =14
                     BorderColor =14211288
                     Name ="txtDataProcessingLevelNote"
                     ControlSource ="DataProcessingLevelNote"
@@ -284,7 +284,7 @@ Begin Form
                     Width =1980
                     Height =238
                     FontSize =10
-                    TabIndex =1
+                    TabIndex =13
                     BorderColor =10921638
                     ColumnInfo ="\"\";\"\";\"\";\"\";\"\";\"\";\"10\";\"40\""
                     Name ="cboDataProcessingLevelID"
@@ -343,7 +343,7 @@ Begin Form
                     Width =1980
                     Height =238
                     FontSize =10
-                    TabIndex =2
+                    TabIndex =15
                     BackColor =15921906
                     BorderColor =10921638
                     Name ="txtDataProcessingLevelDate"
@@ -445,7 +445,7 @@ Begin Form
                     Top =7020
                     Width =15420
                     Height =723
-                    TabIndex =4
+                    TabIndex =12
                     BorderColor =14211288
                     ForeColor =4210752
                     Name ="txtNotes"
@@ -479,15 +479,15 @@ Begin Form
                     End
                 End
                 Begin ComboBox
-                    OverlapFlags =215
+                    OverlapFlags =87
                     IMESentenceMode =3
                     ColumnCount =2
                     ListWidth =2160
-                    Left =3675
-                    Top =660
-                    Width =2759
+                    Left =300
+                    Top =990
+                    Width =2520
                     Height =315
-                    TabIndex =3
+                    TabIndex =1
                     BorderColor =14211288
                     ForeColor =4210752
                     ColumnInfo ="\"\";\"\";\"\";\"\";\"10\";\"100\""
@@ -508,10 +508,10 @@ Begin Form
                     AfterUpdate ="[Event Procedure]"
                     GridlineColor =10921638
 
-                    LayoutCachedLeft =3675
-                    LayoutCachedTop =660
-                    LayoutCachedWidth =6434
-                    LayoutCachedHeight =975
+                    LayoutCachedLeft =300
+                    LayoutCachedTop =990
+                    LayoutCachedWidth =2820
+                    LayoutCachedHeight =1305
                     BorderThemeColorIndex =-1
                     BorderShade =100.0
                     ForeThemeColorIndex =0
@@ -528,9 +528,9 @@ Begin Form
                             FontItalic = NotDefault
                             OverlapFlags =93
                             TextAlign =2
-                            Left =3660
-                            Top =480
-                            Width =2535
+                            Left =300
+                            Top =780
+                            Width =2520
                             Height =210
                             FontSize =8
                             BorderColor =8355711
@@ -538,20 +538,21 @@ Begin Form
                             Name ="Label1"
                             Caption ="pH"
                             GridlineColor =10921638
-                            LayoutCachedLeft =3660
-                            LayoutCachedTop =480
-                            LayoutCachedWidth =6195
-                            LayoutCachedHeight =690
+                            LayoutCachedLeft =300
+                            LayoutCachedTop =780
+                            LayoutCachedWidth =2820
+                            LayoutCachedHeight =990
                         End
                     End
                 End
                 Begin Subform
+                    Enabled = NotDefault
                     OverlapFlags =85
                     OldBorderStyle =0
                     Left =300
-                    Top =1680
+                    Top =1920
                     Width =2850
-                    Height =2100
+                    Height =1860
                     TabIndex =5
                     BorderColor =10921638
                     Name ="sfrmWaterQualitypH"
@@ -561,7 +562,7 @@ Begin Form
                     GridlineColor =10921638
 
                     LayoutCachedLeft =300
-                    LayoutCachedTop =1680
+                    LayoutCachedTop =1920
                     LayoutCachedWidth =3150
                     LayoutCachedHeight =3780
                     Begin
@@ -569,8 +570,8 @@ Begin Form
                             BackStyle =1
                             OverlapFlags =85
                             TextAlign =2
-                            Left =360
-                            Top =1260
+                            Left =300
+                            Top =1560
                             Width =2520
                             Height =300
                             FontWeight =700
@@ -580,10 +581,10 @@ Begin Form
                             Name ="lblpH"
                             Caption ="ph"
                             GridlineColor =10921638
-                            LayoutCachedLeft =360
-                            LayoutCachedTop =1260
-                            LayoutCachedWidth =2880
-                            LayoutCachedHeight =1560
+                            LayoutCachedLeft =300
+                            LayoutCachedTop =1560
+                            LayoutCachedWidth =2820
+                            LayoutCachedHeight =1860
                             BackThemeColorIndex =-1
                             ForeThemeColorIndex =-1
                             ForeTint =100.0
@@ -592,15 +593,15 @@ Begin Form
                 End
                 Begin ComboBox
                     LimitToList = NotDefault
-                    OverlapFlags =215
+                    OverlapFlags =87
                     IMESentenceMode =3
                     ColumnCount =2
                     ListWidth =2160
-                    Left =6510
-                    Top =660
-                    Width =2759
+                    Left =6780
+                    Top =990
+                    Width =3795
                     Height =315
-                    TabIndex =6
+                    TabIndex =2
                     BorderColor =14211288
                     ForeColor =4210752
                     ColumnInfo ="\"\";\"\";\"\";\"\";\"10\";\"100\""
@@ -621,10 +622,10 @@ Begin Form
                     AfterUpdate ="[Event Procedure]"
                     GridlineColor =10921638
 
-                    LayoutCachedLeft =6510
-                    LayoutCachedTop =660
-                    LayoutCachedWidth =9269
-                    LayoutCachedHeight =975
+                    LayoutCachedLeft =6780
+                    LayoutCachedTop =990
+                    LayoutCachedWidth =10575
+                    LayoutCachedHeight =1305
                     BorderThemeColorIndex =-1
                     BorderShade =100.0
                     ForeThemeColorIndex =0
@@ -641,9 +642,9 @@ Begin Form
                             FontItalic = NotDefault
                             OverlapFlags =93
                             TextAlign =2
-                            Left =6480
-                            Top =480
-                            Width =2565
+                            Left =6780
+                            Top =780
+                            Width =3795
                             Height =210
                             FontSize =8
                             BorderColor =8355711
@@ -651,21 +652,22 @@ Begin Form
                             Name ="Label11"
                             Caption ="Dissolved Oxygen"
                             GridlineColor =10921638
-                            LayoutCachedLeft =6480
-                            LayoutCachedTop =480
-                            LayoutCachedWidth =9045
-                            LayoutCachedHeight =690
+                            LayoutCachedLeft =6780
+                            LayoutCachedTop =780
+                            LayoutCachedWidth =10575
+                            LayoutCachedHeight =990
                         End
                     End
                 End
                 Begin Subform
+                    Enabled = NotDefault
                     OverlapFlags =85
                     OldBorderStyle =0
-                    Left =3540
-                    Top =1680
+                    Left =6780
+                    Top =1920
                     Width =4020
-                    Height =2100
-                    TabIndex =7
+                    Height =1860
+                    TabIndex =6
                     BorderColor =10921638
                     Name ="sfrmWaterQualityDO"
                     SourceObject ="Form.sfrm_WaterQualityDO"
@@ -673,17 +675,17 @@ Begin Form
                     LinkMasterFields ="ID"
                     GridlineColor =10921638
 
-                    LayoutCachedLeft =3540
-                    LayoutCachedTop =1680
-                    LayoutCachedWidth =7560
+                    LayoutCachedLeft =6780
+                    LayoutCachedTop =1920
+                    LayoutCachedWidth =10800
                     LayoutCachedHeight =3780
                     Begin
                         Begin Label
                             BackStyle =1
                             OverlapFlags =85
                             TextAlign =2
-                            Left =3540
-                            Top =1260
+                            Left =6780
+                            Top =1560
                             Width =3795
                             Height =300
                             FontWeight =700
@@ -693,10 +695,10 @@ Begin Form
                             Name ="lblDO"
                             Caption ="Dissolved Oxygen"
                             GridlineColor =10921638
-                            LayoutCachedLeft =3540
-                            LayoutCachedTop =1260
-                            LayoutCachedWidth =7335
-                            LayoutCachedHeight =1560
+                            LayoutCachedLeft =6780
+                            LayoutCachedTop =1560
+                            LayoutCachedWidth =10575
+                            LayoutCachedHeight =1860
                             BackThemeColorIndex =-1
                             ForeThemeColorIndex =-1
                             ForeTint =100.0
@@ -705,15 +707,15 @@ Begin Form
                 End
                 Begin ComboBox
                     LimitToList = NotDefault
-                    OverlapFlags =215
+                    OverlapFlags =87
                     IMESentenceMode =3
                     ColumnCount =2
                     ListWidth =2160
-                    Left =9315
-                    Top =660
-                    Width =2759
+                    Left =11160
+                    Top =990
+                    Width =2595
                     Height =315
-                    TabIndex =8
+                    TabIndex =3
                     BorderColor =14211288
                     ForeColor =4210752
                     ColumnInfo ="\"\";\"\";\"\";\"\";\"10\";\"100\""
@@ -735,10 +737,10 @@ Begin Form
                     AfterUpdate ="[Event Procedure]"
                     GridlineColor =10921638
 
-                    LayoutCachedLeft =9315
-                    LayoutCachedTop =660
-                    LayoutCachedWidth =12074
-                    LayoutCachedHeight =975
+                    LayoutCachedLeft =11160
+                    LayoutCachedTop =990
+                    LayoutCachedWidth =13755
+                    LayoutCachedHeight =1305
                     BorderThemeColorIndex =-1
                     BorderShade =100.0
                     ForeThemeColorIndex =0
@@ -755,9 +757,9 @@ Begin Form
                             FontItalic = NotDefault
                             OverlapFlags =93
                             TextAlign =2
-                            Left =9300
-                            Top =480
-                            Width =2535
+                            Left =11160
+                            Top =780
+                            Width =2595
                             Height =210
                             FontSize =8
                             BorderColor =8355711
@@ -765,21 +767,22 @@ Begin Form
                             Name ="Label15"
                             Caption ="Specific Conductance"
                             GridlineColor =10921638
-                            LayoutCachedLeft =9300
-                            LayoutCachedTop =480
-                            LayoutCachedWidth =11835
-                            LayoutCachedHeight =690
+                            LayoutCachedLeft =11160
+                            LayoutCachedTop =780
+                            LayoutCachedWidth =13755
+                            LayoutCachedHeight =990
                         End
                     End
                 End
                 Begin Subform
+                    Enabled = NotDefault
                     OverlapFlags =85
                     OldBorderStyle =0
-                    Left =7755
-                    Top =1680
+                    Left =11160
+                    Top =1920
                     Width =2850
-                    Height =2100
-                    TabIndex =9
+                    Height =1860
+                    TabIndex =7
                     BorderColor =10921638
                     Name ="sfrmWaterQualitySpCond"
                     SourceObject ="Form.sfrm_WaterQualitySpCond"
@@ -787,17 +790,17 @@ Begin Form
                     LinkMasterFields ="ID"
                     GridlineColor =10921638
 
-                    LayoutCachedLeft =7755
-                    LayoutCachedTop =1680
-                    LayoutCachedWidth =10605
+                    LayoutCachedLeft =11160
+                    LayoutCachedTop =1920
+                    LayoutCachedWidth =14010
                     LayoutCachedHeight =3780
                     Begin
                         Begin Label
                             BackStyle =1
                             OverlapFlags =85
                             TextAlign =2
-                            Left =7755
-                            Top =1260
+                            Left =11160
+                            Top =1560
                             Width =2595
                             Height =300
                             FontWeight =700
@@ -807,10 +810,10 @@ Begin Form
                             Name ="lblSpCond"
                             Caption ="Specific Conductance"
                             GridlineColor =10921638
-                            LayoutCachedLeft =7755
-                            LayoutCachedTop =1260
-                            LayoutCachedWidth =10350
-                            LayoutCachedHeight =1560
+                            LayoutCachedLeft =11160
+                            LayoutCachedTop =1560
+                            LayoutCachedWidth =13755
+                            LayoutCachedHeight =1860
                             BackThemeColorIndex =-1
                             ForeThemeColorIndex =-1
                             ForeTint =100.0
@@ -819,15 +822,15 @@ Begin Form
                 End
                 Begin ComboBox
                     LimitToList = NotDefault
-                    OverlapFlags =215
+                    OverlapFlags =87
                     IMESentenceMode =3
                     ColumnCount =2
                     ListWidth =2160
-                    Left =12135
-                    Top =660
-                    Width =2759
+                    Left =3480
+                    Top =990
+                    Width =2595
                     Height =315
-                    TabIndex =10
+                    TabIndex =4
                     BorderColor =14211288
                     ForeColor =4210752
                     ColumnInfo ="\"\";\"\";\"\";\"\";\"10\";\"100\""
@@ -849,10 +852,10 @@ Begin Form
                     AfterUpdate ="[Event Procedure]"
                     GridlineColor =10921638
 
-                    LayoutCachedLeft =12135
-                    LayoutCachedTop =660
-                    LayoutCachedWidth =14894
-                    LayoutCachedHeight =975
+                    LayoutCachedLeft =3480
+                    LayoutCachedTop =990
+                    LayoutCachedWidth =6075
+                    LayoutCachedHeight =1305
                     BorderThemeColorIndex =-1
                     BorderShade =100.0
                     ForeThemeColorIndex =0
@@ -869,9 +872,9 @@ Begin Form
                             FontItalic = NotDefault
                             OverlapFlags =93
                             TextAlign =2
-                            Left =12120
-                            Top =480
-                            Width =2535
+                            Left =3480
+                            Top =780
+                            Width =2595
                             Height =210
                             FontSize =8
                             BorderColor =8355711
@@ -879,21 +882,22 @@ Begin Form
                             Name ="Label19"
                             Caption ="Temperature"
                             GridlineColor =10921638
-                            LayoutCachedLeft =12120
-                            LayoutCachedTop =480
-                            LayoutCachedWidth =14655
-                            LayoutCachedHeight =690
+                            LayoutCachedLeft =3480
+                            LayoutCachedTop =780
+                            LayoutCachedWidth =6075
+                            LayoutCachedHeight =990
                         End
                     End
                 End
                 Begin Subform
+                    Enabled = NotDefault
                     OverlapFlags =85
                     OldBorderStyle =0
-                    Left =10995
-                    Top =1680
+                    Left =3480
+                    Top =1920
                     Width =2850
-                    Height =2100
-                    TabIndex =11
+                    Height =1860
+                    TabIndex =8
                     BorderColor =10921638
                     Name ="sfrmWaterQualityTemperature"
                     SourceObject ="Form.sfrm_WaterQualityTemperature"
@@ -901,17 +905,17 @@ Begin Form
                     LinkMasterFields ="ID"
                     GridlineColor =10921638
 
-                    LayoutCachedLeft =10995
-                    LayoutCachedTop =1680
-                    LayoutCachedWidth =13845
+                    LayoutCachedLeft =3480
+                    LayoutCachedTop =1920
+                    LayoutCachedWidth =6330
                     LayoutCachedHeight =3780
                     Begin
                         Begin Label
                             BackStyle =1
                             OverlapFlags =85
                             TextAlign =2
-                            Left =10995
-                            Top =1260
+                            Left =3480
+                            Top =1560
                             Width =2595
                             Height =300
                             FontWeight =700
@@ -921,10 +925,10 @@ Begin Form
                             Name ="lblTemperature"
                             Caption ="Temperature"
                             GridlineColor =10921638
-                            LayoutCachedLeft =10995
-                            LayoutCachedTop =1260
-                            LayoutCachedWidth =13590
-                            LayoutCachedHeight =1560
+                            LayoutCachedLeft =3480
+                            LayoutCachedTop =1560
+                            LayoutCachedWidth =6075
+                            LayoutCachedHeight =1860
                             BackThemeColorIndex =-1
                             ForeThemeColorIndex =-1
                             ForeTint =100.0
@@ -943,7 +947,6 @@ Begin Form
                     Height =315
                     ColumnOrder =0
                     FontSize =12
-                    TabIndex =12
                     BorderColor =14211288
                     ForeColor =4210752
                     ColumnInfo ="\"\";\"\";\"\";\"\";\"\";\"\";\"10\";\"50\""
@@ -984,7 +987,7 @@ Begin Form
                     Begin
                         Begin Label
                             FontItalic = NotDefault
-                            OverlapFlags =85
+                            OverlapFlags =93
                             TextAlign =1
                             Left =120
                             Top =120
@@ -1007,22 +1010,23 @@ Begin Form
                 End
                 Begin Line
                     OverlapFlags =85
-                    Top =1140
+                    Top =1410
                     Width =15840
                     Name ="lineHeader"
                     GridlineColor =10921638
-                    LayoutCachedTop =1140
+                    LayoutCachedTop =1410
                     LayoutCachedWidth =15840
-                    LayoutCachedHeight =1140
+                    LayoutCachedHeight =1410
                 End
                 Begin Subform
+                    Enabled = NotDefault
                     OverlapFlags =85
                     OldBorderStyle =0
                     Left =300
                     Top =4320
                     Width =5730
                     Height =2400
-                    TabIndex =13
+                    TabIndex =9
                     BorderColor =10921638
                     Name ="sfrmWaterQualitypHCalibration"
                     SourceObject ="Form.sfrm_WaterQualitypHCalibration"
@@ -1061,13 +1065,14 @@ Begin Form
                     End
                 End
                 Begin Subform
+                    Enabled = NotDefault
                     OverlapFlags =85
                     OldBorderStyle =0
                     Left =6300
                     Top =4320
                     Width =4170
                     Height =2340
-                    TabIndex =14
+                    TabIndex =10
                     BorderColor =10921638
                     Name ="sfrmWaterQualityDOCalibration"
                     SourceObject ="Form.sfrm_WaterQualityDOCalibration"
@@ -1106,13 +1111,14 @@ Begin Form
                     End
                 End
                 Begin Subform
+                    Enabled = NotDefault
                     OverlapFlags =85
                     OldBorderStyle =0
                     Left =10680
                     Top =4320
                     Width =4200
                     Height =2340
-                    TabIndex =15
+                    TabIndex =11
                     BorderColor =10921638
                     Name ="sfrmWaterQualitySpCondCalibration"
                     SourceObject ="Form.sfrm_WaterQualitySpCondCalibration"
@@ -1151,20 +1157,20 @@ Begin Form
                     End
                 End
                 Begin Label
-                    OverlapFlags =85
-                    TextAlign =3
+                    OverlapFlags =215
+                    TextAlign =1
                     Left =120
-                    Top =660
-                    Width =3480
+                    Top =420
+                    Width =2100
                     Height =315
                     BorderColor =8355711
                     Name ="Label31"
-                    Caption ="*Instruments used"
+                    Caption ="*Instruments used:"
                     GridlineColor =10921638
                     LayoutCachedLeft =120
-                    LayoutCachedTop =660
-                    LayoutCachedWidth =3600
-                    LayoutCachedHeight =975
+                    LayoutCachedTop =420
+                    LayoutCachedWidth =2220
+                    LayoutCachedHeight =735
                     ForeThemeColorIndex =-1
                     ForeTint =100.0
                 End

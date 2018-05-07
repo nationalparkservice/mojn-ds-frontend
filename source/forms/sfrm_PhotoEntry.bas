@@ -21,20 +21,16 @@ Begin Form
     Width =15540
     DatasheetFontHeight =11
     ItemSuffix =38
-    Left =3720
-    Top =2595
-    Right =19830
-    Bottom =10545
+    Left =1485
+    Top =16335
+    Right =17340
+    Bottom =24030
     DatasheetGridlinesColor =15921906
-    RecSrcDt = Begin
-        0xc0ade2175119e540
-    End
-    RecordSource ="SELECT [data_Photo].[ID], [data_Photo].[PhotoActivityID], [data_Photo].[DateTake"
-        "n], [data_Photo].[PhotoDescriptionCodeID], [data_Photo].[IsLibraryPhotoID], [dat"
-        "a_Photo].[OriginalFilePath], [data_Photo].[RenamedFilePath], [data_Photo].[GPSUn"
-        "itID], [data_Photo].[PhotoID], [data_Photo].[HorizontalDatumID], [data_Photo].[U"
-        "TMZoneID], [data_Photo].[UtmX_m], [data_Photo].[UtmY_m], [data_Photo].[Notes], ["
-        "data_Photo].[DateCreated] FROM data_Photo; "
+    RecordSource ="SELECT data_Photo.ID, data_Photo.PhotoActivityID, data_Photo.DateTaken, data_Pho"
+        "to.PhotoDescriptionCodeID, data_Photo.IsLibraryPhotoID, data_Photo.OriginalFileP"
+        "ath, data_Photo.RenamedFilePath, data_Photo.GPSUnitID, data_Photo.HorizontalDatu"
+        "mID, data_Photo.UTMZoneID, data_Photo.UtmX_m, data_Photo.UtmY_m, data_Photo.Note"
+        "s, data_Photo.DateCreated FROM data_Photo; "
     Caption ="sfrm_PhotoEntry"
     BeforeUpdate ="[Event Procedure]"
     DatasheetFontName ="Calibri"

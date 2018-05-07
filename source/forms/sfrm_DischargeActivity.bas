@@ -21,9 +21,9 @@ Begin Form
     Width =15840
     DatasheetFontHeight =11
     ItemSuffix =22
-    Left =3495
+    Left =3915
     Top =2610
-    Right =19605
+    Right =20025
     Bottom =11850
     DatasheetGridlinesColor =15921906
     RecSrcDt = Begin
@@ -466,6 +466,7 @@ Begin Form
                     RowSource ="SELECT lookup_FlowCondition.ID, lookup_FlowCondition.Label FROM lookup_FlowCondi"
                         "tion ORDER BY lookup_FlowCondition.Sort; "
                     ColumnWidths ="0;2880"
+                    BeforeUpdate ="[Event Procedure]"
                     AfterUpdate ="[Event Procedure]"
                     GridlineColor =10921638
                     AllowValueListEdits =0
@@ -511,6 +512,7 @@ Begin Form
                     End
                 End
                 Begin Subform
+                    Enabled = NotDefault
                     CanGrow = NotDefault
                     OverlapFlags =85
                     OldBorderStyle =0
@@ -908,21 +910,26 @@ Public Function DataQualityOK() As Boolean
 On Error GoTo Error_Handler
 
 Dim flowCondition As String
-Dim dimensionsExist As Integer
 
 If Me.NewRecord Then
     DataQualityOK = True
     GoTo Exit_Procedure
 End If
 
-dimensionsExist = (Me.sfrmSpringbrookDimensions.Form.RowCount() > 0)
-flowCondition = LookupLabelFromID("lookup_FlowCondition", Me.cboFlowConditionID)
+flowCondition = Nz(LookupLabelFromID("lookup_FlowCondition", Me.cboFlowConditionID))
 
 Select Case flowCondition
-    Case "dry", "wet soil only", "flowing", "flood", "standing water"
-        DataQualityOK = dimensionsExist
+    Case "dry", "wet soil only", "flood", "standing water", "solid ice"
+        DataQualityOK = Me.sfrmSpringbrookDimensions.Form.ConsistentWithParent(flowCondition) And _
+                        Me.sfrmDischargeEstimated.Form.RowCount() = 0 And _
+                        Me.sfrmDischargeVolumetric.Form.RowCount() = 0
+    Case "flowing"
+        DataQualityOK = Me.sfrmSpringbrookDimensions.Form.ConsistentWithParent(flowCondition) And _
+                        ((Me.sfrmDischargeEstimated.Form.RowCount() > 0) Xor (Me.sfrmDischargeVolumetric.Form.RowCount() > 0)) And _
+                        Me.sfrmDischargeEstimated.Form.DataQualityOK() And _
+                        Me.sfrmDischargeVolumetric.Form.DataQualityOK()
     Case Else
-        DataQualityOK = Not dimensionsExist
+        DataQualityOK = False
 End Select
 
 Exit_Procedure:
@@ -936,47 +943,47 @@ End Function
 Private Function ValidateFlowCondition(flowCondition As String, estDischarge As Boolean, volDischarge As Boolean, springbrookFlag As Variant, springbrookLength As Variant, springbrookWidth As Variant) As Boolean
 On Error GoTo Error_Handler
 
-Dim springbrookDimensionIsZero As Boolean
-Dim springbrookDimensionsExist As Boolean
-
-springbrookDimensionIsZero = (Not IsNull(springbrookWidth) And springbrookWidth = 0) _
-                                Or (Not IsNull(springbrookLength) And springbrookLength = 0)
-springbrookDimensionsExist = (Not IsNull(springbrookWidth) And springbrookWidth > 0) _
-                                Or (Not IsNull(springbrookLength) And springbrookLength > 0) _
-                                Or (Not IsNothing(springbrookFlag) And springbrookFlag = ">50m")
-
-Select Case flowCondition
-    Case "dry", "wet soil only"
-        'If discharge measurements exist, tell user to delete them before changing flow condition
-        If estDischarge Or volDischarge Then
-            MsgBox ("Cannot change flow condition to dry or wet soil because discharge data is present.")
-            ValidateFlowCondition = False
-        'If springbrook width or length is non-zero, confirm that it is ok to set those fields to 0
-        ElseIf springbrookDimensionsExist Then
-            ValidateFlowCondition = (MsgBox("You have entered data for springbrook dimensions. Changing flow condition to dry or wet soil will set these dimensions to zero. Are you sure you want to continue?", vbYesNo) = vbYes)
-        Else
-            ValidateFlowCondition = True
-        End If
-        
-    Case "flowing"
-        'If springbrook width or length is 0, confirm that it is ok to clear that field
-        If springbrookDimensionIsZero Then
-            ValidateFlowCondition = (MsgBox("Springbrook dimensions are set to 0. Changing flow condition to flowing, flood, or standing water will clear these fields. Are you sure you want to continue?", vbYesNo) = vbYes)
-        Else
-            ValidateFlowCondition = True
-        End If
-    Case "flood", "standing water"
-        'If discharge measurements exist, tell user to delete them before changing flow condition
-        If estDischarge Or volDischarge Then
-            MsgBox ("Cannot change flow condition to flood or standing water because discharge data is present.")
-            ValidateFlowCondition = False
-        'If springbrook width or length is non-zero, confirm that it is ok to set those fields to 0
-        ElseIf springbrookDimensionIsZero Then
-            ValidateFlowCondition = (MsgBox("Springbrook dimensions are set to 0. Changing flow condition to flowing, flood, or standing water will clear these fields. Are you sure you want to continue?", vbYesNo) = vbYes)
-        Else
-            ValidateFlowCondition = True
-        End If
-End Select
+'Dim springbrookDimensionIsZero As Boolean
+'Dim springbrookDimensionsExist As Boolean
+'
+'springbrookDimensionIsZero = (Not IsNull(springbrookWidth) And springbrookWidth = 0) _
+'                                Or (Not IsNull(springbrookLength) And springbrookLength = 0)
+'springbrookDimensionsExist = (Not IsNull(springbrookWidth) And springbrookWidth > 0) _
+'                                Or (Not IsNull(springbrookLength) And springbrookLength > 0) _
+'                                Or (Not IsNothing(springbrookFlag) And springbrookFlag = ">50m")
+'
+'Select Case flowCondition
+'    Case "dry", "wet soil only"
+'        'If discharge measurements exist, tell user to delete them before changing flow condition
+'        If estDischarge Or volDischarge Then
+'            MsgBox ("Cannot change flow condition to dry or wet soil because discharge data is present.")
+'            ValidateFlowCondition = False
+'        'If springbrook width or length is non-zero, confirm that it is ok to set those fields to 0
+'        ElseIf springbrookDimensionsExist Then
+'            ValidateFlowCondition = (MsgBox("You have entered data for springbrook dimensions. Changing flow condition to dry or wet soil will set these dimensions to zero. Are you sure you want to continue?", vbYesNo) = vbYes)
+'        Else
+'            ValidateFlowCondition = True
+'        End If
+'
+'    Case "flowing"
+'        'If springbrook width or length is 0, confirm that it is ok to clear that field
+'        If springbrookDimensionIsZero Then
+'            ValidateFlowCondition = (MsgBox("Springbrook dimensions are set to 0. Changing flow condition to flowing, flood, or standing water will clear these fields. Are you sure you want to continue?", vbYesNo) = vbYes)
+'        Else
+'            ValidateFlowCondition = True
+'        End If
+'    Case "flood", "standing water"
+'        'If discharge measurements exist, tell user to delete them before changing flow condition
+'        If estDischarge Or volDischarge Then
+'            MsgBox ("Cannot change flow condition to flood or standing water because discharge data is present.")
+'            ValidateFlowCondition = False
+'        'If springbrook width or length is non-zero, confirm that it is ok to set those fields to 0
+'        ElseIf springbrookDimensionIsZero Then
+'            ValidateFlowCondition = (MsgBox("Springbrook dimensions are set to 0. Changing flow condition to flowing, flood, or standing water will clear these fields. Are you sure you want to continue?", vbYesNo) = vbYes)
+'        Else
+'            ValidateFlowCondition = True
+'        End If
+'End Select
 
 Exit_Procedure:
         Exit Function
@@ -984,6 +991,19 @@ Error_Handler:
         MsgBox "Module: " & mstrcFormName & vbNewLine & "Sub:  ValidateFlowCondition" & vbNewLine & "Error #" & Err.Number & ": " & Err.Description, vbCritical
         Resume Exit_Procedure
 End Function
+
+Private Sub cboFlowConditionID_AfterUpdate()
+On Error GoTo Error_Handler
+
+    DoCmd.RunCommand acCmdSaveRecord
+    Forms!frm_Visit!sfrmActivityDashboard.Form.Requery
+
+Exit_Procedure:
+    Exit Sub
+Error_Handler:
+    MsgBox "Form: " & mstrcFormName & vbNewLine & "Sub:  cboFlowConditionID_AfterUpdate" & vbNewLine & "Error #" & Err.Number & ": " & Err.Description, vbCritical
+    Resume Exit_Procedure
+End Sub
 
 Private Sub Form_Load()
 On Error GoTo Error_Handler
@@ -997,8 +1017,8 @@ On Error GoTo Error_Handler
     Dim EstDischargeExists As Boolean
     Dim VolDischargeExists As Boolean
 
-    EstDischargeExists = CheckRecExists(Me.sfrmDischargeEstimated.Form.RecordsetClone, "DischargeActivityID = " & Me.ID)
-    VolDischargeExists = CheckRecExists(Me.sfrmDischargeVolumetric.Form.RecordsetClone, "DischargeActivityID = " & Me.ID)
+    EstDischargeExists = Me.sfrmDischargeEstimated.Form.RowCount() > 0 'CheckRecExists(Me.sfrmDischargeEstimated.Form.RecordsetClone, "DischargeActivityID = " & Me.ID)
+    VolDischargeExists = Me.sfrmDischargeVolumetric.Form.RowCount() > 0 'CheckRecExists(Me.sfrmDischargeVolumetric.Form.RecordsetClone, "DischargeActivityID = " & Me.ID)
     
     If IsNull(Me.FlowConditionID.Value) = True Then  'Flow condition not declared; disable all other controls
         EnableToggles (False)
@@ -1035,70 +1055,53 @@ Error_Handler:
         Resume Exit_Procedure
 End Sub
 
-Private Sub cboFlowConditionID_AfterUpdate()
+Private Sub cboFlowConditionID_BeforeUpdate(Cancel As Integer)
 On Error GoTo Error_Handler
 
-    'If Flow Condition ID = dry or wet soil only, Estimated Discharge & Volumetric forms, and toggle buttons are disabled, Springbrook width/length set to 0[zero].
-    'If Flow Condition ID = standing water or flood, Est/Vol forms, and toggles are still disabled. Springbrook width/length are set to null if previously zero.
-    'If Flow Condition ID flowing, Est/Vol forms, and toggles are enabled. Springbrook width/length are set to null if previously zero.
+    'If Flow Condition ID = dry or wet soil only, Estimated Discharge & Volumetric forms, and toggle buttons are disabled
+    'If Flow Condition ID = standing water or flood, Est/Vol forms, and toggles are still disabled.
+    'If Flow Condition ID flowing, Est/Vol forms, and toggles are enabled.
     ' 1-dry, 2-wet soil only, 3-standing water, 4-flowing, 5-flood
     
     'Case where flow condition is not flowing, but discharge measurements exist is trapped in BeforeUpdate
 
+    Dim flowCondition As String
     Dim EstDischargeExists As Boolean
     Dim VolDischargeExists As Boolean
-
-    EstDischargeExists = CheckRecExists(Me.sfrmDischargeEstimated.Form.RecordsetClone, "DischargeActivityID = " & Me.ID)
-    VolDischargeExists = CheckRecExists(Me.sfrmDischargeVolumetric.Form.RecordsetClone, "DischargeActivityID = " & Me.ID)
     
-    'Check to make sure that springbrook dimensions are consistent with the flow condition selection
-    If Not ValidateFlowCondition(Me.cboFlowConditionID.text, EstDischargeExists, VolDischargeExists, _
-                            LookupCodeFromID("lookup_SpringbrookLengthFlag", Me.sfrmSpringbrookDimensions.Form.cboSpringbrookLengthFlagID), _
-                            Me.sfrmSpringbrookDimensions.Form.txtSpringbrookLength_m, Me.sfrmSpringbrookDimensions.Form.txtSpringbrookWidth_m) Then
-        Me.Undo
-        GoTo Exit_Procedure
-    End If
-    
-    Select Case Me.cboFlowConditionID.Value
-        Case LookupIDFromLabel("lookup_FlowCondition", "flowing")
-            If Me.sfrmSpringbrookDimensions.Form.txtSpringbrookWidth_m = 0 Then Me.sfrmSpringbrookDimensions.Form.txtSpringbrookWidth_m = Null
-            If Me.sfrmSpringbrookDimensions.Form.txtSpringbrookLength_m = 0 Then
-                Me.sfrmSpringbrookDimensions.Form.txtSpringbrookLength_m = Null
-                Me.sfrmSpringbrookDimensions.Form.cboSpringbrookLengthFlagID = Null
-            End If
+    flowCondition = Nz(LookupLabelFromID("lookup_FlowCondition", Me.cboFlowConditionID))
+    EstDischargeExists = Me.sfrmDischargeEstimated.Form.RowCount() > 0
+    VolDischargeExists = Me.sfrmDischargeVolumetric.Form.RowCount() > 0
+      
+    Select Case flowCondition
+        Case "flowing"
             EnableToggles True, EstDischargeExists, VolDischargeExists
             EnableEstimated (EstDischargeExists)
             EnableVolumetric (VolDischargeExists)
-            EnableSpringbrook (True)
         
-        Case LookupIDFromLabel("lookup_FlowCondition", "flood"), LookupIDFromLabel("lookup_FlowCondition", "standing water")
-            If Me.sfrmSpringbrookDimensions.Form.txtSpringbrookWidth_m = 0 Then Me.sfrmSpringbrookDimensions.Form.txtSpringbrookWidth_m = Null
-            If Me.sfrmSpringbrookDimensions.Form.txtSpringbrookLength_m = 0 Then
-                Me.sfrmSpringbrookDimensions.Form.txtSpringbrookLength_m = Null
-                Me.sfrmSpringbrookDimensions.Form.cboSpringbrookLengthFlagID = Null
+        Case "flood", "standing water", "dry", "wet soil only", "solid ice"
+            If (Not EstDischargeExists) And (Not VolDischargeExists) Then
+                EnableToggles False
+                EnableEstimated (False)
+                EnableVolumetric (False)
+            Else
+                MsgBox ("Please delete discharge data before attempting to change flow condition from 'flowing'")
+                Cancel = True
+                Me.cboFlowConditionID.Undo
+                GoTo Exit_Procedure
             End If
-            EnableToggles False
-            EnableEstimated (False)
-            EnableVolumetric (False)
-            EnableSpringbrook (True)
-        
-        Case LookupIDFromLabel("lookup_FlowCondition", "dry"), LookupIDFromLabel("lookup_FlowCondition", "wet soil only")
-            Me.sfrmSpringbrookDimensions.Form.txtSpringbrookWidth_m = 0
-            Me.sfrmSpringbrookDimensions.Form.txtSpringbrookLength_m = 0
-            Me.sfrmSpringbrookDimensions.Form.cboSpringbrookLengthFlagID = LookupIDFromCode("lookup_SpringbrookLengthFlag", "Measured")
-            EnableToggles False
-            EnableEstimated (False)
-            EnableVolumetric (False)
-            EnableSpringbrook (True)
+        Case Else
+            Cancel = True
+            Me.cboFlowConditionID.Undo
+            GoTo Exit_Procedure
     End Select
     
-    DoCmd.RunCommand acCmdSaveRecord
-    Forms!frm_Visit!sfrmActivityDashboard.Form.Requery
+    EnableSpringbrook (True)
     
 Exit_Procedure:
     Exit Sub
 Error_Handler:
-    MsgBox "Form: " & mstrcFormName & vbNewLine & "Sub:  cboFlowConditionID_AfterUpdate" & vbNewLine & "Error #" & Err.Number & ": " & Err.Description, vbCritical
+    MsgBox "Form: " & mstrcFormName & vbNewLine & "Sub:  cboFlowConditionID_BeforeUpdate" & vbNewLine & "Error #" & Err.Number & ": " & Err.Description, vbCritical
     Resume Exit_Procedure
 End Sub
 
@@ -1122,8 +1125,8 @@ On Error GoTo Error_Handler
 Dim EstDischargeExists As Boolean
 Dim VolDischargeExists As Boolean
 
-EstDischargeExists = CheckRecExists(Me.sfrmDischargeEstimated.Form.RecordsetClone, "DischargeActivityID = " & Me.ID)
-VolDischargeExists = CheckRecExists(Me.sfrmDischargeVolumetric.Form.RecordsetClone, "DischargeActivityID = " & Me.ID)
+EstDischargeExists = Me.sfrmDischargeEstimated.Form.RowCount() > 0
+VolDischargeExists = Me.sfrmDischargeVolumetric.Form.RowCount() > 0
 
 'No estimated discharge data, no volumetric discharge data -> toggle est. discharge visibility based on toggle button value
 If Not EstDischargeExists And Not VolDischargeExists Then
@@ -1159,8 +1162,8 @@ On Error GoTo Error_Handler
 Dim EstDischargeExists As Boolean
 Dim VolDischargeExists As Boolean
 
-EstDischargeExists = CheckRecExists(Me.sfrmDischargeEstimated.Form.RecordsetClone, "DischargeActivityID = " & Me.ID)
-VolDischargeExists = CheckRecExists(Me.sfrmDischargeVolumetric.Form.RecordsetClone, "DischargeActivityID = " & Me.ID)
+EstDischargeExists = Me.sfrmDischargeEstimated.Form.RowCount() > 0
+VolDischargeExists = Me.sfrmDischargeVolumetric.Form.RowCount() > 0
 
 'No estimated discharge data, no volumetric discharge data -> toggle vol. discharge visibility based on toggle button value
 If Not EstDischargeExists And Not VolDischargeExists Then
@@ -1256,24 +1259,18 @@ Error_Handler:
     Resume Exit_Procedure
 End Function
 
+
 Public Function EnableSpringbrook(bEnabled As Boolean)
 On Error GoTo Error_Handler
-
-Dim showSpringbrookLength As Boolean
-
-'show springbrook length field if the length flag is "measured" or there is a value for springbrook length or if the length flag is null
-showSpringbrookLength = Me!sfrmSpringbrookDimensions.Form!cboSpringbrookLengthFlagID = LookupIDFromCode("lookup_SpringbrookLengthFlag", "Measured") _
-                        Or Not IsNull(Me!sfrmSpringbrookDimensions.Form!txtSpringbrookLength_m) _
-                        Or IsNull(Me!sfrmSpringbrookDimensions.Form!cboSpringbrookLengthFlagID)
-                        
-'Enable or disable springbrook dimensions (mel 4/2018)
-
-Me.sfrmSpringbrookDimensions.Enabled = bEnabled
-Me!sfrmSpringbrookDimensions.Form!txtSpringbrookLength_m.Visible = showSpringbrookLength
-
+    'Enable or disable springbrook dimensions subform (mel 4/2018)
+    
+    Me.sfrmSpringbrookDimensions.Enabled = bEnabled
+    Me.sfrmSpringbrookDimensions.Visible = True
+    Me.lblSfrmSpringbrookDimensions.Visible = True
+        
 Exit_Procedure:
     Exit Function
 Error_Handler:
-    MsgBox "Form: " & mstrcFormName & vbNewLine & "Sub:  EnableSpringbrook" & vbNewLine & "Error #" & Err.Number & ": " & Err.Description, vbCritical
+    MsgBox "Form: " & mstrcFormName & vbNewLine & "Sub:  EnableEstimated" & vbNewLine & "Error #" & Err.Number & ": " & Err.Description, vbCritical
     Resume Exit_Procedure
 End Function

@@ -11,6 +11,7 @@ Begin Form
     AllowDeletions = NotDefault
     DividingLines = NotDefault
     AllowAdditions = NotDefault
+    OrderByOn = NotDefault
     AllowUpdating =2
     ScrollBars =2
     ViewsAllowed =1
@@ -22,10 +23,10 @@ Begin Form
     Width =14400
     DatasheetFontHeight =11
     ItemSuffix =48
-    Left =7215
-    Top =3180
-    Right =21615
-    Bottom =11535
+    Left =4785
+    Top =1365
+    Right =19185
+    Bottom =9720
     DatasheetGridlinesColor =15921906
     Filter ="[ParkID] = 85"
     OrderBy ="SiteCode"

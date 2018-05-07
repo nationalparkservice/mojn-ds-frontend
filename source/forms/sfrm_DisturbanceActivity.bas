@@ -10,7 +10,6 @@ Begin Form
     NavigationButtons = NotDefault
     CloseButton = NotDefault
     DividingLines = NotDefault
-    FilterOn = NotDefault
     DefaultView =0
     ScrollBars =0
     ViewsAllowed =1
@@ -22,10 +21,10 @@ Begin Form
     Width =15840
     DatasheetFontHeight =11
     ItemSuffix =44
-    Left =3750
-    Top =2235
-    Right =19860
-    Bottom =11475
+    Left =495
+    Top =2445
+    Right =16605
+    Bottom =11685
     DatasheetGridlinesColor =15921906
     RecSrcDt = Begin
         0x3a89a5777b15e540
@@ -1399,6 +1398,47 @@ Begin Form
                     LayoutCachedWidth =10530
                     LayoutCachedHeight =360
                 End
+                Begin CommandButton
+                    TabStop = NotDefault
+                    OverlapFlags =85
+                    PictureType =2
+                    Left =8640
+                    Top =2460
+                    Width =306
+                    Height =312
+                    TabIndex =18
+                    ForeColor =4210752
+                    Name ="cmdDeleteDisturbanceModification"
+                    OnClick ="[Event Procedure]"
+                    ControlTipText ="Delete Record"
+                    Picture ="X-Mark-16-LtGray"
+                    GridlineColor =10921638
+
+                    LayoutCachedLeft =8640
+                    LayoutCachedTop =2460
+                    LayoutCachedWidth =8946
+                    LayoutCachedHeight =2772
+                    Gradient =0
+                    BackColor =15527148
+                    BackThemeColorIndex =-1
+                    BackTint =100.0
+                    BorderColor =12566463
+                    BorderThemeColorIndex =-1
+                    BorderTint =100.0
+                    HoverColor =1643706
+                    HoverThemeColorIndex =-1
+                    HoverTint =100.0
+                    PressedColor =14211288
+                    PressedThemeColorIndex =-1
+                    PressedShade =100.0
+                    HoverForeColor =4210752
+                    PressedForeColor =4210752
+                    WebImagePaddingLeft =2
+                    WebImagePaddingTop =2
+                    WebImagePaddingRight =1
+                    WebImagePaddingBottom =1
+                    Overlaps =1
+                End
             End
         End
     End
@@ -1450,6 +1490,12 @@ Error_Handler:
 End Function
 
 
+Private Sub cmdDeleteDisturbanceModification_Click()
+
+DeleteRecord Me, Me.NewRecord
+
+End Sub
+
 Private Sub Form_Load()
 On Error GoTo Error_Handler
     
@@ -1487,7 +1533,7 @@ On Error GoTo Error_Handler
 
     Dim DisturbanceModificationsExist As Boolean
     Dim intDisturbanceModificationsCount As Integer
-    intDisturbanceModificationsCount = DCount("ID", "data_DisturbanceFlowModification", "DisturbanceActivityID = " & Me.ID)
+    intDisturbanceModificationsCount = Me.sfrmDisturbanceModifications.Form.RowCount()
     
     'If user sets Flow Modification Status to any of the 'yes' options, enable Disturbance Modifications form.
     If (Me.cboFlowModificationStatusID = 1 Or _

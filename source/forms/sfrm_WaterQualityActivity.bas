@@ -6,7 +6,6 @@ Begin Form
     AutoCenter = NotDefault
     NavigationButtons = NotDefault
     DividingLines = NotDefault
-    FilterOn = NotDefault
     DefaultView =0
     PictureAlignment =2
     DatasheetGridlinesBehavior =3
@@ -15,10 +14,10 @@ Begin Form
     Width =15840
     DatasheetFontHeight =11
     ItemSuffix =33
-    Left =4665
-    Top =2040
-    Right =20760
-    Bottom =11280
+    Left =495
+    Top =2445
+    Right =16590
+    Bottom =11685
     DatasheetGridlinesColor =15921906
     RecSrcDt = Begin
         0x19205bcaca15e540
@@ -547,6 +546,7 @@ Begin Form
                     End
                 End
                 Begin Subform
+                    Enabled = NotDefault
                     OverlapFlags =85
                     OldBorderStyle =0
                     Left =300
@@ -660,6 +660,7 @@ Begin Form
                     End
                 End
                 Begin Subform
+                    Enabled = NotDefault
                     OverlapFlags =85
                     OldBorderStyle =0
                     Left =6780
@@ -774,6 +775,7 @@ Begin Form
                     End
                 End
                 Begin Subform
+                    Enabled = NotDefault
                     OverlapFlags =85
                     OldBorderStyle =0
                     Left =11160
@@ -888,6 +890,7 @@ Begin Form
                     End
                 End
                 Begin Subform
+                    Enabled = NotDefault
                     OverlapFlags =85
                     OldBorderStyle =0
                     Left =3480
@@ -1016,6 +1019,7 @@ Begin Form
                     LayoutCachedHeight =1410
                 End
                 Begin Subform
+                    Enabled = NotDefault
                     OverlapFlags =85
                     OldBorderStyle =0
                     Left =300
@@ -1059,6 +1063,7 @@ Begin Form
                     End
                 End
                 Begin Subform
+                    Enabled = NotDefault
                     OverlapFlags =85
                     OldBorderStyle =0
                     Left =6300
@@ -1102,6 +1107,7 @@ Begin Form
                     End
                 End
                 Begin Subform
+                    Enabled = NotDefault
                     OverlapFlags =85
                     OldBorderStyle =0
                     Left =10680
@@ -1190,17 +1196,12 @@ Dim pHCount As Integer
 Dim tempCount As Integer
 Dim DOCount As Integer
 Dim SpCondCount As Integer
-Dim instrSpecified As Boolean
+Dim instrumentNotNull As Boolean
 
 If Me.NewRecord Then
     DataQualityOK = True
     GoTo Exit_Procedure
 End If
-
-instrSpecified = LookupCodeFromID("ref_WaterQualityInstrument", Me.cbopHInstrumentID) = "None" And _
-        LookupCodeFromID("ref_WaterQualityInstrument", Me.cboTemperatureInstrumentID) = "None" And _
-        LookupCodeFromID("ref_WaterQualityInstrument", Me.cboDOInstrumentID) = "None" And _
-        LookupCodeFromID("ref_WaterQualityInstrument", Me.cboSpCondInstrumentID) = "None"
 
 dataCollected = LookupCodeFromID("lookup_WaterQualityDataCollected", Me.cboWaterQualityDataCollectedID)
 pHCount = Me.sfrmWaterQualitypH.Form.RowCount()
@@ -1210,15 +1211,18 @@ SpCondCount = Me.sfrmWaterQualitySpCond.Form.RowCount()
 
 Select Case dataCollected
 Case "Y"
-    If (pHCount > 0 And LookupCodeFromID("ref_WaterQualityInstrument", Me.cbopHInstrumentID) <> "None") Or _
-        (tempCount > 0 And LookupCodeFromID("ref_WaterQualityInstrument", Me.cboTemperatureInstrumentID) <> "None") Or _
-        (DOCount > 0 And LookupCodeFromID("ref_WaterQualityInstrument", Me.cboDOInstrumentID) <> "None") Or _
-        (SpCondCount > 0 And LookupCodeFromID("ref_WaterQualityInstrument", Me.cboSpCondInstrumentID) <> "None") Then
+    'If data are collected, at least one wq measurement must have data entered and an instrument specified
+    If ((pHCount > 0 And Nz(LookupCodeFromID("ref_WaterQualityInstrument", Me.cbopHInstrumentID)) <> "None") Or _
+        (tempCount > 0 And Nz(LookupCodeFromID("ref_WaterQualityInstrument", Me.cboTemperatureInstrumentID)) <> "None") Or _
+        (DOCount > 0 And Nz(LookupCodeFromID("ref_WaterQualityInstrument", Me.cboDOInstrumentID)) <> "None") Or _
+        (SpCondCount > 0 And Nz(LookupCodeFromID("ref_WaterQualityInstrument", Me.cboSpCondInstrumentID)) <> "None")) And _
+        RequiredFieldsPopulated Then
         DataQualityOK = True
     Else: DataQualityOK = False
     End If
 Case "NIW", "NO", "NU"
-    If (pHCount + tempCount + DOCount + SpCondCount) = 0 Then
+    'If data are not collected, then there should be no data entered. Instruments can be specified, because it may still be necessary to record a calibration
+    If (pHCount + tempCount + DOCount + SpCondCount) = 0 And RequiredFieldsPopulated Then
         DataQualityOK = True
     Else: DataQualityOK = False
     End If
@@ -1270,10 +1274,10 @@ On Error GoTo Error_Handler
     Dim ObservationExists As Boolean
     Dim YesLookupID As Integer
     
-    ObservationExists = CheckRecExists(Me.sfrmWaterQualitypH.Form.RecordsetClone, "WaterQualityActivityID = " & Me.ID) Or _
-                        CheckRecExists(Me.sfrmWaterQualityDO.Form.RecordsetClone, "WaterQualityActivityID = " & Me.ID) Or _
-                        CheckRecExists(Me.sfrmWaterQualitySpCond.Form.RecordsetClone, "WaterQualityActivityID = " & Me.ID) Or _
-                        CheckRecExists(Me.sfrmWaterQualityTemperature.Form.RecordsetClone, "WaterQualityActivityID = " & Me.ID)
+    ObservationExists = Me.sfrmWaterQualitypH.Form.RowCount() > 0 Or _
+                        Me.sfrmWaterQualityDO.Form.RowCount() > 0 Or _
+                        Me.sfrmWaterQualitySpCond.Form.RowCount() > 0 Or _
+                        Me.sfrmWaterQualityTemperature.Form.RowCount() > 0
     YesLookupID = LookupIDFromCode("lookup_WaterQualityDataCollected", "Y")
 
     If Me.cboWaterQualityDataCollectedID = YesLookupID Then
@@ -1287,17 +1291,15 @@ On Error GoTo Error_Handler
         "If you are sure you want to change ""Water Quality Data Collected?"" to ""No"", please delete your measurements first."), vbOKOnly + vbExclamation, "Existing Records"
         cboWaterQualityDataCollectedID = YesLookupID
         EnableSubforms (True)
-    Else 'no data collected and no measurements exist so set intruments to none
+    Else 'no data collected and no measurements exist
         EnableSubforms (False)
-        Me.cbopHInstrumentID.Value = LookupIDFromLabel("ref_WaterQualityInstrument", "None")
-        Me.cboDOInstrumentID.Value = LookupIDFromLabel("ref_WaterQualityInstrument", "None")
-        Me.cboSpCondInstrumentID.Value = LookupIDFromLabel("ref_WaterQualityInstrument", "None")
-        Me.cboTemperatureInstrumentID.Value = LookupIDFromLabel("ref_WaterQualityInstrument", "None")
     End If
     
-    DoCmd.Save acDefault
-    Forms!frm_Visit!sfrmActivityDashboard.Form.Requery
-
+    If RequiredFieldsPopulated Then
+        DoCmd.Save acDefault
+        Forms!frm_Visit!sfrmActivityDashboard.Form.Requery
+    End If
+    
 Exit_Sub:
     Exit Sub
 Error_Handler:
@@ -1423,11 +1425,11 @@ Public Function RequiredFieldsPopulated() As Boolean
     'Check that required fields are populated to facilitate disabling subforms until requirements are met (mel 4/2018)
     On Error GoTo Error_Handler
 
-        If Not IsNull(Me.WaterQualityDataCollectedID) And _
-            Not IsNull(Me.pHInstrumentID) And _
-            Not IsNull(Me.DOInstrumentID) And _
-            Not IsNull(Me.SpCondInstrumentID) And _
-            Not IsNull(Me.TemperatureInstrumentID) Then
+        If Not IsNull(Me.cboWaterQualityDataCollectedID) And _
+            Not IsNull(Me.cbopHInstrumentID) And _
+            Not IsNull(Me.cboDOInstrumentID) And _
+            Not IsNull(Me.cboSpCondInstrumentID) And _
+            Not IsNull(Me.cboTemperatureInstrumentID) Then
                 RequiredFieldsPopulated = True
         Else
             RequiredFieldsPopulated = False

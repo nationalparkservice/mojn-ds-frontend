@@ -22,12 +22,12 @@ Begin Form
     Width =16620
     DatasheetFontHeight =11
     ItemSuffix =238
-    Left =3690
-    Top =705
-    Right =20310
-    Bottom =11760
+    Left =3795
+    Top =465
+    Right =20415
+    Bottom =11520
     DatasheetGridlinesColor =15921906
-    Filter ="[ID]=381"
+    Filter ="ID = 376"
     RecSrcDt = Begin
         0xab2688a2f412e540
     End
@@ -1897,7 +1897,7 @@ Begin Form
                                     OldBorderStyle =0
                                     Left =120
                                     Top =540
-                                    Width =16110
+                                    Width =16275
                                     Height =9239
                                     BorderColor =10921638
                                     Name ="sfrmInvasivesActivity"
@@ -1908,7 +1908,7 @@ Begin Form
 
                                     LayoutCachedLeft =120
                                     LayoutCachedTop =540
-                                    LayoutCachedWidth =16230
+                                    LayoutCachedWidth =16395
                                     LayoutCachedHeight =9779
                                 End
                             End

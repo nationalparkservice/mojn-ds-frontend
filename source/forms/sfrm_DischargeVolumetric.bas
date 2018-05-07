@@ -9,6 +9,7 @@ Begin Form
     NavigationButtons = NotDefault
     CloseButton = NotDefault
     DividingLines = NotDefault
+    FilterOn = NotDefault
     AllowDesignChanges = NotDefault
     ScrollBars =2
     PictureAlignment =2
@@ -18,10 +19,10 @@ Begin Form
     Width =3780
     DatasheetFontHeight =11
     ItemSuffix =6
-    Left =2970
-    Top =4410
-    Right =7830
-    Bottom =8760
+    Left =4080
+    Top =4635
+    Right =8940
+    Bottom =8985
     DatasheetGridlinesColor =15921906
     RecSrcDt = Begin
         0xad035cf77615e540
@@ -372,6 +373,50 @@ Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 Option Compare Database
 Option Explicit
+
+Const strcFormName As String = "sfrm_DischargeEstimated"
+
+Public Function RowCount() As Integer
+
+RowCount = Me.RecordsetClone.RecordCount
+
+End Function
+
+Public Function DataQualityOK() As Boolean
+On Error GoTo Error_Handler
+
+Dim rs As DAO.Recordset
+
+'If no data, return true and exit
+If Not Me.Dirty And RowCount() = 0 Then
+    DataQualityOK = True
+    GoTo Exit_Procedure
+End If
+
+Set rs = Me.RecordsetClone
+
+'Valid data:
+'   Container volumes are > 0, fill times are > 0, and estimated captures are between 0 and 100
+DataQualityOK = True
+With rs
+    .MoveLast
+    .MoveFirst
+    Do Until .EOF
+        DataQualityOK = DataQualityOK And _
+            (Nz(!ContainerVolume_mL) > 0) And _
+            (Nz(!FillTime_seconds) > 0) And _
+            (Nz(!EstimatedCapture_percent) > 0) And _
+            (Nz(!EstimatedCapture_percent) <= 100)
+        .MoveNext
+    Loop
+End With
+
+Exit_Procedure:
+    Exit Function
+Error_Handler:
+    MsgBox "Form: " & strcFormName & vbNewLine & "Fxn: DataQualityOK" & vbNewLine & "Error #" & Err.Number & ": " & Err.Description, vbCritical
+    Resume Exit_Procedure
+End Function
 
 Private Sub cmdDeleteVolumetricDischarge_Click()
 

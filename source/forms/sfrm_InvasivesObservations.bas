@@ -10,7 +10,6 @@ Begin Form
     NavigationButtons = NotDefault
     CloseButton = NotDefault
     DividingLines = NotDefault
-    FilterOn = NotDefault
     AllowDesignChanges = NotDefault
     ScrollBars =2
     BorderStyle =0
@@ -21,10 +20,10 @@ Begin Form
     Width =15960
     DatasheetFontHeight =11
     ItemSuffix =40
-    Left =3510
-    Top =3390
-    Right =19035
-    Bottom =8790
+    Left =720
+    Top =3540
+    Right =16695
+    Bottom =8970
     DatasheetGridlinesColor =15921906
     RecSrcDt = Begin
         0x8e8931077915e540
@@ -350,17 +349,15 @@ Begin Form
                     OverlapFlags =85
                     TextAlign =2
                     Left =10260
-                    Top =240
-                    Width =900
-                    Height =240
+                    Width =675
+                    Height =480
                     FontSize =10
                     BorderColor =6108695
                     Name ="lblInvasiveUTMZone"
                     Caption ="UTM Zone"
                     GridlineColor =10921638
                     LayoutCachedLeft =10260
-                    LayoutCachedTop =240
-                    LayoutCachedWidth =11160
+                    LayoutCachedWidth =10935
                     LayoutCachedHeight =480
                     ThemeFontIndex =-1
                     BorderThemeColorIndex =-1
@@ -371,16 +368,16 @@ Begin Form
                 Begin Label
                     OverlapFlags =85
                     TextAlign =2
-                    Left =11220
+                    Left =10995
                     Top =240
-                    Width =2400
+                    Width =2625
                     Height =240
                     FontSize =10
                     BorderColor =6108695
                     Name ="lblInvasiveProtectedStatusID"
                     Caption ="*Protected Status"
                     GridlineColor =10921638
-                    LayoutCachedLeft =11220
+                    LayoutCachedLeft =10995
                     LayoutCachedTop =240
                     LayoutCachedWidth =13620
                     LayoutCachedHeight =480
@@ -594,7 +591,7 @@ Begin Form
                     ColumnCount =2
                     ListWidth =720
                     Left =10260
-                    Width =900
+                    Width =675
                     Height =300
                     TabIndex =7
                     BorderColor =14211288
@@ -610,7 +607,7 @@ Begin Form
 
                     ShowOnlyRowSourceValues =255
                     LayoutCachedLeft =10260
-                    LayoutCachedWidth =11160
+                    LayoutCachedWidth =10935
                     LayoutCachedHeight =300
                     ThemeFontIndex =-1
                     BackThemeColorIndex =-1
@@ -665,8 +662,8 @@ Begin Form
                     IMESentenceMode =3
                     ColumnCount =3
                     ListWidth =2160
-                    Left =11220
-                    Width =2400
+                    Left =10995
+                    Width =2625
                     Height =300
                     TabIndex =8
                     BorderColor =14211288
@@ -681,7 +678,7 @@ Begin Form
                     GridlineColor =10921638
                     AllowValueListEdits =0
 
-                    LayoutCachedLeft =11220
+                    LayoutCachedLeft =10995
                     LayoutCachedWidth =13620
                     LayoutCachedHeight =300
                     ThemeFontIndex =-1
@@ -890,11 +887,17 @@ Error_Handler:
 End Sub
 
 Private Sub cmdDeleteInvasivesObservation_Click()
-    
-'Delete Invasive Species observation record, with photo file records from data_InvasivesObservation, data_InvasivesPhoto
-    
-On Error Resume Next
+On Error GoTo Error_Handler
+'Delete Invasive Species observation record
+
 DeleteRecord Me, Me.NewRecord
+
+Exit_Sub:
+    Exit Sub
+    
+Error_Handler:
+    MsgBox "Form: " & mstrcFormName & vbNewLine & "Sub:  cmdDeleteInvasivesObservation_Click" & vbNewLine & "Error #" & Err.Number & ": " & Err.Description, vbCritical
+    Resume Exit_Sub
 
 End Sub
 

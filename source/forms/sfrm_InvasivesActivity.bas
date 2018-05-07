@@ -8,7 +8,6 @@ Begin Form
     NavigationButtons = NotDefault
     CloseButton = NotDefault
     DividingLines = NotDefault
-    FilterOn = NotDefault
     AllowDesignChanges = NotDefault
     DefaultView =0
     ScrollBars =0
@@ -17,13 +16,13 @@ Begin Form
     Cycle =1
     GridX =24
     GridY =24
-    Width =15840
+    Width =16220
     DatasheetFontHeight =11
     ItemSuffix =11
-    Left =4560
-    Top =2175
-    Right =20670
-    Bottom =11415
+    Left =495
+    Top =2445
+    Right =16770
+    Bottom =11685
     DatasheetGridlinesColor =15921906
     RecSrcDt = Begin
         0x340b8c157915e540
@@ -254,9 +253,9 @@ Begin Form
                     OverlapFlags =215
                     OldBorderStyle =0
                     Left =240
-                    Top =1140
-                    Width =15530
-                    Height =5404
+                    Top =1110
+                    Width =15980
+                    Height =5434
                     TabIndex =1
                     BorderColor =65536
                     Name ="sfrmInvasivesObservations"
@@ -266,8 +265,8 @@ Begin Form
                     GridlineColor =10921638
 
                     LayoutCachedLeft =240
-                    LayoutCachedTop =1140
-                    LayoutCachedWidth =15770
+                    LayoutCachedTop =1110
+                    LayoutCachedWidth =16220
                     LayoutCachedHeight =6544
                     BorderThemeColorIndex =-1
                     BorderShade =100.0

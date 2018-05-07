@@ -7,6 +7,7 @@ Begin Form
     AllowDeletions = NotDefault
     DividingLines = NotDefault
     AllowAdditions = NotDefault
+    FilterOn = NotDefault
     AllowEdits = NotDefault
     AllowDesignChanges = NotDefault
     ScrollBars =2
@@ -18,23 +19,23 @@ Begin Form
     Width =6840
     DatasheetFontHeight =11
     ItemSuffix =42
-    Left =4800
-    Top =5160
-    Right =11580
-    Bottom =10635
+    Left =720
+    Top =3510
+    Right =7755
+    Bottom =9240
     DatasheetGridlinesColor =15921906
     RecSrcDt = Begin
-        0xd251bf69f519e540
+        0x9556912e0e1be540
     End
     RecordSource ="SELECT data_Photo.ID, data_Photo.PhotoActivityID, data_Photo.DateTaken, data_Pho"
         "to.PhotoDescriptionCodeID, data_Photo.IsLibraryPhotoID, data_Photo.OriginalFileP"
-        "ath, data_Photo.RenamedFilePath, data_Photo.GPSUnitID, data_Photo.PhotoID, data_"
-        "Photo.HorizontalDatumID, data_Photo.UTMZoneID, data_Photo.UtmX_m, data_Photo.Utm"
-        "Y_m, data_Photo.Notes, ref_PhotoDescriptionCode.Label, lookup_PhotoSOP.Label, re"
-        "f_PhotoDescriptionCode.PhotoSOPID FROM lookup_PhotoSOP RIGHT JOIN (ref_PhotoDesc"
-        "riptionCode RIGHT JOIN data_Photo ON ref_PhotoDescriptionCode.ID = data_Photo.Ph"
-        "otoDescriptionCodeID) ON lookup_PhotoSOP.ID = ref_PhotoDescriptionCode.PhotoSOPI"
-        "D ORDER BY lookup_PhotoSOP.Label; "
+        "ath, data_Photo.RenamedFilePath, data_Photo.GPSUnitID, data_Photo.HorizontalDatu"
+        "mID, data_Photo.UTMZoneID, data_Photo.UtmX_m, data_Photo.UtmY_m, data_Photo.Note"
+        "s, ref_PhotoDescriptionCode.Label, lookup_PhotoSOP.Label, ref_PhotoDescriptionCo"
+        "de.PhotoSOPID FROM lookup_PhotoSOP RIGHT JOIN (ref_PhotoDescriptionCode RIGHT JO"
+        "IN data_Photo ON ref_PhotoDescriptionCode.ID = data_Photo.PhotoDescriptionCodeID"
+        ") ON lookup_PhotoSOP.ID = ref_PhotoDescriptionCode.PhotoSOPID ORDER BY lookup_Ph"
+        "otoSOP.Label; "
     Caption ="sfrm_PhotoList"
     DatasheetFontName ="Calibri"
     PrtMip = Begin
@@ -382,6 +383,11 @@ End Sub
 
 Private Sub cmdPhotoClick_Click()
 
-Disp_Image Me.RenamedFilePath
+'Make sure the photo actually can be found, and display it if it exists (if not, it's probably because the connection to the shared drive is down)
+If FileExists(Me.RenamedFilePath) Then
+    Disp_Image Me.RenamedFilePath
+Else
+    MsgBox ("Could not find photo on shared drive. Check your network connection. If photo is missing, talk to the data mangement team.")
+End If
 
 End Sub

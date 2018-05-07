@@ -20,10 +20,10 @@ Begin Form
     Width =2940
     DatasheetFontHeight =11
     ItemSuffix =3
-    Left =4050
+    Left =4080
     Top =4665
-    Right =7050
-    Bottom =5415
+    Right =7080
+    Bottom =5400
     DatasheetGridlinesColor =15921906
     RecSrcDt = Begin
         0x335bdaa87615e540
@@ -340,6 +340,40 @@ Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 Option Compare Database
 Option Explicit
+
+Const strcFormName As String = "sfrm_DischargeEstimated"
+
+Public Function RowCount() As Integer
+
+RowCount = Me.RecordsetClone.RecordCount
+
+End Function
+
+Public Function DataQualityOK() As Integer
+On Error GoTo Error_Handler
+
+Dim estDischargeFlag As String
+estDischargeFlag = Nz(LookupCodeFromID("lookup_DischargeEstimatedFlag", Me.cboEstimatedDischargeFlagID))
+
+'If no data, return true and exit
+If Not Me.Dirty And RowCount() = 0 Then
+    DataQualityOK = True
+    GoTo Exit_Procedure
+End If
+
+'Valid data:
+'   Flag is < and est. discharge is 1
+'   Flag is null and est. discharge is >1
+DataQualityOK = ((estDischargeFlag = "<") And (Me.txtDischarge_LitersPerMinute = 1)) Or _
+                ((estDischargeFlag = "") And (Me.txtDischarge_LitersPerMinute > 1))
+
+
+Exit_Procedure:
+    Exit Function
+Error_Handler:
+    MsgBox "Form: " & strcFormName & vbNewLine & "Fxn: DataQualityOK" & vbNewLine & "Error #" & Err.Number & ": " & Err.Description, vbCritical
+    Resume Exit_Procedure
+End Function
 
 Private Sub cboEstimatedDischargeFlagID_Change()
     

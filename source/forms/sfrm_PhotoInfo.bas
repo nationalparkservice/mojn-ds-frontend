@@ -7,7 +7,6 @@ Begin Form
     AllowDeletions = NotDefault
     DividingLines = NotDefault
     AllowAdditions = NotDefault
-    FilterOn = NotDefault
     AllowDesignChanges = NotDefault
     DefaultView =0
     ScrollBars =0
@@ -21,15 +20,11 @@ Begin Form
     Width =8055
     DatasheetFontHeight =11
     ItemSuffix =115
-    Left =10875
-    Top =7245
-    Right =19110
-    Bottom =10725
+    Left =9045
+    Top =8775
+    Right =17025
+    Bottom =12000
     DatasheetGridlinesColor =15921906
-    Filter ="data_Photo.ID = 3299"
-    RecSrcDt = Begin
-        0x760844df3519e540
-    End
     RecordSource ="SELECT data_Photo.*, lookup_IsLibraryPhoto.Label, ref_PhotoDescriptionCode.Label"
         " FROM ref_PhotoDescriptionCode RIGHT JOIN (lookup_IsLibraryPhoto RIGHT JOIN data"
         "_Photo ON lookup_IsLibraryPhoto.ID = data_Photo.IsLibraryPhotoID) ON ref_PhotoDe"

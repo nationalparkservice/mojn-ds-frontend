@@ -4,32 +4,25 @@ Begin Form
     RecordSelectors = NotDefault
     NavigationButtons = NotDefault
     DividingLines = NotDefault
+    DataEntry = NotDefault
     AllowDesignChanges = NotDefault
     ScrollBars =2
     PictureAlignment =2
     DatasheetGridlinesBehavior =3
     GridX =24
     GridY =24
-    Width =3900
+    Width =6780
     DatasheetFontHeight =11
-    ItemSuffix =20
-    Left =10020
-    Top =5640
-    Right =13935
-    Bottom =7725
+    ItemSuffix =21
+    Left =3960
+    Top =8040
+    Right =9825
+    Bottom =9645
     DatasheetGridlinesColor =15921906
     RecSrcDt = Begin
-        0x90ece993ce1ae540
+        0x81ca1f3e761be540
     End
-    RecordSource ="SELECT data_CalibrationDO.ID, data_CalibrationDO.CalibrationTime, data_Calibrati"
-        "onDO.CalibrationDate, data_CalibrationDO.PreCalibrationReading_percent, data_Cal"
-        "ibrationDO.PreCalibrationTemperature_C, data_CalibrationDO.PostCalibrationReadin"
-        "g_percent, data_CalibrationDO.PostCalibrationTemperature_C, data_CalibrationDO.B"
-        "arometricPressure_mmHg, data_CalibrationDO.DOInstrumentID, data_CalibrationDO.No"
-        "tes, data_CalibrationDO.DateCreated FROM data_CalibrationDO WHERE (((data_Calibr"
-        "ationDO.CalibrationDate)<Forms!frm_Visit!VisitDate) And ((data_CalibrationDO.DOI"
-        "nstrumentID)=Forms!frm_Visit!sfrm_WaterQualityActivity.Form!cboDOInstrumentID)) "
-        "ORDER BY data_CalibrationDO.CalibrationDate DESC; "
+    RecordSource ="data_CalibrationpH"
     DatasheetFontName ="Calibri"
     PrtMip = Begin
         0x6801000068010000680100006801000000000000201c0000e010000001000000 ,
@@ -185,7 +178,7 @@ Begin Form
             GridlineShade =65.0
         End
         Begin FormHeader
-            Height =225
+            Height =180
             BackColor =15921906
             Name ="FormHeader"
             AlternateBackThemeColorIndex =1
@@ -229,61 +222,112 @@ Begin Form
                     FontItalic = NotDefault
                     OverlapFlags =85
                     TextAlign =2
-                    Left =2550
-                    Width =645
-                    Height =225
+                    Left =2025
+                    Width =495
+                    Height =180
                     FontSize =9
                     BorderColor =8355711
                     ForeColor =8355711
-                    Name ="Label15"
-                    Caption ="Temp"
+                    Name ="Label14"
+                    Caption ="Std"
                     GridlineColor =10921638
-                    LayoutCachedLeft =2550
-                    LayoutCachedWidth =3195
-                    LayoutCachedHeight =225
+                    LayoutCachedLeft =2025
+                    LayoutCachedWidth =2520
+                    LayoutCachedHeight =180
                 End
                 Begin Label
                     FontItalic = NotDefault
                     OverlapFlags =85
                     TextAlign =2
-                    Left =3225
-                    Width =645
-                    Height =225
+                    Left =2565
+                    Width =615
+                    Height =180
+                    FontSize =9
+                    BorderColor =8355711
+                    ForeColor =8355711
+                    Name ="Label15"
+                    Caption ="Pre C"
+                    GridlineColor =10921638
+                    LayoutCachedLeft =2565
+                    LayoutCachedWidth =3180
+                    LayoutCachedHeight =180
+                End
+                Begin Label
+                    FontItalic = NotDefault
+                    OverlapFlags =85
+                    TextAlign =2
+                    Left =3240
+                    Width =615
+                    Height =180
                     FontSize =9
                     BorderColor =8355711
                     ForeColor =8355711
                     Name ="Label16"
-                    Caption ="DO%"
+                    Caption ="Pre pH"
                     GridlineColor =10921638
-                    LayoutCachedLeft =3225
-                    LayoutCachedWidth =3870
-                    LayoutCachedHeight =225
+                    LayoutCachedLeft =3240
+                    LayoutCachedWidth =3855
+                    LayoutCachedHeight =180
+                End
+                Begin Label
+                    FontItalic = NotDefault
+                    OverlapFlags =93
+                    TextAlign =2
+                    Left =3885
+                    Width =645
+                    Height =180
+                    FontSize =9
+                    BorderColor =8355711
+                    ForeColor =8355711
+                    Name ="Label17"
+                    Caption ="Post C"
+                    GridlineColor =10921638
+                    LayoutCachedLeft =3885
+                    LayoutCachedWidth =4530
+                    LayoutCachedHeight =180
+                End
+                Begin Label
+                    FontItalic = NotDefault
+                    OverlapFlags =215
+                    TextAlign =2
+                    Left =4500
+                    Width =645
+                    Height =180
+                    FontSize =9
+                    BorderColor =8355711
+                    ForeColor =8355711
+                    Name ="Label18"
+                    Caption ="Post pH"
+                    GridlineColor =10921638
+                    LayoutCachedLeft =4500
+                    LayoutCachedWidth =5145
+                    LayoutCachedHeight =180
                 End
             End
         End
         Begin Section
-            Height =1755
+            Height =1035
             BackColor =15921906
             Name ="Detail"
             AlternateBackColor =15921906
             Begin
                 Begin TextBox
-                    OverlapFlags =93
+                    OverlapFlags =85
                     IMESentenceMode =3
-                    Left =1200
-                    Top =420
-                    Width =780
+                    Left =2040
+                    Top =60
+                    Width =480
                     Height =315
                     BorderColor =14211288
                     ForeColor =4210752
-                    Name ="StandardValue_pH"
-                    ControlSource ="BarometricPressure_mmHg"
+                    Name ="txtStandardValue_pH"
+                    ControlSource ="StandardValue_pH"
                     GridlineColor =10921638
 
-                    LayoutCachedLeft =1200
-                    LayoutCachedTop =420
-                    LayoutCachedWidth =1980
-                    LayoutCachedHeight =735
+                    LayoutCachedLeft =2040
+                    LayoutCachedTop =60
+                    LayoutCachedWidth =2520
+                    LayoutCachedHeight =375
                     BorderThemeColorIndex =-1
                     BorderShade =100.0
                 End
@@ -297,7 +341,7 @@ Begin Form
                     TabIndex =1
                     BorderColor =14211288
                     ForeColor =4210752
-                    Name ="PreCalibrationTemperature_C"
+                    Name ="txtPreCalibrationTemperature_C"
                     ControlSource ="PreCalibrationTemperature_C"
                     GridlineColor =10921638
 
@@ -318,8 +362,8 @@ Begin Form
                     TabIndex =2
                     BorderColor =14211288
                     ForeColor =4210752
-                    Name ="Text7"
-                    ControlSource ="PreCalibrationReading_percent"
+                    Name ="txtPreCalibrationReading_pH"
+                    ControlSource ="PreCalibrationReading_pH"
                     GridlineColor =10921638
 
                     LayoutCachedLeft =3240
@@ -332,42 +376,42 @@ Begin Form
                 Begin TextBox
                     OverlapFlags =85
                     IMESentenceMode =3
-                    Left =2580
-                    Top =420
+                    Left =3900
+                    Top =60
                     Width =600
                     Height =315
                     TabIndex =3
                     BorderColor =14211288
                     ForeColor =4210752
-                    Name ="Text8"
+                    Name ="txtPostCalibrationTemperature_C"
                     ControlSource ="PostCalibrationTemperature_C"
                     GridlineColor =10921638
 
-                    LayoutCachedLeft =2580
-                    LayoutCachedTop =420
-                    LayoutCachedWidth =3180
-                    LayoutCachedHeight =735
+                    LayoutCachedLeft =3900
+                    LayoutCachedTop =60
+                    LayoutCachedWidth =4500
+                    LayoutCachedHeight =375
                     BorderThemeColorIndex =-1
                     BorderShade =100.0
                 End
                 Begin TextBox
                     OverlapFlags =85
                     IMESentenceMode =3
-                    Left =3240
-                    Top =420
+                    Left =4560
+                    Top =60
                     Width =600
                     Height =315
                     TabIndex =4
                     BorderColor =14211288
                     ForeColor =4210752
-                    Name ="Text9"
-                    ControlSource ="PostCalibrationReading_percent"
+                    Name ="txtPostCalibrationReading_pH"
+                    ControlSource ="PostCalibrationReading_pH"
                     GridlineColor =10921638
 
-                    LayoutCachedLeft =3240
-                    LayoutCachedTop =420
-                    LayoutCachedWidth =3840
-                    LayoutCachedHeight =735
+                    LayoutCachedLeft =4560
+                    LayoutCachedTop =60
+                    LayoutCachedWidth =5160
+                    LayoutCachedHeight =375
                     BorderThemeColorIndex =-1
                     BorderShade =100.0
                 End
@@ -381,7 +425,7 @@ Begin Form
                     TabIndex =5
                     BorderColor =14211288
                     ForeColor =4210752
-                    Name ="Text10"
+                    Name ="txtCalibrationDate"
                     ControlSource ="CalibrationDate"
                     GridlineColor =10921638
 
@@ -402,7 +446,7 @@ Begin Form
                     TabIndex =6
                     BorderColor =14211288
                     ForeColor =4210752
-                    Name ="Text11"
+                    Name ="txtCalibrationTime"
                     ControlSource ="CalibrationTime"
                     Format ="Short Time"
                     GridlineColor =10921638
@@ -418,9 +462,9 @@ Begin Form
                     OverlapFlags =85
                     IMESentenceMode =3
                     Left =60
-                    Top =840
-                    Width =3780
-                    Height =780
+                    Top =420
+                    Width =5100
+                    Height =540
                     FontSize =10
                     TabIndex =7
                     BorderColor =14211288
@@ -430,80 +474,44 @@ Begin Form
                     GridlineColor =10921638
 
                     LayoutCachedLeft =60
-                    LayoutCachedTop =840
-                    LayoutCachedWidth =3840
-                    LayoutCachedHeight =1620
+                    LayoutCachedTop =420
+                    LayoutCachedWidth =5160
+                    LayoutCachedHeight =960
                     BorderThemeColorIndex =-1
                     BorderShade =100.0
-                End
-                Begin Label
-                    FontItalic = NotDefault
-                    OverlapFlags =85
-                    TextAlign =3
-                    Left =2100
-                    Top =420
-                    Width =420
-                    Height =225
-                    FontSize =9
-                    BorderColor =8355711
-                    ForeColor =8355711
-                    Name ="Label18"
-                    Caption ="Post"
-                    GridlineColor =10921638
-                    LayoutCachedLeft =2100
-                    LayoutCachedTop =420
-                    LayoutCachedWidth =2520
-                    LayoutCachedHeight =645
-                End
-                Begin Label
-                    FontItalic = NotDefault
-                    OverlapFlags =85
-                    TextAlign =3
-                    Left =2100
-                    Top =60
-                    Width =420
-                    Height =225
-                    FontSize =9
-                    BorderColor =8355711
-                    ForeColor =8355711
-                    Name ="Label19"
-                    Caption ="Pre"
-                    GridlineColor =10921638
-                    LayoutCachedLeft =2100
-                    LayoutCachedTop =60
-                    LayoutCachedWidth =2520
-                    LayoutCachedHeight =285
-                End
-                Begin Label
-                    FontItalic = NotDefault
-                    OverlapFlags =87
-                    TextAlign =2
-                    Left =60
-                    Top =420
-                    Width =1140
-                    Height =225
-                    FontSize =9
-                    BorderColor =8355711
-                    ForeColor =8355711
-                    Name ="Label14"
-                    Caption ="Atm Pressure"
-                    GridlineColor =10921638
-                    LayoutCachedLeft =60
-                    LayoutCachedTop =420
-                    LayoutCachedWidth =1200
-                    LayoutCachedHeight =645
                 End
                 Begin Line
                     OverlapFlags =85
                     Left =60
-                    Top =1740
-                    Width =3720
+                    Top =1020
+                    Width =5400
                     Name ="Line13"
                     GridlineColor =10921638
                     LayoutCachedLeft =60
-                    LayoutCachedTop =1740
-                    LayoutCachedWidth =3780
-                    LayoutCachedHeight =1740
+                    LayoutCachedTop =1020
+                    LayoutCachedWidth =5460
+                    LayoutCachedHeight =1020
+                End
+                Begin TextBox
+                    Visible = NotDefault
+                    OverlapFlags =85
+                    IMESentenceMode =3
+                    Left =5220
+                    Top =60
+                    Width =300
+                    Height =315
+                    TabIndex =8
+                    BorderColor =10921638
+                    ForeColor =4210752
+                    Name ="txtpHInstrumentID"
+                    ControlSource ="pHInstrumentID"
+                    DefaultValue ="=[Forms]![frm_Visit]![sfrm_WaterQualityActivity].[Form]![pHInstrumentID]"
+                    GridlineColor =10921638
+
+                    LayoutCachedLeft =5220
+                    LayoutCachedTop =60
+                    LayoutCachedWidth =5520
+                    LayoutCachedHeight =375
                 End
             End
         End
@@ -524,7 +532,21 @@ Attribute VB_Exposed = False
 Option Compare Database
 
 Private Sub cmdDeleteRecord_Click()
-
+    
 DeleteRecord Me, Me.NewRecord
 
 End Sub
+
+Public Function SaveRecord() As Boolean
+On Error GoTo Error_Handler
+
+DoCmd.RunCommand acCmdSaveRecord
+SaveRecord = True
+
+Exit_Procedure:
+    Exit Function
+Error_Handler:
+    MsgBox ("Record cannot be saved at this time. Make sure all fields are filled out correctly.")
+    SaveRecord = False
+    GoTo Exit_Procedure
+End Function

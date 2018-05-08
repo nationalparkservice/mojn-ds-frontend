@@ -13,10 +13,10 @@ Begin Form
     Width =3839
     DatasheetFontHeight =11
     ItemSuffix =7
-    Left =10500
-    Top =3240
-    Right =14265
-    Bottom =4845
+    Left =4125
+    Top =4500
+    Right =7890
+    Bottom =6105
     DatasheetGridlinesColor =15921906
     RecSrcDt = Begin
         0xd0852f1fce15e540
@@ -178,7 +178,6 @@ Begin Form
             AlternateBackShade =95.0
             Begin
                 Begin Label
-                    FontItalic = NotDefault
                     OverlapFlags =93
                     TextAlign =2
                     Left =45
@@ -186,16 +185,16 @@ Begin Form
                     Height =225
                     FontSize =9
                     BorderColor =8355711
-                    ForeColor =8355711
                     Name ="Label2"
                     Caption ="Percent"
                     GridlineColor =10921638
                     LayoutCachedLeft =45
                     LayoutCachedWidth =1260
                     LayoutCachedHeight =225
+                    ForeThemeColorIndex =-1
+                    ForeTint =100.0
                 End
                 Begin Label
-                    FontItalic = NotDefault
                     OverlapFlags =85
                     TextAlign =2
                     Left =2580
@@ -203,16 +202,16 @@ Begin Form
                     Height =202
                     FontSize =9
                     BorderColor =8355711
-                    ForeColor =8355711
                     Name ="Label3"
                     Caption ="Flag"
                     GridlineColor =10921638
                     LayoutCachedLeft =2580
                     LayoutCachedWidth =3480
                     LayoutCachedHeight =202
+                    ForeThemeColorIndex =-1
+                    ForeTint =100.0
                 End
                 Begin Label
-                    FontItalic = NotDefault
                     OverlapFlags =215
                     TextAlign =2
                     Left =1245
@@ -220,13 +219,14 @@ Begin Form
                     Height =225
                     FontSize =9
                     BorderColor =8355711
-                    ForeColor =8355711
                     Name ="Label6"
                     Caption ="mg/l"
                     GridlineColor =10921638
                     LayoutCachedLeft =1245
                     LayoutCachedWidth =2490
                     LayoutCachedHeight =225
+                    ForeThemeColorIndex =-1
+                    ForeTint =100.0
                 End
             End
         End

@@ -7,7 +7,6 @@ Begin Form
     AllowDeletions = NotDefault
     DividingLines = NotDefault
     AllowAdditions = NotDefault
-    FilterOn = NotDefault
     AllowEdits = NotDefault
     AllowDesignChanges = NotDefault
     ScrollBars =2
@@ -19,23 +18,20 @@ Begin Form
     Width =6840
     DatasheetFontHeight =11
     ItemSuffix =42
-    Left =720
-    Top =3510
-    Right =7755
-    Bottom =9240
+    Left =8565
+    Top =2460
+    Right =15405
+    Bottom =7230
     DatasheetGridlinesColor =15921906
-    RecSrcDt = Begin
-        0x9556912e0e1be540
-    End
     RecordSource ="SELECT data_Photo.ID, data_Photo.PhotoActivityID, data_Photo.DateTaken, data_Pho"
         "to.PhotoDescriptionCodeID, data_Photo.IsLibraryPhotoID, data_Photo.OriginalFileP"
         "ath, data_Photo.RenamedFilePath, data_Photo.GPSUnitID, data_Photo.HorizontalDatu"
         "mID, data_Photo.UTMZoneID, data_Photo.UtmX_m, data_Photo.UtmY_m, data_Photo.Note"
-        "s, ref_PhotoDescriptionCode.Label, lookup_PhotoSOP.Label, ref_PhotoDescriptionCo"
-        "de.PhotoSOPID FROM lookup_PhotoSOP RIGHT JOIN (ref_PhotoDescriptionCode RIGHT JO"
-        "IN data_Photo ON ref_PhotoDescriptionCode.ID = data_Photo.PhotoDescriptionCodeID"
-        ") ON lookup_PhotoSOP.ID = ref_PhotoDescriptionCode.PhotoSOPID ORDER BY lookup_Ph"
-        "otoSOP.Label; "
+        "s, ref_PhotoDescriptionCode.Label, lookup_PhotoSOP.SortOrder, ref_PhotoDescripti"
+        "onCode.PhotoSOPID, lookup_PhotoSOP.Label FROM lookup_PhotoSOP RIGHT JOIN (ref_Ph"
+        "otoDescriptionCode RIGHT JOIN data_Photo ON ref_PhotoDescriptionCode.ID = data_P"
+        "hoto.PhotoDescriptionCodeID) ON lookup_PhotoSOP.ID = ref_PhotoDescriptionCode.Ph"
+        "otoSOPID ORDER BY lookup_PhotoSOP.SortOrder; "
     Caption ="sfrm_PhotoList"
     DatasheetFontName ="Calibri"
     PrtMip = Begin

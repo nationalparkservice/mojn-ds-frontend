@@ -13,10 +13,10 @@ Begin Form
     Width =2579
     DatasheetFontHeight =11
     ItemSuffix =5
-    Left =12495
-    Top =4710
-    Right =15345
-    Bottom =6570
+    Left =8505
+    Top =4500
+    Right =11100
+    Bottom =6105
     DatasheetGridlinesColor =15921906
     RecSrcDt = Begin
         0x56085c0dce15e540
@@ -178,7 +178,6 @@ Begin Form
             AlternateBackShade =95.0
             Begin
                 Begin Label
-                    FontItalic = NotDefault
                     OverlapFlags =85
                     TextAlign =2
                     Left =45
@@ -186,16 +185,16 @@ Begin Form
                     Height =225
                     FontSize =9
                     BorderColor =8355711
-                    ForeColor =8355711
                     Name ="Label2"
                     Caption ="uS /cm"
                     GridlineColor =10921638
                     LayoutCachedLeft =45
                     LayoutCachedWidth =1260
                     LayoutCachedHeight =225
+                    ForeThemeColorIndex =-1
+                    ForeTint =100.0
                 End
                 Begin Label
-                    FontItalic = NotDefault
                     OverlapFlags =85
                     TextAlign =2
                     Left =1320
@@ -203,13 +202,14 @@ Begin Form
                     Height =202
                     FontSize =9
                     BorderColor =8355711
-                    ForeColor =8355711
                     Name ="Label3"
                     Caption ="Flag"
                     GridlineColor =10921638
                     LayoutCachedLeft =1320
                     LayoutCachedWidth =2220
                     LayoutCachedHeight =202
+                    ForeThemeColorIndex =-1
+                    ForeTint =100.0
                 End
             End
         End

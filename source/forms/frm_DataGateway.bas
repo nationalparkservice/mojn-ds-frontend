@@ -23,12 +23,12 @@ Begin Form
     Width =14400
     DatasheetFontHeight =11
     ItemSuffix =48
-    Left =1260
-    Top =1110
-    Right =15660
-    Bottom =9465
+    Left =3270
+    Top =1230
+    Right =17670
+    Bottom =9585
     DatasheetGridlinesColor =15921906
-    Filter ="[ParkID] = 88"
+    Filter ="[ParkID] = 85"
     OrderBy ="SiteCode"
     RecSrcDt = Begin
         0xc1c4d0d02e11e540
@@ -2540,10 +2540,14 @@ Err_Handler:
 End Sub
 
 Private Sub Form_Close()
-    On Error GoTo Exit_Procedure
+    On Error GoTo Error_Handler
     
     cmdGoogleMaps.HyperlinkAddress = ""
     cmdSiteInfoSheet.HyperlinkAddress = ""
     
 Exit_Procedure:
+    Exit Sub
+Error_Handler:
+    MsgBox "Error #" & Err.Number & ": " & Err.Description, vbCritical
+    Resume Exit_Procedure
 End Sub

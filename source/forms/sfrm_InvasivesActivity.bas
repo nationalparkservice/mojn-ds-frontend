@@ -16,13 +16,13 @@ Begin Form
     Cycle =1
     GridX =24
     GridY =24
-    Width =15840
+    Width =16220
     DatasheetFontHeight =11
     ItemSuffix =11
-    Left =2040
-    Top =2400
-    Right =18150
-    Bottom =11640
+    Left =3390
+    Top =450
+    Right =19410
+    Bottom =9435
     DatasheetGridlinesColor =15921906
     RecSrcDt = Begin
         0x340b8c157915e540
@@ -188,6 +188,18 @@ Begin Form
             BorderShade =65.0
             ShowPageHeaderAndPageFooter =1
         End
+        Begin Chart
+            SpecialEffect =2
+            OldBorderStyle =1
+            ThemeFontIndex =1
+            BackThemeColorIndex =1
+            BorderThemeColorIndex =1
+            BorderShade =65.0
+            ForeThemeColorIndex =2
+            ForeShade =50.0
+            GridlineThemeColorIndex =1
+            GridlineShade =65.0
+        End
         Begin UnboundObjectFrame
             SpecialEffect =2
             OldBorderStyle =1
@@ -241,9 +253,10 @@ Begin Form
                     OverlapFlags =215
                     OldBorderStyle =0
                     Left =240
-                    Top =1140
-                    Width =15530
-                    Height =5404
+                    Top =1110
+                    Width =15980
+                    Height =5434
+                    TabIndex =1
                     BorderColor =65536
                     Name ="sfrmInvasivesObservations"
                     SourceObject ="Form.sfrm_InvasivesObservations"
@@ -252,8 +265,8 @@ Begin Form
                     GridlineColor =10921638
 
                     LayoutCachedLeft =240
-                    LayoutCachedTop =1140
-                    LayoutCachedWidth =15770
+                    LayoutCachedTop =1110
+                    LayoutCachedWidth =16220
                     LayoutCachedHeight =6544
                     BorderThemeColorIndex =-1
                     BorderShade =100.0
@@ -261,6 +274,7 @@ Begin Form
                         Begin Label
                             BackStyle =1
                             OverlapFlags =93
+                            TextAlign =2
                             Left =240
                             Top =840
                             Width =3420
@@ -292,10 +306,9 @@ Begin Form
                     ListWidth =1199
                     Left =2880
                     Top =120
-                    Width =1019
+                    Width =1379
                     Height =315
                     FontSize =12
-                    TabIndex =1
                     BorderColor =10921638
                     ForeColor =2108188
                     ColumnInfo ="\"\";\"\";\"\";\"\";\"\";\"\";\"10\";\"40\""
@@ -318,7 +331,7 @@ Begin Form
 
                     LayoutCachedLeft =2880
                     LayoutCachedTop =120
-                    LayoutCachedWidth =3899
+                    LayoutCachedWidth =4259
                     LayoutCachedHeight =435
                     ConditionalFormat14 = Begin
                         0x01000100000001000000000000000100000000000000f9eded00220000004900 ,
@@ -370,7 +383,7 @@ Begin Form
                     Width =11105
                     Height =966
                     FontSize =10
-                    TabIndex =2
+                    TabIndex =4
                     BorderColor =14211288
                     Name ="txtDataProcessingLevelNote"
                     ControlSource ="DataProcessingLevelNote"
@@ -481,7 +494,7 @@ Begin Form
                     Width =1980
                     Height =238
                     FontSize =10
-                    TabIndex =4
+                    TabIndex =5
                     BackColor =15921906
                     BorderColor =10921638
                     Name ="txtDataProcessingLevelDate"
@@ -583,7 +596,7 @@ Begin Form
                     Top =7020
                     Width =15420
                     Height =723
-                    TabIndex =5
+                    TabIndex =2
                     BorderColor =14211288
                     ForeColor =4210752
                     Name ="Notes"
@@ -618,6 +631,7 @@ Begin Form
                 End
                 Begin TextBox
                     Visible = NotDefault
+                    TabStop = NotDefault
                     OverlapFlags =85
                     IMESentenceMode =3
                     Left =14520
@@ -649,6 +663,34 @@ Option Compare Database
 Option Explicit
 
 Const mstrcFormName As String = "sfrm_InvasivesActivity"
+
+Public Function DataQualityOK() As Boolean
+On Error GoTo Error_Handler
+
+Dim dataCollected As String
+Dim observationCount As Integer
+
+If Me.NewRecord Then
+    DataQualityOK = True
+    GoTo Exit_Procedure
+End If
+
+dataCollected = LookupCodeFromID("lookup_InvasivesObserved", Me.cboInvasivesObserved)
+observationCount = Me.sfrmInvasivesObservations.Form.RowCount()
+
+Select Case dataCollected
+Case "Y"
+    DataQualityOK = (observationCount > 0)
+Case "N", "ND"
+    DataQualityOK = (observationCount = 0)
+End Select
+
+Exit_Procedure:
+    Exit Function
+Error_Handler:
+    MsgBox "Module: " & mstrcFormName & vbNewLine & "Fxn: DataQualityOK" & vbNewLine & "Error #" & Err.Number & ": " & Err.Description, vbCritical
+    Resume Exit_Procedure
+End Function
 
 Private Sub Form_Load()
 On Error GoTo Error_Handler

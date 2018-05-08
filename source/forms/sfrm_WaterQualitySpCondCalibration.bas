@@ -4,6 +4,7 @@ Begin Form
     RecordSelectors = NotDefault
     NavigationButtons = NotDefault
     DividingLines = NotDefault
+    AllowAdditions = NotDefault
     AllowDesignChanges = NotDefault
     ScrollBars =2
     PictureAlignment =2
@@ -12,22 +13,16 @@ Begin Form
     GridY =24
     Width =3900
     DatasheetFontHeight =11
-    ItemSuffix =21
-    Left =9660
-    Top =8040
-    Right =13605
-    Bottom =10125
+    ItemSuffix =26
+    Left =13020
+    Top =1200
+    Right =17265
+    Bottom =3285
     DatasheetGridlinesColor =15921906
     RecSrcDt = Begin
-        0x579ea31f8e16e540
+        0x1c0f5421931be540
     End
-    RecordSource ="SELECT data_CalibrationSpCond.ID, data_CalibrationSpCond.CalibrationTime, data_C"
-        "alibrationSpCond.CalibrationDate, data_CalibrationSpCond.StandardValue_microS_pe"
-        "r_cm, data_CalibrationSpCond.PreCalibrationReading_microS_per_cm, data_Calibrati"
-        "onSpCond.PostCalibrationReading_microS_per_cm, data_CalibrationSpCond.SpCondInst"
-        "rumentID, data_CalibrationSpCond.Notes, data_CalibrationSpCond.DateCreated FROM "
-        "data_CalibrationSpCond WHERE (((data_CalibrationSpCond.CalibrationDate)<[Forms]!"
-        "[frm_Visit]![VisitDate])) ORDER BY data_CalibrationSpCond.CalibrationDate DESC; "
+    RecordSource ="qry_CalibrationSpCond"
     DatasheetFontName ="Calibri"
     PrtMip = Begin
         0x6801000068010000680100006801000000000000201c0000e010000001000000 ,
@@ -183,96 +178,105 @@ Begin Form
             GridlineShade =65.0
         End
         Begin FormHeader
-            Height =225
+            Height =435
             BackColor =15921906
             Name ="FormHeader"
             AlternateBackThemeColorIndex =1
             AlternateBackShade =95.0
             Begin
                 Begin Label
-                    FontItalic = NotDefault
                     OverlapFlags =85
                     TextAlign =2
-                    Left =45
+                    Left =60
+                    Top =240
                     Width =1095
                     Height =180
                     FontSize =9
                     BorderColor =8355711
-                    ForeColor =8355711
-                    Name ="Label2"
+                    ForeColor =7500402
+                    Name ="Label21"
                     Caption ="Date"
                     GridlineColor =10921638
-                    LayoutCachedLeft =45
-                    LayoutCachedWidth =1140
-                    LayoutCachedHeight =180
+                    LayoutCachedLeft =60
+                    LayoutCachedTop =240
+                    LayoutCachedWidth =1155
+                    LayoutCachedHeight =420
+                    ForeThemeColorIndex =-1
+                    ForeTint =100.0
                 End
                 Begin Label
-                    FontItalic = NotDefault
                     OverlapFlags =93
                     TextAlign =2
-                    Left =1185
+                    Left =1200
+                    Top =240
                     Width =795
                     Height =180
                     FontSize =9
                     BorderColor =8355711
-                    ForeColor =8355711
-                    Name ="Label3"
+                    ForeColor =7500402
+                    Name ="Label22"
                     Caption ="Time"
                     GridlineColor =10921638
-                    LayoutCachedLeft =1185
-                    LayoutCachedWidth =1980
-                    LayoutCachedHeight =180
+                    LayoutCachedLeft =1200
+                    LayoutCachedTop =240
+                    LayoutCachedWidth =1995
+                    LayoutCachedHeight =420
+                    ForeThemeColorIndex =-1
+                    ForeTint =100.0
                 End
                 Begin Label
-                    FontItalic = NotDefault
                     OverlapFlags =93
                     TextAlign =2
                     Left =2535
                     Width =675
-                    Height =225
+                    Height =435
                     FontSize =9
                     BorderColor =8355711
-                    ForeColor =8355711
-                    Name ="Label15"
-                    Caption ="Pre"
+                    ForeColor =7500402
+                    Name ="Label23"
+                    Caption ="Pre (μS/cm)"
                     GridlineColor =10921638
                     LayoutCachedLeft =2535
                     LayoutCachedWidth =3210
-                    LayoutCachedHeight =225
+                    LayoutCachedHeight =435
+                    ForeThemeColorIndex =-1
+                    ForeTint =100.0
                 End
                 Begin Label
-                    FontItalic = NotDefault
                     OverlapFlags =87
                     TextAlign =2
                     Left =3210
                     Width =675
-                    Height =225
+                    Height =435
                     FontSize =9
                     BorderColor =8355711
-                    ForeColor =8355711
-                    Name ="Label16"
-                    Caption ="Post"
+                    ForeColor =7500402
+                    Name ="Label24"
+                    Caption ="Post (μS/cm)"
                     GridlineColor =10921638
                     LayoutCachedLeft =3210
                     LayoutCachedWidth =3885
-                    LayoutCachedHeight =225
+                    LayoutCachedHeight =435
+                    ForeThemeColorIndex =-1
+                    ForeTint =100.0
                 End
                 Begin Label
-                    FontItalic = NotDefault
                     OverlapFlags =215
                     TextAlign =2
                     Left =1905
                     Width =705
-                    Height =225
+                    Height =435
                     FontSize =9
                     BorderColor =8355711
-                    ForeColor =8355711
-                    Name ="Label20"
-                    Caption ="Std"
+                    ForeColor =7500402
+                    Name ="Label25"
+                    Caption ="Std (μS/cm)"
                     GridlineColor =10921638
                     LayoutCachedLeft =1905
                     LayoutCachedWidth =2610
-                    LayoutCachedHeight =225
+                    LayoutCachedHeight =435
+                    ForeThemeColorIndex =-1
+                    ForeTint =100.0
                 End
             End
         End
@@ -291,7 +295,7 @@ Begin Form
                     Height =315
                     BorderColor =14211288
                     ForeColor =4210752
-                    Name ="PreCalibrationTemperature_C"
+                    Name ="txtPreCalibrationReading_microS_per_cm"
                     ControlSource ="PreCalibrationReading_microS_per_cm"
                     GridlineColor =10921638
 
@@ -312,7 +316,7 @@ Begin Form
                     TabIndex =1
                     BorderColor =14211288
                     ForeColor =4210752
-                    Name ="Text7"
+                    Name ="txtPostCalibrationReading_microS_per_cm"
                     ControlSource ="PostCalibrationReading_microS_per_cm"
                     GridlineColor =10921638
 
@@ -333,7 +337,7 @@ Begin Form
                     TabIndex =2
                     BorderColor =14211288
                     ForeColor =4210752
-                    Name ="Text8"
+                    Name ="txtStandardValue_microS_per_cm"
                     ControlSource ="StandardValue_microS_per_cm"
                     GridlineColor =10921638
 
@@ -354,7 +358,7 @@ Begin Form
                     TabIndex =3
                     BorderColor =14211288
                     ForeColor =4210752
-                    Name ="Text10"
+                    Name ="txtCalibrationDate"
                     ControlSource ="CalibrationDate"
                     GridlineColor =10921638
 
@@ -375,7 +379,7 @@ Begin Form
                     TabIndex =4
                     BorderColor =14211288
                     ForeColor =4210752
-                    Name ="Text11"
+                    Name ="txtCalibrationTime"
                     ControlSource ="CalibrationTime"
                     Format ="Short Time"
                     GridlineColor =10921638
@@ -398,7 +402,7 @@ Begin Form
                     TabIndex =5
                     BorderColor =14211288
                     ForeColor =4210752
-                    Name ="Text12"
+                    Name ="txtNotes"
                     ControlSource ="Notes"
                     GridlineColor =10921638
 

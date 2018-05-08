@@ -11,6 +11,7 @@ Begin Form
     CloseButton = NotDefault
     DividingLines = NotDefault
     AllowAdditions = NotDefault
+    FilterOn = NotDefault
     AllowEdits = NotDefault
     AllowDesignChanges = NotDefault
     ScrollBars =2
@@ -21,20 +22,16 @@ Begin Form
     Width =5595
     DatasheetFontHeight =11
     ItemSuffix =15
-    Left =2190
-    Top =750
-    Right =7785
-    Bottom =5355
+    Left =11670
+    Top =5940
+    Right =17340
+    Bottom =10845
     DatasheetGridlinesColor =15921906
-    RecordSource ="SELECT data_SensorDeployment.VisitID, lookup_IsSensorRetrieved.Code AS SensorRet"
-        "rieved, data_Visit.VisitDate, lookup_SensorProblem.Label AS SensorProblem, data_"
-        "Site.Code AS SpringCode, data_SensorDeployment.SensorID FROM data_Site INNER JOI"
-        "N (lookup_SensorProblem RIGHT JOIN (lookup_IsSensorRetrieved RIGHT JOIN (data_Vi"
-        "sit INNER JOIN (data_SensorDeployment LEFT JOIN data_SensorRetrievalAttempt ON d"
-        "ata_SensorDeployment.VisitID = data_SensorRetrievalAttempt.SensorDeploymentID) O"
-        "N data_Visit.ID = data_SensorDeployment.VisitID) ON lookup_IsSensorRetrieved.ID "
-        "= data_SensorRetrievalAttempt.IsSensorRetrieved) ON lookup_SensorProblem.ID = da"
-        "ta_SensorRetrievalAttempt.SensorProblemID) ON data_Site.ID = data_Visit.SiteID; "
+    Filter ="SensorID = 140"
+    RecSrcDt = Begin
+        0x69b2e2a5911ae540
+    End
+    RecordSource ="ref_SensorAllActivity"
     Caption ="sfrm_SensorAllDeployments"
     DatasheetFontName ="Calibri"
     PrtMip = Begin
@@ -86,7 +83,7 @@ Begin Form
         End
         Begin FormHeader
             Height =1020
-            BackColor =15527148
+            BackColor =15921906
             Name ="FormHeader"
             AlternateBackThemeColorIndex =1
             AlternateBackShade =95.0
@@ -131,6 +128,7 @@ Begin Form
                 Begin Label
                     OverlapFlags =85
                     TextAlign =2
+                    Left =120
                     Top =720
                     Width =1140
                     Height =300
@@ -139,34 +137,34 @@ Begin Form
                     Name ="Label48"
                     Caption ="Date"
                     GridlineColor =10921638
+                    LayoutCachedLeft =120
                     LayoutCachedTop =720
-                    LayoutCachedWidth =1140
+                    LayoutCachedWidth =1260
                     LayoutCachedHeight =1020
                 End
                 Begin Label
                     OverlapFlags =85
                     TextAlign =2
-                    Left =1245
+                    Left =1395
                     Top =720
-                    Width =4215
+                    Width =4200
                     Height =300
                     BorderColor =8355711
                     ForeColor =8355711
                     Name ="Label49"
                     Caption ="Summary"
                     GridlineColor =10921638
-                    LayoutCachedLeft =1245
+                    LayoutCachedLeft =1395
                     LayoutCachedTop =720
-                    LayoutCachedWidth =5460
+                    LayoutCachedWidth =5595
                     LayoutCachedHeight =1020
                 End
             End
         End
         Begin Section
             Height =720
-            BackColor =15527148
+            BackColor =15921906
             Name ="Detail"
-            AlternateBackColor =14602694
             Begin
                 Begin TextBox
                     OverlapFlags =85
@@ -177,11 +175,11 @@ Begin Form
                     Width =4200
                     Height =600
                     ColumnWidth =3000
-                    BorderColor =10921638
+                    BorderColor =9211020
                     ForeColor =4210752
                     Name ="txtSensorStatus"
-                    ControlSource ="=IIf(IsNull([sensorRetrieved]) Or [sensorRetrieved]=\"ND\",\"Deployment at \" & "
-                        "[springCode],IIf([SensorRetrieved]=\"Y\" And (IsNull([SensorProblem]) Or [Sensor"
+                    ControlSource ="=IIf(IsNull([SensorRetrieved]) Or [SensorRetrieved]=\"ND\",\"Deployment at \" & "
+                        "[SpringCode],IIf([SensorRetrieved]=\"Y\" And (IsNull([SensorProblem]) Or [Sensor"
                         "Problem]=\"None\"),\"Retrieval success at \" & [SpringCode],IIf([SensorRetrieved"
                         "]=\"Y\",\"Retrieval w/problem (\" & LCase([SensorProblem]) & \") at \" & [Spring"
                         "Code],IIf([SensorRetrieved]=\"N\",\"Retrieval failed (\" & LCase([SensorProblem]"
@@ -192,13 +190,15 @@ Begin Form
                     LayoutCachedTop =60
                     LayoutCachedWidth =5595
                     LayoutCachedHeight =660
+                    BorderThemeColorIndex =-1
+                    BorderShade =100.0
                 End
                 Begin TextBox
                     FontUnderline = NotDefault
-                    OldBorderStyle =0
                     OverlapFlags =85
                     TextAlign =2
                     IMESentenceMode =3
+                    Left =60
                     Top =60
                     Width =1275
                     Height =600
@@ -207,7 +207,7 @@ Begin Form
                     TopMargin =90
                     RightMargin =90
                     BottomMargin =90
-                    BorderColor =10921638
+                    BorderColor =9211020
                     ForeColor =16711680
                     Name ="txtVisitDate"
                     ControlSource ="VisitDate"
@@ -215,9 +215,12 @@ Begin Form
                     GridlineColor =10921638
                     ShowDatePicker =0
 
+                    LayoutCachedLeft =60
                     LayoutCachedTop =60
-                    LayoutCachedWidth =1275
+                    LayoutCachedWidth =1335
                     LayoutCachedHeight =660
+                    BorderThemeColorIndex =-1
+                    BorderShade =100.0
                     ForeThemeColorIndex =-1
                     ForeTint =100.0
                 End

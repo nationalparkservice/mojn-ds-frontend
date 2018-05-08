@@ -8,6 +8,7 @@ Begin Form
     NavigationButtons = NotDefault
     CloseButton = NotDefault
     DividingLines = NotDefault
+    FilterOn = NotDefault
     AllowDesignChanges = NotDefault
     ScrollBars =2
     BorderStyle =0
@@ -18,10 +19,10 @@ Begin Form
     Width =4319
     DatasheetFontHeight =11
     ItemSuffix =4
-    Left =2940
-    Top =5175
-    Right =7005
-    Bottom =8340
+    Left =4965
+    Top =5385
+    Right =9705
+    Bottom =8805
     DatasheetGridlinesColor =15921906
     RecSrcDt = Begin
         0x2f831d1f9d15e540
@@ -278,75 +279,13 @@ Begin Form
                     Left =4020
                     Width =299
                     Height =299
-                    TabIndex =1
+                    TabIndex =2
                     ForeColor =4210752
                     Name ="cmdDeletePersonnel"
+                    OnClick ="[Event Procedure]"
                     ControlTipText ="Delete Record"
                     Picture ="X-Mark-16-LtGray"
                     GridlineColor =10921638
-                    OnClickEmMacro = Begin
-                        Version =196611
-                        ColumnsShown =10
-                        Begin
-                            Action ="OnError"
-                            Argument ="0"
-                        End
-                        Begin
-                            Action ="GoToControl"
-                            Argument ="=[Screen].[PreviousControl].[Name]"
-                        End
-                        Begin
-                            Action ="ClearMacroError"
-                        End
-                        Begin
-                            Condition ="Not [Form].[NewRecord]"
-                            Action ="RunCommand"
-                            Argument ="223"
-                        End
-                        Begin
-                            Condition ="[Form].[NewRecord] And Not [Form].[Dirty]"
-                            Action ="Beep"
-                        End
-                        Begin
-                            Condition ="[Form].[NewRecord] And [Form].[Dirty]"
-                            Action ="RunCommand"
-                            Argument ="292"
-                        End
-                        Begin
-                            Condition ="[MacroError]<>0"
-                            Action ="MsgBox"
-                            Argument ="=[MacroError].[Description]"
-                            Argument ="-1"
-                            Argument ="0"
-                        End
-                        Begin
-                            Comment ="_AXL:<?xml version=\"1.0\" encoding=\"UTF-16\" standalone=\"no\"?>\015\012<UserI"
-                                "nterfaceMacro For=\"cmdDeletePersonnel\" xmlns=\"http://schemas.microsoft.com/of"
-                                "fice/accessservices/2009/11/application\"><Statements><Action Name=\"OnError\"/>"
-                                "<Action Name=\"GoToControl\"><Arg"
-                        End
-                        Begin
-                            Comment ="_AXL:ument Name=\"ControlName\">=[Screen].[PreviousControl].[Name]</Argument></A"
-                                "ction><Action Name=\"ClearMacroError\"/><ConditionalBlock><If><Condition>Not [Fo"
-                                "rm].[NewRecord]</Condition><Statements><Action Name=\"DeleteRecord\"/></Statemen"
-                                "ts></If></Condition"
-                        End
-                        Begin
-                            Comment ="_AXL:alBlock><ConditionalBlock><If><Condition>[Form].[NewRecord] And Not [Form]."
-                                "[Dirty]</Condition><Statements><Action Name=\"Beep\"/></Statements></If></Condit"
-                                "ionalBlock><ConditionalBlock><If><Condition>[Form].[NewRecord] And [Form].[Dirty"
-                                "]</Condition><S"
-                        End
-                        Begin
-                            Comment ="_AXL:tatements><Action Name=\"UndoRecord\"/></Statements></If></ConditionalBlock"
-                                "><ConditionalBlock><If><Condition>[MacroError]&lt;&gt;0</Condition><Statements><"
-                                "Action Name=\"MessageBox\"><Argument Name=\"Message\">=[MacroError].[Description"
-                                "]</Argument></Actio"
-                        End
-                        Begin
-                            Comment ="_AXL:n></Statements></If></ConditionalBlock></Statements></UserInterfaceMacro>"
-                        End
-                    End
 
                     LayoutCachedLeft =4020
                     LayoutCachedWidth =4319
@@ -382,7 +321,7 @@ Begin Form
                     Left =1260
                     Width =2699
                     Height =299
-                    TabIndex =2
+                    TabIndex =1
                     BorderColor =14211288
                     ColumnInfo ="\"\";\"\";\"\";\"\";\"10\";\"100\""
                     Name ="cboPersonnelRoleID"
@@ -416,3 +355,21 @@ Begin Form
         End
     End
 End
+CodeBehindForm
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = True
+Attribute VB_PredeclaredId = True
+Attribute VB_Exposed = False
+Option Compare Database
+
+Private Sub cmdDeletePersonnel_Click()
+
+DeleteRecord Me, Me.NewRecord
+
+End Sub
+
+Public Function RowCount() As Integer
+
+RowCount = Me.RecordsetClone.RecordCount
+
+End Function

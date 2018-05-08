@@ -22,10 +22,10 @@ Begin Form
     Width =6480
     DatasheetFontHeight =11
     ItemSuffix =24
-    Left =4020
-    Top =2175
-    Right =10800
-    Bottom =8370
+    Left =8715
+    Top =2085
+    Right =15495
+    Bottom =8280
     DatasheetGridlinesColor =15921906
     RecSrcDt = Begin
         0x3fdd184bf214e540
@@ -316,7 +316,6 @@ Begin Form
                     StatusBarText ="Required; Date Format"
                     AfterUpdate ="[Event Procedure]"
                     FontName ="Arial"
-                    InputMask ="99/99/0000;0;_"
                     GridlineColor =10921638
 
                     LayoutCachedLeft =2769
@@ -365,8 +364,8 @@ Begin Form
                     BorderColor =14211288
                     Name ="txtStartTime"
                     ControlSource ="StartTime"
+                    Format ="Short Time"
                     FontName ="Arial"
-                    InputMask ="00:00;0;_"
                     GridlineColor =10921638
                     ShowDatePicker =0
 

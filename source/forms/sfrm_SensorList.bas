@@ -19,18 +19,18 @@ Begin Form
     DatasheetGridlinesBehavior =3
     GridX =24
     GridY =24
-    Width =5760
+    Width =5753
     DatasheetFontHeight =11
     ItemSuffix =63
-    Left =1605
-    Top =4725
-    Right =7410
-    Bottom =11175
+    Left =5250
+    Top =4395
+    Right =11055
+    Bottom =10845
     DatasheetGridlinesColor =15921906
     RecSrcDt = Begin
-        0x22564493900ce540
+        0x8605953c901ae540
     End
-    RecordSource ="qfrm_SensorMostRecentActivity"
+    RecordSource ="ref_SensorMostRecentActivity"
     Caption ="sfrm_SensorList"
     DatasheetFontName ="Calibri"
     FilterOnLoad =0
@@ -167,15 +167,15 @@ Begin Form
         End
         Begin FormHeader
             Height =660
-            BackColor =15527148
+            BackColor =15921906
             Name ="FormHeader"
             AlternateBackThemeColorIndex =1
             AlternateBackShade =95.0
             Begin
                 Begin Label
-                    BackStyle =1
                     OverlapFlags =85
                     TextAlign =2
+                    Left =60
                     Top =360
                     Width =660
                     Height =300
@@ -185,18 +185,18 @@ Begin Form
                     Name ="Label48"
                     Caption ="#"
                     GridlineColor =10921638
+                    LayoutCachedLeft =60
                     LayoutCachedTop =360
-                    LayoutCachedWidth =660
+                    LayoutCachedWidth =720
                     LayoutCachedHeight =660
                     BackThemeColorIndex =-1
                 End
                 Begin Label
-                    BackStyle =1
                     OverlapFlags =85
                     TextAlign =2
-                    Left =720
+                    Left =795
                     Top =360
-                    Width =4935
+                    Width =4920
                     Height =300
                     BackColor =15527148
                     BorderColor =8355711
@@ -204,15 +204,14 @@ Begin Form
                     Name ="Label49"
                     Caption ="Most recent activity"
                     GridlineColor =10921638
-                    LayoutCachedLeft =720
+                    LayoutCachedLeft =795
                     LayoutCachedTop =360
-                    LayoutCachedWidth =5655
+                    LayoutCachedWidth =5715
                     LayoutCachedHeight =660
                     BackThemeColorIndex =-1
                 End
                 Begin Label
                     FontItalic = NotDefault
-                    BackStyle =1
                     OverlapFlags =85
                     TextAlign =2
                     Width =5715
@@ -232,15 +231,13 @@ Begin Form
         Begin Section
             CanGrow = NotDefault
             Height =720
-            BackColor =15527148
+            BackColor =15921906
             Name ="Detail"
             OnClick ="[Event Procedure]"
-            AlternateBackColor =14211288
             Begin
                 Begin TextBox
                     CanGrow = NotDefault
                     FontUnderline = NotDefault
-                    OldBorderStyle =0
                     OverlapFlags =85
                     TextAlign =2
                     IMESentenceMode =3
@@ -253,7 +250,7 @@ Begin Form
                     TopMargin =90
                     RightMargin =90
                     BottomMargin =90
-                    BorderColor =10921638
+                    BorderColor =9211020
                     ForeColor =16711680
                     Name ="sensorNumber"
                     ControlSource ="SensorNumber"
@@ -266,6 +263,8 @@ Begin Form
                     LayoutCachedWidth =720
                     LayoutCachedHeight =660
                     LayoutGroup =1
+                    BorderThemeColorIndex =-1
+                    BorderShade =100.0
                     ForeThemeColorIndex =-1
                     ForeTint =100.0
                     GroupTable =1
@@ -281,15 +280,15 @@ Begin Form
                     Height =600
                     ColumnWidth =3000
                     TabIndex =1
-                    BorderColor =10921638
+                    BorderColor =9211020
                     ForeColor =4210752
                     Name ="txtSensorInfo"
                     ControlSource ="=IIf(IsNull([MostRecentVisitDate]),\"No deployment or retrieval info.\",IIf(IsNu"
-                        "ll([SensorRetrieved]) Or [SensorRetrieved]=\"No Data\",\"Deployed at \" & [SiteN"
-                        "ame] & \" on \" & [MostRecentVisitDate] & \". No retrieval info.\",IIf([SensorRe"
-                        "trieved]=\"Y\",\"Retrieved from \" & [SiteName] & \" on \" & [MostRecentVisitDat"
-                        "e] & \".\",IIf([SensorRetrieved]=\"N\",\"Unsuccessful retrieval attempt on \" & "
-                        "[MostRecentVisitDate] & \".\",\"\"))))"
+                        "ll([SensorRetrieved]) Or [SensorRetrieved]=\"No Data\",\"Deployed at \" & [Sprin"
+                        "gName] & \" on \" & [MostRecentVisitDate] & \". No retrieval info.\",IIf([Sensor"
+                        "Retrieved]=\"Y\",\"Retrieved from \" & [SpringName] & \" on \" & [MostRecentVisi"
+                        "tDate] & \".\",IIf([SensorRetrieved]=\"N\",\"Unsuccessful retrieval attempt on \""
+                        " & [MostRecentVisitDate] & \".\",\"\"))))"
                     OnClick ="[Event Procedure]"
                     GroupTable =1
                     GridlineColor =10921638
@@ -301,6 +300,8 @@ Begin Form
                     ColumnStart =1
                     ColumnEnd =1
                     LayoutGroup =1
+                    BorderThemeColorIndex =-1
+                    BorderShade =100.0
                     GroupTable =1
                 End
             End
@@ -325,26 +326,26 @@ Option Compare Database
 Option Explicit
 
 Private Function displaySensorInfo()
-Me.Parent.sfrm_Sensor.Form.Visible = True
-Me.Parent.sfrm_Sensor.Form.DataEntry = False
-Me.Parent.sfrm_Sensor.Form.cmdCancel.Visible = False
-Me.Parent.sfrm_Sensor.Form.cmdSave.Visible = False
-Me.Parent.sfrm_Sensor.Form.cmdEdit.Visible = True
-Me.Parent.sfrm_Sensor.Form.cmdSave.Top = Me.Parent.sfrm_Sensor.Form.cmdEdit.Top
-Me.Parent.sfrm_Sensor.Form.cmdSave.Left = Me.Parent.sfrm_Sensor.Form.cmdEdit.Left
+Me.Parent.sfrmSensor.Form.Visible = True
+Me.Parent.sfrmSensor.Form.DataEntry = False
+Me.Parent.sfrmSensor.Form.cmdCancel.Visible = False
+Me.Parent.sfrmSensor.Form.cmdSave.Visible = False
+Me.Parent.sfrmSensor.Form.cmdEdit.Visible = True
+Me.Parent.sfrmSensor.Form.cmdSave.Top = Me.Parent.sfrmSensor.Form.cmdEdit.Top
+Me.Parent.sfrmSensor.Form.cmdSave.Left = Me.Parent.sfrmSensor.Form.cmdEdit.Left
 
-If Me.Parent.sfrm_Sensor.Form!ID <> Me.SensorID Then
-    Me.Parent.sfrm_Sensor.Form.Visible = True
-    Me.Parent.sfrm_Sensor.Form.filter = "ID = " & Me.SensorID
-    Me.Parent.sfrm_Sensor.Form.FilterOn = True
+If Me.Parent.sfrmSensor.Form!ID <> Me.SensorID Then
+    Me.Parent.sfrmSensor.Form.Visible = True
+    Me.Parent.sfrmSensor.Form.filter = "ID = " & Me.SensorID
+    Me.Parent.sfrmSensor.Form.FilterOn = True
 End If
 
 If IsNull(Me.MostRecentVisitDate) Then
-    Me.Parent.sfrm_SensorAllDeployments.Form.Visible = False
+    Me.Parent.sfrmSensorAllDeployments.Form.Visible = False
 Else
-    Me.Parent.sfrm_SensorAllDeployments.Form.Visible = True
-    Me.Parent.sfrm_SensorAllDeployments.Form.filter = "SensorID = " & Me.SensorID
-    Me.Parent.sfrm_SensorAllDeployments.Form.FilterOn = True
+    Me.Parent.sfrmSensorAllDeployments.Form.Visible = True
+    Me.Parent.sfrmSensorAllDeployments.Form.filter = "SensorID = " & Me.SensorID
+    Me.Parent.sfrmSensorAllDeployments.Form.FilterOn = True
 End If
 
 End Function

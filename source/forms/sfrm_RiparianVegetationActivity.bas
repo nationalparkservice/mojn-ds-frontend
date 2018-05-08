@@ -21,10 +21,10 @@ Begin Form
     Width =15840
     DatasheetFontHeight =11
     ItemSuffix =21
-    Left =2100
-    Top =2400
-    Right =18210
-    Bottom =11640
+    Left =3450
+    Top =450
+    Right =19305
+    Bottom =9435
     DatasheetGridlinesColor =15921906
     RecSrcDt = Begin
         0x51f3cbe4ac15e540
@@ -179,6 +179,18 @@ Begin Form
             BorderShade =65.0
             ShowPageHeaderAndPageFooter =1
         End
+        Begin Chart
+            SpecialEffect =2
+            OldBorderStyle =1
+            ThemeFontIndex =1
+            BackThemeColorIndex =1
+            BorderThemeColorIndex =1
+            BorderShade =65.0
+            ForeThemeColorIndex =2
+            ForeShade =50.0
+            GridlineThemeColorIndex =1
+            GridlineShade =65.0
+        End
         Begin UnboundObjectFrame
             SpecialEffect =2
             OldBorderStyle =1
@@ -235,8 +247,9 @@ Begin Form
                     ListWidth =1440
                     Left =3852
                     Top =540
-                    Width =1185
+                    Width =1485
                     Height =313
+                    TabIndex =1
                     BorderColor =14211288
                     ColumnInfo ="\"\";\"\";\"\";\"\";\"10\";\"20\""
                     ConditionalFormat = Begin
@@ -259,7 +272,7 @@ Begin Form
                     ShowOnlyRowSourceValues =255
                     LayoutCachedLeft =3852
                     LayoutCachedTop =540
-                    LayoutCachedWidth =5037
+                    LayoutCachedWidth =5337
                     LayoutCachedHeight =853
                     ThemeFontIndex =-1
                     BackThemeColorIndex =-1
@@ -303,9 +316,9 @@ Begin Form
                     OldBorderStyle =0
                     Left =240
                     Top =1620
-                    Width =13796
+                    Width =13931
                     Height =4255
-                    TabIndex =1
+                    TabIndex =2
                     BorderColor =65536
                     Name ="sfrmRiparianVegetationObservation"
                     SourceObject ="Form.sfrm_RiparianVegetationObservation"
@@ -315,7 +328,7 @@ Begin Form
 
                     LayoutCachedLeft =240
                     LayoutCachedTop =1620
-                    LayoutCachedWidth =14036
+                    LayoutCachedWidth =14171
                     LayoutCachedHeight =5875
                     BorderThemeColorIndex =-1
                     BorderShade =100.0
@@ -355,10 +368,9 @@ Begin Form
                     ColumnCount =3
                     Left =3837
                     Top =120
-                    Width =1199
+                    Width =1499
                     Height =313
                     FontSize =12
-                    TabIndex =2
                     BorderColor =14211288
                     ColumnInfo ="\"\";\"\";\"\";\"\";\"\";\"\";\"10\";\"50\""
                     ConditionalFormat = Begin
@@ -383,7 +395,7 @@ Begin Form
                     ShowOnlyRowSourceValues =255
                     LayoutCachedLeft =3837
                     LayoutCachedTop =120
-                    LayoutCachedWidth =5036
+                    LayoutCachedWidth =5336
                     LayoutCachedHeight =433
                     ThemeFontIndex =-1
                     BackThemeColorIndex =-1
@@ -434,7 +446,7 @@ Begin Form
                     Width =11105
                     Height =966
                     FontSize =10
-                    TabIndex =3
+                    TabIndex =5
                     BorderColor =14211288
                     Name ="txtDataProcessingLevelNote"
                     ControlSource ="DataProcessingLevelNote"
@@ -545,7 +557,7 @@ Begin Form
                     Width =1980
                     Height =238
                     FontSize =10
-                    TabIndex =5
+                    TabIndex =6
                     BackColor =15921906
                     BorderColor =10921638
                     Name ="txtDataProcessingLevelDate"
@@ -647,7 +659,7 @@ Begin Form
                     Top =7020
                     Width =15420
                     Height =723
-                    TabIndex =6
+                    TabIndex =3
                     BorderColor =14211288
                     ForeColor =4210752
                     Name ="Notes"
@@ -692,6 +704,7 @@ Begin Form
                 End
                 Begin TextBox
                     Visible = NotDefault
+                    TabStop = NotDefault
                     OverlapFlags =85
                     IMESentenceMode =3
                     Left =12720
@@ -723,6 +736,34 @@ Option Compare Database
 Option Explicit
 
 Private Const mstrcFormName As String = "sfrm_RiparianVegetationActivity"
+
+Public Function DataQualityOK() As Boolean
+On Error GoTo Error_Handler
+
+Dim dataCollected As String
+Dim observationCount As Integer
+
+If Me.NewRecord Then
+    DataQualityOK = True
+    GoTo Exit_Procedure
+End If
+
+dataCollected = LookupCodeFromID("lookup_IsVegetationObserved", Me.cboIsVegetationObserved)
+observationCount = Me.sfrmRiparianVegetationObservation.Form.RowCount()
+
+Select Case dataCollected
+Case "Y"
+    DataQualityOK = (observationCount > 0) And Not IsNull(Me.cboIsMistletoePresent)
+Case "N", "ND"
+    DataQualityOK = (observationCount = 0) And Not IsNull(Me.cboIsMistletoePresent)
+End Select
+
+Exit_Procedure:
+    Exit Function
+Error_Handler:
+    MsgBox "Module: " & mstrcFormName & vbNewLine & "Fxn: DataQualityOK" & vbNewLine & "Error #" & Err.Number & ": " & Err.Description, vbCritical
+    Resume Exit_Procedure
+End Function
 
 Private Sub Form_Load()
 On Error GoTo Error_Handler

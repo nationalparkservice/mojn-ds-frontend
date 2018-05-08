@@ -448,7 +448,7 @@ Private Sub cmdExportToExcel_Click()
     strQryName = Me.cboPickQuery
 
     'Generate the default output file name
-    strInitFile = Application.CurrentProject.Path & "\Exports\" & strQryName & "_" & CStr(Format(Now(), "yyyymmdd")) & ".xlsx"
+    strInitFile = Application.CurrentProject.path & "\Exports\" & strQryName & "_" & CStr(Format(Now(), "yyyymmdd")) & ".xlsx"
     'Allow user to edit output file name
     strSaveFile = fxnSaveFile(strInitFile, "Microsoft Excel (*.xls*)", "*.xls*")
     'Export to file
@@ -481,7 +481,7 @@ Private Sub cmdExportToText_Click()
     strQryName = Me.cboPickQuery
 
     'Generate the default output file name
-    strInitFile = Application.CurrentProject.Path & "\Exports\" & strQryName & "_" & CStr(Format(Now(), "yyyymmdd")) & ".csv"
+    strInitFile = Application.CurrentProject.path & "\Exports\" & strQryName & "_" & CStr(Format(Now(), "yyyymmdd")) & ".csv"
     'Allow user to edit output file name
     strSaveFile = fxnSaveFile(strInitFile, "Comma Separated Values (*.csv)", "*.csv")
     'Export to file
@@ -501,7 +501,7 @@ Err_Handler:
     Resume Exit_Procedure
 End Sub
 
-Private Sub cboPickQuery_NotInList(NewData As String, Response As Integer)
+Private Sub cboPickQuery_NotInList(NewData As String, response As Integer)
     On Error GoTo Err_Handler
 
     Me.ActiveControl.Undo

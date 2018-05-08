@@ -22,10 +22,10 @@ Begin Form
     Width =13500
     DatasheetFontHeight =11
     ItemSuffix =25
-    Left =-5448
-    Top =516
-    Right =9552
-    Bottom =8472
+    Left =-5445
+    Top =510
+    Right =9555
+    Bottom =8475
     DatasheetGridlinesColor =15921906
     RecSrcDt = Begin
         0xd9d71de4f10be540
@@ -35,6 +35,10 @@ Begin Form
     OnOpen ="[Event Procedure]"
     OnClose ="[Event Procedure]"
     DatasheetFontName ="Calibri"
+    PrtMip = Begin
+        0x6801000068010000680100006801000000000000201c0000e010000001000000 ,
+        0x010000006801000000000000a10700000100000001000000
+    End
     AllowDatasheetView =0
     FilterOnLoad =0
     ShowPageMargins =0
@@ -907,7 +911,7 @@ Private Const mstrcFormName = "frmImportSensorData"
 
 Private Sub cmdAcceptImport_Click()
     
-    On Error GoTo Handle_Error
+    On Error GoTo Error_Handler
     
     Dim Db As DAO.Database
     Dim qry As DAO.QueryDef
@@ -964,7 +968,7 @@ Exit_Sub:
     StatusBar
     Exit Sub
     
-Handle_Error:
+Error_Handler:
     MsgBox "Form: " & mstrcFormName & vbNewLine & "Sub:  cmdAcceptImport_Click" & vbNewLine & "Error #" & Err.Number & ": " & Err.Description, vbCritical
     Resume Exit_Sub
     
@@ -972,7 +976,7 @@ End Sub
 
 Private Sub cmdClear_Click()
     
-    On Error GoTo Handle_Error
+    On Error GoTo Error_Handler
     
     Me.txtFileName = Null
     ClearStagingTables
@@ -986,14 +990,14 @@ Private Sub cmdClear_Click()
 Exit_Sub:
     Exit Sub
     
-Handle_Error:
+Error_Handler:
     MsgBox "Form: " & mstrcFormName & vbNewLine & "Sub:  cmdClear_Click" & vbNewLine & "Error #" & Err.Number & ": " & Err.Description, vbCritical
     Resume Exit_Sub
 
 End Sub
 
 Private Sub cmdGetFileName_Click()
-    On Error GoTo Handle_Error
+    On Error GoTo Error_Handler
     
     Dim fDialog As Office.FileDialog
     Dim varFile As Variant
@@ -1029,7 +1033,7 @@ Private Sub cmdGetFileName_Click()
 Exit_Sub:
     Exit Sub
     
-Handle_Error:
+Error_Handler:
     
     MsgBox "Form: " & mstrcFormName & vbNewLine & "Sub:  cmdGetFileName_Click" & vbNewLine & "Error #" & Err.Number & ": " & Err.Description, vbCritical
     Resume Exit_Sub
@@ -1038,7 +1042,7 @@ End Sub
 
 Private Sub cmdImport_Click()
 
-    On Error GoTo Handle_Error
+    On Error GoTo Error_Handler
     
     Dim RecordCount As Integer
     Dim Header As String
@@ -1112,7 +1116,7 @@ Exit_Sub:
     StatusBar
     Exit Sub
     
-Handle_Error:
+Error_Handler:
     MsgBox "Form: " & mstrcFormName & vbNewLine & "Sub:  cmdImport_Click" & vbNewLine & "Error #" & Err.Number & ": " & Err.Description, vbCritical
     Resume Exit_Sub
     
@@ -1124,7 +1128,7 @@ End Sub
 
 Private Sub Form_Open(Cancel As Integer)
 
-    On Error GoTo Handle_Error
+    On Error GoTo Error_Handler
     
     Dim RetrievalAttempIDString As String
     
@@ -1150,7 +1154,7 @@ Private Sub Form_Open(Cancel As Integer)
 Exit_Sub:
     Exit Sub
     
-Handle_Error:
+Error_Handler:
     MsgBox "Form: " & mstrcFormName & vbNewLine & "Sub:  Form_Open" & vbNewLine & "Error #" & Err.Number & ": " & Err.Description, vbCritical
     DoCmd.Close acForm, Me.Name
     Resume Exit_Sub
@@ -1159,7 +1163,7 @@ End Sub
 
 Private Sub ClearStagingTables()
     
-    On Error GoTo Handle_Error
+    On Error GoTo Error_Handler
     
     DoCmd.SetWarnings False
         DoCmd.RunSQL "delete * from SensorImportRaw"
@@ -1171,7 +1175,7 @@ Exit_Sub:
     DoCmd.SetWarnings True
     Exit Sub
     
-Handle_Error:
+Error_Handler:
     MsgBox "Form: " & mstrcFormName & vbNewLine & "Sub:  ClearStagingTables" & vbNewLine & "Error #" & Err.Number & ": " & Err.Description, vbCritical
     Resume Exit_Sub
     
@@ -1179,7 +1183,7 @@ End Sub
 
 Private Sub SetupAcceptButton()
 
-    On Error GoTo Handle_Error
+    On Error GoTo Error_Handler
 
     Dim isImportSuccessful As Variant
     
@@ -1199,7 +1203,7 @@ Private Sub SetupAcceptButton()
 Exit_Sub:
     Exit Sub
     
-Handle_Error:
+Error_Handler:
     MsgBox "Form: " & mstrcFormName & vbNewLine & "Sub:  SetupAcceptButton" & vbNewLine & "Error #" & Err.Number & ": " & Err.Description, vbCritical
     Resume Exit_Sub
     
@@ -1207,14 +1211,14 @@ End Sub
 
 Private Sub SetupImportButton()
 
-    On Error GoTo Handle_Error
+    On Error GoTo Error_Handler
 
     Me.cmdImport.Enabled = Nz(Me.txtFileName, "") <> ""
     
 Exit_Sub:
     Exit Sub
     
-Handle_Error:
+Error_Handler:
     MsgBox "Form: " & mstrcFormName & vbNewLine & "Sub:  SetupImportButton" & vbNewLine & "Error #" & Err.Number & ": " & Err.Description, vbCritical
     Resume Exit_Sub
     

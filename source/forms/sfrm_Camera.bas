@@ -7,6 +7,7 @@ Begin Form
     NavigationButtons = NotDefault
     CloseButton = NotDefault
     DividingLines = NotDefault
+    FilterOn = NotDefault
     AllowDesignChanges = NotDefault
     DefaultView =0
     ScrollBars =0
@@ -15,13 +16,13 @@ Begin Form
     DatasheetGridlinesBehavior =3
     GridX =24
     GridY =24
-    Width =5759
+    Width =5820
     DatasheetFontHeight =11
-    ItemSuffix =16
-    Left =1485
-    Top =4650
-    Right =7260
-    Bottom =5370
+    ItemSuffix =17
+    Left =3465
+    Top =4365
+    Right =9285
+    Bottom =5085
     DatasheetGridlinesColor =15921906
     RecSrcDt = Begin
         0x556e2cfc5618e540
@@ -32,6 +33,7 @@ Begin Form
         "oActivity].[DataProcessingLevelNote], [data_PhotoActivity].[DateCreated] FROM da"
         "ta_PhotoActivity; "
     Caption ="sfrm_Camera"
+    AfterUpdate ="[Event Procedure]"
     DatasheetFontName ="Calibri"
     PrtMip = Begin
         0x6801000068010000680100006801000000000000201c0000e010000001000000 ,
@@ -61,6 +63,16 @@ Begin Form
             BorderTint =50.0
             ForeThemeColorIndex =0
             ForeTint =50.0
+            GridlineThemeColorIndex =1
+            GridlineShade =65.0
+        End
+        Begin Rectangle
+            SpecialEffect =3
+            BackStyle =0
+            BorderLineStyle =0
+            BackThemeColorIndex =1
+            BorderThemeColorIndex =1
+            BorderShade =65.0
             GridlineThemeColorIndex =1
             GridlineShade =65.0
         End
@@ -289,3 +301,25 @@ Begin Form
         End
     End
 End
+CodeBehindForm
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = True
+Attribute VB_PredeclaredId = True
+Attribute VB_Exposed = False
+Option Compare Database
+
+Public Function RowCount() As Integer
+
+RowCount = Me.RecordsetClone.RecordCount
+
+End Function
+
+Private Sub Form_AfterUpdate()
+
+DoCmd.RunCommand acCmdSaveRecord
+Forms!frm_Visit!sfrmActivityDashboard.Form.Requery
+Forms!frm_Visit!sfrmPhotoActivity.Form.Requery
+Forms!frm_Visit!sfrmPhotoActivity.Form.PhotoTabSetup
+
+
+End Sub

@@ -11,13 +11,13 @@ Begin Form
     DatasheetGridlinesBehavior =3
     GridX =24
     GridY =24
-    Width =15840
+    Width =15885
     DatasheetFontHeight =11
     ItemSuffix =28
-    Left =2040
-    Top =2400
-    Right =18150
-    Bottom =11640
+    Left =3390
+    Top =450
+    Right =19245
+    Bottom =9435
     DatasheetGridlinesColor =15921906
     RecSrcDt = Begin
         0xa55d10aad915e540
@@ -161,6 +161,18 @@ Begin Form
             BorderShade =65.0
             ShowPageHeaderAndPageFooter =1
         End
+        Begin Chart
+            SpecialEffect =2
+            OldBorderStyle =1
+            ThemeFontIndex =1
+            BackThemeColorIndex =1
+            BorderThemeColorIndex =1
+            BorderShade =65.0
+            ForeThemeColorIndex =2
+            ForeShade =50.0
+            GridlineThemeColorIndex =1
+            GridlineShade =65.0
+        End
         Begin Tab
             FontSize =11
             FontName ="Calibri"
@@ -220,6 +232,7 @@ Begin Form
                     Width =11105
                     Height =966
                     FontSize =10
+                    TabIndex =4
                     BorderColor =14211288
                     Name ="txtDataProcessingLevelNote"
                     ControlSource ="DataProcessingLevelNote"
@@ -271,7 +284,7 @@ Begin Form
                     Width =1980
                     Height =238
                     FontSize =10
-                    TabIndex =1
+                    TabIndex =3
                     BorderColor =10921638
                     ColumnInfo ="\"\";\"\";\"\";\"\";\"\";\"\";\"10\";\"40\""
                     Name ="cboDataProcessingLevelID"
@@ -330,7 +343,7 @@ Begin Form
                     Width =1980
                     Height =238
                     FontSize =10
-                    TabIndex =2
+                    TabIndex =5
                     BackColor =15921906
                     BorderColor =10921638
                     Name ="txtDataProcessingLevelDate"
@@ -433,7 +446,7 @@ Begin Form
                     Top =7020
                     Width =15420
                     Height =723
-                    TabIndex =3
+                    TabIndex =2
                     BorderColor =14211288
                     ForeColor =4210752
                     Name ="Notes"
@@ -456,7 +469,7 @@ Begin Form
                             BorderColor =8355711
                             ForeColor =8355711
                             Name ="lblActivityNotes"
-                            Caption ="Notes"
+                            Caption ="Wildlife Notes"
                             GridlineColor =10921638
                             LayoutCachedLeft =300
                             LayoutCachedTop =6840
@@ -472,11 +485,10 @@ Begin Form
                     ColumnCount =3
                     Left =2520
                     Top =120
-                    Width =1200
+                    Width =1320
                     Height =315
                     ColumnOrder =0
                     FontSize =12
-                    TabIndex =4
                     BorderColor =10921638
                     ForeColor =4210752
                     ColumnInfo ="\"\";\"\";\"\";\"\";\"\";\"\";\"10\";\"40\""
@@ -499,7 +511,7 @@ Begin Form
 
                     LayoutCachedLeft =2520
                     LayoutCachedTop =120
-                    LayoutCachedWidth =3720
+                    LayoutCachedWidth =3840
                     LayoutCachedHeight =435
                     ForeThemeColorIndex =0
                     ForeTint =75.0
@@ -548,10 +560,11 @@ Begin Form
                     Enabled = NotDefault
                     OverlapFlags =85
                     OldBorderStyle =0
-                    Top =780
+                    Left =135
+                    Top =1260
                     Width =15750
                     Height =4920
-                    TabIndex =5
+                    TabIndex =1
                     BorderColor =10921638
                     Name ="sfrmWildlifeObservation"
                     SourceObject ="Form.sfrm_WildlifeObservation"
@@ -559,9 +572,37 @@ Begin Form
                     LinkMasterFields ="ID"
                     GridlineColor =10921638
 
-                    LayoutCachedTop =780
-                    LayoutCachedWidth =15750
-                    LayoutCachedHeight =5700
+                    LayoutCachedLeft =135
+                    LayoutCachedTop =1260
+                    LayoutCachedWidth =15885
+                    LayoutCachedHeight =6180
+                    Begin
+                        Begin Label
+                            BackStyle =1
+                            OverlapFlags =85
+                            TextAlign =2
+                            Left =120
+                            Top =840
+                            Width =3255
+                            Height =300
+                            FontWeight =700
+                            BackColor =4281912
+                            BorderColor =6108695
+                            ForeColor =16777215
+                            Name ="lblObservationSubform"
+                            Caption ="Wildlife Observations"
+                            GridlineColor =10921638
+                            LayoutCachedLeft =120
+                            LayoutCachedTop =840
+                            LayoutCachedWidth =3375
+                            LayoutCachedHeight =1140
+                            BackThemeColorIndex =-1
+                            BorderThemeColorIndex =-1
+                            BorderTint =100.0
+                            ForeThemeColorIndex =-1
+                            ForeTint =100.0
+                        End
+                    End
                 End
             End
         End
@@ -583,6 +624,35 @@ Option Compare Database
 Option Explicit
 
 Const mstrcFormName As String = "sfrm_WildlifeActivity"
+
+Public Function DataQualityOK() As Boolean
+On Error GoTo Error_Handler
+
+Dim dataCollected As String
+Dim observationCount As Integer
+
+If Me.NewRecord Then
+    DataQualityOK = True
+    GoTo Exit_Procedure
+End If
+
+dataCollected = LookupCodeFromID("lookup_IsWildlifeObserved", Me.cboIsWildlifeObserved)
+observationCount = Me.sfrmWildlifeObservation.Form.RowCount()
+
+Select Case dataCollected
+Case "Y"
+    DataQualityOK = (observationCount > 0)
+Case "N", "ND"
+    DataQualityOK = (observationCount = 0)
+End Select
+
+Exit_Procedure:
+    Exit Function
+Error_Handler:
+    MsgBox "Module: " & mstrcFormName & vbNewLine & "Fxn: DataQualityOK" & vbNewLine & "Error #" & Err.Number & ": " & Err.Description, vbCritical
+    Resume Exit_Procedure
+End Function
+
 
 Private Sub Form_Load()
 On Error GoTo Error_Handler

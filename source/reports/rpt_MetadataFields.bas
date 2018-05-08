@@ -13,8 +13,7 @@ Begin Report
     Width =11352
     DatasheetFontHeight =11
     ItemSuffix =16
-    Left =3900
-    Top =3900
+    Top =600
     DatasheetGridlinesColor =15921906
     RecSrcDt = Begin
         0x17a666787418e540

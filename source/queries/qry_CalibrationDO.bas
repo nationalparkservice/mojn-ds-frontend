@@ -1,0 +1,5 @@
+SELECT data_CalibrationDO.ID, data_CalibrationDO.CalibrationTime, data_CalibrationDO.CalibrationDate, data_CalibrationDO.PreCalibrationReading_percent, data_CalibrationDO.PreCalibrationTemperature_C, data_CalibrationDO.PostCalibrationReading_percent, data_CalibrationDO.PostCalibrationTemperature_C, data_CalibrationDO.BarometricPressure_mmHg, data_CalibrationDO.DOInstrumentID, data_CalibrationDO.Notes, data_CalibrationDO.DateCreated
+FROM data_CalibrationDO
+WHERE (((data_CalibrationDO.CalibrationDate)<=Forms!frm_Visit!VisitDate) And ((data_CalibrationDO.DOInstrumentID)=Forms!frm_Visit!sfrm_WaterQualityActivity.Form!cboDOInstrumentID))
+ORDER BY data_CalibrationDO.CalibrationDate DESC;
+

@@ -10,6 +10,7 @@ Begin Form
     NavigationButtons = NotDefault
     CloseButton = NotDefault
     DividingLines = NotDefault
+    FilterOn = NotDefault
     AllowDesignChanges = NotDefault
     ScrollBars =2
     PictureAlignment =2
@@ -19,17 +20,16 @@ Begin Form
     Width =13920
     DatasheetFontHeight =11
     ItemSuffix =23
-    Left =2490
-    Top =3240
-    Right =16290
-    Bottom =7500
+    Left =3570
+    Top =3870
+    Right =17505
+    Bottom =8130
     DatasheetGridlinesColor =15921906
     RecSrcDt = Begin
         0x34fd75986c15e540
     End
     RecordSource ="data_RiparianVegetationObservation"
     BeforeUpdate ="[Event Procedure]"
-    AfterUpdate ="[Event Procedure]"
     DatasheetFontName ="Calibri"
     PrtMip = Begin
         0x6801000068010000680100006801000000000000201c0000e010000001000000 ,
@@ -147,6 +147,18 @@ Begin Form
             BorderShade =65.0
             ShowPageHeaderAndPageFooter =1
         End
+        Begin Chart
+            SpecialEffect =2
+            OldBorderStyle =1
+            ThemeFontIndex =1
+            BackThemeColorIndex =1
+            BorderThemeColorIndex =1
+            BorderShade =65.0
+            ForeThemeColorIndex =2
+            ForeShade =50.0
+            GridlineThemeColorIndex =1
+            GridlineShade =65.0
+        End
         Begin UnboundObjectFrame
             SpecialEffect =2
             OldBorderStyle =1
@@ -217,7 +229,7 @@ Begin Form
                     OverlapFlags =85
                     TextAlign =2
                     Left =1680
-                    Width =540
+                    Width =600
                     Height =302
                     FontSize =10
                     BorderColor =6108695
@@ -225,7 +237,7 @@ Begin Form
                     Caption ="*Rank"
                     GridlineColor =10921638
                     LayoutCachedLeft =1680
-                    LayoutCachedWidth =2220
+                    LayoutCachedWidth =2280
                     LayoutCachedHeight =302
                     ThemeFontIndex =-1
                     BorderThemeColorIndex =-1
@@ -234,18 +246,18 @@ Begin Form
                     ForeTint =100.0
                 End
                 Begin Label
-                    OverlapFlags =93
+                    OverlapFlags =85
                     TextAlign =2
-                    Left =2280
-                    Width =4140
+                    Left =2340
+                    Width =4200
                     Height =302
                     FontSize =10
                     BorderColor =6108695
                     Name ="lblDominantSpecies"
                     Caption ="Dominant Species"
                     GridlineColor =10921638
-                    LayoutCachedLeft =2280
-                    LayoutCachedWidth =6420
+                    LayoutCachedLeft =2340
+                    LayoutCachedWidth =6540
                     LayoutCachedHeight =302
                     ThemeFontIndex =-1
                     BorderThemeColorIndex =-1
@@ -254,9 +266,9 @@ Begin Form
                     ForeTint =100.0
                 End
                 Begin Label
-                    OverlapFlags =87
+                    OverlapFlags =85
                     TextAlign =2
-                    Left =6420
+                    Left =6600
                     Width =2097
                     Height =302
                     FontSize =10
@@ -264,8 +276,8 @@ Begin Form
                     Name ="lblConfirmedPlantCode"
                     Caption ="Confirmed Plant Code"
                     GridlineColor =10921638
-                    LayoutCachedLeft =6420
-                    LayoutCachedWidth =8517
+                    LayoutCachedLeft =6600
+                    LayoutCachedWidth =8697
                     LayoutCachedHeight =302
                     ThemeFontIndex =-1
                     BorderThemeColorIndex =-1
@@ -276,16 +288,16 @@ Begin Form
                 Begin Label
                     OverlapFlags =85
                     TextAlign =2
-                    Left =8577
-                    Width =2468
+                    Left =8760
+                    Width =2648
                     Height =302
                     FontSize =10
                     BorderColor =6108695
                     Name ="lblRiparianVegProtectedStatus_Label"
                     Caption ="Protected Status"
                     GridlineColor =10921638
-                    LayoutCachedLeft =8577
-                    LayoutCachedWidth =11045
+                    LayoutCachedLeft =8760
+                    LayoutCachedWidth =11408
                     LayoutCachedHeight =302
                     ThemeFontIndex =-1
                     BorderThemeColorIndex =-1
@@ -296,16 +308,16 @@ Begin Form
                 Begin Label
                     OverlapFlags =85
                     TextAlign =2
-                    Left =11100
-                    Width =1977
+                    Left =11460
+                    Width =1991
                     Height =302
                     FontSize =10
                     BorderColor =6108695
                     Name ="lblRiparianVegTaxonRefAuth"
                     Caption ="Taxonomic Authority"
                     GridlineColor =10921638
-                    LayoutCachedLeft =11100
-                    LayoutCachedWidth =13077
+                    LayoutCachedLeft =11460
+                    LayoutCachedWidth =13451
                     LayoutCachedHeight =302
                     ThemeFontIndex =-1
                     BorderThemeColorIndex =-1
@@ -323,11 +335,11 @@ Begin Form
             AlternateBackColor =15921906
             Begin
                 Begin TextBox
-                    OverlapFlags =93
+                    OverlapFlags =85
                     TextAlign =2
                     IMESentenceMode =3
-                    Left =1680
-                    Width =600
+                    Left =1755
+                    Width =525
                     Height =313
                     TabIndex =1
                     BorderColor =14211288
@@ -335,7 +347,7 @@ Begin Form
                     ControlSource ="Rank"
                     GridlineColor =10921638
 
-                    LayoutCachedLeft =1680
+                    LayoutCachedLeft =1755
                     LayoutCachedWidth =2280
                     LayoutCachedHeight =313
                     BackThemeColorIndex =-1
@@ -346,9 +358,9 @@ Begin Form
                     ForeTint =100.0
                 End
                 Begin TextBox
-                    OverlapFlags =95
+                    OverlapFlags =85
                     IMESentenceMode =3
-                    Left =2280
+                    Left =2340
                     Width =4200
                     Height =313
                     TabIndex =2
@@ -357,8 +369,8 @@ Begin Form
                     ControlSource ="DominantSpecies"
                     GridlineColor =10921638
 
-                    LayoutCachedLeft =2280
-                    LayoutCachedWidth =6480
+                    LayoutCachedLeft =2340
+                    LayoutCachedWidth =6540
                     LayoutCachedHeight =313
                     BackThemeColorIndex =-1
                     BorderThemeColorIndex =-1
@@ -368,7 +380,7 @@ Begin Form
                     ForeTint =100.0
                 End
                 Begin ComboBox
-                    OverlapFlags =87
+                    OverlapFlags =85
                     TextAlign =2
                     IMESentenceMode =3
                     ColumnCount =2
@@ -400,13 +412,13 @@ Begin Form
                 End
                 Begin ComboBox
                     LimitToList = NotDefault
-                    OverlapFlags =95
+                    OverlapFlags =85
                     TextAlign =2
                     IMESentenceMode =3
                     ColumnCount =2
                     ListWidth =2880
-                    Left =6480
-                    Width =2037
+                    Left =6600
+                    Width =2097
                     Height =313
                     TabIndex =3
                     BorderColor =14211288
@@ -422,8 +434,8 @@ Begin Form
                     AllowValueListEdits =0
 
                     ShowOnlyRowSourceValues =255
-                    LayoutCachedLeft =6480
-                    LayoutCachedWidth =8517
+                    LayoutCachedLeft =6600
+                    LayoutCachedWidth =8697
                     LayoutCachedHeight =313
                     ThemeFontIndex =-1
                     BackThemeColorIndex =-1
@@ -436,11 +448,11 @@ Begin Form
                     TabStop = NotDefault
                     OverlapFlags =85
                     PictureType =2
-                    Left =13200
+                    Left =13500
                     Width =306
                     Height =312
                     FontSize =10
-                    TabIndex =5
+                    TabIndex =6
                     ForeColor =4210752
                     Name ="cmdDeleteRiparianVegObs"
                     OnClick ="[Event Procedure]"
@@ -449,8 +461,8 @@ Begin Form
                     Picture ="X-Mark-16-LtGray"
                     GridlineColor =10921638
 
-                    LayoutCachedLeft =13200
-                    LayoutCachedWidth =13506
+                    LayoutCachedLeft =13500
+                    LayoutCachedWidth =13806
                     LayoutCachedHeight =312
                     Gradient =0
                     BackColor =15527148
@@ -476,12 +488,12 @@ Begin Form
                 End
                 Begin ComboBox
                     LimitToList = NotDefault
-                    OverlapFlags =95
+                    OverlapFlags =85
                     TextAlign =2
                     IMESentenceMode =3
                     ColumnCount =3
                     ListWidth =2363
-                    Left =8517
+                    Left =8760
                     Width =2648
                     Height =313
                     TabIndex =4
@@ -494,12 +506,13 @@ Begin Form
                     RowSource ="SELECT lookup_ProtectedStatus.ID, lookup_ProtectedStatus.Code, lookup_ProtectedS"
                         "tatus.Label FROM lookup_ProtectedStatus ORDER BY lookup_ProtectedStatus.ID; "
                     ColumnWidths ="0;0;2363"
-                    OnChange ="[Event Procedure]"
+                    BeforeUpdate ="[Event Procedure]"
+                    DefaultValue ="4"
                     GridlineColor =10921638
                     AllowValueListEdits =0
 
-                    LayoutCachedLeft =8517
-                    LayoutCachedWidth =11165
+                    LayoutCachedLeft =8760
+                    LayoutCachedWidth =11408
                     LayoutCachedHeight =313
                     ThemeFontIndex =-1
                     BackThemeColorIndex =-1
@@ -507,15 +520,15 @@ Begin Form
                     BorderShade =100.0
                 End
                 Begin ComboBox
-                    OverlapFlags =87
+                    OverlapFlags =85
                     TextAlign =2
                     IMESentenceMode =3
                     ColumnCount =3
                     ListWidth =4799
-                    Left =11160
+                    Left =11460
                     Width =1991
                     Height =313
-                    TabIndex =6
+                    TabIndex =5
                     BorderColor =14211288
                     ForeColor =2108188
                     ColumnInfo ="\"\";\"\";\"\";\"\";\"\";\"\";\"10\";\"80\""
@@ -528,11 +541,12 @@ Begin Form
                         "andard ON lookup_TaxonomicReferenceAuthority.TaxonomicStandardID = lookup_Taxono"
                         "micStandard.ID; "
                     ColumnWidths ="0;1847;2952"
-                    OnChange ="[Event Procedure]"
+                    BeforeUpdate ="[Event Procedure]"
+                    DefaultValue ="1"
                     GridlineColor =10921638
 
-                    LayoutCachedLeft =11160
-                    LayoutCachedWidth =13151
+                    LayoutCachedLeft =11460
+                    LayoutCachedWidth =13451
                     LayoutCachedHeight =313
                     ThemeFontIndex =-1
                     BackThemeColorIndex =-1
@@ -543,89 +557,11 @@ Begin Form
         End
         Begin FormFooter
             CanGrow = NotDefault
+            Height =0
             BackColor =15921906
             Name ="FormFooter"
             AlternateBackThemeColorIndex =1
             AlternateBackShade =95.0
-            Begin
-                Begin Subform
-                    Enabled = NotDefault
-                    OverlapFlags =85
-                    OldBorderStyle =0
-                    Left =10164
-                    Top =180
-                    Width =2750
-                    Height =1185
-                    BorderColor =65536
-                    Name ="sfrmRiparianVegetationPhoto"
-                    SourceObject ="Form.sfrm_RiparianVegetationPhoto"
-                    LinkChildFields ="RiparianVegetationObservationID"
-                    LinkMasterFields ="ID"
-                    GridlineColor =10921638
-
-                    LayoutCachedLeft =10164
-                    LayoutCachedTop =180
-                    LayoutCachedWidth =12914
-                    LayoutCachedHeight =1365
-                    BorderThemeColorIndex =-1
-                    BorderShade =100.0
-                    Begin
-                        Begin Label
-                            FontItalic = NotDefault
-                            OverlapFlags =85
-                            TextAlign =2
-                            Left =6660
-                            Top =180
-                            Width =3360
-                            Height =300
-                            FontWeight =700
-                            BorderColor =6108695
-                            Name ="lblRiparianVegPhotos"
-                            Caption ="Photos for observations of:"
-                            GridlineColor =10921638
-                            LayoutCachedLeft =6660
-                            LayoutCachedTop =180
-                            LayoutCachedWidth =10020
-                            LayoutCachedHeight =480
-                            BorderThemeColorIndex =-1
-                            BorderTint =100.0
-                            ForeThemeColorIndex =-1
-                            ForeTint =100.0
-                        End
-                    End
-                End
-                Begin TextBox
-                    Locked = NotDefault
-                    TabStop = NotDefault
-                    OldBorderStyle =0
-                    OverlapFlags =85
-                    TextAlign =2
-                    BackStyle =0
-                    IMESentenceMode =3
-                    Left =6660
-                    Top =540
-                    Width =3363
-                    Height =846
-                    FontSize =14
-                    FontWeight =700
-                    TabIndex =1
-                    BackColor =12765388
-                    BorderColor =10921638
-                    ForeColor =1643706
-                    Name ="txtRiparianVegObsPhotos"
-                    ControlSource ="=[cboLifeFormID].[Column](0)"
-                    GridlineColor =10921638
-
-                    LayoutCachedLeft =6660
-                    LayoutCachedTop =540
-                    LayoutCachedWidth =10023
-                    LayoutCachedHeight =1386
-                    BackThemeColorIndex =-1
-                    ThemeFontIndex =-1
-                    ForeThemeColorIndex =-1
-                    ForeTint =100.0
-                End
-            End
         End
     End
 End
@@ -642,7 +578,7 @@ Private Const mstrcFormName As String = "sfrm_RiparianVegetationObservation"
 Private Sub cboConfirmedPlantCodeID_AfterUpdate()
 
     'When user selects a confirmed plant code (species), cboProtectedStatus should default to the park's protected status for that species
-    'but also provide the whole list of Protected Status' so the user may select a different one, if necessary.
+    'but also provide the whole list of Protected Statuses so the user may select a different one, if necessary.
 
 On Error GoTo Error_Handler
 
@@ -678,7 +614,7 @@ Error_Handler:
     Resume Exit_Sub
 End Sub
 
-Private Sub cboProtectedStatus_Change()
+Private Sub cboProtectedStatus_BeforeUpdate(Cancel As Integer)
 
     'If user changes protected status, display message asking if they're sure they want to change the protected status. If no, undo change. If yes, make change.
     
@@ -696,7 +632,8 @@ On Error GoTo Error_Handler
     
     'Check user's response. If no, undo change.
     If YesNo = vbNo Then
-        Me.cboProtectedStatus.Undo
+        Cancel = True
+        Me!cboProtectedStatus.Undo
     End If
     
 Exit_Sub:
@@ -706,7 +643,7 @@ Error_Handler:
     Resume Exit_Sub
 End Sub
 
-Private Sub cboRiparianVegTaxonRefAuthID_Change()
+Private Sub cboRiparianVegTaxonRefAuthID_BeforeUpdate(Cancel As Integer)
 
     'If user changes Taxonomic Reference Authority, display message asking if they're sure they want to change it. If user responds no, undo change. If yes, make change.
     
@@ -724,6 +661,7 @@ On Error GoTo Error_Handler
     
     'Check user's response. If no, undo change.
     If YesNo = vbNo Then
+        Cancel = True
         Me.cboRiparianVegTaxonRefAuthID.Undo
     End If
     
@@ -736,78 +674,18 @@ End Sub
 
 Private Sub cmdDeleteRiparianVegObs_Click()
 
-'Delete Riparian observation record and photo file #s, associated with a visit, from data_RiparianVegetationObservation, and data_RiparianVegetationPhoto
+'Delete Riparian observation record
     
-    On Error Resume Next
-    
-    Dim YesNo As Integer
-    Dim RiparianVegetationObservationExists
-    
-    If IsNull(Me.ID) Then
-        Resume Next
-    'If user clicks delete button and there are unsaved changes, save the record and then prompt the user to indicate if they're sure they want to get rid of the record.
-    Else
-        If Not IsNull(Me.ID) And Me.Dirty = True Then
-            DoCmd.RunCommand acCmdSaveRecord
-            YesNo = MsgBox("You are about to delete this Riparian Vegetation Observation, which may include Species Information and Photo File #s." _
-            & Chr(13) & vbNewLine & "If you click Yes, you won't be able to undo this Delete operation." & Chr(13) _
-            & "Are you sure you want to delete this record?", vbYesNo + vbExclamation, "Delete Riparian Vegetation Observation?")
-            If YesNo = vbYes Then
-                CurrentDb.Execute "Delete * from data_RiparianVegetationObservation where ID = " & Me.ID, dbSeeChanges
-                Me.Requery
-                RiparianVegetationObservationExists = CheckRecExists(Me.Recordset, "RiparianVegetationActivityID = " & Me.Parent.VisitID)
-                If RiparianVegetationObservationExists Then
-                    Me.sfrmRiparianVegetationPhoto.Enabled = True
-                Else
-                    Me.sfrmRiparianVegetationPhoto.Enabled = False
-                    Me.Requery
-                End If
-            Else
-                Me.Undo
-            End If
-        Else
-        YesNo = MsgBox("You are about to delete this Riparian Vegetation Observation, which may include Species Information and Photo File #s." _
-        & Chr(13) & vbNewLine & "If you click Yes, you won't be able to undo this Delete operation." & Chr(13) _
-        & "Are you sure you want to delete this record?", vbYesNo + vbExclamation, "Delete Riparian Vegetation Observation?")
-            If YesNo = vbYes Then
-                CurrentDb.Execute "Delete * from data_RiparianVegetationObservation where ID = " & Me.ID, dbSeeChanges
-                Me.Requery
-                RiparianVegetationObservationExists = CheckRecExists(Me.Recordset, "RiparianVegetationActivityID = " & Me.Parent.VisitID)
-                If RiparianVegetationObservationExists Then
-                    Me.sfrmRiparianVegetationPhoto.Enabled = True
-                Else
-                    Me.sfrmRiparianVegetationPhoto.Enabled = False
-                    Me.Requery
-                End If
-            Else
-                Me.Undo
-            End If
-        End If
-    End If
-    
-End Sub
-
-Private Sub Form_AfterUpdate()
-
 On Error GoTo Error_Handler
-
-    Dim intRiparianVegetationObservationsCount As Integer
+DeleteRecord Me, Me.NewRecord
     
-    intRiparianVegetationObservationsCount = DCount("ID", "data_RiparianVegetationObservation", "RiparianVegetationActivityID = " & Me.Parent.VisitID)
-        
-    'Enable Riparian Vegetation Photo form when observations are present
-    If intRiparianVegetationObservationsCount <> 0 Then
-        Me.sfrmRiparianVegetationPhoto.Enabled = True
-    Else
-        Me.sfrmRiparianVegetationPhoto.Enabled = False
-    End If
-
 Exit_Sub:
     Exit Sub
 Error_Handler:
-    MsgBox "Form: " & mstrcFormName & vbNewLine & "Sub:  Form_AfterUpdate" & vbNewLine & "Error #" & Err.Number & ": " & Err.Description, vbCritical
+    MsgBox "Form: " & mstrcFormName & vbNewLine & "Sub:  cboRiparianVegTaxonRefAuthID_Change" & vbNewLine & "Error #" & Err.Number & ": " & Err.Description, vbCritical
     Resume Exit_Sub
 End Sub
+
 
 Private Sub Form_BeforeUpdate(Cancel As Integer)
 
@@ -828,3 +706,9 @@ Error_Handler:
     MsgBox "Form: " & mstrcFormName & vbNewLine & "Sub:  Form_BeforeUpdate" & vbNewLine & "Error #" & Err.Number & ": " & Err.Description, vbCritical
     Resume Exit_Sub
 End Sub
+
+Public Function RowCount() As Integer
+
+RowCount = Me.RecordsetClone.RecordCount
+
+End Function

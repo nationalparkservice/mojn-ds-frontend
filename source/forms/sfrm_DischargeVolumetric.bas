@@ -9,6 +9,7 @@ Begin Form
     NavigationButtons = NotDefault
     CloseButton = NotDefault
     DividingLines = NotDefault
+    FilterOn = NotDefault
     AllowDesignChanges = NotDefault
     ScrollBars =2
     PictureAlignment =2
@@ -18,10 +19,10 @@ Begin Form
     Width =3780
     DatasheetFontHeight =11
     ItemSuffix =6
-    Left =3210
-    Top =5850
-    Right =7815
-    Bottom =9945
+    Left =4080
+    Top =4635
+    Right =8940
+    Bottom =8985
     DatasheetGridlinesColor =15921906
     RecSrcDt = Begin
         0xad035cf77615e540
@@ -373,42 +374,56 @@ Attribute VB_Exposed = False
 Option Compare Database
 Option Explicit
 
+Const strcFormName As String = "sfrm_DischargeEstimated"
+
+Public Function RowCount() As Integer
+
+RowCount = Me.RecordsetClone.RecordCount
+
+End Function
+
+Public Function DataQualityOK() As Boolean
+On Error GoTo Error_Handler
+
+Dim rs As DAO.Recordset
+
+'If no data, return true and exit
+If Not Me.Dirty And RowCount() = 0 Then
+    DataQualityOK = True
+    GoTo Exit_Procedure
+End If
+
+Set rs = Me.RecordsetClone
+
+'Valid data:
+'   Container volumes are > 0, fill times are > 0, and estimated captures are between 0 and 100
+DataQualityOK = True
+With rs
+    .MoveLast
+    .MoveFirst
+    Do Until .EOF
+        DataQualityOK = DataQualityOK And _
+            (Nz(!ContainerVolume_mL) > 0) And _
+            (Nz(!FillTime_seconds) > 0) And _
+            (Nz(!EstimatedCapture_percent) > 0) And _
+            (Nz(!EstimatedCapture_percent) <= 100)
+        .MoveNext
+    Loop
+End With
+
+Exit_Procedure:
+    Exit Function
+Error_Handler:
+    MsgBox "Form: " & strcFormName & vbNewLine & "Fxn: DataQualityOK" & vbNewLine & "Error #" & Err.Number & ": " & Err.Description, vbCritical
+    Resume Exit_Procedure
+End Function
+
 Private Sub cmdDeleteVolumetricDischarge_Click()
 
-    'Delete Volumetric Discharge record, associated with a visit, from data_DischargeVolumetricObservation
+'Delete Volumetric Discharge record, associated with a visit, from data_DischargeVolumetricObservation
     
-    On Error Resume Next
-    
-    Dim YesNo As Integer
-    
-    If IsNull(Me.ID) Then
-        Resume Next
-    'If user clicks delete button and there are unsaved changes, save the record and then prompt the user to indicate if they're sure they want to get rid of the record.
-    Else
-        If Not IsNull(Me.ID) And Me.Dirty = True Then
-            DoCmd.RunCommand acCmdSaveRecord
-            YesNo = MsgBox("You are about to delete this Volumetric Discharge Observation." & Chr(13) + vbNewLine _
-            & "If you click Yes, you won't be able to undo this Delete operation." & Chr(13) _
-                & "Are you sure you want to delete this record?", vbYesNo + vbExclamation, "Delete Volumetric Discharge Observation?")
-                    If YesNo = vbYes Then
-                        CurrentDb.Execute "Delete * from data_DischargeVolumetricObservation where ID = " & Me.ID, dbSeeChanges
-                        Me.Requery
-                    Else
-                        Me.Undo
-                    End If
-        Else
-            YesNo = MsgBox("You are about to delete this Volumetric Discharge Observation." & Chr(13) + vbNewLine _
-            & "If you click Yes, you won't be able to undo this Delete operation." & Chr(13) _
-                & "Are you sure you want to delete this record?", vbYesNo + vbExclamation, "Delete Volumetric Discharge Observation?")
-                    If YesNo = vbYes Then
-                        CurrentDb.Execute "Delete * from data_DischargeVolumetricObservation where ID = " & Me.ID, dbSeeChanges
-                        Me.Requery
-                    Else
-                        Me.Undo
-                    End If
-        End If
-    End If
-
+On Error Resume Next
+DeleteRecord Me, Me.NewRecord
 
 End Sub
 

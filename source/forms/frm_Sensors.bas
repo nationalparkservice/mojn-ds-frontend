@@ -22,10 +22,10 @@ Begin Form
     Width =12900
     DatasheetFontHeight =11
     ItemSuffix =281
-    Left =1005
-    Top =360
-    Right =14220
-    Bottom =11280
+    Left =3495
+    Top =390
+    Right =16710
+    Bottom =11310
     DatasheetGridlinesColor =15921906
     RecSrcDt = Begin
         0x030a44c98d15e540
@@ -332,7 +332,7 @@ Begin Form
         End
         Begin FormHeader
             Height =720
-            BackColor =0
+            BackColor =4281912
             Name ="FormHeader"
             AlternateBackThemeColorIndex =1
             AlternateBackShade =95.0
@@ -353,12 +353,11 @@ Begin Form
                     ForeColor =16777215
                     Name ="lblHeader"
                     Caption ="Sensors"
-                    FontName ="Arial"
                     GridlineColor =10921638
                     LayoutCachedTop =60
                     LayoutCachedWidth =12900
                     LayoutCachedHeight =720
-                    ThemeFontIndex =-1
+                    ThemeFontIndex =0
                     BorderThemeColorIndex =2
                     BorderTint =100.0
                     ForeThemeColorIndex =-1
@@ -366,47 +365,49 @@ Begin Form
                 End
                 Begin CommandButton
                     OverlapFlags =215
-                    Left =11820
-                    Top =120
+                    Left =11835
+                    Top =135
                     Width =840
                     Height =405
                     FontWeight =700
                     Name ="cmdCloseForm"
                     Caption ="Close"
                     OnClick ="[Event Procedure]"
-                    FontName ="Arial"
                     GroupTable =2
+                    LeftPadding =45
+                    TopPadding =45
+                    RightPadding =150
+                    BottomPadding =150
                     GridlineColor =10921638
 
-                    LayoutCachedLeft =11820
-                    LayoutCachedTop =120
-                    LayoutCachedWidth =12660
-                    LayoutCachedHeight =525
+                    LayoutCachedLeft =11835
+                    LayoutCachedTop =135
+                    LayoutCachedWidth =12675
+                    LayoutCachedHeight =540
                     LayoutGroup =1
                     ForeThemeColorIndex =-1
                     ForeTint =100.0
-                    BackColor =10855845
+                    Shape =0
+                    Gradient =0
+                    BackColor =14211288
                     BackThemeColorIndex =-1
                     BackTint =100.0
-                    BorderColor =8890489
-                    BorderThemeColorIndex =2
-                    ThemeFontIndex =-1
-                    HoverColor =10855845
+                    BorderColor =9211020
+                    BorderThemeColorIndex =-1
+                    BorderTint =100.0
+                    ThemeFontIndex =0
+                    HoverColor =15527148
                     HoverThemeColorIndex =-1
                     HoverTint =100.0
-                    PressedColor =10855845
+                    PressedColor =15527148
                     PressedThemeColorIndex =-1
                     PressedShade =100.0
                     HoverForeColor =4210752
                     PressedForeColor =4210752
                     GroupTable =2
-                    Shadow =-1
+                    Shadow =1
                     QuickStyle =22
-                    QuickStyleMask =-1009
-                    WebImagePaddingLeft =-2
-                    WebImagePaddingTop =1
-                    WebImagePaddingRight =-3
-                    WebImagePaddingBottom =-6
+                    QuickStyleMask =-1013
                     Overlaps =1
                 End
             End
@@ -414,9 +415,8 @@ Begin Form
         Begin Section
             CanGrow = NotDefault
             Height =9945
-            BackColor =15527148
+            BackColor =15921906
             Name ="Detail"
-            AlternateBackColor =14602694
             Begin
                 Begin Subform
                     CanGrow = NotDefault
@@ -457,7 +457,6 @@ Begin Form
                     BorderShade =100.0
                 End
                 Begin Subform
-                    Visible = NotDefault
                     CanGrow = NotDefault
                     OverlapFlags =215
                     OldBorderStyle =0
@@ -527,8 +526,9 @@ Begin Form
                     Caption ="New Sensor"
                     OnClick ="[Event Procedure]"
                     LeftPadding =60
-                    RightPadding =75
-                    BottomPadding =120
+                    TopPadding =45
+                    RightPadding =150
+                    BottomPadding =150
                     GridlineColor =10921638
 
                     LayoutCachedLeft =4800
@@ -536,36 +536,39 @@ Begin Form
                     LayoutCachedWidth =8040
                     LayoutCachedHeight =9705
                     ForeTint =100.0
-                    BackColor =10855845
+                    Shape =0
+                    Gradient =0
+                    BackColor =14211288
                     BackThemeColorIndex =-1
                     BackTint =100.0
-                    BorderColor =0
-                    BorderThemeColorIndex =0
+                    BorderColor =9211020
+                    BorderThemeColorIndex =-1
                     BorderTint =100.0
-                    HoverColor =10855845
+                    HoverColor =14211288
                     HoverThemeColorIndex =-1
                     HoverTint =100.0
-                    PressedColor =10855845
+                    PressedColor =14211288
                     PressedThemeColorIndex =-1
                     PressedShade =100.0
                     HoverForeColor =0
                     HoverForeTint =100.0
                     PressedForeColor =0
                     PressedForeTint =100.0
-                    Shadow =-1
+                    Shadow =1
                     QuickStyle =22
-                    QuickStyleMask =-49
-                    WebImagePaddingTop =1
+                    QuickStyleMask =-117
+                    WebImagePaddingLeft =1
                     Overlaps =1
                 End
                 Begin Rectangle
-                    SpecialEffect =0
+                    SpecialEffect =4
+                    BorderWidth =3
                     OverlapFlags =223
                     Left =6600
                     Top =420
                     Width =6120
                     Height =8685
-                    BorderColor =65536
+                    BorderColor =9211020
                     Name ="boxSensorDetails"
                     GridlineColor =10921638
                     LayoutCachedLeft =6600
@@ -581,26 +584,25 @@ Begin Form
                     TextAlign =2
                     IMESentenceMode =3
                     Left =6840
-                    Top =180
-                    Width =2715
-                    Height =360
+                    Top =225
+                    Width =2895
+                    Height =315
                     FontSize =14
                     TabIndex =5
-                    BackColor =15527148
+                    BackColor =15921906
                     Name ="txtSensor"
                     ControlSource ="=\"Sensor Details\" & IIf([sfrmSensor].Visible,IIf(IsNull([sfrmSensor].Form!txtT"
                         "agLabel),\": New\",\": #\" & [sfrmSensor].Form!txtTagLabel),\"\")"
-                    FontName ="Arial"
                     GridlineColor =10921638
 
                     LayoutCachedLeft =6840
-                    LayoutCachedTop =180
-                    LayoutCachedWidth =9555
+                    LayoutCachedTop =225
+                    LayoutCachedWidth =9735
                     LayoutCachedHeight =540
                     BackThemeColorIndex =-1
                     BorderThemeColorIndex =-1
                     BorderShade =100.0
-                    ThemeFontIndex =-1
+                    ThemeFontIndex =0
                     ForeThemeColorIndex =-1
                     ForeTint =100.0
                 End
@@ -624,7 +626,6 @@ Begin Form
                     BorderShade =100.0
                     Begin
                         Begin Label
-                            BackStyle =1
                             OverlapFlags =223
                             Left =3825
                             Top =660
@@ -634,13 +635,12 @@ Begin Form
                             BackColor =15527148
                             Name ="lblDeployed"
                             Caption ="Deployed"
-                            FontName ="Arial"
                             GridlineColor =10921638
                             LayoutCachedLeft =3825
                             LayoutCachedTop =660
                             LayoutCachedWidth =6240
                             LayoutCachedHeight =960
-                            ThemeFontIndex =-1
+                            ThemeFontIndex =0
                             BackThemeColorIndex =-1
                             BorderThemeColorIndex =-1
                             BorderTint =100.0
@@ -669,7 +669,6 @@ Begin Form
                     BorderShade =100.0
                     Begin
                         Begin Label
-                            BackStyle =1
                             OverlapFlags =95
                             Left =4365
                             Top =1380
@@ -679,13 +678,12 @@ Begin Form
                             BackColor =15527148
                             Name ="lblFailedRetrieval"
                             Caption ="Failed retrieval"
-                            FontName ="Arial"
                             GridlineColor =10921638
                             LayoutCachedLeft =4365
                             LayoutCachedTop =1380
                             LayoutCachedWidth =6000
                             LayoutCachedHeight =1680
-                            ThemeFontIndex =-1
+                            ThemeFontIndex =0
                             BackThemeColorIndex =-1
                             BorderThemeColorIndex =-1
                             BorderTint =100.0
@@ -714,7 +712,6 @@ Begin Form
                     BorderShade =100.0
                     Begin
                         Begin Label
-                            BackStyle =1
                             OverlapFlags =95
                             Left =4365
                             Top =1020
@@ -724,13 +721,12 @@ Begin Form
                             BackColor =15527148
                             Name ="lblSuccessfulRetrieval"
                             Caption ="Successful retrieval"
-                            FontName ="Arial"
                             GridlineColor =10921638
                             LayoutCachedLeft =4365
                             LayoutCachedTop =1020
                             LayoutCachedWidth =6240
                             LayoutCachedHeight =1320
-                            ThemeFontIndex =-1
+                            ThemeFontIndex =0
                             BackThemeColorIndex =-1
                             BorderThemeColorIndex =-1
                             BorderTint =100.0
@@ -740,7 +736,6 @@ Begin Form
                     End
                 End
                 Begin Label
-                    BackStyle =1
                     OverlapFlags =93
                     Left =420
                     Top =660
@@ -750,13 +745,12 @@ Begin Form
                     BackColor =15527148
                     Name ="lblSensorFilterList"
                     Caption ="Filter:"
-                    FontName ="Arial"
                     GridlineColor =10921638
                     LayoutCachedLeft =420
                     LayoutCachedTop =660
                     LayoutCachedWidth =1095
                     LayoutCachedHeight =960
-                    ThemeFontIndex =-1
+                    ThemeFontIndex =0
                     BackThemeColorIndex =-1
                     BorderThemeColorIndex =-1
                     BorderTint =100.0
@@ -797,7 +791,6 @@ Begin Form
                     BorderShade =100.0
                     Begin
                         Begin Label
-                            BackStyle =1
                             OverlapFlags =95
                             Left =4365
                             Top =1740
@@ -807,13 +800,12 @@ Begin Form
                             BackColor =15527148
                             Name ="lblNoRetrievalAttempt"
                             Caption ="No retrieval info"
-                            FontName ="Arial"
                             GridlineColor =10921638
                             LayoutCachedLeft =4365
                             LayoutCachedTop =1740
                             LayoutCachedWidth =6000
                             LayoutCachedHeight =2040
-                            ThemeFontIndex =-1
+                            ThemeFontIndex =0
                             BackThemeColorIndex =-1
                             BorderThemeColorIndex =-1
                             BorderTint =100.0
@@ -842,7 +834,6 @@ Begin Form
                     BorderShade =100.0
                     Begin
                         Begin Label
-                            BackStyle =1
                             OverlapFlags =223
                             Left =1485
                             Top =660
@@ -852,13 +843,12 @@ Begin Form
                             BackColor =15527148
                             Name ="lblSensorNoDeployInfo"
                             Caption ="No deployment info"
-                            FontName ="Arial"
                             GridlineColor =10921638
                             LayoutCachedLeft =1485
                             LayoutCachedTop =660
                             LayoutCachedWidth =3435
                             LayoutCachedHeight =960
-                            ThemeFontIndex =-1
+                            ThemeFontIndex =0
                             BackThemeColorIndex =-1
                             BorderThemeColorIndex =-1
                             BorderTint =100.0
@@ -869,14 +859,16 @@ Begin Form
                 End
                 Begin OptionGroup
                     TabStop = NotDefault
-                    SpecialEffect =0
+                    SpecialEffect =4
+                    BorderWidth =3
                     OverlapFlags =255
                     Left =180
                     Top =420
                     Width =6255
                     Height =8684
                     TabIndex =11
-                    BorderColor =65536
+                    BackColor =15921906
+                    BorderColor =9211020
                     Name ="fraAllSensors"
                     GridlineColor =10921638
 
@@ -884,6 +876,7 @@ Begin Form
                     LayoutCachedTop =420
                     LayoutCachedWidth =6435
                     LayoutCachedHeight =9104
+                    BackThemeColorIndex =-1
                     BorderThemeColorIndex =-1
                     BorderShade =100.0
                 End
@@ -892,20 +885,19 @@ Begin Form
                     OverlapFlags =247
                     TextAlign =2
                     Left =420
-                    Top =180
+                    Top =225
                     Width =1523
-                    Height =360
+                    Height =315
                     FontSize =14
-                    BackColor =15527148
+                    BackColor =15921906
                     Name ="lblAllSensors"
                     Caption ="All Sensors"
-                    FontName ="Arial"
                     GridlineColor =10921638
                     LayoutCachedLeft =420
-                    LayoutCachedTop =180
+                    LayoutCachedTop =225
                     LayoutCachedWidth =1943
                     LayoutCachedHeight =540
-                    ThemeFontIndex =-1
+                    ThemeFontIndex =0
                     BackThemeColorIndex =-1
                     BorderThemeColorIndex =-1
                     BorderTint =100.0

@@ -17,13 +17,13 @@ Begin Form
     DatasheetGridlinesBehavior =3
     GridX =24
     GridY =24
-    Width =15840
+    Width =15960
     DatasheetFontHeight =11
     ItemSuffix =40
-    Left =4440
-    Top =3090
-    Right =19710
-    Bottom =8235
+    Left =720
+    Top =3540
+    Right =16695
+    Bottom =8970
     DatasheetGridlinesColor =15921906
     RecSrcDt = Begin
         0x8e8931077915e540
@@ -31,7 +31,6 @@ Begin Form
     RecordSource ="data_InvasivesObservation"
     Caption ="Invasives Observations"
     BeforeUpdate ="[Event Procedure]"
-    AfterUpdate ="[Event Procedure]"
     DatasheetFontName ="Calibri"
     PrtMip = Begin
         0x6801000068010000680100006801000000000000201c0000e010000001000000 ,
@@ -163,6 +162,18 @@ Begin Form
             BorderShade =65.0
             ShowPageHeaderAndPageFooter =1
         End
+        Begin Chart
+            SpecialEffect =2
+            OldBorderStyle =1
+            ThemeFontIndex =1
+            BackThemeColorIndex =1
+            BorderThemeColorIndex =1
+            BorderShade =65.0
+            ForeThemeColorIndex =2
+            ForeShade =50.0
+            GridlineThemeColorIndex =1
+            GridlineShade =65.0
+        End
         Begin Tab
             FontSize =11
             FontName ="Calibri"
@@ -199,7 +210,7 @@ Begin Form
             GridlineShade =65.0
         End
         Begin FormHeader
-            Height =479
+            Height =480
             BackColor =15921906
             Name ="FormHeader"
             AlternateBackThemeColorIndex =1
@@ -208,19 +219,19 @@ Begin Form
                 Begin Label
                     OverlapFlags =85
                     TextAlign =2
-                    Left =1500
+                    Left =1560
                     Top =240
                     Width =3060
-                    Height =239
+                    Height =240
                     FontSize =10
                     BorderColor =6108695
                     Name ="lblSpeciesNotes"
                     Caption ="Species Notes"
                     GridlineColor =10921638
-                    LayoutCachedLeft =1500
+                    LayoutCachedLeft =1560
                     LayoutCachedTop =240
-                    LayoutCachedWidth =4560
-                    LayoutCachedHeight =479
+                    LayoutCachedWidth =4620
+                    LayoutCachedHeight =480
                     BorderThemeColorIndex =-1
                     BorderTint =100.0
                     ForeThemeColorIndex =-1
@@ -229,19 +240,19 @@ Begin Form
                 Begin Label
                     OverlapFlags =85
                     TextAlign =2
-                    Left =5700
+                    Left =5820
                     Top =240
-                    Width =1008
-                    Height =239
+                    Width =1080
+                    Height =240
                     FontSize =10
                     BorderColor =6108695
                     Name ="lblInvasiveUtmX"
                     Caption ="UTMX (m)"
                     GridlineColor =10921638
-                    LayoutCachedLeft =5700
+                    LayoutCachedLeft =5820
                     LayoutCachedTop =240
-                    LayoutCachedWidth =6708
-                    LayoutCachedHeight =479
+                    LayoutCachedWidth =6900
+                    LayoutCachedHeight =480
                     ThemeFontIndex =-1
                     BorderThemeColorIndex =-1
                     BorderTint =100.0
@@ -251,19 +262,19 @@ Begin Form
                 Begin Label
                     OverlapFlags =85
                     TextAlign =2
-                    Left =6780
+                    Left =6960
                     Top =240
-                    Width =1008
-                    Height =239
+                    Width =1080
+                    Height =240
                     FontSize =10
                     BorderColor =6108695
                     Name ="lblInvasiveUtmY"
                     Caption ="UTMY (m)"
                     GridlineColor =10921638
-                    LayoutCachedLeft =6780
+                    LayoutCachedLeft =6960
                     LayoutCachedTop =240
-                    LayoutCachedWidth =7788
-                    LayoutCachedHeight =479
+                    LayoutCachedWidth =8040
+                    LayoutCachedHeight =480
                     ThemeFontIndex =-1
                     BorderThemeColorIndex =-1
                     BorderTint =100.0
@@ -273,17 +284,19 @@ Begin Form
                 Begin Label
                     OverlapFlags =85
                     TextAlign =2
+                    Left =60
                     Top =240
-                    Width =1056
-                    Height =239
+                    Width =1080
+                    Height =240
                     FontSize =10
                     BorderColor =6108695
                     Name ="lblSpeciesID"
                     Caption ="*Species"
                     GridlineColor =10921638
+                    LayoutCachedLeft =60
                     LayoutCachedTop =240
-                    LayoutCachedWidth =1056
-                    LayoutCachedHeight =479
+                    LayoutCachedWidth =1140
+                    LayoutCachedHeight =480
                     ThemeFontIndex =-1
                     BorderThemeColorIndex =-1
                     BorderTint =100.0
@@ -293,17 +306,17 @@ Begin Form
                 Begin Label
                     OverlapFlags =85
                     TextAlign =2
-                    Left =4620
-                    Width =1056
-                    Height =479
+                    Left =4680
+                    Width =1080
+                    Height =480
                     FontSize =10
                     BorderColor =6108695
                     Name ="lblRiparianVegBufferID"
                     Caption ="*Riparian\015\012Veg Buffer"
                     GridlineColor =10921638
-                    LayoutCachedLeft =4620
-                    LayoutCachedWidth =5676
-                    LayoutCachedHeight =479
+                    LayoutCachedLeft =4680
+                    LayoutCachedWidth =5760
+                    LayoutCachedHeight =480
                     ThemeFontIndex =-1
                     BorderThemeColorIndex =-1
                     BorderTint =100.0
@@ -313,19 +326,19 @@ Begin Form
                 Begin Label
                     OverlapFlags =85
                     TextAlign =2
-                    Left =7860
+                    Left =8100
                     Top =240
-                    Width =2028
-                    Height =239
+                    Width =2100
+                    Height =240
                     FontSize =10
                     BorderColor =6108695
                     Name ="lblInvasiveDatum"
                     Caption ="Horizontal Datum"
                     GridlineColor =10921638
-                    LayoutCachedLeft =7860
+                    LayoutCachedLeft =8100
                     LayoutCachedTop =240
-                    LayoutCachedWidth =9888
-                    LayoutCachedHeight =479
+                    LayoutCachedWidth =10200
+                    LayoutCachedHeight =480
                     ThemeFontIndex =-1
                     BorderThemeColorIndex =-1
                     BorderTint =100.0
@@ -335,19 +348,17 @@ Begin Form
                 Begin Label
                     OverlapFlags =85
                     TextAlign =2
-                    Left =9960
-                    Top =240
-                    Width =855
-                    Height =239
+                    Left =10260
+                    Width =675
+                    Height =480
                     FontSize =10
                     BorderColor =6108695
                     Name ="lblInvasiveUTMZone"
                     Caption ="UTM Zone"
                     GridlineColor =10921638
-                    LayoutCachedLeft =9960
-                    LayoutCachedTop =240
-                    LayoutCachedWidth =10815
-                    LayoutCachedHeight =479
+                    LayoutCachedLeft =10260
+                    LayoutCachedWidth =10935
+                    LayoutCachedHeight =480
                     ThemeFontIndex =-1
                     BorderThemeColorIndex =-1
                     BorderTint =100.0
@@ -357,19 +368,19 @@ Begin Form
                 Begin Label
                     OverlapFlags =85
                     TextAlign =2
-                    Left =10860
+                    Left =10995
                     Top =240
-                    Width =2340
-                    Height =239
+                    Width =2625
+                    Height =240
                     FontSize =10
                     BorderColor =6108695
                     Name ="lblInvasiveProtectedStatusID"
                     Caption ="*Protected Status"
                     GridlineColor =10921638
-                    LayoutCachedLeft =10860
+                    LayoutCachedLeft =10995
                     LayoutCachedTop =240
-                    LayoutCachedWidth =13200
-                    LayoutCachedHeight =479
+                    LayoutCachedWidth =13620
+                    LayoutCachedHeight =480
                     ThemeFontIndex =-1
                     BorderThemeColorIndex =-1
                     BorderTint =100.0
@@ -379,17 +390,17 @@ Begin Form
                 Begin Label
                     OverlapFlags =85
                     TextAlign =2
-                    Left =13260
-                    Width =1848
-                    Height =479
+                    Left =13680
+                    Width =1860
+                    Height =480
                     FontSize =10
                     BorderColor =8355711
                     Name ="lblInvasiveTaxonomicRefAuthID"
                     Caption ="*Taxonomic Reference Authority"
                     GridlineColor =10921638
-                    LayoutCachedLeft =13260
-                    LayoutCachedWidth =15108
-                    LayoutCachedHeight =479
+                    LayoutCachedLeft =13680
+                    LayoutCachedWidth =15540
+                    LayoutCachedHeight =480
                     ThemeFontIndex =-1
                     ForeThemeColorIndex =-1
                     ForeTint =100.0
@@ -404,12 +415,12 @@ Begin Form
             AlternateBackColor =15921906
             Begin
                 Begin TextBox
-                    OverlapFlags =93
+                    OverlapFlags =85
                     TextAlign =1
                     IMESentenceMode =3
                     Left =1560
                     Width =3060
-                    Height =313
+                    Height =300
                     TabIndex =2
                     BorderColor =14211288
                     Name ="txtInvasiveSpeciesNotes"
@@ -418,7 +429,7 @@ Begin Form
 
                     LayoutCachedLeft =1560
                     LayoutCachedWidth =4620
-                    LayoutCachedHeight =313
+                    LayoutCachedHeight =300
                     BackThemeColorIndex =-1
                     BorderThemeColorIndex =-1
                     BorderShade =100.0
@@ -427,21 +438,21 @@ Begin Form
                     ForeTint =100.0
                 End
                 Begin TextBox
-                    OverlapFlags =93
+                    OverlapFlags =85
                     TextAlign =2
                     IMESentenceMode =3
-                    Left =5700
-                    Width =1083
-                    Height =313
+                    Left =5820
+                    Width =1080
+                    Height =300
                     TabIndex =4
                     BorderColor =14211288
                     Name ="txtInvasiveUtmX_m"
                     ControlSource ="UtmX_m"
                     GridlineColor =10921638
 
-                    LayoutCachedLeft =5700
-                    LayoutCachedWidth =6783
-                    LayoutCachedHeight =313
+                    LayoutCachedLeft =5820
+                    LayoutCachedWidth =6900
+                    LayoutCachedHeight =300
                     BackThemeColorIndex =-1
                     BorderThemeColorIndex =-1
                     BorderShade =100.0
@@ -450,21 +461,21 @@ Begin Form
                     ForeTint =100.0
                 End
                 Begin TextBox
-                    OverlapFlags =95
+                    OverlapFlags =85
                     TextAlign =2
                     IMESentenceMode =3
-                    Left =6780
-                    Width =1083
-                    Height =313
+                    Left =6960
+                    Width =1080
+                    Height =300
                     TabIndex =5
                     BorderColor =14211288
                     Name ="txtInvasiveUtmY_m"
                     ControlSource ="UtmY_m"
                     GridlineColor =10921638
 
-                    LayoutCachedLeft =6780
-                    LayoutCachedWidth =7863
-                    LayoutCachedHeight =313
+                    LayoutCachedLeft =6960
+                    LayoutCachedWidth =8040
+                    LayoutCachedHeight =300
                     BackThemeColorIndex =-1
                     BorderThemeColorIndex =-1
                     BorderShade =100.0
@@ -481,8 +492,8 @@ Begin Form
                     ColumnCount =5
                     ListWidth =8280
                     Left =60
-                    Width =1086
-                    Height =313
+                    Width =1080
+                    Height =300
                     BorderColor =14211288
                     ColumnInfo ="\"\";\"\";\"\";\"\";\"\";\"\";\"\";\"\";\"\";\"\";\"10\";\"20\""
                     Name ="cboTaxonID"
@@ -498,8 +509,8 @@ Begin Form
 
                     ShowOnlyRowSourceValues =255
                     LayoutCachedLeft =60
-                    LayoutCachedWidth =1146
-                    LayoutCachedHeight =313
+                    LayoutCachedWidth =1140
+                    LayoutCachedHeight =300
                     BackThemeColorIndex =-1
                     BorderThemeColorIndex =-1
                     BorderShade =100.0
@@ -508,14 +519,14 @@ Begin Form
                 End
                 Begin ComboBox
                     LimitToList = NotDefault
-                    OverlapFlags =87
+                    OverlapFlags =85
                     TextAlign =2
                     IMESentenceMode =3
                     ColumnCount =2
                     ListWidth =2160
-                    Left =4620
-                    Width =1086
-                    Height =313
+                    Left =4680
+                    Width =1080
+                    Height =300
                     TabIndex =3
                     BorderColor =14211288
                     ColumnInfo ="\"\";\"\";\"\";\"\";\"10\";\"20\""
@@ -529,9 +540,9 @@ Begin Form
                     AllowValueListEdits =0
 
                     ShowOnlyRowSourceValues =255
-                    LayoutCachedLeft =4620
-                    LayoutCachedWidth =5706
-                    LayoutCachedHeight =313
+                    LayoutCachedLeft =4680
+                    LayoutCachedWidth =5760
+                    LayoutCachedHeight =300
                     ThemeFontIndex =-1
                     BackThemeColorIndex =-1
                     BorderThemeColorIndex =-1
@@ -541,14 +552,14 @@ Begin Form
                 End
                 Begin ComboBox
                     LimitToList = NotDefault
-                    OverlapFlags =95
+                    OverlapFlags =85
                     TextAlign =2
                     IMESentenceMode =3
                     ColumnCount =2
                     ListWidth =1440
-                    Left =7860
-                    Width =2103
-                    Height =313
+                    Left =8100
+                    Width =2100
+                    Height =300
                     TabIndex =6
                     BorderColor =14211288
                     ColumnInfo ="\"\";\"\";\"\";\"\";\"10\";\"40\""
@@ -562,9 +573,9 @@ Begin Form
                     AllowValueListEdits =0
 
                     ShowOnlyRowSourceValues =255
-                    LayoutCachedLeft =7860
-                    LayoutCachedWidth =9963
-                    LayoutCachedHeight =313
+                    LayoutCachedLeft =8100
+                    LayoutCachedWidth =10200
+                    LayoutCachedHeight =300
                     ThemeFontIndex =-1
                     BackThemeColorIndex =-1
                     BorderThemeColorIndex =-1
@@ -574,14 +585,14 @@ Begin Form
                 End
                 Begin ComboBox
                     LimitToList = NotDefault
-                    OverlapFlags =95
+                    OverlapFlags =85
                     TextAlign =2
                     IMESentenceMode =3
                     ColumnCount =2
                     ListWidth =720
-                    Left =9960
-                    Width =900
-                    Height =313
+                    Left =10260
+                    Width =675
+                    Height =300
                     TabIndex =7
                     BorderColor =14211288
                     ColumnInfo ="\"\";\"\";\"\";\"\";\"10\";\"10\""
@@ -595,9 +606,9 @@ Begin Form
                     AllowValueListEdits =0
 
                     ShowOnlyRowSourceValues =255
-                    LayoutCachedLeft =9960
-                    LayoutCachedWidth =10860
-                    LayoutCachedHeight =313
+                    LayoutCachedLeft =10260
+                    LayoutCachedWidth =10935
+                    LayoutCachedHeight =300
                     ThemeFontIndex =-1
                     BackThemeColorIndex =-1
                     BorderThemeColorIndex =-1
@@ -609,7 +620,7 @@ Begin Form
                     TabStop = NotDefault
                     OverlapFlags =85
                     PictureType =2
-                    Left =15166
+                    Left =15586
                     Width =313
                     Height =313
                     TabIndex =10
@@ -620,8 +631,8 @@ Begin Form
                     Picture ="X-Mark-16-LtGray"
                     GridlineColor =10921638
 
-                    LayoutCachedLeft =15166
-                    LayoutCachedWidth =15479
+                    LayoutCachedLeft =15586
+                    LayoutCachedWidth =15899
                     LayoutCachedHeight =313
                     Gradient =0
                     BackColor =15527148
@@ -646,14 +657,14 @@ Begin Form
                 End
                 Begin ComboBox
                     LimitToList = NotDefault
-                    OverlapFlags =95
+                    OverlapFlags =85
                     TextAlign =2
                     IMESentenceMode =3
                     ColumnCount =3
                     ListWidth =2160
-                    Left =10860
-                    Width =2400
-                    Height =313
+                    Left =10995
+                    Width =2625
+                    Height =300
                     TabIndex =8
                     BorderColor =14211288
                     ColumnInfo ="\"\";\"\";\"\";\"\";\"\";\"\";\"10\";\"50\""
@@ -667,9 +678,9 @@ Begin Form
                     GridlineColor =10921638
                     AllowValueListEdits =0
 
-                    LayoutCachedLeft =10860
-                    LayoutCachedWidth =13260
-                    LayoutCachedHeight =313
+                    LayoutCachedLeft =10995
+                    LayoutCachedWidth =13620
+                    LayoutCachedHeight =300
                     ThemeFontIndex =-1
                     BackThemeColorIndex =-1
                     BorderThemeColorIndex =-1
@@ -679,14 +690,14 @@ Begin Form
                 End
                 Begin ComboBox
                     LimitToList = NotDefault
-                    OverlapFlags =87
+                    OverlapFlags =85
                     TextAlign =2
                     IMESentenceMode =3
                     ColumnCount =3
                     ListWidth =4799
-                    Left =13260
-                    Width =1848
-                    Height =313
+                    Left =13680
+                    Width =1860
+                    Height =300
                     TabIndex =9
                     BorderColor =14211288
                     ColumnInfo ="\"\";\"\";\"\";\"\";\"\";\"\";\"10\";\"80\""
@@ -703,9 +714,9 @@ Begin Form
                     GridlineColor =10921638
                     AllowValueListEdits =0
 
-                    LayoutCachedLeft =13260
-                    LayoutCachedWidth =15108
-                    LayoutCachedHeight =313
+                    LayoutCachedLeft =13680
+                    LayoutCachedWidth =15540
+                    LayoutCachedHeight =300
                     ThemeFontIndex =-1
                     BackThemeColorIndex =-1
                     BorderThemeColorIndex =-1
@@ -714,11 +725,12 @@ Begin Form
                     ForeShade =100.0
                 End
                 Begin CommandButton
+                    TabStop = NotDefault
                     OverlapFlags =85
                     PictureType =2
                     Left =1200
-                    Width =312
-                    Height =311
+                    Width =300
+                    Height =300
                     TabIndex =1
                     ForeColor =4210752
                     Name ="cmdGoToSpeciesLink"
@@ -727,8 +739,8 @@ Begin Form
                     GridlineColor =10921638
 
                     LayoutCachedLeft =1200
-                    LayoutCachedWidth =1512
-                    LayoutCachedHeight =311
+                    LayoutCachedWidth =1500
+                    LayoutCachedHeight =300
                     Gradient =0
                     BackColor =15921906
                     BackThemeColorIndex =-1
@@ -754,89 +766,11 @@ Begin Form
         End
         Begin FormFooter
             CanGrow = NotDefault
+            Height =0
             BackColor =15921906
             Name ="FormFooter"
             AlternateBackThemeColorIndex =1
             AlternateBackShade =95.0
-            Begin
-                Begin Subform
-                    Enabled = NotDefault
-                    OverlapFlags =85
-                    OldBorderStyle =0
-                    Left =10164
-                    Top =180
-                    Width =2750
-                    Height =1185
-                    BorderColor =65536
-                    Name ="sfrmInvasivesPhoto"
-                    SourceObject ="Form.sfrm_InvasivesPhoto"
-                    LinkChildFields ="InvasivesObservationID"
-                    LinkMasterFields ="ID"
-                    GridlineColor =10921638
-
-                    LayoutCachedLeft =10164
-                    LayoutCachedTop =180
-                    LayoutCachedWidth =12914
-                    LayoutCachedHeight =1365
-                    BorderThemeColorIndex =-1
-                    BorderShade =100.0
-                    Begin
-                        Begin Label
-                            FontItalic = NotDefault
-                            OverlapFlags =85
-                            TextAlign =2
-                            Left =6660
-                            Top =180
-                            Width =3360
-                            Height =300
-                            FontWeight =700
-                            BorderColor =6108695
-                            Name ="lblRiparianVegPhotos"
-                            Caption ="Photos for observations of:"
-                            GridlineColor =10921638
-                            LayoutCachedLeft =6660
-                            LayoutCachedTop =180
-                            LayoutCachedWidth =10020
-                            LayoutCachedHeight =480
-                            BorderThemeColorIndex =-1
-                            BorderTint =100.0
-                            ForeThemeColorIndex =-1
-                            ForeTint =100.0
-                        End
-                    End
-                End
-                Begin TextBox
-                    Locked = NotDefault
-                    TabStop = NotDefault
-                    OldBorderStyle =0
-                    OverlapFlags =85
-                    TextAlign =2
-                    BackStyle =0
-                    IMESentenceMode =3
-                    Left =6660
-                    Top =540
-                    Width =3363
-                    Height =846
-                    FontSize =14
-                    FontWeight =700
-                    TabIndex =1
-                    BackColor =12765388
-                    BorderColor =10921638
-                    ForeColor =1643706
-                    Name ="txtRiparianVegObsPhotos"
-                    ControlSource ="=[cboTaxonID].[Column](1)"
-                    GridlineColor =10921638
-
-                    LayoutCachedLeft =6660
-                    LayoutCachedTop =540
-                    LayoutCachedWidth =10023
-                    LayoutCachedHeight =1386
-                    BackThemeColorIndex =-1
-                    ThemeFontIndex =-1
-                    ForeThemeColorIndex =-1
-                    ForeTint =100.0
-                End
-            End
         End
     End
 End
@@ -953,55 +887,17 @@ Error_Handler:
 End Sub
 
 Private Sub cmdDeleteInvasivesObservation_Click()
+On Error GoTo Error_Handler
+'Delete Invasive Species observation record
+
+DeleteRecord Me, Me.NewRecord
+
+Exit_Sub:
+    Exit Sub
     
-'Delete Invasive Species observation record, with photo file records from data_InvasivesObservation, data_InvasivesPhoto
-    
-    On Error Resume Next
-    
-    Dim YesNo As Integer
-    Dim InvasivesObservationsExists As Boolean
-    
-    If IsNull(Me.ID) Then
-        Resume Next
-    'If user clicks delete button and there are unsaved changes, save the record and then prompt the user to indicate if they're sure they want to get rid of the record.
-    Else
-        If Not IsNull(Me.ID) And Me.Dirty = True Then
-            DoCmd.RunCommand acCmdSaveRecord
-            YesNo = MsgBox("You are about to delete this Invasive Species Observation, which may include Location, Protected Status, and Photo File #s." & Chr(13) & vbNewLine & _
-            "If you click Yes, you won't be able to undo this Delete operation." & Chr(13) _
-            & "Are you sure you want to delete this record?", vbYesNo + vbExclamation, "Delete Invasive Species Observation?")
-                If YesNo = vbYes Then
-                    CurrentDb.Execute "Delete * from data_InvasivesObservation where id = " & Me.ID, dbSeeChanges
-                    Me.Requery
-                    InvasivesObservationsExists = CheckRecExists(Me.Recordset, "InvasivesActivityID = " & Me.Parent.VisitID)
-                        If InvasivesObservationsExists Then
-                            Me.sfrmInvasivesPhoto.Enabled = True
-                        Else
-                            Me.sfrmInvasivesPhoto.Enabled = False
-                            Me.Requery
-                        End If
-                Else
-                    Me.Undo
-                End If
-        Else
-            YesNo = MsgBox("You are about to delete this Invasive Species Observation, which may include Location, Protected Status, and Photo File #s." & Chr(13) & vbNewLine & _
-            "If you click Yes, you won't be able to undo this Delete operation." & Chr(13) _
-            & "Are you sure you want to delete this record?", vbYesNo + vbExclamation, "Delete Invasive Species Observation?")
-                If YesNo = vbYes Then
-                    CurrentDb.Execute "Delete * from data_InvasivesObservation where id = " & Me.ID, dbSeeChanges
-                    Me.Requery
-                    InvasivesObservationsExists = CheckRecExists(Me.Recordset, "InvasivesActivityID = " & Me.Parent.VisitID)
-                        If InvasivesObservationsExists Then
-                            Me.sfrmInvasivesPhoto.Enabled = True
-                        Else
-                            Me.sfrmInvasivesPhoto.Enabled = False
-                            Me.Requery
-                        End If
-                Else
-                    Me.Undo
-                End If
-        End If
-    End If
+Error_Handler:
+    MsgBox "Form: " & mstrcFormName & vbNewLine & "Sub:  cmdDeleteInvasivesObservation_Click" & vbNewLine & "Error #" & Err.Number & ": " & Err.Description, vbCritical
+    Resume Exit_Sub
 
 End Sub
 
@@ -1025,31 +921,6 @@ Error_Handler:
 
 End Sub
 
-Private Sub Form_AfterUpdate()
-
-On Error GoTo Error_Handler
-
-    Dim intInvasivesObservationsCount As Integer
-    
-    intInvasivesObservationsCount = DCount("ID", "data_InvasivesObservation", "InvasivesActivityID = " & Me.Parent.VisitID)
-    
-    'Enable sfrmInvasivesPhoto if observations are present
-    
-    If intInvasivesObservationsCount <> 0 Then
-        Me.sfrmInvasivesPhoto.Enabled = True
-    Else
-        Me.sfrmInvasivesPhoto.Enabled = False
-    End If
-    
-Exit_Sub:
-    Exit Sub
-    
-Error_Handler:
-    MsgBox "Form: " & mstrcFormName & vbNewLine & "Sub:  Form_AfterUpdate" & vbNewLine & "Error #" & Err.Number & ": " & Err.Description, vbCritical
-    Resume Exit_Sub
-
-    
-End Sub
 
 Private Sub Form_BeforeUpdate(Cancel As Integer)
     
@@ -1095,3 +966,9 @@ Error_Handler:
     Resume Exit_Sub
     
 End Sub
+
+Public Function RowCount() As Integer
+
+RowCount = Me.RecordsetClone.RecordCount
+
+End Function

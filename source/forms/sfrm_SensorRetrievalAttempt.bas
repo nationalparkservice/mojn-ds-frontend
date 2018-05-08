@@ -19,11 +19,11 @@ Begin Form
     GridY =24
     Width =15840
     DatasheetFontHeight =11
-    ItemSuffix =26
-    Left =885
-    Top =2430
-    Right =16725
-    Bottom =8070
+    ItemSuffix =27
+    Left =2205
+    Top =5235
+    Right =17790
+    Bottom =10620
     DatasheetGridlinesColor =15921906
     AfterInsert ="[Event Procedure]"
     RecSrcDt = Begin
@@ -185,6 +185,18 @@ Begin Form
             BorderShade =65.0
             ShowPageHeaderAndPageFooter =1
         End
+        Begin Chart
+            SpecialEffect =2
+            OldBorderStyle =1
+            ThemeFontIndex =1
+            BackThemeColorIndex =1
+            BorderThemeColorIndex =1
+            BorderShade =65.0
+            ForeThemeColorIndex =2
+            ForeShade =50.0
+            GridlineThemeColorIndex =1
+            GridlineShade =65.0
+        End
         Begin UnboundObjectFrame
             SpecialEffect =2
             OldBorderStyle =1
@@ -227,7 +239,7 @@ Begin Form
             GridlineShade =65.0
         End
         Begin FormHeader
-            Height =720
+            Height =435
             BackColor =15921906
             Name ="FormHeader"
             AlternateBackThemeColorIndex =1
@@ -256,124 +268,21 @@ Begin Form
                     ForeThemeColorIndex =-1
                     ForeTint =100.0
                 End
-                Begin TextBox
-                    Enabled = NotDefault
-                    Locked = NotDefault
-                    FontItalic = NotDefault
-                    OverlapFlags =85
-                    TextAlign =2
-                    IMESentenceMode =3
-                    Left =14664
-                    Top =60
-                    Width =1080
-                    ColumnOrder =0
-                    FontSize =10
-                    BorderColor =10921638
-                    ForeColor =4210752
-                    Name ="txtSensorTemperatureImportDate"
-                    Format ="Short Date"
-                    FontName ="Arial"
-                    GridlineColor =10921638
-
-                    LayoutCachedLeft =14664
-                    LayoutCachedTop =60
-                    LayoutCachedWidth =15744
-                    LayoutCachedHeight =300
-                    ThemeFontIndex =-1
-                    Begin
-                        Begin Label
-                            FontItalic = NotDefault
-                            OverlapFlags =85
-                            TextAlign =3
-                            Left =8880
-                            Top =60
-                            Width =5760
-                            Height =240
-                            FontSize =10
-                            BorderColor =6108695
-                            Name ="lblRecordCount"
-                            Caption ="Selected Retrieval Attempt's Temperature Log File Imported on:"
-                            FontName ="Arial"
-                            GridlineColor =10921638
-                            LayoutCachedLeft =8880
-                            LayoutCachedTop =60
-                            LayoutCachedWidth =14640
-                            LayoutCachedHeight =300
-                            ThemeFontIndex =-1
-                            BorderThemeColorIndex =-1
-                            BorderTint =100.0
-                            ForeThemeColorIndex =-1
-                            ForeTint =100.0
-                        End
-                    End
-                End
-                Begin TextBox
-                    Enabled = NotDefault
-                    Locked = NotDefault
-                    FontItalic = NotDefault
-                    OverlapFlags =85
-                    TextAlign =2
-                    IMESentenceMode =3
-                    Left =14664
-                    Top =360
-                    Width =1080
-                    ColumnOrder =1
-                    FontSize =10
-                    TabIndex =1
-                    BorderColor =10921638
-                    ForeColor =4210752
-                    Name ="txtSensorHumidityImportDate"
-                    Format ="Short Date"
-                    FontName ="Arial"
-                    GridlineColor =10921638
-
-                    LayoutCachedLeft =14664
-                    LayoutCachedTop =360
-                    LayoutCachedWidth =15744
-                    LayoutCachedHeight =600
-                    ThemeFontIndex =-1
-                    Begin
-                        Begin Label
-                            FontItalic = NotDefault
-                            OverlapFlags =85
-                            TextAlign =3
-                            Left =8880
-                            Top =360
-                            Width =5760
-                            Height =240
-                            FontSize =10
-                            BorderColor =6108695
-                            Name ="lblRecordCountHumidity"
-                            Caption ="Selected Retrieval Attempt's Humidity Log File Imported on:"
-                            FontName ="Arial"
-                            GridlineColor =10921638
-                            LayoutCachedLeft =8880
-                            LayoutCachedTop =360
-                            LayoutCachedWidth =14640
-                            LayoutCachedHeight =600
-                            ThemeFontIndex =-1
-                            BorderThemeColorIndex =-1
-                            BorderTint =100.0
-                            ForeThemeColorIndex =-1
-                            ForeTint =100.0
-                        End
-                    End
-                End
                 Begin Line
                     BorderWidth =1
                     OverlapFlags =85
-                    Top =660
+                    Top =420
                     Width =15840
                     Name ="Line24"
                     GridlineColor =10921638
-                    LayoutCachedTop =660
+                    LayoutCachedTop =420
                     LayoutCachedWidth =15840
-                    LayoutCachedHeight =660
+                    LayoutCachedHeight =420
                 End
             End
         End
         Begin Section
-            Height =2235
+            Height =1395
             BackColor =15921906
             Name ="Detail"
             AlternateBackColor =15527148
@@ -381,11 +290,11 @@ Begin Form
                 Begin TextBox
                     OverlapFlags =85
                     IMESentenceMode =3
-                    Left =2758
+                    Left =2398
                     Top =840
-                    Width =1918
+                    Width =2638
                     Height =297
-                    TabIndex =5
+                    TabIndex =2
                     BorderColor =14211288
                     Name ="txtRetrievalTimeOfDay"
                     ControlSource ="RetrievalTimeOfDay"
@@ -393,9 +302,9 @@ Begin Form
                     InputMask ="00:00;0;_"
                     GridlineColor =10921638
 
-                    LayoutCachedLeft =2758
+                    LayoutCachedLeft =2398
                     LayoutCachedTop =840
-                    LayoutCachedWidth =4676
+                    LayoutCachedWidth =5036
                     LayoutCachedHeight =1137
                     BackThemeColorIndex =-1
                     BorderThemeColorIndex =-1
@@ -406,17 +315,22 @@ Begin Form
                         Begin Label
                             OverlapFlags =85
                             TextAlign =3
-                            Left =660
+                            Left =300
                             Top =840
                             Width =2034
                             Height =300
+                            FontSize =10
+                            LeftMargin =22
+                            TopMargin =22
+                            RightMargin =22
+                            BottomMargin =22
                             BorderColor =6108695
                             Name ="Label2"
                             Caption ="  Retrieval Time (24hr)"
                             GridlineColor =10921638
-                            LayoutCachedLeft =660
+                            LayoutCachedLeft =300
                             LayoutCachedTop =840
-                            LayoutCachedWidth =2694
+                            LayoutCachedWidth =2334
                             LayoutCachedHeight =1140
                             ThemeFontIndex =-1
                             BorderThemeColorIndex =-1
@@ -431,11 +345,10 @@ Begin Form
                     IMESentenceMode =3
                     ColumnCount =2
                     ListWidth =1440
-                    Left =2758
+                    Left =2398
                     Top =120
-                    Width =1918
+                    Width =2638
                     Height =297
-                    TabIndex =1
                     BorderColor =14211288
                     ColumnInfo ="\"\";\"\";\"\";\"\";\"10\";\"20\""
                     Name ="cboIsSensorRetrieved"
@@ -449,9 +362,9 @@ Begin Form
                     AllowValueListEdits =0
 
                     ShowOnlyRowSourceValues =255
-                    LayoutCachedLeft =2758
+                    LayoutCachedLeft =2398
                     LayoutCachedTop =120
-                    LayoutCachedWidth =4676
+                    LayoutCachedWidth =5036
                     LayoutCachedHeight =417
                     ThemeFontIndex =-1
                     BackThemeColorIndex =-1
@@ -463,17 +376,22 @@ Begin Form
                         Begin Label
                             OverlapFlags =85
                             TextAlign =3
-                            Left =180
+                            Left =60
                             Top =120
-                            Width =2520
+                            Width =2280
                             Height =297
+                            FontSize =10
+                            LeftMargin =22
+                            TopMargin =22
+                            RightMargin =22
+                            BottomMargin =22
                             BorderColor =6108695
                             Name ="Label0"
                             Caption ="*Retrieved?"
                             GridlineColor =10921638
-                            LayoutCachedLeft =180
+                            LayoutCachedLeft =60
                             LayoutCachedTop =120
-                            LayoutCachedWidth =2700
+                            LayoutCachedWidth =2340
                             LayoutCachedHeight =417
                             ThemeFontIndex =-1
                             BorderThemeColorIndex =-1
@@ -488,18 +406,18 @@ Begin Form
                     ScrollBars =2
                     OverlapFlags =85
                     IMESentenceMode =3
-                    Left =10140
+                    Left =10320
                     Top =120
-                    Width =5106
+                    Width =4926
                     Height =1140
                     FontSize =10
-                    TabIndex =6
+                    TabIndex =5
                     BorderColor =14211288
                     Name ="txtNotes"
                     ControlSource ="Notes"
                     GridlineColor =10921638
 
-                    LayoutCachedLeft =10140
+                    LayoutCachedLeft =10320
                     LayoutCachedTop =120
                     LayoutCachedWidth =15246
                     LayoutCachedHeight =1260
@@ -513,17 +431,22 @@ Begin Form
                         Begin Label
                             OverlapFlags =85
                             TextAlign =3
-                            Left =9480
+                            Left =9660
                             Top =120
                             Width =600
                             Height =311
+                            FontSize =10
+                            LeftMargin =22
+                            TopMargin =22
+                            RightMargin =22
+                            BottomMargin =22
                             BorderColor =6108695
                             Name ="Label4"
                             Caption ="  Notes"
                             GridlineColor =10921638
-                            LayoutCachedLeft =9480
+                            LayoutCachedLeft =9660
                             LayoutCachedTop =120
-                            LayoutCachedWidth =10080
+                            LayoutCachedWidth =10260
                             LayoutCachedHeight =431
                             ThemeFontIndex =-1
                             BorderThemeColorIndex =-1
@@ -539,11 +462,11 @@ Begin Form
                     IMESentenceMode =3
                     ColumnCount =2
                     ListWidth =1440
-                    Left =6960
+                    Left =7140
                     Top =120
                     Width =2460
                     Height =297
-                    TabIndex =4
+                    TabIndex =3
                     BorderColor =14211288
                     ColumnInfo ="\"\";\"\";\"\";\"\";\"10\";\"50\""
                     Name ="cboSensorProblemID"
@@ -556,9 +479,9 @@ Begin Form
                     AllowValueListEdits =0
 
                     ShowOnlyRowSourceValues =255
-                    LayoutCachedLeft =6960
+                    LayoutCachedLeft =7140
                     LayoutCachedTop =120
-                    LayoutCachedWidth =9420
+                    LayoutCachedWidth =9600
                     LayoutCachedHeight =417
                     ThemeFontIndex =-1
                     BackThemeColorIndex =-1
@@ -570,17 +493,22 @@ Begin Form
                         Begin Label
                             OverlapFlags =85
                             TextAlign =3
-                            Left =4920
+                            Left =5100
                             Top =120
                             Width =1980
                             Height =297
+                            FontSize =10
+                            LeftMargin =22
+                            TopMargin =22
+                            RightMargin =22
+                            BottomMargin =22
                             BorderColor =6108695
                             Name ="Label1"
                             Caption ="*Sensor Problem"
                             GridlineColor =10921638
-                            LayoutCachedLeft =4920
+                            LayoutCachedLeft =5100
                             LayoutCachedTop =120
-                            LayoutCachedWidth =6900
+                            LayoutCachedWidth =7080
                             LayoutCachedHeight =417
                             ThemeFontIndex =-1
                             BorderThemeColorIndex =-1
@@ -596,11 +524,11 @@ Begin Form
                     IMESentenceMode =3
                     ColumnCount =3
                     ListWidth =3456
-                    Left =6960
+                    Left =7140
                     Top =480
                     Width =2460
                     Height =297
-                    TabIndex =2
+                    TabIndex =4
                     BorderColor =14211288
                     ColumnInfo ="\"\";\"\";\"\";\"\";\"\";\"\";\"10\";\"100\""
                     Name ="cboIsDownloadSuccessfulID"
@@ -614,9 +542,9 @@ Begin Form
                     AllowValueListEdits =0
 
                     ShowOnlyRowSourceValues =255
-                    LayoutCachedLeft =6960
+                    LayoutCachedLeft =7140
                     LayoutCachedTop =480
-                    LayoutCachedWidth =9420
+                    LayoutCachedWidth =9600
                     LayoutCachedHeight =777
                     ThemeFontIndex =-1
                     BackThemeColorIndex =-1
@@ -628,17 +556,22 @@ Begin Form
                         Begin Label
                             OverlapFlags =85
                             TextAlign =3
-                            Left =4740
+                            Left =5100
                             Top =480
-                            Width =2160
+                            Width =1980
                             Height =297
+                            FontSize =10
+                            LeftMargin =22
+                            TopMargin =22
+                            RightMargin =22
+                            BottomMargin =22
                             BorderColor =6108695
                             Name ="Label3"
                             Caption ="  Download Successful?"
                             GridlineColor =10921638
-                            LayoutCachedLeft =4740
+                            LayoutCachedLeft =5100
                             LayoutCachedTop =480
-                            LayoutCachedWidth =6900
+                            LayoutCachedWidth =7080
                             LayoutCachedHeight =777
                             ThemeFontIndex =-1
                             BorderThemeColorIndex =-1
@@ -653,35 +586,36 @@ Begin Form
                     OverlapFlags =85
                     IMESentenceMode =3
                     ColumnCount =2
-                    Left =2759
+                    Left =2399
                     Top =480
-                    Width =1918
+                    Width =2638
                     Height =297
+                    TabIndex =1
                     BorderColor =14211288
                     ColumnInfo ="\"\";\"\";\"\";\"\";\"10\";\"0\""
                     Name ="cboSensorDeploymentID"
                     ControlSource ="SensorDeploymentID"
                     RowSourceType ="Table/Query"
-                    RowSource ="SELECT data_SensorDeployment.ID, [ref_Sensor].[Label] & \", deployed\" & [data_V"
-                        "isit].[VisitDate] AS cboText, data_SensorDeployment.SensorID, data_Site.ID, data"
-                        "_SensorRetrievalAttempt.ID FROM (((data_Site INNER JOIN data_Visit ON data_Site."
-                        "ID = data_Visit.SiteID) INNER JOIN data_SensorDeployment ON data_Visit.ID = data"
-                        "_SensorDeployment.VisitID) INNER JOIN ref_Sensor ON data_SensorDeployment.Sensor"
-                        "ID = ref_Sensor.ID) LEFT JOIN data_SensorRetrievalAttempt ON data_SensorDeployme"
-                        "nt.ID = data_SensorRetrievalAttempt.SensorDeploymentID WHERE (((data_SensorDeplo"
-                        "yment.SensorID)<>Forms!frm_Visit!sfrm_SensorDeployment.Form!SensorID) And ((data"
-                        "_Site.ID)=Forms!frm_Visit!SiteID) And ((data_SensorRetrievalAttempt.ID) Is Null "
-                        "Or (data_SensorRetrievalAttempt.ID)=Forms!frm_Visit!sfrm_SensorRetrievalAttempt."
-                        "Form!ID)); "
+                    RowSource ="SELECT data_SensorDeployment.ID, [ref_Sensor].[Label] & \", deployed \" & [data_"
+                        "Visit].[VisitDate] AS cboText, data_SensorDeployment.SensorID, data_Site.ID, dat"
+                        "a_SensorRetrievalAttempt.ID FROM (((data_Site INNER JOIN data_Visit ON data_Site"
+                        ".ID = data_Visit.SiteID) INNER JOIN data_SensorDeployment ON data_Visit.ID = dat"
+                        "a_SensorDeployment.VisitID) INNER JOIN ref_Sensor ON data_SensorDeployment.Senso"
+                        "rID = ref_Sensor.ID) LEFT JOIN data_SensorRetrievalAttempt ON data_SensorDeploym"
+                        "ent.ID = data_SensorRetrievalAttempt.SensorDeploymentID WHERE (((data_SensorDepl"
+                        "oyment.SensorID)<>Forms!frm_Visit!sfrm_SensorDeployment.Form!SensorID) And ((dat"
+                        "a_Site.ID)=Forms!frm_Visit!SiteID) And ((data_SensorRetrievalAttempt.ID) Is Null"
+                        " Or (data_SensorRetrievalAttempt.ID)=Forms!frm_Visit!sfrm_SensorRetrievalAttempt"
+                        ".Form!ID)); "
                     ColumnWidths ="0;2880"
                     GridlineColor =10921638
                     AllowValueListEdits =0
                     InheritValueList =0
 
                     ShowOnlyRowSourceValues =255
-                    LayoutCachedLeft =2759
+                    LayoutCachedLeft =2399
                     LayoutCachedTop =480
-                    LayoutCachedWidth =4677
+                    LayoutCachedWidth =5037
                     LayoutCachedHeight =777
                     ThemeFontIndex =-1
                     BackThemeColorIndex =-1
@@ -693,17 +627,22 @@ Begin Form
                         Begin Label
                             OverlapFlags =85
                             TextAlign =3
-                            Left =180
+                            Left =60
                             Top =480
-                            Width =2520
+                            Width =2280
                             Height =300
+                            FontSize =10
+                            LeftMargin =22
+                            TopMargin =22
+                            RightMargin =22
+                            BottomMargin =22
                             BorderColor =6108695
                             Name ="Label8"
                             Caption ="*Prior Sensor Deployment"
                             GridlineColor =10921638
-                            LayoutCachedLeft =180
+                            LayoutCachedLeft =60
                             LayoutCachedTop =480
-                            LayoutCachedWidth =2700
+                            LayoutCachedWidth =2340
                             LayoutCachedHeight =780
                             ThemeFontIndex =-1
                             BorderThemeColorIndex =-1
@@ -716,13 +655,13 @@ Begin Form
                 Begin Line
                     BorderWidth =1
                     OverlapFlags =85
-                    Top =2220
+                    Top =1380
                     Width =15840
                     Name ="Line14"
                     GridlineColor =10921638
-                    LayoutCachedTop =2220
+                    LayoutCachedTop =1380
                     LayoutCachedWidth =15840
-                    LayoutCachedHeight =2220
+                    LayoutCachedHeight =1380
                 End
                 Begin CommandButton
                     TabStop = NotDefault
@@ -732,7 +671,7 @@ Begin Form
                     Top =120
                     Width =486
                     Height =1140
-                    TabIndex =7
+                    TabIndex =6
                     ForeColor =4210752
                     Name ="cmdDeleteSensorRetrieval"
                     OnClick ="[Event Procedure]"
@@ -765,206 +704,6 @@ Begin Form
                     WebImagePaddingBottom =1
                     Overlaps =1
                 End
-                Begin CommandButton
-                    Enabled = NotDefault
-                    OverlapFlags =93
-                    Left =3120
-                    Top =1680
-                    Width =3156
-                    Height =300
-                    TabIndex =3
-                    ForeColor =4210752
-                    Name ="cmdImportTSensorDataTemperature"
-                    Caption ="Import Temperature"
-                    OnClick ="[Event Procedure]"
-                    GridlineColor =10921638
-
-                    LayoutCachedLeft =3120
-                    LayoutCachedTop =1680
-                    LayoutCachedWidth =6276
-                    LayoutCachedHeight =1980
-                    BackColor =12566463
-                    BackThemeColorIndex =-1
-                    BackTint =100.0
-                    BorderColor =14136213
-                    HoverColor =11525325
-                    HoverThemeColorIndex =-1
-                    HoverTint =100.0
-                    PressedColor =12566463
-                    PressedThemeColorIndex =-1
-                    PressedShade =100.0
-                    HoverForeColor =4210752
-                    PressedForeColor =4210752
-                    WebImagePaddingLeft =2
-                    WebImagePaddingTop =2
-                    WebImagePaddingRight =1
-                    WebImagePaddingBottom =1
-                    Overlaps =1
-                End
-                Begin CommandButton
-                    Enabled = NotDefault
-                    OverlapFlags =93
-                    Left =9600
-                    Top =1680
-                    Width =3156
-                    Height =300
-                    TabIndex =8
-                    ForeColor =4210752
-                    Name ="cmdImportTSensorDataHumidity"
-                    Caption ="Import Humidity"
-                    OnClick ="[Event Procedure]"
-                    GridlineColor =10921638
-
-                    LayoutCachedLeft =9600
-                    LayoutCachedTop =1680
-                    LayoutCachedWidth =12756
-                    LayoutCachedHeight =1980
-                    BackColor =12566463
-                    BackThemeColorIndex =-1
-                    BackTint =100.0
-                    BorderColor =14136213
-                    HoverColor =11525325
-                    HoverThemeColorIndex =-1
-                    HoverTint =100.0
-                    PressedColor =12566463
-                    PressedThemeColorIndex =-1
-                    PressedShade =100.0
-                    HoverForeColor =4210752
-                    PressedForeColor =4210752
-                    WebImagePaddingLeft =2
-                    WebImagePaddingTop =2
-                    WebImagePaddingRight =1
-                    WebImagePaddingBottom =1
-                    Overlaps =1
-                End
-                Begin CommandButton
-                    Enabled = NotDefault
-                    OverlapFlags =93
-                    Left =6360
-                    Top =1680
-                    Width =2016
-                    Height =300
-                    TabIndex =9
-                    ForeColor =4210752
-                    Name ="cmdDeleteTSensorDataTemperature"
-                    Caption ="Delete Temperature"
-                    OnClick ="[Event Procedure]"
-                    GridlineColor =10921638
-
-                    LayoutCachedLeft =6360
-                    LayoutCachedTop =1680
-                    LayoutCachedWidth =8376
-                    LayoutCachedHeight =1980
-                    BackColor =12566463
-                    BackThemeColorIndex =-1
-                    BackTint =100.0
-                    BorderColor =14136213
-                    HoverColor =10856415
-                    HoverThemeColorIndex =-1
-                    HoverTint =100.0
-                    PressedColor =12566463
-                    PressedThemeColorIndex =-1
-                    PressedShade =100.0
-                    HoverForeColor =4210752
-                    PressedForeColor =4210752
-                    WebImagePaddingLeft =2
-                    WebImagePaddingTop =2
-                    WebImagePaddingRight =1
-                    WebImagePaddingBottom =1
-                    Overlaps =1
-                End
-                Begin CommandButton
-                    Enabled = NotDefault
-                    OverlapFlags =93
-                    Left =12840
-                    Top =1680
-                    Width =2016
-                    Height =300
-                    TabIndex =10
-                    ForeColor =4210752
-                    Name ="cmdDeleteTSensorDataHumidity"
-                    Caption ="Delete Humidity"
-                    OnClick ="[Event Procedure]"
-                    GridlineColor =10921638
-
-                    LayoutCachedLeft =12840
-                    LayoutCachedTop =1680
-                    LayoutCachedWidth =14856
-                    LayoutCachedHeight =1980
-                    BackColor =12566463
-                    BackThemeColorIndex =-1
-                    BackTint =100.0
-                    BorderColor =14136213
-                    HoverColor =10856415
-                    HoverThemeColorIndex =-1
-                    HoverTint =100.0
-                    PressedColor =12566463
-                    PressedThemeColorIndex =-1
-                    PressedShade =100.0
-                    HoverForeColor =4210752
-                    PressedForeColor =4210752
-                    WebImagePaddingLeft =2
-                    WebImagePaddingTop =2
-                    WebImagePaddingRight =1
-                    WebImagePaddingBottom =1
-                    Overlaps =1
-                End
-                Begin Rectangle
-                    OverlapFlags =223
-                    Left =60
-                    Top =1560
-                    Width =15714
-                    Height =540
-                    BorderColor =10921638
-                    Name ="fraImport"
-                    GridlineColor =10921638
-                    LayoutCachedLeft =60
-                    LayoutCachedTop =1560
-                    LayoutCachedWidth =15774
-                    LayoutCachedHeight =2100
-                End
-                Begin Label
-                    OverlapFlags =215
-                    TextAlign =2
-                    Left =300
-                    Top =1680
-                    Width =1884
-                    Height =300
-                    FontSize =10
-                    FontWeight =700
-                    BorderColor =8355711
-                    Name ="lblWildlifeObserved"
-                    Caption ="Import Sensor Data"
-                    FontName ="Arial"
-                    GridlineColor =10921638
-                    LayoutCachedLeft =300
-                    LayoutCachedTop =1680
-                    LayoutCachedWidth =2184
-                    LayoutCachedHeight =1980
-                    ThemeFontIndex =-1
-                    BackThemeColorIndex =-1
-                    ForeThemeColorIndex =-1
-                    ForeTint =100.0
-                End
-                Begin TextBox
-                    OverlapFlags =85
-                    IMESentenceMode =3
-                    Left =7860
-                    Top =1020
-                    Width =240
-                    Height =315
-                    TabIndex =11
-                    BorderColor =10921638
-                    ForeColor =4210752
-                    Name ="IsSensorRetrieved"
-                    ControlSource ="IsSensorRetrievedID"
-                    GridlineColor =10921638
-
-                    LayoutCachedLeft =7860
-                    LayoutCachedTop =1020
-                    LayoutCachedWidth =8100
-                    LayoutCachedHeight =1335
-                End
             End
         End
         Begin FormFooter
@@ -993,16 +732,14 @@ On Error GoTo Error_Handler
 
 'If sensor not retrieved, set download successful to N/A
     If Me.IsSensorRetrievedID = 2 Then
-        Me.IsDownloadSuccessfulID = 8
+        Me.cboIsDownloadSuccessfulID = 8
 'If no sensor retrieval data, set download successful to No Data
     ElseIf Me.IsSensorRetrievedID = 9 Then
-        Me.IsDownloadSuccessfulID = 9
+        Me.cboIsDownloadSuccessfulID = 9
 'If sensor retrieved and download successful is set to N/A, set download successful to null.
     ElseIf Me.IsSensorRetrievedID = 1 And Me.IsDownloadSuccessfulID = 8 Then
-        Me.IsDownloadSuccessfulID = Null
+        Me.cboIsDownloadSuccessfulID = Null
     End If
-    
-    SetupImportButtons  ' Enable/disable the two import buttons and the delete buttons based on the [Retrieved?] value
     
 Exit_Sub:
     Exit Sub
@@ -1019,33 +756,8 @@ Private Sub cmdDeleteSensorRetrieval_Click()
 
     On Error Resume Next
     
-    Dim YesNo As Integer
+    DeleteRecord Me, Me.NewRecord
     
-    If IsNull(Me.VisitID) Then
-        Resume Next
-    'If user clicks delete button and there are unsaved changes, save the record and then prompt the user to indicate if they're sure they want to get rid of the record.
-    Else
-        If Not IsNull(Me.VisitID) And Me.Dirty = True Then
-            DoCmd.RunCommand acCmdSaveRecord
-            YesNo = MsgBox("You are about to delete this Sensor Retrieval Attempt." & Chr(13) & vbNewLine & "If you click Yes, you won't be able to undo this Delete operation." & Chr(13) _
-            & "Are you sure you want to delete this record?", vbYesNo + vbExclamation, "Delete Sensor Retrieval Attempt?")
-                If YesNo = vbYes Then
-                    CurrentDb.Execute "Delete * from data_SensorRetrievalAttempt where id = " & Me.ID, dbSeeChanges
-                    Me.Requery
-                Else
-                    Me.Undo
-                End If
-        Else
-            YesNo = MsgBox("You are about to delete this Sensor Retrieval Attempt." & Chr(13) & vbNewLine & "If you click Yes, you won't be able to undo this Delete operation." & Chr(13) _
-            & "Are you sure you want to delete this record?", vbYesNo + vbExclamation, "Delete Sensor Retrieval Attempt?")
-                If YesNo = vbYes Then
-                    CurrentDb.Execute "Delete * from data_SensorRetrievalAttempt where id = " & Me.ID, dbSeeChanges
-                    Me.Requery
-                Else
-                    Me.Undo
-                End If
-        End If
-    End If
 End Sub
 
 Private Sub cmdDeleteTSensorDataHumidity_Click()
@@ -1116,69 +828,9 @@ Private Sub cmdDeleteTSensorDataTemperature_Click()
 
 End Sub
 
-Private Sub cmdImportTSensorDataHumidity_Click()
-    Dim RetrievalID As String
-    Dim ImportType As String
-    Dim SensorHumidityImportExists As Boolean
-    Dim YesNoResponse As Integer
-    
-    SensorHumidityImportExists = Nz(DLookup("ID", "data_SensorImportHeader_Humidity", "SensorRetrievalAttemptID = " & Me.ID))
-        
-    If Not IsNull(Me.ID) And (Me.IsSensorRetrievedID = YesID) And (SensorHumidityImportExists = False) Then
-        RetrievalID = XML_Tag("RetrievalID", Me.ID)
-        ImportType = XML_Tag("ImportType", "Humidity")
-        DoCmd.OpenForm "frmImportSensorData", acNormal, , , acFormPropertySettings, acDialog, RetrievalID & ImportType
-        Me.Requery
-    ElseIf Not IsNull(Me.ID) And (Me.IsSensorRetrievedID = YesID) And (SensorHumidityImportExists = True) Then
-        YesNoResponse = MsgBox("Sensor Humidity Measurements were previously imported. Do you want to replace all the measurements?", vbYesNo + vbExclamation, "Import Sensor Humidity Data")
-            If YesNoResponse = vbYes Then
-                CurrentDb.Execute "Delete * from data_SensorImportHeader_Humidity where SensorRetrievalAttemptID = " & Me.ID, dbSeeChanges
-                Me.txtSensorHumidityImportDate = "n/a"
-                RetrievalID = XML_Tag("RetrievalID", Me.ID)
-                ImportType = XML_Tag("ImportType", "Humidity")
-                DoCmd.OpenForm "frmImportSensorData", acNormal, , , acFormPropertySettings, acDialog, RetrievalID & ImportType
-                Me.Requery
-            Else
-                Me.Undo
-            End If
-    End If
 
-End Sub
 
-Private Sub cmdImportTSensorDataTemperature_Click()
-    Dim RetrievalID As String
-    Dim ImportType As String
-    Dim SensorTempImportExists As Boolean
-    Dim YesNoResponse As Integer
-    
-    SensorTempImportExists = Nz(DLookup("ID", "data_SensorImportHeader_Temperature", "SensorRetrievalAttemptID = " & Me.ID))
-        
-    If Not IsNull(Me.ID) And (Me.IsSensorRetrievedID = YesID) And (SensorTempImportExists = False) Then
-        RetrievalID = XML_Tag("RetrievalID", Me.ID)
-        ImportType = XML_Tag("ImportType", "Temperature")
-        DoCmd.OpenForm "frmImportSensorData", acNormal, , , acFormPropertySettings, acDialog, RetrievalID & ImportType
-        Me.Requery
-    ElseIf Not IsNull(Me.ID) And (Me.IsSensorRetrievedID = YesID) And (SensorTempImportExists = True) Then
-        YesNoResponse = MsgBox("Sensor Temperature Measurements were previously imported. Do you want to replace all the measurements?", vbYesNo + vbExclamation, "Import Sensor Temperature Data")
-            If YesNoResponse = vbYes Then
-                CurrentDb.Execute "Delete * from data_SensorImportHeader_Temperature where SensorRetrievalAttemptID = " & Me.ID, dbSeeChanges
-                Me.txtSensorTemperatureImportDate = "n/a"
-                RetrievalID = XML_Tag("RetrievalID", Me.ID)
-                ImportType = XML_Tag("ImportType", "Temperature")
-                DoCmd.OpenForm "frmImportSensorData", acNormal, , , acFormPropertySettings, acDialog, RetrievalID & ImportType
-                Me.Requery
-            Else
-                Me.Undo
-            End If
-    End If
 
-End Sub
-
-Private Sub Form_AfterInsert()
-
-    SetupImportButtons
-    
-End Sub
 
 Private Sub Form_BeforeUpdate(Cancel As Integer)
 'LC 10/30/2017 - Before adding record to table, check for nulls in required fields
@@ -1191,19 +843,6 @@ Private Sub Form_BeforeUpdate(Cancel As Integer)
         Me.cboIsSensorRetrieved.SetFocus
     End If
             
-End Sub
-
-Private Sub Form_Current()
-'    If Not IsNull(Me.ID) Then
-'        Me.txtSensorTemperatureImportDate = DLookup("ImportDate", "data_SensorImportHeader_Temperature", "SensorRetrievalAttemptID = " & Me.ID & " AND IsImportSuccess = True")
-'        Me.txtSensorHumidityImportDate = DLookup("ImportDate", "data_SensorImportHeader_Humidity", "SensorRetrievalAttemptID = " & Me.ID)
-'    Else
-'        Me.txtSensorTemperatureImportDate = "n/a"
-'        Me.txtSensorHumidityImportDate = "n/a"
-'    End If
-        
-    SetupImportButtons  ' Enable/disable the two import and delete buttons based on the [Retrieved?] value
-
 End Sub
 
 Private Function cmdImportTSensorDataTemperature_CanExecute() As Boolean
@@ -1236,20 +875,6 @@ Private Function cmdDeleteTSensorDataHumidity_CanExecute() As Boolean
     End If
 End Function
 
-Private Sub Form_KeyUp(KeyCode As Integer, Shift As Integer)
-    If KeyCode = 27 Then
-        SetupImportButtons  ' Enable/disable the two import and two delete buttons based on the [Retrieved?] value
-    End If
-End Sub
-
 Private Sub Form_Open(Cancel As Integer)
     YesID = DLookup("ID", "lookup_IsSensorRetrieved", "Label = 'Yes'")
-End Sub
-
-Private Sub SetupImportButtons()
-    Me.cmdImportTSensorDataTemperature.Enabled = cmdImportTSensorDataTemperature_CanExecute()
-    Me.cmdImportTSensorDataHumidity.Enabled = cmdImportTSensorDataHumidity_CanExecute()
-    Me.cmdDeleteTSensorDataTemperature.Enabled = cmdDeleteTSensorDataTemperature_CanExecute()
-    Me.cmdDeleteTSensorDataHumidity.Enabled = cmdDeleteTSensorDataHumidity_CanExecute()
-    
 End Sub

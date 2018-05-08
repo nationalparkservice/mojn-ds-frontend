@@ -17,10 +17,10 @@ Begin Form
     Width =2820
     DatasheetFontHeight =11
     ItemSuffix =4
-    Left =11310
-    Top =6390
-    Right =13875
-    Bottom =7935
+    Left =14010
+    Top =3570
+    Right =16830
+    Bottom =5370
     DatasheetGridlinesColor =15921906
     RecSrcDt = Begin
         0x959b1e88aa15e540
@@ -196,73 +196,10 @@ Begin Form
                     Height =312
                     ForeColor =4210752
                     Name ="cmdDeleteDisturbanceModification"
+                    OnClick ="[Event Procedure]"
                     ControlTipText ="Delete Record"
                     Picture ="X-Mark-16-LtGray"
                     GridlineColor =10921638
-                    OnClickEmMacro = Begin
-                        Version =196611
-                        ColumnsShown =10
-                        Begin
-                            Action ="OnError"
-                            Argument ="0"
-                        End
-                        Begin
-                            Action ="GoToControl"
-                            Argument ="=[Screen].[PreviousControl].[Name]"
-                        End
-                        Begin
-                            Action ="ClearMacroError"
-                        End
-                        Begin
-                            Condition ="Not [Form].[NewRecord]"
-                            Action ="RunCommand"
-                            Argument ="223"
-                        End
-                        Begin
-                            Condition ="[Form].[NewRecord] And Not [Form].[Dirty]"
-                            Action ="Beep"
-                        End
-                        Begin
-                            Condition ="[Form].[NewRecord] And [Form].[Dirty]"
-                            Action ="RunCommand"
-                            Argument ="292"
-                        End
-                        Begin
-                            Condition ="[MacroError]<>0"
-                            Action ="MsgBox"
-                            Argument ="=[MacroError].[Description]"
-                            Argument ="-1"
-                            Argument ="0"
-                        End
-                        Begin
-                            Comment ="_AXL:<?xml version=\"1.0\" encoding=\"UTF-16\" standalone=\"no\"?>\015\012<UserI"
-                                "nterfaceMacro For=\"cmdDeleteDisturbanceModification\" xmlns=\"http://schemas.mi"
-                                "crosoft.com/office/accessservices/2009/11/application\"><Statements><Action Name"
-                                "=\"OnError\"/><Action Name=\"GoT"
-                        End
-                        Begin
-                            Comment ="_AXL:oControl\"><Argument Name=\"ControlName\">=[Screen].[PreviousControl].[Name"
-                                "]</Argument></Action><Action Name=\"ClearMacroError\"/><ConditionalBlock><If><Co"
-                                "ndition>Not [Form].[NewRecord]</Condition><Statements><Action Name=\"DeleteRecor"
-                                "d\"/></Statements></"
-                        End
-                        Begin
-                            Comment ="_AXL:If></ConditionalBlock><ConditionalBlock><If><Condition>[Form].[NewRecord] A"
-                                "nd Not [Form].[Dirty]</Condition><Statements><Action Name=\"Beep\"/></Statements"
-                                "></If></ConditionalBlock><ConditionalBlock><If><Condition>[Form].[NewRecord] And"
-                                " [Form].[Dirty]"
-                        End
-                        Begin
-                            Comment ="_AXL:</Condition><Statements><Action Name=\"UndoRecord\"/></Statements></If></Co"
-                                "nditionalBlock><ConditionalBlock><If><Condition>[MacroError]&lt;&gt;0</Condition"
-                                "><Statements><Action Name=\"MessageBox\"><Argument Name=\"Message\">=[MacroError"
-                                "].[Description]</Ar"
-                        End
-                        Begin
-                            Comment ="_AXL:gument></Action></Statements></If></ConditionalBlock></Statements></UserInt"
-                                "erfaceMacro>"
-                        End
-                    End
 
                     LayoutCachedLeft =2460
                     LayoutCachedTop =43
@@ -341,3 +278,15 @@ Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 Option Compare Database
 Option Explicit
+
+Private Sub cmdDeleteDisturbanceModification_Click()
+
+DeleteRecord Me, Me.NewRecord
+
+End Sub
+
+Public Function RowCount() As Integer
+
+RowCount = Me.RecordsetClone.RecordCount
+
+End Function

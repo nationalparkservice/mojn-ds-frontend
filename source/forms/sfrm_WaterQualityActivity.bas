@@ -7,17 +7,18 @@ Begin Form
     NavigationButtons = NotDefault
     DividingLines = NotDefault
     DefaultView =0
+    ScrollBars =0
     PictureAlignment =2
     DatasheetGridlinesBehavior =3
     GridX =24
     GridY =24
-    Width =15840
+    Width =17370
     DatasheetFontHeight =11
-    ItemSuffix =33
-    Left =2040
-    Top =2400
-    Right =18135
-    Bottom =11640
+    ItemSuffix =44
+    Left =1230
+    Top =1770
+    Right =17070
+    Bottom =10755
     DatasheetGridlinesColor =15921906
     RecSrcDt = Begin
         0x19205bcaca15e540
@@ -161,6 +162,18 @@ Begin Form
             BorderShade =65.0
             ShowPageHeaderAndPageFooter =1
         End
+        Begin Chart
+            SpecialEffect =2
+            OldBorderStyle =1
+            ThemeFontIndex =1
+            BackThemeColorIndex =1
+            BorderThemeColorIndex =1
+            BorderShade =65.0
+            ForeThemeColorIndex =2
+            ForeShade =50.0
+            GridlineThemeColorIndex =1
+            GridlineShade =65.0
+        End
         Begin Tab
             FontSize =11
             FontName ="Calibri"
@@ -205,7 +218,7 @@ Begin Form
         End
         Begin Section
             CanGrow = NotDefault
-            Height =9240
+            Height =12300
             BackColor =15921906
             Name ="Detail"
             AlternateBackColor =15527148
@@ -220,6 +233,7 @@ Begin Form
                     Width =11105
                     Height =966
                     FontSize =10
+                    TabIndex =14
                     BorderColor =14211288
                     Name ="txtDataProcessingLevelNote"
                     ControlSource ="DataProcessingLevelNote"
@@ -271,7 +285,7 @@ Begin Form
                     Width =1980
                     Height =238
                     FontSize =10
-                    TabIndex =1
+                    TabIndex =13
                     BorderColor =10921638
                     ColumnInfo ="\"\";\"\";\"\";\"\";\"\";\"\";\"10\";\"40\""
                     Name ="cboDataProcessingLevelID"
@@ -330,7 +344,7 @@ Begin Form
                     Width =1980
                     Height =238
                     FontSize =10
-                    TabIndex =2
+                    TabIndex =15
                     BackColor =15921906
                     BorderColor =10921638
                     Name ="txtDataProcessingLevelDate"
@@ -426,13 +440,13 @@ Begin Form
                 Begin TextBox
                     EnterKeyBehavior = NotDefault
                     ScrollBars =2
-                    OverlapFlags =215
+                    OverlapFlags =223
                     IMESentenceMode =3
                     Left =300
-                    Top =7020
+                    Top =7140
                     Width =15420
-                    Height =723
-                    TabIndex =4
+                    Height =603
+                    TabIndex =12
                     BorderColor =14211288
                     ForeColor =4210752
                     Name ="txtNotes"
@@ -440,7 +454,7 @@ Begin Form
                     GridlineColor =10921638
 
                     LayoutCachedLeft =300
-                    LayoutCachedTop =7020
+                    LayoutCachedTop =7140
                     LayoutCachedWidth =15720
                     LayoutCachedHeight =7743
                     BorderThemeColorIndex =-1
@@ -449,7 +463,7 @@ Begin Form
                         Begin Label
                             OverlapFlags =93
                             Left =300
-                            Top =6840
+                            Top =6960
                             Width =2160
                             Height =240
                             FontSize =8
@@ -459,22 +473,22 @@ Begin Form
                             Caption ="Water Quality Notes"
                             GridlineColor =10921638
                             LayoutCachedLeft =300
-                            LayoutCachedTop =6840
+                            LayoutCachedTop =6960
                             LayoutCachedWidth =2460
-                            LayoutCachedHeight =7080
+                            LayoutCachedHeight =7200
                         End
                     End
                 End
                 Begin ComboBox
-                    OverlapFlags =215
+                    OverlapFlags =87
                     IMESentenceMode =3
                     ColumnCount =2
                     ListWidth =2160
-                    Left =3675
-                    Top =660
-                    Width =2759
+                    Left =300
+                    Top =990
+                    Width =2520
                     Height =315
-                    TabIndex =3
+                    TabIndex =1
                     BorderColor =14211288
                     ForeColor =4210752
                     ColumnInfo ="\"\";\"\";\"\";\"\";\"10\";\"100\""
@@ -495,10 +509,10 @@ Begin Form
                     AfterUpdate ="[Event Procedure]"
                     GridlineColor =10921638
 
-                    LayoutCachedLeft =3675
-                    LayoutCachedTop =660
-                    LayoutCachedWidth =6434
-                    LayoutCachedHeight =975
+                    LayoutCachedLeft =300
+                    LayoutCachedTop =990
+                    LayoutCachedWidth =2820
+                    LayoutCachedHeight =1305
                     BorderThemeColorIndex =-1
                     BorderShade =100.0
                     ForeThemeColorIndex =0
@@ -512,34 +526,33 @@ Begin Form
                     End
                     Begin
                         Begin Label
-                            FontItalic = NotDefault
                             OverlapFlags =93
                             TextAlign =2
-                            Left =3660
-                            Top =480
-                            Width =2535
+                            Left =300
+                            Top =780
+                            Width =2520
                             Height =210
                             FontSize =8
                             BorderColor =8355711
-                            ForeColor =8355711
                             Name ="Label1"
                             Caption ="pH"
                             GridlineColor =10921638
-                            LayoutCachedLeft =3660
-                            LayoutCachedTop =480
-                            LayoutCachedWidth =6195
-                            LayoutCachedHeight =690
+                            LayoutCachedLeft =300
+                            LayoutCachedTop =780
+                            LayoutCachedWidth =2820
+                            LayoutCachedHeight =990
+                            ForeThemeColorIndex =-1
+                            ForeTint =100.0
                         End
                     End
                 End
                 Begin Subform
-                    Enabled = NotDefault
                     OverlapFlags =85
                     OldBorderStyle =0
                     Left =300
-                    Top =1680
+                    Top =1920
                     Width =2850
-                    Height =2100
+                    Height =1860
                     TabIndex =5
                     BorderColor =10921638
                     Name ="sfrmWaterQualitypH"
@@ -549,7 +562,7 @@ Begin Form
                     GridlineColor =10921638
 
                     LayoutCachedLeft =300
-                    LayoutCachedTop =1680
+                    LayoutCachedTop =1920
                     LayoutCachedWidth =3150
                     LayoutCachedHeight =3780
                     Begin
@@ -557,8 +570,8 @@ Begin Form
                             BackStyle =1
                             OverlapFlags =85
                             TextAlign =2
-                            Left =360
-                            Top =1260
+                            Left =300
+                            Top =1560
                             Width =2520
                             Height =300
                             FontWeight =700
@@ -568,10 +581,10 @@ Begin Form
                             Name ="lblpH"
                             Caption ="ph"
                             GridlineColor =10921638
-                            LayoutCachedLeft =360
-                            LayoutCachedTop =1260
-                            LayoutCachedWidth =2880
-                            LayoutCachedHeight =1560
+                            LayoutCachedLeft =300
+                            LayoutCachedTop =1560
+                            LayoutCachedWidth =2820
+                            LayoutCachedHeight =1860
                             BackThemeColorIndex =-1
                             ForeThemeColorIndex =-1
                             ForeTint =100.0
@@ -580,15 +593,15 @@ Begin Form
                 End
                 Begin ComboBox
                     LimitToList = NotDefault
-                    OverlapFlags =215
+                    OverlapFlags =87
                     IMESentenceMode =3
                     ColumnCount =2
                     ListWidth =2160
-                    Left =6510
-                    Top =660
-                    Width =2759
+                    Left =6780
+                    Top =990
+                    Width =3795
                     Height =315
-                    TabIndex =6
+                    TabIndex =2
                     BorderColor =14211288
                     ForeColor =4210752
                     ColumnInfo ="\"\";\"\";\"\";\"\";\"10\";\"100\""
@@ -609,10 +622,10 @@ Begin Form
                     AfterUpdate ="[Event Procedure]"
                     GridlineColor =10921638
 
-                    LayoutCachedLeft =6510
-                    LayoutCachedTop =660
-                    LayoutCachedWidth =9269
-                    LayoutCachedHeight =975
+                    LayoutCachedLeft =6780
+                    LayoutCachedTop =990
+                    LayoutCachedWidth =10575
+                    LayoutCachedHeight =1305
                     BorderThemeColorIndex =-1
                     BorderShade =100.0
                     ForeThemeColorIndex =0
@@ -626,35 +639,34 @@ Begin Form
                     End
                     Begin
                         Begin Label
-                            FontItalic = NotDefault
                             OverlapFlags =93
                             TextAlign =2
-                            Left =6480
-                            Top =480
-                            Width =2565
+                            Left =6780
+                            Top =780
+                            Width =3795
                             Height =210
                             FontSize =8
                             BorderColor =8355711
-                            ForeColor =8355711
                             Name ="Label11"
                             Caption ="Dissolved Oxygen"
                             GridlineColor =10921638
-                            LayoutCachedLeft =6480
-                            LayoutCachedTop =480
-                            LayoutCachedWidth =9045
-                            LayoutCachedHeight =690
+                            LayoutCachedLeft =6780
+                            LayoutCachedTop =780
+                            LayoutCachedWidth =10575
+                            LayoutCachedHeight =990
+                            ForeThemeColorIndex =-1
+                            ForeTint =100.0
                         End
                     End
                 End
                 Begin Subform
-                    Enabled = NotDefault
                     OverlapFlags =85
                     OldBorderStyle =0
-                    Left =3540
-                    Top =1680
+                    Left =6780
+                    Top =1920
                     Width =4020
-                    Height =2100
-                    TabIndex =7
+                    Height =1860
+                    TabIndex =6
                     BorderColor =10921638
                     Name ="sfrmWaterQualityDO"
                     SourceObject ="Form.sfrm_WaterQualityDO"
@@ -662,17 +674,17 @@ Begin Form
                     LinkMasterFields ="ID"
                     GridlineColor =10921638
 
-                    LayoutCachedLeft =3540
-                    LayoutCachedTop =1680
-                    LayoutCachedWidth =7560
+                    LayoutCachedLeft =6780
+                    LayoutCachedTop =1920
+                    LayoutCachedWidth =10800
                     LayoutCachedHeight =3780
                     Begin
                         Begin Label
                             BackStyle =1
                             OverlapFlags =85
                             TextAlign =2
-                            Left =3540
-                            Top =1260
+                            Left =6780
+                            Top =1560
                             Width =3795
                             Height =300
                             FontWeight =700
@@ -682,10 +694,10 @@ Begin Form
                             Name ="lblDO"
                             Caption ="Dissolved Oxygen"
                             GridlineColor =10921638
-                            LayoutCachedLeft =3540
-                            LayoutCachedTop =1260
-                            LayoutCachedWidth =7335
-                            LayoutCachedHeight =1560
+                            LayoutCachedLeft =6780
+                            LayoutCachedTop =1560
+                            LayoutCachedWidth =10575
+                            LayoutCachedHeight =1860
                             BackThemeColorIndex =-1
                             ForeThemeColorIndex =-1
                             ForeTint =100.0
@@ -694,15 +706,15 @@ Begin Form
                 End
                 Begin ComboBox
                     LimitToList = NotDefault
-                    OverlapFlags =215
+                    OverlapFlags =87
                     IMESentenceMode =3
                     ColumnCount =2
                     ListWidth =2160
-                    Left =9315
-                    Top =660
-                    Width =2759
+                    Left =11160
+                    Top =990
+                    Width =2595
                     Height =315
-                    TabIndex =8
+                    TabIndex =3
                     BorderColor =14211288
                     ForeColor =4210752
                     ColumnInfo ="\"\";\"\";\"\";\"\";\"10\";\"100\""
@@ -724,10 +736,10 @@ Begin Form
                     AfterUpdate ="[Event Procedure]"
                     GridlineColor =10921638
 
-                    LayoutCachedLeft =9315
-                    LayoutCachedTop =660
-                    LayoutCachedWidth =12074
-                    LayoutCachedHeight =975
+                    LayoutCachedLeft =11160
+                    LayoutCachedTop =990
+                    LayoutCachedWidth =13755
+                    LayoutCachedHeight =1305
                     BorderThemeColorIndex =-1
                     BorderShade =100.0
                     ForeThemeColorIndex =0
@@ -741,35 +753,34 @@ Begin Form
                     End
                     Begin
                         Begin Label
-                            FontItalic = NotDefault
                             OverlapFlags =93
                             TextAlign =2
-                            Left =9300
-                            Top =480
-                            Width =2535
+                            Left =11160
+                            Top =780
+                            Width =2595
                             Height =210
                             FontSize =8
                             BorderColor =8355711
-                            ForeColor =8355711
                             Name ="Label15"
                             Caption ="Specific Conductance"
                             GridlineColor =10921638
-                            LayoutCachedLeft =9300
-                            LayoutCachedTop =480
-                            LayoutCachedWidth =11835
-                            LayoutCachedHeight =690
+                            LayoutCachedLeft =11160
+                            LayoutCachedTop =780
+                            LayoutCachedWidth =13755
+                            LayoutCachedHeight =990
+                            ForeThemeColorIndex =-1
+                            ForeTint =100.0
                         End
                     End
                 End
                 Begin Subform
-                    Enabled = NotDefault
                     OverlapFlags =85
                     OldBorderStyle =0
-                    Left =7755
-                    Top =1680
+                    Left =11160
+                    Top =1920
                     Width =2850
-                    Height =2100
-                    TabIndex =9
+                    Height =1860
+                    TabIndex =7
                     BorderColor =10921638
                     Name ="sfrmWaterQualitySpCond"
                     SourceObject ="Form.sfrm_WaterQualitySpCond"
@@ -777,17 +788,17 @@ Begin Form
                     LinkMasterFields ="ID"
                     GridlineColor =10921638
 
-                    LayoutCachedLeft =7755
-                    LayoutCachedTop =1680
-                    LayoutCachedWidth =10605
+                    LayoutCachedLeft =11160
+                    LayoutCachedTop =1920
+                    LayoutCachedWidth =14010
                     LayoutCachedHeight =3780
                     Begin
                         Begin Label
                             BackStyle =1
                             OverlapFlags =85
                             TextAlign =2
-                            Left =7755
-                            Top =1260
+                            Left =11160
+                            Top =1560
                             Width =2595
                             Height =300
                             FontWeight =700
@@ -797,10 +808,10 @@ Begin Form
                             Name ="lblSpCond"
                             Caption ="Specific Conductance"
                             GridlineColor =10921638
-                            LayoutCachedLeft =7755
-                            LayoutCachedTop =1260
-                            LayoutCachedWidth =10350
-                            LayoutCachedHeight =1560
+                            LayoutCachedLeft =11160
+                            LayoutCachedTop =1560
+                            LayoutCachedWidth =13755
+                            LayoutCachedHeight =1860
                             BackThemeColorIndex =-1
                             ForeThemeColorIndex =-1
                             ForeTint =100.0
@@ -809,15 +820,15 @@ Begin Form
                 End
                 Begin ComboBox
                     LimitToList = NotDefault
-                    OverlapFlags =215
+                    OverlapFlags =87
                     IMESentenceMode =3
                     ColumnCount =2
                     ListWidth =2160
-                    Left =12135
-                    Top =660
-                    Width =2759
+                    Left =3480
+                    Top =990
+                    Width =2595
                     Height =315
-                    TabIndex =10
+                    TabIndex =4
                     BorderColor =14211288
                     ForeColor =4210752
                     ColumnInfo ="\"\";\"\";\"\";\"\";\"10\";\"100\""
@@ -839,10 +850,10 @@ Begin Form
                     AfterUpdate ="[Event Procedure]"
                     GridlineColor =10921638
 
-                    LayoutCachedLeft =12135
-                    LayoutCachedTop =660
-                    LayoutCachedWidth =14894
-                    LayoutCachedHeight =975
+                    LayoutCachedLeft =3480
+                    LayoutCachedTop =990
+                    LayoutCachedWidth =6075
+                    LayoutCachedHeight =1305
                     BorderThemeColorIndex =-1
                     BorderShade =100.0
                     ForeThemeColorIndex =0
@@ -856,35 +867,34 @@ Begin Form
                     End
                     Begin
                         Begin Label
-                            FontItalic = NotDefault
                             OverlapFlags =93
                             TextAlign =2
-                            Left =12120
-                            Top =480
-                            Width =2535
+                            Left =3480
+                            Top =780
+                            Width =2595
                             Height =210
                             FontSize =8
                             BorderColor =8355711
-                            ForeColor =8355711
                             Name ="Label19"
                             Caption ="Temperature"
                             GridlineColor =10921638
-                            LayoutCachedLeft =12120
-                            LayoutCachedTop =480
-                            LayoutCachedWidth =14655
-                            LayoutCachedHeight =690
+                            LayoutCachedLeft =3480
+                            LayoutCachedTop =780
+                            LayoutCachedWidth =6075
+                            LayoutCachedHeight =990
+                            ForeThemeColorIndex =-1
+                            ForeTint =100.0
                         End
                     End
                 End
                 Begin Subform
-                    Enabled = NotDefault
                     OverlapFlags =85
                     OldBorderStyle =0
-                    Left =10995
-                    Top =1680
+                    Left =3480
+                    Top =1920
                     Width =2850
-                    Height =2100
-                    TabIndex =11
+                    Height =1860
+                    TabIndex =8
                     BorderColor =10921638
                     Name ="sfrmWaterQualityTemperature"
                     SourceObject ="Form.sfrm_WaterQualityTemperature"
@@ -892,17 +902,17 @@ Begin Form
                     LinkMasterFields ="ID"
                     GridlineColor =10921638
 
-                    LayoutCachedLeft =10995
-                    LayoutCachedTop =1680
-                    LayoutCachedWidth =13845
+                    LayoutCachedLeft =3480
+                    LayoutCachedTop =1920
+                    LayoutCachedWidth =6330
                     LayoutCachedHeight =3780
                     Begin
                         Begin Label
                             BackStyle =1
                             OverlapFlags =85
                             TextAlign =2
-                            Left =10995
-                            Top =1260
+                            Left =3480
+                            Top =1560
                             Width =2595
                             Height =300
                             FontWeight =700
@@ -912,10 +922,10 @@ Begin Form
                             Name ="lblTemperature"
                             Caption ="Temperature"
                             GridlineColor =10921638
-                            LayoutCachedLeft =10995
-                            LayoutCachedTop =1260
-                            LayoutCachedWidth =13590
-                            LayoutCachedHeight =1560
+                            LayoutCachedLeft =3480
+                            LayoutCachedTop =1560
+                            LayoutCachedWidth =6075
+                            LayoutCachedHeight =1860
                             BackThemeColorIndex =-1
                             ForeThemeColorIndex =-1
                             ForeTint =100.0
@@ -934,7 +944,6 @@ Begin Form
                     Height =315
                     ColumnOrder =0
                     FontSize =12
-                    TabIndex =12
                     BorderColor =14211288
                     ForeColor =4210752
                     ColumnInfo ="\"\";\"\";\"\";\"\";\"\";\"\";\"10\";\"50\""
@@ -975,7 +984,7 @@ Begin Form
                     Begin
                         Begin Label
                             FontItalic = NotDefault
-                            OverlapFlags =85
+                            OverlapFlags =93
                             TextAlign =1
                             Left =120
                             Top =120
@@ -998,173 +1007,495 @@ Begin Form
                 End
                 Begin Line
                     OverlapFlags =85
-                    Top =1140
+                    Top =1410
                     Width =15840
                     Name ="lineHeader"
                     GridlineColor =10921638
-                    LayoutCachedTop =1140
+                    LayoutCachedTop =1410
                     LayoutCachedWidth =15840
-                    LayoutCachedHeight =1140
+                    LayoutCachedHeight =1410
                 End
                 Begin Subform
-                    Enabled = NotDefault
                     OverlapFlags =85
                     OldBorderStyle =0
                     Left =300
                     Top =4320
                     Width =5730
                     Height =2400
-                    TabIndex =13
+                    TabIndex =9
                     BorderColor =10921638
                     Name ="sfrmWaterQualitypHCalibration"
                     SourceObject ="Form.sfrm_WaterQualitypHCalibration"
-                    LinkChildFields ="pHInstrumentID"
-                    LinkMasterFields ="pHInstrumentID"
                     GridlineColor =10921638
 
                     LayoutCachedLeft =300
                     LayoutCachedTop =4320
                     LayoutCachedWidth =6030
                     LayoutCachedHeight =6720
-                    Begin
-                        Begin Label
-                            BackStyle =1
-                            OverlapFlags =85
-                            TextAlign =2
-                            Left =300
-                            Top =3960
-                            Width =5715
-                            Height =300
-                            FontWeight =700
-                            BackColor =4281912
-                            BorderColor =8355711
-                            ForeColor =16777215
-                            Name ="lblpHCalibration"
-                            Caption ="pH Calibration"
-                            GridlineColor =10921638
-                            LayoutCachedLeft =300
-                            LayoutCachedTop =3960
-                            LayoutCachedWidth =6015
-                            LayoutCachedHeight =4260
-                            BackThemeColorIndex =-1
-                            ForeThemeColorIndex =-1
-                            ForeTint =100.0
-                        End
-                    End
                 End
                 Begin Subform
-                    Enabled = NotDefault
                     OverlapFlags =85
                     OldBorderStyle =0
-                    Left =6300
+                    Left =6180
                     Top =4320
-                    Width =4170
+                    Width =5100
                     Height =2340
-                    TabIndex =14
+                    TabIndex =10
                     BorderColor =10921638
                     Name ="sfrmWaterQualityDOCalibration"
                     SourceObject ="Form.sfrm_WaterQualityDOCalibration"
-                    LinkChildFields ="DOInstrumentID"
-                    LinkMasterFields ="DOInstrumentID"
                     GridlineColor =10921638
 
-                    LayoutCachedLeft =6300
+                    LayoutCachedLeft =6180
                     LayoutCachedTop =4320
-                    LayoutCachedWidth =10470
+                    LayoutCachedWidth =11280
                     LayoutCachedHeight =6660
-                    Begin
-                        Begin Label
-                            BackStyle =1
-                            OverlapFlags =85
-                            TextAlign =2
-                            Left =6300
-                            Top =3960
-                            Width =4185
-                            Height =300
-                            FontWeight =700
-                            BackColor =4281912
-                            BorderColor =8355711
-                            ForeColor =16777215
-                            Name ="lblDOCalibration"
-                            Caption ="Dissolved Oxygen Calibration"
-                            GridlineColor =10921638
-                            LayoutCachedLeft =6300
-                            LayoutCachedTop =3960
-                            LayoutCachedWidth =10485
-                            LayoutCachedHeight =4260
-                            BackThemeColorIndex =-1
-                            ForeThemeColorIndex =-1
-                            ForeTint =100.0
-                        End
-                    End
                 End
                 Begin Subform
-                    Enabled = NotDefault
                     OverlapFlags =85
                     OldBorderStyle =0
-                    Left =10680
+                    Left =11460
                     Top =4320
-                    Width =4200
+                    Width =4500
                     Height =2340
-                    TabIndex =15
+                    TabIndex =11
                     BorderColor =10921638
                     Name ="sfrmWaterQualitySpCondCalibration"
                     SourceObject ="Form.sfrm_WaterQualitySpCondCalibration"
-                    LinkChildFields ="SpCondInstrumentID"
-                    LinkMasterFields ="SpCondInstrumentID"
                     GridlineColor =10921638
 
-                    LayoutCachedLeft =10680
+                    LayoutCachedLeft =11460
                     LayoutCachedTop =4320
-                    LayoutCachedWidth =14880
+                    LayoutCachedWidth =15960
                     LayoutCachedHeight =6660
-                    Begin
-                        Begin Label
-                            BackStyle =1
-                            OverlapFlags =85
-                            TextAlign =2
-                            Left =10680
-                            Top =3960
-                            Width =4200
-                            Height =300
-                            FontWeight =700
-                            BackColor =4281912
-                            BorderColor =8355711
-                            ForeColor =16777215
-                            Name ="lblSpCondCalibration"
-                            Caption ="Specific Conductance Calibration"
-                            GridlineColor =10921638
-                            LayoutCachedLeft =10680
-                            LayoutCachedTop =3960
-                            LayoutCachedWidth =14880
-                            LayoutCachedHeight =4260
-                            BackThemeColorIndex =-1
-                            ForeThemeColorIndex =-1
-                            ForeTint =100.0
-                        End
-                    End
                 End
                 Begin Label
-                    OverlapFlags =85
-                    TextAlign =3
+                    OverlapFlags =215
+                    TextAlign =1
                     Left =120
-                    Top =660
-                    Width =3480
+                    Top =420
+                    Width =2100
                     Height =315
                     BorderColor =8355711
                     Name ="Label31"
-                    Caption ="*Instruments used"
+                    Caption ="*Instruments used:"
                     GridlineColor =10921638
                     LayoutCachedLeft =120
-                    LayoutCachedTop =660
-                    LayoutCachedWidth =3600
-                    LayoutCachedHeight =975
+                    LayoutCachedTop =420
+                    LayoutCachedWidth =2220
+                    LayoutCachedHeight =735
+                    ForeThemeColorIndex =-1
+                    ForeTint =100.0
+                End
+                Begin CommandButton
+                    OverlapFlags =127
+                    Left =3840
+                    Top =6780
+                    Width =1920
+                    Height =260
+                    FontSize =9
+                    TabIndex =16
+                    Name ="cmdpHCal"
+                    Caption ="New pH Calibration"
+                    OnClick ="[Event Procedure]"
+                    Tag ="NoLock"
+                    LeftPadding =45
+                    TopPadding =45
+                    RightPadding =150
+                    BottomPadding =150
+                    GridlineColor =10921638
+
+                    LayoutCachedLeft =3840
+                    LayoutCachedTop =6780
+                    LayoutCachedWidth =5760
+                    LayoutCachedHeight =7040
+                    ForeTint =100.0
+                    Shape =0
+                    Gradient =0
+                    BackColor =14211288
+                    BackThemeColorIndex =-1
+                    BackTint =100.0
+                    BorderColor =9211020
+                    BorderThemeColorIndex =-1
+                    BorderTint =100.0
+                    ThemeFontIndex =-1
+                    HoverColor =14277081
+                    HoverThemeColorIndex =1
+                    HoverTint =100.0
+                    HoverShade =85.0
+                    PressedColor =14277081
+                    PressedThemeColorIndex =1
+                    PressedShade =85.0
+                    HoverForeColor =0
+                    HoverForeTint =100.0
+                    PressedForeColor =0
+                    PressedForeTint =100.0
+                    Shadow =1
+                    Overlaps =1
+                End
+                Begin CommandButton
+                    OverlapFlags =127
+                    Left =8820
+                    Top =6780
+                    Width =1920
+                    Height =260
+                    FontSize =9
+                    TabIndex =17
+                    Name ="cmdDOCal"
+                    Caption ="New DO Calibration"
+                    OnClick ="[Event Procedure]"
+                    Tag ="NoLock"
+                    LeftPadding =45
+                    TopPadding =45
+                    RightPadding =150
+                    BottomPadding =150
+                    GridlineColor =10921638
+
+                    LayoutCachedLeft =8820
+                    LayoutCachedTop =6780
+                    LayoutCachedWidth =10740
+                    LayoutCachedHeight =7040
+                    ForeTint =100.0
+                    Shape =0
+                    Gradient =0
+                    BackColor =14211288
+                    BackThemeColorIndex =-1
+                    BackTint =100.0
+                    BorderColor =9211020
+                    BorderThemeColorIndex =-1
+                    BorderTint =100.0
+                    ThemeFontIndex =-1
+                    HoverColor =14277081
+                    HoverThemeColorIndex =1
+                    HoverTint =100.0
+                    HoverShade =85.0
+                    PressedColor =14277081
+                    PressedThemeColorIndex =1
+                    PressedShade =85.0
+                    HoverForeColor =0
+                    HoverForeTint =100.0
+                    PressedForeColor =0
+                    PressedForeTint =100.0
+                    Shadow =1
+                    Overlaps =1
+                End
+                Begin CommandButton
+                    OverlapFlags =127
+                    Left =13200
+                    Top =6780
+                    Width =2160
+                    Height =260
+                    FontSize =9
+                    TabIndex =18
+                    Name ="cmdSpCondCal"
+                    Caption ="New SpCond Calibration"
+                    OnClick ="[Event Procedure]"
+                    Tag ="NoLock"
+                    LeftPadding =45
+                    TopPadding =45
+                    RightPadding =150
+                    BottomPadding =150
+                    GridlineColor =10921638
+
+                    LayoutCachedLeft =13200
+                    LayoutCachedTop =6780
+                    LayoutCachedWidth =15360
+                    LayoutCachedHeight =7040
+                    ForeTint =100.0
+                    Shape =0
+                    Gradient =0
+                    BackColor =14211288
+                    BackThemeColorIndex =-1
+                    BackTint =100.0
+                    BorderColor =9211020
+                    BorderThemeColorIndex =-1
+                    BorderTint =100.0
+                    ThemeFontIndex =-1
+                    HoverColor =14277081
+                    HoverThemeColorIndex =1
+                    HoverTint =100.0
+                    HoverShade =85.0
+                    PressedColor =14277081
+                    PressedThemeColorIndex =1
+                    PressedShade =85.0
+                    HoverForeColor =0
+                    HoverForeTint =100.0
+                    PressedForeColor =0
+                    PressedForeTint =100.0
+                    Shadow =1
+                    Overlaps =1
+                End
+                Begin CommandButton
+                    Visible = NotDefault
+                    OverlapFlags =247
+                    Left =3180
+                    Top =6780
+                    Width =1920
+                    Height =260
+                    FontSize =9
+                    TabIndex =19
+                    Name ="cmdSavepHCal"
+                    Caption ="Save pH Calibration"
+                    OnClick ="[Event Procedure]"
+                    Tag ="NoLock"
+                    LeftPadding =45
+                    TopPadding =45
+                    RightPadding =150
+                    BottomPadding =150
+                    GridlineColor =10921638
+
+                    LayoutCachedLeft =3180
+                    LayoutCachedTop =6780
+                    LayoutCachedWidth =5100
+                    LayoutCachedHeight =7040
+                    ForeTint =100.0
+                    Shape =0
+                    Gradient =0
+                    BackColor =14211288
+                    BackThemeColorIndex =-1
+                    BackTint =100.0
+                    BorderColor =9211020
+                    BorderThemeColorIndex =-1
+                    BorderTint =100.0
+                    ThemeFontIndex =-1
+                    HoverColor =14277081
+                    HoverThemeColorIndex =1
+                    HoverTint =100.0
+                    HoverShade =85.0
+                    PressedColor =14277081
+                    PressedThemeColorIndex =1
+                    PressedShade =85.0
+                    HoverForeColor =0
+                    HoverForeTint =100.0
+                    PressedForeColor =0
+                    PressedForeTint =100.0
+                    Shadow =1
+                    Overlaps =1
+                End
+                Begin CommandButton
+                    Visible = NotDefault
+                    OverlapFlags =247
+                    Left =8520
+                    Top =6780
+                    Width =1920
+                    Height =260
+                    FontSize =9
+                    TabIndex =20
+                    Name ="cmdSaveDOCal"
+                    Caption ="Save DO Calibration"
+                    OnClick ="[Event Procedure]"
+                    Tag ="NoLock"
+                    LeftPadding =45
+                    TopPadding =45
+                    RightPadding =150
+                    BottomPadding =150
+                    GridlineColor =10921638
+
+                    LayoutCachedLeft =8520
+                    LayoutCachedTop =6780
+                    LayoutCachedWidth =10440
+                    LayoutCachedHeight =7040
+                    ForeTint =100.0
+                    Shape =0
+                    Gradient =0
+                    BackColor =14211288
+                    BackThemeColorIndex =-1
+                    BackTint =100.0
+                    BorderColor =9211020
+                    BorderThemeColorIndex =-1
+                    BorderTint =100.0
+                    ThemeFontIndex =-1
+                    HoverColor =14277081
+                    HoverThemeColorIndex =1
+                    HoverTint =100.0
+                    HoverShade =85.0
+                    PressedColor =14277081
+                    PressedThemeColorIndex =1
+                    PressedShade =85.0
+                    HoverForeColor =0
+                    HoverForeTint =100.0
+                    PressedForeColor =0
+                    PressedForeTint =100.0
+                    Shadow =1
+                    Overlaps =1
+                End
+                Begin CommandButton
+                    Visible = NotDefault
+                    OverlapFlags =247
+                    Left =12840
+                    Top =6780
+                    Width =2160
+                    Height =260
+                    FontSize =9
+                    TabIndex =21
+                    Name ="cmdSaveSpCondCal"
+                    Caption ="Save SpCond Calibration"
+                    OnClick ="[Event Procedure]"
+                    Tag ="NoLock"
+                    LeftPadding =45
+                    TopPadding =45
+                    RightPadding =150
+                    BottomPadding =150
+                    GridlineColor =10921638
+
+                    LayoutCachedLeft =12840
+                    LayoutCachedTop =6780
+                    LayoutCachedWidth =15000
+                    LayoutCachedHeight =7040
+                    ForeTint =100.0
+                    Shape =0
+                    Gradient =0
+                    BackColor =14211288
+                    BackThemeColorIndex =-1
+                    BackTint =100.0
+                    BorderColor =9211020
+                    BorderThemeColorIndex =-1
+                    BorderTint =100.0
+                    ThemeFontIndex =-1
+                    HoverColor =14277081
+                    HoverThemeColorIndex =1
+                    HoverTint =100.0
+                    HoverShade =85.0
+                    PressedColor =14277081
+                    PressedThemeColorIndex =1
+                    PressedShade =85.0
+                    HoverForeColor =0
+                    HoverForeTint =100.0
+                    PressedForeColor =0
+                    PressedForeTint =100.0
+                    Shadow =1
+                    Overlaps =1
+                End
+                Begin Label
+                    BackStyle =1
+                    OverlapFlags =85
+                    TextAlign =2
+                    Left =285
+                    Top =3960
+                    Width =5745
+                    Height =300
+                    FontWeight =700
+                    BackColor =4281912
+                    BorderColor =8355711
+                    ForeColor =16777215
+                    Name ="lblpHCalibration"
+                    Caption ="pH Calibration"
+                    GridlineColor =10921638
+                    LayoutCachedLeft =285
+                    LayoutCachedTop =3960
+                    LayoutCachedWidth =6030
+                    LayoutCachedHeight =4260
+                    BackThemeColorIndex =-1
+                    ForeThemeColorIndex =-1
+                    ForeTint =100.0
+                End
+                Begin Subform
+                    Visible = NotDefault
+                    OverlapFlags =85
+                    OldBorderStyle =0
+                    Left =240
+                    Top =9600
+                    Width =6120
+                    Height =1860
+                    TabIndex =22
+                    BorderColor =10921638
+                    Name ="sfrmWaterQualityEnterpHCalibration"
+                    SourceObject ="Form.sfrm_WaterQualityEnterpHCalibration"
+                    GridlineColor =10921638
+
+                    LayoutCachedLeft =240
+                    LayoutCachedTop =9600
+                    LayoutCachedWidth =6360
+                    LayoutCachedHeight =11460
+                End
+                Begin Subform
+                    Visible = NotDefault
+                    OverlapFlags =85
+                    OldBorderStyle =0
+                    Left =6660
+                    Top =9540
+                    Width =5070
+                    Height =1980
+                    TabIndex =23
+                    BorderColor =10921638
+                    Name ="sfrmWaterQualityEnterDOCalibration"
+                    SourceObject ="Form.sfrm_WaterQualityEnterDOCalibration"
+                    GridlineColor =10921638
+
+                    LayoutCachedLeft =6660
+                    LayoutCachedTop =9540
+                    LayoutCachedWidth =11730
+                    LayoutCachedHeight =11520
+                End
+                Begin Subform
+                    Visible = NotDefault
+                    OverlapFlags =85
+                    OldBorderStyle =0
+                    Left =11940
+                    Top =9720
+                    Width =5190
+                    Height =1620
+                    TabIndex =24
+                    BorderColor =10921638
+                    Name ="sfrmWaterQualityEnterSpCondCalibration"
+                    SourceObject ="Form.sfrm_WaterQualityEnterSpCondCalibration"
+                    GridlineColor =10921638
+
+                    LayoutCachedLeft =11940
+                    LayoutCachedTop =9720
+                    LayoutCachedWidth =17130
+                    LayoutCachedHeight =11340
+                End
+                Begin Label
+                    BackStyle =1
+                    OverlapFlags =85
+                    TextAlign =2
+                    Left =6180
+                    Top =3960
+                    Width =5100
+                    Height =300
+                    FontWeight =700
+                    BackColor =4281912
+                    BorderColor =8355711
+                    ForeColor =16777215
+                    Name ="lblDOCalibration"
+                    Caption ="Dissolved Oxygen Calibration"
+                    GridlineColor =10921638
+                    LayoutCachedLeft =6180
+                    LayoutCachedTop =3960
+                    LayoutCachedWidth =11280
+                    LayoutCachedHeight =4260
+                    BackThemeColorIndex =-1
+                    ForeThemeColorIndex =-1
+                    ForeTint =100.0
+                End
+                Begin Label
+                    BackStyle =1
+                    OverlapFlags =85
+                    TextAlign =2
+                    Left =11460
+                    Top =3960
+                    Width =4200
+                    Height =300
+                    FontWeight =700
+                    BackColor =4281912
+                    BorderColor =8355711
+                    ForeColor =16777215
+                    Name ="lblSpCondCalibration"
+                    Caption ="Specific Conductance Calibration"
+                    GridlineColor =10921638
+                    LayoutCachedLeft =11460
+                    LayoutCachedTop =3960
+                    LayoutCachedWidth =15660
+                    LayoutCachedHeight =4260
+                    BackThemeColorIndex =-1
                     ForeThemeColorIndex =-1
                     ForeTint =100.0
                 End
             End
         End
         Begin FormFooter
+            CanGrow = NotDefault
             Height =0
             BackColor =4281912
             Name ="FormFooter"
@@ -1183,6 +1514,134 @@ Option Explicit
 
 Private Const mstrcFormName As String = "sfrm_WaterQualityActivity"
 
+Public Function DataQualityOK() As Boolean
+
+Dim dataCollected As String
+Dim pHCount As Integer
+Dim tempCount As Integer
+Dim DOCount As Integer
+Dim SpCondCount As Integer
+Dim instrumentNotNull As Boolean
+
+If Me.NewRecord Then
+    DataQualityOK = True
+    GoTo Exit_Procedure
+End If
+
+dataCollected = LookupCodeFromID("lookup_WaterQualityDataCollected", Me.cboWaterQualityDataCollectedID)
+pHCount = Me.sfrmWaterQualitypH.Form.RowCount()
+tempCount = Me.sfrmWaterQualityTemperature.Form.RowCount()
+DOCount = Me.sfrmWaterQualityDO.Form.RowCount()
+SpCondCount = Me.sfrmWaterQualitySpCond.Form.RowCount()
+
+Select Case dataCollected
+Case "Y"
+    'If data are collected, at least one wq measurement must have data entered and an instrument specified
+    If ((pHCount > 0 And Nz(LookupCodeFromID("ref_WaterQualityInstrument", Me.cbopHInstrumentID)) <> "None") Or _
+        (tempCount > 0 And Nz(LookupCodeFromID("ref_WaterQualityInstrument", Me.cboTemperatureInstrumentID)) <> "None") Or _
+        (DOCount > 0 And Nz(LookupCodeFromID("ref_WaterQualityInstrument", Me.cboDOInstrumentID)) <> "None") Or _
+        (SpCondCount > 0 And Nz(LookupCodeFromID("ref_WaterQualityInstrument", Me.cboSpCondInstrumentID)) <> "None")) And _
+        RequiredFieldsPopulated Then
+        DataQualityOK = True
+    Else: DataQualityOK = False
+    End If
+Case "NIW", "NO", "NU"
+    'If data are not collected, then there should be no data entered. Instruments can be specified, because it may still be necessary to record a calibration
+    If (pHCount + tempCount + DOCount + SpCondCount) = 0 And RequiredFieldsPopulated Then
+        DataQualityOK = True
+    Else: DataQualityOK = False
+    End If
+End Select
+
+Exit_Procedure:
+    Exit Function
+Error_Handler:
+    MsgBox "Form: " & mstrcFormName & vbNewLine & "Fxn:  DataQualityOK" & vbNewLine & "Error #" & Err.Number & ": " & Err.Description, vbCritical
+    Resume Exit_Procedure
+
+End Function
+
+Private Function ToggleCalibrationEntry(entryForm As SubForm, browseForm As SubForm, entryButton As CommandButton, saveButton As CommandButton, entry As Boolean)
+
+'Switch to data entry mode
+If entry Then
+    'Hide browsing subform, set the data entry subform to the same position and dimensions as the browsing subform, and make the data entry subform visible
+    browseForm.Visible = False
+    With entryForm
+        .Top = browseForm.Top
+        .Left = browseForm.Left
+        .Height = browseForm.Height
+        .Width = browseForm.Width
+        .Visible = True
+        .SetFocus
+        .Form.txtCalibrationDate.SetFocus
+    End With
+    'Hide enter data button, set save button to same position and size as the enter data button, and make the save data button visible
+    entryButton.Visible = False
+    With saveButton
+        .Top = entryButton.Top
+        .Left = entryButton.Left
+        .Height = entryButton.Height
+        .Width = entryButton.Width
+        .Visible = True
+    End With
+'Switch to browse mode
+Else
+    'Try to save the calibration data that was entered. If successful, toggle back to the browse subform, otherwise do nothing
+    If entryForm.Form.SaveRecord Then
+        'Requery the browse form so that the most recent data shows up, then make it visible
+        With browseForm
+            .Visible = True
+            .SetFocus
+            .Requery
+        End With
+        'Requery the data entry form so that it will be blank next time, then make it invisible
+        With entryForm
+            .Requery
+            .Visible = False
+        End With
+        'Hide save button, show new calibration button
+        entryButton.Visible = True
+        saveButton.Visible = False
+    End If
+End If
+End Function
+
+Private Sub cmdSpCondCal_Click()
+
+ToggleCalibrationEntry Me.sfrmWaterQualityEnterSpCondCalibration, Me.sfrmWaterQualitySpCondCalibration, Me.cmdSpCondCal, Me.cmdSaveSpCondCal, True
+
+End Sub
+
+Private Sub cmdSaveSpCondCal_Click()
+
+ToggleCalibrationEntry Me.sfrmWaterQualityEnterSpCondCalibration, Me.sfrmWaterQualitySpCondCalibration, Me.cmdSpCondCal, Me.cmdSaveSpCondCal, False
+
+End Sub
+
+Private Sub cmdDOCal_Click()
+
+ToggleCalibrationEntry Me.sfrmWaterQualityEnterDOCalibration, Me.sfrmWaterQualityDOCalibration, Me.cmdDOCal, Me.cmdSaveDOCal, True
+
+End Sub
+
+Private Sub cmdSaveDOCal_Click()
+
+ToggleCalibrationEntry Me.sfrmWaterQualityEnterDOCalibration, Me.sfrmWaterQualityDOCalibration, Me.cmdDOCal, Me.cmdSaveDOCal, False
+
+End Sub
+
+Private Sub cmdpHCal_Click()
+
+ToggleCalibrationEntry Me.sfrmWaterQualityEnterpHCalibration, Me.sfrmWaterQualitypHCalibration, Me.cmdpHCal, Me.cmdSavepHCal, True
+
+End Sub
+
+Private Sub cmdSavepHCal_Click()
+
+ToggleCalibrationEntry Me.sfrmWaterQualityEnterpHCalibration, Me.sfrmWaterQualitypHCalibration, Me.cmdpHCal, Me.cmdSavepHCal, False
+
+End Sub
 
 Private Sub Form_Load()
 On Error GoTo Error_Handler
@@ -1221,10 +1680,10 @@ On Error GoTo Error_Handler
     Dim ObservationExists As Boolean
     Dim YesLookupID As Integer
     
-    ObservationExists = CheckRecExists(Me.sfrmWaterQualitypH.Form.RecordsetClone, "WaterQualityActivityID = " & Me.ID) Or _
-                        CheckRecExists(Me.sfrmWaterQualityDO.Form.RecordsetClone, "WaterQualityActivityID = " & Me.ID) Or _
-                        CheckRecExists(Me.sfrmWaterQualitySpCond.Form.RecordsetClone, "WaterQualityActivityID = " & Me.ID) Or _
-                        CheckRecExists(Me.sfrmWaterQualityTemperature.Form.RecordsetClone, "WaterQualityActivityID = " & Me.ID)
+    ObservationExists = Me.sfrmWaterQualitypH.Form.RowCount() > 0 Or _
+                        Me.sfrmWaterQualityDO.Form.RowCount() > 0 Or _
+                        Me.sfrmWaterQualitySpCond.Form.RowCount() > 0 Or _
+                        Me.sfrmWaterQualityTemperature.Form.RowCount() > 0
     YesLookupID = LookupIDFromCode("lookup_WaterQualityDataCollected", "Y")
 
     If Me.cboWaterQualityDataCollectedID = YesLookupID Then
@@ -1238,17 +1697,15 @@ On Error GoTo Error_Handler
         "If you are sure you want to change ""Water Quality Data Collected?"" to ""No"", please delete your measurements first."), vbOKOnly + vbExclamation, "Existing Records"
         cboWaterQualityDataCollectedID = YesLookupID
         EnableSubforms (True)
-    Else 'no data collected and no measurements exist so set intruments to none
+    Else 'no data collected and no measurements exist
         EnableSubforms (False)
-        Me.cbopHInstrumentID.Value = LookupIDFromLabel("ref_WaterQualityInstrument", "None")
-        Me.cboDOInstrumentID.Value = LookupIDFromLabel("ref_WaterQualityInstrument", "None")
-        Me.cboSpCondInstrumentID.Value = LookupIDFromLabel("ref_WaterQualityInstrument", "None")
-        Me.cboTemperatureInstrumentID.Value = LookupIDFromLabel("ref_WaterQualityInstrument", "None")
     End If
     
-    DoCmd.Save acDefault
-    Forms!frm_Visit!sfrmActivityDashboard.Form.Requery
-
+    If RequiredFieldsPopulated Then
+        DoCmd.Save acDefault
+        Forms!frm_Visit!sfrmActivityDashboard.Form.Requery
+    End If
+    
 Exit_Sub:
     Exit Sub
 Error_Handler:
@@ -1374,11 +1831,11 @@ Public Function RequiredFieldsPopulated() As Boolean
     'Check that required fields are populated to facilitate disabling subforms until requirements are met (mel 4/2018)
     On Error GoTo Error_Handler
 
-        If Not IsNull(Me.WaterQualityDataCollectedID) And _
-            Not IsNull(Me.pHInstrumentID) And _
-            Not IsNull(Me.DOInstrumentID) And _
-            Not IsNull(Me.SpCondInstrumentID) And _
-            Not IsNull(Me.TemperatureInstrumentID) Then
+        If Not IsNull(Me.cboWaterQualityDataCollectedID) And _
+            Not IsNull(Me.cbopHInstrumentID) And _
+            Not IsNull(Me.cboDOInstrumentID) And _
+            Not IsNull(Me.cboSpCondInstrumentID) And _
+            Not IsNull(Me.cboTemperatureInstrumentID) Then
                 RequiredFieldsPopulated = True
         Else
             RequiredFieldsPopulated = False

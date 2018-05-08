@@ -19,20 +19,22 @@ Begin Form
     Width =4500
     DatasheetFontHeight =11
     ItemSuffix =5
-    Left =9150
-    Top =5010
-    Right =13695
-    Bottom =9915
+    Left =9840
+    Top =2265
+    Right =14385
+    Bottom =7170
     DatasheetGridlinesColor =15921906
     RecSrcDt = Begin
         0x9d66bc17ab15e540
     End
     RecordSource ="data_SpringbrookDimensions"
+    BeforeUpdate ="[Event Procedure]"
     DatasheetFontName ="Calibri"
     PrtMip = Begin
         0x6801000068010000680100006801000000000000201c0000e010000001000000 ,
         0x010000006801000000000000a10700000100000001000000
     End
+    OnLoad ="[Event Procedure]"
     FilterOnLoad =0
     ShowPageMargins =0
     DisplayOnSharePointSite =1
@@ -146,6 +148,18 @@ Begin Form
             BorderShade =65.0
             ShowPageHeaderAndPageFooter =1
         End
+        Begin Chart
+            SpecialEffect =2
+            OldBorderStyle =1
+            ThemeFontIndex =1
+            BackThemeColorIndex =1
+            BorderThemeColorIndex =1
+            BorderShade =65.0
+            ForeThemeColorIndex =2
+            ForeShade =50.0
+            GridlineThemeColorIndex =1
+            GridlineShade =65.0
+        End
         Begin Tab
             FontSize =11
             FontName ="Calibri"
@@ -198,8 +212,8 @@ Begin Form
                     Height =313
                     TabIndex =2
                     BorderColor =14211288
-                    Name ="txtSpringbrookLength_meters"
-                    ControlSource ="SpringbrookLength_meters"
+                    Name ="txtSpringbrookLength_m"
+                    ControlSource ="SpringbrookLength_m"
                     GridlineColor =10921638
 
                     LayoutCachedLeft =2583
@@ -327,6 +341,8 @@ Begin Form
                     RowSource ="SELECT lookup_SpringbrookLengthFlag.ID, lookup_SpringbrookLengthFlag.Code, looku"
                         "p_SpringbrookLengthFlag.Label FROM lookup_SpringbrookLengthFlag; "
                     ColumnWidths ="0;1199;1944"
+                    BeforeUpdate ="[Event Procedure]"
+                    DefaultValue ="3"
                     GridlineColor =10921638
                     AllowValueListEdits =0
 
@@ -373,73 +389,11 @@ Begin Form
                     Height =3539
                     TabIndex =4
                     ForeColor =4210752
-                    Name ="cmdDeletePersonnel"
+                    Name ="cmdDeleteSpringbrookDim"
+                    OnClick ="[Event Procedure]"
                     ControlTipText ="Delete Record"
                     Picture ="X-Mark-16-LtGray"
                     GridlineColor =10921638
-                    OnClickEmMacro = Begin
-                        Version =196611
-                        ColumnsShown =10
-                        Begin
-                            Action ="OnError"
-                            Argument ="0"
-                        End
-                        Begin
-                            Action ="GoToControl"
-                            Argument ="=[Screen].[PreviousControl].[Name]"
-                        End
-                        Begin
-                            Action ="ClearMacroError"
-                        End
-                        Begin
-                            Condition ="Not [Form].[NewRecord]"
-                            Action ="RunCommand"
-                            Argument ="223"
-                        End
-                        Begin
-                            Condition ="[Form].[NewRecord] And Not [Form].[Dirty]"
-                            Action ="Beep"
-                        End
-                        Begin
-                            Condition ="[Form].[NewRecord] And [Form].[Dirty]"
-                            Action ="RunCommand"
-                            Argument ="292"
-                        End
-                        Begin
-                            Condition ="[MacroError]<>0"
-                            Action ="MsgBox"
-                            Argument ="=[MacroError].[Description]"
-                            Argument ="-1"
-                            Argument ="0"
-                        End
-                        Begin
-                            Comment ="_AXL:<?xml version=\"1.0\" encoding=\"UTF-16\" standalone=\"no\"?>\015\012<UserI"
-                                "nterfaceMacro For=\"cmdDeletePersonnel\" xmlns=\"http://schemas.microsoft.com/of"
-                                "fice/accessservices/2009/11/application\"><Statements><Action Name=\"OnError\"/>"
-                                "<Action Name=\"GoToControl\"><Arg"
-                        End
-                        Begin
-                            Comment ="_AXL:ument Name=\"ControlName\">=[Screen].[PreviousControl].[Name]</Argument></A"
-                                "ction><Action Name=\"ClearMacroError\"/><ConditionalBlock><If><Condition>Not [Fo"
-                                "rm].[NewRecord]</Condition><Statements><Action Name=\"DeleteRecord\"/></Statemen"
-                                "ts></If></Condition"
-                        End
-                        Begin
-                            Comment ="_AXL:alBlock><ConditionalBlock><If><Condition>[Form].[NewRecord] And Not [Form]."
-                                "[Dirty]</Condition><Statements><Action Name=\"Beep\"/></Statements></If></Condit"
-                                "ionalBlock><ConditionalBlock><If><Condition>[Form].[NewRecord] And [Form].[Dirty"
-                                "]</Condition><S"
-                        End
-                        Begin
-                            Comment ="_AXL:tatements><Action Name=\"UndoRecord\"/></Statements></If></ConditionalBlock"
-                                "><ConditionalBlock><If><Condition>[MacroError]&lt;&gt;0</Condition><Statements><"
-                                "Action Name=\"MessageBox\"><Argument Name=\"Message\">=[MacroError].[Description"
-                                "]</Argument></Actio"
-                        End
-                        Begin
-                            Comment ="_AXL:n></Statements></If></ConditionalBlock></Statements></UserInterfaceMacro>"
-                        End
-                    End
 
                     LayoutCachedLeft =4140
                     LayoutCachedTop =60
@@ -464,6 +418,7 @@ Begin Form
                     WebImagePaddingTop =2
                     WebImagePaddingRight =1
                     WebImagePaddingBottom =1
+                    Overlaps =1
                 End
             End
         End
@@ -485,39 +440,161 @@ Attribute VB_Exposed = False
 Option Compare Database
 Option Explicit
 
+Const strcFormName As String = "sfrm_SpringbrookDimensions"
+
+Public Function RowCount() As Integer
+
+RowCount = Me.RecordsetClone.RecordCount
+
+End Function
+
+Public Function DataQualityOK() As Integer
+On Error GoTo Error_Handler
+
+Dim lengthFlag As String
+lengthFlag = Nz(LookupCodeFromID("lookup_SpringbrookLengthFlag", Me.cboSpringbrookLengthFlagID))
+
+'If no data, return true and exit
+If Not Me.Dirty And RowCount() = 0 Then
+    DataQualityOK = True
+    GoTo Exit_Procedure
+End If
+
+'Valid data options:
+'       Springbrook width length are 0 and length flag is Measured
+'       Springbrook width > 0, springbrook length is null, flag is >50m
+'       Springbrook width > 0, springbrook length > 0, flag is Measured
+DataQualityOK = ((Nz(Me.txtSpringbrookLength_m, 1) = 0) And (Nz(Me.txtSpringbrookWidth_m, 1) = 0) And (Nz(lengthFlag) = "Measured")) Or _
+                ((Nz(Me.txtSpringbrookWidth_m) > 0) And (lengthFlag = ">50m") And IsNull(Me.txtSpringbrookLength_m)) Or _
+                ((Nz(Me.txtSpringbrookWidth_m) > 0) And (lengthFlag = "Measured") And (Nz(Me.txtSpringbrookLength_m) > 0))
+
+
+Exit_Procedure:
+    Exit Function
+Error_Handler:
+    MsgBox "Form: " & strcFormName & vbNewLine & "Fxn: DataQualityOK" & vbNewLine & "Error #" & Err.Number & ": " & Err.Description, vbCritical
+    Resume Exit_Procedure
+End Function
+
+Public Sub SetupVisibility()
+
+Dim lengthFlag As String
+lengthFlag = Nz(LookupCodeFromID("lookup_SpringbrookLengthFlag", Me.cboSpringbrookLengthFlagID))
+
+Select Case lengthFlag
+    'If flag is ">50m", hide springbrook length as long as there is no data recorded for springbrook length
+    Case ">50m"
+        Me.txtSpringbrookLength_m.Visible = Not IsNull(Me.txtSpringbrookLength_m)
+    'if flag is "Measured", show all fields
+    Case "Measured"
+        Me.txtSpringbrookLength_m.Visible = True
+    Case Else
+        Me.txtSpringbrookLength_m.Visible = True
+End Select
+
+End Sub
+
+Public Function ConsistentWithParent(flowCondition As String) As Boolean
+On Error GoTo Error_Handler
+
+Dim lengthFlag As String
+lengthFlag = Nz(LookupCodeFromID("lookup_SpringbrookLengthFlag", Me.cboSpringbrookLengthFlagID))
+
+'If the data don't pass the basic data quality check, don't bother checking for consistency with parent form data
+If Not DataQualityOK() Then
+    ConsistentWithParent = False
+    GoTo Exit_Procedure
+End If
+
+'Make sure that length and width are 0 if no water present and make sure that they are recorded appropriately if water is present
+Select Case flowCondition
+    Case "dry", "wet soil only"
+        ConsistentWithParent = ((Nz(Me.txtSpringbrookLength_m, 1) = 0) And (Nz(Me.txtSpringbrookWidth_m, 1) = 0) And (Nz(lengthFlag) = "Measured"))
+    Case "flowing", "flood", "standing water", "solid ice"
+        ConsistentWithParent = ((Nz(Me.txtSpringbrookWidth_m) > 0) And (lengthFlag = ">50m") And IsNull(Me.txtSpringbrookLength_m)) Or _
+                ((Nz(Me.txtSpringbrookWidth_m) > 0) And (lengthFlag = "Measured") And (Nz(Me.txtSpringbrookLength_m) > 0))
+    Case Else
+        ConsistentWithParent = False
+End Select
+
+Exit_Procedure:
+    Exit Function
+Error_Handler:
+    MsgBox "Form: " & strcFormName & vbNewLine & "Fxn: ConsistentWithParent" & vbNewLine & "Error #" & Err.Number & ": " & Err.Description, vbCritical
+    Resume Exit_Procedure
+End Function
+
 Private Sub cmdDeleteSpringbrookDim_Click()
 
-'Delete Springbrook Dimensions record, associated with a visit, from data_SpringbrookDimensions
-    
-    On Error Resume Next
-    
-    Dim YesNo As Integer
-    
-    If IsNull(Me.DischargeActivityID) Then
-        Resume Next
-    'If user clicks delete button and there are unsaved changes, save the record and then prompt the user to indicate if they're sure they want to get rid of the record.
-    Else
-        If Not IsNull(Me.DischargeActivityID) And Me.Dirty = True Then
-            DoCmd.RunCommand acCmdSaveRecord
-            YesNo = MsgBox("You are about to delete the Springbrook Dimensions for this visit." & Chr(13) + vbNewLine _
-            & "If you click Yes, you won't be able to undo this Delete operation." & Chr(13) _
-                & "Are you sure you want to delete this record?", vbYesNo + vbExclamation, "Delete Springbrook Dimensions?")
-                    If YesNo = vbYes Then
-                        CurrentDb.Execute "Delete * from data_SpringbrookDimensions where DischargeActivityID = " & Me.DischargeActivityID, dbSeeChanges
-                        Me.Requery
-                    Else
-                        Me.Undo
-                    End If
-        Else
-            YesNo = MsgBox("You are about to delete the Springbrook Dimensions for this visit." & Chr(13) + vbNewLine _
-            & "If you click Yes, you won't be able to undo this Delete operation." & Chr(13) _
-                & "Are you sure you want to delete this record?", vbYesNo + vbExclamation, "Delete Springbrook Dimensions?")
-                    If YesNo = vbYes Then
-                        CurrentDb.Execute "Delete * from data_SpringbrookDimensions where DischargeActivityID = " & Me.DischargeActivityID, dbSeeChanges
-                        Me.Requery
-                    Else
-                        Me.Undo
-                    End If
+'Delete Springbrook Dimensions record from data_SpringbrookDimensions
+On Error GoTo Error_Handler
+
+DeleteRecord Me, Me.NewRecord
+SetupVisibility
+
+Exit_Sub:
+    Exit Sub
+Error_Handler:
+    MsgBox "Form: " & strcFormName & vbNewLine & "Sub: cmdDeleteSpringbrookDim_Click" & vbNewLine & "Error #" & Err.Number & ": " & Err.Description, vbCritical
+    Resume Exit_Sub
+End Sub
+
+
+Private Sub cboSpringbrookLengthFlagID_BeforeUpdate(Cancel As Integer)
+On Error GoTo Error_Handler
+
+Dim lengthFlag As String
+Dim clearLength As Integer
+lengthFlag = LookupCodeFromID("lookup_SpringbrookLengthFlag", Me.cboSpringbrookLengthFlagID)
+
+Select Case lengthFlag
+    Case ">50m"
+        'Hide springbrook length if null. If not null, check if ok to clear. Set visibility of fields accordingly
+        If Not IsNull(Me.txtSpringbrookLength_m) Then
+            clearLength = MsgBox("Setting springbrook length to >50m will clear the existing springbrook length value. Do you want to continue?", vbYesNo)
+            If clearLength = vbYes Then
+                Me.txtSpringbrookLength_m = Null
+                Cancel = False
+            Else
+                Cancel = True
+            End If
         End If
-    End If
+        
+    Case Else
+        Cancel = False
+End Select
+
+'As long as the user hasn't canceled the update, refresh field visibility
+If Cancel = False Then SetupVisibility
+
+Exit_Sub:
+    Exit Sub
+Error_Handler:
+    MsgBox "Form: " & strcFormName & vbNewLine & "Sub: cboSpringbrookLengthFlagID_BeforeUpdate" & vbNewLine & "Error #" & Err.Number & ": " & Err.Description, vbCritical
+    Resume Exit_Sub
+End Sub
+
+Private Sub Form_BeforeUpdate(Cancel As Integer)
+On Error GoTo Error_Handler
+
+Dim flowCondition As String
+Dim OKToSave As Boolean
+
+flowCondition = Nz(LookupLabelFromID("lookup_FlowCondition", Me.Parent.Form.cboFlowConditionID))
+OKToSave = DataQualityOK()
+
+If Not OKToSave Then MsgBox ("Please correct the data errors in springbrook dimensions before continuing")
+Cancel = Not OKToSave
+
+Exit_Sub:
+    Exit Sub
+Error_Handler:
+    MsgBox "Form: " & strcFormName & vbNewLine & "Sub: Form_BeforeUpdate" & vbNewLine & "Error #" & Err.Number & ": " & Err.Description, vbCritical
+    Resume Exit_Sub
+End Sub
+
+Private Sub Form_Load()
+
+SetupVisibility
+
 End Sub

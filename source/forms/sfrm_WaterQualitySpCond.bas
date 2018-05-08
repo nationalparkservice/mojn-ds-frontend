@@ -13,10 +13,10 @@ Begin Form
     Width =2579
     DatasheetFontHeight =11
     ItemSuffix =5
-    Left =9345
-    Top =5925
-    Right =11940
-    Bottom =7770
+    Left =8505
+    Top =4500
+    Right =11100
+    Bottom =6105
     DatasheetGridlinesColor =15921906
     RecSrcDt = Begin
         0x56085c0dce15e540
@@ -178,7 +178,6 @@ Begin Form
             AlternateBackShade =95.0
             Begin
                 Begin Label
-                    FontItalic = NotDefault
                     OverlapFlags =85
                     TextAlign =2
                     Left =45
@@ -186,16 +185,16 @@ Begin Form
                     Height =225
                     FontSize =9
                     BorderColor =8355711
-                    ForeColor =8355711
                     Name ="Label2"
                     Caption ="uS /cm"
                     GridlineColor =10921638
                     LayoutCachedLeft =45
                     LayoutCachedWidth =1260
                     LayoutCachedHeight =225
+                    ForeThemeColorIndex =-1
+                    ForeTint =100.0
                 End
                 Begin Label
-                    FontItalic = NotDefault
                     OverlapFlags =85
                     TextAlign =2
                     Left =1320
@@ -203,13 +202,14 @@ Begin Form
                     Height =202
                     FontSize =9
                     BorderColor =8355711
-                    ForeColor =8355711
                     Name ="Label3"
                     Caption ="Flag"
                     GridlineColor =10921638
                     LayoutCachedLeft =1320
                     LayoutCachedWidth =2220
                     LayoutCachedHeight =202
+                    ForeThemeColorIndex =-1
+                    ForeTint =100.0
                 End
             End
         End
@@ -391,32 +391,11 @@ Option Compare Database
 
 Private Sub cmdDeleteRecord_Click()
 On Error Resume Next
-    
-'    Dim YesNo As Integer
-'
-'    If IsNull(Me.VisitID) Then
-'        Resume Next
-'    'If user clicks delete button and there are unsaved changes, save the record and then prompt the user to indicate if they're sure they want to get rid of the record.
-'    Else
-'        If Not IsNull(Me.VisitID) And Me.Dirty = True Then
-'            DoCmd.RunCommand acCmdSaveRecord
-'            YesNo = MsgBox("You are about to delete this measurement record." & Chr(13) & vbNewLine & "If you click Yes, you won't be able to undo this Delete operation. " _
-'            & "Are you sure you want to delete this record?", vbYesNo + vbExclamation, "Delete Sensor Deployment?")
-'                If YesNo = vbYes Then
-'                    CurrentDb.Execute "Delete * from data_SensorDeployment where VisitID = " & Me.VisitID, dbSeeChanges
-'                    Me.Requery
-'                Else
-'                    Me.Undo
-'                End If
-'        Else
-'            YesNo = MsgBox("You are about to delete this Sensor Deployment record." & Chr(13) & vbNewLine & "If you click Yes, you won't be able to undo this Delete operation. " _
-'            & "Are you sure you want to delete this record?", vbYesNo + vbExclamation, "Delete Sensor Deployment?")
-'                If YesNo = vbYes Then
-'                    CurrentDb.Execute "Delete * from data_SensorDeployment where VisitID = " & Me.VisitID, dbSeeChanges
-'                    Me.Requery
-'                Else
-'                    Me.Undo
-'                End If
-'        End If
-'    End If
+DeleteRecord Me, Me.NewRecord
 End Sub
+
+Public Function RowCount() As Integer
+
+RowCount = Me.RecordsetClone.RecordCount
+
+End Function

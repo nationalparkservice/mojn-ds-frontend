@@ -13,10 +13,10 @@ Begin Form
     Width =2579
     DatasheetFontHeight =11
     ItemSuffix =5
-    Left =3030
-    Top =6315
-    Right =5625
-    Bottom =7920
+    Left =4020
+    Top =3240
+    Right =6615
+    Bottom =4845
     DatasheetGridlinesColor =15921906
     RecSrcDt = Begin
         0xd506ec10cd15e540
@@ -390,7 +390,7 @@ Attribute VB_Exposed = False
 Option Compare Database
 
 Private Sub cmdDeleteRecord_Click()
-On Error Resume Next
+
 DeleteRecord Me, Me.NewRecord
    
 End Sub

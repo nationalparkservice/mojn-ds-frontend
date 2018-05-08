@@ -10,22 +10,18 @@ Begin Form
     DatasheetGridlinesBehavior =3
     GridX =24
     GridY =24
-    Width =5460
+    Width =6780
     DatasheetFontHeight =11
-    ItemSuffix =19
-    Left =2400
-    Top =8640
-    Right =7875
-    Bottom =10785
+    ItemSuffix =21
+    Left =4020
+    Top =7080
+    Right =9495
+    Bottom =9225
     DatasheetGridlinesColor =15921906
-    RecordSource ="SELECT data_CalibrationpH.ID, data_CalibrationpH.CalibrationTime, data_Calibrati"
-        "onpH.CalibrationDate, data_CalibrationpH.StandardValue_pH, data_CalibrationpH.Pr"
-        "eCalibrationReading_pH, data_CalibrationpH.PreCalibrationTemperature_C, data_Cal"
-        "ibrationpH.PostCalibrationReading_pH, data_CalibrationpH.PostCalibrationTemperat"
-        "ure_C, data_CalibrationpH.Notes, data_CalibrationpH.DateCreated FROM data_Calibr"
-        "ationpH WHERE (((data_CalibrationpH.CalibrationDate)<=Forms!frm_Visit!VisitDate)"
-        " And ((data_CalibrationpH.pHInstrumentID)=Forms!frm_Visit!sfrm_WaterQualityActiv"
-        "ity.Form!cbopHInstrumentID)) ORDER BY data_CalibrationpH.CalibrationDate DESC; "
+    RecSrcDt = Begin
+        0x4a0e76b6761be540
+    End
+    RecordSource ="qry_CalibrationpH"
     DatasheetFontName ="Calibri"
     PrtMip = Begin
         0x6801000068010000680100006801000000000000201c0000e010000001000000 ,
@@ -323,7 +319,7 @@ Begin Form
                     Height =315
                     BorderColor =14211288
                     ForeColor =4210752
-                    Name ="StandardValue_pH"
+                    Name ="txtStandardValue_pH"
                     ControlSource ="StandardValue_pH"
                     GridlineColor =10921638
 
@@ -344,7 +340,7 @@ Begin Form
                     TabIndex =1
                     BorderColor =14211288
                     ForeColor =4210752
-                    Name ="PreCalibrationTemperature_C"
+                    Name ="txtPreCalibrationTemperature_C"
                     ControlSource ="PreCalibrationTemperature_C"
                     GridlineColor =10921638
 
@@ -365,7 +361,7 @@ Begin Form
                     TabIndex =2
                     BorderColor =14211288
                     ForeColor =4210752
-                    Name ="Text7"
+                    Name ="txtPreCalibrationReading_pH"
                     ControlSource ="PreCalibrationReading_pH"
                     GridlineColor =10921638
 
@@ -386,7 +382,7 @@ Begin Form
                     TabIndex =3
                     BorderColor =14211288
                     ForeColor =4210752
-                    Name ="Text8"
+                    Name ="txtPostCalibrationTemperature_C"
                     ControlSource ="PostCalibrationTemperature_C"
                     GridlineColor =10921638
 
@@ -407,7 +403,7 @@ Begin Form
                     TabIndex =4
                     BorderColor =14211288
                     ForeColor =4210752
-                    Name ="Text9"
+                    Name ="txtPostCalibrationReading_pH"
                     ControlSource ="PostCalibrationReading_pH"
                     GridlineColor =10921638
 
@@ -428,7 +424,7 @@ Begin Form
                     TabIndex =5
                     BorderColor =14211288
                     ForeColor =4210752
-                    Name ="Text10"
+                    Name ="txtCalibrationDate"
                     ControlSource ="CalibrationDate"
                     GridlineColor =10921638
 
@@ -449,7 +445,7 @@ Begin Form
                     TabIndex =6
                     BorderColor =14211288
                     ForeColor =4210752
-                    Name ="Text11"
+                    Name ="txtCalibrationTime"
                     ControlSource ="CalibrationTime"
                     Format ="Short Time"
                     GridlineColor =10921638
@@ -514,34 +510,21 @@ Attribute VB_Exposed = False
 Option Compare Database
 
 Private Sub cmdDeleteRecord_Click()
-On Error Resume Next
     
-'    Dim YesNo As Integer
-'
-'    If IsNull(Me.VisitID) Then
-'        Resume Next
-'    'If user clicks delete button and there are unsaved changes, save the record and then prompt the user to indicate if they're sure they want to get rid of the record.
-'    Else
-'        If Not IsNull(Me.VisitID) And Me.Dirty = True Then
-'            DoCmd.RunCommand acCmdSaveRecord
-'            YesNo = MsgBox("You are about to delete this measurement record." & Chr(13) & vbNewLine & "If you click Yes, you won't be able to undo this Delete operation. " _
-'            & "Are you sure you want to delete this record?", vbYesNo + vbExclamation, "Delete Sensor Deployment?")
-'                If YesNo = vbYes Then
-'                    CurrentDb.Execute "Delete * from data_SensorDeployment where VisitID = " & Me.VisitID, dbSeeChanges
-'                    Me.Requery
-'                Else
-'                    Me.Undo
-'                End If
-'        Else
-'            YesNo = MsgBox("You are about to delete this Sensor Deployment record." & Chr(13) & vbNewLine & "If you click Yes, you won't be able to undo this Delete operation. " _
-'            & "Are you sure you want to delete this record?", vbYesNo + vbExclamation, "Delete Sensor Deployment?")
-'                If YesNo = vbYes Then
-'                    CurrentDb.Execute "Delete * from data_SensorDeployment where VisitID = " & Me.VisitID, dbSeeChanges
-'                    Me.Requery
-'                Else
-'                    Me.Undo
-'                End If
-'        End If
-'    End If
-'End Sub
+DeleteRecord Me, Me.NewRecord
+
 End Sub
+
+Public Function SaveRecord() As Boolean
+On Error GoTo Error_Handler
+
+DoCmd.RunCommand acCmdSaveRecord
+SaveRecord = True
+
+Exit_Procedure:
+    Exit Function
+Error_Handler:
+    MsgBox ("Record cannot be saved at this time. Make sure all fields are filled out correctly.")
+    SaveRecord = False
+    GoTo Exit_Procedure
+End Function

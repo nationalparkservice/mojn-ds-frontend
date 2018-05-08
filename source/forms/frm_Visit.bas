@@ -9,7 +9,6 @@ Begin Form
     NavigationButtons = NotDefault
     CloseButton = NotDefault
     DividingLines = NotDefault
-    FilterOn = NotDefault
     AllowDesignChanges = NotDefault
     DefaultView =0
     ScrollBars =0
@@ -22,14 +21,13 @@ Begin Form
     Width =16620
     DatasheetFontHeight =11
     ItemSuffix =238
-    Left =3795
-    Top =465
-    Right =20415
-    Bottom =11520
+    Left =2925
+    Top =270
+    Right =19545
+    Bottom =11325
     DatasheetGridlinesColor =15921906
-    Filter ="ID = 376"
     RecSrcDt = Begin
-        0xab2688a2f412e540
+        0x9dbfe286751be540
     End
     RecordSource ="app_Visit"
     Caption ="Spring Visit"

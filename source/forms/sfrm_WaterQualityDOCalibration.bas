@@ -4,32 +4,25 @@ Begin Form
     RecordSelectors = NotDefault
     NavigationButtons = NotDefault
     DividingLines = NotDefault
+    AllowAdditions = NotDefault
     AllowDesignChanges = NotDefault
     ScrollBars =2
     PictureAlignment =2
     DatasheetGridlinesBehavior =3
     GridX =24
     GridY =24
-    Width =3900
+    Width =4920
     DatasheetFontHeight =11
-    ItemSuffix =20
-    Left =10020
-    Top =5640
-    Right =13935
-    Bottom =7725
+    ItemSuffix =21
+    Left =5205
+    Top =4710
+    Right =9810
+    Bottom =6795
     DatasheetGridlinesColor =15921906
     RecSrcDt = Begin
-        0x90ece993ce1ae540
+        0x535faac1921be540
     End
-    RecordSource ="SELECT data_CalibrationDO.ID, data_CalibrationDO.CalibrationTime, data_Calibrati"
-        "onDO.CalibrationDate, data_CalibrationDO.PreCalibrationReading_percent, data_Cal"
-        "ibrationDO.PreCalibrationTemperature_C, data_CalibrationDO.PostCalibrationReadin"
-        "g_percent, data_CalibrationDO.PostCalibrationTemperature_C, data_CalibrationDO.B"
-        "arometricPressure_mmHg, data_CalibrationDO.DOInstrumentID, data_CalibrationDO.No"
-        "tes, data_CalibrationDO.DateCreated FROM data_CalibrationDO WHERE (((data_Calibr"
-        "ationDO.CalibrationDate)<Forms!frm_Visit!VisitDate) And ((data_CalibrationDO.DOI"
-        "nstrumentID)=Forms!frm_Visit!sfrm_WaterQualityActivity.Form!cboDOInstrumentID)) "
-        "ORDER BY data_CalibrationDO.CalibrationDate DESC; "
+    RecordSource ="qry_CalibrationDO"
     DatasheetFontName ="Calibri"
     PrtMip = Begin
         0x6801000068010000680100006801000000000000201c0000e010000001000000 ,
@@ -185,189 +178,213 @@ Begin Form
             GridlineShade =65.0
         End
         Begin FormHeader
-            Height =225
+            Height =435
             BackColor =15921906
             Name ="FormHeader"
             AlternateBackThemeColorIndex =1
             AlternateBackShade =95.0
             Begin
                 Begin Label
-                    FontItalic = NotDefault
                     OverlapFlags =85
                     TextAlign =2
-                    Left =45
+                    Left =60
+                    Top =210
                     Width =1095
-                    Height =180
+                    Height =225
                     FontSize =9
                     BorderColor =8355711
-                    ForeColor =8355711
+                    ForeColor =7500402
                     Name ="Label2"
                     Caption ="Date"
                     GridlineColor =10921638
-                    LayoutCachedLeft =45
-                    LayoutCachedWidth =1140
-                    LayoutCachedHeight =180
+                    LayoutCachedLeft =60
+                    LayoutCachedTop =210
+                    LayoutCachedWidth =1155
+                    LayoutCachedHeight =435
+                    ForeThemeColorIndex =-1
+                    ForeTint =100.0
                 End
                 Begin Label
-                    FontItalic = NotDefault
-                    OverlapFlags =85
+                    OverlapFlags =93
                     TextAlign =2
-                    Left =1185
+                    Left =1200
+                    Top =210
                     Width =795
-                    Height =180
+                    Height =225
                     FontSize =9
                     BorderColor =8355711
-                    ForeColor =8355711
+                    ForeColor =7500402
                     Name ="Label3"
                     Caption ="Time"
                     GridlineColor =10921638
-                    LayoutCachedLeft =1185
-                    LayoutCachedWidth =1980
-                    LayoutCachedHeight =180
+                    LayoutCachedLeft =1200
+                    LayoutCachedTop =210
+                    LayoutCachedWidth =1995
+                    LayoutCachedHeight =435
+                    ForeThemeColorIndex =-1
+                    ForeTint =100.0
                 End
                 Begin Label
-                    FontItalic = NotDefault
-                    OverlapFlags =85
+                    OverlapFlags =93
                     TextAlign =2
-                    Left =2550
-                    Width =645
+                    Left =3300
+                    Top =210
+                    Width =735
                     Height =225
                     FontSize =9
                     BorderColor =8355711
-                    ForeColor =8355711
+                    ForeColor =7500402
                     Name ="Label15"
-                    Caption ="Temp"
+                    Caption ="Temp (C)"
                     GridlineColor =10921638
-                    LayoutCachedLeft =2550
-                    LayoutCachedWidth =3195
-                    LayoutCachedHeight =225
+                    LayoutCachedLeft =3300
+                    LayoutCachedTop =210
+                    LayoutCachedWidth =4035
+                    LayoutCachedHeight =435
+                    ForeThemeColorIndex =-1
+                    ForeTint =100.0
                 End
                 Begin Label
-                    FontItalic = NotDefault
-                    OverlapFlags =85
+                    OverlapFlags =215
                     TextAlign =2
-                    Left =3225
+                    Left =4005
+                    Top =210
                     Width =645
                     Height =225
                     FontSize =9
                     BorderColor =8355711
-                    ForeColor =8355711
+                    ForeColor =7500402
                     Name ="Label16"
                     Caption ="DO%"
                     GridlineColor =10921638
-                    LayoutCachedLeft =3225
-                    LayoutCachedWidth =3870
-                    LayoutCachedHeight =225
+                    LayoutCachedLeft =4005
+                    LayoutCachedTop =210
+                    LayoutCachedWidth =4650
+                    LayoutCachedHeight =435
+                    ForeThemeColorIndex =-1
+                    ForeTint =100.0
+                End
+                Begin Label
+                    OverlapFlags =215
+                    TextAlign =2
+                    Left =1980
+                    Width =960
+                    Height =435
+                    FontSize =9
+                    BorderColor =8355711
+                    ForeColor =7500402
+                    Name ="Label14"
+                    Caption ="Atm. Press. (mmHg)"
+                    GridlineColor =10921638
+                    LayoutCachedLeft =1980
+                    LayoutCachedWidth =2940
+                    LayoutCachedHeight =435
+                    ForeThemeColorIndex =-1
+                    ForeTint =100.0
                 End
             End
         End
         Begin Section
-            Height =1755
+            Height =1395
             BackColor =15921906
             Name ="Detail"
             AlternateBackColor =15921906
             Begin
                 Begin TextBox
-                    OverlapFlags =93
+                    OverlapFlags =85
                     IMESentenceMode =3
-                    Left =1200
-                    Top =420
+                    Left =2040
                     Width =780
                     Height =315
                     BorderColor =14211288
                     ForeColor =4210752
-                    Name ="StandardValue_pH"
+                    Name ="txtBarometricPressure_mmHg"
                     ControlSource ="BarometricPressure_mmHg"
                     GridlineColor =10921638
 
-                    LayoutCachedLeft =1200
-                    LayoutCachedTop =420
-                    LayoutCachedWidth =1980
-                    LayoutCachedHeight =735
+                    LayoutCachedLeft =2040
+                    LayoutCachedWidth =2820
+                    LayoutCachedHeight =315
                     BorderThemeColorIndex =-1
                     BorderShade =100.0
                 End
                 Begin TextBox
                     OverlapFlags =85
                     IMESentenceMode =3
-                    Left =2580
-                    Top =60
+                    Left =3360
                     Width =600
                     Height =315
                     TabIndex =1
                     BorderColor =14211288
                     ForeColor =4210752
-                    Name ="PreCalibrationTemperature_C"
+                    Name ="txtPreCalibrationTemperature_C"
                     ControlSource ="PreCalibrationTemperature_C"
                     GridlineColor =10921638
 
-                    LayoutCachedLeft =2580
-                    LayoutCachedTop =60
-                    LayoutCachedWidth =3180
-                    LayoutCachedHeight =375
+                    LayoutCachedLeft =3360
+                    LayoutCachedWidth =3960
+                    LayoutCachedHeight =315
                     BorderThemeColorIndex =-1
                     BorderShade =100.0
                 End
                 Begin TextBox
                     OverlapFlags =85
                     IMESentenceMode =3
-                    Left =3240
-                    Top =60
+                    Left =4020
                     Width =600
                     Height =315
                     TabIndex =2
                     BorderColor =14211288
                     ForeColor =4210752
-                    Name ="Text7"
+                    Name ="txtPreCalibrationReading_percent"
                     ControlSource ="PreCalibrationReading_percent"
                     GridlineColor =10921638
 
-                    LayoutCachedLeft =3240
-                    LayoutCachedTop =60
-                    LayoutCachedWidth =3840
-                    LayoutCachedHeight =375
+                    LayoutCachedLeft =4020
+                    LayoutCachedWidth =4620
+                    LayoutCachedHeight =315
                     BorderThemeColorIndex =-1
                     BorderShade =100.0
                 End
                 Begin TextBox
                     OverlapFlags =85
                     IMESentenceMode =3
-                    Left =2580
-                    Top =420
+                    Left =3360
+                    Top =360
                     Width =600
                     Height =315
                     TabIndex =3
                     BorderColor =14211288
                     ForeColor =4210752
-                    Name ="Text8"
+                    Name ="txtPostCalibrationTemperature_C"
                     ControlSource ="PostCalibrationTemperature_C"
                     GridlineColor =10921638
 
-                    LayoutCachedLeft =2580
-                    LayoutCachedTop =420
-                    LayoutCachedWidth =3180
-                    LayoutCachedHeight =735
+                    LayoutCachedLeft =3360
+                    LayoutCachedTop =360
+                    LayoutCachedWidth =3960
+                    LayoutCachedHeight =675
                     BorderThemeColorIndex =-1
                     BorderShade =100.0
                 End
                 Begin TextBox
                     OverlapFlags =85
                     IMESentenceMode =3
-                    Left =3240
-                    Top =420
+                    Left =4020
+                    Top =360
                     Width =600
                     Height =315
                     TabIndex =4
                     BorderColor =14211288
                     ForeColor =4210752
-                    Name ="Text9"
+                    Name ="txtPostCalibrationReading_percent"
                     ControlSource ="PostCalibrationReading_percent"
                     GridlineColor =10921638
 
-                    LayoutCachedLeft =3240
-                    LayoutCachedTop =420
-                    LayoutCachedWidth =3840
-                    LayoutCachedHeight =735
+                    LayoutCachedLeft =4020
+                    LayoutCachedTop =360
+                    LayoutCachedWidth =4620
+                    LayoutCachedHeight =675
                     BorderThemeColorIndex =-1
                     BorderShade =100.0
                 End
@@ -375,20 +392,18 @@ Begin Form
                     OverlapFlags =85
                     IMESentenceMode =3
                     Left =60
-                    Top =60
                     Width =1080
                     Height =315
                     TabIndex =5
                     BorderColor =14211288
                     ForeColor =4210752
-                    Name ="Text10"
+                    Name ="txtCalibrationDate"
                     ControlSource ="CalibrationDate"
                     GridlineColor =10921638
 
                     LayoutCachedLeft =60
-                    LayoutCachedTop =60
                     LayoutCachedWidth =1140
-                    LayoutCachedHeight =375
+                    LayoutCachedHeight =315
                     BorderThemeColorIndex =-1
                     BorderShade =100.0
                 End
@@ -396,114 +411,114 @@ Begin Form
                     OverlapFlags =85
                     IMESentenceMode =3
                     Left =1200
-                    Top =60
                     Width =780
                     Height =315
                     TabIndex =6
                     BorderColor =14211288
                     ForeColor =4210752
-                    Name ="Text11"
+                    Name ="txtCalibrationTime"
                     ControlSource ="CalibrationTime"
                     Format ="Short Time"
                     GridlineColor =10921638
 
                     LayoutCachedLeft =1200
-                    LayoutCachedTop =60
                     LayoutCachedWidth =1980
-                    LayoutCachedHeight =375
+                    LayoutCachedHeight =315
                     BorderThemeColorIndex =-1
                     BorderShade =100.0
                 End
                 Begin TextBox
-                    OverlapFlags =85
+                    ScrollBars =2
+                    OverlapFlags =93
                     IMESentenceMode =3
                     Left =60
-                    Top =840
-                    Width =3780
-                    Height =780
+                    Top =720
+                    Width =4560
+                    Height =600
                     FontSize =10
                     TabIndex =7
                     BorderColor =14211288
                     ForeColor =4210752
-                    Name ="Text12"
+                    Name ="txtNotes"
                     ControlSource ="Notes"
                     GridlineColor =10921638
 
                     LayoutCachedLeft =60
-                    LayoutCachedTop =840
-                    LayoutCachedWidth =3840
-                    LayoutCachedHeight =1620
+                    LayoutCachedTop =720
+                    LayoutCachedWidth =4620
+                    LayoutCachedHeight =1320
                     BorderThemeColorIndex =-1
                     BorderShade =100.0
                 End
                 Begin Label
-                    FontItalic = NotDefault
                     OverlapFlags =85
                     TextAlign =3
-                    Left =2100
-                    Top =420
+                    Left =2880
+                    Top =360
                     Width =420
                     Height =225
                     FontSize =9
                     BorderColor =8355711
-                    ForeColor =8355711
+                    ForeColor =7500402
                     Name ="Label18"
                     Caption ="Post"
                     GridlineColor =10921638
-                    LayoutCachedLeft =2100
-                    LayoutCachedTop =420
-                    LayoutCachedWidth =2520
-                    LayoutCachedHeight =645
+                    LayoutCachedLeft =2880
+                    LayoutCachedTop =360
+                    LayoutCachedWidth =3300
+                    LayoutCachedHeight =585
+                    ForeThemeColorIndex =-1
+                    ForeTint =100.0
                 End
                 Begin Label
-                    FontItalic = NotDefault
                     OverlapFlags =85
                     TextAlign =3
-                    Left =2100
-                    Top =60
+                    Left =2880
                     Width =420
                     Height =225
                     FontSize =9
                     BorderColor =8355711
-                    ForeColor =8355711
+                    ForeColor =7500402
                     Name ="Label19"
                     Caption ="Pre"
                     GridlineColor =10921638
-                    LayoutCachedLeft =2100
-                    LayoutCachedTop =60
-                    LayoutCachedWidth =2520
-                    LayoutCachedHeight =285
-                End
-                Begin Label
-                    FontItalic = NotDefault
-                    OverlapFlags =87
-                    TextAlign =2
-                    Left =60
-                    Top =420
-                    Width =1140
-                    Height =225
-                    FontSize =9
-                    BorderColor =8355711
-                    ForeColor =8355711
-                    Name ="Label14"
-                    Caption ="Atm Pressure"
-                    GridlineColor =10921638
-                    LayoutCachedLeft =60
-                    LayoutCachedTop =420
-                    LayoutCachedWidth =1200
-                    LayoutCachedHeight =645
+                    LayoutCachedLeft =2880
+                    LayoutCachedWidth =3300
+                    LayoutCachedHeight =225
+                    ForeThemeColorIndex =-1
+                    ForeTint =100.0
                 End
                 Begin Line
                     OverlapFlags =85
                     Left =60
-                    Top =1740
-                    Width =3720
-                    Name ="Line13"
+                    Top =1380
+                    Width =4860
+                    Name ="Line20"
                     GridlineColor =10921638
                     LayoutCachedLeft =60
-                    LayoutCachedTop =1740
-                    LayoutCachedWidth =3780
-                    LayoutCachedHeight =1740
+                    LayoutCachedTop =1380
+                    LayoutCachedWidth =4920
+                    LayoutCachedHeight =1380
+                End
+                Begin Label
+                    OverlapFlags =247
+                    TextAlign =1
+                    Left =60
+                    Top =540
+                    Width =825
+                    Height =435
+                    FontSize =9
+                    BorderColor =8355711
+                    ForeColor =7500402
+                    Name ="lblNotes"
+                    Caption ="Notes"
+                    GridlineColor =10921638
+                    LayoutCachedLeft =60
+                    LayoutCachedTop =540
+                    LayoutCachedWidth =885
+                    LayoutCachedHeight =975
+                    ForeThemeColorIndex =-1
+                    ForeTint =100.0
                 End
             End
         End

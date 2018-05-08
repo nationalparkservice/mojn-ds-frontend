@@ -21,10 +21,10 @@ Begin Form
     Width =15840
     DatasheetFontHeight =11
     ItemSuffix =44
-    Left =3390
-    Top =450
-    Right =19245
-    Bottom =9435
+    Left =1230
+    Top =3210
+    Right =17085
+    Bottom =12195
     DatasheetGridlinesColor =15921906
     RecSrcDt = Begin
         0x3a89a5777b15e540
@@ -1396,47 +1396,6 @@ Begin Form
                     LayoutCachedTop =120
                     LayoutCachedWidth =10530
                     LayoutCachedHeight =360
-                End
-                Begin CommandButton
-                    TabStop = NotDefault
-                    OverlapFlags =85
-                    PictureType =2
-                    Left =8640
-                    Top =2460
-                    Width =306
-                    Height =312
-                    TabIndex =18
-                    ForeColor =4210752
-                    Name ="cmdDeleteDisturbanceModification"
-                    OnClick ="[Event Procedure]"
-                    ControlTipText ="Delete Record"
-                    Picture ="X-Mark-16-LtGray"
-                    GridlineColor =10921638
-
-                    LayoutCachedLeft =8640
-                    LayoutCachedTop =2460
-                    LayoutCachedWidth =8946
-                    LayoutCachedHeight =2772
-                    Gradient =0
-                    BackColor =15527148
-                    BackThemeColorIndex =-1
-                    BackTint =100.0
-                    BorderColor =12566463
-                    BorderThemeColorIndex =-1
-                    BorderTint =100.0
-                    HoverColor =1643706
-                    HoverThemeColorIndex =-1
-                    HoverTint =100.0
-                    PressedColor =14211288
-                    PressedThemeColorIndex =-1
-                    PressedShade =100.0
-                    HoverForeColor =4210752
-                    PressedForeColor =4210752
-                    WebImagePaddingLeft =2
-                    WebImagePaddingTop =2
-                    WebImagePaddingRight =1
-                    WebImagePaddingBottom =1
-                    Overlaps =1
                 End
             End
         End

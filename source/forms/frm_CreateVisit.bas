@@ -535,8 +535,8 @@ Begin Form
                     ControlSource ="MonitoringStatusID"
                     RowSourceType ="Table/Query"
                     RowSource ="SELECT lookup_MonitoringStatus.ID, lookup_MonitoringStatus.Label, lookup_Monitor"
-                        "ingStatus.AcceptanceCategory FROM lookup_MonitoringStatus ORDER BY lookup_Monito"
-                        "ringStatus.ID; "
+                        "ingStatus.IsSampled FROM lookup_MonitoringStatus ORDER BY lookup_MonitoringStatu"
+                        "s.ID; "
                     ColumnWidths ="0;3888;0"
                     FontName ="Arial"
                     GridlineColor =10921638
@@ -886,7 +886,7 @@ On Error GoTo Error_Handler
         MsgBox ("Please select a spring"), vbOKOnly + vbExclamation, "Spring Name"
         Exit Sub
     ElseIf IsNull(Me.cboMonitoringStatusID) Then
-        MsgBox ("Please select an acceptance or rejection reason"), vbOKOnly + vbExclamation, "Visit Acceptance or Rejection Reason"
+        MsgBox ("Please specify whether the spring was sampled at this visit"), vbOKOnly + vbExclamation, "Visit Monitoring Status"
         Exit Sub
     ElseIf IsNull(Me.cboSpringTypeID) And (Me.cboMonitoringStatusID = 1) Then
         MsgBox ("Please select a spring type"), vbOKOnly + vbExclamation, "Spring Type"

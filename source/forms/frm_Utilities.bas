@@ -21,10 +21,10 @@ Begin Form
     Width =6180
     DatasheetFontHeight =11
     ItemSuffix =21
-    Left =4800
-    Top =3360
-    Right =10830
-    Bottom =7140
+    Left =7470
+    Top =2595
+    Right =13500
+    Bottom =6375
     DatasheetGridlinesColor =15921906
     RecSrcDt = Begin
         0x2d844c838e00e540
@@ -413,9 +413,9 @@ Begin Form
                     Overlaps =1
                 End
                 Begin CommandButton
-                    OverlapFlags =223
+                    OverlapFlags =95
                     Left =3060
-                    Top =300
+                    Top =1740
                     Width =1274
                     Height =1260
                     FontSize =13
@@ -433,9 +433,9 @@ Begin Form
                     GridlineColor =10921638
 
                     LayoutCachedLeft =3060
-                    LayoutCachedTop =300
+                    LayoutCachedTop =1740
                     LayoutCachedWidth =4334
-                    LayoutCachedHeight =1560
+                    LayoutCachedHeight =3000
                     ForeThemeColorIndex =-1
                     ForeTint =100.0
                     Gradient =0
@@ -462,7 +462,7 @@ Begin Form
                     Overlaps =1
                 End
                 Begin CommandButton
-                    OverlapFlags =95
+                    OverlapFlags =223
                     Left =4440
                     Top =1740
                     Width =1274
@@ -510,17 +510,17 @@ Begin Form
                     Overlaps =1
                 End
                 Begin CommandButton
-                    Enabled = NotDefault
                     TabStop = NotDefault
-                    OverlapFlags =95
+                    OverlapFlags =223
                     Left =3060
-                    Top =1740
+                    Top =300
                     Width =1274
                     Height =1260
                     FontSize =13
                     FontWeight =700
                     TabIndex =5
-                    Name ="cmdUnused"
+                    Name ="cmdWQInstruments"
+                    Caption ="WQ Instr."
                     OnClick ="[Event Procedure]"
                     FontName ="Arial"
                     LeftPadding =45
@@ -530,9 +530,9 @@ Begin Form
                     GridlineColor =10921638
 
                     LayoutCachedLeft =3060
-                    LayoutCachedTop =1740
+                    LayoutCachedTop =300
                     LayoutCachedWidth =4334
-                    LayoutCachedHeight =3000
+                    LayoutCachedHeight =1560
                     ForeThemeColorIndex =-1
                     ForeTint =100.0
                     Gradient =0
@@ -763,4 +763,10 @@ Exit_Procedure:
 Err_Handler:
     MsgBox "Error #" & Err.Number & ": " & Err.Description, vbCritical
     Resume Exit_Procedure
+End Sub
+
+Private Sub cmdWQInstruments_Click()
+
+DoCmd.OpenForm "frm_AddWaterQualityInstrument"
+
 End Sub

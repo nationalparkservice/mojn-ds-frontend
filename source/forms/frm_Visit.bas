@@ -886,8 +886,8 @@ Begin Form
                                     ControlSource ="MonitoringStatusID"
                                     RowSourceType ="Table/Query"
                                     RowSource ="SELECT lookup_MonitoringStatus.ID, lookup_MonitoringStatus.Label, lookup_Monitor"
-                                        "ingStatus.AcceptanceCategory FROM lookup_MonitoringStatus ORDER BY lookup_Monito"
-                                        "ringStatus.ID; "
+                                        "ingStatus.IsSampled FROM lookup_MonitoringStatus ORDER BY lookup_MonitoringStatu"
+                                        "s.ID; "
                                     ColumnWidths ="0;3600;0"
                                     GridlineColor =10921638
                                     AllowValueListEdits =0

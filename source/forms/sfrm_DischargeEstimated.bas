@@ -23,7 +23,7 @@ Begin Form
     Left =4080
     Top =4665
     Right =7080
-    Bottom =5400
+    Bottom =5415
     DatasheetGridlinesColor =15921906
     RecSrcDt = Begin
         0x335bdaa87615e540
@@ -387,8 +387,6 @@ End Sub
 Private Sub cmdDeleteEstimatedDischarge_Click()
 
 'Delete Estimated Discharge record, associated with a visit, from data_DischargeEstimatedObservation
-    
-On Error Resume Next
 DeleteRecord Me, Me.NewRecord
     
 End Sub

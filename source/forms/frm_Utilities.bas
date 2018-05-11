@@ -21,10 +21,10 @@ Begin Form
     Width =6180
     DatasheetFontHeight =11
     ItemSuffix =21
-    Left =7470
-    Top =2595
-    Right =13500
-    Bottom =6375
+    Left =5400
+    Top =2085
+    Right =11430
+    Bottom =5865
     DatasheetGridlinesColor =15921906
     RecSrcDt = Begin
         0x2d844c838e00e540
@@ -421,8 +421,8 @@ Begin Form
                     FontSize =13
                     FontWeight =700
                     TabIndex =2
-                    Name ="cmdLookups"
-                    Caption ="Other Lookups"
+                    Name ="cmdPersonnel"
+                    Caption ="Personnel"
                     OnClick ="[Event Procedure]"
                     FontName ="Arial"
                     ControlTipText ="View lookup tables and edit, if appropriate."
@@ -625,6 +625,12 @@ Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 Option Compare Database
 Option Explicit
+
+Private Sub cmdPersonnel_Click()
+
+DoCmd.OpenForm "frm_AddContact"
+
+End Sub
 
 Private Sub cmdSchema_Click()
     On Error GoTo Err_Handler

@@ -7,6 +7,7 @@ Begin Form
     AllowDeletions = NotDefault
     DividingLines = NotDefault
     AllowAdditions = NotDefault
+    FilterOn = NotDefault
     AllowDesignChanges = NotDefault
     PictureAlignment =2
     DatasheetGridlinesBehavior =3

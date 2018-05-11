@@ -9,15 +9,16 @@ Begin Form
     DefaultView =0
     PictureAlignment =2
     DatasheetGridlinesBehavior =3
+    Cycle =1
     GridX =24
     GridY =24
     Width =15885
     DatasheetFontHeight =11
     ItemSuffix =28
-    Left =3390
-    Top =450
-    Right =19245
-    Bottom =9435
+    Left =1215
+    Top =3165
+    Right =17070
+    Bottom =12150
     DatasheetGridlinesColor =15921906
     RecSrcDt = Begin
         0xa55d10aad915e540
@@ -437,7 +438,6 @@ Begin Form
                     ForeTint =100.0
                 End
                 Begin TextBox
-                    Enabled = NotDefault
                     EnterKeyBehavior = NotDefault
                     ScrollBars =2
                     OverlapFlags =215
@@ -450,6 +450,7 @@ Begin Form
                     BorderColor =14211288
                     ForeColor =4210752
                     Name ="Notes"
+                    ControlSource ="Notes"
                     GridlineColor =10921638
 
                     LayoutCachedLeft =300

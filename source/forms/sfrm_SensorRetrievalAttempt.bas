@@ -14,16 +14,15 @@ Begin Form
     ViewsAllowed =1
     PictureAlignment =2
     DatasheetGridlinesBehavior =3
-    Cycle =1
     GridX =24
     GridY =24
     Width =15840
     DatasheetFontHeight =11
     ItemSuffix =27
-    Left =2205
-    Top =5235
-    Right =17790
-    Bottom =10620
+    Left =1395
+    Top =5025
+    Right =16980
+    Bottom =10410
     DatasheetGridlinesColor =15921906
     AfterInsert ="[Event Procedure]"
     RecSrcDt = Begin
@@ -299,8 +298,8 @@ Begin Form
                     Name ="txtRetrievalTimeOfDay"
                     ControlSource ="RetrievalTimeOfDay"
                     Format ="Short Time"
-                    InputMask ="00:00;0;_"
                     GridlineColor =10921638
+                    ShowDatePicker =0
 
                     LayoutCachedLeft =2398
                     LayoutCachedTop =840

@@ -10,15 +10,16 @@ Begin Form
     ScrollBars =0
     PictureAlignment =2
     DatasheetGridlinesBehavior =3
+    Cycle =1
     GridX =24
     GridY =24
     Width =17370
     DatasheetFontHeight =11
     ItemSuffix =44
-    Left =1230
-    Top =1770
-    Right =17070
-    Bottom =10755
+    Left =1215
+    Top =3165
+    Right =17055
+    Bottom =12150
     DatasheetGridlinesColor =15921906
     RecSrcDt = Begin
         0x19205bcaca15e540
@@ -507,6 +508,7 @@ Begin Form
                         "QualityInstrument.IsActive FROM ref_WaterQualityInstrument; "
                     ColumnWidths ="0;2160"
                     AfterUpdate ="[Event Procedure]"
+                    DefaultValue ="=[Forms]![frm_Visit]![cboDefaultWQInstr]"
                     GridlineColor =10921638
 
                     LayoutCachedLeft =300
@@ -601,7 +603,7 @@ Begin Form
                     Top =990
                     Width =3795
                     Height =315
-                    TabIndex =2
+                    TabIndex =3
                     BorderColor =14211288
                     ForeColor =4210752
                     ColumnInfo ="\"\";\"\";\"\";\"\";\"10\";\"100\""
@@ -620,6 +622,7 @@ Begin Form
                         "QualityInstrument.IsActive FROM ref_WaterQualityInstrument; "
                     ColumnWidths ="0;2160"
                     AfterUpdate ="[Event Procedure]"
+                    DefaultValue ="[Forms]![frm_Visit]![cboDefaultWQInstr]"
                     GridlineColor =10921638
 
                     LayoutCachedLeft =6780
@@ -666,7 +669,7 @@ Begin Form
                     Top =1920
                     Width =4020
                     Height =1860
-                    TabIndex =6
+                    TabIndex =7
                     BorderColor =10921638
                     Name ="sfrmWaterQualityDO"
                     SourceObject ="Form.sfrm_WaterQualityDO"
@@ -714,7 +717,7 @@ Begin Form
                     Top =990
                     Width =2595
                     Height =315
-                    TabIndex =3
+                    TabIndex =4
                     BorderColor =14211288
                     ForeColor =4210752
                     ColumnInfo ="\"\";\"\";\"\";\"\";\"10\";\"100\""
@@ -734,6 +737,7 @@ Begin Form
                         "QualityInstrument.IsActive FROM ref_WaterQualityInstrument; "
                     ColumnWidths ="0;2160"
                     AfterUpdate ="[Event Procedure]"
+                    DefaultValue ="[Forms]![frm_Visit]![cboDefaultWQInstr]"
                     GridlineColor =10921638
 
                     LayoutCachedLeft =11160
@@ -780,7 +784,7 @@ Begin Form
                     Top =1920
                     Width =2850
                     Height =1860
-                    TabIndex =7
+                    TabIndex =8
                     BorderColor =10921638
                     Name ="sfrmWaterQualitySpCond"
                     SourceObject ="Form.sfrm_WaterQualitySpCond"
@@ -828,7 +832,7 @@ Begin Form
                     Top =990
                     Width =2595
                     Height =315
-                    TabIndex =4
+                    TabIndex =2
                     BorderColor =14211288
                     ForeColor =4210752
                     ColumnInfo ="\"\";\"\";\"\";\"\";\"10\";\"100\""
@@ -848,6 +852,7 @@ Begin Form
                         "QualityInstrument.IsActive FROM ref_WaterQualityInstrument; "
                     ColumnWidths ="0;2160"
                     AfterUpdate ="[Event Procedure]"
+                    DefaultValue ="[Forms]![frm_Visit]![cboDefaultWQInstr]"
                     GridlineColor =10921638
 
                     LayoutCachedLeft =3480
@@ -894,7 +899,7 @@ Begin Form
                     Top =1920
                     Width =2850
                     Height =1860
-                    TabIndex =8
+                    TabIndex =6
                     BorderColor =10921638
                     Name ="sfrmWaterQualityTemperature"
                     SourceObject ="Form.sfrm_WaterQualityTemperature"

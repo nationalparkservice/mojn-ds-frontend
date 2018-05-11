@@ -15,15 +15,16 @@ Begin Form
     ScrollBars =2
     PictureAlignment =2
     DatasheetGridlinesBehavior =3
+    Cycle =1
     GridX =24
     GridY =24
     Width =5453
     DatasheetFontHeight =11
     ItemSuffix =63
-    Left =10215
-    Top =7545
-    Right =15885
-    Bottom =11445
+    Left =9975
+    Top =3105
+    Right =15645
+    Bottom =7005
     DatasheetGridlinesColor =15921906
     RecSrcDt = Begin
         0xa9f03f4ad51be540

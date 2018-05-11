@@ -477,7 +477,7 @@ Begin Form
                     RowSourceType ="Table/Query"
                     RowSource ="SELECT data_Site.ID, data_Site.Code, data_Site.Name, lookup_Park.ID FROM lookup_"
                         "Park INNER JOIN data_Site ON lookup_Park.ID = data_Site.ParkID WHERE (((lookup_P"
-                        "ark.ID)=[Forms]![frm_Add_Site_Visit]![cboPark])) ORDER BY data_Site.Name; "
+                        "ark.ID)=Nz([Forms]![frm_Add_Site_Visit]![cboPark]))) ORDER BY data_Site.Name; "
                     ColumnWidths ="0;2520;4320"
                     StatusBarText ="Required"
                     FontName ="Arial"

@@ -19,10 +19,10 @@ Begin Form
     Width =15846
     DatasheetFontHeight =11
     ItemSuffix =5
-    Left =3765
-    Top =2775
-    Right =19605
-    Bottom =4395
+    Left =1395
+    Top =3345
+    Right =16980
+    Bottom =4710
     DatasheetGridlinesColor =15921906
     RecSrcDt = Begin
         0x05dbeaa68e15e540
@@ -233,8 +233,8 @@ Begin Form
                     Name ="txtDeploymentTimeOfDay"
                     ControlSource ="DeploymentTimeOfDay"
                     Format ="Short Time"
-                    InputMask ="00:00;0;_"
                     GridlineColor =10921638
+                    ShowDatePicker =0
 
                     LayoutCachedLeft =1862
                     LayoutCachedTop =480

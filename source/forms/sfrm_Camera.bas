@@ -7,22 +7,22 @@ Begin Form
     NavigationButtons = NotDefault
     CloseButton = NotDefault
     DividingLines = NotDefault
-    FilterOn = NotDefault
     AllowDesignChanges = NotDefault
     DefaultView =0
     ScrollBars =0
     ViewsAllowed =1
     PictureAlignment =2
     DatasheetGridlinesBehavior =3
+    Cycle =1
     GridX =24
     GridY =24
     Width =5820
     DatasheetFontHeight =11
     ItemSuffix =17
-    Left =3465
-    Top =4365
-    Right =9285
-    Bottom =5085
+    Left =1395
+    Top =5265
+    Right =6960
+    Bottom =5730
     DatasheetGridlinesColor =15921906
     RecSrcDt = Begin
         0x556e2cfc5618e540

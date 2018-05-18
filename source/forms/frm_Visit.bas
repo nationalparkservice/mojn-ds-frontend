@@ -2438,15 +2438,24 @@ End Sub
 Private Sub tabctlSpringLocationVisit_Change()
 On Error GoTo Error_Handler
 
+Dim resp As Integer
+
 'Don't check for missing data again if we just switched back to the current tab
 If currentTabNumber = Me.tabctlSpringLocationVisit Then GoTo Exit_Procedure
 
-'Check for missing data on current tab. If any data are missing, then prevent the user from switching tabs
+'Check for missing data on current tab. If any data are missing, alert the user but give the option to continue on.
 If DataQualityOK(currentTabNumber) Then
     currentTabNumber = Me.tabctlSpringLocationVisit
 Else
-    Me.tabctlSpringLocationVisit = currentTabNumber
-    MsgBox ("Please finish entering data on this tab before moving on to the next")
+    resp = MsgBox("The data in this tab did not pass data quality checks. Are you sure the data were entered correctly? Click Yes to continue and No to remain on this tab and correct errors.", vbYesNo)
+    If resp = vbNo Then
+        'stay on the same tab
+        Me.tabctlSpringLocationVisit = currentTabNumber
+    ElseIf resp = vbYes Then
+        'move on to the next tab
+        currentTabNumber = Me.tabctlSpringLocationVisit
+    End If
+    
 End If
 
 Exit_Procedure:

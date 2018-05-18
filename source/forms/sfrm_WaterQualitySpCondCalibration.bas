@@ -11,13 +11,13 @@ Begin Form
     DatasheetGridlinesBehavior =3
     GridX =24
     GridY =24
-    Width =3900
+    Width =4200
     DatasheetFontHeight =11
     ItemSuffix =26
-    Left =13020
-    Top =1200
-    Right =17265
-    Bottom =3285
+    Left =6945
+    Top =2880
+    Right =11190
+    Bottom =4965
     DatasheetGridlinesColor =15921906
     RecSrcDt = Begin
         0x1c0f5421931be540
@@ -281,7 +281,7 @@ Begin Form
             End
         End
         Begin Section
-            Height =1395
+            Height =1693
             BackColor =15921906
             Name ="Detail"
             AlternateBackColor =15921906
@@ -425,6 +425,44 @@ Begin Form
                     LayoutCachedWidth =3780
                     LayoutCachedHeight =1380
                 End
+                Begin CommandButton
+                    TabStop = NotDefault
+                    OverlapFlags =85
+                    PictureType =2
+                    Left =3900
+                    Top =60
+                    Width =238
+                    Height =1198
+                    TabIndex =6
+                    ForeColor =4210752
+                    Name ="cmdDelete"
+                    OnClick ="[Event Procedure]"
+                    ControlTipText ="Delete Record"
+                    Picture ="X-Mark-16-LtGray"
+                    GridlineColor =10921638
+
+                    LayoutCachedLeft =3900
+                    LayoutCachedTop =60
+                    LayoutCachedWidth =4138
+                    LayoutCachedHeight =1258
+                    Gradient =0
+                    BackColor =15527148
+                    BackThemeColorIndex =-1
+                    BackTint =100.0
+                    BorderColor =12566463
+                    BorderThemeColorIndex =-1
+                    BorderTint =100.0
+                    HoverColor =1643706
+                    HoverThemeColorIndex =-1
+                    HoverTint =100.0
+                    PressedColor =9592887
+                    HoverForeColor =4210752
+                    PressedForeColor =4210752
+                    WebImagePaddingLeft =2
+                    WebImagePaddingTop =2
+                    WebImagePaddingRight =1
+                    WebImagePaddingBottom =1
+                End
             End
         End
         Begin FormFooter
@@ -443,33 +481,8 @@ Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 Option Compare Database
 
-Private Sub cmdDeleteRecord_Click()
-On Error Resume Next
-    
-    Dim YesNo As Integer
-    
+Private Sub cmdDelete_Click()
 
-'    'If user clicks delete button and there are unsaved changes, save the record and then prompt the user to indicate if they're sure they want to get rid of the record.
-'
-'        If Not IsNull(Me.VisitID) And Me.Dirty = True Then
-'            DoCmd.RunCommand acCmdSaveRecord
-'            YesNo = MsgBox("You are about to delete this measurement record." & Chr(13) & vbNewLine & "If you click Yes, you won't be able to undo this Delete operation. " _
-'            & "Are you sure you want to delete this record?", vbYesNo + vbExclamation, "Delete Sensor Deployment?")
-'                If YesNo = vbYes Then
-'                    CurrentDb.Execute "Delete * from data_SensorDeployment where VisitID = " & Me.VisitID, dbSeeChanges
-'                    Me.Requery
-'                Else
-'                    Me.Undo
-'                End If
-'        Else
-'            YesNo = MsgBox("You are about to delete this Sensor Deployment record." & Chr(13) & vbNewLine & "If you click Yes, you won't be able to undo this Delete operation. " _
-'            & "Are you sure you want to delete this record?", vbYesNo + vbExclamation, "Delete Sensor Deployment?")
-'                If YesNo = vbYes Then
-'                    CurrentDb.Execute "Delete * from data_SensorDeployment where VisitID = " & Me.VisitID, dbSeeChanges
-'                    Me.Requery
-'                Else
-'                    Me.Undo
-'                End If
-'        End If
+DeleteRecord Me, Me.NewRecord
 
 End Sub

@@ -21,11 +21,12 @@ Begin Form
     Width =16620
     DatasheetFontHeight =11
     ItemSuffix =246
-    Left =1485
-    Top =30
-    Right =18105
-    Bottom =11235
+    Left =6195
+    Top =630
+    Right =22815
+    Bottom =11835
     DatasheetGridlinesColor =15921906
+    Filter ="ID = 3"
     RecSrcDt = Begin
         0x9dbfe286751be540
     End
@@ -2439,6 +2440,15 @@ Private Sub tabctlSpringLocationVisit_Change()
 On Error GoTo Error_Handler
 
 Dim resp As Integer
+
+'If switching to photos tab, set up buttons and subforms according to which data are present
+If Me.tabctlSpringLocationVisit = 1 Then
+    Me.sfrmPhotoActivity.Form.PhotoTabSetup
+End If
+
+If Me.tabctlSpringLocationVisit = 4 Then
+    Me.sfrm_WaterQualityActivity.Form.Requery
+End If
 
 'Don't check for missing data again if we just switched back to the current tab
 If currentTabNumber = Me.tabctlSpringLocationVisit Then GoTo Exit_Procedure

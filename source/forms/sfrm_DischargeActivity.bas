@@ -9,6 +9,7 @@ Begin Form
     NavigationButtons = NotDefault
     CloseButton = NotDefault
     DividingLines = NotDefault
+    FilterOn = NotDefault
     AllowDesignChanges = NotDefault
     DefaultView =0
     ScrollBars =0
@@ -20,10 +21,10 @@ Begin Form
     Width =15840
     DatasheetFontHeight =11
     ItemSuffix =22
-    Left =1950
-    Top =3090
-    Right =17805
-    Bottom =12075
+    Left =3915
+    Top =2550
+    Right =20025
+    Bottom =11790
     DatasheetGridlinesColor =15921906
     RecSrcDt = Begin
         0x372b2ba47615e540
@@ -917,11 +918,13 @@ End If
 flowCondition = Nz(LookupLabelFromID("lookup_FlowCondition", Me.cboFlowConditionID))
 
 Select Case flowCondition
-    Case "dry", "wet soil only", "flood", "standing water", "solid ice"
+    'If the spring is dry, there should be no discharge data
+    Case "dry"
         DataQualityOK = Me.sfrmSpringbrookDimensions.Form.ConsistentWithParent(flowCondition) And _
                         Me.sfrmDischargeEstimated.Form.RowCount() = 0 And _
                         Me.sfrmDischargeVolumetric.Form.RowCount() = 0
-    Case "flowing"
+    'If the spring is not dry, discharge data should be present
+    Case "flowing", "wet soil only", "flood", "standing water", "solid ice"
         DataQualityOK = Me.sfrmSpringbrookDimensions.Form.ConsistentWithParent(flowCondition) And _
                         ((Me.sfrmDischargeEstimated.Form.RowCount() > 0) Xor (Me.sfrmDischargeVolumetric.Form.RowCount() > 0)) And _
                         Me.sfrmDischargeEstimated.Form.DataQualityOK() And _
@@ -1026,7 +1029,14 @@ On Error GoTo Error_Handler
         GoTo Exit_Procedure
     End If
     
-    If Me.FlowConditionID.Value = LookupIDFromLabel("lookup_FlowCondition", "flowing") Then
+    'Disable discharge measurements if flow condition is dry
+    If Me.FlowConditionID.Value = LookupIDFromLabel("lookup_FlowCondition", "dry") Then
+        EnableToggles (False)
+        EnableEstimated (False)
+        EnableVolumetric (False)
+        EnableSpringbrook (True)
+    Else
+    'Set up discharge subform visibility
         If VolDischargeExists Then
             EnableToggles (True)
             EnableEstimated (False)
@@ -1038,12 +1048,6 @@ On Error GoTo Error_Handler
             EnableVolumetric (False)
             EnableSpringbrook (True)
         End If
-    Else
-        'Dry, Wet Soil Only, Standing Water, or Flood; Enable only Springbrook
-        EnableToggles (False)
-        EnableEstimated (False)
-        EnableVolumetric (False)
-        EnableSpringbrook (True)
     End If
     
 Exit_Procedure:
@@ -1072,18 +1076,18 @@ On Error GoTo Error_Handler
     VolDischargeExists = Me.sfrmDischargeVolumetric.Form.RowCount() > 0
       
     Select Case flowCondition
-        Case "flowing"
+        Case "flowing", "flood", "standing water", "wet soil only", "solid ice"
             EnableToggles True, EstDischargeExists, VolDischargeExists
             EnableEstimated (EstDischargeExists)
             EnableVolumetric (VolDischargeExists)
         
-        Case "flood", "standing water", "dry", "wet soil only", "solid ice"
+        Case "dry"
             If (Not EstDischargeExists) And (Not VolDischargeExists) Then
                 EnableToggles False
                 EnableEstimated (False)
                 EnableVolumetric (False)
             Else
-                MsgBox ("Please delete discharge data before attempting to change flow condition from 'flowing'")
+                MsgBox ("Please delete discharge data before attempting to change flow condition to 'dry'")
                 Cancel = True
                 Me.cboFlowConditionID.Undo
                 GoTo Exit_Procedure

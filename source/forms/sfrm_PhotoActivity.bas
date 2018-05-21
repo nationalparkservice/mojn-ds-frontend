@@ -15,11 +15,11 @@ Begin Form
     GridY =24
     Width =16110
     DatasheetFontHeight =11
-    ItemSuffix =46
-    Left =1170
-    Top =3210
-    Right =17025
-    Bottom =12195
+    ItemSuffix =47
+    Left =255
+    Top =2940
+    Right =16110
+    Bottom =11925
     DatasheetGridlinesColor =15921906
     RecSrcDt = Begin
         0xc208564c6c18e540
@@ -228,6 +228,7 @@ Begin Form
                     Height =3840
                     BorderColor =9211020
                     Name ="imgCurrentPhoto"
+                    OnClick ="[Event Procedure]"
                     GridlineColor =10921638
 
                     LayoutCachedLeft =7620
@@ -368,7 +369,7 @@ Begin Form
                     OverlapFlags =85
                     TextAlign =2
                     Left =300
-                    Top =180
+                    Top =120
                     Width =6780
                     Height =300
                     FontWeight =700
@@ -379,19 +380,19 @@ Begin Form
                     Caption ="Photos"
                     GridlineColor =10921638
                     LayoutCachedLeft =300
-                    LayoutCachedTop =180
+                    LayoutCachedTop =120
                     LayoutCachedWidth =7080
-                    LayoutCachedHeight =480
+                    LayoutCachedHeight =420
                     BackThemeColorIndex =-1
                     ForeThemeColorIndex =-1
                     ForeTint =100.0
                 End
                 Begin Label
                     BackStyle =1
-                    OverlapFlags =85
+                    OverlapFlags =93
                     TextAlign =2
                     Left =7620
-                    Top =180
+                    Top =120
                     Width =8010
                     Height =300
                     FontWeight =700
@@ -402,9 +403,9 @@ Begin Form
                     Caption ="Preview"
                     GridlineColor =10921638
                     LayoutCachedLeft =7620
-                    LayoutCachedTop =180
+                    LayoutCachedTop =120
                     LayoutCachedWidth =15630
-                    LayoutCachedHeight =480
+                    LayoutCachedHeight =420
                     BackThemeColorIndex =-1
                     ForeThemeColorIndex =-1
                     ForeTint =100.0
@@ -743,6 +744,28 @@ Begin Form
                     ForeThemeColorIndex =-1
                     ForeTint =100.0
                 End
+                Begin Label
+                    FontItalic = NotDefault
+                    OverlapFlags =215
+                    TextAlign =2
+                    Left =7605
+                    Top =420
+                    Width =7995
+                    Height =240
+                    FontSize =10
+                    BorderColor =8355711
+                    ForeColor =4144959
+                    Name ="Label46"
+                    Caption ="Click image to view larger (it will open in your default image viewer, usually W"
+                        "indows Photo Viewer)"
+                    GridlineColor =10921638
+                    LayoutCachedLeft =7605
+                    LayoutCachedTop =420
+                    LayoutCachedWidth =15600
+                    LayoutCachedHeight =660
+                    ForeThemeColorIndex =-1
+                    ForeTint =100.0
+                End
             End
         End
     End
@@ -830,7 +853,7 @@ Else
     If Not (renamedPhotos.BOF And renamedPhotos.EOF) Then
         renamedPhotos.MoveFirst
         renamedPhotos.MoveLast
-        photosExist = (renamedPhotos.RecordCount > 0)
+        photosExist = (renamedPhotos.recordCount > 0)
     Else
         photosExist = False
     End If
@@ -841,16 +864,25 @@ End If
 'If photos exist for this visit, default to the photo browser view
 If photosExist Then
     Me.sfrmPhotoEntry.Visible = False
-    
+    Me.cmdAddRepeatPhoto.Enabled = True
 'If no photos exist for this visit and there is a photo activity record, default to the photo data entry view
 ElseIf photoActivityExists Then
     Me.sfrmPhotoEntry.Visible = True
     Me.sfrmPhotoEntry.Top = 0
     Me.sfrmPhotoEntry.Left = 0
     Me.sfrmPhotoEntry.Form.DataEntry = True
+    Me.cmdAddRepeatPhoto.Enabled = True
 'If there is no photo activity record, disable photo data entry
 Else
     Me.sfrmPhotoEntry.Visible = False
     Me.cmdAddRepeatPhoto.Enabled = False
 End If
+End Sub
+
+Private Sub imgCurrentPhoto_Click()
+
+If Nz(Me.imgCurrentPhoto.Picture, "(none)") <> "(none)" Then
+    Application.FollowHyperlink Me.imgCurrentPhoto.Picture
+End If
+
 End Sub

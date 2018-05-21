@@ -8,6 +8,7 @@ Begin Form
     NavigationButtons = NotDefault
     CloseButton = NotDefault
     DividingLines = NotDefault
+    FilterOn = NotDefault
     AllowDesignChanges = NotDefault
     DefaultView =0
     ScrollBars =0
@@ -21,9 +22,9 @@ Begin Form
     DatasheetFontHeight =11
     ItemSuffix =3
     Left =4080
-    Top =4665
+    Top =4605
     Right =7080
-    Bottom =5415
+    Bottom =5355
     DatasheetGridlinesColor =15921906
     RecSrcDt = Begin
         0x335bdaa87615e540
@@ -345,7 +346,7 @@ Const strcFormName As String = "sfrm_DischargeEstimated"
 
 Public Function RowCount() As Integer
 
-RowCount = Me.RecordsetClone.RecordCount
+RowCount = Me.RecordsetClone.recordCount
 
 End Function
 
@@ -365,7 +366,7 @@ End If
 '   Flag is < and est. discharge is 1
 '   Flag is null and est. discharge is >1
 DataQualityOK = ((estDischargeFlag = "<") And (Me.txtDischarge_LitersPerMinute = 1)) Or _
-                ((estDischargeFlag = "") And (Me.txtDischarge_LitersPerMinute > 1))
+                ((estDischargeFlag = "") And (Me.txtDischarge_LitersPerMinute >= 1))
 
 
 Exit_Procedure:

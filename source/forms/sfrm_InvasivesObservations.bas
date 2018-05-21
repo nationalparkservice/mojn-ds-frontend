@@ -20,10 +20,10 @@ Begin Form
     Width =15960
     DatasheetFontHeight =11
     ItemSuffix =40
-    Left =720
-    Top =3540
-    Right =16695
-    Bottom =8970
+    Left =4170
+    Top =3240
+    Right =20145
+    Bottom =8670
     DatasheetGridlinesColor =15921906
     RecSrcDt = Begin
         0x8e8931077915e540
@@ -928,31 +928,36 @@ Private Sub Form_BeforeUpdate(Cancel As Integer)
     'appropriate ranges.
     'UTM coordinates, datum, and zone are required if user indicates "No" for species in Riparian Buffer
     'TaxonID, RiparianVegetationBufferID, ProtectedStatusID, and TaxonomoicReferenceAuthority_IdentificationID are required fields.
-    
+Dim resp As Integer
+
 On Error GoTo Error_Handler
-    
+    'Make sure that species dropdown is filled
     If IsNull(Me.cboTaxonID) Then
         MsgBox ("Species is a required field"), vbOKOnly + vbExclamation, "Invasive Species"
         Cancel = True
         Me.cboTaxonID.SetFocus
+    'Make sure that Riparian Veg Buffer dropdown is filled
     ElseIf IsNull(Me.cboInvRiparianVegetationBufferID) Then
         MsgBox ("Please indicate if species is within a Riparian Vegetation Buffer"), vbOKOnly + vbExclamation, "Riparian Vegetation Buffer?"
         Cancel = True
         Me.cboInvRiparianVegetationBufferID.SetFocus
+    'Alert user if coordinates (required for species outside riparian veg buffer) are missing, but allow option to continue with missing data
     ElseIf Me.cboInvRiparianVegetationBufferID = 2 And _
         (IsNull(Me.txtInvasiveUtmX_m) Or IsNull(Me.txtInvasiveUtmY_m) Or IsNull(Me.cboInvasiveDatumID) Or IsNull(Me.cboInvasiveUTMZone)) Then
-        MsgBox ("If response to Riparian Veg Buffer is 'No', UTM coordinates, Datum, and Zone are required."), vbOKOnly + vbExclamation, "Invasive Species Location"
-        Cancel = True
-        Me.txtInvasiveUtmX_m.SetFocus
+        resp = MsgBox("If response to Riparian Veg Buffer is 'No', UTM coordinates, Datum, and Zone are required. Are you sure you wish to continue?", vbYesNo)
+        If resp = vbNo Then
+            Cancel = True
+            Me.txtInvasiveUtmX_m.SetFocus
+        End If
     End If
 
     'LC 10/18/2017 - Appropriate ranges for UTMs: UTMX must be between 200000 and 900000, UTMY must be between 3500000 and 4350000.
 
-    If Me.txtInvasiveUtmX_m < 200000 Or Me.txtInvasiveUtmX_m > 900000 Then
+    If Not IsNull(Me.txtInvasiveUtmX_m) And (Me.txtInvasiveUtmX_m < 200000 Or Me.txtInvasiveUtmX_m > 900000) Then
         MsgBox ("Please re-enter UTMX coordinate within appropriate range"), vbOKOnly + vbExclamation, "UTMX Coordinate"
         Cancel = True
         Me.txtInvasiveUtmX_m.SetFocus
-    ElseIf Me.txtInvasiveUtmY_m < 3500000 Or Me.txtInvasiveUtmY_m > 4350000 Then
+    ElseIf Not IsNull(Me.txtInvasiveUtmY_m) And (Me.txtInvasiveUtmY_m < 3500000 Or Me.txtInvasiveUtmY_m > 4350000) Then
         MsgBox ("Please re-enter UTMY coordinate within appropriate range"), vbOKOnly + vbExclamation, "UTMY Coordinate"
         Cancel = True
         Me.txtInvasiveUtmY_m.SetFocus
@@ -969,6 +974,6 @@ End Sub
 
 Public Function RowCount() As Integer
 
-RowCount = Me.RecordsetClone.RecordCount
+RowCount = Me.RecordsetClone.recordCount
 
 End Function

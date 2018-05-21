@@ -14,10 +14,10 @@ Begin Form
     Width =6120
     DatasheetFontHeight =11
     ItemSuffix =23
-    Left =3255
-    Top =2310
-    Right =10575
-    Bottom =4965
+    Left =1485
+    Top =7890
+    Right =7350
+    Bottom =9495
     DatasheetGridlinesColor =15921906
     RecSrcDt = Begin
         0x81ca1f3e761be540
@@ -430,6 +430,7 @@ Begin Form
                     Name ="txtCalibrationTime"
                     ControlSource ="CalibrationTime"
                     Format ="Short Time"
+                    DefaultValue ="=[Forms]![frm_Visit]![StartTime]"
                     GridlineColor =10921638
 
                     LayoutCachedLeft =1200
@@ -449,6 +450,7 @@ Begin Form
                     ForeColor =4210752
                     Name ="txtCalibrationDate"
                     ControlSource ="CalibrationDate"
+                    DefaultValue ="=[Forms]![frm_Visit]![VisitDate]"
                     GridlineColor =10921638
 
                     LayoutCachedLeft =60
@@ -580,11 +582,11 @@ Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 Option Compare Database
 
-Private Sub cmdDeleteRecord_Click()
-    
-DeleteRecord Me, Me.NewRecord
+Public Function RowCount() As Integer
 
-End Sub
+RowCount = Me.RecordsetClone.recordCount
+
+End Function
 
 Public Function SaveRecord() As Boolean
 On Error GoTo Error_Handler

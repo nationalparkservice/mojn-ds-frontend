@@ -479,6 +479,6 @@ End Sub
 
 Public Function RowCount() As Integer
 
-RowCount = Me.RecordsetClone.RecordCount
+RowCount = Me.RecordsetClone.recordCount
 
 End Function

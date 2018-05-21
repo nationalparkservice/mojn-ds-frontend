@@ -14,10 +14,10 @@ Begin Form
     Width =5520
     DatasheetFontHeight =11
     ItemSuffix =23
-    Left =6525
-    Top =6420
-    Right =11340
-    Bottom =8145
+    Left =7905
+    Top =7830
+    Right =12720
+    Bottom =9555
     DatasheetGridlinesColor =15921906
     RecSrcDt = Begin
         0x17e2cd51901be540
@@ -178,7 +178,7 @@ Begin Form
             GridlineShade =65.0
         End
         Begin FormHeader
-            Height =435
+            Height =495
             BackColor =15921906
             Name ="FormHeader"
             AlternateBackThemeColorIndex =1
@@ -188,7 +188,7 @@ Begin Form
                     OverlapFlags =85
                     TextAlign =2
                     Left =60
-                    Top =210
+                    Top =270
                     Width =1095
                     Height =225
                     FontSize =9
@@ -197,9 +197,9 @@ Begin Form
                     Caption ="Date"
                     GridlineColor =10921638
                     LayoutCachedLeft =60
-                    LayoutCachedTop =210
+                    LayoutCachedTop =270
                     LayoutCachedWidth =1155
-                    LayoutCachedHeight =435
+                    LayoutCachedHeight =495
                     ForeThemeColorIndex =-1
                     ForeTint =100.0
                 End
@@ -207,7 +207,7 @@ Begin Form
                     OverlapFlags =93
                     TextAlign =2
                     Left =1200
-                    Top =210
+                    Top =270
                     Width =795
                     Height =225
                     FontSize =9
@@ -216,9 +216,9 @@ Begin Form
                     Caption ="Time"
                     GridlineColor =10921638
                     LayoutCachedLeft =1200
-                    LayoutCachedTop =210
+                    LayoutCachedTop =270
                     LayoutCachedWidth =1995
-                    LayoutCachedHeight =435
+                    LayoutCachedHeight =495
                     ForeThemeColorIndex =-1
                     ForeTint =100.0
                 End
@@ -226,7 +226,7 @@ Begin Form
                     OverlapFlags =93
                     TextAlign =2
                     Left =3300
-                    Top =210
+                    Top =270
                     Width =735
                     Height =225
                     FontSize =9
@@ -235,9 +235,9 @@ Begin Form
                     Caption ="Temp (C)"
                     GridlineColor =10921638
                     LayoutCachedLeft =3300
-                    LayoutCachedTop =210
+                    LayoutCachedTop =270
                     LayoutCachedWidth =4035
-                    LayoutCachedHeight =435
+                    LayoutCachedHeight =495
                     ForeThemeColorIndex =-1
                     ForeTint =100.0
                 End
@@ -245,7 +245,7 @@ Begin Form
                     OverlapFlags =215
                     TextAlign =2
                     Left =4005
-                    Top =210
+                    Top =270
                     Width =645
                     Height =225
                     FontSize =9
@@ -254,9 +254,9 @@ Begin Form
                     Caption ="DO%"
                     GridlineColor =10921638
                     LayoutCachedLeft =4005
-                    LayoutCachedTop =210
+                    LayoutCachedTop =270
                     LayoutCachedWidth =4650
-                    LayoutCachedHeight =435
+                    LayoutCachedHeight =495
                     ForeThemeColorIndex =-1
                     ForeTint =100.0
                 End
@@ -264,6 +264,7 @@ Begin Form
                     OverlapFlags =215
                     TextAlign =2
                     Left =1980
+                    Top =60
                     Width =960
                     Height =435
                     FontSize =9
@@ -272,8 +273,9 @@ Begin Form
                     Caption ="Atm. Press. (mmHg)"
                     GridlineColor =10921638
                     LayoutCachedLeft =1980
+                    LayoutCachedTop =60
                     LayoutCachedWidth =2940
-                    LayoutCachedHeight =435
+                    LayoutCachedHeight =495
                     ForeThemeColorIndex =-1
                     ForeTint =100.0
                 End
@@ -401,6 +403,7 @@ Begin Form
                     ForeColor =4210752
                     Name ="txtCalibrationDate"
                     ControlSource ="CalibrationDate"
+                    DefaultValue ="=[Forms]![frm_Visit]![VisitDate]"
                     GridlineColor =10921638
 
                     LayoutCachedLeft =60
@@ -423,6 +426,7 @@ Begin Form
                     Name ="txtCalibrationTime"
                     ControlSource ="CalibrationTime"
                     Format ="Short Time"
+                    DefaultValue ="=[Forms]![frm_Visit]![StartTime]"
                     GridlineColor =10921638
 
                     LayoutCachedLeft =1200
@@ -516,6 +520,7 @@ Begin Form
                     TabIndex =8
                     ForeColor =4210752
                     Name ="cmdDelete"
+                    OnClick ="[Event Procedure]"
                     ControlTipText ="Delete Record"
                     Picture ="X-Mark-16-LtGray"
                     GridlineColor =10921638
@@ -543,28 +548,6 @@ Begin Form
                     WebImagePaddingBottom =1
                     Overlaps =1
                 End
-                Begin TextBox
-                    Visible = NotDefault
-                    TabStop = NotDefault
-                    OverlapFlags =85
-                    IMESentenceMode =3
-                    Left =5100
-                    Top =60
-                    Width =420
-                    Height =315
-                    TabIndex =9
-                    BorderColor =10921638
-                    ForeColor =4210752
-                    Name ="txtDOInstrumentID"
-                    ControlSource ="DOInstrumentID"
-                    DefaultValue ="=[Forms]![frm_Visit]![sfrm_WaterQualityActivity].[Form]![DOInstrumentID]"
-                    GridlineColor =10921638
-
-                    LayoutCachedLeft =5100
-                    LayoutCachedTop =60
-                    LayoutCachedWidth =5520
-                    LayoutCachedHeight =375
-                End
                 Begin Label
                     OverlapFlags =247
                     TextAlign =1
@@ -584,6 +567,31 @@ Begin Form
                     ForeThemeColorIndex =-1
                     ForeTint =100.0
                 End
+                Begin TextBox
+                    Visible = NotDefault
+                    Enabled = NotDefault
+                    Locked = NotDefault
+                    TabStop = NotDefault
+                    OverlapFlags =85
+                    TextAlign =2
+                    IMESentenceMode =3
+                    Left =5100
+                    Top =240
+                    Width =420
+                    Height =255
+                    TabIndex =9
+                    BorderColor =10921638
+                    ForeColor =4210752
+                    Name ="txtDOInstrumentID"
+                    ControlSource ="DOInstrumentID"
+                    DefaultValue ="=[Forms]![frm_Visit]![sfrm_WaterQualityActivity].[Form]![DOInstrumentID]"
+                    GridlineColor =10921638
+
+                    LayoutCachedLeft =5100
+                    LayoutCachedTop =240
+                    LayoutCachedWidth =5520
+                    LayoutCachedHeight =495
+                End
             End
         End
         Begin FormFooter
@@ -602,11 +610,6 @@ Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 Option Compare Database
 
-Private Sub cmdDeleteRecord_Click()
-
-DeleteRecord Me, Me.NewRecord
-
-End Sub
 
 Public Function SaveRecord() As Boolean
 On Error GoTo Error_Handler
@@ -628,4 +631,16 @@ Error_Handler:
     MsgBox ("Record cannot be saved at this time. Make sure all fields are filled out correctly.")
     SaveRecord = False
     GoTo Exit_Procedure
+End Function
+
+Private Sub cmdDelete_Click()
+
+DeleteRecord Me, Me.NewRecord
+
+End Sub
+
+Public Function RowCount() As Integer
+
+RowCount = Me.RecordsetClone.recordCount
+
 End Function

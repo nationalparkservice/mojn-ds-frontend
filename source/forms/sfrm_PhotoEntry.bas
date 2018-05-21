@@ -21,11 +21,14 @@ Begin Form
     Width =15540
     DatasheetFontHeight =11
     ItemSuffix =38
-    Left =1485
-    Top =16335
-    Right =17340
-    Bottom =24030
+    Left =2865
+    Top =16005
+    Right =18720
+    Bottom =23700
     DatasheetGridlinesColor =15921906
+    RecSrcDt = Begin
+        0x6227942e0e1be540
+    End
     RecordSource ="SELECT data_Photo.ID, data_Photo.PhotoActivityID, data_Photo.DateTaken, data_Pho"
         "to.PhotoDescriptionCodeID, data_Photo.IsLibraryPhotoID, data_Photo.OriginalFileP"
         "ath, data_Photo.RenamedFilePath, data_Photo.GPSUnitID, data_Photo.HorizontalDatu"
@@ -646,6 +649,7 @@ Begin Form
                     ControlSource ="GPSUnitID"
                     RowSourceType ="Table/Query"
                     RowSource ="SELECT ref_GPSUnit.Label, ref_GPSUnit.ID FROM ref_GPSUnit; "
+                    DefaultValue ="=[Forms]![frm_Visit]![cboDefaultGPSUnit]"
                     GridlineColor =10921638
                     AllowValueListEdits =0
 
@@ -723,6 +727,7 @@ Begin Form
                     RowSourceType ="Table/Query"
                     RowSource ="SELECT lookup_HorizontalDatum.Code, lookup_HorizontalDatum.ID FROM lookup_Horizo"
                         "ntalDatum; "
+                    DefaultValue ="=[Forms]![frm_Visit]![cboDefaultDatum]"
                     GridlineColor =10921638
 
                     LayoutCachedLeft =1800
@@ -777,6 +782,7 @@ Begin Form
                     ControlSource ="UTMZoneID"
                     RowSourceType ="Table/Query"
                     RowSource ="SELECT lookup_UtmZone.Label, lookup_UtmZone.ID FROM lookup_UtmZone; "
+                    DefaultValue ="=[Forms]![frm_Visit]![cboDefaultUTMZone]"
                     GridlineColor =10921638
 
                     LayoutCachedLeft =1800

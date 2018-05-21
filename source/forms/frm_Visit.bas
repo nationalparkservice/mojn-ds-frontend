@@ -20,12 +20,13 @@ Begin Form
     GridY =24
     Width =16620
     DatasheetFontHeight =11
-    ItemSuffix =238
-    Left =765
-    Top =150
-    Right =17385
-    Bottom =11205
+    ItemSuffix =246
+    Left =6195
+    Top =630
+    Right =22815
+    Bottom =11835
     DatasheetGridlinesColor =15921906
+    Filter ="ID = 3"
     RecSrcDt = Begin
         0x9dbfe286751be540
     End
@@ -809,7 +810,7 @@ Begin Form
         End
         Begin Section
             CanGrow = NotDefault
-            Height =9915
+            Height =10065
             BackColor =4281912
             Name ="Detail"
             AlternateBackColor =14602694
@@ -817,14 +818,14 @@ Begin Form
                 Begin Tab
                     OverlapFlags =85
                     Width =16620
-                    Height =9915
+                    Height =10065
                     FontWeight =700
                     Name ="tabctlSpringLocationVisit"
                     OnChange ="[Event Procedure]"
                     GridlineColor =10921638
 
                     LayoutCachedWidth =16620
-                    LayoutCachedHeight =9915
+                    LayoutCachedHeight =10065
                     ThemeFontIndex =1
                     BackColor =15921906
                     BackThemeColorIndex =-1
@@ -844,18 +845,18 @@ Begin Form
                     Begin
                         Begin Page
                             OverlapFlags =87
-                            Left =75
+                            Left =60
                             Top =480
-                            Width =16470
-                            Height =9360
+                            Width =16485
+                            Height =9510
                             BorderColor =10921638
                             Name ="tabIntro"
                             Caption ="Intro"
                             GridlineColor =10921638
-                            LayoutCachedLeft =75
+                            LayoutCachedLeft =60
                             LayoutCachedTop =480
                             LayoutCachedWidth =16545
-                            LayoutCachedHeight =9840
+                            LayoutCachedHeight =9990
                             WebImagePaddingLeft =2
                             WebImagePaddingTop =2
                             WebImagePaddingRight =2
@@ -1161,7 +1162,7 @@ Begin Form
                                     Left =1800
                                     Top =3660
                                     Width =4739
-                                    Height =3415
+                                    Height =2635
                                     TabIndex =5
                                     BorderColor =10921638
                                     Name ="sfrmVisitPersonnel"
@@ -1173,7 +1174,7 @@ Begin Form
                                     LayoutCachedLeft =1800
                                     LayoutCachedTop =3660
                                     LayoutCachedWidth =6539
-                                    LayoutCachedHeight =7075
+                                    LayoutCachedHeight =6295
                                     Begin
                                         Begin Label
                                             OverlapFlags =215
@@ -1554,6 +1555,184 @@ Begin Form
                                     ForeThemeColorIndex =-1
                                     ForeTint =100.0
                                 End
+                                Begin ComboBox
+                                    OverlapFlags =215
+                                    IMESentenceMode =3
+                                    Left =1920
+                                    Top =6360
+                                    Width =3780
+                                    Height =315
+                                    TabIndex =12
+                                    BoundColumn =1
+                                    BorderColor =10921638
+                                    ForeColor =4210752
+                                    ColumnInfo ="\"\";\"\";\"10\";\"100\""
+                                    Name ="cboDefaultWQInstr"
+                                    RowSourceType ="Table/Query"
+                                    RowSource ="SELECT ref_WaterQualityInstrument.Label, ref_WaterQualityInstrument.ID FROM ref_"
+                                        "WaterQualityInstrument; "
+                                    GridlineColor =10921638
+
+                                    LayoutCachedLeft =1920
+                                    LayoutCachedTop =6360
+                                    LayoutCachedWidth =5700
+                                    LayoutCachedHeight =6675
+                                    ForeThemeColorIndex =0
+                                    ForeTint =75.0
+                                    ForeShade =100.0
+                                    Begin
+                                        Begin Label
+                                            OverlapFlags =215
+                                            TextAlign =3
+                                            Left =60
+                                            Top =6360
+                                            Width =1755
+                                            Height =315
+                                            BorderColor =8355711
+                                            ForeColor =8355711
+                                            Name ="Label239"
+                                            Caption ="Default WQ Instr."
+                                            GridlineColor =10921638
+                                            LayoutCachedLeft =60
+                                            LayoutCachedTop =6360
+                                            LayoutCachedWidth =1815
+                                            LayoutCachedHeight =6675
+                                        End
+                                    End
+                                End
+                                Begin ComboBox
+                                    OverlapFlags =215
+                                    IMESentenceMode =3
+                                    Left =1920
+                                    Top =6720
+                                    Width =3780
+                                    Height =315
+                                    TabIndex =13
+                                    BoundColumn =1
+                                    BorderColor =10921638
+                                    ForeColor =4210752
+                                    ColumnInfo ="\"\";\"\";\"10\";\"100\""
+                                    Name ="cboDefaultGPSUnit"
+                                    RowSourceType ="Table/Query"
+                                    RowSource ="SELECT ref_GPSUnit.Label, ref_GPSUnit.ID FROM ref_GPSUnit; "
+                                    GridlineColor =10921638
+
+                                    LayoutCachedLeft =1920
+                                    LayoutCachedTop =6720
+                                    LayoutCachedWidth =5700
+                                    LayoutCachedHeight =7035
+                                    ForeThemeColorIndex =0
+                                    ForeTint =75.0
+                                    ForeShade =100.0
+                                    Begin
+                                        Begin Label
+                                            OverlapFlags =215
+                                            TextAlign =3
+                                            Left =60
+                                            Top =6720
+                                            Width =1755
+                                            Height =315
+                                            BorderColor =8355711
+                                            ForeColor =8355711
+                                            Name ="Label241"
+                                            Caption ="Default GPS Unit"
+                                            GridlineColor =10921638
+                                            LayoutCachedLeft =60
+                                            LayoutCachedTop =6720
+                                            LayoutCachedWidth =1815
+                                            LayoutCachedHeight =7035
+                                        End
+                                    End
+                                End
+                                Begin ComboBox
+                                    OverlapFlags =215
+                                    IMESentenceMode =3
+                                    Left =1920
+                                    Top =7080
+                                    Width =3780
+                                    Height =315
+                                    TabIndex =14
+                                    BoundColumn =1
+                                    BorderColor =10921638
+                                    ForeColor =4210752
+                                    ColumnInfo ="\"\";\"\";\"10\";\"40\""
+                                    Name ="cboDefaultDatum"
+                                    RowSourceType ="Table/Query"
+                                    RowSource ="SELECT lookup_HorizontalDatum.Code, lookup_HorizontalDatum.ID FROM lookup_Horizo"
+                                        "ntalDatum; "
+                                    GridlineColor =10921638
+
+                                    LayoutCachedLeft =1920
+                                    LayoutCachedTop =7080
+                                    LayoutCachedWidth =5700
+                                    LayoutCachedHeight =7395
+                                    ForeThemeColorIndex =0
+                                    ForeTint =75.0
+                                    ForeShade =100.0
+                                    Begin
+                                        Begin Label
+                                            OverlapFlags =215
+                                            TextAlign =3
+                                            Left =60
+                                            Top =7080
+                                            Width =1755
+                                            Height =315
+                                            BorderColor =8355711
+                                            ForeColor =8355711
+                                            Name ="Label243"
+                                            Caption ="Default Datum"
+                                            GridlineColor =10921638
+                                            LayoutCachedLeft =60
+                                            LayoutCachedTop =7080
+                                            LayoutCachedWidth =1815
+                                            LayoutCachedHeight =7395
+                                        End
+                                    End
+                                End
+                                Begin ComboBox
+                                    OverlapFlags =215
+                                    IMESentenceMode =3
+                                    Left =1920
+                                    Top =7440
+                                    Width =3780
+                                    Height =315
+                                    TabIndex =15
+                                    BoundColumn =1
+                                    BorderColor =10921638
+                                    ForeColor =4210752
+                                    ColumnInfo ="\"\";\"\";\"10\";\"10\""
+                                    Name ="cboDefaultUTMZone"
+                                    RowSourceType ="Table/Query"
+                                    RowSource ="SELECT lookup_UtmZone.Code, lookup_UtmZone.ID FROM lookup_UtmZone; "
+                                    GridlineColor =10921638
+
+                                    LayoutCachedLeft =1920
+                                    LayoutCachedTop =7440
+                                    LayoutCachedWidth =5700
+                                    LayoutCachedHeight =7755
+                                    ForeThemeColorIndex =0
+                                    ForeTint =75.0
+                                    ForeShade =100.0
+                                    Begin
+                                        Begin Label
+                                            OverlapFlags =215
+                                            TextAlign =3
+                                            Left =60
+                                            Top =7440
+                                            Width =1755
+                                            Height =315
+                                            BorderColor =8355711
+                                            ForeColor =8355711
+                                            Name ="Label245"
+                                            Caption ="Default UTM Zone"
+                                            GridlineColor =10921638
+                                            LayoutCachedLeft =60
+                                            LayoutCachedTop =7440
+                                            LayoutCachedWidth =1815
+                                            LayoutCachedHeight =7755
+                                        End
+                                    End
+                                End
                             End
                         End
                         Begin Page
@@ -1562,7 +1741,7 @@ Begin Form
                             Left =60
                             Top =480
                             Width =16485
-                            Height =9360
+                            Height =9510
                             BorderColor =10921638
                             Name ="tabPhotos"
                             Tag ="AlwaysVisible"
@@ -1571,7 +1750,7 @@ Begin Form
                             LayoutCachedLeft =60
                             LayoutCachedTop =480
                             LayoutCachedWidth =16545
-                            LayoutCachedHeight =9840
+                            LayoutCachedHeight =9990
                             WebImagePaddingLeft =2
                             WebImagePaddingTop =2
                             WebImagePaddingRight =2
@@ -1603,7 +1782,7 @@ Begin Form
                             Left =75
                             Top =480
                             Width =16470
-                            Height =9360
+                            Height =9510
                             BorderColor =10921638
                             Name ="tabSensor"
                             Tag ="Sensor"
@@ -1612,7 +1791,7 @@ Begin Form
                             LayoutCachedLeft =75
                             LayoutCachedTop =480
                             LayoutCachedWidth =16545
-                            LayoutCachedHeight =9840
+                            LayoutCachedHeight =9990
                             WebImagePaddingLeft =2
                             WebImagePaddingTop =2
                             WebImagePaddingRight =2
@@ -1664,7 +1843,7 @@ Begin Form
                             Left =75
                             Top =480
                             Width =16470
-                            Height =9360
+                            Height =9510
                             BorderColor =10921638
                             Name ="tabDischarge"
                             Tag ="Default"
@@ -1673,7 +1852,7 @@ Begin Form
                             LayoutCachedLeft =75
                             LayoutCachedTop =480
                             LayoutCachedWidth =16545
-                            LayoutCachedHeight =9840
+                            LayoutCachedHeight =9990
                             WebImagePaddingLeft =2
                             WebImagePaddingTop =2
                             WebImagePaddingRight =2
@@ -1705,7 +1884,7 @@ Begin Form
                             Left =75
                             Top =480
                             Width =16470
-                            Height =9360
+                            Height =9510
                             BorderColor =10921638
                             Name ="tabQuality"
                             Tag ="Quality"
@@ -1714,7 +1893,7 @@ Begin Form
                             LayoutCachedLeft =75
                             LayoutCachedTop =480
                             LayoutCachedWidth =16545
-                            LayoutCachedHeight =9840
+                            LayoutCachedHeight =9990
                             WebImagePaddingLeft =2
                             WebImagePaddingTop =2
                             WebImagePaddingRight =2
@@ -1746,7 +1925,7 @@ Begin Form
                             Left =75
                             Top =480
                             Width =16470
-                            Height =9360
+                            Height =9510
                             BorderColor =10921638
                             Name ="tabDisturbance"
                             Tag ="Default"
@@ -1755,7 +1934,7 @@ Begin Form
                             LayoutCachedLeft =75
                             LayoutCachedTop =480
                             LayoutCachedWidth =16545
-                            LayoutCachedHeight =9840
+                            LayoutCachedHeight =9990
                             WebImagePaddingLeft =2
                             WebImagePaddingTop =2
                             WebImagePaddingRight =2
@@ -1788,7 +1967,7 @@ Begin Form
                             Left =75
                             Top =480
                             Width =16470
-                            Height =9360
+                            Height =9510
                             BorderColor =10921638
                             Name ="tabWildlife"
                             Tag ="Default"
@@ -1797,7 +1976,7 @@ Begin Form
                             LayoutCachedLeft =75
                             LayoutCachedTop =480
                             LayoutCachedWidth =16545
-                            LayoutCachedHeight =9840
+                            LayoutCachedHeight =9990
                             WebImagePaddingLeft =2
                             WebImagePaddingTop =2
                             WebImagePaddingRight =2
@@ -1832,7 +2011,7 @@ Begin Form
                             Left =75
                             Top =480
                             Width =16470
-                            Height =9360
+                            Height =9510
                             BorderColor =10921638
                             Name ="tabRiparian"
                             Tag ="Riparian"
@@ -1841,7 +2020,7 @@ Begin Form
                             LayoutCachedLeft =75
                             LayoutCachedTop =480
                             LayoutCachedWidth =16545
-                            LayoutCachedHeight =9840
+                            LayoutCachedHeight =9990
                             WebImagePaddingLeft =2
                             WebImagePaddingTop =2
                             WebImagePaddingRight =2
@@ -1874,7 +2053,7 @@ Begin Form
                             Left =75
                             Top =480
                             Width =16470
-                            Height =9360
+                            Height =9510
                             BorderColor =10921638
                             Name ="tabInvasives"
                             Tag ="Default"
@@ -1883,7 +2062,7 @@ Begin Form
                             LayoutCachedLeft =75
                             LayoutCachedTop =480
                             LayoutCachedWidth =16545
-                            LayoutCachedHeight =9840
+                            LayoutCachedHeight =9990
                             WebImagePaddingLeft =2
                             WebImagePaddingTop =2
                             WebImagePaddingRight =2
@@ -1936,9 +2115,18 @@ Option Explicit
 Private Const mstrcFormName = "frm_Visit"
 Private currentTabNumber As Integer
 
+Public defaultWQInstrument As Variant
+Public defaultGPSUnit As Variant
+Public defaultDatum As Variant
+Public defaultUTMZone As Variant
+
 Sub Initialize()
 
 currentTabNumber = 0
+defaultWQInstrument = ""
+defaultGPSUnit = ""
+defaultDatum = ""
+defaultUTMZone = ""
 
 End Sub
 
@@ -2251,15 +2439,33 @@ End Sub
 Private Sub tabctlSpringLocationVisit_Change()
 On Error GoTo Error_Handler
 
+Dim resp As Integer
+
+'If switching to photos tab, set up buttons and subforms according to which data are present
+If Me.tabctlSpringLocationVisit = 1 Then
+    Me.sfrmPhotoActivity.Form.PhotoTabSetup
+End If
+
+If Me.tabctlSpringLocationVisit = 4 Then
+    Me.sfrm_WaterQualityActivity.Form.Requery
+End If
+
 'Don't check for missing data again if we just switched back to the current tab
 If currentTabNumber = Me.tabctlSpringLocationVisit Then GoTo Exit_Procedure
 
-'Check for missing data on current tab. If any data are missing, then prevent the user from switching tabs
+'Check for missing data on current tab. If any data are missing, alert the user but give the option to continue on.
 If DataQualityOK(currentTabNumber) Then
     currentTabNumber = Me.tabctlSpringLocationVisit
 Else
-    Me.tabctlSpringLocationVisit = currentTabNumber
-    MsgBox ("Please finish entering data on this tab before moving on to the next")
+    resp = MsgBox("The data in this tab did not pass data quality checks. Are you sure the data were entered correctly? Click Yes to continue and No to remain on this tab and correct errors.", vbYesNo)
+    If resp = vbNo Then
+        'stay on the same tab
+        Me.tabctlSpringLocationVisit = currentTabNumber
+    ElseIf resp = vbYes Then
+        'move on to the next tab
+        currentTabNumber = Me.tabctlSpringLocationVisit
+    End If
+    
 End If
 
 Exit_Procedure:

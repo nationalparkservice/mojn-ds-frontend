@@ -11,7 +11,7 @@ Dim i As Integer
 
 photoPaths.MoveLast
 photoPaths.MoveFirst
-nPhotos = photoPaths.RecordCount
+nPhotos = photoPaths.recordCount
 gridSize = thumbnailGrid.Count
 i = ((pageNumber - 1) * gridSize)
 

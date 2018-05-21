@@ -21,10 +21,13 @@ Begin Form
     DatasheetFontHeight =11
     ItemSuffix =115
     Left =9045
-    Top =8775
+    Top =-3120
     Right =17025
-    Bottom =12000
+    Bottom =105
     DatasheetGridlinesColor =15921906
+    RecSrcDt = Begin
+        0x7d93922e0e1be540
+    End
     RecordSource ="SELECT data_Photo.*, lookup_IsLibraryPhoto.Label, ref_PhotoDescriptionCode.Label"
         " FROM ref_PhotoDescriptionCode RIGHT JOIN (lookup_IsLibraryPhoto RIGHT JOIN data"
         "_Photo ON lookup_IsLibraryPhoto.ID = data_Photo.IsLibraryPhotoID) ON ref_PhotoDe"
@@ -365,6 +368,7 @@ Begin Form
                                     ForeColor =4210752
                                     Name ="DateTaken"
                                     ControlSource ="DateTaken"
+                                    Format ="Short Date"
                                     GridlineColor =10921638
 
                                     LayoutCachedLeft =975

@@ -13,15 +13,16 @@ Begin Form
     ViewsAllowed =1
     PictureAlignment =2
     DatasheetGridlinesBehavior =3
+    Cycle =1
     GridX =24
     GridY =24
     Width =6840
     DatasheetFontHeight =11
     ItemSuffix =42
-    Left =8565
-    Top =2460
-    Right =15405
-    Bottom =7230
+    Left =600
+    Top =5145
+    Right =7380
+    Bottom =10620
     DatasheetGridlinesColor =15921906
     RecordSource ="SELECT data_Photo.ID, data_Photo.PhotoActivityID, data_Photo.DateTaken, data_Pho"
         "to.PhotoDescriptionCodeID, data_Photo.IsLibraryPhotoID, data_Photo.OriginalFileP"

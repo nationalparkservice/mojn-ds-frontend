@@ -14,13 +14,13 @@ Begin Form
     Width =5520
     DatasheetFontHeight =11
     ItemSuffix =62
-    Left =4890
-    Top =705
-    Right =12720
-    Bottom =3705
+    Left =1665
+    Top =4320
+    Right =7140
+    Bottom =6465
     DatasheetGridlinesColor =15921906
     RecSrcDt = Begin
-        0x4a0e76b6761be540
+        0xd8aaaddf561ce540
     End
     RecordSource ="qry_CalibrationpH"
     DatasheetFontName ="Calibri"
@@ -497,6 +497,42 @@ Begin Form
                     BorderThemeColorIndex =-1
                     BorderShade =100.0
                 End
+                Begin CommandButton
+                    TabStop = NotDefault
+                    OverlapFlags =85
+                    PictureType =2
+                    Left =5220
+                    Width =238
+                    Height =778
+                    TabIndex =8
+                    ForeColor =4210752
+                    Name ="cmdDelete"
+                    OnClick ="[Event Procedure]"
+                    ControlTipText ="Delete Record"
+                    Picture ="X-Mark-16-LtGray"
+                    GridlineColor =10921638
+
+                    LayoutCachedLeft =5220
+                    LayoutCachedWidth =5458
+                    LayoutCachedHeight =778
+                    Gradient =0
+                    BackColor =15527148
+                    BackThemeColorIndex =-1
+                    BackTint =100.0
+                    BorderColor =12566463
+                    BorderThemeColorIndex =-1
+                    BorderTint =100.0
+                    HoverColor =1643706
+                    HoverThemeColorIndex =-1
+                    HoverTint =100.0
+                    PressedColor =9592887
+                    HoverForeColor =4210752
+                    PressedForeColor =4210752
+                    WebImagePaddingLeft =2
+                    WebImagePaddingTop =2
+                    WebImagePaddingRight =1
+                    WebImagePaddingBottom =1
+                End
             End
         End
         Begin FormFooter
@@ -515,22 +551,8 @@ Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 Option Compare Database
 
-Private Sub cmdDeleteRecord_Click()
+Private Sub cmdDelete_Click()
     
 DeleteRecord Me, Me.NewRecord
 
 End Sub
-
-Public Function SaveRecord() As Boolean
-On Error GoTo Error_Handler
-
-DoCmd.RunCommand acCmdSaveRecord
-SaveRecord = True
-
-Exit_Procedure:
-    Exit Function
-Error_Handler:
-    MsgBox ("Record cannot be saved at this time. Make sure all fields are filled out correctly.")
-    SaveRecord = False
-    GoTo Exit_Procedure
-End Function

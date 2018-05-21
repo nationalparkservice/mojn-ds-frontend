@@ -11,16 +11,16 @@ Begin Form
     DatasheetGridlinesBehavior =3
     GridX =24
     GridY =24
-    Width =4920
+    Width =4980
     DatasheetFontHeight =11
     ItemSuffix =21
-    Left =5205
-    Top =4710
-    Right =9810
-    Bottom =6795
+    Left =1665
+    Top =2880
+    Right =6510
+    Bottom =4965
     DatasheetGridlinesColor =15921906
     RecSrcDt = Begin
-        0x535faac1921be540
+        0x1c40fa086c1ce540
     End
     RecordSource ="qry_CalibrationDO"
     DatasheetFontName ="Calibri"
@@ -519,6 +519,42 @@ Begin Form
                     LayoutCachedHeight =975
                     ForeThemeColorIndex =-1
                     ForeTint =100.0
+                End
+                Begin CommandButton
+                    TabStop = NotDefault
+                    OverlapFlags =85
+                    PictureType =2
+                    Left =4680
+                    Width =238
+                    Height =1303
+                    TabIndex =8
+                    ForeColor =4210752
+                    Name ="cmdDelete"
+                    OnClick ="[Event Procedure]"
+                    ControlTipText ="Delete Record"
+                    Picture ="X-Mark-16-LtGray"
+                    GridlineColor =10921638
+
+                    LayoutCachedLeft =4680
+                    LayoutCachedWidth =4918
+                    LayoutCachedHeight =1303
+                    Gradient =0
+                    BackColor =15527148
+                    BackThemeColorIndex =-1
+                    BackTint =100.0
+                    BorderColor =12566463
+                    BorderThemeColorIndex =-1
+                    BorderTint =100.0
+                    HoverColor =1643706
+                    HoverThemeColorIndex =-1
+                    HoverTint =100.0
+                    PressedColor =9592887
+                    HoverForeColor =4210752
+                    PressedForeColor =4210752
+                    WebImagePaddingLeft =2
+                    WebImagePaddingTop =2
+                    WebImagePaddingRight =1
+                    WebImagePaddingBottom =1
                 End
             End
         End

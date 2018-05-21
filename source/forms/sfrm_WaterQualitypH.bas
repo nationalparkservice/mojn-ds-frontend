@@ -13,10 +13,10 @@ Begin Form
     Width =2579
     DatasheetFontHeight =11
     ItemSuffix =5
-    Left =-2355
-    Top =4500
-    Right =240
-    Bottom =6105
+    Left =1845
+    Top =5955
+    Right =4440
+    Bottom =7560
     DatasheetGridlinesColor =15921906
     RecSrcDt = Begin
         0xd506ec10cd15e540
@@ -397,6 +397,6 @@ End Sub
 
 Public Function RowCount() As Integer
 
-RowCount = Me.RecordsetClone.RecordCount
+RowCount = Me.RecordsetClone.recordCount
 
 End Function

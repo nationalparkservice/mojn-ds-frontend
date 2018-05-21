@@ -1,5 +1,5 @@
 SELECT data_CalibrationSpCond.ID, data_CalibrationSpCond.CalibrationTime, data_CalibrationSpCond.CalibrationDate, data_CalibrationSpCond.StandardValue_microS_per_cm, data_CalibrationSpCond.PreCalibrationReading_microS_per_cm, data_CalibrationSpCond.PostCalibrationReading_microS_per_cm, data_CalibrationSpCond.SpCondInstrumentID, data_CalibrationSpCond.Notes, data_CalibrationSpCond.DateCreated
 FROM data_CalibrationSpCond
-WHERE (((data_CalibrationSpCond.CalibrationDate)<=Forms!frm_Visit!VisitDate) And ((data_CalibrationSpCond.SpCondInstrumentID)=Forms!frm_Visit!sfrm_WaterQualityActivity.Form!cboSpCondInstrumentID))
-ORDER BY data_CalibrationSpCond.CalibrationDate DESC;
+WHERE (((data_CalibrationSpCond.CalibrationDate)=Forms!frm_Visit!VisitDate) And ((data_CalibrationSpCond.SpCondInstrumentID)=Forms!frm_Visit!sfrm_WaterQualityActivity.Form!cboSpCondInstrumentID) And ((data_CalibrationSpCond.CalibrationTime)<=Forms!frm_Visit!StartTime)) Or (((data_CalibrationSpCond.CalibrationDate)<Forms!frm_Visit!VisitDate) And ((data_CalibrationSpCond.SpCondInstrumentID)=Forms!frm_Visit!sfrm_WaterQualityActivity.Form!cboSpCondInstrumentID)) Or (((data_CalibrationSpCond.CalibrationDate)=Forms!frm_Visit!VisitDate) And ((data_CalibrationSpCond.SpCondInstrumentID)=Forms!frm_Visit!sfrm_WaterQualityActivity.Form!cboSpCondInstrumentID) And ((data_CalibrationSpCond.CalibrationTime) Is Null))
+ORDER BY data_CalibrationSpCond.CalibrationDate DESC , data_CalibrationSpCond.CalibrationTime DESC;
 

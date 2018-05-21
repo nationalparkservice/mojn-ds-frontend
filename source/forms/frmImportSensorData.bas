@@ -1044,7 +1044,7 @@ Private Sub cmdImport_Click()
 
     On Error GoTo Error_Handler
     
-    Dim RecordCount As Integer
+    Dim recordCount As Integer
     Dim Header As String
     Dim fileName As String
     Dim LineCount As Integer
@@ -1102,7 +1102,7 @@ Private Sub cmdImport_Click()
             qry.Parameters(0) = HeaderID
             qry.Execute
             
-            RecordCount = qry.RecordsAffected
+            recordCount = qry.RecordsAffected
         
             StatusBar "Finished."
             Me.Requery
@@ -1231,17 +1231,17 @@ End Sub
 
 Private Sub SanityChecks()
     Dim warnings As New StringBuilder
-    Dim RecordCount As Integer
+    Dim recordCount As Integer
     
     ' Check for inapropriate Units
     Select Case ImportType
         Case "Temperature"
-            RecordCount = DCount("*", "SensorImportConverted", "Unit not in ('C', 'F')")
+            recordCount = DCount("*", "SensorImportConverted", "Unit not in ('C', 'F')")
         Case "Humidity"
-            RecordCount = DCount("*", "SensorImportConverted", "Unit <> '%RH'")
+            recordCount = DCount("*", "SensorImportConverted", "Unit <> '%RH'")
     End Select
     
-    If RecordCount > 0 Then
+    If recordCount > 0 Then
         warnings.AppendLine "Data may contain unexpected Unit(s) indicating the wrong file may have been imported."
     End If
     

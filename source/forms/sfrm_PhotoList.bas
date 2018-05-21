@@ -19,14 +19,11 @@ Begin Form
     Width =6840
     DatasheetFontHeight =11
     ItemSuffix =42
-    Left =1785
-    Top =4860
-    Right =8565
-    Bottom =10335
+    Left =600
+    Top =5145
+    Right =7380
+    Bottom =10620
     DatasheetGridlinesColor =15921906
-    RecSrcDt = Begin
-        0xd861382f941be540
-    End
     RecordSource ="SELECT data_Photo.ID, data_Photo.PhotoActivityID, data_Photo.DateTaken, data_Pho"
         "to.PhotoDescriptionCodeID, data_Photo.IsLibraryPhotoID, data_Photo.OriginalFileP"
         "ath, data_Photo.RenamedFilePath, data_Photo.GPSUnitID, data_Photo.HorizontalDatu"

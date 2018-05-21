@@ -378,7 +378,7 @@ Const strcFormName As String = "sfrm_DischargeEstimated"
 
 Public Function RowCount() As Integer
 
-RowCount = Me.RecordsetClone.RecordCount
+RowCount = Me.RecordsetClone.recordCount
 
 End Function
 

@@ -324,7 +324,7 @@ Option Explicit
 
 Private Function displayEntryForm()
 Me.Parent.sfrmEntry.Form.Visible = True
-Me.Parent.sfrmEntry.Form.DataEntry = False
+Me.Parent.sfrmEntry.Form.dataEntry = False
 Me.Parent.sfrmEntry.Form.cmdCancel.Visible = False
 Me.Parent.sfrmEntry.Form.cmdSave.Visible = False
 Me.Parent.sfrmEntry.Form.cmdEdit.Visible = True

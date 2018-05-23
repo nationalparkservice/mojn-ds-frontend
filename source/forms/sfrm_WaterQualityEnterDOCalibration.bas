@@ -14,10 +14,10 @@ Begin Form
     Width =5520
     DatasheetFontHeight =11
     ItemSuffix =23
-    Left =7905
-    Top =7830
-    Right =12720
-    Bottom =9555
+    Left =8655
+    Top =13635
+    Right =13470
+    Bottom =15360
     DatasheetGridlinesColor =15921906
     RecSrcDt = Begin
         0x17e2cd51901be540
@@ -609,13 +609,13 @@ Attribute VB_Creatable = True
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 Option Compare Database
-
+Const FRM_NAME = "sfrm_WaterQualityEnterDOCalibration"
 
 Public Function SaveRecord() As Boolean
 On Error GoTo Error_Handler
 
 'only save the record if the date matches the visit date
-If Me.txtCalibrationDate = Me.Parent.Parent!VisitDate Then
+If DataQualityOK() Then
     DoCmd.RunCommand acCmdSaveRecord
     SaveRecord = True
 'if there's no record to save, then return true but don't do anything
@@ -631,6 +631,43 @@ Error_Handler:
     MsgBox ("Record cannot be saved at this time. Make sure all fields are filled out correctly.")
     SaveRecord = False
     GoTo Exit_Procedure
+End Function
+
+Public Function DataQualityOK() As String
+On Error GoTo Error_Handler
+
+Dim rs As DAO.Recordset
+
+'If no data, return true and exit
+If Not Me.Dirty And RowCount() = 0 Then
+    DataQualityOK = ""
+    GoTo Exit_Procedure
+End If
+
+Set rs = Me.RecordsetClone
+
+'Valid data:
+'   all instruments are the same and match the instrument selected
+DataQualityOK = ""
+With rs
+    .MoveLast
+    .MoveFirst
+    Do Until .EOF
+        If !DOInstrumentID = Me.Parent!DOInstrumentID Then
+            DataQualityOK = DataQualityOK & ""
+                        (!DOInstrumentID <> 29) And _
+                        (!CalibrationDate = Me.Parent.Parent!txtVisitDate) And _
+                        (!CalibrationTime <= Me.Parent.Parent!txtStartTime)
+        .MoveNext
+    Loop
+End With
+
+Exit_Procedure:
+    Exit Function
+Error_Handler:
+    DataQualityOK = False
+    MsgBox "Form: " & FRM_NAME & vbNewLine & "Fxn: DataQualityOK" & vbNewLine & "Error #" & Err.Number & ": " & Err.Description, vbCritical
+    Resume Exit_Procedure
 End Function
 
 Private Sub cmdDelete_Click()

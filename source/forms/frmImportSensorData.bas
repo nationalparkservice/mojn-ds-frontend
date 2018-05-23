@@ -960,7 +960,7 @@ Private Sub cmdAcceptImport_Click()
         
         StatusBar "Finished."
         
-        SetupButtons
+        setupButtons
     End If
 
 Exit_Sub:
@@ -985,7 +985,7 @@ Private Sub cmdClear_Click()
     
     Me.Requery
     HeaderID = 0
-    SetupButtons
+    setupButtons
     
 Exit_Sub:
     Exit Sub
@@ -1020,7 +1020,7 @@ Private Sub cmdGetFileName_Click()
         ' Show the dialog box. If the .Show method returns True, the '
         ' user picked at least one file. If the .Show method returns '
         ' False, the user clicked Cancel. '
-        If .Show = True Then
+        If .show = True Then
             Me.txtFileName = .SelectedItems(1)
         End If
     End With
@@ -1029,7 +1029,7 @@ Private Sub cmdGetFileName_Click()
     Me.txtHeaderBlock = ""
     Me.Requery
     HeaderID = 0    ' Since the user chose a new file, let's reset the HeaderID so that the form will stop using any previously created Header record.
-    SetupButtons
+    setupButtons
 Exit_Sub:
     Exit Sub
     
@@ -1224,7 +1224,7 @@ Error_Handler:
     
 End Sub
 
-Private Sub SetupButtons()
+Private Sub setupButtons()
     SetupAcceptButton
     SetupImportButton
 End Sub

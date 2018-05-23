@@ -22,15 +22,14 @@ Begin Form
     Width =5775
     DatasheetFontHeight =11
     ItemSuffix =74
-    Left =2895
-    Top =2190
-    Right =8700
-    Bottom =10515
+    Left =6105
+    Top =3255
+    Right =11910
+    Bottom =11325
     DatasheetGridlinesColor =15921906
-    RecSrcDt = Begin
-        0xc744ac92f11be540
-    End
-    RecordSource ="ref_Personnel"
+    RecordSource ="SELECT ref_Personnel.*, ref_Personnel.PersonnelActiveID, ref_Personnel.Organizat"
+        "ion, ref_Personnel.Initials FROM ref_Personnel ORDER BY ref_Personnel.PersonnelA"
+        "ctiveID, ref_Personnel.Organization DESC , ref_Personnel.Initials; "
     Caption ="sfrmList"
     DatasheetFontName ="Calibri"
     FilterOnLoad =0
@@ -307,7 +306,7 @@ Begin Form
                     BorderColor =9211020
                     ForeColor =4144959
                     Name ="txtInfo"
-                    ControlSource ="Organization"
+                    ControlSource ="ref_Personnel.Organization"
                     OnClick ="[Event Procedure]"
                     GroupTable =1
                     GridlineColor =10921638
@@ -341,7 +340,7 @@ Begin Form
                     BorderColor =9211020
                     ForeColor =4144959
                     Name ="Initials"
-                    ControlSource ="Initials"
+                    ControlSource ="ref_Personnel.Initials"
                     GroupTable =1
                     GridlineColor =10921638
 
@@ -381,7 +380,7 @@ Option Explicit
 
 Private Function displayEntryForm()
 Me.Parent.sfrmEntry.Form.Visible = True
-Me.Parent.sfrmEntry.Form.DataEntry = False
+Me.Parent.sfrmEntry.Form.dataEntry = False
 Me.Parent.sfrmEntry.Form.cmdCancel.Visible = False
 Me.Parent.sfrmEntry.Form.cmdSave.Visible = False
 Me.Parent.sfrmEntry.Form.cmdEdit.Visible = True

@@ -11,7 +11,6 @@ Begin Form
     CloseButton = NotDefault
     DividingLines = NotDefault
     AllowAdditions = NotDefault
-    AllowEdits = NotDefault
     AllowDesignChanges = NotDefault
     ScrollBars =2
     BorderStyle =0
@@ -19,20 +18,30 @@ Begin Form
     DatasheetGridlinesBehavior =3
     GridX =24
     GridY =24
-    Width =5753
+    Width =6038
     DatasheetFontHeight =11
-    ItemSuffix =63
-    Left =5250
-    Top =4395
-    Right =11055
-    Bottom =10845
+    ItemSuffix =68
+    Left =-28470
+    Top =4065
+    Right =-22665
+    Bottom =12135
     DatasheetGridlinesColor =15921906
     RecSrcDt = Begin
-        0x8605953c901ae540
+        0x5363e024321de540
     End
-    RecordSource ="ref_SensorMostRecentActivity"
-    Caption ="sfrm_SensorList"
+    RecordSource ="SELECT data_CalibrationDO.ID, data_CalibrationDO.CalibrationDate, data_Calibrati"
+        "onDO.CalibrationTime, ref_WaterQualityInstrument.Label, ref_WaterQualityInstrume"
+        "nt.ID AS WaterQualityInstrumentID FROM ref_WaterQualityInstrument INNER JOIN dat"
+        "a_CalibrationDO ON ref_WaterQualityInstrument.ID = data_CalibrationDO.DOInstrume"
+        "ntID ORDER BY ref_WaterQualityInstrument.IsActive, data_CalibrationDO.Calibratio"
+        "nDate DESC , data_CalibrationDO.CalibrationTime DESC , ref_WaterQualityInstrumen"
+        "t.Label; "
+    Caption ="sfrmList"
     DatasheetFontName ="Calibri"
+    PrtMip = Begin
+        0x6801000068010000680100006801000000000000201c0000e010000001000000 ,
+        0x010000006801000000000000a10700000100000001000000
+    End
     FilterOnLoad =0
     ShowPageMargins =0
     DisplayOnSharePointSite =1
@@ -122,6 +131,23 @@ Begin Form
             GridlineThemeColorIndex =1
             GridlineShade =65.0
         End
+        Begin ComboBox
+            AddColon = NotDefault
+            BorderLineStyle =0
+            LabelX =-1800
+            FontSize =11
+            FontName ="Calibri"
+            AllowValueListEdits =1
+            InheritValueList =1
+            ThemeFontIndex =1
+            BackThemeColorIndex =1
+            BorderThemeColorIndex =1
+            BorderShade =65.0
+            ForeThemeColorIndex =2
+            ForeShade =50.0
+            GridlineThemeColorIndex =1
+            GridlineShade =65.0
+        End
         Begin Subform
             BorderLineStyle =0
             BorderThemeColorIndex =1
@@ -166,7 +192,7 @@ Begin Form
             GridlineShade =65.0
         End
         Begin FormHeader
-            Height =660
+            Height =1620
             BackColor =15921906
             Name ="FormHeader"
             AlternateBackThemeColorIndex =1
@@ -175,67 +201,157 @@ Begin Form
                 Begin Label
                     OverlapFlags =85
                     TextAlign =2
-                    Left =60
-                    Top =360
-                    Width =660
+                    Left =75
+                    Top =1260
+                    Width =3450
                     Height =300
                     BackColor =15527148
                     BorderColor =8355711
                     ForeColor =8355711
                     Name ="Label48"
-                    Caption ="#"
+                    Caption ="Instrument"
                     GridlineColor =10921638
-                    LayoutCachedLeft =60
-                    LayoutCachedTop =360
-                    LayoutCachedWidth =720
-                    LayoutCachedHeight =660
+                    LayoutCachedLeft =75
+                    LayoutCachedTop =1260
+                    LayoutCachedWidth =3525
+                    LayoutCachedHeight =1560
                     BackThemeColorIndex =-1
                 End
                 Begin Label
                     OverlapFlags =85
                     TextAlign =2
-                    Left =795
-                    Top =360
-                    Width =4920
+                    Left =3570
+                    Top =1260
+                    Width =2190
                     Height =300
                     BackColor =15527148
                     BorderColor =8355711
                     ForeColor =8355711
                     Name ="Label49"
-                    Caption ="Most recent activity"
+                    Caption ="Date"
                     GridlineColor =10921638
-                    LayoutCachedLeft =795
-                    LayoutCachedTop =360
-                    LayoutCachedWidth =5715
-                    LayoutCachedHeight =660
+                    LayoutCachedLeft =3570
+                    LayoutCachedTop =1260
+                    LayoutCachedWidth =5760
+                    LayoutCachedHeight =1560
                     BackThemeColorIndex =-1
                 End
                 Begin Label
                     FontItalic = NotDefault
                     OverlapFlags =85
                     TextAlign =2
-                    Width =5715
-                    Height =324
+                    Top =900
+                    Width =5760
+                    Height =330
                     BackColor =15527148
                     BorderColor =8355711
                     ForeColor =8355711
                     Name ="Label279"
-                    Caption ="Click on a sensor to view full details."
+                    Caption ="Click on an instrument to view full details."
                     GridlineColor =10921638
-                    LayoutCachedWidth =5715
-                    LayoutCachedHeight =324
+                    LayoutCachedTop =900
+                    LayoutCachedWidth =5760
+                    LayoutCachedHeight =1230
                     BackThemeColorIndex =-1
+                End
+                Begin ComboBox
+                    OverlapFlags =215
+                    IMESentenceMode =3
+                    Left =60
+                    Top =420
+                    Width =3840
+                    Height =315
+                    BoundColumn =1
+                    BorderColor =10921638
+                    ForeColor =2108188
+                    ColumnInfo ="\"\";\"\";\"10\";\"100\""
+                    Name ="cboInstrumentFilter"
+                    RowSourceType ="Table/Query"
+                    RowSource ="SELECT ref_WaterQualityInstrument.Label, ref_WaterQualityInstrument.ID FROM ref_"
+                        "WaterQualityInstrument ORDER BY ref_WaterQualityInstrument.IsActive, ref_WaterQu"
+                        "alityInstrument.Manufacturer, ref_WaterQualityInstrument.Model; "
+                    AfterUpdate ="[Event Procedure]"
+                    GridlineColor =10921638
+                    AllowValueListEdits =0
+
+                    LayoutCachedLeft =60
+                    LayoutCachedTop =420
+                    LayoutCachedWidth =3900
+                    LayoutCachedHeight =735
+                    Begin
+                        Begin Label
+                            OverlapFlags =93
+                            Left =60
+                            Top =120
+                            Width =2370
+                            Height =315
+                            BorderColor =8355711
+                            ForeColor =8355711
+                            Name ="Label67"
+                            Caption ="Filter by WQ instrument:"
+                            GridlineColor =10921638
+                            LayoutCachedLeft =60
+                            LayoutCachedTop =120
+                            LayoutCachedWidth =2430
+                            LayoutCachedHeight =435
+                        End
+                    End
+                End
+                Begin CommandButton
+                    OverlapFlags =85
+                    Left =4140
+                    Top =420
+                    Width =1560
+                    Height =300
+                    TabIndex =1
+                    Name ="cmdClearFilter"
+                    Caption ="Clear Filter"
+                    OnClick ="[Event Procedure]"
+                    LeftPadding =60
+                    TopPadding =45
+                    RightPadding =150
+                    BottomPadding =150
+                    GridlineColor =10921638
+
+                    LayoutCachedLeft =4140
+                    LayoutCachedTop =420
+                    LayoutCachedWidth =5700
+                    LayoutCachedHeight =720
+                    ForeTint =100.0
+                    Shape =0
+                    Gradient =0
+                    BackColor =14211288
+                    BackThemeColorIndex =-1
+                    BackTint =100.0
+                    BorderColor =9211020
+                    BorderThemeColorIndex =-1
+                    BorderTint =100.0
+                    HoverColor =14211288
+                    HoverThemeColorIndex =-1
+                    HoverTint =100.0
+                    PressedColor =14211288
+                    PressedThemeColorIndex =-1
+                    PressedShade =100.0
+                    HoverForeColor =0
+                    HoverForeTint =100.0
+                    PressedForeColor =0
+                    PressedForeTint =100.0
+                    Shadow =1
+                    QuickStyle =22
+                    QuickStyleMask =-117
+                    WebImagePaddingLeft =1
                 End
             End
         End
         Begin Section
             CanGrow = NotDefault
-            Height =720
+            Height =690
             BackColor =15921906
             Name ="Detail"
             OnClick ="[Event Procedure]"
             Begin
                 Begin TextBox
+                    Locked = NotDefault
                     CanGrow = NotDefault
                     FontUnderline = NotDefault
                     OverlapFlags =85
@@ -243,7 +359,7 @@ Begin Form
                     IMESentenceMode =3
                     Left =60
                     Top =60
-                    Width =660
+                    Width =3435
                     Height =600
                     ColumnWidth =3000
                     LeftMargin =90
@@ -252,15 +368,15 @@ Begin Form
                     BottomMargin =90
                     BorderColor =9211020
                     ForeColor =16711680
-                    Name ="sensorNumber"
-                    ControlSource ="SensorNumber"
+                    Name ="txtLabel"
+                    ControlSource ="Label"
                     OnClick ="[Event Procedure]"
                     GroupTable =1
                     GridlineColor =10921638
 
                     LayoutCachedLeft =60
                     LayoutCachedTop =60
-                    LayoutCachedWidth =720
+                    LayoutCachedWidth =3495
                     LayoutCachedHeight =660
                     LayoutGroup =1
                     BorderThemeColorIndex =-1
@@ -270,32 +386,28 @@ Begin Form
                     GroupTable =1
                 End
                 Begin TextBox
+                    Locked = NotDefault
                     CanGrow = NotDefault
                     OverlapFlags =85
                     TextAlign =2
                     IMESentenceMode =3
-                    Left =780
+                    Left =3555
                     Top =60
-                    Width =4935
+                    Width =2205
                     Height =600
                     ColumnWidth =3000
                     TabIndex =1
                     BorderColor =9211020
                     ForeColor =4210752
-                    Name ="txtSensorInfo"
-                    ControlSource ="=IIf(IsNull([MostRecentVisitDate]),\"No deployment or retrieval info.\",IIf(IsNu"
-                        "ll([SensorRetrieved]) Or [SensorRetrieved]=\"No Data\",\"Deployed at \" & [Sprin"
-                        "gName] & \" on \" & [MostRecentVisitDate] & \". No retrieval info.\",IIf([Sensor"
-                        "Retrieved]=\"Y\",\"Retrieved from \" & [SpringName] & \" on \" & [MostRecentVisi"
-                        "tDate] & \".\",IIf([SensorRetrieved]=\"N\",\"Unsuccessful retrieval attempt on \""
-                        " & [MostRecentVisitDate] & \".\",\"\"))))"
+                    Name ="txtInfo"
+                    ControlSource ="=[CalibrationDate] & \" \" & [CalibrationTime]"
                     OnClick ="[Event Procedure]"
                     GroupTable =1
                     GridlineColor =10921638
 
-                    LayoutCachedLeft =780
+                    LayoutCachedLeft =3555
                     LayoutCachedTop =60
-                    LayoutCachedWidth =5715
+                    LayoutCachedWidth =5760
                     LayoutCachedHeight =660
                     ColumnStart =1
                     ColumnEnd =1
@@ -325,49 +437,47 @@ Attribute VB_Exposed = False
 Option Compare Database
 Option Explicit
 
-Private Function displaySensorInfo()
-Me.Parent.sfrmSensor.Form.Visible = True
-Me.Parent.sfrmSensor.Form.dataEntry = False
-Me.Parent.sfrmSensor.Form.cmdCancel.Visible = False
-Me.Parent.sfrmSensor.Form.cmdSave.Visible = False
-Me.Parent.sfrmSensor.Form.cmdEdit.Visible = True
-Me.Parent.sfrmSensor.Form.cmdSave.Top = Me.Parent.sfrmSensor.Form.cmdEdit.Top
-Me.Parent.sfrmSensor.Form.cmdSave.Left = Me.Parent.sfrmSensor.Form.cmdEdit.Left
+Private Sub cboInstrumentFilter_AfterUpdate()
 
-If Me.Parent.sfrmSensor.Form!ID <> Me.SensorID Then
-    Me.Parent.sfrmSensor.Form.Visible = True
-    Me.Parent.sfrmSensor.Form.filter = "ID = " & Me.SensorID
-    Me.Parent.sfrmSensor.Form.FilterOn = True
-End If
-
-If IsNull(Me.MostRecentVisitDate) Then
-    Me.Parent.sfrmSensorAllDeployments.Form.Visible = False
+If Me.Parent.sfrmEntry.Form.hide Then
+    'Filter calibration list by WQ instrument
+    Me.filter = "WaterQualityInstrumentID = " & Me.cboInstrumentFilter
+    Me.FilterOn = True
 Else
-    Me.Parent.sfrmSensorAllDeployments.Form.Visible = True
-    Me.Parent.sfrmSensorAllDeployments.Form.filter = "SensorID = " & Me.SensorID
-    Me.Parent.sfrmSensorAllDeployments.Form.FilterOn = True
+    Me.cboInstrumentFilter = Null
 End If
 
-End Function
 
+End Sub
 
+Private Sub cmdClearFilter_Click()
+
+If Me.Parent.sfrmEntry.Form.hide Then
+    'Clear the calibration list filter and show all calibrations
+    Me.FilterOn = False
+    Me.cboInstrumentFilter = Null
+End If
+
+End Sub
 
 Private Sub Detail_Click()
 
-displaySensorInfo
+'Make detail/data entry form visible and display the calibration that was just clicked in the list
+Me.Parent.sfrmEntry.Form.show dataViewMode, Me.ID
 
 End Sub
 
 
-Private Sub sensorNumber_Click()
+Private Sub txtInfo_Click()
 
-displaySensorInfo
+'Make detail/data entry form visible and display the calibration that was just clicked in the list
+Me.Parent.sfrmEntry.Form.show dataViewMode, Me.ID
 
 End Sub
 
+Private Sub txtLabel_Click()
 
-Private Sub txtSensorInfo_Click()
-
-displaySensorInfo
+'Make detail/data entry form visible and display the calibration that was just clicked in the list
+Me.Parent.sfrmEntry.Form.show dataViewMode, Me.ID
 
 End Sub

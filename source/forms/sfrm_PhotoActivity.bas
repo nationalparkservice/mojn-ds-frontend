@@ -794,7 +794,7 @@ Private Sub cmdAddRepeatPhoto_Click()
 Me.sfrmPhotoEntry.Top = 0
 Me.sfrmPhotoEntry.Left = 0
 Me.sfrmPhotoEntry.Enabled = True
-Me.sfrmPhotoEntry.Form.DataEntry = True
+Me.sfrmPhotoEntry.Form.dataEntry = True
 Me.sfrmPhotoEntry.Visible = True
 Me.sfrmPhotoEntry.SetFocus
 Me.sfrmPhotoEntry.Form.cboPhotoDescriptionCode.SetFocus
@@ -870,7 +870,7 @@ ElseIf photoActivityExists Then
     Me.sfrmPhotoEntry.Visible = True
     Me.sfrmPhotoEntry.Top = 0
     Me.sfrmPhotoEntry.Left = 0
-    Me.sfrmPhotoEntry.Form.DataEntry = True
+    Me.sfrmPhotoEntry.Form.dataEntry = True
     Me.cmdAddRepeatPhoto.Enabled = True
 'If there is no photo activity record, disable photo data entry
 Else

@@ -574,7 +574,7 @@ Dim currentID As Integer
 DoCmd.RunCommand acCmdSaveRecord
 currentID = Me.ID
 swapButtons
-Me.DataEntry = False
+Me.dataEntry = False
 Me.AllowEdits = False
 Me.filter = "ID = " & currentID
 Me.FilterOn = True

@@ -22,10 +22,10 @@ Begin Form
     Width =12915
     DatasheetFontHeight =11
     ItemSuffix =282
-    Left =2640
-    Top =360
-    Right =15855
-    Bottom =11280
+    Left =5505
+    Top =510
+    Right =18720
+    Bottom =11430
     DatasheetGridlinesColor =15921906
     RecSrcDt = Begin
         0x923d7d3ed51be540
@@ -670,7 +670,7 @@ Option Explicit
 
 Private Sub cmdAddNew_Click()
 
-Me.sfrmEntry.Form.DataEntry = True
+Me.sfrmEntry.Form.dataEntry = True
 Me.sfrmEntry.Form.Visible = True
 Me.sfrmEntry.Form.swapButtons
 'Me.sfrmEntry.Form.cmdCancel.Visible = True

@@ -19,13 +19,13 @@ Begin Form
     Cycle =1
     GridX =24
     GridY =24
-    Width =12900
+    Width =12945
     DatasheetFontHeight =11
     ItemSuffix =282
-    Left =2970
-    Top =360
-    Right =16185
-    Bottom =11280
+    Left =2295
+    Top =300
+    Right =15510
+    Bottom =11220
     DatasheetGridlinesColor =15921906
     RecSrcDt = Begin
         0x923d7d3ed51be540
@@ -36,6 +36,7 @@ Begin Form
         0x6801000068010000680100006801000000000000201c0000e010000001000000 ,
         0x010000006801000000000000a10700000100000001000000
     End
+    OnLoad ="[Event Procedure]"
     AllowDatasheetView =0
     FilterOnLoad =0
     ShowPageMargins =0
@@ -339,9 +340,9 @@ Begin Form
                 Begin Label
                     OverlapFlags =93
                     TextAlign =2
-                    Left =-15
+                    Left =-60
                     Top =60
-                    Width =12915
+                    Width =13005
                     Height =660
                     FontSize =20
                     FontWeight =700
@@ -352,11 +353,11 @@ Begin Form
                     BorderColor =4281912
                     ForeColor =16777215
                     Name ="lblHeader"
-                    Caption ="Water Quality Instruments"
+                    Caption ="pH Calibration"
                     GridlineColor =10921638
-                    LayoutCachedLeft =-15
+                    LayoutCachedLeft =-60
                     LayoutCachedTop =60
-                    LayoutCachedWidth =12900
+                    LayoutCachedWidth =12945
                     LayoutCachedHeight =720
                     ThemeFontIndex =0
                     BorderThemeColorIndex =2
@@ -420,23 +421,24 @@ Begin Form
             Name ="Detail"
             Begin
                 Begin Subform
+                    Visible = NotDefault
                     CanGrow = NotDefault
                     OverlapFlags =215
                     OldBorderStyle =0
-                    Left =6660
+                    Left =6720
                     Top =660
                     Width =5925
-                    Height =4155
+                    Height =5820
                     TabIndex =1
                     BorderColor =10921638
                     Name ="sfrmEntry"
-                    SourceObject ="Form.sfrm_WaterQualityInstrument"
+                    SourceObject ="Form.sfrm_pHCalibrationNew"
                     GridlineColor =10921638
 
-                    LayoutCachedLeft =6660
+                    LayoutCachedLeft =6720
                     LayoutCachedTop =660
-                    LayoutCachedWidth =12585
-                    LayoutCachedHeight =4815
+                    LayoutCachedWidth =12645
+                    LayoutCachedHeight =6480
                 End
                 Begin Subform
                     CanGrow = NotDefault
@@ -447,7 +449,7 @@ Begin Form
                     Width =6060
                     Height =8325
                     Name ="sfrmList"
-                    SourceObject ="Form.sfrm_WaterQualityInstrumentList"
+                    SourceObject ="Form.sfrm_pHCalibrationList"
                     GridlineColor =10921638
 
                     LayoutCachedLeft =255
@@ -463,16 +465,16 @@ Begin Form
                     OverlapFlags =215
                     OldBorderStyle =0
                     Left =6675
-                    Top =4860
+                    Top =6540
                     Width =5925
-                    Height =4125
+                    Height =2445
                     TabIndex =2
                     BorderColor =10921638
                     Name ="sfrmVisits"
                     GridlineColor =10921638
 
                     LayoutCachedLeft =6675
-                    LayoutCachedTop =4860
+                    LayoutCachedTop =6540
                     LayoutCachedWidth =12600
                     LayoutCachedHeight =8985
                 End
@@ -605,18 +607,18 @@ Begin Form
                     BackStyle =1
                     OverlapFlags =215
                     TextAlign =2
-                    Left =420
+                    Left =345
                     Top =240
-                    Width =2355
+                    Width =2235
                     Height =360
                     FontSize =14
                     BackColor =15921906
                     Name ="lblList"
-                    Caption ="All WQ Instruments"
+                    Caption ="All pH Calibrations"
                     GridlineColor =10921638
-                    LayoutCachedLeft =420
+                    LayoutCachedLeft =345
                     LayoutCachedTop =240
-                    LayoutCachedWidth =2775
+                    LayoutCachedWidth =2580
                     LayoutCachedHeight =600
                     ThemeFontIndex =0
                     BackThemeColorIndex =-1
@@ -670,19 +672,49 @@ Option Explicit
 
 Private Sub cmdAddNew_Click()
 
-Me.sfrmEntry.Form.dataEntry = True
-Me.sfrmEntry.Form.Visible = True
-Me.sfrmEntry.Form.swapButtons
-'Me.sfrmEntry.Form.cmdCancel.Visible = True
-'Me.sfrmEntry.Form.cmdSave.Visible = True
-'Me.sfrmEntry.Form.cmdEdit.Visible = False
-Me.sfrmVisits.Visible = False
+Me.sfrmEntry.Form.show dataEntryMode
 
 End Sub
 
 
 Private Sub cmdCloseForm_Click()
 
-DoCmd.RunCommand acCmdCloseWindow
+If Me.sfrmEntry.Form.okToClose Then
+    DoCmd.RunCommand acCmdCloseWindow
+Else
+    MsgBox ("Please save, delete, or cancel out of the calibration being edited before you continue")
+End If
+
+End Sub
+
+Private Sub Form_Load()
+
+Dim strArgs() As String
+Dim calDate As String
+Dim calTime As String
+Dim wqInstrID As Integer
+
+If Not IsNull(Me.OpenArgs) Then
+    'Get date, time, and wq instrument from open args
+    strArgs = Split(Me.OpenArgs, ",")
+    calDate = "#" & strArgs(0) & "#"
+    calTime = "#" & strArgs(1) & "#"
+    wqInstrID = strArgs(2)
+    
+    'Set the details subform to data entry mode
+    Me.sfrmEntry.Form.show dataEntryMode
+    
+    'Use the date, time, and instrument ID that were passed through the open args as defaults
+    If Not IsNull(calDate) Then Me.sfrmEntry.Form!txtCalibrationDate.DefaultValue = calDate
+    If Not IsNull(calTime) Then Me.sfrmEntry.Form!txtCalibrationTime.DefaultValue = calTime
+    If Not IsNull(wqInstrID) Then
+        Me.sfrmEntry.Form!cboInstrumentID.DefaultValue = wqInstrID
+        Me.sfrmEntry.SetFocus
+        Me.sfrmEntry.Form!txtStandard.SetFocus
+    End If
+Else
+    'If open args are empty, hide the details form
+    Me.sfrmEntry.Form.hide
+End If
 
 End Sub

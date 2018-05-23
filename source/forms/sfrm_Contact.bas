@@ -22,12 +22,12 @@ Begin Form
     Width =6240
     DatasheetFontHeight =11
     ItemSuffix =89
-    Left =9300
-    Top =2190
-    Right =15225
-    Bottom =6675
+    Left =12510
+    Top =3255
+    Right =18180
+    Bottom =7485
     DatasheetGridlinesColor =15921906
-    Filter ="ID = 2"
+    Filter ="ID = 91"
     RecSrcDt = Begin
         0xc2e8f3c6f11be540
     End
@@ -814,7 +814,7 @@ Dim currentID As Integer
 DoCmd.RunCommand acCmdSaveRecord
 currentID = Me.ID
 swapButtons
-Me.DataEntry = False
+Me.dataEntry = False
 Me.AllowEdits = False
 Me.filter = "ID = " & currentID
 Me.FilterOn = True

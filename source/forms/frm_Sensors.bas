@@ -1068,7 +1068,7 @@ End Sub
 
 Private Sub cmdNewSensor_Click()
 
-Me.sfrmSensor.Form.DataEntry = True
+Me.sfrmSensor.Form.dataEntry = True
 Me.sfrmSensor.Form.Visible = True
 Me.sfrmSensor.Form.cmdCancel.Visible = True
 Me.sfrmSensor.Form.cmdSave.Visible = True

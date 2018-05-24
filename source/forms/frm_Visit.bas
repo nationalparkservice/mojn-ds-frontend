@@ -20,11 +20,11 @@ Begin Form
     GridY =24
     Width =16620
     DatasheetFontHeight =11
-    ItemSuffix =246
-    Left =315
-    Top =135
-    Right =16935
-    Bottom =11340
+    ItemSuffix =259
+    Left =3360
+    Top =375
+    Right =19980
+    Bottom =11925
     DatasheetGridlinesColor =15921906
     Filter ="ID = 3"
     RecSrcDt = Begin
@@ -304,12 +304,39 @@ Begin Form
             GridlineShade =65.0
         End
         Begin FormHeader
-            Height =1155
+            Height =1500
             BackColor =4281912
             Name ="FormHeader"
             AlternateBackThemeColorIndex =1
             AlternateBackShade =95.0
             Begin
+                Begin TextBox
+                    Enabled = NotDefault
+                    Locked = NotDefault
+                    TabStop = NotDefault
+                    OldBorderStyle =0
+                    OverlapFlags =93
+                    TextAlign =1
+                    BackStyle =0
+                    IMESentenceMode =3
+                    Left =60
+                    Width =12786
+                    Height =654
+                    ColumnOrder =6
+                    FontSize =24
+                    FontWeight =700
+                    BorderColor =10921638
+                    ForeColor =16777215
+                    Name ="txtSiteName"
+                    ControlSource ="Label"
+                    GridlineColor =10921638
+
+                    LayoutCachedLeft =60
+                    LayoutCachedWidth =12846
+                    LayoutCachedHeight =654
+                    ForeThemeColorIndex =-1
+                    ForeTint =100.0
+                End
                 Begin CommandButton
                     OverlapFlags =85
                     PictureType =2
@@ -356,7 +383,7 @@ Begin Form
                     Locked = NotDefault
                     TabStop = NotDefault
                     OldBorderStyle =0
-                    OverlapFlags =93
+                    OverlapFlags =95
                     TextAlign =1
                     BackStyle =0
                     IMESentenceMode =3
@@ -364,7 +391,7 @@ Begin Form
                     Top =660
                     Width =1527
                     Height =359
-                    ColumnOrder =4
+                    ColumnOrder =5
                     FontSize =14
                     FontWeight =700
                     TabIndex =1
@@ -385,33 +412,6 @@ Begin Form
                     ForeTint =100.0
                 End
                 Begin TextBox
-                    Enabled = NotDefault
-                    Locked = NotDefault
-                    TabStop = NotDefault
-                    OldBorderStyle =0
-                    OverlapFlags =95
-                    TextAlign =1
-                    BackStyle =0
-                    IMESentenceMode =3
-                    Left =60
-                    Width =12786
-                    Height =654
-                    ColumnOrder =5
-                    FontSize =24
-                    FontWeight =700
-                    BorderColor =10921638
-                    ForeColor =16777215
-                    Name ="txtSiteName"
-                    ControlSource ="Label"
-                    GridlineColor =10921638
-
-                    LayoutCachedLeft =60
-                    LayoutCachedWidth =12846
-                    LayoutCachedHeight =654
-                    ForeThemeColorIndex =-1
-                    ForeTint =100.0
-                End
-                Begin TextBox
                     Visible = NotDefault
                     Enabled = NotDefault
                     TabStop = NotDefault
@@ -422,7 +422,7 @@ Begin Form
                     Top =660
                     Width =348
                     Height =228
-                    ColumnOrder =3
+                    ColumnOrder =4
                     FontSize =8
                     TabIndex =4
                     BorderColor =10921638
@@ -450,7 +450,7 @@ Begin Form
                     Top =660
                     Width =300
                     Height =228
-                    ColumnOrder =2
+                    ColumnOrder =3
                     FontSize =8
                     TabIndex =5
                     BorderColor =10921638
@@ -471,7 +471,7 @@ Begin Form
                     Locked = NotDefault
                     TabStop = NotDefault
                     OldBorderStyle =0
-                    OverlapFlags =87
+                    OverlapFlags =95
                     TextAlign =1
                     BackStyle =0
                     IMESentenceMode =3
@@ -479,7 +479,7 @@ Begin Form
                     Top =660
                     Width =2115
                     Height =360
-                    ColumnOrder =1
+                    ColumnOrder =2
                     FontSize =14
                     FontWeight =700
                     TabIndex =2
@@ -500,14 +500,14 @@ Begin Form
                     Visible = NotDefault
                     Enabled = NotDefault
                     OldBorderStyle =0
-                    OverlapFlags =87
+                    OverlapFlags =95
                     BackStyle =0
                     IMESentenceMode =3
                     Left =12372
                     Top =660
                     Width =504
                     Height =228
-                    ColumnOrder =0
+                    ColumnOrder =1
                     FontSize =8
                     TabIndex =6
                     BorderColor =10921638
@@ -805,6 +805,145 @@ Begin Form
                     WebImagePaddingRight =1
                     WebImagePaddingBottom =1
                     Overlaps =1
+                End
+                Begin CommandButton
+                    OverlapFlags =247
+                    Left =12540
+                    Top =60
+                    Width =360
+                    Height =1320
+                    FontSize =8
+                    TabIndex =13
+                    ForeColor =4210752
+                    Name ="cmdEditSite"
+                    Caption ="Edit Visit Info"
+                    OnClick ="[Event Procedure]"
+                    Picture ="ic_action_edit.png"
+                    GridlineColor =10921638
+                    ImageData = Begin
+                        0x89504e470d0a1a0a0000000d4948445200000020000000200806000000737a7a ,
+                        0xf40000000473424954080808087c086488000000097048597300000dd700000d ,
+                        0xd70142289b780000001974455874536f667477617265007777772e696e6b7363 ,
+                        0x6170652e6f72679bee3c1a000001b8494441545885edd73f6814511006f0df1c ,
+                        0x872811b5506c42ba88850816228208a2d6420a3bad2c14b4122b3b0b91206a61 ,
+                        0x6365636123a885add86a20a220a829ad140b4122f8ef59ec0b771c7bbb97dc93 ,
+                        0x83908181e5ed7bf37d33dfec3c36524a26699d89a26f1058b70422623e223e47 ,
+                        0xc4bb8838dcb839a554d4711ba9cfffe0fcb0fd452b10117bb184e77dcb1ddc8a ,
+                        0x88d9ba33c50844c4655cc35f9cc005fcceafb7e0ea7f2310113bf0122f704355 ,
+                        0x8147f979c57ed41e2ea0f9757cc8a0b398c66b3cc426bcc7474cd79e1f137c3b ,
+                        0x6632e8332ce314f6e3278ee3fe30f0b108e875fb32aea0abea812fd885bb388d ,
+                        0xa9c638853eb584c799c42bdcc445ec6e8d55087cc5cf6609e61123c52b089eb0 ,
+                        0x80239819396641f08427abae6841f0a19f5a93776b87439f4544174ff10b8770 ,
+                        0xb466db128ea5943eb5c51bb4c64918110772f039bcc5257c2f058e6609704faf ,
+                        0xc45fb1073b55936fcd651fa907b02d673b78b59ec46209f0b61e3883a981b50e ,
+                        0x36ab6eb6376b2efb2812a834afebf63be366dd2a816a98f4837e53cdf67d25c1 ,
+                        0x9b083cd09b6ce7b45c28457b2022b6e68c0fa69416c6d6b8c522673c315b9fff ,
+                        0x051b045663ff0055c239bbf4de7ad50000000049454e44ae426082
+                    End
+
+                    LayoutCachedLeft =12540
+                    LayoutCachedTop =60
+                    LayoutCachedWidth =12900
+                    LayoutCachedHeight =1380
+                    Gradient =0
+                    BackColor =5072450
+                    BackThemeColorIndex =-1
+                    BackTint =100.0
+                    BorderColor =8355711
+                    BorderThemeColorIndex =1
+                    BorderTint =100.0
+                    BorderShade =50.0
+                    HoverColor =8890489
+                    HoverThemeColorIndex =2
+                    HoverTint =60.0
+                    PressedColor =8890489
+                    PressedThemeColorIndex =2
+                    PressedTint =60.0
+                    PressedShade =100.0
+                    HoverForeColor =4210752
+                    PressedForeColor =4210752
+                    WebImagePaddingLeft =2
+                    WebImagePaddingTop =2
+                    WebImagePaddingRight =1
+                    WebImagePaddingBottom =1
+                    Overlaps =1
+                End
+                Begin ComboBox
+                    Locked = NotDefault
+                    TabStop = NotDefault
+                    OldBorderStyle =0
+                    OverlapFlags =95
+                    TextAlign =1
+                    BackStyle =0
+                    IMESentenceMode =3
+                    Left =1500
+                    Top =1020
+                    Width =5040
+                    Height =390
+                    ColumnOrder =0
+                    FontSize =14
+                    FontWeight =700
+                    TabIndex =12
+                    BoundColumn =1
+                    BorderColor =10921638
+                    ForeColor =16777215
+                    ColumnInfo ="\"\";\"\";\"10\";\"400\""
+                    Name ="cboProtocol"
+                    ControlSource ="ProtocolID"
+                    RowSourceType ="Table/Query"
+                    RowSource ="SELECT ref_Protocol.ProtocolName, ref_Protocol.ID FROM ref_Protocol; "
+                    GridlineColor =10921638
+                    AllowValueListEdits =0
+
+                    LayoutCachedLeft =1500
+                    LayoutCachedTop =1020
+                    LayoutCachedWidth =6540
+                    LayoutCachedHeight =1410
+                    ForeThemeColorIndex =-1
+                    ForeShade =100.0
+                End
+                Begin Rectangle
+                    SpecialEffect =0
+                    BackStyle =1
+                    OldBorderStyle =0
+                    OverlapFlags =247
+                    Left =6240
+                    Top =900
+                    Width =540
+                    Height =600
+                    BackColor =4281912
+                    BorderColor =10921638
+                    Name ="Box257"
+                    GridlineColor =10921638
+                    LayoutCachedLeft =6240
+                    LayoutCachedTop =900
+                    LayoutCachedWidth =6780
+                    LayoutCachedHeight =1500
+                    BackThemeColorIndex =-1
+                End
+                Begin Label
+                    OverlapFlags =87
+                    TextAlign =1
+                    Left =60
+                    Top =1020
+                    Width =1260
+                    Height =360
+                    FontSize =14
+                    FontWeight =700
+                    BorderColor =10921638
+                    ForeColor =16777215
+                    Name ="Text258"
+                    Caption ="Protocol:"
+                    GridlineColor =10921638
+                    LayoutCachedLeft =60
+                    LayoutCachedTop =1020
+                    LayoutCachedWidth =1320
+                    LayoutCachedHeight =1380
+                    BorderThemeColorIndex =1
+                    BorderTint =100.0
+                    BorderShade =65.0
+                    ForeThemeColorIndex =-1
+                    ForeTint =100.0
                 End
             End
         End
@@ -2123,10 +2262,20 @@ Public defaultUTMZone As Variant
 Sub Initialize()
 
 currentTabNumber = 0
+
 defaultWQInstrument = ""
 defaultGPSUnit = ""
 defaultDatum = ""
 defaultUTMZone = ""
+
+End Sub
+
+
+
+Private Sub cmdEditSite_Click()
+
+DoCmd.OpenForm "frm_ChangeSite", , , "ID = " & Me.ID, , acDialog
+Me.Form.Requery
 
 End Sub
 

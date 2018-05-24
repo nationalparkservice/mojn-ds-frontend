@@ -5,11 +5,12 @@ Begin Form
     RecordSelectors = NotDefault
     NavigationButtons = NotDefault
     AllowDeletions = NotDefault
+    CloseButton = NotDefault
     DividingLines = NotDefault
     AllowAdditions = NotDefault
-    FilterOn = NotDefault
     AllowDesignChanges = NotDefault
     DefaultView =0
+    ScrollBars =0
     PictureAlignment =2
     DatasheetGridlinesBehavior =3
     Cycle =1
@@ -17,7 +18,7 @@ Begin Form
     GridY =24
     Width =6420
     DatasheetFontHeight =11
-    ItemSuffix =4
+    ItemSuffix =5
     Left =9285
     Top =4770
     Right =15960
@@ -177,12 +178,31 @@ Begin Form
             GridlineShade =65.0
         End
         Begin FormHeader
-            Height =360
+            Height =480
             BackColor =4281912
             Name ="FormHeader"
-            AutoHeight =1
             AlternateBackThemeColorIndex =1
             AlternateBackShade =95.0
+            Begin
+                Begin Label
+                    OverlapFlags =85
+                    Left =60
+                    Width =4320
+                    Height =480
+                    FontSize =18
+                    FontWeight =700
+                    BorderColor =8355711
+                    ForeColor =16777215
+                    Name ="Label4"
+                    Caption ="Change Basic Visit Info"
+                    GridlineColor =10921638
+                    LayoutCachedLeft =60
+                    LayoutCachedWidth =4380
+                    LayoutCachedHeight =480
+                    ForeThemeColorIndex =-1
+                    ForeTint =100.0
+                End
+            End
         End
         Begin Section
             Height =1800
@@ -451,7 +471,9 @@ Option Compare Database
 Const FORM_NAME = "frm_ChangeSite"
 
 Public Function DataQualityOK() As Boolean
-Me.cboProtocolID.SetFocus
+
+Me.cboProtocolID.SetFocus   'This is necessary to be able to access the text property of this control
+'Make sure all fields are filled in
 If IsNull(Me.cboSiteID) Or _
     IsNull(Me.txtVisitDate) Or _
     Me.txtVisitDate > Date Or _
@@ -468,12 +490,15 @@ End Function
 
 Private Sub cmdCancelSite_Click()
 
+'Undo changes and close window
 If Me.Dirty Then Me.Undo
 DoCmd.RunCommand acCmdCloseWindow
 
 End Sub
 
 Private Sub cmdSaveSite_Click()
+
+'Make sure all fields are filled in, then save and close
 If DataQualityOK Then
     DoCmd.RunCommand acCmdSaveRecord
     DoCmd.RunCommand acCmdCloseWindow

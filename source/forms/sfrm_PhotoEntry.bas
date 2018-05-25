@@ -21,10 +21,10 @@ Begin Form
     Width =15540
     DatasheetFontHeight =11
     ItemSuffix =38
-    Left =2865
-    Top =16005
-    Right =18720
-    Bottom =23700
+    Left =2805
+    Top =2790
+    Right =18915
+    Bottom =10740
     DatasheetGridlinesColor =15921906
     RecSrcDt = Begin
         0x6227942e0e1be540
@@ -65,6 +65,16 @@ Begin Form
             BorderTint =50.0
             ForeThemeColorIndex =0
             ForeTint =50.0
+            GridlineThemeColorIndex =1
+            GridlineShade =65.0
+        End
+        Begin Rectangle
+            SpecialEffect =3
+            BackStyle =0
+            BorderLineStyle =0
+            BackThemeColorIndex =1
+            BorderThemeColorIndex =1
+            BorderShade =65.0
             GridlineThemeColorIndex =1
             GridlineShade =65.0
         End
@@ -1164,6 +1174,7 @@ End If
 Exit_Function:
     Exit Function
 Error_Handler:
+    MsgBox Err.Number & ": " & Err.Description
     Resume Exit_Function
 End Function
 

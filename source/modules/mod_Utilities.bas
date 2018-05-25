@@ -6,10 +6,18 @@ Option Explicit
 Const strcModName As String = "mod_Utilities"
 
 
-Public Function DeleteRecord(currentForm As Form, recordIsNew As Boolean)
+Public Function DeleteRecord(currentForm As Form, recordIsNew As Boolean, Optional suppressConfirmation As Boolean)
 On Error GoTo Error_Handler
 
-If MsgBox("Are you sure you want to delete this record?", vbYesNo) = vbYes Then
+Dim resp As Integer
+
+If Not IsNull(suppressConfirmation) And suppressConfirmation = True Then
+    resp = vbYes
+Else
+    resp = MsgBox("Are you sure you want to delete this record?", vbYesNo)
+End If
+
+If resp = vbYes Then
     If recordIsNew Then
         currentForm.Undo
     Else

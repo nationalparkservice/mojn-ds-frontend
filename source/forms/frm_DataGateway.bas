@@ -23,10 +23,10 @@ Begin Form
     Width =14400
     DatasheetFontHeight =11
     ItemSuffix =48
-    Left =6330
-    Top =2160
-    Right =20730
-    Bottom =10515
+    Left =4785
+    Top =1365
+    Right =19185
+    Bottom =9720
     DatasheetGridlinesColor =15921906
     Filter ="[ParkID] = 85"
     OrderBy ="SiteCode"

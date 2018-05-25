@@ -19,11 +19,14 @@ Begin Form
     Width =6840
     DatasheetFontHeight =11
     ItemSuffix =42
-    Left =600
-    Top =5145
-    Right =7380
-    Bottom =10620
+    Left =3105
+    Top =3870
+    Right =10140
+    Bottom =9600
     DatasheetGridlinesColor =15921906
+    RecSrcDt = Begin
+        0x79c6969e6f1ce540
+    End
     RecordSource ="SELECT data_Photo.ID, data_Photo.PhotoActivityID, data_Photo.DateTaken, data_Pho"
         "to.PhotoDescriptionCodeID, data_Photo.IsLibraryPhotoID, data_Photo.OriginalFileP"
         "ath, data_Photo.RenamedFilePath, data_Photo.GPSUnitID, data_Photo.HorizontalDatu"
@@ -367,9 +370,10 @@ Private Sub Disp_Image(path As String)
 
 If Me.Parent.imgCurrentPhoto.Picture <> path Then
     Me.Parent.imgCurrentPhoto.Picture = path
-    Me.Parent!sfrmPhotoInfo.Visible = True
     Me.Parent!sfrmPhotoInfo.Form.filter = "data_Photo.ID = " & Me.ID
     Me.Parent!sfrmPhotoInfo.Form.FilterOn = True
+    Me.Parent!sfrmPhotoInfo.Form!tabPhotoDetail = 0
+    Me.Parent!sfrmPhotoInfo.Visible = True
     Me.Parent.lblPhotoInstructions.Visible = False
 End If
 
@@ -385,6 +389,7 @@ If FileExists(Me.RenamedFilePath) Then
     Disp_Image Me.RenamedFilePath
 Else
     MsgBox ("Could not find photo on shared drive. Check your network connection. If photo is missing, talk to the data mangement team.")
+    Disp_Image ""
 End If
 
 End Sub

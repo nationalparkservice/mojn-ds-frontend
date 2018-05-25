@@ -6,7 +6,6 @@ Begin Form
     NavigationButtons = NotDefault
     DividingLines = NotDefault
     AllowAdditions = NotDefault
-    FilterOn = NotDefault
     AllowDesignChanges = NotDefault
     DefaultView =0
     ScrollBars =0
@@ -20,10 +19,10 @@ Begin Form
     Width =8055
     DatasheetFontHeight =11
     ItemSuffix =147
-    Left =10365
-    Top =7410
-    Right =18600
-    Bottom =10890
+    Left =8760
+    Top =5850
+    Right =16740
+    Bottom =9075
     DatasheetGridlinesColor =15921906
     Filter ="data_Photo.ID = 3"
     RecSrcDt = Begin
@@ -1147,6 +1146,12 @@ On Error GoTo Error_Handler
 Dim fso As FileSystemObject
 Dim resp As Integer
 Set fso = VBA.CreateObject("Scripting.FileSystemObject")
+
+'Make sure original photo file still exists. If not, prevent deletion.
+If Not fso.FileExists(Me.txtOriginalFilePath) Then
+    MsgBox ("This photo is missing from the originals folder. Because the copy in the Desert Springs data folder is the only known copy, it cannot be deleted. Please contact the data management team.")
+    GoTo Exit_Procedure
+End If
 
 'Prompt user to confirm delete
 resp = MsgBox("Are you sure you want to delete this photo from the shared drive and delete its data from the database?", vbYesNo)

@@ -21,10 +21,10 @@ Begin Form
     Width =16620
     DatasheetFontHeight =11
     ItemSuffix =259
-    Left =465
-    Top =90
-    Right =17085
-    Bottom =11640
+    Left =3135
+    Top =630
+    Right =19755
+    Bottom =12180
     DatasheetGridlinesColor =15921906
     Filter ="ID = 3"
     RecSrcDt = Begin
@@ -319,8 +319,8 @@ Begin Form
                     TextAlign =1
                     BackStyle =0
                     IMESentenceMode =3
-                    Left =60
-                    Width =12786
+                    Left =540
+                    Width =12426
                     Height =654
                     ColumnOrder =6
                     FontSize =24
@@ -331,8 +331,8 @@ Begin Form
                     ControlSource ="Label"
                     GridlineColor =10921638
 
-                    LayoutCachedLeft =60
-                    LayoutCachedWidth =12846
+                    LayoutCachedLeft =540
+                    LayoutCachedWidth =12966
                     LayoutCachedHeight =654
                     ForeThemeColorIndex =-1
                     ForeTint =100.0
@@ -387,7 +387,7 @@ Begin Form
                     TextAlign =1
                     BackStyle =0
                     IMESentenceMode =3
-                    Left =60
+                    Left =540
                     Top =660
                     Width =1527
                     Height =359
@@ -403,9 +403,9 @@ Begin Form
                     GridlineColor =10921638
                     ShowDatePicker =0
 
-                    LayoutCachedLeft =60
+                    LayoutCachedLeft =540
                     LayoutCachedTop =660
-                    LayoutCachedWidth =1587
+                    LayoutCachedWidth =2067
                     LayoutCachedHeight =1019
                     ThemeFontIndex =-1
                     ForeThemeColorIndex =-1
@@ -475,7 +475,7 @@ Begin Form
                     TextAlign =1
                     BackStyle =0
                     IMESentenceMode =3
-                    Left =1668
+                    Left =2148
                     Top =660
                     Width =2115
                     Height =360
@@ -489,9 +489,9 @@ Begin Form
                     ControlSource ="StartTime"
                     GridlineColor =10921638
 
-                    LayoutCachedLeft =1668
+                    LayoutCachedLeft =2148
                     LayoutCachedTop =660
-                    LayoutCachedWidth =3783
+                    LayoutCachedWidth =4263
                     LayoutCachedHeight =1020
                     ForeThemeColorIndex =-1
                     ForeTint =100.0
@@ -500,7 +500,7 @@ Begin Form
                     Visible = NotDefault
                     Enabled = NotDefault
                     OldBorderStyle =0
-                    OverlapFlags =95
+                    OverlapFlags =87
                     BackStyle =0
                     IMESentenceMode =3
                     Left =12372
@@ -807,11 +807,11 @@ Begin Form
                     Overlaps =1
                 End
                 Begin CommandButton
-                    OverlapFlags =247
-                    Left =12540
+                    OverlapFlags =85
+                    Left =60
                     Top =60
                     Width =360
-                    Height =1320
+                    Height =1383
                     FontSize =8
                     TabIndex =13
                     ForeColor =4210752
@@ -841,10 +841,10 @@ Begin Form
                         0x051b045663ff0055c239bbf4de7ad50000000049454e44ae426082
                     End
 
-                    LayoutCachedLeft =12540
+                    LayoutCachedLeft =60
                     LayoutCachedTop =60
-                    LayoutCachedWidth =12900
-                    LayoutCachedHeight =1380
+                    LayoutCachedWidth =420
+                    LayoutCachedHeight =1443
                     Gradient =0
                     BackColor =5072450
                     BackThemeColorIndex =-1
@@ -876,7 +876,7 @@ Begin Form
                     TextAlign =1
                     BackStyle =0
                     IMESentenceMode =3
-                    Left =1500
+                    Left =1980
                     Top =1020
                     Width =5040
                     Height =390
@@ -895,9 +895,9 @@ Begin Form
                     GridlineColor =10921638
                     AllowValueListEdits =0
 
-                    LayoutCachedLeft =1500
+                    LayoutCachedLeft =1980
                     LayoutCachedTop =1020
-                    LayoutCachedWidth =6540
+                    LayoutCachedWidth =7020
                     LayoutCachedHeight =1410
                     ForeThemeColorIndex =-1
                     ForeShade =100.0
@@ -907,7 +907,7 @@ Begin Form
                     BackStyle =1
                     OldBorderStyle =0
                     OverlapFlags =247
-                    Left =6240
+                    Left =6720
                     Top =900
                     Width =540
                     Height =600
@@ -915,16 +915,16 @@ Begin Form
                     BorderColor =10921638
                     Name ="Box257"
                     GridlineColor =10921638
-                    LayoutCachedLeft =6240
+                    LayoutCachedLeft =6720
                     LayoutCachedTop =900
-                    LayoutCachedWidth =6780
+                    LayoutCachedWidth =7260
                     LayoutCachedHeight =1500
                     BackThemeColorIndex =-1
                 End
                 Begin Label
                     OverlapFlags =87
                     TextAlign =1
-                    Left =60
+                    Left =540
                     Top =1020
                     Width =1260
                     Height =360
@@ -935,9 +935,9 @@ Begin Form
                     Name ="Text258"
                     Caption ="Protocol:"
                     GridlineColor =10921638
-                    LayoutCachedLeft =60
+                    LayoutCachedLeft =540
                     LayoutCachedTop =1020
-                    LayoutCachedWidth =1320
+                    LayoutCachedWidth =1800
                     LayoutCachedHeight =1380
                     BorderThemeColorIndex =1
                     BorderTint =100.0

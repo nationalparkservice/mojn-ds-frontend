@@ -19,14 +19,14 @@ Begin Form
     DatasheetGridlinesBehavior =3
     GridX =24
     GridY =24
-    Width =5753
+    Width =5760
     DatasheetFontHeight =11
     ItemSuffix =63
     Left =5250
     Top =4395
     Right =11055
     Bottom =10845
-    DatasheetGridlinesColor =15921906
+    DatasheetGridlinesColor =14806254
     RecSrcDt = Begin
         0x8605953c901ae540
     End
@@ -327,7 +327,7 @@ Option Explicit
 
 Private Function displaySensorInfo()
 Me.Parent.sfrmSensor.Form.Visible = True
-Me.Parent.sfrmSensor.Form.dataEntry = False
+Me.Parent.sfrmSensor.Form.DataEntry = False
 Me.Parent.sfrmSensor.Form.cmdCancel.Visible = False
 Me.Parent.sfrmSensor.Form.cmdSave.Visible = False
 Me.Parent.sfrmSensor.Form.cmdEdit.Visible = True

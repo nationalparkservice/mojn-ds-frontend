@@ -9,7 +9,6 @@ Begin Form
     NavigationButtons = NotDefault
     CloseButton = NotDefault
     DividingLines = NotDefault
-    FilterOn = NotDefault
     AllowEdits = NotDefault
     AllowDesignChanges = NotDefault
     DefaultView =0
@@ -18,14 +17,14 @@ Begin Form
     DatasheetGridlinesBehavior =3
     GridX =24
     GridY =24
-    Width =5453
+    Width =5460
     DatasheetFontHeight =11
     ItemSuffix =55
     Left =10560
     Top =3120
     Right =16230
     Bottom =5985
-    DatasheetGridlinesColor =15921906
+    DatasheetGridlinesColor =14806254
     Filter ="ID = 140"
     RecSrcDt = Begin
         0xb93e99ec55fbe440
@@ -574,7 +573,7 @@ Dim currentID As Integer
 DoCmd.RunCommand acCmdSaveRecord
 currentID = Me.ID
 swapButtons
-Me.dataEntry = False
+Me.DataEntry = False
 Me.AllowEdits = False
 Me.filter = "ID = " & currentID
 Me.FilterOn = True

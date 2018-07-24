@@ -24,7 +24,7 @@ Begin Form
     Top =3045
     Right =15375
     Bottom =8610
-    DatasheetGridlinesColor =15921906
+    DatasheetGridlinesColor =14806254
     RecSrcDt = Begin
         0x62e991c36e1de540
     End
@@ -178,7 +178,7 @@ Begin Form
                     Overlaps =1
                 End
                 Begin CommandButton
-                    OverlapFlags =95
+                    OverlapFlags =85
                     Left =2820
                     Top =4440
                     Width =1080
@@ -461,7 +461,7 @@ Begin Form
                 End
                 Begin CommandButton
                     Visible = NotDefault
-                    OverlapFlags =87
+                    OverlapFlags =85
                     Left =1560
                     Top =4440
                     Width =1080
@@ -921,17 +921,17 @@ If (IsNull(Me.ID) And Me.Dirty = False) Or _
     
     If mode = dataEntryMode Then
     'Allow data entry (i.e. add new record)
-        Me.dataEntry = True
+        Me.DataEntry = True
         Me.AllowEdits = True
         
     ElseIf mode = dataEditMode Then
     'Allow editing of existing data only
-        Me.dataEntry = False
+        Me.DataEntry = False
         Me.AllowEdits = True
         
     ElseIf mode = dataViewMode Then
     'Prevent data entry and editing - view only
-        Me.dataEntry = False
+        Me.DataEntry = False
         Me.AllowEdits = False
     
     End If

@@ -27,7 +27,7 @@ Begin Form
     Top =1725
     Right =14490
     Bottom =4995
-    DatasheetGridlinesColor =15921906
+    DatasheetGridlinesColor =14806254
     RecSrcDt = Begin
         0x34d1bf053810e540
     End

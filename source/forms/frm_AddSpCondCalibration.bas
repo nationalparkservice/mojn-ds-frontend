@@ -26,7 +26,7 @@ Begin Form
     Top =360
     Right =15630
     Bottom =11280
-    DatasheetGridlinesColor =15921906
+    DatasheetGridlinesColor =14806254
     RecSrcDt = Begin
         0x923d7d3ed51be540
     End
@@ -340,6 +340,7 @@ Begin Form
                 Begin Label
                     OverlapFlags =93
                     TextAlign =2
+                    TextFontFamily =18
                     Left =-45
                     Top =60
                     Width =12975
@@ -350,10 +351,11 @@ Begin Form
                     TopMargin =45
                     RightMargin =45
                     BottomMargin =45
-                    BorderColor =4281912
+                    BorderColor =8210719
                     ForeColor =16777215
                     Name ="lblHeader"
                     Caption ="Specific Conductance Calibration"
+                    FontName ="Cambria"
                     GridlineColor =10921638
                     LayoutCachedLeft =-45
                     LayoutCachedTop =60
@@ -367,6 +369,7 @@ Begin Form
                 End
                 Begin CommandButton
                     OverlapFlags =215
+                    TextFontFamily =18
                     Left =11835
                     Top =135
                     Width =840
@@ -375,6 +378,7 @@ Begin Form
                     Name ="cmdCloseForm"
                     Caption ="Close"
                     OnClick ="[Event Procedure]"
+                    FontName ="Cambria"
                     GroupTable =2
                     LeftPadding =45
                     TopPadding =45
@@ -606,6 +610,7 @@ Begin Form
                     BackStyle =1
                     OverlapFlags =215
                     TextAlign =2
+                    TextFontFamily =18
                     Left =360
                     Top =240
                     Width =4320
@@ -614,6 +619,7 @@ Begin Form
                     BackColor =15921906
                     Name ="lblList"
                     Caption ="All Specific Conductance Calibrations"
+                    FontName ="Cambria"
                     GridlineColor =10921638
                     LayoutCachedLeft =360
                     LayoutCachedTop =240
@@ -630,6 +636,7 @@ Begin Form
                     BackStyle =1
                     OverlapFlags =215
                     TextAlign =2
+                    TextFontFamily =18
                     Left =6825
                     Top =240
                     Width =1035
@@ -638,6 +645,7 @@ Begin Form
                     BackColor =15921906
                     Name ="Label281"
                     Caption ="Details"
+                    FontName ="Cambria"
                     GridlineColor =10921638
                     LayoutCachedLeft =6825
                     LayoutCachedTop =240

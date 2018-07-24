@@ -23,7 +23,7 @@ Begin Form
     Top =4770
     Right =15960
     Bottom =7335
-    DatasheetGridlinesColor =15921906
+    DatasheetGridlinesColor =14806254
     Filter ="ID = 1"
     RecSrcDt = Begin
         0x5f6feb25751de540

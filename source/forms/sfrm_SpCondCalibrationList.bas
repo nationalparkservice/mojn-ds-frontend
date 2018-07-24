@@ -25,7 +25,10 @@ Begin Form
     Top =3105
     Right =8820
     Bottom =11175
-    DatasheetGridlinesColor =15921906
+    DatasheetGridlinesColor =14806254
+    RecSrcDt = Begin
+        0x3a89cc459321e540
+    End
     RecordSource ="SELECT data_CalibrationSpCond.ID, data_CalibrationSpCond.CalibrationDate, data_C"
         "alibrationSpCond.CalibrationTime, ref_WaterQualityInstrument.Label, ref_WaterQua"
         "lityInstrument.ID AS WaterQualityInstrumentID FROM data_CalibrationSpCond INNER "
@@ -260,7 +263,7 @@ Begin Form
                     Height =315
                     BoundColumn =1
                     BorderColor =10921638
-                    ForeColor =2108188
+                    ForeColor =4138256
                     ColumnInfo ="\"\";\"\";\"10\";\"100\""
                     Name ="cboInstrumentFilter"
                     RowSourceType ="Table/Query"

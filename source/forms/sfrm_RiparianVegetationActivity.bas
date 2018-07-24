@@ -25,7 +25,7 @@ Begin Form
     Top =450
     Right =19305
     Bottom =9435
-    DatasheetGridlinesColor =15921906
+    DatasheetGridlinesColor =14806254
     RecSrcDt = Begin
         0x51f3cbe4ac15e540
     End
@@ -829,7 +829,7 @@ End Sub
 Private Sub Form_BeforeUpdate(Cancel As Integer)
 
     'Requery the DPL date text box to force the date to show
-    Me.txtdataprocessingleveldate.Requery
+    Me.txtDataProcessingLevelDate.Requery
 
 End Sub
 

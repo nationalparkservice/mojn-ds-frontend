@@ -275,7 +275,7 @@ Begin Form
                     Overlaps =1
                 End
                 Begin CommandButton
-                    OverlapFlags =223
+                    OverlapFlags =95
                     Left =1200
                     Top =7740
                     Width =1260

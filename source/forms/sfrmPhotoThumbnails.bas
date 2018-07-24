@@ -15,7 +15,10 @@ Begin Form
     Width =11520
     DatasheetFontHeight =11
     ItemSuffix =30
-    DatasheetGridlinesColor =15921906
+    DatasheetGridlinesColor =14806254
+    RecSrcDt = Begin
+        0x562a32469321e540
+    End
     RecordSource ="SELECT [data_Photo].[ID], [data_Photo].[PhotoActivityID], [data_Photo].[DateTake"
         "n], [data_Photo].[PhotoDescriptionCodeID], [data_Photo].[IsLibraryPhotoID], [dat"
         "a_Photo].[OriginalFilePath], [data_Photo].[RenamedFilePath], [data_Photo].[GPSUn"

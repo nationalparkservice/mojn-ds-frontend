@@ -9,7 +9,6 @@ Begin Form
     NavigationButtons = NotDefault
     CloseButton = NotDefault
     DividingLines = NotDefault
-    FilterOn = NotDefault
     AllowEdits = NotDefault
     AllowDesignChanges = NotDefault
     DefaultView =0
@@ -26,7 +25,7 @@ Begin Form
     Top =3255
     Right =18180
     Bottom =7485
-    DatasheetGridlinesColor =15921906
+    DatasheetGridlinesColor =14806254
     Filter ="ID = 91"
     RecSrcDt = Begin
         0xc2e8f3c6f11be540
@@ -132,7 +131,7 @@ Begin Form
             GridlineShade =65.0
         End
         Begin FormHeader
-            Height =397
+            Height =399
             BackColor =15921906
             Name ="FormHeader"
             AutoHeight =1
@@ -396,7 +395,7 @@ Begin Form
                 End
                 Begin CommandButton
                     Visible = NotDefault
-                    OverlapFlags =95
+                    OverlapFlags =85
                     Left =2940
                     Top =3000
                     Width =1080
@@ -814,7 +813,7 @@ Dim currentID As Integer
 DoCmd.RunCommand acCmdSaveRecord
 currentID = Me.ID
 swapButtons
-Me.dataEntry = False
+Me.DataEntry = False
 Me.AllowEdits = False
 Me.filter = "ID = " & currentID
 Me.FilterOn = True

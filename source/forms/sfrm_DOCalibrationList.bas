@@ -25,7 +25,7 @@ Begin Form
     Top =4065
     Right =-22665
     Bottom =12135
-    DatasheetGridlinesColor =15921906
+    DatasheetGridlinesColor =14806254
     RecSrcDt = Begin
         0x5363e024321de540
     End
@@ -263,7 +263,7 @@ Begin Form
                     Height =315
                     BoundColumn =1
                     BorderColor =10921638
-                    ForeColor =2108188
+                    ForeColor =4138256
                     ColumnInfo ="\"\";\"\";\"10\";\"100\""
                     Name ="cboInstrumentFilter"
                     RowSourceType ="Table/Query"

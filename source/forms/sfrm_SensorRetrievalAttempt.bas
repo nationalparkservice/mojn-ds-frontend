@@ -23,7 +23,7 @@ Begin Form
     Top =5025
     Right =16980
     Bottom =10410
-    DatasheetGridlinesColor =15921906
+    DatasheetGridlinesColor =14806254
     AfterInsert ="[Event Procedure]"
     RecSrcDt = Begin
         0x033976c5b515e540

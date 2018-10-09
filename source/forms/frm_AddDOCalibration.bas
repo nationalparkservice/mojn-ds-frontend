@@ -370,10 +370,10 @@ Begin Form
                 Begin CommandButton
                     OverlapFlags =215
                     TextFontFamily =18
-                    Left =11835
-                    Top =135
+                    Left =11832
+                    Top =132
                     Width =840
-                    Height =405
+                    Height =408
                     FontWeight =700
                     Name ="cmdCloseForm"
                     Caption ="Close"
@@ -386,9 +386,9 @@ Begin Form
                     BottomPadding =150
                     GridlineColor =10921638
 
-                    LayoutCachedLeft =11835
-                    LayoutCachedTop =135
-                    LayoutCachedWidth =12675
+                    LayoutCachedLeft =11832
+                    LayoutCachedTop =132
+                    LayoutCachedWidth =12672
                     LayoutCachedHeight =540
                     LayoutGroup =1
                     ForeThemeColorIndex =-1
@@ -414,6 +414,10 @@ Begin Form
                     Shadow =1
                     QuickStyle =22
                     QuickStyleMask =-1013
+                    WebImagePaddingLeft =1
+                    WebImagePaddingTop =1
+                    WebImagePaddingRight =3
+                    WebImagePaddingBottom =3
                     Overlaps =1
                 End
             End
@@ -562,7 +566,10 @@ Begin Form
                     Shadow =1
                     QuickStyle =22
                     QuickStyleMask =-117
-                    WebImagePaddingLeft =1
+                    WebImagePaddingLeft =2
+                    WebImagePaddingTop =1
+                    WebImagePaddingRight =3
+                    WebImagePaddingBottom =3
                     Overlaps =1
                 End
                 Begin Rectangle

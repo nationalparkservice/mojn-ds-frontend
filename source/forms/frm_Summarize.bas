@@ -21,10 +21,10 @@ Begin Form
     Width =14400
     DatasheetFontHeight =9
     ItemSuffix =40
-    Left =855
-    Top =420
-    Right =15150
-    Bottom =9195
+    Left =3045
+    Top =1680
+    Right =17340
+    Bottom =10455
     DatasheetGridlinesColor =12632256
     RecSrcDt = Begin
         0x2680758ff389e340
@@ -113,8 +113,8 @@ Begin Form
                     Name ="cboPickQuery"
                     RowSourceType ="Table/Query"
                     RowSource ="SELECT MSysObjects.Name, MSysObjects.Type, * FROM MSysObjects WHERE (((MSysObjec"
-                        "ts.Name) Like \"qfrm_*\") AND ((MSysObjects.Type)=5)) ORDER BY MSysObjects.Name;"
-                        " "
+                        "ts.Name) Like \"analysis_*\") AND ((MSysObjects.Type)=4)) ORDER BY MSysObjects.N"
+                        "ame; "
                     ColumnWidths ="5760"
                     AfterUpdate ="[Event Procedure]"
                     FontName ="Calibri"
@@ -275,7 +275,7 @@ Begin Form
                     Overlaps =1
                 End
                 Begin CommandButton
-                    OverlapFlags =95
+                    OverlapFlags =223
                     Left =1200
                     Top =7740
                     Width =1260
@@ -390,7 +390,6 @@ Begin Form
                     ForeColor =0
                     Name ="cmdExport_All_Data"
                     Caption ="Export All Data"
-                    OnClick ="[Event Procedure]"
                     FontName ="Franklin Gothic Book"
                     ControlTipText ="Export All Data to Excel or CSV"
                     LeftPadding =60
@@ -522,22 +521,22 @@ Private Sub cboPickQuery_AfterUpdate()
         GoTo Exit_Procedure
     End If
 
-    Dim qdf As DAO.QueryDef
-    Dim qdfs As DAO.QueryDefs
-    Set qdfs = DBEngine(0)(0).QueryDefs
+    'Dim qdf As DAO.QueryDef
+    'Dim qdfs As DAO.QueryDefs
+    'Set qdfs = DBEngine(0)(0).QueryDefs
 
     On Error GoTo Err_Handler
     ' Bind the subform to the newly-selected object
     Me.subResults.Enabled = True
     Me.subResults.Visible = True
-    Me.subResults.SourceObject = "Query." & Me.cboPickQuery.Value
+    Me.subResults.SourceObject = "Table." & Me.cboPickQuery.Value
 
     ' Set focus to the subform to allow scrolling, etc.
     Me.subResults.SetFocus
 
 Exit_Procedure:
     On Error Resume Next
-    Set qdfs = Nothing
+    'Set qdfs = Nothing
     Exit Sub
 Err_Handler:
     Select Case Err.Number
@@ -547,61 +546,5 @@ Err_Handler:
       Case Else
         MsgBox "Error #" & Err.Number & ": " & Err.Description, vbCritical
     End Select
-    Resume Exit_Procedure
-End Sub
-
-Private Sub cmdExport_All_Data_Click()
-On Error GoTo Err_Handler
-'This routines exports all data to a single XLSX file as well as individual CSV files and is typically triggered from a button on the Data Summary form.
-    
-'    Dim strQryName(8, 2) As String
-'    Dim qNum As Integer
-'    Dim qDef As QueryDef
-'    Dim strParkName As String
-'    Dim strInitFile As String
-'    Dim strSaveFile As String
-'    Dim strSaveFolder As String
-'    Dim db As dao.Database
-'    Set db = CurrentDb
-'
-'    'Populate an array with the name of a query and the worksheet name to be used for the results of this query.
-'    strQryName(0, 0) = "qExport_Site_Visits"
-'    strQryName(0, 1) = "0Site_Visits"
-'    strQryName(1, 0) = "qExport_WaterQuantity"
-'    strQryName(1, 1) = "1WaterQuantity"
-'    strQryName(2, 0) = "qExport_WaterQuality"
-'    strQryName(2, 1) = "2WaterQuality"
-'    strQryName(3, 0) = "qExport_Disturbance"
-'    strQryName(3, 1) = "3Disturbance"
-'    strQryName(4, 0) = "qExport_Wildlife"
-'    strQryName(4, 1) = "4Wildlife"
-'    strQryName(5, 0) = "qExport_Riparian"
-'    strQryName(5, 1) = "5Riparian"
-'    strQryName(6, 0) = "qExport_Invasives"
-'    strQryName(6, 1) = "6Invasives"
-'    strQryName(7, 0) = "qExport_WaterQuality_Sum"
-'    strQryName(7, 1) = "7WaterQualitySummary"
-'
-'    'Generate the default output file name and allow user to edit it
-'    strInitFile = Application.CurrentProject.Path & "\Exports\MOJN_DS_All_Data_" & CStr(Format(Now(), "yyyymmdd")) & ".xlsx"
-'    strSaveFile = fxnSaveFile(strInitFile, "Microsoft Excel (*.xls*)", "*.xls*")
-'    strSaveFolder = fPathParsing(strSaveFile, "D")
-'
-'    'Cycle through queries and create an worksheet tab for each one
-'    For qNum = 0 To 7
-'        Set qDef = db.CreateQueryDef(strQryName(qNum, 1), CurrentDb.QueryDefs(strQryName(qNum, 0)).SQL)
-'        'Export each parameter to a seperate worksheet in an XLSX workbook (SpreadsheetType = '10' for .XLSX)
-'        DoCmd.TransferSpreadsheet acExport, 10, strQryName(qNum, 1), strSaveFile, True
-'        'Export each parameter to a seperate CSV file.
-'        DoCmd.TransferText acExportDelim, , strQryName(qNum, 1), strSaveFolder & "\" & strQryName(qNum, 1) & "_" & CStr(Format(Now(), "yyyymmdd")) & ".csv", True
-'        DoCmd.DeleteObject acQuery, strQryName(qNum, 1)
-'    Next
-'
-'    MsgBox "File saved to:" & vbCrLf & vbCrLf & strSaveFile
-
-Exit_Procedure:
-    Exit Sub
-Err_Handler:
-    MsgBox Err.Description
     Resume Exit_Procedure
 End Sub

@@ -723,10 +723,10 @@ Begin Form
                     PressedShade =100.0
                     HoverForeColor =4210752
                     PressedForeColor =4210752
-                    WebImagePaddingLeft =2
-                    WebImagePaddingTop =2
-                    WebImagePaddingRight =1
-                    WebImagePaddingBottom =1
+                    WebImagePaddingLeft =3
+                    WebImagePaddingTop =3
+                    WebImagePaddingRight =2
+                    WebImagePaddingBottom =2
                     Overlaps =1
                 End
                 Begin CommandButton
@@ -762,10 +762,10 @@ Begin Form
                     PressedShade =100.0
                     HoverForeColor =4210752
                     PressedForeColor =4210752
-                    WebImagePaddingLeft =2
-                    WebImagePaddingTop =2
-                    WebImagePaddingRight =1
-                    WebImagePaddingBottom =1
+                    WebImagePaddingLeft =3
+                    WebImagePaddingTop =3
+                    WebImagePaddingRight =2
+                    WebImagePaddingBottom =2
                     Overlaps =1
                 End
             End

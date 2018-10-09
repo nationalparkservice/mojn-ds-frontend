@@ -175,7 +175,10 @@ Begin Form
                     Shadow =1
                     QuickStyle =22
                     QuickStyleMask =-117
-                    WebImagePaddingLeft =1
+                    WebImagePaddingLeft =2
+                    WebImagePaddingTop =1
+                    WebImagePaddingRight =3
+                    WebImagePaddingBottom =3
                     Overlaps =1
                 End
                 Begin CommandButton
@@ -219,7 +222,10 @@ Begin Form
                     Shadow =1
                     QuickStyle =22
                     QuickStyleMask =-117
-                    WebImagePaddingLeft =1
+                    WebImagePaddingLeft =2
+                    WebImagePaddingTop =1
+                    WebImagePaddingRight =3
+                    WebImagePaddingBottom =3
                     Overlaps =1
                 End
                 Begin CommandButton
@@ -263,7 +269,10 @@ Begin Form
                     Shadow =1
                     QuickStyle =22
                     QuickStyleMask =-117
-                    WebImagePaddingLeft =1
+                    WebImagePaddingLeft =2
+                    WebImagePaddingTop =1
+                    WebImagePaddingRight =3
+                    WebImagePaddingBottom =3
                     Overlaps =1
                 End
                 Begin TextBox
@@ -720,7 +729,10 @@ Begin Form
                     Shadow =1
                     QuickStyle =22
                     QuickStyleMask =-117
-                    WebImagePaddingLeft =1
+                    WebImagePaddingLeft =2
+                    WebImagePaddingTop =1
+                    WebImagePaddingRight =3
+                    WebImagePaddingBottom =3
                     Overlaps =1
                 End
             End

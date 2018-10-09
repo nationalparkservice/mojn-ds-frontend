@@ -7,7 +7,6 @@ Begin Form
     AllowDeletions = NotDefault
     DividingLines = NotDefault
     AllowAdditions = NotDefault
-    FilterOn = NotDefault
     AllowDesignChanges = NotDefault
     PictureAlignment =2
     DatasheetGridlinesBehavior =3
@@ -20,7 +19,7 @@ Begin Form
     Top =3600
     Right =18300
     Bottom =8610
-    DatasheetGridlinesColor =15921906
+    DatasheetGridlinesColor =14806254
     Filter ="-1"
     RecSrcDt = Begin
         0x2f6228768e15e540

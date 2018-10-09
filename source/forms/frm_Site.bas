@@ -23,8 +23,8 @@ Begin Form
     Top =1500
     Right =10995
     Bottom =11145
-    DatasheetGridlinesColor =15921906
-    Filter ="ID = 80"
+    DatasheetGridlinesColor =14806254
+    Filter ="ID = 305"
     RecSrcDt = Begin
         0x21ee4da5f217e540
     End

@@ -59,7 +59,7 @@ Public Function fxnDPLUpdate(FormToUpdate As Form) As Boolean
     intDPLNew = FormToUpdate.cboDataProcessingLevelID.Value
 
     'Check to see if comment box is null; an explanation is required if DPL goes from Provisional back to Raw
-    If Not IsNull(FormToUpdate.txtdataprocessinglevelnote) Then
+    If Not IsNull(FormToUpdate.txtDataProcessingLevelNote) Then
         DPLNoteExists = True
     Else
         DPLNoteExists = False
@@ -69,13 +69,13 @@ Public Function fxnDPLUpdate(FormToUpdate As Form) As Boolean
     'DPL changed from Raw to Provisional
         Case 1 & 2
             fxnDPLUpdate = True
-            FormToUpdate.txtdataprocessingleveldate = Now
+            FormToUpdate.txtDataProcessingLevelDate = Now
     'DPL changed from Provisional to Accepted
         Case 2 & 3
             If MsgBox("Has data undergone all planned QA and QC PROCEDURES as defined in network published protocol and associated SOPs? " _
                 & "Are you sure you want to assign ""Accepted"" DPL status?", vbYesNo + vbExclamation, "Change Data Processing Level") = vbYes Then
                     fxnDPLUpdate = True
-                    FormToUpdate.txtdataprocessingleveldate = Now
+                    FormToUpdate.txtDataProcessingLevelDate = Now
             Else
               fxnDPLUpdate = False
             End If
@@ -84,7 +84,7 @@ Public Function fxnDPLUpdate(FormToUpdate As Form) As Boolean
             If MsgBox("Has data undergone all planned QA and QC PROCEDURES as defined in network published protocol and associated SOPs? " _
                 & "Are you sure you want to skip ""Provisional"" DPL status?", vbYesNo + vbExclamation, "Change Data Processing Level") = vbYes Then
                     fxnDPLUpdate = True
-                    FormToUpdate.txtdataprocessingleveldate = Now
+                    FormToUpdate.txtDataProcessingLevelDate = Now
             Else
               fxnDPLUpdate = False
             End If
@@ -95,7 +95,7 @@ Public Function fxnDPLUpdate(FormToUpdate As Form) As Boolean
             & "Do you want to proceed?", vbYesNo + vbExclamation, "Change Data Processing Level?")
                 If YesNo = vbYes Then
                     fxnDPLUpdate = True
-                    FormToUpdate.txtdataprocessingleveldate = Now
+                    FormToUpdate.txtDataProcessingLevelDate = Now
                 Else
                     fxnDPLUpdate = False
                 End If

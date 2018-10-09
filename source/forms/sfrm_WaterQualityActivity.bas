@@ -20,7 +20,7 @@ Begin Form
     Top =3195
     Right =16620
     Bottom =12180
-    DatasheetGridlinesColor =15921906
+    DatasheetGridlinesColor =14806254
     RecSrcDt = Begin
         0x19205bcaca15e540
     End
@@ -45,7 +45,6 @@ Begin Form
     ForeThemeColorIndex =0
     AlternateBackThemeColorIndex =1
     AlternateBackShade =95.0
-    ThemeName ="1_SVTestTheme"
     Begin
         Begin Label
             BackStyle =0
@@ -1650,7 +1649,7 @@ End Sub
 Private Sub Form_BeforeUpdate(Cancel As Integer)
 
     'Requery the DPL date text box to force the date to show
-    Me.txtdataprocessingleveldate.Requery
+    Me.txtDataProcessingLevelDate.Requery
 
 End Sub
 

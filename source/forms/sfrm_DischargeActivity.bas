@@ -9,7 +9,6 @@ Begin Form
     NavigationButtons = NotDefault
     CloseButton = NotDefault
     DividingLines = NotDefault
-    FilterOn = NotDefault
     AllowDesignChanges = NotDefault
     DefaultView =0
     ScrollBars =0
@@ -25,7 +24,7 @@ Begin Form
     Top =2550
     Right =20025
     Bottom =11790
-    DatasheetGridlinesColor =15921906
+    DatasheetGridlinesColor =14806254
     RecSrcDt = Begin
         0x372b2ba47615e540
     End
@@ -1111,7 +1110,7 @@ Private Sub Form_BeforeUpdate(Cancel As Integer)
 On Error GoTo Error_Handler
 
 'Requery the DPL date text box to force the date to show
-Me.txtdataprocessingleveldate.Requery
+Me.txtDataProcessingLevelDate.Requery
 
 Exit_Procedure:
     Exit Sub

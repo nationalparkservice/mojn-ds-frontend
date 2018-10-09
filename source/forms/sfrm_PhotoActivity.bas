@@ -20,7 +20,7 @@ Begin Form
     Top =3420
     Right =16575
     Bottom =12405
-    DatasheetGridlinesColor =15921906
+    DatasheetGridlinesColor =14806254
     RecSrcDt = Begin
         0xc208564c6c18e540
     End
@@ -421,7 +421,7 @@ Begin Form
                     Height =320
                     BoundColumn =1
                     BorderColor =9211020
-                    ForeColor =2108188
+                    ForeColor =4138256
                     ColumnInfo ="\"\";\"\";\"10\";\"50\""
                     Name ="cboPhotoSOPFilter"
                     RowSourceType ="Table/Query"
@@ -794,7 +794,7 @@ Private Sub cmdAddRepeatPhoto_Click()
 Me.sfrmPhotoEntry.Top = 0
 Me.sfrmPhotoEntry.Left = 0
 Me.sfrmPhotoEntry.Enabled = True
-Me.sfrmPhotoEntry.Form.dataEntry = True
+Me.sfrmPhotoEntry.Form.DataEntry = True
 Me.sfrmPhotoEntry.Visible = True
 Me.sfrmPhotoEntry.SetFocus
 Me.sfrmPhotoEntry.Form.cboPhotoDescriptionCode.SetFocus
@@ -870,7 +870,7 @@ ElseIf photoActivityExists Then
     Me.sfrmPhotoEntry.Visible = True
     Me.sfrmPhotoEntry.Top = 0
     Me.sfrmPhotoEntry.Left = 0
-    Me.sfrmPhotoEntry.Form.dataEntry = True
+    Me.sfrmPhotoEntry.Form.DataEntry = True
     Me.cmdAddRepeatPhoto.Enabled = True
 'If there is no photo activity record, disable photo data entry
 Else

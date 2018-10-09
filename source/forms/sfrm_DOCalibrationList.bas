@@ -25,7 +25,7 @@ Begin Form
     Top =4065
     Right =-22665
     Bottom =12135
-    DatasheetGridlinesColor =15921906
+    DatasheetGridlinesColor =14806254
     RecSrcDt = Begin
         0x5363e024321de540
     End
@@ -263,7 +263,7 @@ Begin Form
                     Height =315
                     BoundColumn =1
                     BorderColor =10921638
-                    ForeColor =2108188
+                    ForeColor =4138256
                     ColumnInfo ="\"\";\"\";\"10\";\"100\""
                     Name ="cboInstrumentFilter"
                     RowSourceType ="Table/Query"
@@ -339,7 +339,10 @@ Begin Form
                     Shadow =1
                     QuickStyle =22
                     QuickStyleMask =-117
-                    WebImagePaddingLeft =1
+                    WebImagePaddingLeft =2
+                    WebImagePaddingTop =1
+                    WebImagePaddingRight =3
+                    WebImagePaddingBottom =3
                 End
             End
         End
@@ -391,9 +394,9 @@ Begin Form
                     OverlapFlags =85
                     TextAlign =2
                     IMESentenceMode =3
-                    Left =3555
+                    Left =3564
                     Top =60
-                    Width =2205
+                    Width =2208
                     Height =600
                     ColumnWidth =3000
                     TabIndex =1
@@ -405,9 +408,9 @@ Begin Form
                     GroupTable =1
                     GridlineColor =10921638
 
-                    LayoutCachedLeft =3555
+                    LayoutCachedLeft =3564
                     LayoutCachedTop =60
-                    LayoutCachedWidth =5760
+                    LayoutCachedWidth =5772
                     LayoutCachedHeight =660
                     ColumnStart =1
                     ColumnEnd =1

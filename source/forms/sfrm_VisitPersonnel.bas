@@ -8,7 +8,6 @@ Begin Form
     NavigationButtons = NotDefault
     CloseButton = NotDefault
     DividingLines = NotDefault
-    FilterOn = NotDefault
     AllowDesignChanges = NotDefault
     ScrollBars =2
     BorderStyle =0
@@ -23,7 +22,7 @@ Begin Form
     Top =5385
     Right =9705
     Bottom =8805
-    DatasheetGridlinesColor =15921906
+    DatasheetGridlinesColor =14806254
     RecSrcDt = Begin
         0x2f831d1f9d15e540
     End

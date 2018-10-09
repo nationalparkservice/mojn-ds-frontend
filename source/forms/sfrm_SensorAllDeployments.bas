@@ -11,7 +11,6 @@ Begin Form
     CloseButton = NotDefault
     DividingLines = NotDefault
     AllowAdditions = NotDefault
-    FilterOn = NotDefault
     AllowEdits = NotDefault
     AllowDesignChanges = NotDefault
     ScrollBars =2
@@ -26,7 +25,7 @@ Begin Form
     Top =5940
     Right =17340
     Bottom =10845
-    DatasheetGridlinesColor =15921906
+    DatasheetGridlinesColor =14806254
     Filter ="SensorID = 140"
     RecSrcDt = Begin
         0x69b2e2a5911ae540

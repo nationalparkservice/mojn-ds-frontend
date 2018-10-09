@@ -19,12 +19,12 @@ Begin Form
     GridY =24
     Width =7845
     DatasheetFontHeight =11
-    ItemSuffix =170
-    Left =9360
+    ItemSuffix =171
+    Left =9705
     Top =3045
-    Right =15030
+    Right =15375
     Bottom =8610
-    DatasheetGridlinesColor =15921906
+    DatasheetGridlinesColor =14806254
     RecSrcDt = Begin
         0x62e991c36e1de540
     End
@@ -138,7 +138,7 @@ Begin Form
                     Left =4080
                     Top =4440
                     Width =1080
-                    TabIndex =6
+                    TabIndex =5
                     Name ="cmdEdit"
                     Caption ="Edit"
                     OnClick ="[Event Procedure]"
@@ -178,11 +178,11 @@ Begin Form
                     Overlaps =1
                 End
                 Begin CommandButton
-                    OverlapFlags =95
+                    OverlapFlags =85
                     Left =2820
                     Top =4440
                     Width =1080
-                    TabIndex =5
+                    TabIndex =4
                     Name ="cmdCancel"
                     Caption ="Cancel"
                     OnClick ="[Event Procedure]"
@@ -226,7 +226,7 @@ Begin Form
                     Left =4080
                     Top =4440
                     Width =1080
-                    TabIndex =4
+                    TabIndex =3
                     Name ="cmdSave"
                     Caption ="Save"
                     OnClick ="[Event Procedure]"
@@ -273,7 +273,6 @@ Begin Form
                     Top =780
                     Width =1740
                     Height =285
-                    TabIndex =1
                     BorderColor =10921638
                     ForeColor =4210752
                     Name ="txtCalibrationTime"
@@ -321,7 +320,7 @@ Begin Form
                     Top =420
                     Width =1740
                     Height =285
-                    TabIndex =2
+                    TabIndex =1
                     BorderColor =10921638
                     ForeColor =4210752
                     Name ="txtCalibrationDate"
@@ -363,61 +362,16 @@ Begin Form
                     End
                 End
                 Begin TextBox
-                    OverlapFlags =85
-                    TextAlign =1
-                    IMESentenceMode =3
-                    Left =1680
-                    Top =1140
-                    Width =1740
-                    Height =285
-                    BorderColor =10921638
-                    ForeColor =4210752
-                    Name ="txtStandard"
-                    ControlSource ="StandardValue_pH"
-                    GridlineColor =10921638
-
-                    LayoutCachedLeft =1680
-                    LayoutCachedTop =1140
-                    LayoutCachedWidth =3420
-                    LayoutCachedHeight =1425
-                    RowStart =1
-                    RowEnd =1
-                    ColumnStart =1
-                    ColumnEnd =1
-                    Begin
-                        Begin Label
-                            OverlapFlags =85
-                            TextAlign =1
-                            Left =60
-                            Top =1140
-                            Width =1500
-                            Height =285
-                            FontSize =10
-                            BorderColor =8355711
-                            ForeColor =8355711
-                            Name ="Label82"
-                            Caption ="pH Standard"
-                            GridlineColor =10921638
-                            LayoutCachedLeft =60
-                            LayoutCachedTop =1140
-                            LayoutCachedWidth =1560
-                            LayoutCachedHeight =1425
-                            RowStart =1
-                            RowEnd =1
-                        End
-                    End
-                End
-                Begin TextBox
                     EnterKeyBehavior = NotDefault
                     ScrollBars =2
                     OverlapFlags =85
                     TextAlign =1
                     IMESentenceMode =3
                     Left =60
-                    Top =3060
+                    Top =3420
                     Width =5160
-                    Height =1200
-                    TabIndex =3
+                    Height =840
+                    TabIndex =2
                     BorderColor =10921638
                     ForeColor =4210752
                     Name ="txtNotes"
@@ -425,7 +379,7 @@ Begin Form
                     GridlineColor =10921638
 
                     LayoutCachedLeft =60
-                    LayoutCachedTop =3060
+                    LayoutCachedTop =3420
                     LayoutCachedWidth =5220
                     LayoutCachedHeight =4260
                     RowStart =5
@@ -437,7 +391,7 @@ Begin Form
                             OverlapFlags =85
                             TextAlign =1
                             Left =60
-                            Top =2820
+                            Top =3180
                             Width =1680
                             Height =225
                             BorderColor =8355711
@@ -446,9 +400,9 @@ Begin Form
                             Caption ="Notes"
                             GridlineColor =10921638
                             LayoutCachedLeft =60
-                            LayoutCachedTop =2820
+                            LayoutCachedTop =3180
                             LayoutCachedWidth =1740
-                            LayoutCachedHeight =3045
+                            LayoutCachedHeight =3405
                             RowStart =5
                             RowEnd =5
                         End
@@ -462,7 +416,7 @@ Begin Form
                     Top =60
                     Width =3540
                     Height =285
-                    TabIndex =7
+                    TabIndex =6
                     BoundColumn =1
                     BorderColor =10921638
                     ForeColor =4210752
@@ -507,11 +461,11 @@ Begin Form
                 End
                 Begin CommandButton
                     Visible = NotDefault
-                    OverlapFlags =87
+                    OverlapFlags =85
                     Left =1560
                     Top =4440
                     Width =1080
-                    TabIndex =8
+                    TabIndex =7
                     Name ="cmdDelete"
                     Caption ="Delete"
                     OnClick ="[Event Procedure]"
@@ -555,10 +509,10 @@ Begin Form
                     TextAlign =1
                     IMESentenceMode =3
                     Left =3375
-                    Top =1920
+                    Top =2340
                     Width =1620
                     Height =315
-                    TabIndex =9
+                    TabIndex =8
                     BorderColor =10921638
                     ForeColor =4210752
                     Name ="txtPreCalibrationReading"
@@ -566,9 +520,9 @@ Begin Form
                     GridlineColor =10921638
 
                     LayoutCachedLeft =3375
-                    LayoutCachedTop =1920
+                    LayoutCachedTop =2340
                     LayoutCachedWidth =4995
-                    LayoutCachedHeight =2235
+                    LayoutCachedHeight =2655
                     RowStart =3
                     RowEnd =3
                     ColumnStart =3
@@ -579,10 +533,10 @@ Begin Form
                     TextAlign =1
                     IMESentenceMode =3
                     Left =1680
-                    Top =1920
+                    Top =2340
                     Width =1620
                     Height =315
-                    TabIndex =10
+                    TabIndex =9
                     BorderColor =10921638
                     ForeColor =4210752
                     Name ="txtPreCalibrationTemperature_C"
@@ -590,9 +544,9 @@ Begin Form
                     GridlineColor =10921638
 
                     LayoutCachedLeft =1680
-                    LayoutCachedTop =1920
+                    LayoutCachedTop =2340
                     LayoutCachedWidth =3300
-                    LayoutCachedHeight =2235
+                    LayoutCachedHeight =2655
                     RowStart =3
                     RowEnd =3
                     ColumnStart =1
@@ -602,7 +556,7 @@ Begin Form
                             OverlapFlags =85
                             TextAlign =1
                             Left =60
-                            Top =1920
+                            Top =2340
                             Width =1500
                             Height =315
                             FontSize =10
@@ -612,9 +566,9 @@ Begin Form
                             Caption ="Pre-calibration"
                             GridlineColor =10921638
                             LayoutCachedLeft =60
-                            LayoutCachedTop =1920
+                            LayoutCachedTop =2340
                             LayoutCachedWidth =1560
-                            LayoutCachedHeight =2235
+                            LayoutCachedHeight =2655
                             RowStart =3
                             RowEnd =3
                         End
@@ -625,10 +579,10 @@ Begin Form
                     TextAlign =1
                     IMESentenceMode =3
                     Left =3375
-                    Top =2295
+                    Top =2715
                     Width =1620
                     Height =315
-                    TabIndex =11
+                    TabIndex =10
                     BorderColor =10921638
                     ForeColor =4210752
                     Name ="txtPostCalibrationReading"
@@ -636,9 +590,9 @@ Begin Form
                     GridlineColor =10921638
 
                     LayoutCachedLeft =3375
-                    LayoutCachedTop =2295
+                    LayoutCachedTop =2715
                     LayoutCachedWidth =4995
-                    LayoutCachedHeight =2610
+                    LayoutCachedHeight =3030
                     RowStart =4
                     RowEnd =4
                     ColumnStart =3
@@ -649,10 +603,10 @@ Begin Form
                     TextAlign =1
                     IMESentenceMode =3
                     Left =1680
-                    Top =2280
+                    Top =2700
                     Width =1620
                     Height =315
-                    TabIndex =12
+                    TabIndex =11
                     BorderColor =10921638
                     ForeColor =4210752
                     Name ="txtPostCalibrationTemperature_C"
@@ -660,9 +614,9 @@ Begin Form
                     GridlineColor =10921638
 
                     LayoutCachedLeft =1680
-                    LayoutCachedTop =2280
+                    LayoutCachedTop =2700
                     LayoutCachedWidth =3300
-                    LayoutCachedHeight =2595
+                    LayoutCachedHeight =3015
                     RowStart =4
                     RowEnd =4
                     ColumnStart =1
@@ -672,7 +626,7 @@ Begin Form
                             OverlapFlags =85
                             TextAlign =1
                             Left =60
-                            Top =2280
+                            Top =2700
                             Width =1500
                             Height =315
                             FontSize =10
@@ -682,9 +636,9 @@ Begin Form
                             Caption ="Post-calibration"
                             GridlineColor =10921638
                             LayoutCachedLeft =60
-                            LayoutCachedTop =2280
+                            LayoutCachedTop =2700
                             LayoutCachedWidth =1560
-                            LayoutCachedHeight =2595
+                            LayoutCachedHeight =3015
                             RowStart =4
                             RowEnd =4
                         End
@@ -694,7 +648,7 @@ Begin Form
                     OverlapFlags =85
                     TextAlign =2
                     Left =1680
-                    Top =1620
+                    Top =2040
                     Width =1620
                     Height =255
                     FontSize =10
@@ -704,9 +658,9 @@ Begin Form
                     Caption ="Temp (C)"
                     GridlineColor =10921638
                     LayoutCachedLeft =1680
-                    LayoutCachedTop =1620
+                    LayoutCachedTop =2040
                     LayoutCachedWidth =3300
-                    LayoutCachedHeight =1875
+                    LayoutCachedHeight =2295
                     RowStart =3
                     RowEnd =3
                 End
@@ -714,7 +668,7 @@ Begin Form
                     OverlapFlags =85
                     TextAlign =2
                     Left =3360
-                    Top =1620
+                    Top =2040
                     Width =1635
                     Height =255
                     FontSize =10
@@ -724,11 +678,101 @@ Begin Form
                     Caption ="pH reading"
                     GridlineColor =10921638
                     LayoutCachedLeft =3360
-                    LayoutCachedTop =1620
+                    LayoutCachedTop =2040
                     LayoutCachedWidth =4995
-                    LayoutCachedHeight =1875
+                    LayoutCachedHeight =2295
                     RowStart =3
                     RowEnd =3
+                End
+                Begin ComboBox
+                    RowSourceTypeInt =1
+                    OverlapFlags =85
+                    TextAlign =1
+                    IMESentenceMode =3
+                    Left =1680
+                    Top =1140
+                    Width =1740
+                    Height =315
+                    TabIndex =12
+                    BorderColor =10921638
+                    ForeColor =4210752
+                    Name ="txtStandard"
+                    ControlSource ="StandardValue_pH"
+                    RowSourceType ="Value List"
+                    RowSource ="\"4.00\";\"7.00\";\"10.00\""
+                    GridlineColor =10921638
+
+                    LayoutCachedLeft =1680
+                    LayoutCachedTop =1140
+                    LayoutCachedWidth =3420
+                    LayoutCachedHeight =1455
+                    RowStart =1
+                    RowEnd =1
+                    ColumnStart =1
+                    ColumnEnd =1
+                    ForeThemeColorIndex =0
+                    ForeTint =75.0
+                    ForeShade =100.0
+                    Begin
+                        Begin Label
+                            OverlapFlags =85
+                            TextAlign =1
+                            Left =60
+                            Top =1140
+                            Width =1500
+                            Height =285
+                            FontSize =10
+                            BorderColor =8355711
+                            ForeColor =8355711
+                            Name ="Label82"
+                            Caption ="pH Standard"
+                            GridlineColor =10921638
+                            LayoutCachedLeft =60
+                            LayoutCachedTop =1140
+                            LayoutCachedWidth =1560
+                            LayoutCachedHeight =1425
+                            RowStart =1
+                            RowEnd =1
+                        End
+                    End
+                End
+                Begin TextBox
+                    OverlapFlags =85
+                    IMESentenceMode =3
+                    Left =1680
+                    Top =1500
+                    Width =1740
+                    Height =315
+                    TabIndex =13
+                    BorderColor =10921638
+                    ForeColor =4210752
+                    Name ="TemperatureCorrectedStd_pH"
+                    ControlSource ="TemperatureCorrectedStd_pH"
+                    GridlineColor =10921638
+
+                    LayoutCachedLeft =1680
+                    LayoutCachedTop =1500
+                    LayoutCachedWidth =3420
+                    LayoutCachedHeight =1815
+                    Begin
+                        Begin Label
+                            OverlapFlags =85
+                            Left =60
+                            Top =1500
+                            Width =1500
+                            Height =480
+                            FontSize =10
+                            BorderColor =8355711
+                            ForeColor =8355711
+                            Name ="Label170"
+                            Caption ="Temp. Corrected Standard"
+                            GridlineColor =10921638
+                            LayoutCachedLeft =60
+                            LayoutCachedTop =1500
+                            LayoutCachedWidth =1560
+                            LayoutCachedHeight =1980
+                        End
+                    End
                 End
             End
         End
@@ -877,17 +921,17 @@ If (IsNull(Me.ID) And Me.Dirty = False) Or _
     
     If mode = dataEntryMode Then
     'Allow data entry (i.e. add new record)
-        Me.dataEntry = True
+        Me.DataEntry = True
         Me.AllowEdits = True
         
     ElseIf mode = dataEditMode Then
     'Allow editing of existing data only
-        Me.dataEntry = False
+        Me.DataEntry = False
         Me.AllowEdits = True
         
     ElseIf mode = dataViewMode Then
     'Prevent data entry and editing - view only
-        Me.dataEntry = False
+        Me.DataEntry = False
         Me.AllowEdits = False
     
     End If

@@ -24,7 +24,7 @@ Begin Form
     Top =795
     Right =14190
     Bottom =6615
-    DatasheetGridlinesColor =15921906
+    DatasheetGridlinesColor =14806254
     Filter ="ID = 149"
     RecSrcDt = Begin
         0x7bdfd16c311de540
@@ -175,11 +175,14 @@ Begin Form
                     Shadow =1
                     QuickStyle =22
                     QuickStyleMask =-117
-                    WebImagePaddingLeft =1
+                    WebImagePaddingLeft =2
+                    WebImagePaddingTop =1
+                    WebImagePaddingRight =3
+                    WebImagePaddingBottom =3
                     Overlaps =1
                 End
                 Begin CommandButton
-                    OverlapFlags =95
+                    OverlapFlags =85
                     Left =2820
                     Top =4440
                     Width =1080
@@ -219,7 +222,10 @@ Begin Form
                     Shadow =1
                     QuickStyle =22
                     QuickStyleMask =-117
-                    WebImagePaddingLeft =1
+                    WebImagePaddingLeft =2
+                    WebImagePaddingTop =1
+                    WebImagePaddingRight =3
+                    WebImagePaddingBottom =3
                     Overlaps =1
                 End
                 Begin CommandButton
@@ -263,7 +269,10 @@ Begin Form
                     Shadow =1
                     QuickStyle =22
                     QuickStyleMask =-117
-                    WebImagePaddingLeft =1
+                    WebImagePaddingLeft =2
+                    WebImagePaddingTop =1
+                    WebImagePaddingRight =3
+                    WebImagePaddingBottom =3
                     Overlaps =1
                 End
                 Begin TextBox
@@ -680,7 +689,7 @@ Begin Form
                 End
                 Begin CommandButton
                     Visible = NotDefault
-                    OverlapFlags =87
+                    OverlapFlags =85
                     Left =1560
                     Top =4440
                     Width =1080
@@ -720,7 +729,10 @@ Begin Form
                     Shadow =1
                     QuickStyle =22
                     QuickStyleMask =-117
-                    WebImagePaddingLeft =1
+                    WebImagePaddingLeft =2
+                    WebImagePaddingTop =1
+                    WebImagePaddingRight =3
+                    WebImagePaddingBottom =3
                     Overlaps =1
                 End
             End
@@ -873,17 +885,17 @@ If (IsNull(Me.ID) And Me.Dirty = False) Or _
     
     If mode = dataEntryMode Then
     'Allow data entry (i.e. add new record)
-        Me.dataEntry = True
+        Me.DataEntry = True
         Me.AllowEdits = True
         
     ElseIf mode = dataEditMode Then
     'Allow editing of existing data only
-        Me.dataEntry = False
+        Me.DataEntry = False
         Me.AllowEdits = True
         
     ElseIf mode = dataViewMode Then
     'Prevent data entry and editing - view only
-        Me.dataEntry = False
+        Me.DataEntry = False
         Me.AllowEdits = False
     
     End If

@@ -24,7 +24,7 @@ Begin Form
     Top =1545
     Right =14970
     Bottom =8790
-    DatasheetGridlinesColor =15921906
+    DatasheetGridlinesColor =14806254
     RecSrcDt = Begin
         0x5eb7f4100d99e440
     End
@@ -236,7 +236,7 @@ Begin Form
                     FontSize =13
                     TabIndex =2
                     BorderColor =10921638
-                    ForeColor =2108188
+                    ForeColor =4138256
                     ColumnInfo ="\"\";\"\";\"\";\"\";\"\";\"\";\"\";\"\";\"10\";\"510\""
                     Name ="cboChooseServer"
                     RowSourceType ="Table/Query"

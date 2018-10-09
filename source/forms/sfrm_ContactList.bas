@@ -19,14 +19,17 @@ Begin Form
     DatasheetGridlinesBehavior =3
     GridX =24
     GridY =24
-    Width =5775
+    Width =5784
     DatasheetFontHeight =11
     ItemSuffix =74
     Left =6105
     Top =3255
     Right =11910
     Bottom =11325
-    DatasheetGridlinesColor =15921906
+    DatasheetGridlinesColor =14806254
+    RecSrcDt = Begin
+        0xb6c338459321e540
+    End
     RecordSource ="SELECT ref_Personnel.*, ref_Personnel.PersonnelActiveID, ref_Personnel.Organizat"
         "ion, ref_Personnel.Initials FROM ref_Personnel ORDER BY ref_Personnel.PersonnelA"
         "ctiveID, ref_Personnel.Organization DESC , ref_Personnel.Initials; "
@@ -165,7 +168,7 @@ Begin Form
             GridlineShade =65.0
         End
         Begin FormHeader
-            Height =682
+            Height =684
             BackColor =15921906
             Name ="FormHeader"
             AlternateBackThemeColorIndex =1
@@ -380,7 +383,7 @@ Option Explicit
 
 Private Function displayEntryForm()
 Me.Parent.sfrmEntry.Form.Visible = True
-Me.Parent.sfrmEntry.Form.dataEntry = False
+Me.Parent.sfrmEntry.Form.DataEntry = False
 Me.Parent.sfrmEntry.Form.cmdCancel.Visible = False
 Me.Parent.sfrmEntry.Form.cmdSave.Visible = False
 Me.Parent.sfrmEntry.Form.cmdEdit.Visible = True

@@ -23,7 +23,7 @@ Begin Form
     Top =450
     Right =19410
     Bottom =9435
-    DatasheetGridlinesColor =15921906
+    DatasheetGridlinesColor =14806254
     RecSrcDt = Begin
         0x340b8c157915e540
     End
@@ -310,7 +310,7 @@ Begin Form
                     Height =315
                     FontSize =12
                     BorderColor =10921638
-                    ForeColor =2108188
+                    ForeColor =4138256
                     ColumnInfo ="\"\";\"\";\"\";\"\";\"\";\"\";\"10\";\"40\""
                     ConditionalFormat = Begin
                         0x01000000a8000000010000000100000000000000000000002300000001000000 ,
@@ -725,7 +725,7 @@ End Sub
 Private Sub Form_BeforeUpdate(Cancel As Integer)
 
     'Requery the DPL date text box to force the date to show
-    Me.txtdataprocessingleveldate.Requery
+    Me.txtDataProcessingLevelDate.Requery
 
 End Sub
 

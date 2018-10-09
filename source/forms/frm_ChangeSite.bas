@@ -8,6 +8,7 @@ Begin Form
     CloseButton = NotDefault
     DividingLines = NotDefault
     AllowAdditions = NotDefault
+    FilterOn = NotDefault
     AllowDesignChanges = NotDefault
     DefaultView =0
     ScrollBars =0
@@ -23,8 +24,8 @@ Begin Form
     Top =4770
     Right =15960
     Bottom =7335
-    DatasheetGridlinesColor =15921906
-    Filter ="ID = 1"
+    DatasheetGridlinesColor =14806254
+    Filter ="ID = 468"
     RecSrcDt = Begin
         0x5f6feb25751de540
     End

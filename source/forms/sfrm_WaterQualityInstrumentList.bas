@@ -26,7 +26,7 @@ Begin Form
     Top =4785
     Right =8850
     Bottom =11235
-    DatasheetGridlinesColor =15921906
+    DatasheetGridlinesColor =14806254
     RecSrcDt = Begin
         0x1c5de01cd51be540
     End
@@ -324,7 +324,7 @@ Option Explicit
 
 Private Function displayEntryForm()
 Me.Parent.sfrmEntry.Form.Visible = True
-Me.Parent.sfrmEntry.Form.dataEntry = False
+Me.Parent.sfrmEntry.Form.DataEntry = False
 Me.Parent.sfrmEntry.Form.cmdCancel.Visible = False
 Me.Parent.sfrmEntry.Form.cmdSave.Visible = False
 Me.Parent.sfrmEntry.Form.cmdEdit.Visible = True

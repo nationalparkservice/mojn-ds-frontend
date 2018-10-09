@@ -26,7 +26,7 @@ Begin Form
     Top =390
     Right =16710
     Bottom =11310
-    DatasheetGridlinesColor =15921906
+    DatasheetGridlinesColor =14806254
     RecSrcDt = Begin
         0x030a44c98d15e540
     End
@@ -340,6 +340,7 @@ Begin Form
                 Begin Label
                     OverlapFlags =93
                     TextAlign =2
+                    TextFontFamily =18
                     Top =60
                     Width =12900
                     Height =660
@@ -349,10 +350,11 @@ Begin Form
                     TopMargin =45
                     RightMargin =45
                     BottomMargin =45
-                    BorderColor =4281912
+                    BorderColor =8210719
                     ForeColor =16777215
                     Name ="lblHeader"
                     Caption ="Sensors"
+                    FontName ="Cambria"
                     GridlineColor =10921638
                     LayoutCachedTop =60
                     LayoutCachedWidth =12900
@@ -365,6 +367,7 @@ Begin Form
                 End
                 Begin CommandButton
                     OverlapFlags =215
+                    TextFontFamily =18
                     Left =11835
                     Top =135
                     Width =840
@@ -373,6 +376,7 @@ Begin Form
                     Name ="cmdCloseForm"
                     Caption ="Close"
                     OnClick ="[Event Procedure]"
+                    FontName ="Cambria"
                     GroupTable =2
                     LeftPadding =45
                     TopPadding =45
@@ -582,6 +586,7 @@ Begin Form
                     OldBorderStyle =0
                     OverlapFlags =215
                     TextAlign =2
+                    TextFontFamily =18
                     IMESentenceMode =3
                     Left =6840
                     Top =225
@@ -593,6 +598,7 @@ Begin Form
                     Name ="txtSensor"
                     ControlSource ="=\"Sensor Details\" & IIf([sfrmSensor].Visible,IIf(IsNull([sfrmSensor].Form!txtT"
                         "agLabel),\": New\",\": #\" & [sfrmSensor].Form!txtTagLabel),\"\")"
+                    FontName ="Cambria"
                     GridlineColor =10921638
 
                     LayoutCachedLeft =6840
@@ -626,7 +632,8 @@ Begin Form
                     BorderShade =100.0
                     Begin
                         Begin Label
-                            OverlapFlags =223
+                            OverlapFlags =127
+                            TextFontFamily =18
                             Left =3825
                             Top =660
                             Width =2415
@@ -635,6 +642,7 @@ Begin Form
                             BackColor =15527148
                             Name ="lblDeployed"
                             Caption ="Deployed"
+                            FontName ="Cambria"
                             GridlineColor =10921638
                             LayoutCachedLeft =3825
                             LayoutCachedTop =660
@@ -669,7 +677,8 @@ Begin Form
                     BorderShade =100.0
                     Begin
                         Begin Label
-                            OverlapFlags =95
+                            OverlapFlags =93
+                            TextFontFamily =18
                             Left =4365
                             Top =1380
                             Width =1635
@@ -678,6 +687,7 @@ Begin Form
                             BackColor =15527148
                             Name ="lblFailedRetrieval"
                             Caption ="Failed retrieval"
+                            FontName ="Cambria"
                             GridlineColor =10921638
                             LayoutCachedLeft =4365
                             LayoutCachedTop =1380
@@ -712,7 +722,8 @@ Begin Form
                     BorderShade =100.0
                     Begin
                         Begin Label
-                            OverlapFlags =95
+                            OverlapFlags =93
+                            TextFontFamily =18
                             Left =4365
                             Top =1020
                             Width =1875
@@ -721,6 +732,7 @@ Begin Form
                             BackColor =15527148
                             Name ="lblSuccessfulRetrieval"
                             Caption ="Successful retrieval"
+                            FontName ="Cambria"
                             GridlineColor =10921638
                             LayoutCachedLeft =4365
                             LayoutCachedTop =1020
@@ -737,6 +749,7 @@ Begin Form
                 End
                 Begin Label
                     OverlapFlags =93
+                    TextFontFamily =18
                     Left =420
                     Top =660
                     Width =675
@@ -745,6 +758,7 @@ Begin Form
                     BackColor =15527148
                     Name ="lblSensorFilterList"
                     Caption ="Filter:"
+                    FontName ="Cambria"
                     GridlineColor =10921638
                     LayoutCachedLeft =420
                     LayoutCachedTop =660
@@ -791,7 +805,8 @@ Begin Form
                     BorderShade =100.0
                     Begin
                         Begin Label
-                            OverlapFlags =95
+                            OverlapFlags =93
+                            TextFontFamily =18
                             Left =4365
                             Top =1740
                             Width =1635
@@ -800,6 +815,7 @@ Begin Form
                             BackColor =15527148
                             Name ="lblNoRetrievalAttempt"
                             Caption ="No retrieval info"
+                            FontName ="Cambria"
                             GridlineColor =10921638
                             LayoutCachedLeft =4365
                             LayoutCachedTop =1740
@@ -834,7 +850,8 @@ Begin Form
                     BorderShade =100.0
                     Begin
                         Begin Label
-                            OverlapFlags =223
+                            OverlapFlags =127
+                            TextFontFamily =18
                             Left =1485
                             Top =660
                             Width =1950
@@ -843,6 +860,7 @@ Begin Form
                             BackColor =15527148
                             Name ="lblSensorNoDeployInfo"
                             Caption ="No deployment info"
+                            FontName ="Cambria"
                             GridlineColor =10921638
                             LayoutCachedLeft =1485
                             LayoutCachedTop =660
@@ -884,6 +902,7 @@ Begin Form
                     BackStyle =1
                     OverlapFlags =247
                     TextAlign =2
+                    TextFontFamily =18
                     Left =420
                     Top =225
                     Width =1523
@@ -892,6 +911,7 @@ Begin Form
                     BackColor =15921906
                     Name ="lblAllSensors"
                     Caption ="All Sensors"
+                    FontName ="Cambria"
                     GridlineColor =10921638
                     LayoutCachedLeft =420
                     LayoutCachedTop =225
@@ -1068,7 +1088,7 @@ End Sub
 
 Private Sub cmdNewSensor_Click()
 
-Me.sfrmSensor.Form.dataEntry = True
+Me.sfrmSensor.Form.DataEntry = True
 Me.sfrmSensor.Form.Visible = True
 Me.sfrmSensor.Form.cmdCancel.Visible = True
 Me.sfrmSensor.Form.cmdSave.Visible = True

@@ -10,7 +10,6 @@ Begin Form
     NavigationButtons = NotDefault
     CloseButton = NotDefault
     DividingLines = NotDefault
-    FilterOn = NotDefault
     AllowDesignChanges = NotDefault
     ScrollBars =2
     PictureAlignment =2
@@ -24,7 +23,7 @@ Begin Form
     Top =3870
     Right =17505
     Bottom =8130
-    DatasheetGridlinesColor =15921906
+    DatasheetGridlinesColor =14806254
     RecSrcDt = Begin
         0x34fd75986c15e540
     End
@@ -498,7 +497,7 @@ Begin Form
                     Height =313
                     TabIndex =4
                     BorderColor =14211288
-                    ForeColor =2108188
+                    ForeColor =4138256
                     ColumnInfo ="\"\";\"\";\"\";\"\";\"\";\"\";\"10\";\"50\""
                     Name ="cboProtectedStatus"
                     ControlSource ="ProtectedStatusID"
@@ -530,7 +529,7 @@ Begin Form
                     Height =313
                     TabIndex =5
                     BorderColor =14211288
-                    ForeColor =2108188
+                    ForeColor =4138256
                     ColumnInfo ="\"\";\"\";\"\";\"\";\"\";\"\";\"10\";\"80\""
                     Name ="cboRiparianVegTaxonRefAuthID"
                     ControlSource ="TaxonomicReferenceAuthorityID"

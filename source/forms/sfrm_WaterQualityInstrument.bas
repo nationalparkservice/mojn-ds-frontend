@@ -25,7 +25,7 @@ Begin Form
     Top =3105
     Right =15645
     Bottom =7005
-    DatasheetGridlinesColor =15921906
+    DatasheetGridlinesColor =14806254
     RecSrcDt = Begin
         0xa9f03f4ad51be540
     End
@@ -298,7 +298,7 @@ Begin Form
                 Begin TextBox
                     EnterKeyBehavior = NotDefault
                     ScrollBars =2
-                    OverlapFlags =85
+                    OverlapFlags =223
                     TextAlign =1
                     IMESentenceMode =3
                     Left =1800
@@ -360,7 +360,7 @@ Begin Form
                 End
                 Begin CommandButton
                     Visible = NotDefault
-                    OverlapFlags =95
+                    OverlapFlags =255
                     Left =2820
                     Top =3060
                     Width =1080
@@ -405,7 +405,7 @@ Begin Form
                 End
                 Begin CommandButton
                     Visible = NotDefault
-                    OverlapFlags =215
+                    OverlapFlags =247
                     Left =1800
                     Top =3060
                     Width =1080
@@ -676,7 +676,7 @@ Dim currentID As Integer
 DoCmd.RunCommand acCmdSaveRecord
 currentID = Me.ID
 swapButtons
-Me.dataEntry = False
+Me.DataEntry = False
 Me.AllowEdits = False
 Me.filter = "ID = " & currentID
 Me.FilterOn = True

@@ -9,7 +9,6 @@ Begin Form
     NavigationButtons = NotDefault
     CloseButton = NotDefault
     DividingLines = NotDefault
-    FilterOn = NotDefault
     AllowDesignChanges = NotDefault
     DefaultView =0
     ScrollBars =0
@@ -22,12 +21,12 @@ Begin Form
     Width =16620
     DatasheetFontHeight =11
     ItemSuffix =259
-    Left =4480
-    Top =340
-    Right =21100
-    Bottom =11900
+    Left =3675
+    Top =300
+    Right =20295
+    Bottom =11850
     DatasheetGridlinesColor =14806254
-    Filter ="ID = 501"
+    Filter ="ID = 285"
     RecSrcDt = Begin
         0x9dbfe286751be540
     End
@@ -373,10 +372,10 @@ Begin Form
                     PressedShade =100.0
                     HoverForeColor =4210752
                     PressedForeColor =4210752
-                    WebImagePaddingLeft =3
-                    WebImagePaddingTop =3
-                    WebImagePaddingRight =2
-                    WebImagePaddingBottom =2
+                    WebImagePaddingLeft =2
+                    WebImagePaddingTop =2
+                    WebImagePaddingRight =1
+                    WebImagePaddingBottom =1
                     Overlaps =1
                 End
                 Begin TextBox
@@ -571,7 +570,7 @@ Begin Form
                     Shadow =-1
                     QuickStyle =23
                     QuickStyleMask =-113
-                    WebImagePaddingLeft =-1
+                    WebImagePaddingTop =1
                     Overlaps =1
                 End
                 Begin CommandButton
@@ -643,10 +642,10 @@ Begin Form
                     PressedShade =100.0
                     HoverForeColor =4210752
                     PressedForeColor =4210752
-                    WebImagePaddingLeft =3
-                    WebImagePaddingTop =3
-                    WebImagePaddingRight =2
-                    WebImagePaddingBottom =2
+                    WebImagePaddingLeft =2
+                    WebImagePaddingTop =2
+                    WebImagePaddingRight =1
+                    WebImagePaddingBottom =1
                     Overlaps =1
                 End
                 Begin CommandButton
@@ -718,10 +717,10 @@ Begin Form
                     PressedShade =100.0
                     HoverForeColor =4210752
                     PressedForeColor =4210752
-                    WebImagePaddingLeft =3
-                    WebImagePaddingTop =3
-                    WebImagePaddingRight =2
-                    WebImagePaddingBottom =2
+                    WebImagePaddingLeft =2
+                    WebImagePaddingTop =2
+                    WebImagePaddingRight =1
+                    WebImagePaddingBottom =1
                     Overlaps =1
                 End
                 Begin CommandButton
@@ -759,10 +758,10 @@ Begin Form
                     PressedShade =100.0
                     HoverForeColor =4210752
                     PressedForeColor =4210752
-                    WebImagePaddingLeft =3
-                    WebImagePaddingTop =3
-                    WebImagePaddingRight =2
-                    WebImagePaddingBottom =2
+                    WebImagePaddingLeft =2
+                    WebImagePaddingTop =2
+                    WebImagePaddingRight =1
+                    WebImagePaddingBottom =1
                     Overlaps =1
                 End
                 Begin CommandButton
@@ -801,10 +800,10 @@ Begin Form
                     PressedShade =100.0
                     HoverForeColor =4210752
                     PressedForeColor =4210752
-                    WebImagePaddingLeft =3
-                    WebImagePaddingTop =3
-                    WebImagePaddingRight =2
-                    WebImagePaddingBottom =2
+                    WebImagePaddingLeft =2
+                    WebImagePaddingTop =2
+                    WebImagePaddingRight =1
+                    WebImagePaddingBottom =1
                     Overlaps =1
                 End
                 Begin CommandButton
@@ -862,10 +861,10 @@ Begin Form
                     PressedShade =100.0
                     HoverForeColor =4210752
                     PressedForeColor =4210752
-                    WebImagePaddingLeft =3
-                    WebImagePaddingTop =3
-                    WebImagePaddingRight =2
-                    WebImagePaddingBottom =2
+                    WebImagePaddingLeft =2
+                    WebImagePaddingTop =2
+                    WebImagePaddingRight =1
+                    WebImagePaddingBottom =1
                     Overlaps =1
                 End
                 Begin ComboBox
@@ -996,10 +995,10 @@ Begin Form
                             LayoutCachedTop =480
                             LayoutCachedWidth =16545
                             LayoutCachedHeight =9990
-                            WebImagePaddingLeft =3
-                            WebImagePaddingTop =3
-                            WebImagePaddingRight =3
-                            WebImagePaddingBottom =3
+                            WebImagePaddingLeft =2
+                            WebImagePaddingTop =2
+                            WebImagePaddingRight =2
+                            WebImagePaddingBottom =2
                             Begin
                                 Begin ComboBox
                                     LimitToList = NotDefault
@@ -1708,8 +1707,8 @@ Begin Form
                                     ColumnInfo ="\"\";\"\";\"10\";\"100\""
                                     Name ="cboDefaultWQInstr"
                                     RowSourceType ="Table/Query"
-                                    RowSource ="SELECT ref_WaterQualityInstrument.Label, ref_WaterQualityInstrument.ID FROM ref_"
-                                        "WaterQualityInstrument; "
+                                    RowSource ="SELECT ref_WaterQualityInstrument_Shared.Label, ref_WaterQualityInstrument_Share"
+                                        "d.ID FROM ref_WaterQualityInstrument_Shared; "
                                     GridlineColor =10921638
 
                                     LayoutCachedLeft =1920
@@ -1890,10 +1889,10 @@ Begin Form
                             LayoutCachedTop =480
                             LayoutCachedWidth =16545
                             LayoutCachedHeight =9990
-                            WebImagePaddingLeft =3
-                            WebImagePaddingTop =3
-                            WebImagePaddingRight =3
-                            WebImagePaddingBottom =3
+                            WebImagePaddingLeft =2
+                            WebImagePaddingTop =2
+                            WebImagePaddingRight =2
+                            WebImagePaddingBottom =2
                             Begin
                                 Begin Subform
                                     OverlapFlags =247
@@ -1931,10 +1930,10 @@ Begin Form
                             LayoutCachedTop =480
                             LayoutCachedWidth =16545
                             LayoutCachedHeight =9990
-                            WebImagePaddingLeft =3
-                            WebImagePaddingTop =3
-                            WebImagePaddingRight =3
-                            WebImagePaddingBottom =3
+                            WebImagePaddingLeft =2
+                            WebImagePaddingTop =2
+                            WebImagePaddingRight =2
+                            WebImagePaddingBottom =2
                             Begin
                                 Begin Subform
                                     OverlapFlags =247
@@ -1992,10 +1991,10 @@ Begin Form
                             LayoutCachedTop =480
                             LayoutCachedWidth =16545
                             LayoutCachedHeight =9990
-                            WebImagePaddingLeft =3
-                            WebImagePaddingTop =3
-                            WebImagePaddingRight =3
-                            WebImagePaddingBottom =3
+                            WebImagePaddingLeft =2
+                            WebImagePaddingTop =2
+                            WebImagePaddingRight =2
+                            WebImagePaddingBottom =2
                             Begin
                                 Begin Subform
                                     OverlapFlags =247
@@ -2033,10 +2032,10 @@ Begin Form
                             LayoutCachedTop =480
                             LayoutCachedWidth =16545
                             LayoutCachedHeight =9990
-                            WebImagePaddingLeft =3
-                            WebImagePaddingTop =3
-                            WebImagePaddingRight =3
-                            WebImagePaddingBottom =3
+                            WebImagePaddingLeft =2
+                            WebImagePaddingTop =2
+                            WebImagePaddingRight =2
+                            WebImagePaddingBottom =2
                             Begin
                                 Begin Subform
                                     OverlapFlags =247
@@ -2074,10 +2073,10 @@ Begin Form
                             LayoutCachedTop =480
                             LayoutCachedWidth =16545
                             LayoutCachedHeight =9990
-                            WebImagePaddingLeft =3
-                            WebImagePaddingTop =3
-                            WebImagePaddingRight =3
-                            WebImagePaddingBottom =3
+                            WebImagePaddingLeft =2
+                            WebImagePaddingTop =2
+                            WebImagePaddingRight =2
+                            WebImagePaddingBottom =2
                             Begin
                                 Begin Subform
                                     CanGrow = NotDefault
@@ -2116,10 +2115,10 @@ Begin Form
                             LayoutCachedTop =480
                             LayoutCachedWidth =16545
                             LayoutCachedHeight =9990
-                            WebImagePaddingLeft =3
-                            WebImagePaddingTop =3
-                            WebImagePaddingRight =3
-                            WebImagePaddingBottom =3
+                            WebImagePaddingLeft =2
+                            WebImagePaddingTop =2
+                            WebImagePaddingRight =2
+                            WebImagePaddingBottom =2
                             Begin
                                 Begin Subform
                                     CanGrow = NotDefault
@@ -2160,10 +2159,10 @@ Begin Form
                             LayoutCachedTop =480
                             LayoutCachedWidth =16545
                             LayoutCachedHeight =9990
-                            WebImagePaddingLeft =3
-                            WebImagePaddingTop =3
-                            WebImagePaddingRight =3
-                            WebImagePaddingBottom =3
+                            WebImagePaddingLeft =2
+                            WebImagePaddingTop =2
+                            WebImagePaddingRight =2
+                            WebImagePaddingBottom =2
                             Begin
                                 Begin Subform
                                     CanGrow = NotDefault
@@ -2202,10 +2201,10 @@ Begin Form
                             LayoutCachedTop =480
                             LayoutCachedWidth =16545
                             LayoutCachedHeight =9990
-                            WebImagePaddingLeft =3
-                            WebImagePaddingTop =3
-                            WebImagePaddingRight =3
-                            WebImagePaddingBottom =3
+                            WebImagePaddingLeft =2
+                            WebImagePaddingTop =2
+                            WebImagePaddingRight =2
+                            WebImagePaddingBottom =2
                             Begin
                                 Begin Subform
                                     CanGrow = NotDefault

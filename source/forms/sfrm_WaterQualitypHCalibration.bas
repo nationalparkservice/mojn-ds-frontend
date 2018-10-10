@@ -14,13 +14,13 @@ Begin Form
     Width =5520
     DatasheetFontHeight =11
     ItemSuffix =62
-    Left =2295
-    Top =8415
-    Right =7770
-    Bottom =10560
+    Left =2445
+    Top =8520
+    Right =7920
+    Bottom =10665
     DatasheetGridlinesColor =14806254
     RecSrcDt = Begin
-        0xd8aaaddf561ce540
+        0x45ba50bfd52ee540
     End
     RecordSource ="qry_CalibrationpH"
     DatasheetFontName ="Calibri"

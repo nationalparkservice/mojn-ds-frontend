@@ -26,9 +26,9 @@ Begin Form
     Bottom =8610
     DatasheetGridlinesColor =14806254
     RecSrcDt = Begin
-        0x62e991c36e1de540
+        0x36d580ded52ee540
     End
-    RecordSource ="data_CalibrationpH"
+    RecordSource ="data_CalibrationpH_Shared"
     Caption ="sfrmEntry"
     DatasheetFontName ="Calibri"
     PrtMip = Begin
@@ -178,7 +178,7 @@ Begin Form
                     Overlaps =1
                 End
                 Begin CommandButton
-                    OverlapFlags =85
+                    OverlapFlags =95
                     Left =2820
                     Top =4440
                     Width =1080
@@ -424,8 +424,8 @@ Begin Form
                     Name ="cboInstrumentID"
                     ControlSource ="pHInstrumentID"
                     RowSourceType ="Table/Query"
-                    RowSource ="SELECT ref_WaterQualityInstrument.Label, ref_WaterQualityInstrument.ID FROM ref_"
-                        "WaterQualityInstrument; "
+                    RowSource ="SELECT ref_WaterQualityInstrument_Shared.Label, ref_WaterQualityInstrument_Share"
+                        "d.ID FROM ref_WaterQualityInstrument_Shared; "
                     GridlineColor =10921638
                     ListItemsEditForm ="frm_AddWaterQualityInstrument"
 
@@ -461,7 +461,7 @@ Begin Form
                 End
                 Begin CommandButton
                     Visible = NotDefault
-                    OverlapFlags =85
+                    OverlapFlags =87
                     Left =1560
                     Top =4440
                     Width =1080

@@ -26,9 +26,9 @@ Begin Form
     Bottom =8670
     DatasheetGridlinesColor =14806254
     RecSrcDt = Begin
-        0x80108ef76d1de540
+        0xe7bf69f6d52ee540
     End
-    RecordSource ="data_CalibrationSpCond"
+    RecordSource ="data_CalibrationSpCond_Shared"
     Caption ="sfrmEntry"
     DatasheetFontName ="Calibri"
     PrtMip = Begin
@@ -174,14 +174,11 @@ Begin Form
                     Shadow =1
                     QuickStyle =22
                     QuickStyleMask =-117
-                    WebImagePaddingLeft =2
-                    WebImagePaddingTop =1
-                    WebImagePaddingRight =3
-                    WebImagePaddingBottom =3
+                    WebImagePaddingLeft =1
                     Overlaps =1
                 End
                 Begin CommandButton
-                    OverlapFlags =85
+                    OverlapFlags =95
                     Left =2820
                     Top =4080
                     Width =1080
@@ -221,10 +218,7 @@ Begin Form
                     Shadow =1
                     QuickStyle =22
                     QuickStyleMask =-117
-                    WebImagePaddingLeft =2
-                    WebImagePaddingTop =1
-                    WebImagePaddingRight =3
-                    WebImagePaddingBottom =3
+                    WebImagePaddingLeft =1
                     Overlaps =1
                 End
                 Begin CommandButton
@@ -268,10 +262,7 @@ Begin Form
                     Shadow =1
                     QuickStyle =22
                     QuickStyleMask =-117
-                    WebImagePaddingLeft =2
-                    WebImagePaddingTop =1
-                    WebImagePaddingRight =3
-                    WebImagePaddingBottom =3
+                    WebImagePaddingLeft =1
                     Overlaps =1
                 End
                 Begin TextBox
@@ -565,8 +556,8 @@ Begin Form
                     Name ="cboInstrumentID"
                     ControlSource ="SpCondInstrumentID"
                     RowSourceType ="Table/Query"
-                    RowSource ="SELECT ref_WaterQualityInstrument.Label, ref_WaterQualityInstrument.ID FROM ref_"
-                        "WaterQualityInstrument; "
+                    RowSource ="SELECT ref_WaterQualityInstrument_Shared.Label, ref_WaterQualityInstrument_Share"
+                        "d.ID FROM ref_WaterQualityInstrument_Shared; "
                     GridlineColor =10921638
                     ListItemsEditForm ="frm_AddWaterQualityInstrument"
 
@@ -602,7 +593,7 @@ Begin Form
                 End
                 Begin CommandButton
                     Visible = NotDefault
-                    OverlapFlags =85
+                    OverlapFlags =87
                     Left =1560
                     Top =4080
                     Width =1080
@@ -642,10 +633,7 @@ Begin Form
                     Shadow =1
                     QuickStyle =22
                     QuickStyleMask =-117
-                    WebImagePaddingLeft =2
-                    WebImagePaddingTop =1
-                    WebImagePaddingRight =3
-                    WebImagePaddingBottom =3
+                    WebImagePaddingLeft =1
                     Overlaps =1
                 End
             End

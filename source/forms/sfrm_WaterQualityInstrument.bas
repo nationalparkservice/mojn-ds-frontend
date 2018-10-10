@@ -27,9 +27,9 @@ Begin Form
     Bottom =7005
     DatasheetGridlinesColor =14806254
     RecSrcDt = Begin
-        0xa9f03f4ad51be540
+        0xeddc1709d62ee540
     End
-    RecordSource ="ref_WaterQualityInstrument"
+    RecordSource ="ref_WaterQualityInstrument_Shared"
     Caption ="sfrmEntry"
     DatasheetFontName ="Calibri"
     PrtMip = Begin
@@ -298,7 +298,7 @@ Begin Form
                 Begin TextBox
                     EnterKeyBehavior = NotDefault
                     ScrollBars =2
-                    OverlapFlags =223
+                    OverlapFlags =85
                     TextAlign =1
                     IMESentenceMode =3
                     Left =1800
@@ -360,7 +360,7 @@ Begin Form
                 End
                 Begin CommandButton
                     Visible = NotDefault
-                    OverlapFlags =255
+                    OverlapFlags =95
                     Left =2820
                     Top =3060
                     Width =1080
@@ -405,7 +405,7 @@ Begin Form
                 End
                 Begin CommandButton
                     Visible = NotDefault
-                    OverlapFlags =247
+                    OverlapFlags =215
                     Left =1800
                     Top =3060
                     Width =1080

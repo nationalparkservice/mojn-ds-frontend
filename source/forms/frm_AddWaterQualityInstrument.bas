@@ -25,7 +25,7 @@ Begin Form
     Left =2970
     Top =360
     Right =16185
-    Bottom =11280
+    Bottom =11910
     DatasheetGridlinesColor =14806254
     RecSrcDt = Begin
         0x923d7d3ed51be540
@@ -330,7 +330,7 @@ Begin Form
             ForeTint =75.0
         End
         Begin FormHeader
-            Height =720
+            Height =1605
             BackColor =4281912
             Name ="FormHeader"
             AlternateBackThemeColorIndex =1
@@ -339,7 +339,6 @@ Begin Form
                 Begin Label
                     OverlapFlags =93
                     TextAlign =2
-                    TextFontFamily =18
                     Left =-15
                     Top =60
                     Width =12915
@@ -354,13 +353,12 @@ Begin Form
                     ForeColor =16777215
                     Name ="lblHeader"
                     Caption ="Water Quality Instruments"
-                    FontName ="Cambria"
                     GridlineColor =10921638
                     LayoutCachedLeft =-15
                     LayoutCachedTop =60
                     LayoutCachedWidth =12900
                     LayoutCachedHeight =720
-                    ThemeFontIndex =0
+                    ThemeFontIndex =-1
                     BorderThemeColorIndex =2
                     BorderTint =100.0
                     ForeThemeColorIndex =-1
@@ -368,7 +366,6 @@ Begin Form
                 End
                 Begin CommandButton
                     OverlapFlags =215
-                    TextFontFamily =18
                     Left =11835
                     Top =135
                     Width =840
@@ -377,7 +374,6 @@ Begin Form
                     Name ="cmdCloseForm"
                     Caption ="Close"
                     OnClick ="[Event Procedure]"
-                    FontName ="Cambria"
                     GroupTable =2
                     LeftPadding =45
                     TopPadding =45
@@ -400,7 +396,7 @@ Begin Form
                     BorderColor =9211020
                     BorderThemeColorIndex =-1
                     BorderTint =100.0
-                    ThemeFontIndex =0
+                    ThemeFontIndex =-1
                     HoverColor =15527148
                     HoverThemeColorIndex =-1
                     HoverTint =100.0
@@ -414,6 +410,28 @@ Begin Form
                     QuickStyle =22
                     QuickStyleMask =-1013
                     Overlaps =1
+                End
+                Begin Label
+                    OverlapFlags =85
+                    Left =240
+                    Top =780
+                    Width =12540
+                    Height =825
+                    FontWeight =700
+                    BorderColor =8355711
+                    ForeColor =16777215
+                    Name ="Label283"
+                    Caption ="NOTE: The data in this form are shared across multiple protocols. Please use ext"
+                        "ra care when editing or deleting information, as it may apply to other protocols"
+                        ". If your notes have protocol-specific references, make sure that it is clear wh"
+                        "ich protocol you are referring to."
+                    GridlineColor =10921638
+                    LayoutCachedLeft =240
+                    LayoutCachedTop =780
+                    LayoutCachedWidth =12780
+                    LayoutCachedHeight =1605
+                    ForeThemeColorIndex =-1
+                    ForeTint =100.0
                 End
             End
         End
@@ -609,7 +627,6 @@ Begin Form
                     BackStyle =1
                     OverlapFlags =215
                     TextAlign =2
-                    TextFontFamily =18
                     Left =420
                     Top =240
                     Width =2355
@@ -618,13 +635,12 @@ Begin Form
                     BackColor =15921906
                     Name ="lblList"
                     Caption ="All WQ Instruments"
-                    FontName ="Cambria"
                     GridlineColor =10921638
                     LayoutCachedLeft =420
                     LayoutCachedTop =240
                     LayoutCachedWidth =2775
                     LayoutCachedHeight =600
-                    ThemeFontIndex =0
+                    ThemeFontIndex =-1
                     BackThemeColorIndex =-1
                     BorderThemeColorIndex =-1
                     BorderTint =100.0
@@ -635,7 +651,6 @@ Begin Form
                     BackStyle =1
                     OverlapFlags =215
                     TextAlign =2
-                    TextFontFamily =18
                     Left =6825
                     Top =240
                     Width =1035
@@ -644,13 +659,12 @@ Begin Form
                     BackColor =15921906
                     Name ="Label281"
                     Caption ="Details"
-                    FontName ="Cambria"
                     GridlineColor =10921638
                     LayoutCachedLeft =6825
                     LayoutCachedTop =240
                     LayoutCachedWidth =7860
                     LayoutCachedHeight =600
-                    ThemeFontIndex =0
+                    ThemeFontIndex =-1
                     BackThemeColorIndex =-1
                     BorderThemeColorIndex =-1
                     BorderTint =100.0

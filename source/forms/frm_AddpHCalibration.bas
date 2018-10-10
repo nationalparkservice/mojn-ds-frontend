@@ -25,7 +25,7 @@ Begin Form
     Left =2640
     Top =300
     Right =15855
-    Bottom =11220
+    Bottom =11895
     DatasheetGridlinesColor =14806254
     RecSrcDt = Begin
         0x923d7d3ed51be540
@@ -331,7 +331,7 @@ Begin Form
             ForeTint =75.0
         End
         Begin FormHeader
-            Height =720
+            Height =1605
             BackColor =4281912
             Name ="FormHeader"
             AlternateBackThemeColorIndex =1
@@ -415,6 +415,28 @@ Begin Form
                     QuickStyle =22
                     QuickStyleMask =-1013
                     Overlaps =1
+                End
+                Begin Label
+                    OverlapFlags =85
+                    Left =120
+                    Top =780
+                    Width =12540
+                    Height =825
+                    FontWeight =700
+                    BorderColor =8355711
+                    ForeColor =16777215
+                    Name ="Label283"
+                    Caption ="NOTE: The data in this form are shared across multiple protocols. Please use ext"
+                        "ra care when editing or deleting information, as it may apply to other protocols"
+                        ". If your notes have protocol-specific references, make sure that it is clear wh"
+                        "ich protocol you are referring to."
+                    GridlineColor =10921638
+                    LayoutCachedLeft =120
+                    LayoutCachedTop =780
+                    LayoutCachedWidth =12660
+                    LayoutCachedHeight =1605
+                    ForeThemeColorIndex =-1
+                    ForeTint =100.0
                 End
             End
         End

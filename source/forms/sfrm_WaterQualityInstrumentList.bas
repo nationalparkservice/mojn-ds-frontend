@@ -22,15 +22,15 @@ Begin Form
     Width =6038
     DatasheetFontHeight =11
     ItemSuffix =63
-    Left =3045
-    Top =4785
-    Right =8850
-    Bottom =11235
+    Left =3570
+    Top =3105
+    Right =9375
+    Bottom =11175
     DatasheetGridlinesColor =14806254
     RecSrcDt = Begin
-        0x1c5de01cd51be540
+        0xda141809d62ee540
     End
-    RecordSource ="ref_WaterQualityInstrument"
+    RecordSource ="ref_WaterQualityInstrument_Shared"
     Caption ="sfrmList"
     DatasheetFontName ="Calibri"
     FilterOnLoad =0

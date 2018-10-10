@@ -9,6 +9,7 @@ Begin Form
     NavigationButtons = NotDefault
     CloseButton = NotDefault
     DividingLines = NotDefault
+    DataEntry = NotDefault
     AllowDesignChanges = NotDefault
     DefaultView =0
     ScrollBars =2
@@ -20,16 +21,15 @@ Begin Form
     Width =7845
     DatasheetFontHeight =11
     ItemSuffix =168
-    Left =8265
-    Top =795
-    Right =14190
-    Bottom =6615
+    Left =11280
+    Top =3600
+    Right =16950
+    Bottom =9165
     DatasheetGridlinesColor =14806254
-    Filter ="ID = 149"
     RecSrcDt = Begin
-        0x7bdfd16c311de540
+        0xe49ada8aed29e540
     End
-    RecordSource ="data_CalibrationDO"
+    RecordSource ="data_CalibrationDO_Shared"
     Caption ="sfrmEntry"
     DatasheetFontName ="Calibri"
     PrtMip = Begin
@@ -135,6 +135,7 @@ Begin Form
             Name ="Detail"
             Begin
                 Begin CommandButton
+                    Visible = NotDefault
                     OverlapFlags =93
                     Left =4080
                     Top =4440
@@ -175,15 +176,12 @@ Begin Form
                     Shadow =1
                     QuickStyle =22
                     QuickStyleMask =-117
-                    WebImagePaddingLeft =2
-                    WebImagePaddingTop =1
-                    WebImagePaddingRight =3
-                    WebImagePaddingBottom =3
+                    WebImagePaddingLeft =1
                     Overlaps =1
                 End
                 Begin CommandButton
                     OverlapFlags =85
-                    Left =2820
+                    Left =2800
                     Top =4440
                     Width =1080
                     TabIndex =9
@@ -196,9 +194,9 @@ Begin Form
                     BottomPadding =150
                     GridlineColor =10921638
 
-                    LayoutCachedLeft =2820
+                    LayoutCachedLeft =2800
                     LayoutCachedTop =4440
-                    LayoutCachedWidth =3900
+                    LayoutCachedWidth =3880
                     LayoutCachedHeight =4800
                     ForeTint =100.0
                     Shape =0
@@ -222,10 +220,7 @@ Begin Form
                     Shadow =1
                     QuickStyle =22
                     QuickStyleMask =-117
-                    WebImagePaddingLeft =2
-                    WebImagePaddingTop =1
-                    WebImagePaddingRight =3
-                    WebImagePaddingBottom =3
+                    WebImagePaddingLeft =1
                     Overlaps =1
                 End
                 Begin CommandButton
@@ -269,10 +264,7 @@ Begin Form
                     Shadow =1
                     QuickStyle =22
                     QuickStyleMask =-117
-                    WebImagePaddingLeft =2
-                    WebImagePaddingTop =1
-                    WebImagePaddingRight =3
-                    WebImagePaddingBottom =3
+                    WebImagePaddingLeft =1
                     Overlaps =1
                 End
                 Begin TextBox
@@ -289,6 +281,7 @@ Begin Form
                     Name ="txtCalibrationTime"
                     ControlSource ="CalibrationTime"
                     Format ="General Date"
+                    DefaultValue ="#12:00:00 AM#"
                     GridlineColor =10921638
                     ShowDatePicker =0
 
@@ -336,6 +329,7 @@ Begin Form
                     Name ="txtCalibrationDate"
                     ControlSource ="CalibrationDate"
                     Format ="General Date"
+                    DefaultValue ="#5/14/2018#"
                     GridlineColor =10921638
 
                     LayoutCachedLeft =1800
@@ -653,8 +647,9 @@ Begin Form
                     Name ="cboInstrumentID"
                     ControlSource ="DOInstrumentID"
                     RowSourceType ="Table/Query"
-                    RowSource ="SELECT ref_WaterQualityInstrument.Label, ref_WaterQualityInstrument.ID FROM ref_"
-                        "WaterQualityInstrument; "
+                    RowSource ="SELECT ref_WaterQualityInstrument_Shared.Label, ref_WaterQualityInstrument_Share"
+                        "d.ID FROM ref_WaterQualityInstrument_Shared; "
+                    DefaultValue ="16"
                     GridlineColor =10921638
                     ListItemsEditForm ="frm_AddWaterQualityInstrument"
 
@@ -688,9 +683,8 @@ Begin Form
                     End
                 End
                 Begin CommandButton
-                    Visible = NotDefault
                     OverlapFlags =85
-                    Left =1560
+                    Left =60
                     Top =4440
                     Width =1080
                     TabIndex =12
@@ -703,9 +697,9 @@ Begin Form
                     BottomPadding =150
                     GridlineColor =10921638
 
-                    LayoutCachedLeft =1560
+                    LayoutCachedLeft =60
                     LayoutCachedTop =4440
-                    LayoutCachedWidth =2640
+                    LayoutCachedWidth =1140
                     LayoutCachedHeight =4800
                     ForeTint =100.0
                     Shape =0
@@ -729,10 +723,7 @@ Begin Form
                     Shadow =1
                     QuickStyle =22
                     QuickStyleMask =-117
-                    WebImagePaddingLeft =2
-                    WebImagePaddingTop =1
-                    WebImagePaddingRight =3
-                    WebImagePaddingBottom =3
+                    WebImagePaddingLeft =1
                     Overlaps =1
                 End
             End

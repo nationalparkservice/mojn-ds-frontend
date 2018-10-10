@@ -26,16 +26,14 @@ Begin Form
     Right =8820
     Bottom =11175
     DatasheetGridlinesColor =14806254
-    RecSrcDt = Begin
-        0x3a89cc459321e540
-    End
-    RecordSource ="SELECT data_CalibrationSpCond.ID, data_CalibrationSpCond.CalibrationDate, data_C"
-        "alibrationSpCond.CalibrationTime, ref_WaterQualityInstrument.Label, ref_WaterQua"
-        "lityInstrument.ID AS WaterQualityInstrumentID FROM data_CalibrationSpCond INNER "
-        "JOIN ref_WaterQualityInstrument ON data_CalibrationSpCond.SpCondInstrumentID = r"
-        "ef_WaterQualityInstrument.ID ORDER BY ref_WaterQualityInstrument.IsActive, data_"
-        "CalibrationSpCond.CalibrationDate DESC , data_CalibrationSpCond.CalibrationTime "
-        "DESC , ref_WaterQualityInstrument.Label; "
+    RecordSource ="SELECT data_CalibrationSpCond_Shared.ID, data_CalibrationSpCond_Shared.Calibrati"
+        "onDate, data_CalibrationSpCond_Shared.CalibrationTime, ref_WaterQualityInstrumen"
+        "t_Shared.Label, ref_WaterQualityInstrument_Shared.ID AS WaterQualityInstrumentID"
+        " FROM data_CalibrationSpCond_Shared INNER JOIN ref_WaterQualityInstrument_Shared"
+        " ON data_CalibrationSpCond_Shared.SpCondInstrumentID = ref_WaterQualityInstrumen"
+        "t_Shared.ID ORDER BY ref_WaterQualityInstrument_Shared.IsActive, data_Calibratio"
+        "nSpCond_Shared.CalibrationDate DESC , data_CalibrationSpCond_Shared.CalibrationT"
+        "ime DESC , ref_WaterQualityInstrument_Shared.Label; "
     Caption ="sfrmList"
     DatasheetFontName ="Calibri"
     PrtMip = Begin
@@ -267,9 +265,10 @@ Begin Form
                     ColumnInfo ="\"\";\"\";\"10\";\"100\""
                     Name ="cboInstrumentFilter"
                     RowSourceType ="Table/Query"
-                    RowSource ="SELECT ref_WaterQualityInstrument.Label, ref_WaterQualityInstrument.ID FROM ref_"
-                        "WaterQualityInstrument ORDER BY ref_WaterQualityInstrument.IsActive, ref_WaterQu"
-                        "alityInstrument.Manufacturer, ref_WaterQualityInstrument.Model; "
+                    RowSource ="SELECT ref_WaterQualityInstrument_Shared.Label, ref_WaterQualityInstrument_Share"
+                        "d.ID FROM ref_WaterQualityInstrument_Shared ORDER BY ref_WaterQualityInstrument_"
+                        "Shared.IsActive, ref_WaterQualityInstrument_Shared.Manufacturer, ref_WaterQualit"
+                        "yInstrument_Shared.Model; "
                     AfterUpdate ="[Event Procedure]"
                     GridlineColor =10921638
                     AllowValueListEdits =0
@@ -339,10 +338,7 @@ Begin Form
                     Shadow =1
                     QuickStyle =22
                     QuickStyleMask =-117
-                    WebImagePaddingLeft =2
-                    WebImagePaddingTop =1
-                    WebImagePaddingRight =3
-                    WebImagePaddingBottom =3
+                    WebImagePaddingLeft =1
                 End
             End
         End
@@ -394,9 +390,9 @@ Begin Form
                     OverlapFlags =85
                     TextAlign =2
                     IMESentenceMode =3
-                    Left =3564
+                    Left =3555
                     Top =60
-                    Width =2208
+                    Width =2205
                     Height =600
                     ColumnWidth =3000
                     TabIndex =1
@@ -408,9 +404,9 @@ Begin Form
                     GroupTable =1
                     GridlineColor =10921638
 
-                    LayoutCachedLeft =3564
+                    LayoutCachedLeft =3555
                     LayoutCachedTop =60
-                    LayoutCachedWidth =5772
+                    LayoutCachedWidth =5760
                     LayoutCachedHeight =660
                     ColumnStart =1
                     ColumnEnd =1

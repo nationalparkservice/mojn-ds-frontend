@@ -22,10 +22,10 @@ Begin Form
     Width =12930
     DatasheetFontHeight =11
     ItemSuffix =282
-    Left =2415
-    Top =360
-    Right =15630
-    Bottom =11280
+    Left =2310
+    Top =75
+    Right =15525
+    Bottom =11670
     DatasheetGridlinesColor =14806254
     RecSrcDt = Begin
         0x923d7d3ed51be540
@@ -331,7 +331,7 @@ Begin Form
             ForeTint =75.0
         End
         Begin FormHeader
-            Height =720
+            Height =1605
             BackColor =4281912
             Name ="FormHeader"
             AlternateBackThemeColorIndex =1
@@ -340,7 +340,6 @@ Begin Form
                 Begin Label
                     OverlapFlags =93
                     TextAlign =2
-                    TextFontFamily =18
                     Left =-45
                     Top =60
                     Width =12975
@@ -355,13 +354,12 @@ Begin Form
                     ForeColor =16777215
                     Name ="lblHeader"
                     Caption ="Specific Conductance Calibration"
-                    FontName ="Cambria"
                     GridlineColor =10921638
                     LayoutCachedLeft =-45
                     LayoutCachedTop =60
                     LayoutCachedWidth =12930
                     LayoutCachedHeight =720
-                    ThemeFontIndex =0
+                    ThemeFontIndex =-1
                     BorderThemeColorIndex =2
                     BorderTint =100.0
                     ForeThemeColorIndex =-1
@@ -369,16 +367,14 @@ Begin Form
                 End
                 Begin CommandButton
                     OverlapFlags =215
-                    TextFontFamily =18
-                    Left =11832
-                    Top =132
+                    Left =11835
+                    Top =135
                     Width =840
-                    Height =408
+                    Height =405
                     FontWeight =700
                     Name ="cmdCloseForm"
                     Caption ="Close"
                     OnClick ="[Event Procedure]"
-                    FontName ="Cambria"
                     GroupTable =2
                     LeftPadding =45
                     TopPadding =45
@@ -386,9 +382,9 @@ Begin Form
                     BottomPadding =150
                     GridlineColor =10921638
 
-                    LayoutCachedLeft =11832
-                    LayoutCachedTop =132
-                    LayoutCachedWidth =12672
+                    LayoutCachedLeft =11835
+                    LayoutCachedTop =135
+                    LayoutCachedWidth =12675
                     LayoutCachedHeight =540
                     LayoutGroup =1
                     ForeThemeColorIndex =-1
@@ -401,7 +397,7 @@ Begin Form
                     BorderColor =9211020
                     BorderThemeColorIndex =-1
                     BorderTint =100.0
-                    ThemeFontIndex =0
+                    ThemeFontIndex =-1
                     HoverColor =15527148
                     HoverThemeColorIndex =-1
                     HoverTint =100.0
@@ -414,11 +410,29 @@ Begin Form
                     Shadow =1
                     QuickStyle =22
                     QuickStyleMask =-1013
-                    WebImagePaddingLeft =1
-                    WebImagePaddingTop =1
-                    WebImagePaddingRight =3
-                    WebImagePaddingBottom =3
                     Overlaps =1
+                End
+                Begin Label
+                    OverlapFlags =85
+                    Left =180
+                    Top =780
+                    Width =12540
+                    Height =825
+                    FontWeight =700
+                    BorderColor =8355711
+                    ForeColor =16777215
+                    Name ="Label283"
+                    Caption ="NOTE: The data in this form are shared across multiple protocols. Please use ext"
+                        "ra care when editing or deleting information, as it may apply to other protocols"
+                        ". If your notes have protocol-specific references, make sure that it is clear wh"
+                        "ich protocol you are referring to."
+                    GridlineColor =10921638
+                    LayoutCachedLeft =180
+                    LayoutCachedTop =780
+                    LayoutCachedWidth =12720
+                    LayoutCachedHeight =1605
+                    ForeThemeColorIndex =-1
+                    ForeTint =100.0
                 End
             End
         End
@@ -566,10 +580,7 @@ Begin Form
                     Shadow =1
                     QuickStyle =22
                     QuickStyleMask =-117
-                    WebImagePaddingLeft =2
-                    WebImagePaddingTop =1
-                    WebImagePaddingRight =3
-                    WebImagePaddingBottom =3
+                    WebImagePaddingLeft =1
                     Overlaps =1
                 End
                 Begin Rectangle
@@ -617,7 +628,6 @@ Begin Form
                     BackStyle =1
                     OverlapFlags =215
                     TextAlign =2
-                    TextFontFamily =18
                     Left =360
                     Top =240
                     Width =4320
@@ -626,13 +636,12 @@ Begin Form
                     BackColor =15921906
                     Name ="lblList"
                     Caption ="All Specific Conductance Calibrations"
-                    FontName ="Cambria"
                     GridlineColor =10921638
                     LayoutCachedLeft =360
                     LayoutCachedTop =240
                     LayoutCachedWidth =4680
                     LayoutCachedHeight =600
-                    ThemeFontIndex =0
+                    ThemeFontIndex =-1
                     BackThemeColorIndex =-1
                     BorderThemeColorIndex =-1
                     BorderTint =100.0
@@ -643,7 +652,6 @@ Begin Form
                     BackStyle =1
                     OverlapFlags =215
                     TextAlign =2
-                    TextFontFamily =18
                     Left =6825
                     Top =240
                     Width =1035
@@ -652,13 +660,12 @@ Begin Form
                     BackColor =15921906
                     Name ="Label281"
                     Caption ="Details"
-                    FontName ="Cambria"
                     GridlineColor =10921638
                     LayoutCachedLeft =6825
                     LayoutCachedTop =240
                     LayoutCachedWidth =7860
                     LayoutCachedHeight =600
-                    ThemeFontIndex =0
+                    ThemeFontIndex =-1
                     BackThemeColorIndex =-1
                     BorderThemeColorIndex =-1
                     BorderTint =100.0

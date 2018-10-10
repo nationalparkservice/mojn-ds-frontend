@@ -21,21 +21,19 @@ Begin Form
     Width =6060
     DatasheetFontHeight =11
     ItemSuffix =74
-    Left =3015
-    Top =3105
-    Right =8820
-    Bottom =11175
+    Left =3240
+    Top =3045
+    Right =9045
+    Bottom =11115
     DatasheetGridlinesColor =14806254
-    RecSrcDt = Begin
-        0x2391a3566e1de540
-    End
-    RecordSource ="SELECT data_CalibrationpH.ID, data_CalibrationpH.CalibrationDate, data_Calibrati"
-        "onpH.CalibrationTime, ref_WaterQualityInstrument.Label, ref_WaterQualityInstrume"
-        "nt.ID AS WaterQualityInstrumentID, data_CalibrationpH.StandardValue_pH FROM data"
-        "_CalibrationpH INNER JOIN ref_WaterQualityInstrument ON data_CalibrationpH.pHIns"
-        "trumentID = ref_WaterQualityInstrument.ID ORDER BY ref_WaterQualityInstrument.Is"
-        "Active, data_CalibrationpH.CalibrationDate DESC , data_CalibrationpH.Calibration"
-        "Time DESC , ref_WaterQualityInstrument.Label; "
+    RecordSource ="SELECT data_CalibrationpH_Shared.ID, data_CalibrationpH_Shared.CalibrationDate, "
+        "data_CalibrationpH_Shared.CalibrationTime, ref_WaterQualityInstrument_Shared.Lab"
+        "el, ref_WaterQualityInstrument_Shared.ID AS WaterQualityInstrumentID, data_Calib"
+        "rationpH_Shared.StandardValue_pH FROM data_CalibrationpH_Shared INNER JOIN ref_W"
+        "aterQualityInstrument_Shared ON data_CalibrationpH_Shared.pHInstrumentID = ref_W"
+        "aterQualityInstrument_Shared.ID ORDER BY ref_WaterQualityInstrument_Shared.IsAct"
+        "ive, data_CalibrationpH_Shared.CalibrationDate DESC , data_CalibrationpH_Shared."
+        "CalibrationTime DESC , ref_WaterQualityInstrument_Shared.Label; "
     Caption ="sfrmList"
     DatasheetFontName ="Calibri"
     PrtMip = Begin
@@ -267,9 +265,10 @@ Begin Form
                     ColumnInfo ="\"\";\"\";\"10\";\"100\""
                     Name ="cboInstrumentFilter"
                     RowSourceType ="Table/Query"
-                    RowSource ="SELECT ref_WaterQualityInstrument.Label, ref_WaterQualityInstrument.ID FROM ref_"
-                        "WaterQualityInstrument ORDER BY ref_WaterQualityInstrument.IsActive, ref_WaterQu"
-                        "alityInstrument.Manufacturer, ref_WaterQualityInstrument.Model; "
+                    RowSource ="SELECT ref_WaterQualityInstrument_Shared.Label, ref_WaterQualityInstrument_Share"
+                        "d.ID FROM ref_WaterQualityInstrument_Shared ORDER BY ref_WaterQualityInstrument_"
+                        "Shared.IsActive, ref_WaterQualityInstrument_Shared.Manufacturer, ref_WaterQualit"
+                        "yInstrument_Shared.Model; "
                     AfterUpdate ="[Event Procedure]"
                     GridlineColor =10921638
                     AllowValueListEdits =0

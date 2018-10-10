@@ -16,10 +16,10 @@ Begin Form
     Width =17370
     DatasheetFontHeight =11
     ItemSuffix =50
-    Left =780
-    Top =3195
-    Right =16620
-    Bottom =12180
+    Left =4140
+    Top =3705
+    Right =19980
+    Bottom =12690
     DatasheetGridlinesColor =14806254
     RecSrcDt = Begin
         0x19205bcaca15e540
@@ -502,9 +502,10 @@ Begin Form
                     Name ="cbopHInstrumentID"
                     ControlSource ="pHInstrumentID"
                     RowSourceType ="Table/Query"
-                    RowSource ="SELECT ref_WaterQualityInstrument.ID, ref_WaterQualityInstrument.Label, ref_Wate"
-                        "rQualityInstrument.Summary, ref_WaterQualityInstrument.NPSPropertyTag, ref_Water"
-                        "QualityInstrument.IsActive FROM ref_WaterQualityInstrument; "
+                    RowSource ="SELECT ref_WaterQualityInstrument_Shared.ID, ref_WaterQualityInstrument_Shared.L"
+                        "abel, ref_WaterQualityInstrument_Shared.Summary, ref_WaterQualityInstrument_Shar"
+                        "ed.NPSPropertyTag, ref_WaterQualityInstrument_Shared.IsActive FROM ref_WaterQual"
+                        "ityInstrument_Shared; "
                     ColumnWidths ="0;2160"
                     AfterUpdate ="[Event Procedure]"
                     DefaultValue ="=[Forms]![frm_Visit]![cboDefaultWQInstr]"
@@ -617,9 +618,10 @@ Begin Form
                     Name ="cboDOInstrumentID"
                     ControlSource ="DOInstrumentID"
                     RowSourceType ="Table/Query"
-                    RowSource ="SELECT ref_WaterQualityInstrument.ID, ref_WaterQualityInstrument.Label, ref_Wate"
-                        "rQualityInstrument.Summary, ref_WaterQualityInstrument.NPSPropertyTag, ref_Water"
-                        "QualityInstrument.IsActive FROM ref_WaterQualityInstrument; "
+                    RowSource ="SELECT ref_WaterQualityInstrument_Shared.ID, ref_WaterQualityInstrument_Shared.L"
+                        "abel, ref_WaterQualityInstrument_Shared.Summary, ref_WaterQualityInstrument_Shar"
+                        "ed.NPSPropertyTag, ref_WaterQualityInstrument_Shared.IsActive FROM ref_WaterQual"
+                        "ityInstrument_Shared; "
                     ColumnWidths ="0;2160"
                     AfterUpdate ="[Event Procedure]"
                     DefaultValue ="=[Forms]![frm_Visit]![cboDefaultWQInstr]"
@@ -733,9 +735,10 @@ Begin Form
                     Name ="cboSpCondInstrumentID"
                     ControlSource ="SpCondInstrumentID"
                     RowSourceType ="Table/Query"
-                    RowSource ="SELECT ref_WaterQualityInstrument.ID, ref_WaterQualityInstrument.Label, ref_Wate"
-                        "rQualityInstrument.Summary, ref_WaterQualityInstrument.NPSPropertyTag, ref_Water"
-                        "QualityInstrument.IsActive FROM ref_WaterQualityInstrument; "
+                    RowSource ="SELECT ref_WaterQualityInstrument_Shared.ID, ref_WaterQualityInstrument_Shared.L"
+                        "abel, ref_WaterQualityInstrument_Shared.Summary, ref_WaterQualityInstrument_Shar"
+                        "ed.NPSPropertyTag, ref_WaterQualityInstrument_Shared.IsActive FROM ref_WaterQual"
+                        "ityInstrument_Shared; "
                     ColumnWidths ="0;2160"
                     AfterUpdate ="[Event Procedure]"
                     DefaultValue ="=[Forms]![frm_Visit]![cboDefaultWQInstr]"
@@ -849,9 +852,10 @@ Begin Form
                     Name ="cboTemperatureInstrumentID"
                     ControlSource ="TemperatureInstrumentID"
                     RowSourceType ="Table/Query"
-                    RowSource ="SELECT ref_WaterQualityInstrument.ID, ref_WaterQualityInstrument.Label, ref_Wate"
-                        "rQualityInstrument.Summary, ref_WaterQualityInstrument.NPSPropertyTag, ref_Water"
-                        "QualityInstrument.IsActive FROM ref_WaterQualityInstrument; "
+                    RowSource ="SELECT ref_WaterQualityInstrument_Shared.ID, ref_WaterQualityInstrument_Shared.L"
+                        "abel, ref_WaterQualityInstrument_Shared.Summary, ref_WaterQualityInstrument_Shar"
+                        "ed.NPSPropertyTag, ref_WaterQualityInstrument_Shared.IsActive FROM ref_WaterQual"
+                        "ityInstrument_Shared; "
                     ColumnWidths ="0;2160"
                     AfterUpdate ="[Event Procedure]"
                     DefaultValue ="=[Forms]![frm_Visit]![cboDefaultWQInstr]"
@@ -1422,10 +1426,10 @@ SpCondCount = Me.sfrmWaterQualitySpCond.Form.RowCount()
 Select Case dataCollected
 Case "Y"
     'If data are collected, at least one wq measurement must have data entered and an instrument specified
-    If ((pHCount > 0 And Nz(LookupCodeFromID("ref_WaterQualityInstrument", Me.cbopHInstrumentID)) <> "None") Or _
-        (tempCount > 0 And Nz(LookupCodeFromID("ref_WaterQualityInstrument", Me.cboTemperatureInstrumentID)) <> "None") Or _
-        (DOCount > 0 And Nz(LookupCodeFromID("ref_WaterQualityInstrument", Me.cboDOInstrumentID)) <> "None") Or _
-        (SpCondCount > 0 And Nz(LookupCodeFromID("ref_WaterQualityInstrument", Me.cboSpCondInstrumentID)) <> "None")) And _
+    If ((pHCount > 0 And Nz(LookupCodeFromID("ref_WaterQualityInstrument_Shared", Me.cbopHInstrumentID)) <> "None") Or _
+        (tempCount > 0 And Nz(LookupCodeFromID("ref_WaterQualityInstrument_Shared", Me.cboTemperatureInstrumentID)) <> "None") Or _
+        (DOCount > 0 And Nz(LookupCodeFromID("ref_WaterQualityInstrument_Shared", Me.cboDOInstrumentID)) <> "None") Or _
+        (SpCondCount > 0 And Nz(LookupCodeFromID("ref_WaterQualityInstrument_Shared", Me.cboSpCondInstrumentID)) <> "None")) And _
         RequiredFieldsPopulated Then
         DataQualityOK = True
     Else: DataQualityOK = False
@@ -1496,9 +1500,9 @@ On Error GoTo Error_Handler
 
     If ActivityExists = True And Me.cboWaterQualityDataCollectedID = YesLookupID And Not IsNull(Me.pHInstrumentID) And Not IsNull(Me.TemperatureInstrumentID) And Not IsNull(Me.DOInstrumentID) And Not IsNull(Me.SpCondInstrumentID) Then
         EnableSubforms (True)
-        Me.lblpHCalInfo.Caption = "Last 3 calibrations for " & LookupLabelFromID("ref_WaterQualityInstrument", Me.pHInstrumentID)
-        Me.lblDOCalInfo.Caption = "Last 3 calibrations for " & LookupLabelFromID("ref_WaterQualityInstrument", Me.DOInstrumentID)
-        Me.lblSpCondCalInfo.Caption = "Last 3 calibrations for " & LookupLabelFromID("ref_WaterQualityInstrument", Me.SpCondInstrumentID)
+        Me.lblpHCalInfo.Caption = "Last 3 calibrations for " & LookupLabelFromID("ref_WaterQualityInstrument_Shared", Me.pHInstrumentID)
+        Me.lblDOCalInfo.Caption = "Last 3 calibrations for " & LookupLabelFromID("ref_WaterQualityInstrument_Shared", Me.DOInstrumentID)
+        Me.lblSpCondCalInfo.Caption = "Last 3 calibrations for " & LookupLabelFromID("ref_WaterQualityInstrument_Shared", Me.SpCondInstrumentID)
     Else
         EnableSubforms (False)
     End If
@@ -1581,7 +1585,7 @@ On Error GoTo Error_Handler
     If RequiredFieldsPopulated() Then
         EnableSubforms (True)
         RefreshCalibration
-        Me.lblpHCalInfo.Caption = "Last 3 calibrations for " & LookupLabelFromID("ref_WaterQualityInstrument", Me.cbopHInstrumentID)
+        Me.lblpHCalInfo.Caption = "Last 3 calibrations for " & LookupLabelFromID("ref_WaterQualityInstrument_Shared", Me.cbopHInstrumentID)
     Else
         EnableSubforms (False)
     End If
@@ -1599,7 +1603,7 @@ On Error GoTo Error_Handler
     If RequiredFieldsPopulated() Then
         EnableSubforms (True)
         RefreshCalibration
-        Me.lblDOCalInfo.Caption = "Last 3 calibrations for " & LookupLabelFromID("ref_WaterQualityInstrument", Me.cboDOInstrumentID)
+        Me.lblDOCalInfo.Caption = "Last 3 calibrations for " & LookupLabelFromID("ref_WaterQualityInstrument_Shared", Me.cboDOInstrumentID)
     Else
         EnableSubforms (False)
     End If
@@ -1617,7 +1621,7 @@ On Error GoTo Error_Handler
     If RequiredFieldsPopulated() Then
         EnableSubforms (True)
         RefreshCalibration
-        Me.lblSpCondCalInfo.Caption = "Last 3 calibrations for " & LookupLabelFromID("ref_WaterQualityInstrument", Me.cboSpCondInstrumentID)
+        Me.lblSpCondCalInfo.Caption = "Last 3 calibrations for " & LookupLabelFromID("ref_WaterQualityInstrument_Shared", Me.cboSpCondInstrumentID)
     Else
         EnableSubforms (False)
     End If

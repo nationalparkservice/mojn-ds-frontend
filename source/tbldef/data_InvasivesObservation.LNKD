@@ -1,4 +1,4 @@
 ﻿data_InvasivesObservation
-ODBC;DRIVER=ODBC Driver 13 for SQL Server;SERVER=INPLAKE52V\MOJN;UID=sewright;Trusted_Connection=Yes;APP=Microsoft Office 2016;DATABASE=MOJN_DS_Water;
+ODBC;DRIVER=ODBC Driver 13 for SQL Server;SERVER=INPLAKE52V\MOJN;UID=sewright;PWD=;Trusted_Connection=Yes;APP=Microsoft Office 2016;DATABASE=MOJN_DS_Water;
 data.InvasivesObservation
 ID

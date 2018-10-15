@@ -1,0 +1,4 @@
+﻿ID	Server	DisplayName	IsActive	Driver	App	Database	Trusted_Connection	Description
+1	INPLAKE52V\\MOJN	TESTING DS Database	-1	ODBC Driver 13 for SQL Server	Microsoft® Windows® Operating System	Testing_MOJN_DS_Water	-1	
+2	INPLAKE52V\\MOJN	DS_Water v1	-1	ODBC Driver 13 for SQL Server	Microsoft® Windows® Operating System	MOJN_DS_Water	-1	
+3	INPLAKE36792JNX\\SARAH_LOCAL	TESTING LOCAL DS Database	-1	ODBC Driver 13 for SQL Server	Microsoft® Windows® Operating System	Testing_MOJN_DS_Water	-1	

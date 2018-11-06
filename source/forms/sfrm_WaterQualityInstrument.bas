@@ -22,9 +22,9 @@ Begin Form
     DatasheetFontHeight =11
     ItemSuffix =63
     Left =9975
-    Top =3105
+    Top =3990
     Right =15645
-    Bottom =7005
+    Bottom =7890
     DatasheetGridlinesColor =14806254
     RecSrcDt = Begin
         0xeddc1709d62ee540
@@ -139,6 +139,7 @@ Begin Form
                     Left =4080
                     Top =3060
                     Width =1080
+                    TabIndex =8
                     Name ="cmdEdit"
                     Caption ="Edit"
                     OnClick ="[Event Procedure]"
@@ -246,7 +247,6 @@ Begin Form
                     Top =30
                     Width =3540
                     Height =330
-                    TabIndex =2
                     LeftMargin =22
                     TopMargin =22
                     RightMargin =22
@@ -305,7 +305,7 @@ Begin Form
                     Top =2175
                     Width =3540
                     Height =825
-                    TabIndex =3
+                    TabIndex =5
                     LeftMargin =22
                     TopMargin =22
                     RightMargin =22
@@ -364,7 +364,7 @@ Begin Form
                     Left =2820
                     Top =3060
                     Width =1080
-                    TabIndex =4
+                    TabIndex =7
                     Name ="cmdCancel"
                     Caption ="Cancel"
                     OnClick ="[Event Procedure]"
@@ -409,7 +409,7 @@ Begin Form
                     Left =1800
                     Top =3060
                     Width =1080
-                    TabIndex =5
+                    TabIndex =6
                     Name ="cmdSave"
                     Caption ="Save"
                     OnClick ="[Event Procedure]"
@@ -455,7 +455,7 @@ Begin Form
                     Top =810
                     Width =3540
                     Height =315
-                    TabIndex =6
+                    TabIndex =2
                     BorderColor =9211020
                     ForeColor =4210752
                     Name ="txtManufacturer"
@@ -511,7 +511,7 @@ Begin Form
                     Top =1185
                     Width =3540
                     Height =555
-                    TabIndex =7
+                    TabIndex =3
                     BorderColor =9211020
                     ForeColor =4210752
                     Name ="txtNPSPropertyTag"
@@ -568,7 +568,7 @@ Begin Form
                     Top =1800
                     Width =3540
                     Height =315
-                    TabIndex =8
+                    TabIndex =4
                     BorderColor =9211020
                     ForeColor =4210752
                     Name ="cboIsActive"

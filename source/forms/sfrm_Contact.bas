@@ -21,10 +21,10 @@ Begin Form
     Width =6240
     DatasheetFontHeight =11
     ItemSuffix =89
-    Left =12510
-    Top =3255
-    Right =18180
-    Bottom =7485
+    Left =8775
+    Top =3225
+    Right =14445
+    Bottom =7455
     DatasheetGridlinesColor =14806254
     Filter ="ID = 91"
     RecSrcDt = Begin
@@ -226,7 +226,7 @@ Begin Form
                     Left =4200
                     Top =3000
                     Width =1080
-                    TabIndex =10
+                    TabIndex =9
                     Name ="cmdEdit"
                     Caption ="Edit"
                     OnClick ="[Event Procedure]"
@@ -281,7 +281,7 @@ Begin Form
                     BottomMargin =22
                     BorderColor =9211020
                     ForeColor =4210752
-                    Name ="txtModel"
+                    Name ="txtMiddleInitial"
                     ControlSource ="MiddleInitial"
                     GroupTable =5
                     GridlineColor =10921638
@@ -314,7 +314,7 @@ Begin Form
                     BottomMargin =22
                     BorderColor =9211020
                     ForeColor =4210752
-                    Name ="txtLabel"
+                    Name ="txtFirstName"
                     ControlSource ="FirstName"
                     GroupTable =5
                     GridlineColor =10921638
@@ -347,7 +347,7 @@ Begin Form
                     BottomMargin =22
                     BorderColor =9211020
                     ForeColor =4210752
-                    Name ="txtSummary"
+                    Name ="txtNotes"
                     ControlSource ="Notes"
                     GroupTable =2
                     GridlineColor =10921638
@@ -395,11 +395,11 @@ Begin Form
                 End
                 Begin CommandButton
                     Visible = NotDefault
-                    OverlapFlags =85
+                    OverlapFlags =95
                     Left =2940
                     Top =3000
                     Width =1080
-                    TabIndex =9
+                    TabIndex =10
                     Name ="cmdCancel"
                     Caption ="Cancel"
                     OnClick ="[Event Procedure]"
@@ -494,7 +494,7 @@ Begin Form
                     TabIndex =2
                     BorderColor =9211020
                     ForeColor =4210752
-                    Name ="txtManufacturer"
+                    Name ="txtLastName"
                     ControlSource ="LastName"
                     GroupTable =5
                     GridlineColor =10921638
@@ -522,7 +522,7 @@ Begin Form
                     TabIndex =4
                     BorderColor =9211020
                     ForeColor =4210752
-                    Name ="txtNPSPropertyTag"
+                    Name ="txtOrganization"
                     ControlSource ="Organization"
                     GroupTable =2
                     GridlineColor =10921638
@@ -647,7 +647,7 @@ Begin Form
                     BorderColor =9211020
                     ForeColor =4210752
                     ColumnInfo ="\"\";\"\";\"10\";\"50\""
-                    Name ="ProtectedStatusID"
+                    Name ="cboProtectedStatus"
                     ControlSource ="ProtectedStatusID"
                     RowSourceType ="Table/Query"
                     RowSource ="SELECT lookup_ProtectedStatus.Label, lookup_ProtectedStatus.ID FROM lookup_Prote"
@@ -711,7 +711,7 @@ Begin Form
                     TabIndex =3
                     BorderColor =9211020
                     ForeColor =4210752
-                    Name ="Initials"
+                    Name ="txtInitials"
                     ControlSource ="Initials"
                     GroupTable =2
                     GridlineColor =10921638

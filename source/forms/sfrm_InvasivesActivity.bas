@@ -19,10 +19,10 @@ Begin Form
     Width =16220
     DatasheetFontHeight =11
     ItemSuffix =11
-    Left =3390
-    Top =450
-    Right =19410
-    Bottom =9435
+    Left =3375
+    Top =2820
+    Right =19650
+    Bottom =12060
     DatasheetGridlinesColor =14806254
     RecSrcDt = Begin
         0x340b8c157915e540
@@ -249,6 +249,7 @@ Begin Form
             AlternateBackColor =15921906
             Begin
                 Begin Subform
+                    Enabled = NotDefault
                     CanGrow = NotDefault
                     OverlapFlags =215
                     OldBorderStyle =0

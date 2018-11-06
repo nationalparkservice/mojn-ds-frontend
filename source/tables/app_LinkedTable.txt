@@ -108,3 +108,6 @@
 111	data_CalibrationpH_Shared	data.CalibrationpH_Shared	ID		
 112	data_CalibrationSpCond_Shared	data.CalibrationSpCond_Shared	ID		
 113	ref_WaterQualityInstrument_Shared	ref.WaterQualityInstrument_Shared	ID		
+114	lookup_WildlifeEvidencePresent	lookup.WildlifeEvidencePresent			
+115	analysis_RETIRED_Wildlife	analysis.RETIRED_Wildlife			
+116	data_RETIRED_WildlifeObservation	data.RETIRED_WildlifeObservation			

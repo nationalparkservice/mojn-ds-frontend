@@ -14,19 +14,18 @@ Begin Form
     DatasheetGridlinesBehavior =3
     GridX =24
     GridY =24
-    Width =15613
+    Width =15840
     DatasheetFontHeight =11
-    ItemSuffix =24
-    Left =3405
-    Top =3510
-    Right =19155
-    Bottom =8430
+    ItemSuffix =77
+    Left =3240
+    Top =5745
+    Right =18735
+    Bottom =10410
     DatasheetGridlinesColor =14806254
     RecSrcDt = Begin
-        0x340aab957b15e540
+        0x248acacb5132e540
     End
     RecordSource ="data_WildlifeObservation"
-    BeforeUpdate ="[Event Procedure]"
     DatasheetFontName ="Calibri"
     PrtMip = Begin
         0x6801000068010000680100006801000000000000201c0000e010000001000000 ,
@@ -195,7 +194,7 @@ Begin Form
             GridlineShade =65.0
         End
         Begin FormHeader
-            Height =314
+            Height =637
             BackColor =15921906
             Name ="FormHeader"
             AlternateBackThemeColorIndex =1
@@ -203,176 +202,213 @@ Begin Form
             Begin
                 Begin Label
                     OverlapFlags =85
-                    TextAlign =2
-                    Left =6840
-                    Width =8400
-                    Height =300
-                    BorderColor =6108695
-                    Name ="lblWildlifeEvidenceNotes"
-                    Caption ="Evidence Notes"
+                    Left =1560
+                    Top =300
+                    Width =1140
+                    Height =315
+                    FontSize =10
+                    BackColor =8421504
+                    BorderColor =8355711
+                    Name ="Label24"
+                    Caption ="Direct Obs."
                     GridlineColor =10921638
-                    LayoutCachedLeft =6840
-                    LayoutCachedWidth =15240
-                    LayoutCachedHeight =300
-                    ThemeFontIndex =-1
-                    BorderThemeColorIndex =-1
-                    BorderTint =100.0
-                    ForeThemeColorIndex =-1
+                    LayoutCachedLeft =1560
+                    LayoutCachedTop =300
+                    LayoutCachedWidth =2700
+                    LayoutCachedHeight =615
+                    ColumnStart =1
+                    ColumnEnd =1
+                    BackThemeColorIndex =-1
                     ForeTint =100.0
                 End
                 Begin Label
                     OverlapFlags =85
-                    TextAlign =2
-                    Left =1260
-                    Width =1080
-                    Height =300
-                    BorderColor =6108695
-                    Name ="lblWildlifeEvidence"
-                    Caption ="Evidence"
+                    Left =2760
+                    Top =300
+                    Width =1140
+                    Height =315
+                    FontSize =10
+                    BackColor =8421504
+                    BorderColor =8355711
+                    Name ="Label25"
+                    Caption ="Scat"
                     GridlineColor =10921638
-                    LayoutCachedLeft =1260
-                    LayoutCachedWidth =2340
-                    LayoutCachedHeight =300
-                    ThemeFontIndex =-1
-                    BorderThemeColorIndex =-1
-                    BorderTint =100.0
-                    ForeThemeColorIndex =-1
+                    LayoutCachedLeft =2760
+                    LayoutCachedTop =300
+                    LayoutCachedWidth =3900
+                    LayoutCachedHeight =615
+                    ColumnStart =2
+                    ColumnEnd =2
+                    BackThemeColorIndex =-1
                     ForeTint =100.0
                 End
                 Begin Label
                     OverlapFlags =85
-                    TextAlign =2
-                    Left =2400
-                    Width =4380
-                    Height =300
-                    BorderColor =6108695
-                    Name ="lblWildlifeSpecies"
-                    Caption ="Species"
+                    Left =3960
+                    Top =300
+                    Width =1140
+                    Height =315
+                    FontSize =10
+                    BackColor =8421504
+                    BorderColor =8355711
+                    Name ="Label26"
+                    Caption ="Tracks"
                     GridlineColor =10921638
-                    LayoutCachedLeft =2400
-                    LayoutCachedWidth =6780
-                    LayoutCachedHeight =300
-                    ThemeFontIndex =-1
-                    BorderThemeColorIndex =-1
-                    BorderTint =100.0
-                    ForeThemeColorIndex =-1
+                    LayoutCachedLeft =3960
+                    LayoutCachedTop =300
+                    LayoutCachedWidth =5100
+                    LayoutCachedHeight =615
+                    ColumnStart =3
+                    ColumnEnd =3
+                    BackThemeColorIndex =-1
+                    ForeTint =100.0
+                End
+                Begin Label
+                    OverlapFlags =85
+                    Left =5160
+                    Top =300
+                    Width =1140
+                    Height =315
+                    FontSize =10
+                    BackColor =8421504
+                    BorderColor =8355711
+                    Name ="Label27"
+                    Caption ="Shelter"
+                    GridlineColor =10921638
+                    LayoutCachedLeft =5160
+                    LayoutCachedTop =300
+                    LayoutCachedWidth =6300
+                    LayoutCachedHeight =615
+                    ColumnStart =4
+                    ColumnEnd =4
+                    BackThemeColorIndex =-1
+                    ForeTint =100.0
+                End
+                Begin Label
+                    OverlapFlags =85
+                    Left =6360
+                    Top =300
+                    Width =1140
+                    Height =315
+                    FontSize =10
+                    BackColor =8421504
+                    BorderColor =8355711
+                    Name ="Label28"
+                    Caption ="Foraging"
+                    GridlineColor =10921638
+                    LayoutCachedLeft =6360
+                    LayoutCachedTop =300
+                    LayoutCachedWidth =7500
+                    LayoutCachedHeight =615
+                    ColumnStart =5
+                    ColumnEnd =5
+                    BackThemeColorIndex =-1
+                    ForeTint =100.0
+                End
+                Begin Label
+                    OverlapFlags =85
+                    Left =7560
+                    Top =300
+                    Width =1140
+                    Height =315
+                    FontSize =10
+                    BackColor =8421504
+                    BorderColor =8355711
+                    Name ="Label29"
+                    Caption ="Vocalization"
+                    GridlineColor =10921638
+                    LayoutCachedLeft =7560
+                    LayoutCachedTop =300
+                    LayoutCachedWidth =8700
+                    LayoutCachedHeight =615
+                    ColumnStart =6
+                    ColumnEnd =6
+                    BackThemeColorIndex =-1
+                    ForeTint =100.0
+                End
+                Begin Label
+                    OverlapFlags =85
+                    Left =8760
+                    Top =120
+                    Width =1140
+                    Height =495
+                    FontSize =10
+                    BackColor =8421504
+                    BorderColor =8355711
+                    Name ="Label30"
+                    Caption ="Other\015\012Evidence"
+                    GridlineColor =10921638
+                    LayoutCachedLeft =8760
+                    LayoutCachedTop =120
+                    LayoutCachedWidth =9900
+                    LayoutCachedHeight =615
+                    ColumnStart =7
+                    ColumnEnd =7
+                    BackThemeColorIndex =-1
+                    ForeTint =100.0
+                End
+                Begin Label
+                    OverlapFlags =85
+                    Left =9960
+                    Top =300
+                    Width =5340
+                    Height =315
+                    FontSize =10
+                    BackColor =8421504
+                    BorderColor =8355711
+                    Name ="Label31"
+                    Caption ="Notes"
+                    GridlineColor =10921638
+                    LayoutCachedLeft =9960
+                    LayoutCachedTop =300
+                    LayoutCachedWidth =15300
+                    LayoutCachedHeight =615
+                    ColumnStart =8
+                    ColumnEnd =8
+                    BackThemeColorIndex =-1
                     ForeTint =100.0
                 End
                 Begin Label
                     OverlapFlags =85
                     TextAlign =2
                     Left =60
-                    Width =1140
-                    Height =300
+                    Top =300
+                    Width =1440
+                    Height =315
+                    FontSize =10
+                    BackColor =8421504
                     BorderColor =6108695
                     Name ="lblWildlifeType"
                     Caption ="Type"
                     GridlineColor =10921638
                     LayoutCachedLeft =60
-                    LayoutCachedWidth =1200
-                    LayoutCachedHeight =300
+                    LayoutCachedTop =300
+                    LayoutCachedWidth =1500
+                    LayoutCachedHeight =615
+                    BackThemeColorIndex =-1
                     BorderThemeColorIndex =-1
                     BorderTint =100.0
-                    ForeThemeColorIndex =-1
                     ForeTint =100.0
                 End
             End
         End
         Begin Section
-            Height =360
+            Height =420
             BackColor =15921906
             Name ="Detail"
             AlternateBackColor =15921906
             Begin
-                Begin TextBox
-                    OverlapFlags =85
-                    IMESentenceMode =3
-                    Left =2400
-                    Width =4380
-                    Height =300
-                    TabIndex =2
-                    BorderColor =14211288
-                    Name ="txtSpeciesName"
-                    ControlSource ="SpeciesName"
-                    GridlineColor =10921638
-
-                    LayoutCachedLeft =2400
-                    LayoutCachedWidth =6780
-                    LayoutCachedHeight =300
-                    BackThemeColorIndex =-1
-                    BorderThemeColorIndex =-1
-                    BorderShade =100.0
-                    ForeThemeColorIndex =-1
-                    ForeTint =100.0
-                End
-                Begin TextBox
-                    EnterKeyBehavior = NotDefault
-                    ScrollBars =2
-                    OverlapFlags =85
-                    IMESentenceMode =3
-                    Left =6840
-                    Width =8400
-                    Height =300
-                    TabIndex =3
-                    BorderColor =14211288
-                    Name ="txtEvidenceNotes"
-                    ControlSource ="EvidenceNotes"
-                    GridlineColor =10921638
-
-                    LayoutCachedLeft =6840
-                    LayoutCachedWidth =15240
-                    LayoutCachedHeight =300
-                    BackThemeColorIndex =-1
-                    BorderThemeColorIndex =-1
-                    BorderShade =100.0
-                    ThemeFontIndex =-1
-                    ForeThemeColorIndex =-1
-                    ForeTint =100.0
-                End
                 Begin ComboBox
                     LimitToList = NotDefault
                     OverlapFlags =85
-                    TextAlign =2
-                    IMESentenceMode =3
-                    ColumnCount =3
-                    ListWidth =2880
-                    Left =1260
-                    Width =1080
-                    Height =300
-                    TabIndex =1
-                    BorderColor =14211288
-                    ColumnInfo ="\"\";\"\";\"\";\"\";\"\";\"\";\"10\";\"12\""
-                    Name ="cmbWildlifeEvidenceID"
-                    ControlSource ="WildlifeEvidenceID"
-                    RowSourceType ="Table/Query"
-                    RowSource ="SELECT lookup_WildlifeEvidence.ID, lookup_WildlifeEvidence.Code, lookup_Wildlife"
-                        "Evidence.Label FROM lookup_WildlifeEvidence; "
-                    ColumnWidths ="0;1440;1440"
-                    GridlineColor =10921638
-                    AllowValueListEdits =0
-
-                    ShowOnlyRowSourceValues =255
-                    LayoutCachedLeft =1260
-                    LayoutCachedWidth =2340
-                    LayoutCachedHeight =300
-                    ThemeFontIndex =-1
-                    BackThemeColorIndex =-1
-                    BorderThemeColorIndex =-1
-                    BorderShade =100.0
-                    ForeThemeColorIndex =-1
-                    ForeShade =100.0
-                End
-                Begin ComboBox
-                    LimitToList = NotDefault
-                    OverlapFlags =85
-                    TextAlign =2
                     IMESentenceMode =3
                     ColumnCount =3
                     ListWidth =2880
                     Left =60
-                    Width =1140
-                    Height =300
-                    BorderColor =14211288
+                    Top =30
+                    Height =315
+                    BorderColor =10921638
+                    ForeColor =4210752
                     ColumnInfo ="\"\";\"\";\"\";\"\";\"\";\"\";\"10\";\"12\""
                     Name ="cmbWildlifeTypeID"
                     ControlSource ="WildlifeTypeID"
@@ -380,28 +416,31 @@ Begin Form
                     RowSource ="SELECT lookup_WildlifeType.ID, lookup_WildlifeType.Code, lookup_WildlifeType.Lab"
                         "el FROM lookup_WildlifeType; "
                     ColumnWidths ="0;864;2016"
+                    ValidationRule ="Not IsNull([WildlifeTypeID])"
+                    ValidationText ="Wildlife type is required"
                     GridlineColor =10921638
                     AllowValueListEdits =0
 
                     ShowOnlyRowSourceValues =255
                     LayoutCachedLeft =60
-                    LayoutCachedWidth =1200
-                    LayoutCachedHeight =300
-                    ThemeFontIndex =-1
-                    BackThemeColorIndex =-1
-                    BorderThemeColorIndex =-1
-                    BorderShade =100.0
-                    ForeThemeColorIndex =-1
+                    LayoutCachedTop =30
+                    LayoutCachedWidth =1500
+                    LayoutCachedHeight =345
+                    RowStart =1
+                    RowEnd =1
+                    ForeThemeColorIndex =0
+                    ForeTint =75.0
                     ForeShade =100.0
                 End
                 Begin CommandButton
                     TabStop = NotDefault
                     OverlapFlags =85
                     PictureType =2
-                    Left =15300
-                    Width =313
-                    Height =313
-                    TabIndex =4
+                    Left =15360
+                    Top =60
+                    Width =375
+                    Height =315
+                    TabIndex =9
                     ForeColor =4210752
                     Name ="cmdDeleteWildlifeObservation"
                     OnClick ="[Event Procedure]"
@@ -409,9 +448,14 @@ Begin Form
                     Picture ="X-Mark-16-LtGray"
                     GridlineColor =10921638
 
-                    LayoutCachedLeft =15300
-                    LayoutCachedWidth =15613
-                    LayoutCachedHeight =313
+                    LayoutCachedLeft =15360
+                    LayoutCachedTop =60
+                    LayoutCachedWidth =15735
+                    LayoutCachedHeight =375
+                    RowStart =1
+                    RowEnd =1
+                    ColumnStart =9
+                    ColumnEnd =9
                     Gradient =0
                     BackColor =15527148
                     BackThemeColorIndex =-1
@@ -432,6 +476,269 @@ Begin Form
                     WebImagePaddingRight =1
                     WebImagePaddingBottom =1
                     Overlaps =1
+                End
+                Begin TextBox
+                    EnterKeyBehavior = NotDefault
+                    ScrollBars =2
+                    OverlapFlags =85
+                    IMESentenceMode =3
+                    Left =9960
+                    Top =30
+                    Width =5340
+                    Height =315
+                    TabIndex =8
+                    BorderColor =10921638
+                    ForeColor =4210752
+                    Name ="Notes"
+                    ControlSource ="Notes"
+                    GridlineColor =10921638
+
+                    LayoutCachedLeft =9960
+                    LayoutCachedTop =30
+                    LayoutCachedWidth =15300
+                    LayoutCachedHeight =345
+                    RowStart =1
+                    RowEnd =1
+                    ColumnStart =8
+                    ColumnEnd =8
+                End
+                Begin ComboBox
+                    OverlapFlags =85
+                    IMESentenceMode =3
+                    Left =1560
+                    Top =30
+                    Width =1140
+                    Height =315
+                    TabIndex =1
+                    BoundColumn =1
+                    BorderColor =10921638
+                    ForeColor =4210752
+                    ColumnInfo ="\"\";\"\";\"10\";\"40\""
+                    Name ="DirectObservation"
+                    ControlSource ="DirectObservation"
+                    RowSourceType ="Table/Query"
+                    RowSource ="SELECT lookup_WildlifeEvidencePresent.Label, lookup_WildlifeEvidencePresent.ID F"
+                        "ROM lookup_WildlifeEvidencePresent; "
+                    ValidationRule ="Not IsNull([DirectObservation])"
+                    ValidationText ="Please enter a value for every evidence type."
+                    GridlineColor =10921638
+                    AllowValueListEdits =0
+
+                    LayoutCachedLeft =1560
+                    LayoutCachedTop =30
+                    LayoutCachedWidth =2700
+                    LayoutCachedHeight =345
+                    RowStart =1
+                    RowEnd =1
+                    ColumnStart =1
+                    ColumnEnd =1
+                    ForeThemeColorIndex =0
+                    ForeTint =75.0
+                    ForeShade =100.0
+                End
+                Begin ComboBox
+                    OverlapFlags =85
+                    IMESentenceMode =3
+                    Left =2760
+                    Top =30
+                    Width =1140
+                    Height =315
+                    TabIndex =2
+                    BoundColumn =1
+                    BorderColor =10921638
+                    ForeColor =4210752
+                    ColumnInfo ="\"\";\"\";\"10\";\"40\""
+                    Name ="Scat"
+                    ControlSource ="Scat"
+                    RowSourceType ="Table/Query"
+                    RowSource ="SELECT lookup_WildlifeEvidencePresent.Label, lookup_WildlifeEvidencePresent.ID F"
+                        "ROM lookup_WildlifeEvidencePresent; "
+                    ValidationRule ="Not IsNull([Scat])"
+                    ValidationText ="Please enter a value for every evidence type."
+                    GridlineColor =10921638
+                    AllowValueListEdits =0
+
+                    LayoutCachedLeft =2760
+                    LayoutCachedTop =30
+                    LayoutCachedWidth =3900
+                    LayoutCachedHeight =345
+                    RowStart =1
+                    RowEnd =1
+                    ColumnStart =2
+                    ColumnEnd =2
+                    ForeThemeColorIndex =0
+                    ForeTint =75.0
+                    ForeShade =100.0
+                End
+                Begin ComboBox
+                    OverlapFlags =85
+                    IMESentenceMode =3
+                    Left =3960
+                    Top =30
+                    Width =1140
+                    Height =315
+                    TabIndex =3
+                    BoundColumn =1
+                    BorderColor =10921638
+                    ForeColor =4210752
+                    ColumnInfo ="\"\";\"\";\"10\";\"40\""
+                    Name ="Tracks"
+                    ControlSource ="Tracks"
+                    RowSourceType ="Table/Query"
+                    RowSource ="SELECT lookup_WildlifeEvidencePresent.Label, lookup_WildlifeEvidencePresent.ID\015"
+                        "\012FROM lookup_WildlifeEvidencePresent;\015\012"
+                    ValidationRule ="Not IsNull([Tracks])"
+                    ValidationText ="Please enter a value for every evidence type."
+                    GridlineColor =10921638
+                    AllowValueListEdits =0
+
+                    LayoutCachedLeft =3960
+                    LayoutCachedTop =30
+                    LayoutCachedWidth =5100
+                    LayoutCachedHeight =345
+                    RowStart =1
+                    RowEnd =1
+                    ColumnStart =3
+                    ColumnEnd =3
+                    ForeThemeColorIndex =0
+                    ForeTint =75.0
+                    ForeShade =100.0
+                End
+                Begin ComboBox
+                    OverlapFlags =85
+                    IMESentenceMode =3
+                    Left =5160
+                    Top =30
+                    Width =1140
+                    Height =315
+                    TabIndex =4
+                    BoundColumn =1
+                    BorderColor =10921638
+                    ForeColor =4210752
+                    ColumnInfo ="\"\";\"\";\"10\";\"40\""
+                    Name ="Shelter"
+                    ControlSource ="Shelter"
+                    RowSourceType ="Table/Query"
+                    RowSource ="SELECT lookup_WildlifeEvidencePresent.Label, lookup_WildlifeEvidencePresent.ID\015"
+                        "\012FROM lookup_WildlifeEvidencePresent;\015\012"
+                    ValidationRule ="Not IsNull([Shelter])"
+                    ValidationText ="Please enter a value for every evidence type."
+                    GridlineColor =10921638
+                    AllowValueListEdits =0
+
+                    LayoutCachedLeft =5160
+                    LayoutCachedTop =30
+                    LayoutCachedWidth =6300
+                    LayoutCachedHeight =345
+                    RowStart =1
+                    RowEnd =1
+                    ColumnStart =4
+                    ColumnEnd =4
+                    ForeThemeColorIndex =0
+                    ForeTint =75.0
+                    ForeShade =100.0
+                End
+                Begin ComboBox
+                    OverlapFlags =85
+                    IMESentenceMode =3
+                    Left =6360
+                    Top =30
+                    Width =1140
+                    Height =315
+                    TabIndex =5
+                    BoundColumn =1
+                    BorderColor =10921638
+                    ForeColor =4210752
+                    ColumnInfo ="\"\";\"\";\"10\";\"40\""
+                    Name ="Foraging"
+                    ControlSource ="Foraging"
+                    RowSourceType ="Table/Query"
+                    RowSource ="SELECT lookup_WildlifeEvidencePresent.Label, lookup_WildlifeEvidencePresent.ID\015"
+                        "\012FROM lookup_WildlifeEvidencePresent;\015\012"
+                    ValidationRule ="Not IsNull([Foraging])"
+                    ValidationText ="Please enter a value for every evidence type."
+                    GridlineColor =10921638
+                    AllowValueListEdits =0
+
+                    LayoutCachedLeft =6360
+                    LayoutCachedTop =30
+                    LayoutCachedWidth =7500
+                    LayoutCachedHeight =345
+                    RowStart =1
+                    RowEnd =1
+                    ColumnStart =5
+                    ColumnEnd =5
+                    ForeThemeColorIndex =0
+                    ForeTint =75.0
+                    ForeShade =100.0
+                End
+                Begin ComboBox
+                    OverlapFlags =85
+                    IMESentenceMode =3
+                    Left =7560
+                    Top =30
+                    Width =1140
+                    Height =315
+                    TabIndex =6
+                    BoundColumn =1
+                    BorderColor =10921638
+                    ForeColor =4210752
+                    ColumnInfo ="\"\";\"\";\"10\";\"40\""
+                    Name ="Vocalization"
+                    ControlSource ="Vocalization"
+                    RowSourceType ="Table/Query"
+                    RowSource ="SELECT lookup_WildlifeEvidencePresent.Label, lookup_WildlifeEvidencePresent.ID\015"
+                        "\012FROM lookup_WildlifeEvidencePresent;\015\012"
+                    ValidationRule ="Not IsNull([Vocalization])"
+                    ValidationText ="Please enter a value for every evidence type."
+                    GridlineColor =10921638
+                    AllowValueListEdits =0
+
+                    LayoutCachedLeft =7560
+                    LayoutCachedTop =30
+                    LayoutCachedWidth =8700
+                    LayoutCachedHeight =345
+                    RowStart =1
+                    RowEnd =1
+                    ColumnStart =6
+                    ColumnEnd =6
+                    ForeThemeColorIndex =0
+                    ForeTint =75.0
+                    ForeShade =100.0
+                End
+                Begin ComboBox
+                    OverlapFlags =85
+                    IMESentenceMode =3
+                    Left =8760
+                    Top =30
+                    Width =1140
+                    Height =315
+                    TabIndex =7
+                    BoundColumn =1
+                    BorderColor =10921638
+                    ForeColor =4210752
+                    ColumnInfo ="\"\";\"\";\"10\";\"40\""
+                    Name ="OtherEvidence"
+                    ControlSource ="OtherEvidence"
+                    RowSourceType ="Table/Query"
+                    RowSource ="SELECT lookup_WildlifeEvidencePresent.Label, lookup_WildlifeEvidencePresent.ID\015"
+                        "\012FROM lookup_WildlifeEvidencePresent;\015\012"
+                    ValidationRule ="Not IsNull([OtherEvidence])"
+                    ValidationText ="Please enter a value for every evidence type."
+                    GridlineColor =10921638
+                    AllowValueListEdits =0
+
+                    LayoutCachedLeft =8760
+                    LayoutCachedTop =30
+                    LayoutCachedWidth =9900
+                    LayoutCachedHeight =345
+                    RowStart =1
+                    RowEnd =1
+                    ColumnStart =7
+                    ColumnEnd =7
+                    ForeThemeColorIndex =0
+                    ForeTint =75.0
+                    ForeShade =100.0
                 End
             End
         End
@@ -461,20 +768,7 @@ DeleteRecord Me, Me.NewRecord
    
 End Sub
 
-Private Sub Form_BeforeUpdate(Cancel As Integer)
-'Lisa Carter 11/14/2017
-'Check for nulls in required fields: WildlifeTypeID and WildlifeEvidenceID. Don't allow user to proceed without filling in those fields.
 
-    If IsNull(Me.cmbWildlifeTypeID) Then
-        MsgBox ("Please provide the wildlife type."), vbOKOnly + vbExclamation, "Wildlife Type"
-        Cancel = True
-        Me.cmbWildlifeTypeID.SetFocus
-    ElseIf IsNull(Me.WildlifeEvidenceID) Then
-        MsgBox ("Please provide the observation evidence."), vbOKOnly + vbExclamation, "Wildlife Observation Evidence"
-        Cancel = True
-        Me.cmbWildlifeEvidenceID.SetFocus
-    End If
-End Sub
 
 Public Function RowCount() As Integer
 

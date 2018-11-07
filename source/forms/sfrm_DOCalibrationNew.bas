@@ -140,7 +140,7 @@ Begin Form
                     Left =4080
                     Top =4440
                     Width =1080
-                    TabIndex =10
+                    TabIndex =11
                     Name ="cmdEdit"
                     Caption ="Edit"
                     OnClick ="[Event Procedure]"
@@ -228,7 +228,7 @@ Begin Form
                     Left =4080
                     Top =4440
                     Width =1080
-                    TabIndex =8
+                    TabIndex =10
                     Name ="cmdSave"
                     Caption ="Save"
                     OnClick ="[Event Procedure]"
@@ -275,7 +275,7 @@ Begin Form
                     Top =780
                     Width =1620
                     Height =315
-                    TabIndex =1
+                    TabIndex =2
                     BorderColor =10921638
                     ForeColor =4210752
                     Name ="txtCalibrationTime"
@@ -323,7 +323,7 @@ Begin Form
                     Top =420
                     Width =1620
                     Height =315
-                    TabIndex =2
+                    TabIndex =1
                     BorderColor =10921638
                     ForeColor =4210752
                     Name ="txtCalibrationDate"
@@ -372,7 +372,7 @@ Begin Form
                     Top =2040
                     Width =1620
                     Height =315
-                    TabIndex =4
+                    TabIndex =5
                     BorderColor =10921638
                     ForeColor =4210752
                     Name ="txtPreCalibrationReading_percent"
@@ -396,7 +396,7 @@ Begin Form
                     Top =2040
                     Width =1620
                     Height =315
-                    TabIndex =3
+                    TabIndex =4
                     BorderColor =10921638
                     ForeColor =4210752
                     Name ="txtPreCalibrationTemperature_C"
@@ -441,7 +441,7 @@ Begin Form
                     Top =2415
                     Width =1620
                     Height =315
-                    TabIndex =6
+                    TabIndex =7
                     BorderColor =10921638
                     ForeColor =4210752
                     Name ="txtPostCalibrationReading_percent"
@@ -465,7 +465,7 @@ Begin Form
                     Top =2415
                     Width =1620
                     Height =315
-                    TabIndex =5
+                    TabIndex =6
                     BorderColor =10921638
                     ForeColor =4210752
                     Name ="txtPostCalibrationTemperature_C"
@@ -510,6 +510,7 @@ Begin Form
                     Top =1140
                     Width =1620
                     Height =315
+                    TabIndex =3
                     BorderColor =10921638
                     ForeColor =4210752
                     Name ="txtBarometricPressure_mmHg"
@@ -556,7 +557,7 @@ Begin Form
                     Top =3240
                     Width =5160
                     Height =960
-                    TabIndex =7
+                    TabIndex =8
                     BorderColor =10921638
                     ForeColor =4210752
                     Name ="txtNotes"
@@ -639,7 +640,6 @@ Begin Form
                     Top =60
                     Width =3420
                     Height =315
-                    TabIndex =11
                     BoundColumn =1
                     BorderColor =10921638
                     ForeColor =4210752
@@ -683,6 +683,7 @@ Begin Form
                     End
                 End
                 Begin CommandButton
+                    TabStop = NotDefault
                     OverlapFlags =85
                     Left =60
                     Top =4440

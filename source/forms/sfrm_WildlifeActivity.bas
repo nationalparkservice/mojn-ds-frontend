@@ -15,10 +15,10 @@ Begin Form
     Width =15885
     DatasheetFontHeight =11
     ItemSuffix =28
-    Left =1215
-    Top =3165
-    Right =17070
-    Bottom =12150
+    Left =3720
+    Top =3735
+    Right =19920
+    Bottom =12720
     DatasheetGridlinesColor =14806254
     RecSrcDt = Begin
         0xa55d10aad915e540
@@ -286,7 +286,6 @@ Begin Form
                     FontSize =10
                     TabIndex =3
                     BorderColor =10921638
-                    ColumnInfo ="\"\";\"\";\"\";\"\";\"\";\"\";\"10\";\"40\""
                     Name ="cboDataProcessingLevelID"
                     ControlSource ="DataProcessingLevelID"
                     RowSourceType ="Table/Query"
@@ -491,7 +490,6 @@ Begin Form
                     FontSize =12
                     BorderColor =10921638
                     ForeColor =4210752
-                    ColumnInfo ="\"\";\"\";\"\";\"\";\"\";\"\";\"10\";\"40\""
                     ConditionalFormat = Begin
                         0x01000000aa000000010000000100000000000000000000002400000001000000 ,
                         0x00000000f9eded00000000000000000000000000000000000000000000000000 ,
@@ -557,7 +555,6 @@ Begin Form
                     LayoutCachedHeight =540
                 End
                 Begin Subform
-                    Enabled = NotDefault
                     OverlapFlags =85
                     OldBorderStyle =0
                     Left =135
@@ -663,10 +660,22 @@ On Error GoTo Error_Handler
     
     Dim ActivityExists As Boolean
     Dim YesLookupID As Integer
-
+    Dim IsLegacyData As Boolean
+    
     ActivityExists = CheckRecExists(Me.RecordsetClone, "VisitID = " & Me.VisitID)
     YesLookupID = LookupIDFromCode("lookup_IsWildlifeObserved", "Y")
-
+    IsLegacyData = Me.Parent.VisitDate < #11/4/2018#
+    
+    If IsLegacyData = True Then
+        Me.sfrmWildlifeObservation.SourceObject = "sfrm_RETIRED_WildlifeObservation"
+        Me.sfrmWildlifeObservation.LinkMasterFields = "ID"
+        Me.sfrmWildlifeObservation.LinkChildFields = "WildlifeActivityID"
+    Else
+        Me.sfrmWildlifeObservation.SourceObject = "sfrm_WildlifeObservation"
+        Me.sfrmWildlifeObservation.LinkMasterFields = "ID"
+        Me.sfrmWildlifeObservation.LinkChildFields = "WildlifeActivityID"
+    End If
+    
     If ActivityExists = True And Me.cboIsWildlifeObserved = YesLookupID Then
         Me.sfrmWildlifeObservation.Enabled = True
     Else

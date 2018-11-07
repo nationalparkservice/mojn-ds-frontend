@@ -21,9 +21,9 @@ Begin Form
     DatasheetFontHeight =11
     ItemSuffix =171
     Left =9705
-    Top =3045
+    Top =3930
     Right =15375
-    Bottom =8610
+    Bottom =9495
     DatasheetGridlinesColor =14806254
     RecSrcDt = Begin
         0x36d580ded52ee540
@@ -138,7 +138,7 @@ Begin Form
                     Left =4080
                     Top =4440
                     Width =1080
-                    TabIndex =5
+                    TabIndex =12
                     Name ="cmdEdit"
                     Caption ="Edit"
                     OnClick ="[Event Procedure]"
@@ -182,7 +182,7 @@ Begin Form
                     Left =2820
                     Top =4440
                     Width =1080
-                    TabIndex =4
+                    TabIndex =13
                     Name ="cmdCancel"
                     Caption ="Cancel"
                     OnClick ="[Event Procedure]"
@@ -226,7 +226,7 @@ Begin Form
                     Left =4080
                     Top =4440
                     Width =1080
-                    TabIndex =3
+                    TabIndex =11
                     Name ="cmdSave"
                     Caption ="Save"
                     OnClick ="[Event Procedure]"
@@ -273,6 +273,7 @@ Begin Form
                     Top =780
                     Width =1740
                     Height =285
+                    TabIndex =2
                     BorderColor =10921638
                     ForeColor =4210752
                     Name ="txtCalibrationTime"
@@ -371,7 +372,7 @@ Begin Form
                     Top =3420
                     Width =5160
                     Height =840
-                    TabIndex =2
+                    TabIndex =9
                     BorderColor =10921638
                     ForeColor =4210752
                     Name ="txtNotes"
@@ -416,7 +417,6 @@ Begin Form
                     Top =60
                     Width =3540
                     Height =285
-                    TabIndex =6
                     BoundColumn =1
                     BorderColor =10921638
                     ForeColor =4210752
@@ -461,11 +461,12 @@ Begin Form
                 End
                 Begin CommandButton
                     Visible = NotDefault
+                    TabStop = NotDefault
                     OverlapFlags =87
                     Left =1560
                     Top =4440
                     Width =1080
-                    TabIndex =7
+                    TabIndex =10
                     Name ="cmdDelete"
                     Caption ="Delete"
                     OnClick ="[Event Procedure]"
@@ -512,7 +513,7 @@ Begin Form
                     Top =2340
                     Width =1620
                     Height =315
-                    TabIndex =8
+                    TabIndex =6
                     BorderColor =10921638
                     ForeColor =4210752
                     Name ="txtPreCalibrationReading"
@@ -536,7 +537,7 @@ Begin Form
                     Top =2340
                     Width =1620
                     Height =315
-                    TabIndex =9
+                    TabIndex =5
                     BorderColor =10921638
                     ForeColor =4210752
                     Name ="txtPreCalibrationTemperature_C"
@@ -582,7 +583,7 @@ Begin Form
                     Top =2715
                     Width =1620
                     Height =315
-                    TabIndex =10
+                    TabIndex =8
                     BorderColor =10921638
                     ForeColor =4210752
                     Name ="txtPostCalibrationReading"
@@ -606,7 +607,7 @@ Begin Form
                     Top =2700
                     Width =1620
                     Height =315
-                    TabIndex =11
+                    TabIndex =7
                     BorderColor =10921638
                     ForeColor =4210752
                     Name ="txtPostCalibrationTemperature_C"
@@ -693,7 +694,7 @@ Begin Form
                     Top =1140
                     Width =1740
                     Height =315
-                    TabIndex =12
+                    TabIndex =3
                     BorderColor =10921638
                     ForeColor =4210752
                     Name ="txtStandard"
@@ -743,7 +744,7 @@ Begin Form
                     Top =1500
                     Width =1740
                     Height =315
-                    TabIndex =13
+                    TabIndex =4
                     BorderColor =10921638
                     ForeColor =4210752
                     Name ="TemperatureCorrectedStd_pH"

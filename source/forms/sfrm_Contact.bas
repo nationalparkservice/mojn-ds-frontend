@@ -775,7 +775,7 @@ Option Explicit
 
 Public Function swapButtons()
 
-Me.txtLabel.SetFocus
+Me.txtFirstName.SetFocus
 Me.cmdCancel.Visible = Not (Me.cmdCancel.Visible)
 Me.cmdSave.Visible = Not (Me.cmdSave.Visible)
 Me.cmdEdit.Visible = Not (Me.cmdEdit.Visible)

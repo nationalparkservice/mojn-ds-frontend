@@ -111,3 +111,4 @@
 114	lookup_WildlifeEvidencePresent	lookup.WildlifeEvidencePresent			
 115	analysis_RETIRED_Wildlife	analysis.RETIRED_Wildlife			
 116	data_RETIRED_WildlifeObservation	data.RETIRED_WildlifeObservation			
+117	lookup_DischargeEstimatedClass	lookup.DischargeEstimatedClass			

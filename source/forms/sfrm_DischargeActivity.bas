@@ -20,10 +20,10 @@ Begin Form
     Width =15840
     DatasheetFontHeight =11
     ItemSuffix =22
-    Left =3375
-    Top =2820
-    Right =19485
-    Bottom =12060
+    Left =2775
+    Top =3615
+    Right =18630
+    Bottom =12600
     DatasheetGridlinesColor =14806254
     RecSrcDt = Begin
         0x372b2ba47615e540
@@ -921,14 +921,13 @@ Select Case flowCondition
     'If the spring is dry, there should be no discharge data
     Case "dry"
         DataQualityOK = Me.sfrmSpringbrookDimensions.Form.ConsistentWithParent(flowCondition) And _
-                        Me.sfrmDischargeEstimated.Form.RowCount() = 0 And _
+                        Me.sfrmDischargeEstimated.Form.ConsistentWithParent(flowCondition) And _
                         Me.sfrmDischargeVolumetric.Form.RowCount() = 0
     'If the spring is not dry, discharge data should be present
     Case "flowing", "wet soil only", "flood", "standing water", "solid ice"
         DataQualityOK = Me.sfrmSpringbrookDimensions.Form.ConsistentWithParent(flowCondition) And _
-                        ((Me.sfrmDischargeEstimated.Form.RowCount() > 0) Xor (Me.sfrmDischargeVolumetric.Form.RowCount() > 0)) And _
-                        Me.sfrmDischargeEstimated.Form.DataQualityOK() And _
-                        Me.sfrmDischargeVolumetric.Form.DataQualityOK()
+                        (((Me.sfrmDischargeEstimated.Form.RowCount() > 0) And Me.sfrmDischargeEstimated.Form.ConsistentWithParent(flowCondition)) Xor _
+                        ((Me.sfrmDischargeVolumetric.Form.RowCount() > 0) And Me.sfrmDischargeVolumetric.Form.DataQualityOK()))
     Case Else
         DataQualityOK = False
 End Select
@@ -1011,8 +1010,7 @@ On Error GoTo Error_Handler
         
     'When main form opens, enable/disable forms and toggle buttons, according to business rules:
     'FlowConditionID is null: All forms and toggle buttons are disabled.
-    'FlowConditionID = Dry, Wet Soil Only, Standing Water, or Flood: Enable Springbrook Dimensions form. Toggle buttons and Est/Vol forms should be disabled.
-    'FlowDonditionID = Flowing: Enable Springbrook Dimensions form, toggle buttons, and Est/Vol forms according to existing data
+    'FlowConditionID = Dry, Wet Soil Only, Standing Water, Flowing, Solid Ice or Flood: Enable Springbrook Dimensions, toggle buttons and Est/Vol forms.
     '(if no discharge data, sfrmDischargeEstimated is the default visible form).
     
     Dim EstDischargeExists As Boolean
@@ -1026,15 +1024,6 @@ On Error GoTo Error_Handler
         EnableEstimated (False)
         EnableVolumetric (False)
         EnableSpringbrook (False)
-        GoTo Exit_Procedure
-    End If
-    
-    'Disable discharge measurements if flow condition is dry
-    If Me.FlowConditionID.Value = LookupIDFromLabel("lookup_FlowCondition", "dry") Then
-        EnableToggles (False)
-        EnableEstimated (False)
-        EnableVolumetric (False)
-        EnableSpringbrook (True)
     Else
     'Set up discharge subform visibility
         If VolDischargeExists Then
@@ -1060,12 +1049,7 @@ End Sub
 Private Sub cboFlowConditionID_BeforeUpdate(Cancel As Integer)
 On Error GoTo Error_Handler
 
-    'If Flow Condition ID = dry or wet soil only, Estimated Discharge & Volumetric forms, and toggle buttons are disabled
-    'If Flow Condition ID = standing water or flood, Est/Vol forms, and toggles are still disabled.
-    'If Flow Condition ID flowing, Est/Vol forms, and toggles are enabled.
-    ' 1-dry, 2-wet soil only, 3-standing water, 4-flowing, 5-flood
-    
-    'Case where flow condition is not flowing, but discharge measurements exist is trapped in BeforeUpdate
+    'If Flow Condition ID = dry, make sure there isn't volumetric discharge data before updating
 
     Dim flowCondition As String
     Dim EstDischargeExists As Boolean
@@ -1082,12 +1066,12 @@ On Error GoTo Error_Handler
             EnableVolumetric (VolDischargeExists)
         
         Case "dry"
-            If (Not EstDischargeExists) And (Not VolDischargeExists) Then
-                EnableToggles False
-                EnableEstimated (False)
-                EnableVolumetric (False)
+            If (Not VolDischargeExists) Then
+                EnableToggles True, EstDischargeExists, VolDischargeExists
+                EnableEstimated (EstDischargeExists)
+                EnableVolumetric (VolDischargeExists)
             Else
-                MsgBox ("Please delete discharge data before attempting to change flow condition to 'dry'")
+                MsgBox ("Please delete volumetric discharge data before attempting to change flow condition to 'dry'")
                 Cancel = True
                 Me.cboFlowConditionID.Undo
                 GoTo Exit_Procedure

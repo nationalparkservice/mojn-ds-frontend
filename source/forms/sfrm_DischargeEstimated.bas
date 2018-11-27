@@ -20,17 +20,16 @@ Begin Form
     Width =2940
     DatasheetFontHeight =11
     ItemSuffix =3
-    Left =4080
-    Top =4605
-    Right =7080
-    Bottom =5355
+    Left =3285
+    Top =6300
+    Right =6030
+    Bottom =6795
     DatasheetGridlinesColor =14806254
     RecSrcDt = Begin
         0x335bdaa87615e540
     End
     RecordSource ="data_DischargeEstimatedObservation"
     Caption ="Estimated Discharge"
-    BeforeUpdate ="[Event Procedure]"
     DatasheetFontName ="Calibri"
     PrtMip = Begin
         0x6801000068010000680100006801000000000000201c0000e010000001000000 ,
@@ -179,45 +178,24 @@ Begin Form
             GridlineShade =65.0
         End
         Begin FormHeader
-            Height =315
+            Height =300
             BackColor =15921906
             Name ="FormHeader"
             AlternateBackThemeColorIndex =1
             AlternateBackShade =95.0
             Begin
                 Begin Label
-                    OverlapFlags =93
+                    OverlapFlags =85
                     TextAlign =2
-                    Width =1260
-                    Height =315
+                    Width =2820
+                    Height =300
                     FontSize =10
                     BorderColor =6108695
                     Name ="lblEstimatedDischargeFlagID"
-                    Caption ="Discharge is"
+                    Caption ="Estimated discharge class (L/sec)"
                     GridlineColor =10921638
-                    LayoutCachedWidth =1260
-                    LayoutCachedHeight =315
-                    BorderThemeColorIndex =-1
-                    BorderTint =100.0
-                    ForeThemeColorIndex =-1
-                    ForeTint =100.0
-                End
-                Begin Label
-                    OverlapFlags =87
-                    TextAlign =2
-                    Left =1260
-                    Width =1272
-                    Height =315
-                    FontSize =10
-                    BorderColor =6108695
-                    Name ="lblLiters/Minute"
-                    Caption ="*Liters/Minute"
-                    EventProcPrefix ="lblLiters_Minute"
-                    GridlineColor =10921638
-                    LayoutCachedLeft =1260
-                    LayoutCachedWidth =2532
-                    LayoutCachedHeight =315
-                    ThemeFontIndex =-1
+                    LayoutCachedWidth =2820
+                    LayoutCachedHeight =300
                     BorderThemeColorIndex =-1
                     BorderTint =100.0
                     ForeThemeColorIndex =-1
@@ -231,53 +209,29 @@ Begin Form
             Name ="Detail"
             AlternateBackColor =14602694
             Begin
-                Begin TextBox
-                    OverlapFlags =93
-                    IMESentenceMode =3
-                    Left =1320
-                    Width =1197
-                    Height =360
-                    TabIndex =1
-                    BorderColor =14211288
-                    Name ="txtDischarge_LitersPerMinute"
-                    ControlSource ="Discharge_L_per_min"
-                    OnChange ="[Event Procedure]"
-                    GridlineColor =10921638
-
-                    LayoutCachedLeft =1320
-                    LayoutCachedWidth =2517
-                    LayoutCachedHeight =360
-                    BackThemeColorIndex =-1
-                    BorderThemeColorIndex =-1
-                    BorderShade =100.0
-                    ThemeFontIndex =-1
-                    ForeThemeColorIndex =-1
-                    ForeTint =100.0
-                End
                 Begin ComboBox
                     LimitToList = NotDefault
                     OverlapFlags =85
                     TextAlign =2
                     IMESentenceMode =3
-                    ColumnCount =3
                     Left =60
-                    Width =1200
+                    Width =2400
                     Height =360
+                    BoundColumn =1
                     BorderColor =14211288
-                    ColumnInfo ="\"\";\"\";\"\";\"\";\"\";\"\";\"10\";\"10\""
-                    Name ="cboEstimatedDischargeFlagID"
-                    ControlSource ="DischargeEstimatedFlagID"
+                    ColumnInfo ="\"\";\"\";\"10\";\"30\""
+                    Name ="cboEstimatedDischargeClassID"
+                    ControlSource ="DischargeEstimatedClassID"
                     RowSourceType ="Table/Query"
-                    RowSource ="SELECT lookup_DischargeEstimatedFlag.ID, lookup_DischargeEstimatedFlag.Code, loo"
-                        "kup_DischargeEstimatedFlag.Label FROM lookup_DischargeEstimatedFlag WHERE (((loo"
-                        "kup_DischargeEstimatedFlag.ID)=1)); "
-                    ColumnWidths ="0;288;288"
+                    RowSource ="SELECT lookup_DischargeEstimatedClass.Label, lookup_DischargeEstimatedClass.ID F"
+                        "ROM lookup_DischargeEstimatedClass ORDER BY lookup_DischargeEstimatedClass.Sort;"
+                        " "
                     OnChange ="[Event Procedure]"
                     GridlineColor =10921638
                     AllowValueListEdits =0
 
                     LayoutCachedLeft =60
-                    LayoutCachedWidth =1260
+                    LayoutCachedWidth =2460
                     LayoutCachedHeight =360
                     ThemeFontIndex =-1
                     BackThemeColorIndex =-1
@@ -288,11 +242,11 @@ Begin Form
                 End
                 Begin CommandButton
                     TabStop = NotDefault
-                    OverlapFlags =87
+                    OverlapFlags =85
                     PictureType =2
                     Left =2520
                     Width =360
-                    TabIndex =2
+                    TabIndex =1
                     ForeColor =4210752
                     Name ="cmdDeleteEstimatedDischarge"
                     OnClick ="[Event Procedure]"
@@ -349,68 +303,33 @@ RowCount = Me.RecordsetClone.recordCount
 
 End Function
 
-Public Function DataQualityOK() As Integer
+
+Public Function ConsistentWithParent(flowCondition As String) As Boolean
 On Error GoTo Error_Handler
 
-Dim estDischargeFlag As String
-estDischargeFlag = Nz(LookupCodeFromID("lookup_DischargeEstimatedFlag", Me.cboEstimatedDischargeFlagID))
-
-'If no data, return true and exit
-If Not Me.Dirty And RowCount() = 0 Then
-    DataQualityOK = True
-    GoTo Exit_Procedure
-End If
-
-'Valid data:
-'   Flag is < and est. discharge is 1
-'   Flag is null and est. discharge is >1
-DataQualityOK = ((estDischargeFlag = "<") And (Me.txtDischarge_LitersPerMinute = 1)) Or _
-                ((estDischargeFlag = "") And (Me.txtDischarge_LitersPerMinute >= 1))
-
+'Make sure that est. discharge is 0 for dry, <0.1 for wet, standing, and solid ice, and >0 for flowing and flood.
+Select Case flowCondition
+    Case "dry"
+        ConsistentWithParent = (Nz(Me.cboEstimatedDischargeClassID) = 1)
+    Case "wet soil only", "standing water", "solid ice"
+        ConsistentWithParent = (Nz(Me.cboEstimatedDischargeClassID) = 2)
+    Case "flowing", "flood"
+        ConsistentWithParent = (Nz(Me.cboEstimatedDischargeClassID) >= 2)
+    Case Else
+        ConsistentWithParent = False
+End Select
 
 Exit_Procedure:
     Exit Function
 Error_Handler:
-    MsgBox "Form: " & strcFormName & vbNewLine & "Fxn: DataQualityOK" & vbNewLine & "Error #" & Err.Number & ": " & Err.Description, vbCritical
+    MsgBox "Form: " & strcFormName & vbNewLine & "Fxn: ConsistentWithParent" & vbNewLine & "Error #" & Err.Number & ": " & Err.Description, vbCritical
     Resume Exit_Procedure
 End Function
 
-Private Sub cboEstimatedDischargeFlagID_Change()
-    
-    'Default Estimated Discharge Flag to 1 ("<"), and then LitersPerMinute should be 1. If LitersPerMinute <>1, Estimated Discharge will be null
-    If Me.cboEstimatedDischargeFlagID = 1 Then
-        Me.txtDischarge_LitersPerMinute.Value = 1
-    End If
-
-End Sub
 
 Private Sub cmdDeleteEstimatedDischarge_Click()
 
 'Delete Estimated Discharge record, associated with a visit, from data_DischargeEstimatedObservation
 DeleteRecord Me, Me.NewRecord
     
-End Sub
-
-Private Sub Form_BeforeUpdate(Cancel As Integer)
-
-    'Liters per minute is required and values should be >=0 and <=1000
-    If IsNull(Me.txtDischarge_LitersPerMinute) Then
-        Cancel = True
-        MsgBox ("A discharge value is required"), vbOKOnly + vbExclamation, "Discharge Liters Per Minute"
-        Me.txtDischarge_LitersPerMinute.SetFocus
-    ElseIf Not IsNull(Me.txtDischarge_LitersPerMinute) And (Me.txtDischarge_LitersPerMinute < 0 Or Me.txtDischarge_LitersPerMinute > 1000) Then
-        Cancel = True
-        MsgBox ("Discharge value outside accepted range."), vbOKOnly + vbExclamation, "Discharge Liters Per Minute"
-        Me.txtDischarge_LitersPerMinute.SetFocus
-    End If
-
-End Sub
-
-Private Sub txtDischarge_LitersPerMinute_Change()
- 
- 'If Estimated Discharge Flag = "<" and user changes LitersPerMinute to something other than 1, null out the Est Discharge Flag
- If Me.cboEstimatedDischargeFlagID = 1 And Me.txtDischarge_LitersPerMinute.text <> 1 Then
-    Me.cboEstimatedDischargeFlagID = Null
-    
-End If
 End Sub
